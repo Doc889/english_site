@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EnglishPath - Master English at Your Own Pace</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary: #7c3aed;
+            --color-primary-dark: #6d28d9;
+            --color-primary-light: #a78bfa;
+            --color-secondary: #c4b5fd;
+            --color-accent: #ddd6fe;
+            --color-bg: #ffffff;
+            --color-bg-alt: #faf5ff;
+            --color-text: #1f2937;
+            --color-text-light: #6b7280;
+            --color-white: #ffffff;
+            --font-display: 'Playfair Display', serif;
+            --font-body: 'DM Sans', sans-serif;
+            --shadow-sm: 0 2px 8px rgba(124, 58, 237, 0.08);
+            --shadow-md: 0 4px 20px rgba(124, 58, 237, 0.12);
+            --shadow-lg: 0 8px 40px rgba(124, 58, 237, 0.16);
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(250, 247, 244, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(212, 102, 79, 0.1);
+            transition: var(--transition);
+        }
+
+        header.scrolled {
+            box-shadow: var(--shadow-sm);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .main-title {
+            font-family: var(--font-display);
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--color-primary);
+            margin-bottom: 1rem;
+            letter-spacing: -1px;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--color-text-light);
+            margin-bottom: 0.5rem;
+        }
+
+        .free-badge {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            background: var(--color-accent);
+            color: var(--color-primary);
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+        }
+
+        /* Main Content */
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem 6rem;
+        }
+
+        .level-section {
+            margin-bottom: 4rem;
+        }
+
+        .level-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 3px solid var(--color-primary);
+        }
+
+        .level-badge {
+            padding: 0.5rem 1.5rem;
+            background: var(--color-primary);
+            color: var(--color-white);
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .level-badge.intermediate {
+            background: var(--color-primary-light);
+        }
+
+        .level-badge.advanced {
+            background: var(--color-primary-dark);
+        }
+
+        .level-title {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            color: var(--color-text);
+            font-weight: 700;
+        }
+
+        .topics-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .topic-item {
+            background: var(--color-white);
+            border: 2px solid var(--color-accent);
+            padding: 1.5rem;
+            border-radius: 16px;
+            transition: var(--transition);
+            cursor: pointer;
+            text-decoration: none;
+            color: var(--color-text);
+            display: block;
+        }
+
+        .topic-item:hover {
+            border-color: var(--color-primary);
+            background: var(--color-bg-alt);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .topic-item h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--color-primary);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .topic-item h3::before {
+            content: '•';
+            font-size: 1.5rem;
+        }
+
+        .topic-item p {
+            font-size: 0.9rem;
+            color: var(--color-text-light);
+            line-height: 1.5;
+        }
+
+
+        /* Footer */
+        footer {
+            background: var(--color-primary);
+            color: var(--color-white);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-content p {
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+
+        .footer-links a {
+            color: var(--color-white);
+            text-decoration: none;
+            opacity: 0.8;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+            text-decoration: underline;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .fade-in-delay-1 { animation-delay: 0.1s; }
+        .fade-in-delay-2 { animation-delay: 0.2s; }
+        .fade-in-delay-3 { animation-delay: 0.3s; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .main-title {
+                font-size: 2.5rem;
+            }
+
+            .subtitle {
+                font-size: 1rem;
+            }
+
+            .level-title {
+                font-size: 2rem;
+            }
+
+            .topics-list {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="header-content">
+            <h1 class="main-title">Master English at Your Own Pace</h1>
+            <p class="subtitle">Complete collection of English grammar topics, organized from easy to advanced</p>
+            <span class="free-badge">100% Free Learning</span>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- Beginner Level -->
+        <section class="level-section">
+            <div class="level-header">
+                <span class="level-badge">Beginner</span>
+                <h2 class="level-title">Foundation Topics</h2>
+            </div>
+            <div id="beginner-topics-list" class="topics-list">
+                <!-- Topics will be loaded dynamically from database -->
+                <div style="grid-column: 1/-1; text-align: center; padding: 2rem; color: var(--color-text-light);">
+                    Loading topics...
+                </div>
+            </div>
+        </section>
+
+        <!-- Intermediate Level -->
+        <section class="level-section">
+            <div class="level-header">
+                <span class="level-badge intermediate">Intermediate</span>
+                <h2 class="level-title">Building Skills</h2>
+            </div>
+            <div class="topics-list">
+                <a href="#" class="topic-item">
+                    <h3>Subject-Verb Agreement</h3>
+                    <p>Matching subjects with correct verb forms</p>
+                </a>
+                <a href="#" class="topic-item">
+                    <h3>Countable vs Uncountable Nouns</h3>
+                    <p>Much, many, a lot of, some, any</p>
+                </a>
+                <a href="#" class="topic-item">
+                    <h3>Possessive Pronouns</h3>
+                    <p>Mine, yours, his, hers, ours, theirs</p>
+                </a>
+                <a href="#" class="topic-item">
+                    <h3>Object Pronouns</h3>
+                    <p>Me, you, him, her, it, us, them</p>
+                </a>
+                <a href="#" class="topic-item">
+                    <h3>Reflexive Pronouns</h3>
+                    <p>Myself, yourself, himself, etc.</p>
+                </a>
+                <a href="#" class="topic-item">
+                    <h3>Present Perfect</h3>
+                    <p>Have/has + past participle</p>
+                </a>
+                <a href="#" class="topic-item">
+                    <h3>Present Perfect vs Past Simple</h3>
+                    <p>Understanding the key differences</p>
+                </a>
+                <a href="#" class="topic-item">
+                    <h3>Past Continuous</h3>
+                    <p>Was/were + verb-ing</p>
+                </a>
+                <a href="#" class="topic-item">
+                    <h3>Future: Will vs Going To</h3>
+                    <p>Different ways to talk about the future</p>
+                </a>
+                <a href="#" class="topic-item">
+                    <h3>Modal Verbs - Must, Should, Have To</h3>
+                    <p>Obligation and advice</p>
+                </a>
+                <a href="#" class="topic-item">
+                    <h3>Modal Verbs - May, Might, Could</h3>
+                    <p>Possibility and permission</p>
+                </a>
+                <a href="#" class="topic-item">
+                    <h3>Comparatives & Superlatives</h3>
+                    <p>Comparing things and describing extremes</p>
+                </a>
+                <a href="#" class="topic-item">
+                    <h3>Zero Conditional</h3>
+                    <p>General truths and scientific facts</p>
+                </a>
+                <a href="#" class="topic-item">
+                    <h3>First Conditional</h3>
+                    <p>Real possibilities in the future</p>
+                </a>
+                <a href="#" class="topic-item">
+                    <h3>Second Conditional</h3>
+                    <p>Hypothetical situations in present/future</p>
+                </a>
+                <a href="#" class="topic-item">
+                    <h3>Relative Clauses - Who, Which, That</h3>
+                    <p>Defining and non-defining clauses</p>
+                </a>
+                <a href="#" class="topic-item">
+                    <h3>Basic Phrasal Verbs</h3>
+                    <p>Common verb + preposition combinations</p>
+                </a>
+                <a href="#" class="topic-item">
+                    <h3>Prepositions of Time</h3>
+                    <p>In, on, at for time expressions</p>
+                </a>
+                <a href="#" class="topic-item">
+                    <h3>Question Tags</h3>
+                    <p>Isn't it? Don't you? Haven't they?</p>
+                </a>
+                <a href="#" class="topic-item">
+                    <h3>Reported Speech - Statements</h3>
+                    <p>He said, she told me, etc.</p>
+                </a>
+                <a href="#" class="topic-item">
+                    <h3>Gerunds & Infinitives</h3>
+                    <p>Verb patterns: to do vs doing</p>
+                </a>
+                <a href="#" class="topic-item">
+                    <h3>Used To</h3>
+                    <p>Past habits and states</p>
+                </a>
+                <a href="#" class="topic-item">
+                    <h3>Passive Voice - Present & Past</h3>
+                    <p>Basic passive constructions</p>
+                </a>
+                <a href="#" class="topic-item">
+                    <h3>So, Such, Too, Enough</h3>
+                    <p>Intensifiers and modifiers</p>
+                </a>
+                <a href="#" class="topic-item">
+                    <h3>Make vs Do</h3>
+                    <p>Common collocations and differences</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- Advanced Level -->
+        <section class="level-section">
+            <div class="level-header">
+                <span class="level-badge advanced">Advanced</span>
+                <h2 class="level-title">Mastery Topics</h2>
+            </div>
+            <div class="topics-list">
+                <a href="#" class="topic-item">
+                    <h3>Present Perfect Continuous</h3>
+                    <p>Have/has been + verb-ing</p>
+                </a>
+                <a href="#" class="topic-item">
+                    <h3>Past Perfect</h3>
+                    <p>Had + past participle</p>
+                </a>
+                <a href="#" class="topic-item">
+                    <h3>Past Perfect Continuous</h3>
+                    <p>Had been + verb-ing</p>
+                </a>
+                <a href="#" class="topic-item">
+                    <h3>Future Perfect</h3>
+                    <p>Will have + past participle</p>
+                </a>
+                <a href="#" class="topic-item">
+                    <h3>Future Continuous</h3>
+                    <p>Will be + verb-ing</p>
+                </a>
+                <a href="#" class="topic-item">
+                    <h3>Third Conditional</h3>
+                    <p>Hypothetical past situations</p>
+                </a>
+                <a href="#" class="topic-item">
+                    <h3>Mixed Conditionals</h3>
+                    <p>Combining different conditional types</p>
+                </a>
+                <a href="#" class="topic-item">
+                    <h3>Wish & If Only</h3>
+                    <p>Expressing regrets and desires</p>
+                </a>
+                <a href="#" class="topic-item">
+                    <h3>Advanced Modal Verbs</h3>
+                    <p>Would rather, had better, ought to</p>
+                </a>
+                <a href="#" class="topic-item">
+                    <h3>Modal Verbs - Past Forms</h3>
+                    <p>Could have, should have, must have</p>
+                </a>
+                <a href="#" class="topic-item">
+                    <h3>Passive Voice - All Tenses</h3>
+                    <p>Complex passive constructions</p>
+                </a>
+                <a href="#" class="topic-item">
+                    <h3>Causative Structures</h3>
+                    <p>Have/get something done</p>
+                </a>
+                <a href="#" class="topic-item">
+                    <h3>Reported Speech - Questions</h3>
+                    <p>Indirect questions and commands</p>
+                </a>
+                <a href="#" class="topic-item">
+                    <h3>Relative Clauses - Advanced</h3>
+                    <p>Whose, where, when, reduced clauses</p>
+                </a>
+                <a href="#" class="topic-item">
+                    <h3>Participle Clauses</h3>
+                    <p>Present and past participles</p>
+                </a>
+                <a href="#" class="topic-item">
+                    <h3>Cleft Sentences</h3>
+                    <p>What, it was/is... that emphasis</p>
+                </a>
+                <a href="#" class="topic-item">
+                    <h3>Inversion</h3>
+                    <p>Formal structures and emphasis</p>
+                </a>
+                <a href="#" class="topic-item">
+                    <h3>Subjunctive Mood</h3>
+                    <p>Formal requests and suggestions</p>
+                </a>
+                <a href="#" class="topic-item">
+                    <h3>Advanced Phrasal Verbs</h3>
+                    <p>Three-part phrasal verbs and idioms</p>
+                </a>
+                <a href="#" class="topic-item">
+                    <h3>Collocations</h3>
+                    <p>Natural word combinations</p>
+                </a>
+                <a href="#" class="topic-item">
+                    <h3>Idioms & Expressions</h3>
+                    <p>Common English idioms</p>
+                </a>
+                <a href="#" class="topic-item">
+                    <h3>Formal vs Informal English</h3>
+                    <p>Register and style differences</p>
+                </a>
+                <a href="#" class="topic-item">
+                    <h3>Business English</h3>
+                    <p>Professional communication skills</p>
+                </a>
+                <a href="#" class="topic-item">
+                    <h3>Academic Writing</h3>
+                    <p>Essays, reports, and formal writing</p>
+                </a>
+                <a href="#" class="topic-item">
+                    <h3>Discourse Markers</h3>
+                    <p>However, moreover, nevertheless, etc.</p>
+                </a>
+                <a href="#" class="topic-item">
+                    <h3>Emphasis & Focus</h3>
+                    <p>Advanced techniques for emphasis</p>
+                </a>
+                <a href="#" class="topic-item">
+                    <h3>Ellipsis & Substitution</h3>
+                    <p>Avoiding repetition in speech</p>
+                </a>
+                <a href="#" class="topic-item">
+                    <h3>Common Errors & Confusions</h3>
+                    <p>Affect/effect, its/it's, and more</p>
+                </a>
+                <a href="#" class="topic-item">
+                    <h3>False Friends</h3>
+                    <p>Words that seem similar but differ</p>
+                </a>
+                <a href="#" class="topic-item">
+                    <h3>Prefixes & Suffixes</h3>
+                    <p>Word formation and etymology</p>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 EnglishPath - Free English Learning for Everyone</p>
+            <div class="footer-links">
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // API base URL
+        const API_BASE = window.location.origin + '/api';
+
+        // Load beginner topics from database
+        async function loadBeginnerTopics() {
+            try {
+                const response = await fetch(`${API_BASE}/topics?difficulty=beginner`);
+                if (!response.ok) {
+                    throw new Error('Failed to load topics');
+                }
+
+                const topics = await response.json();
+                const container = document.getElementById('beginner-topics-list');
+
+                // Clear loading message
+                container.innerHTML = '';
+
+                // Render each topic
+                topics.forEach(topic => {
+                    const topicLink = document.createElement('a');
+                    topicLink.href = `/topics/${topic.id}`;
+                    topicLink.className = 'topic-item';
+
+                    topicLink.innerHTML = `
+                        <h3>${topic.title}</h3>
+                        <p>${topic.description}</p>
+                    `;
+
+                    container.appendChild(topicLink);
+                });
+
+                // Setup fade-in animations after topics are loaded
+                setupAnimations();
+
+            } catch (error) {
+                console.error('Error loading topics:', error);
+                const container = document.getElementById('beginner-topics-list');
+                container.innerHTML = `
+                    <div style="grid-column: 1/-1; text-align: center; padding: 2rem; color: var(--color-error);">
+                        Failed to load topics. Please refresh the page.
+                    </div>
+                `;
+            }
+        }
+
+        // Header scroll effect
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Fade in animation on scroll
+        function setupAnimations() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all topic items
+            document.querySelectorAll('.topic-item').forEach(item => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(20px)';
+                item.style.transition = 'opacity 0.5s ease-out, transform 0.5s ease-out';
+                observer.observe(item);
+            });
+        }
+
+        // Load topics when page loads
+        document.addEventListener('DOMContentLoaded', loadBeginnerTopics);
+    </script>
+</body>
+</html>
