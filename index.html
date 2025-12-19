@@ -47,7 +47,6 @@
 
         /* Header */
         header {
-            position: sticky;
             top: 0;
             z-index: 100;
             background: rgba(250, 247, 244, 0.95);
@@ -56,9 +55,6 @@
             transition: var(--transition);
         }
 
-        header.scrolled {
-            box-shadow: var(--shadow-sm);
-        }
 
         .header-content {
             max-width: 1200px;
@@ -274,8 +270,8 @@
     <!-- Header -->
     <header id="header">
         <div class="header-content">
-            <h1 class="main-title">Master English at Your Own Pace</h1>
-            <p class="subtitle">Complete collection of English grammar topics, organized from easy to advanced</p>
+            <h1 class="main-title">Победи грамматику английского языка</h1>
+            <p class="subtitle">Перед тобой инструмент, с помощью которого ты поймёшь суть английского языка и навсегда закроешь свои пробелы в грамматике. Тебя ждут сотни тестов. Все зависит только от тебя.</p>
             <span class="free-badge">100% Free Learning</span>
         </div>
     </header>
@@ -597,16 +593,6 @@
                 `;
             }
         }
-
-        // Header scroll effect
-        const header = document.getElementById('header');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
 
         // Fade in animation on scroll
         function setupAnimations() {

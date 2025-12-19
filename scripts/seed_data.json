@@ -1,0 +1,168 @@
+{
+  "topics": [
+    {
+      "id": "alphabet-pronunciation",
+      "title": "The Alphabet & Pronunciation",
+      "description": "Learn English letters, basic sounds, and pronunciation rules",
+      "difficulty": "beginner",
+      "total_questions": 20,
+      "display_order": 0
+    },
+    {
+      "id": "greetings-introductions",
+      "title": "Basic Greetings & Introductions",
+      "description": "Hello, goodbye, introducing yourself and others",
+      "difficulty": "beginner",
+      "total_questions": 20,
+      "display_order": 1
+    },
+    {
+      "id": "articles",
+      "title": "Articles (A, An, The)",
+      "description": "When to use indefinite and definite articles",
+      "difficulty": "beginner",
+      "total_questions": 20,
+      "display_order": 2
+    },
+    {
+      "id": "nouns-plural",
+      "title": "Nouns - Singular & Plural",
+      "description": "Regular and irregular plural forms",
+      "difficulty": "beginner",
+      "total_questions": 20,
+      "display_order": 3
+    },
+    {
+      "id": "personal-pronouns",
+      "title": "Personal Pronouns",
+      "description": "I, you, he, she, it, we, they",
+      "difficulty": "beginner",
+      "total_questions": 20,
+      "display_order": 4
+    },
+    {
+      "id": "to-be-present",
+      "title": "To Be - Present Simple",
+      "description": "Am, is, are - forms and usage",
+      "difficulty": "beginner",
+      "total_questions": 20,
+      "display_order": 5
+    },
+    {
+      "id": "present-simple",
+      "title": "Present Simple Tense",
+      "description": "Daily routines, habits, and general facts",
+      "difficulty": "beginner",
+      "total_questions": 20,
+      "display_order": 6
+    },
+    {
+      "id": "basic-adjectives",
+      "title": "Basic Adjectives",
+      "description": "Describing people, places, and things",
+      "difficulty": "beginner",
+      "total_questions": 20,
+      "display_order": 7
+    },
+    {
+      "id": "demonstratives",
+      "title": "Demonstratives",
+      "description": "This, that, these, those",
+      "difficulty": "beginner",
+      "total_questions": 20,
+      "display_order": 8
+    },
+    {
+      "id": "simple-questions",
+      "title": "Simple Questions",
+      "description": "Yes/No questions and basic Wh- questions",
+      "difficulty": "beginner",
+      "total_questions": 20,
+      "display_order": 9
+    },
+    {
+      "id": "numbers-counting",
+      "title": "Numbers & Counting",
+      "description": "Cardinal and ordinal numbers",
+      "difficulty": "beginner",
+      "total_questions": 20,
+      "display_order": 10
+    },
+    {
+      "id": "time-dates",
+      "title": "Time & Dates",
+      "description": "Telling time, days, months, years",
+      "difficulty": "beginner",
+      "total_questions": 20,
+      "display_order": 11
+    },
+    {
+      "id": "there-is-are",
+      "title": "There Is / There Are",
+      "description": "Describing what exists or is available",
+      "difficulty": "beginner",
+      "total_questions": 20,
+      "display_order": 12
+    },
+    {
+      "id": "prepositions-place",
+      "title": "Prepositions of Place",
+      "description": "In, on, at, under, between, etc.",
+      "difficulty": "beginner",
+      "total_questions": 20,
+      "display_order": 13
+    },
+    {
+      "id": "present-continuous",
+      "title": "Present Continuous",
+      "description": "Actions happening now",
+      "difficulty": "beginner",
+      "total_questions": 20,
+      "display_order": 14
+    },
+    {
+      "id": "past-simple-regular",
+      "title": "Past Simple - Regular Verbs",
+      "description": "Basic past tense with -ed endings",
+      "difficulty": "beginner",
+      "total_questions": 20,
+      "display_order": 15
+    },
+    {
+      "id": "past-simple-irregular",
+      "title": "Past Simple - Irregular Verbs",
+      "description": "Common irregular past forms",
+      "difficulty": "beginner",
+      "total_questions": 20,
+      "display_order": 16
+    },
+    {
+      "id": "can-cant",
+      "title": "Can / Can't",
+      "description": "Ability and possibility",
+      "difficulty": "beginner",
+      "total_questions": 20,
+      "display_order": 17
+    },
+    {
+      "id": "possessive-adjectives",
+      "title": "Possessive Adjectives",
+      "description": "My, your, his, her, its, our, their",
+      "difficulty": "beginner",
+      "total_questions": 20,
+      "display_order": 18
+    },
+    {
+      "id": "adverbs-frequency",
+      "title": "Basic Adverbs of Frequency",
+      "description": "Always, usually, sometimes, never",
+      "difficulty": "beginner",
+      "total_questions": 20,
+      "display_order": 19
+    }
+  ],
+  "rule_sections": [],
+  "rule_examples": [],
+  "questions": [],
+  "question_options": []
+}
