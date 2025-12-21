@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>There is / There are - Английский язык</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary: #7c3aed;
+            --color-primary-dark: #6d28d9;
+            --color-primary-light: #a78bfa;
+            --color-secondary: #c4b5fd;
+            --color-accent: #ddd6fe;
+            --color-bg: #ffffff;
+            --color-bg-alt: #faf5ff;
+            --color-text: #1f2937;
+            --color-text-light: #6b7280;
+            --color-success: #10b981;
+            --color-error: #ef4444;
+            --font-display: 'Playfair Display', serif;
+            --font-body: 'DM Sans', sans-serif;
+            --shadow-sm: 0 2px 8px rgba(124, 58, 237, 0.08);
+            --shadow-md: 0 4px 20px rgba(124, 58, 237, 0.12);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        header {
+            background: var(--color-primary);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: white;
+            text-decoration: none;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            opacity: 0.9;
+            transition: var(--transition);
+        }
+
+        .back-link:hover {
+            opacity: 1;
+            transform: translateX(-3px);
+        }
+
+        header h1 {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+        }
+
+        .content-section {
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            color: var(--color-primary);
+            margin: 3rem 0 2rem;
+            text-align: center;
+        }
+
+        .rule-section {
+            background: var(--color-bg-alt);
+            border-left: 4px solid var(--color-primary);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .rule-title {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            color: var(--color-primary);
+            margin-bottom: 1rem;
+        }
+
+        .rule-content {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            white-space: pre-line;
+        }
+
+        .examples {
+            margin-top: 1.5rem;
+        }
+
+        .example {
+            background: var(--color-bg);
+            padding: 0.8rem 1.2rem;
+            margin-bottom: 0.5rem;
+            border-radius: 8px;
+            border-left: 3px solid var(--color-secondary);
+            font-family: monospace;
+            font-size: 1rem;
+        }
+
+        .quiz-section {
+            background: var(--color-bg-alt);
+            padding: 3rem;
+            border-radius: 16px;
+            margin-top: 3rem;
+        }
+
+        .question {
+            background: var(--color-bg);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
+            border: 2px solid transparent;
+            transition: var(--transition);
+        }
+
+        .question.correct {
+            border-color: var(--color-success);
+            background: #f0fdf4;
+        }
+
+        .question.incorrect {
+            border-color: var(--color-error);
+            background: #fef2f2;
+        }
+
+        .question-text {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            color: var(--color-text);
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .option {
+            display: flex;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            background: var(--color-bg-alt);
+            border: 2px solid var(--color-accent);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .option:hover {
+            border-color: var(--color-primary);
+            background: white;
+        }
+
+        .option input[type="radio"] {
+            margin-right: 1rem;
+            cursor: pointer;
+        }
+
+        .option.correct {
+            background: #dcfce7;
+            border-color: var(--color-success);
+        }
+
+        .option.incorrect {
+            background: #fee2e2;
+            border-color: var(--color-error);
+        }
+
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 1.2rem;
+            background: var(--color-primary);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 2rem;
+            transition: var(--transition);
+        }
+
+        .submit-btn:hover:not(:disabled) {
+            background: var(--color-primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .submit-btn:disabled {
+            background: var(--color-text-light);
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .results {
+            text-align: center;
+            padding: 2rem;
+            background: var(--color-primary);
+            color: white;
+            border-radius: 12px;
+            margin-top: 2rem;
+        }
+
+        .results.hidden {
+            display: none;
+        }
+
+        .score {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .score.pass {
+            color: #dcfce7;
+        }
+
+        .score.fail {
+            color: #fecaca;
+        }
+
+        .results-message {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .retry-btn {
+            padding: 0.8rem 1.5rem;
+            background: var(--color-bg);
+            border: 2px solid white;
+            color: var(--color-primary);
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            margin-right: 1rem;
+        }
+
+        .retry-btn:hover {
+            background: white;
+            transform: translateY(-2px);
+        }
+
+        .home-btn {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+            padding: 0.8rem 1.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: var(--transition);
+        }
+
+        .home-btn:hover {
+            background: white;
+            color: var(--color-primary);
+            transform: translateY(-2px);
+        }
+
+        .quiz-selector-btn {
+            padding: 0.8rem 1.5rem;
+            background: var(--color-bg);
+            border: 2px solid var(--color-primary);
+            color: var(--color-primary);
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            min-width: 200px;
+        }
+
+        .quiz-selector-btn:hover {
+            background: var(--color-primary);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .quiz-selector-btn.active {
+            background: var(--color-primary);
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .container {
+                padding: 2rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="../index.html" class="back-link">← Назад ко всем темам</a>
+            <h1>There is / There are</h1>
+            <p>Конструкция для описания наличия предметов и людей</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Theory Section -->
+        <div class="content-section">
+            <h2 class="section-title">Теория</h2>
+            
+        <div class="rule-section">
+            <h3 class="rule-title">Главное про there is / there are</h3>
+            <div class="rule-content"></div>
+            
+        </div>
+        
+
+        <div class="rule-section">
+            <h3 class="rule-title">There is / there are = «есть», «находится», «существует»</h3>
+            <div class="rule-content"></div>
+            <div class="examples"><div class="example">Не переводи «there» как «там»!</div><div class="example">There is a book on the table. — На столе есть книга (не «там книга»).</div><div class="example">Два правила:</div><div class="example">1️⃣ There is — для единственного числа</div><div class="example">2️⃣ There are — для множественного числа</div><div class="example">There is (единственное число)</div><div class="example">There is — используем, когда говорим об ОДНОМ предмете.</div><div class="example">Утверждения:</div><div class="example">There is a cat in the garden. — В саду (есть) кошка.</div><div class="example">There is a book on the desk. — На столе (есть) книга.</div><div class="example">There is a problem. — Есть проблема.</div><div class="example">There is milk in the fridge. — В холодильнике есть молоко.</div><div class="example">💡 Совет:</div><div class="example">Можно сокращать: there's</div><div class="example">There's a cat. = There is a cat.</div><div class="example">Примеры:</div><div class="example">There is a pen on the table.</div><div class="example">There is a car outside.</div><div class="example">There is a doctor here.</div><div class="example">There are (множественное число)</div><div class="example">There are — используем, когда говорим о НЕСКОЛЬКИХ предметах.</div><div class="example">Утверждения:</div><div class="example">There are two cats in the garden. — В саду (есть) две кошки.</div><div class="example">There are books on the desk. — На столе (есть) книги.</div><div class="example">There are some problems. — Есть несколько проблем.</div><div class="example">There are apples in the basket. — В корзине есть яблоки.</div><div class="example">Примеры:</div><div class="example">There are three pens on the table.</div><div class="example">There are cars outside.</div><div class="example">There are many people here.</div><div class="example">💡 Совет:</div><div class="example">There are нельзя сокращать до there're в письменной речи (хотя в речи так иногда говорят).</div><div class="example">Отрицания</div><div class="example">Отрицание строится очень просто: добавляем not или no.</div><div class="example">There is not (isn't):</div><div class="example">There isn't a cat. — Нет кошки.</div><div class="example">There isn't any milk. — Нет молока.</div><div class="example">There isn't a problem. — Нет проблемы.</div><div class="example">There are not (aren't):</div><div class="example">There aren't cats. — Нет кошек.</div><div class="example">There aren't any apples. — Нет яблок.</div><div class="example">There aren't people here. — Здесь нет людей.</div><div class="example">Можно использовать no:</div><div class="example">There is no milk. = There isn't any milk.</div><div class="example">There are no apples. = There aren't any apples.</div><div class="example">💡 Совет:</div><div class="example">No + существительное БЕЗ артикля</div><div class="example">There is no book. (не "no a book")</div><div class="example">Вопросы</div><div class="example">Вопросы строятся очень просто: меняем порядок слов.</div><div class="example">Is there...?</div><div class="example">Is there a cat? — Есть кошка?</div><div class="example">Is there milk? — Есть молоко?</div><div class="example">Is there a problem? — Есть проблема?</div><div class="example">Are there...?</div><div class="example">Are there cats? — Есть кошки?</div><div class="example">Are there apples? — Есть яблоки?</div><div class="example">Are there people? — Есть люди?</div><div class="example">Короткие ответы:</div><div class="example">Is there a book? — Yes, there is. / No, there isn't.</div><div class="example">Are there books? — Yes, there are. / No, there aren't.</div><div class="example">Примеры в контексте:</div><div class="example">Is there a bank near here? — Здесь поблизости есть банк?</div><div class="example">Are there any questions? — Есть вопросы?</div><div class="example">There с предлогами места</div><div class="example">There is / there are часто используются с предлогами места:</div><div class="example">in (в):</div><div class="example">There is a book in the bag.</div><div class="example">on (на):</div><div class="example">There are plates on the table.</div><div class="example">under (под):</div><div class="example">There is a cat under the bed.</div><div class="example">next to (рядом):</div><div class="example">There is a shop next to my house.</div><div class="example">between (между):</div><div class="example">There is a park between two buildings.</div><div class="example">Примеры:</div><div class="example">There is a pen in my pocket.</div><div class="example">There are flowers on the balcony.</div><div class="example">There is a dog under the tree.</div><div class="example">There are people in the room.</div><div class="example">Разница: There is/are vs It is/They are</div><div class="example">Важное различие!</div><div class="example">There is/are — когда вводим новую информацию (что-то существует):</div><div class="example">There is a cat in the garden. — В саду есть кошка.</div><div class="example">It is/They are — когда говорим о чём-то известном:</div><div class="example">It is black. — Она чёрная (та самая кошка).</div><div class="example">Примеры:</div><div class="example">There is a book. It is interesting. — Есть книга. Она интересная.</div><div class="example">There are people. They are students. — Есть люди. Они студенты.</div></div>
+        </div>
+        
+
+        <div class="rule-section">
+            <h3 class="rule-title">Типичные ошибки русскоговорящих</h3>
+            <div class="rule-content"></div>
+            <div class="examples"><div class="example">❌ There are a book. → неправильное число</div><div class="example">✔ There is a book.</div><div class="example">❌ There is books. → неправильное число</div><div class="example">✔ There are books.</div><div class="example">❌ Is there cats? → неправильное число</div><div class="example">✔ Are there cats?</div><div class="example">❌ There not is a cat. → неправильный порядок</div><div class="example">✔ There isn't a cat.</div><div class="example">❌ There is no a book. → лишний артикль</div><div class="example">✔ There is no book.</div><div class="example">❌ It is a cat in the garden. → используем It вместо There</div><div class="example">✔ There is a cat in the garden.</div></div>
+        </div>
+        
+
+        <div class="rule-section">
+            <h3 class="rule-title">Главное про there is / there are</h3>
+            <div class="rule-content"></div>
+            <div class="examples"><div class="example">1️⃣ There is — для единственного числа</div><div class="example">2️⃣ There are — для множественного числа</div><div class="example">3️⃣ Используем, чтобы сказать, что что-то существует или находится</div><div class="example">4️⃣ Отрицание: isn't / aren't или no</div><div class="example">5️⃣ Вопросы: Is there...? / Are there...?</div></div>
+        </div>
+        
+        </div>
+
+        <!-- Results Section (hidden initially) -->
+        <div id="results" class="results hidden">
+            <div class="score" id="score"></div>
+            <div class="results-message" id="results-message"></div>
+            <div>
+                <button class="retry-btn" onclick="retakeQuiz()">Пройти ещё раз</button>
+                <a href="../index.html" class="home-btn">На главную</a>
+            </div>
+        </div>
+
+        <!-- Quiz Section -->
+        <div class="quiz-section" id="quiz-section">
+            <h2 class="section-title">Тест</h2>
+
+            <!-- Quiz Selector (shown if multiple quizzes) -->
+            <div id="quiz-selector" style="margin-bottom: 2rem; display: flex; flex-direction: column; align-items: center; gap: 0.8rem;">
+                <button type="button" class="quiz-selector-btn" data-quiz="1" onclick="loadQuiz(1)">Тест 1</button>
+<button type="button" class="quiz-selector-btn" data-quiz="2" onclick="loadQuiz(2)">Тест 2</button>
+<button type="button" class="quiz-selector-btn" data-quiz="3" onclick="loadQuiz(3)">Тест 3</button>
+<button type="button" class="quiz-selector-btn" data-quiz="4" onclick="loadQuiz(4)">Тест 4</button>
+<button type="button" class="quiz-selector-btn" data-quiz="5" onclick="loadQuiz(5)">Тест 5</button>
+<button type="button" class="quiz-selector-btn" data-quiz="6" onclick="loadQuiz(6)">Тест 6</button>
+<button type="button" class="quiz-selector-btn" data-quiz="7" onclick="loadQuiz(7)">Тест 7</button>
+<button type="button" class="quiz-selector-btn" data-quiz="8" onclick="loadQuiz(8)">Тест 8</button>
+<button type="button" class="quiz-selector-btn" data-quiz="9" onclick="loadQuiz(9)">Тест 9</button>
+<button type="button" class="quiz-selector-btn" data-quiz="10" onclick="loadQuiz(10)">Тест 10</button>
+            </div>
+
+            <div id="quiz-placeholder" style="text-align: center; padding: 3rem; color: var(--color-text-light); display: block;">
+                <p style="font-size: 1.2rem;">Выберите тест, чтобы начать</p>
+            </div>
+
+            <form id="quiz-form" style="display: none;">
+                
+                <button type="submit" class="submit-btn" id="submit-btn">Проверить ответы</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const allQuizData = {"1": [{"id": 5137, "text": "___ a book on the table.", "options": ["There is", "There are", "It is", "Is there"], "correct_index": 0}, {"id": 5138, "text": "___ a cat in the garden.", "options": ["There is", "There are", "It is", "Is there"], "correct_index": 0}, {"id": 5139, "text": "___ a problem here.", "options": ["There is", "There are", "It is", "Is there"], "correct_index": 0}, {"id": 5140, "text": "___ milk in the fridge.", "options": ["There is", "There are", "It is", "Is there"], "correct_index": 0}, {"id": 5141, "text": "___ a pen on the desk.", "options": ["There is", "There are", "It is", "Is there"], "correct_index": 0}, {"id": 5142, "text": "___ a car outside.", "options": ["There is", "There are", "It is", "Is there"], "correct_index": 0}, {"id": 5143, "text": "___ a dog under the tree.", "options": ["There is", "There are", "It is", "Is there"], "correct_index": 0}, {"id": 5144, "text": "___ a shop near here.", "options": ["There is", "There are", "It is", "Is there"], "correct_index": 0}, {"id": 5145, "text": "___ a teacher in the room.", "options": ["There is", "There are", "It is", "Is there"], "correct_index": 0}, {"id": 5146, "text": "___ water in the bottle.", "options": ["There is", "There are", "It is", "Is there"], "correct_index": 0}, {"id": 5147, "text": "___ a park in the city.", "options": ["There is", "There are", "It is", "Is there"], "correct_index": 0}, {"id": 5148, "text": "___ a phone on the sofa.", "options": ["There is", "There are", "It is", "Is there"], "correct_index": 0}, {"id": 5149, "text": "___ a doctor here.", "options": ["There is", "There are", "It is", "Is there"], "correct_index": 0}, {"id": 5150, "text": "___ a key in my pocket.", "options": ["There is", "There are", "It is", "Is there"], "correct_index": 0}, {"id": 5151, "text": "___ a bird on the roof.", "options": ["There is", "There are", "It is", "Is there"], "correct_index": 0}, {"id": 5152, "text": "___ a museum in town.", "options": ["There is", "There are", "It is", "Is there"], "correct_index": 0}, {"id": 5153, "text": "___ a lamp on the table.", "options": ["There is", "There are", "It is", "Is there"], "correct_index": 0}, {"id": 5154, "text": "___ a letter for you.", "options": ["There is", "There are", "It is", "Is there"], "correct_index": 0}, {"id": 5155, "text": "___ a bank nearby.", "options": ["There is", "There are", "It is", "Is there"], "correct_index": 0}, {"id": 5156, "text": "___ a computer in the office.", "options": ["There is", "There are", "It is", "Is there"], "correct_index": 0}], "2": [{"id": 5157, "text": "___ books on the shelf.", "options": ["There is", "There are", "They are", "Are there"], "correct_index": 1}, {"id": 5158, "text": "___ cats in the garden.", "options": ["There is", "There are", "They are", "Are there"], "correct_index": 1}, {"id": 5159, "text": "___ apples in the basket.", "options": ["There is", "There are", "They are", "Are there"], "correct_index": 1}, {"id": 5160, "text": "___ people in the room.", "options": ["There is", "There are", "They are", "Are there"], "correct_index": 1}, {"id": 5161, "text": "___ cars on the street.", "options": ["There is", "There are", "They are", "Are there"], "correct_index": 1}, {"id": 5162, "text": "___ flowers in the vase.", "options": ["There is", "There are", "They are", "Are there"], "correct_index": 1}, {"id": 5163, "text": "___ students in the class.", "options": ["There is", "There are", "They are", "Are there"], "correct_index": 1}, {"id": 5164, "text": "___ chairs around the table.", "options": ["There is", "There are", "They are", "Are there"], "correct_index": 1}, {"id": 5165, "text": "___ trees in the park.", "options": ["There is", "There are", "They are", "Are there"], "correct_index": 1}, {"id": 5166, "text": "___ plates on the table.", "options": ["There is", "There are", "They are", "Are there"], "correct_index": 1}, {"id": 5167, "text": "___ two dogs outside.", "options": ["There is", "There are", "They are", "Are there"], "correct_index": 1}, {"id": 5168, "text": "___ many shops here.", "options": ["There is", "There are", "They are", "Are there"], "correct_index": 1}, {"id": 5169, "text": "___ three windows in the room.", "options": ["There is", "There are", "They are", "Are there"], "correct_index": 1}, {"id": 5170, "text": "___ children in the playground.", "options": ["There is", "There are", "They are", "Are there"], "correct_index": 1}, {"id": 5171, "text": "___ bottles in the fridge.", "options": ["There is", "There are", "They are", "Are there"], "correct_index": 1}, {"id": 5172, "text": "___ some questions.", "options": ["There is", "There are", "They are", "Are there"], "correct_index": 1}, {"id": 5173, "text": "___ five pencils on the desk.", "options": ["There is", "There are", "They are", "Are there"], "correct_index": 1}, {"id": 5174, "text": "___ birds on the tree.", "options": ["There is", "There are", "They are", "Are there"], "correct_index": 1}, {"id": 5175, "text": "___ several problems.", "options": ["There is", "There are", "They are", "Are there"], "correct_index": 1}, {"id": 5176, "text": "___ pictures on the wall.", "options": ["There is", "There are", "They are", "Are there"], "correct_index": 1}], "3": [{"id": 5177, "text": "___ a cat and two dogs.", "options": ["There is", "There are", "It is", "They are"], "correct_index": 0}, {"id": 5178, "text": "___ two dogs and a cat.", "options": ["There is", "There are", "It is", "They are"], "correct_index": 1}, {"id": 5179, "text": "___ one book on the table.", "options": ["There is", "There are", "It is", "They are"], "correct_index": 0}, {"id": 5180, "text": "___ three cups here.", "options": ["There is", "There are", "It is", "They are"], "correct_index": 1}, {"id": 5181, "text": "___ a teacher in the classroom.", "options": ["There is", "There are", "It is", "They are"], "correct_index": 0}, {"id": 5182, "text": "___ students outside.", "options": ["There is", "There are", "It is", "They are"], "correct_index": 1}, {"id": 5183, "text": "___ milk in the glass.", "options": ["There is", "There are", "It is", "They are"], "correct_index": 0}, {"id": 5184, "text": "___ apples in the bowl.", "options": ["There is", "There are", "It is", "They are"], "correct_index": 1}, {"id": 5185, "text": "___ a phone on the chair.", "options": ["There is", "There are", "It is", "They are"], "correct_index": 0}, {"id": 5186, "text": "___ many people here.", "options": ["There is", "There are", "It is", "They are"], "correct_index": 1}, {"id": 5187, "text": "___ a problem with this.", "options": ["There is", "There are", "It is", "They are"], "correct_index": 0}, {"id": 5188, "text": "___ some problems.", "options": ["There is", "There are", "It is", "They are"], "correct_index": 1}, {"id": 5189, "text": "___ water in the bottle.", "options": ["There is", "There are", "It is", "They are"], "correct_index": 0}, {"id": 5190, "text": "___ five bottles.", "options": ["There is", "There are", "It is", "They are"], "correct_index": 1}, {"id": 5191, "text": "___ a car in the garage.", "options": ["There is", "There are", "It is", "They are"], "correct_index": 0}, {"id": 5192, "text": "___ two cars outside.", "options": ["There is", "There are", "It is", "They are"], "correct_index": 1}, {"id": 5193, "text": "___ a park nearby.", "options": ["There is", "There are", "It is", "They are"], "correct_index": 0}, {"id": 5194, "text": "___ parks in the city.", "options": ["There is", "There are", "It is", "They are"], "correct_index": 1}, {"id": 5195, "text": "___ one chair.", "options": ["There is", "There are", "It is", "They are"], "correct_index": 0}, {"id": 5196, "text": "___ four chairs.", "options": ["There is", "There are", "It is", "They are"], "correct_index": 1}], "4": [{"id": 5197, "text": "___ a book on the table.", "options": ["There isn't", "There aren't", "It isn't", "They aren't"], "correct_index": 0}, {"id": 5198, "text": "___ books on the shelf.", "options": ["There isn't", "There aren't", "It isn't", "They aren't"], "correct_index": 1}, {"id": 5199, "text": "___ milk in the fridge.", "options": ["There isn't", "There aren't", "It isn't", "They aren't"], "correct_index": 0}, {"id": 5200, "text": "___ apples in the basket.", "options": ["There isn't", "There aren't", "It isn't", "They aren't"], "correct_index": 1}, {"id": 5201, "text": "___ a cat here.", "options": ["There isn't", "There aren't", "It isn't", "They aren't"], "correct_index": 0}, {"id": 5202, "text": "___ people in the room.", "options": ["There isn't", "There aren't", "It isn't", "They aren't"], "correct_index": 1}, {"id": 5203, "text": "___ a problem.", "options": ["There isn't", "There aren't", "It isn't", "They aren't"], "correct_index": 0}, {"id": 5204, "text": "___ any questions.", "options": ["There isn't", "There aren't", "It isn't", "They aren't"], "correct_index": 1}, {"id": 5205, "text": "___ water in the glass.", "options": ["There isn't", "There aren't", "It isn't", "They aren't"], "correct_index": 0}, {"id": 5206, "text": "___ cars outside.", "options": ["There isn't", "There aren't", "It isn't", "They aren't"], "correct_index": 1}, {"id": 5207, "text": "___ a pen on the desk.", "options": ["There isn't", "There aren't", "It isn't", "They aren't"], "correct_index": 0}, {"id": 5208, "text": "___ chairs here.", "options": ["There isn't", "There aren't", "It isn't", "They aren't"], "correct_index": 1}, {"id": 5209, "text": "___ time.", "options": ["There isn't", "There aren't", "It isn't", "They aren't"], "correct_index": 0}, {"id": 5210, "text": "___ students in class.", "options": ["There isn't", "There aren't", "It isn't", "They aren't"], "correct_index": 1}, {"id": 5211, "text": "___ a doctor available.", "options": ["There isn't", "There aren't", "It isn't", "They aren't"], "correct_index": 0}, {"id": 5212, "text": "___ any cookies left.", "options": ["There isn't", "There aren't", "It isn't", "They aren't"], "correct_index": 1}, {"id": 5213, "text": "___ a bank nearby.", "options": ["There isn't", "There aren't", "It isn't", "They aren't"], "correct_index": 0}, {"id": 5214, "text": "___ shops here.", "options": ["There isn't", "There aren't", "It isn't", "They aren't"], "correct_index": 1}, {"id": 5215, "text": "___ a solution.", "options": ["There isn't", "There aren't", "It isn't", "They aren't"], "correct_index": 0}, {"id": 5216, "text": "___ tickets available.", "options": ["There isn't", "There aren't", "It isn't", "They aren't"], "correct_index": 1}], "5": [{"id": 5217, "text": "___ no milk.", "options": ["There is", "There are", "It is", "They are"], "correct_index": 0}, {"id": 5218, "text": "___ no apples.", "options": ["There is", "There are", "It is", "They are"], "correct_index": 1}, {"id": 5219, "text": "___ no time.", "options": ["There is", "There are", "It is", "They are"], "correct_index": 0}, {"id": 5220, "text": "___ no people here.", "options": ["There is", "There are", "It is", "They are"], "correct_index": 1}, {"id": 5221, "text": "___ no problem.", "options": ["There is", "There are", "It is", "They are"], "correct_index": 0}, {"id": 5222, "text": "___ no books.", "options": ["There is", "There are", "It is", "They are"], "correct_index": 1}, {"id": 5223, "text": "___ no water.", "options": ["There is", "There are", "It is", "They are"], "correct_index": 0}, {"id": 5224, "text": "___ no students.", "options": ["There is", "There are", "It is", "They are"], "correct_index": 1}, {"id": 5225, "text": "___ no coffee left.", "options": ["There is", "There are", "It is", "They are"], "correct_index": 0}, {"id": 5226, "text": "___ no chairs available.", "options": ["There is", "There are", "It is", "They are"], "correct_index": 1}, {"id": 5227, "text": "___ no internet.", "options": ["There is", "There are", "It is", "They are"], "correct_index": 0}, {"id": 5228, "text": "___ no cars outside.", "options": ["There is", "There are", "It is", "They are"], "correct_index": 1}, {"id": 5229, "text": "___ no hope.", "options": ["There is", "There are", "It is", "They are"], "correct_index": 0}, {"id": 5230, "text": "___ no options.", "options": ["There is", "There are", "It is", "They are"], "correct_index": 1}, {"id": 5231, "text": "___ no sugar.", "options": ["There is", "There are", "It is", "They are"], "correct_index": 0}, {"id": 5232, "text": "___ no questions.", "options": ["There is", "There are", "It is", "They are"], "correct_index": 1}, {"id": 5233, "text": "___ no space.", "options": ["There is", "There are", "It is", "They are"], "correct_index": 0}, {"id": 5234, "text": "___ no tickets.", "options": ["There is", "There are", "It is", "They are"], "correct_index": 1}, {"id": 5235, "text": "___ no food.", "options": ["There is", "There are", "It is", "They are"], "correct_index": 0}, {"id": 5236, "text": "___ no places.", "options": ["There is", "There are", "It is", "They are"], "correct_index": 1}], "6": [{"id": 5237, "text": "___ a bank near here?", "options": ["Is there", "Are there", "Is it", "Are they"], "correct_index": 0}, {"id": 5238, "text": "___ any milk?", "options": ["Is there", "Are there", "Is it", "Are they"], "correct_index": 0}, {"id": 5239, "text": "___ a problem?", "options": ["Is there", "Are there", "Is it", "Are they"], "correct_index": 0}, {"id": 5240, "text": "___ a pen on the desk?", "options": ["Is there", "Are there", "Is it", "Are they"], "correct_index": 0}, {"id": 5241, "text": "___ a cat in the garden?", "options": ["Is there", "Are there", "Is it", "Are they"], "correct_index": 0}, {"id": 5242, "text": "___ time for this?", "options": ["Is there", "Are there", "Is it", "Are they"], "correct_index": 0}, {"id": 5243, "text": "___ a doctor here?", "options": ["Is there", "Are there", "Is it", "Are they"], "correct_index": 0}, {"id": 5244, "text": "___ water in the bottle?", "options": ["Is there", "Are there", "Is it", "Are they"], "correct_index": 0}, {"id": 5245, "text": "___ a solution?", "options": ["Is there", "Are there", "Is it", "Are they"], "correct_index": 0}, {"id": 5246, "text": "___ a phone in the room?", "options": ["Is there", "Are there", "Is it", "Are they"], "correct_index": 0}, {"id": 5247, "text": "___ coffee left?", "options": ["Is there", "Are there", "Is it", "Are they"], "correct_index": 0}, {"id": 5248, "text": "___ a shop nearby?", "options": ["Is there", "Are there", "Is it", "Are they"], "correct_index": 0}, {"id": 5249, "text": "___ a meeting today?", "options": ["Is there", "Are there", "Is it", "Are they"], "correct_index": 0}, {"id": 5250, "text": "___ sugar in the tea?", "options": ["Is there", "Are there", "Is it", "Are they"], "correct_index": 0}, {"id": 5251, "text": "___ a park here?", "options": ["Is there", "Are there", "Is it", "Are they"], "correct_index": 0}, {"id": 5252, "text": "___ hope?", "options": ["Is there", "Are there", "Is it", "Are they"], "correct_index": 0}, {"id": 5253, "text": "___ a way out?", "options": ["Is there", "Are there", "Is it", "Are they"], "correct_index": 0}, {"id": 5254, "text": "___ internet?", "options": ["Is there", "Are there", "Is it", "Are they"], "correct_index": 0}, {"id": 5255, "text": "___ a reason?", "options": ["Is there", "Are there", "Is it", "Are they"], "correct_index": 0}, {"id": 5256, "text": "___ space here?", "options": ["Is there", "Are there", "Is it", "Are they"], "correct_index": 0}], "7": [{"id": 5257, "text": "___ any books?", "options": ["Is there", "Are there", "Is it", "Are they"], "correct_index": 1}, {"id": 5258, "text": "___ people in the room?", "options": ["Is there", "Are there", "Is it", "Are they"], "correct_index": 1}, {"id": 5259, "text": "___ apples in the basket?", "options": ["Is there", "Are there", "Is it", "Are they"], "correct_index": 1}, {"id": 5260, "text": "___ any questions?", "options": ["Is there", "Are there", "Is it", "Are they"], "correct_index": 1}, {"id": 5261, "text": "___ students here?", "options": ["Is there", "Are there", "Is it", "Are they"], "correct_index": 1}, {"id": 5262, "text": "___ cars outside?", "options": ["Is there", "Are there", "Is it", "Are they"], "correct_index": 1}, {"id": 5263, "text": "___ any cookies?", "options": ["Is there", "Are there", "Is it", "Are they"], "correct_index": 1}, {"id": 5264, "text": "___ chairs available?", "options": ["Is there", "Are there", "Is it", "Are they"], "correct_index": 1}, {"id": 5265, "text": "___ problems?", "options": ["Is there", "Are there", "Is it", "Are they"], "correct_index": 1}, {"id": 5266, "text": "___ tickets left?", "options": ["Is there", "Are there", "Is it", "Are they"], "correct_index": 1}, {"id": 5267, "text": "___ any shops nearby?", "options": ["Is there", "Are there", "Is it", "Are they"], "correct_index": 1}, {"id": 5268, "text": "___ children in the park?", "options": ["Is there", "Are there", "Is it", "Are they"], "correct_index": 1}, {"id": 5269, "text": "___ options?", "options": ["Is there", "Are there", "Is it", "Are they"], "correct_index": 1}, {"id": 5270, "text": "___ any plates?", "options": ["Is there", "Are there", "Is it", "Are they"], "correct_index": 1}, {"id": 5271, "text": "___ trees here?", "options": ["Is there", "Are there", "Is it", "Are they"], "correct_index": 1}, {"id": 5272, "text": "___ messages for me?", "options": ["Is there", "Are there", "Is it", "Are they"], "correct_index": 1}, {"id": 5273, "text": "___ any restaurants?", "options": ["Is there", "Are there", "Is it", "Are they"], "correct_index": 1}, {"id": 5274, "text": "___ places to sit?", "options": ["Is there", "Are there", "Is it", "Are they"], "correct_index": 1}, {"id": 5275, "text": "___ buses at night?", "options": ["Is there", "Are there", "Is it", "Are they"], "correct_index": 1}, {"id": 5276, "text": "___ any reasons?", "options": ["Is there", "Are there", "Is it", "Are they"], "correct_index": 1}], "8": [{"id": 5277, "text": "There is a book ___ the table.", "options": ["in", "on", "at", "to"], "correct_index": 1}, {"id": 5278, "text": "There are flowers ___ the vase.", "options": ["in", "on", "at", "to"], "correct_index": 0}, {"id": 5279, "text": "There is a cat ___ the bed.", "options": ["in", "under", "at", "to"], "correct_index": 1}, {"id": 5280, "text": "There are people ___ the room.", "options": ["in", "on", "at", "to"], "correct_index": 0}, {"id": 5281, "text": "There is a shop ___ my house.", "options": ["in", "on", "next to", "to"], "correct_index": 2}, {"id": 5282, "text": "There are birds ___ the tree.", "options": ["in", "under", "at", "to"], "correct_index": 0}, {"id": 5283, "text": "There is a park ___ two buildings.", "options": ["in", "between", "at", "to"], "correct_index": 1}, {"id": 5284, "text": "There are plates ___ the table.", "options": ["in", "on", "at", "to"], "correct_index": 1}, {"id": 5285, "text": "There is a dog ___ the car.", "options": ["in", "on", "at", "to"], "correct_index": 0}, {"id": 5286, "text": "There are books ___ the shelf.", "options": ["in", "on", "at", "to"], "correct_index": 1}, {"id": 5287, "text": "There is a pen ___ my pocket.", "options": ["in", "on", "at", "to"], "correct_index": 0}, {"id": 5288, "text": "There are children ___ the playground.", "options": ["in", "on", "at", "to"], "correct_index": 0}, {"id": 5289, "text": "There is a lamp ___ the desk.", "options": ["in", "on", "at", "to"], "correct_index": 1}, {"id": 5290, "text": "There are cars ___ the street.", "options": ["in", "on", "at", "to"], "correct_index": 1}, {"id": 5291, "text": "There is a cafe ___ the bank.", "options": ["in", "next to", "at", "to"], "correct_index": 1}, {"id": 5292, "text": "There are photos ___ the wall.", "options": ["in", "on", "at", "to"], "correct_index": 1}, {"id": 5293, "text": "There is water ___ the bottle.", "options": ["in", "on", "at", "to"], "correct_index": 0}, {"id": 5294, "text": "There are people ___ the bus.", "options": ["in", "on", "at", "to"], "correct_index": 1}, {"id": 5295, "text": "There is a box ___ the table.", "options": ["in", "under", "at", "to"], "correct_index": 1}, {"id": 5296, "text": "There are shoes ___ the door.", "options": ["in", "next to", "at", "to"], "correct_index": 1}], "9": [{"id": 5297, "text": "___ a cat.", "options": ["There is", "There are", "Is there", "Are there"], "correct_index": 0}, {"id": 5298, "text": "___ two cats.", "options": ["There is", "There are", "Is there", "Are there"], "correct_index": 1}, {"id": 5299, "text": "___ a problem?", "options": ["There is", "There are", "Is there", "Are there"], "correct_index": 2}, {"id": 5300, "text": "___ any books?", "options": ["There is", "There are", "Is there", "Are there"], "correct_index": 3}, {"id": 5301, "text": "___ no milk.", "options": ["There is", "There are", "Is there", "Are there"], "correct_index": 0}, {"id": 5302, "text": "___ no apples.", "options": ["There is", "There are", "Is there", "Are there"], "correct_index": 1}, {"id": 5303, "text": "___ a shop?", "options": ["There is", "There are", "Is there", "Are there"], "correct_index": 2}, {"id": 5304, "text": "___ people here.", "options": ["There is", "There are", "Is there", "Are there"], "correct_index": 1}, {"id": 5305, "text": "There ___ a car.", "options": ["is", "are", "isn't", "aren't"], "correct_index": 0}, {"id": 5306, "text": "There ___ cars.", "options": ["is", "are", "isn't", "aren't"], "correct_index": 1}, {"id": 5307, "text": "There ___ a pen.", "options": ["is", "are", "isn't", "aren't"], "correct_index": 2}, {"id": 5308, "text": "There ___ pens.", "options": ["is", "are", "isn't", "aren't"], "correct_index": 3}, {"id": 5309, "text": "___ time?", "options": ["There is", "There are", "Is there", "Are there"], "correct_index": 2}, {"id": 5310, "text": "___ students?", "options": ["There is", "There are", "Is there", "Are there"], "correct_index": 3}, {"id": 5311, "text": "___ a park.", "options": ["There is", "There are", "Is there", "Are there"], "correct_index": 0}, {"id": 5312, "text": "___ no water.", "options": ["There is", "There are", "Is there", "Are there"], "correct_index": 0}, {"id": 5313, "text": "___ tickets?", "options": ["There is", "There are", "Is there", "Are there"], "correct_index": 3}, {"id": 5314, "text": "There ___ no chairs.", "options": ["is", "are", "isn't", "aren't"], "correct_index": 1}, {"id": 5315, "text": "___ a meeting today.", "options": ["There is", "There are", "Is there", "Are there"], "correct_index": 0}, {"id": 5316, "text": "___ questions.", "options": ["There is", "There are", "Is there", "Are there"], "correct_index": 1}], "10": [{"id": 5317, "text": "Is there a bank? — Yes, ___.", "options": ["there is", "there are", "it is", "they are"], "correct_index": 0}, {"id": 5318, "text": "Are there shops? — Yes, ___.", "options": ["there is", "there are", "it is", "they are"], "correct_index": 1}, {"id": 5319, "text": "Is there milk? — No, ___.", "options": ["there is", "there isn't", "it isn't", "they aren't"], "correct_index": 1}, {"id": 5320, "text": "Are there apples? — No, ___.", "options": ["there is", "there isn't", "it isn't", "there aren't"], "correct_index": 3}, {"id": 5321, "text": "Is there a problem? — Yes, ___.", "options": ["there is", "there are", "it is", "they are"], "correct_index": 0}, {"id": 5322, "text": "Are there people? — Yes, ___.", "options": ["there is", "there are", "it is", "they are"], "correct_index": 1}, {"id": 5323, "text": "Is there time? — No, ___.", "options": ["there is", "there isn't", "it isn't", "they aren't"], "correct_index": 1}, {"id": 5324, "text": "Are there chairs? — No, ___.", "options": ["there is", "there isn't", "it isn't", "there aren't"], "correct_index": 3}, {"id": 5325, "text": "Is there a cat? — Yes, ___.", "options": ["there is", "there are", "it is", "they are"], "correct_index": 0}, {"id": 5326, "text": "Are there books? — Yes, ___.", "options": ["there is", "there are", "it is", "they are"], "correct_index": 1}, {"id": 5327, "text": "Is there water? — No, ___.", "options": ["there is", "there isn't", "it isn't", "they aren't"], "correct_index": 1}, {"id": 5328, "text": "Are there students? — No, ___.", "options": ["there is", "there isn't", "it isn't", "there aren't"], "correct_index": 3}, {"id": 5329, "text": "Is there hope? — Yes, ___.", "options": ["there is", "there are", "it is", "they are"], "correct_index": 0}, {"id": 5330, "text": "Are there options? — Yes, ___.", "options": ["there is", "there are", "it is", "they are"], "correct_index": 1}, {"id": 5331, "text": "Is there space? — No, ___.", "options": ["there is", "there isn't", "it isn't", "they aren't"], "correct_index": 1}, {"id": 5332, "text": "Are there tickets? — No, ___.", "options": ["there is", "there isn't", "it isn't", "there aren't"], "correct_index": 3}, {"id": 5333, "text": "Is there a doctor? — Yes, ___.", "options": ["there is", "there are", "it is", "they are"], "correct_index": 0}, {"id": 5334, "text": "Are there cars? — Yes, ___.", "options": ["there is", "there are", "it is", "they are"], "correct_index": 1}, {"id": 5335, "text": "Is there coffee? — No, ___.", "options": ["there is", "there isn't", "it isn't", "they aren't"], "correct_index": 1}, {"id": 5336, "text": "Are there problems? — No, ___.", "options": ["there is", "there isn't", "it isn't", "there aren't"], "correct_index": 3}]};
+        let currentQuizSet = 1;
+        const quizData = allQuizData[currentQuizSet] || [];
+
+        function checkAnswers(event) {
+            event.preventDefault();
+
+            const form = document.getElementById('quiz-form');
+            const formData = new FormData(form);
+
+            let correct = 0;
+            let total = quizData.length;
+
+            // Check each question
+            quizData.forEach((question, index) => {
+                const selectedAnswer = parseInt(formData.get(`question-${question.id}`));
+                const options = document.querySelectorAll(`input[name="question-${question.id}"]`);
+
+                options.forEach((option, optIndex) => {
+                    const label = option.closest('.option');
+                    if (optIndex === question.correct_index) {
+                        label.classList.add('correct');
+                    }
+                    if (selectedAnswer === optIndex && selectedAnswer !== question.correct_index) {
+                        label.classList.add('incorrect');
+                    }
+                    option.disabled = true;
+                });
+
+                if (selectedAnswer === question.correct_index) {
+                    correct++;
+                }
+            });
+
+            // Calculate score
+            const percentage = Math.round((correct / total) * 100);
+            const passed = percentage >= 70;
+
+            // Show results
+            const resultsDiv = document.getElementById('results');
+            const scoreDiv = document.getElementById('score');
+            const messageDiv = document.getElementById('results-message');
+
+            scoreDiv.textContent = `${percentage}%`;
+            scoreDiv.className = 'score ' + (passed ? 'pass' : 'fail');
+
+            messageDiv.textContent = `Вы ответили правильно на ${correct} из ${total} вопросов`;
+
+            resultsDiv.classList.remove('hidden');
+
+            // Disable submit button
+            document.getElementById('submit-btn').disabled = true;
+
+            // Scroll to results
+            resultsDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        function retakeQuiz() {
+            loadQuiz(currentQuizSet);
+        }
+
+        function loadQuiz(quizSet) {
+            currentQuizSet = quizSet;
+
+            // Hide placeholder, show form (if they exist)
+            const placeholder = document.getElementById('quiz-placeholder');
+            const form = document.getElementById('quiz-form');
+            if (placeholder) {
+                placeholder.style.display = 'none';
+            }
+            if (form.style.display === 'none') {
+                form.style.display = 'block';
+            }
+
+            // Update button states
+            document.querySelectorAll('.quiz-selector-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (parseInt(btn.dataset.quiz) === quizSet) {
+                    btn.classList.add('active');
+                }
+            });
+
+            // Get questions for this quiz set
+            const questions = allQuizData[quizSet] || [];
+
+            // Clear and rebuild quiz HTML
+            const submitBtn = document.getElementById('submit-btn');
+
+            // Remove all questions
+            const existingQuestions = form.querySelectorAll('.question');
+            existingQuestions.forEach(q => q.remove());
+
+            // Add new questions
+            questions.forEach((question, index) => {
+                const questionDiv = document.createElement('div');
+                questionDiv.className = 'question';
+                questionDiv.dataset.questionId = question.id;
+
+                let optionsHtml = '';
+                question.options.forEach((option, optIndex) => {
+                    optionsHtml += `
+                        <label class="option">
+                            <input type="radio" name="question-${question.id}" value="${optIndex}" required>
+                            <span>${option}</span>
+                        </label>
+                    `;
+                });
+
+                questionDiv.innerHTML = `
+                    <div class="question-text">${index + 1}. ${question.text}</div>
+                    <div class="options">
+                        ${optionsHtml}
+                    </div>
+                `;
+
+                form.insertBefore(questionDiv, submitBtn);
+            });
+
+            // Reset form state
+            form.reset();
+            submitBtn.disabled = false;
+            document.getElementById('results').classList.add('hidden');
+            document.querySelectorAll('.option').forEach(opt => {
+                opt.classList.remove('correct', 'incorrect');
+            });
+
+            // Scroll to quiz
+            form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        // Initialize: if only one quiz set, load it automatically
+        const quizSetCount = Object.keys(allQuizData).length;
+        if (quizSetCount === 1) {
+            // Single quiz - load immediately
+            loadQuiz(1);
+        }
+        // If multiple quiz sets, user must select one (placeholder will show)
+
+        document.getElementById('quiz-form').addEventListener('submit', checkAnswers);
+    </script>
+</body>
+</html>

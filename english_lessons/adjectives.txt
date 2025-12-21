@@ -1,0 +1,777 @@
+Представь, что английский — это язык-конструктор.
+Существительное — это предмет.
+Прилагательное — это стикер, который ты просто прилепляешь к предмету.
+И всё. Оно никогда не меняется. Ни при каких обстоятельствах.
+
+И вот тут начинается кайф.
+
+Начнём с самого важного.
+
+В английском прилагательное:
+— не меняется по роду
+— не меняется по числу
+— не меняется по падежам
+Вообще. Никогда. Совсем.
+
+Русский мозг такой:
+
+«красивая девушка / красивый дом / красивые дома»
+
+А английский отвечает:
+
+beautiful girl
+beautiful house
+beautiful houses
+
+Одно слово. Всегда.
+
+Запомни мысль, а не правило:
+прилагательное в английском — ленивое. Оно вообще не хочет работать.
+
+Теперь самое критичное: где оно стоит.
+
+В 90% случаев прилагательное СТОИТ ПЕРЕД существительным.
+
+Не после.
+Не «дом красивый».
+А «красивый дом».
+
+Примеры:
+
+a big house
+
+an interesting idea
+
+my old friend
+
+Это железное правило.
+Если ты ставишь прилагательное после существительного — ты почти всегда ошибаешься.
+
+Но есть второй вариант, и он тоже очень важный.
+
+Прилагательное может стоять ПОСЛЕ глагола to be.
+
+Формула простая:
+
+subject + to be + adjective
+
+Примеры:
+
+The house is big
+
+She is smart
+
+The idea was stupid
+
+И вот тут важный момент:
+после to be НЕТ существительного, только прилагательное.
+
+❌ She is a beautiful — ошибка
+✅ She is beautiful — правильно
+
+Теперь давай уберём ещё одну русскую ловушку.
+
+В английском нельзя сказать "очень красиво" через окончание.
+Нет «красивее» через форму слова, если это не сравнение.
+
+Чтобы усилить прилагательное, ты используешь наречия:
+
+very
+
+really
+
+quite
+
+Пример:
+
+very interesting
+
+really boring
+
+Запомни:
+прилагательное само по себе — нейтральное, эмоции добавляются отдельными словами.
+
+Теперь — степени сравнения. Базово, без боли.
+
+Если прилагательное короткое (1 слог):
+
+big → bigger → the biggest
+
+fast → faster → the fastest
+
+Если длинное (2+ слога):
+
+interesting → more interesting → the most interesting
+
+Логика простая:
+— короткие → меняются
+— длинные → через more / most
+
+И да, the в превосходной степени — почти всегда обязателен:
+
+the best day
+
+the worst idea
+
+Есть неправильные формы. Их мало, но они суперчастые:
+
+good → better → the best
+
+bad → worse → the worst
+
+Их не надо понимать.
+Их надо принять, как факт жизни.
+
+Теперь типичные ошибки русскоговорящих — это важно.
+
+Ошибка №1
+❌ a house big
+Почему? Потому что мозг думает по-русски.
+Правильно:
+✅ a big house
+
+Ошибка №2
+❌ beautifuls houses
+Почему? Потому что хочется добавить окончание.
+Правильно:
+✅ beautiful houses
+
+Ошибка №3
+❌ she is a beautiful
+Потому что хочется «она — красивая».
+Правильно:
+✅ she is beautiful
+
+Ошибка №4
+❌ more better
+Это двойное сравнение.
+Правильно:
+✅ better
+
+Фиксируем главную мысль темы:
+
+Прилагательное в английском — это неизменяемый ярлык,
+который либо стоит перед существительным,
+либо после to be.
+
+Если ты это понял — ты уже на голову выше большинства beginner'ов.
+
+Квиз 1 — Позиция и формы прилагательных
+
+She has a ___ car.
+A) beautiful red B) red beautiful C) beautifuls red D) reds beautiful ✅ A
+
+The house is ___.
+A) a big B) big C) bigs D) the bigs ✅ B
+
+This is ___ than that book.
+A) interesting B) interestinger C) more interesting D) most interesting ✅ C
+
+He is ___ student in the class.
+A) best B) better C) more best D) the best ✅ D
+
+I need a ___ car.
+A) fast B) faster C) fastest D) fasts ✅ A
+
+She is ___ beautiful.
+A) much B) very C) more D) the most ✅ B
+
+They live in ___ house.
+A) olds B) house old C) an old D) an house old ✅ C
+
+The movie ___ boring.
+A) am B) are C) be D) is ✅ D
+
+___ girls are here.
+A) beautiful B) beautifuls C) beauties D) beautifuler ✅ A
+
+He is ___ than me.
+A) tall B) taller C) more tall D) tallest ✅ B
+
+This is ___ book in the library.
+A) older B) the oldest C) oldest D) more old ✅ B
+
+My car is ___ than yours.
+A) fastest B) fast C) faster D) more fast ✅ C
+
+She bought a ___ dress.
+A) news beautiful B) beautiful new C) new beautiful D) beautifuls new ✅ B
+
+The weather ___ cold.
+A) are B) am C) is D) be ✅ C
+
+I saw a ___ dog.
+A) bigs B) bigger C) biggest D) big ✅ D
+
+This is ___ movie I've seen.
+A) the most interesting B) interestinger C) most interesting D) the interestingest ✅ A
+
+We need ___ table.
+A) smalls B) a small C) small a D) a table small ✅ B
+
+He ___ hungry.
+A) are B) am C) is D) be ✅ C
+
+___ cars are expensive.
+A) fasts B) faster C) fastest D) fast ✅ D
+
+She is ___ person here.
+A) the kindest B) kindest C) kinder D) more kind ✅ A
+
+Квиз 2 — Сравнительная и превосходная степень
+
+This book is ___ than that one.
+A) big B) bigger C) biggest D) more big ✅ B
+
+She is ___ girl in school.
+A) youngest B) younger C) more young D) the youngest ✅ D
+
+My room is ___ than yours.
+A) cleaner B) more clean C) cleanest D) clean ✅ A
+
+This is ___ day of the year.
+A) hotest B) the hottest C) hotter D) more hot ✅ B
+
+He is ___ than his brother.
+A) carefuler B) more careful C) most careful D) carefullest ✅ B
+
+This is ___ problem we have.
+A) difficulter B) more difficult C) most difficult D) the most difficult ✅ D
+
+The red bag is ___ than the blue one.
+A) cheap B) more cheap C) cheaper D) cheapest ✅ C
+
+She is ___ singer in the competition.
+A) the amazingest B) most amazing C) more amazing D) the most amazing ✅ D
+
+Today is ___ than yesterday.
+A) colder B) cold C) coldest D) more cold ✅ A
+
+This is ___ car in the parking lot.
+A) cheaper B) cheapest C) the cheapest D) most cheap ✅ C
+
+He is ___ runner on the team.
+A) faster B) fastest C) more fast D) the fastest ✅ D
+
+This movie is ___ than the first one.
+A) interestinger B) more interesting C) most interesting D) interesting ✅ B
+
+She is ___ person I know.
+A) the kindest B) more kind C) kinder D) kindest ✅ A
+
+This test is ___ than the last one.
+A) hardest B) harder C) more hard D) hard ✅ B
+
+He is ___ teacher in school.
+A) popularst B) more popular C) the most popular D) most popular ✅ C
+
+Summer is ___ than winter.
+A) the hottest B) hot C) more hot D) hotter ✅ D
+
+This is ___ hotel in the city.
+A) the most comfortable B) most comfortable C) more comfortable D) the comfortablest ✅ A
+
+She is ___ than before.
+A) confident B) more confident C) most confident D) confidenter ✅ B
+
+This street is ___ than that one.
+A) longest B) more long C) long D) longer ✅ D
+
+This is ___ building in the city.
+A) taller B) tallest C) the tallest D) more tall ✅ C
+
+Квиз 3 — Неправильные формы и усилители
+
+This pizza is ___ than that one.
+A) good B) better C) best D) more good ✅ B
+
+This is ___ pizza in town.
+A) better B) good C) the best D) more good ✅ C
+
+The weather is ___ today than yesterday.
+A) badder B) bad C) worst D) worse ✅ D
+
+This is ___ day of the week.
+A) the worst B) worse C) bad D) more bad ✅ A
+
+The movie was ___ interesting.
+A) much B) very C) many D) more ✅ B
+
+She is ___ beautiful.
+A) much B) more C) very D) many ✅ C
+
+The test was ___ difficult.
+A) more B) much C) many D) really ✅ D
+
+My result is ___ than yours.
+A) good B) better C) best D) more good ✅ B
+
+This is ___ important.
+A) many B) quite C) much D) more ✅ B
+
+Your English is ___ than mine.
+A) more good B) good C) better D) best ✅ C
+
+This is ___ idea ever.
+A) worse B) bad C) more bad D) the worst ✅ D
+
+She is ___ tired.
+A) really B) many C) much D) more ✅ A
+
+His score is ___ than hers.
+A) good B) better C) best D) more good ✅ B
+
+The book is ___ boring.
+A) much B) many C) very D) more ✅ C
+
+That was ___ decision I made.
+A) worse B) the worst C) bad D) more bad ✅ B
+
+He was ___ angry.
+A) much B) many C) really D) more ✅ C
+
+This is ___ movie I've seen.
+A) the worst B) worse C) bad D) more bad ✅ A
+
+This is ___ expensive.
+A) many B) much C) more D) quite ✅ D
+
+The food was ___ delicious.
+A) really B) many C) much D) more ✅ A
+
+He is ___ smart.
+A) much B) more C) very D) many ✅ C
+
+Квиз 4 — Неизменяемость и позиция
+
+___ girls (красивые девушки)
+A) beautifuls B) beauties C) beautiful D) beautifuler ✅ C
+
+___ houses (большие дома)
+A) bigs B) biggs C) bigger D) big ✅ D
+
+I saw a ___ cat.
+A) black B) blacks C) cat black D) a black ✅ A
+
+She has ___ hair.
+A) longs B) long C) hair long D) a long ✅ B
+
+___ cars (быстрые машины)
+A) fasts B) faster C) fast D) fastest ✅ C
+
+He drives a ___ car.
+A) reds B) car red C) a red D) red ✅ D
+
+___ ideas (интересные идеи)
+A) interesting B) interestings C) interested D) interests ✅ A
+
+They live in a ___ apartment.
+A) moderns B) modern C) apartment modern D) a modern ✅ B
+
+___ books (старые книги)
+A) olds B) older C) old D) oldest ✅ C
+
+I bought ___ shoes.
+A) news B) shoes new C) a new D) new ✅ D
+
+___ students (умные студенты)
+A) smart B) smarts C) smarter D) smartest ✅ A
+
+She wore a ___ dress.
+A) blues B) blue C) dress blue D) a blue ✅ B
+
+___ flowers (красивые цветы)
+A) beautifuls B) beauties C) beautiful D) beautifuler ✅ C
+
+He has a ___ phone.
+A) news B) phone new C) new D) a new ✅ C
+
+___ dogs (маленькие собаки)
+A) smalls B) smaller C) smallest D) small ✅ D
+
+We saw a ___ building.
+A) tall B) talls C) building tall D) a tall ✅ A
+
+___ children (счастливые дети)
+A) happys B) happy C) happies D) happier ✅ B
+
+I need a ___ pen.
+A) blacks B) pen black C) black D) a black ✅ C
+
+___ teachers (хорошие учителя)
+A) goods B) better C) best D) good ✅ D
+
+She found a ___ bag.
+A) small B) smalls C) bag small D) a small ✅ A
+
+Квиз 5 — Порядок прилагательных и "to be"
+
+She has a ___ car.
+A) beautiful red B) red beautiful C) beautifuls red D) reds beautiful ✅ A
+
+The house ___ big.
+A) are B) is C) am D) be ✅ B
+
+I saw a ___ dog.
+A) black big B) bigs black C) big black D) blacks big ✅ C
+
+She ___ smart.
+A) are B) am C) be D) is ✅ D
+
+He bought a ___ house.
+A) nice old B) old nice C) nices old D) olds nice ✅ A
+
+The weather ___ cold.
+A) are B) is C) am D) be ✅ B
+
+She wore a ___ dress.
+A) blue long B) longs blue C) long blue D) blues long ✅ C
+
+They ___ happy.
+A) is B) am C) be D) are ✅ D
+
+They have a ___ table.
+A) small round B) round small C) smalls round D) rounds small ✅ A
+
+I ___ tired.
+A) is B) are C) be D) am ✅ D
+
+I need a ___ bag.
+A) blacks large B) large black C) larges black D) black large ✅ B
+
+The movie ___ boring.
+A) are B) am C) is D) be ✅ C
+
+She found a ___ book.
+A) old thin B) thin old C) thins old D) olds thin ✅ B
+
+We ___ ready.
+A) is B) am C) be D) are ✅ D
+
+He drives a ___ car.
+A) fast red B) red fast C) fasts red D) reds fast ✅ A
+
+The books ___ expensive.
+A) is B) are C) am D) be ✅ B
+
+We saw a ___ bird.
+A) yellow small B) smalls yellow C) small yellow D) yellows small ✅ C
+
+He ___ hungry.
+A) are B) am C) be D) is ✅ D
+
+I bought a ___ laptop.
+A) new expensive B) expensive new C) news expensive D) expensives new ✅ A
+
+The children ___ quiet.
+A) is B) are C) am D) be ✅ B
+
+Квиз 6 — Сравнительная степень + "than"
+
+My car is faster ___ yours.
+A) than B) then C) that D) the ✅ A
+
+She is taller ___ her sister.
+A) then B) than C) that D) the ✅ B
+
+This book is more interesting ___ that one.
+A) the B) that C) than D) then ✅ C
+
+He is older ___ me.
+A) that B) then C) the D) than ✅ D
+
+This house is bigger ___ mine.
+A) than B) then C) that D) the ✅ A
+
+She is smarter ___ him.
+A) then B) than C) that D) the ✅ B
+
+Today is colder ___ yesterday.
+A) the B) that C) than D) then ✅ C
+
+This test is easier ___ the last one.
+A) that B) then C) the D) than ✅ D
+
+My room is cleaner ___ yours.
+A) than B) then C) that D) the ✅ A
+
+She is more beautiful ___ before.
+A) then B) than C) that D) the ✅ B
+
+He runs faster ___ everyone.
+A) the B) that C) than D) then ✅ C
+
+This car is cheaper ___ that one.
+A) that B) then C) the D) than ✅ D
+
+She is more confident ___ yesterday.
+A) than B) then C) that D) the ✅ A
+
+My phone is newer ___ yours.
+A) then B) than C) that D) the ✅ B
+
+This problem is harder ___ I thought.
+A) the B) that C) than D) then ✅ C
+
+He is stronger ___ his brother.
+A) that B) then C) the D) than ✅ D
+
+The movie was longer ___ expected.
+A) than B) then C) that D) the ✅ A
+
+This lesson is more important ___ the last.
+A) then B) than C) that D) the ✅ B
+
+She speaks louder ___ him.
+A) the B) that C) than D) then ✅ C
+
+Winter is colder ___ autumn.
+A) that B) then C) the D) than ✅ D
+
+Квиз 7 — Превосходная степень + "the"
+
+This is ___ biggest house in town.
+A) the B) a C) an D) – ✅ A
+
+He is ___ smartest student.
+A) a B) the C) an D) – ✅ B
+
+She is ___ most beautiful girl.
+A) an B) – C) the D) a ✅ C
+
+This is ___ oldest building.
+A) – B) a C) an D) the ✅ D
+
+He is ___ fastest runner.
+A) the B) a C) an D) – ✅ A
+
+This is ___ best pizza.
+A) a B) the C) an D) – ✅ B
+
+She is ___ youngest child.
+A) an B) – C) the D) a ✅ C
+
+This is ___ most expensive car.
+A) – B) a C) an D) the ✅ D
+
+He is ___ tallest player.
+A) the B) a C) an D) – ✅ A
+
+This is ___ worst day.
+A) a B) the C) an D) – ✅ B
+
+She is ___ kindest person.
+A) an B) – C) the D) a ✅ C
+
+This is ___ longest road.
+A) – B) a C) an D) the ✅ D
+
+He is ___ strongest boy.
+A) the B) a C) an D) – ✅ A
+
+This is ___ hottest day.
+A) a B) the C) an D) – ✅ B
+
+She is ___ most talented singer.
+A) an B) – C) the D) a ✅ C
+
+This is ___ cheapest option.
+A) – B) a C) an D) the ✅ D
+
+He is ___ most successful person.
+A) the B) a C) an D) – ✅ A
+
+This is ___ coldest winter.
+A) a B) the C) an D) – ✅ B
+
+She is ___ most popular student.
+A) an B) – C) the D) a ✅ C
+
+This is ___ most comfortable hotel.
+A) – B) a C) an D) the ✅ D
+
+Квиз 8 — Прилагательные после связующих глаголов
+
+The soup tastes ___.
+A) delicious B) a delicious C) deliciously D) deliciouses ✅ A
+
+She looks ___.
+A) a tired B) tired C) tiredly D) tireds ✅ B
+
+The flowers smell ___.
+A) nices B) nicely C) nice D) a nice ✅ C
+
+He seems ___.
+A) happily B) a happy C) happys D) happy ✅ D
+
+The music sounds ___.
+A) beautiful B) a beautiful C) beautifully D) beautifuls ✅ A
+
+She feels ___.
+A) sickly B) sick C) sicks D) a sick ✅ B
+
+The cake tastes ___.
+A) a sweet B) sweetly C) sweet D) sweets ✅ C
+
+He appears ___.
+A) confidently B) confidents C) a confident D) confident ✅ D
+
+The weather seems ___.
+A) cold B) coldly C) colds D) a cold ✅ A
+
+She looks ___.
+A) a beautiful B) beautiful C) beautifully D) beautifuls ✅ B
+
+The coffee smells ___.
+A) deliciously B) a delicious C) delicious D) deliciouses ✅ C
+
+He feels ___.
+A) happily B) a happy C) happys D) happy ✅ D
+
+The food tastes ___.
+A) wonderful B) wonderfully C) wonders D) a wonderful ✅ A
+
+She seems ___.
+A) nervously B) nervous C) a nervous D) nervouses ✅ B
+
+The room looks ___.
+A) cleanly B) cleans C) clean D) a clean ✅ C
+
+He appears ___.
+A) angrily B) angries C) a angry D) angry ✅ D
+
+The flowers smell ___.
+A) sweet B) sweetly C) sweets D) a sweet ✅ A
+
+She feels ___.
+A) comfortably B) comfortable C) comfortables D) a comfortable ✅ B
+
+The music sounds ___.
+A) loudly B) louds C) loud D) a loud ✅ C
+
+The situation seems ___.
+A) seriously B) serious C) seriouses D) a serious ✅ B
+
+Квиз 9 — Типичные ошибки
+
+Правильная форма: красивые дома
+A) houses beautiful B) beautifuls houses C) houses beautifuls D) beautiful houses ✅ D
+
+Правильная форма: она красивая
+A) she is a beautiful B) she beautiful C) she are beautiful D) she is beautiful ✅ D
+
+Правильная форма: большой дом
+A) a house big B) big a house C) a bigs house D) a big house ✅ D
+
+Правильная форма: лучше
+A) more better B) more good C) gooder D) better ✅ D
+
+Правильная форма: самый интересный
+A) the interestingest B) most interesting C) more interesting D) the most interesting ✅ D
+
+Правильная форма: очень умный
+A) much smart B) many smart C) very smart D) more smart ✅ C
+
+Правильная форма: быстрые машины
+A) fasts cars B) fast cars C) cars fast D) faster cars ✅ B
+
+Правильная форма: старая книга
+A) an old book B) old an book C) a book old D) an olds book ✅ A
+
+Правильная форма: хуже
+A) more bad B) worse C) badder D) more worse ✅ B
+
+Правильная форма: маленький ребенок
+A) small a child B) a child small C) a small child D) a smalls child ✅ C
+
+Правильная форма: они счастливы
+A) they is happy B) they are happy C) they happy D) they are a happy ✅ B
+
+Правильная форма: новый телефон
+A) phone new B) a news phone C) new a phone D) a new phone ✅ D
+
+Правильная форма: самый лучший
+A) the best B) best C) better D) more best ✅ A
+
+Правильная форма: более дорогой
+A) expensiver B) more expensive C) most expensive D) the most expensive ✅ B
+
+Правильная форма: холодная вода
+A) water cold B) a colds water C) cold water D) cold a water ✅ C
+
+Правильная форма: умные студенты
+A) smarts students B) students smart C) smarter students D) smart students ✅ D
+
+Правильная форма: самый худший
+A) the worst B) worst C) worser D) more worst ✅ A
+
+Правильная форма: очень холодно
+A) much cold B) very cold C) many cold D) more cold ✅ B
+
+Правильная форма: высокий человек
+A) man tall B) a talls man C) a tall man D) tall a man ✅ C
+
+Правильная форма: более интересный
+A) interestinger B) most interesting C) the most interesting D) more interesting ✅ D
+
+Квиз 10 — Итоговый обзор
+
+She has ___ eyes.
+A) beautiful B) beautifuls C) a beautiful D) beautifully ✅ A
+
+This pizza is ___ than that one.
+A) more good B) better C) gooder D) best ✅ B
+
+He is ___ person I know.
+A) nicest B) nicer C) the nicest D) more nice ✅ C
+
+I bought a ___ phone.
+A) news B) a new C) the new D) new ✅ D
+
+The movie was ___ boring.
+A) very B) much C) more D) the most ✅ A
+
+She is ___ her sister.
+A) taller then B) taller than C) more tall than D) tallest than ✅ B
+
+This is ___ expensive restaurant in town.
+A) most B) more C) the most D) much ✅ C
+
+He looks ___.
+A) a happy B) happily C) happys D) happy ✅ D
+
+This house is ___ than mine.
+A) bigger B) more big C) biger D) biggest ✅ A
+
+She is ___ beautiful.
+A) much B) really C) more D) the most ✅ B
+
+This car is ___ (быстрее).
+A) more fast B) fastest C) faster D) the fastest ✅ C
+
+The weather ___ nice today.
+A) are B) am C) be D) is ✅ D
+
+I need ___ coffee.
+A) hot B) a hot C) hots D) the hot ✅ A
+
+This is ___ (самый важный).
+A) more important B) the most important C) importanter D) most important ✅ B
+
+___ books are on the table.
+A) olds B) older C) old D) oldest ✅ C
+
+She is ___ (моложе).
+A) more young B) youngest C) the youngest D) younger ✅ D
+
+He drives a ___ car.
+A) fast B) fasts C) faster D) the fastest ✅ A
+
+This is ___ idea ever.
+A) worse B) the worst C) bad D) more bad ✅ B
+
+My room is ___ than yours.
+A) more clean B) cleanest C) cleaner D) clean ✅ C
+
+She wore a ___ dress.
+A) red beautiful B) beautifuls red C) reds beautiful D) beautiful red ✅ D

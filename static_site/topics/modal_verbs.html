@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Модальные глаголы - Английский язык</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary: #7c3aed;
+            --color-primary-dark: #6d28d9;
+            --color-primary-light: #a78bfa;
+            --color-secondary: #c4b5fd;
+            --color-accent: #ddd6fe;
+            --color-bg: #ffffff;
+            --color-bg-alt: #faf5ff;
+            --color-text: #1f2937;
+            --color-text-light: #6b7280;
+            --color-success: #10b981;
+            --color-error: #ef4444;
+            --font-display: 'Playfair Display', serif;
+            --font-body: 'DM Sans', sans-serif;
+            --shadow-sm: 0 2px 8px rgba(124, 58, 237, 0.08);
+            --shadow-md: 0 4px 20px rgba(124, 58, 237, 0.12);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        header {
+            background: var(--color-primary);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: white;
+            text-decoration: none;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            opacity: 0.9;
+            transition: var(--transition);
+        }
+
+        .back-link:hover {
+            opacity: 1;
+            transform: translateX(-3px);
+        }
+
+        header h1 {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+        }
+
+        .content-section {
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            color: var(--color-primary);
+            margin: 3rem 0 2rem;
+            text-align: center;
+        }
+
+        .rule-section {
+            background: var(--color-bg-alt);
+            border-left: 4px solid var(--color-primary);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .rule-title {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            color: var(--color-primary);
+            margin-bottom: 1rem;
+        }
+
+        .rule-content {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            white-space: pre-line;
+        }
+
+        .examples {
+            margin-top: 1.5rem;
+        }
+
+        .example {
+            background: var(--color-bg);
+            padding: 0.8rem 1.2rem;
+            margin-bottom: 0.5rem;
+            border-radius: 8px;
+            border-left: 3px solid var(--color-secondary);
+            font-family: monospace;
+            font-size: 1rem;
+        }
+
+        .quiz-section {
+            background: var(--color-bg-alt);
+            padding: 3rem;
+            border-radius: 16px;
+            margin-top: 3rem;
+        }
+
+        .question {
+            background: var(--color-bg);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
+            border: 2px solid transparent;
+            transition: var(--transition);
+        }
+
+        .question.correct {
+            border-color: var(--color-success);
+            background: #f0fdf4;
+        }
+
+        .question.incorrect {
+            border-color: var(--color-error);
+            background: #fef2f2;
+        }
+
+        .question-text {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            color: var(--color-text);
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .option {
+            display: flex;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            background: var(--color-bg-alt);
+            border: 2px solid var(--color-accent);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .option:hover {
+            border-color: var(--color-primary);
+            background: white;
+        }
+
+        .option input[type="radio"] {
+            margin-right: 1rem;
+            cursor: pointer;
+        }
+
+        .option.correct {
+            background: #dcfce7;
+            border-color: var(--color-success);
+        }
+
+        .option.incorrect {
+            background: #fee2e2;
+            border-color: var(--color-error);
+        }
+
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 1.2rem;
+            background: var(--color-primary);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 2rem;
+            transition: var(--transition);
+        }
+
+        .submit-btn:hover:not(:disabled) {
+            background: var(--color-primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .submit-btn:disabled {
+            background: var(--color-text-light);
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .results {
+            text-align: center;
+            padding: 2rem;
+            background: var(--color-primary);
+            color: white;
+            border-radius: 12px;
+            margin-top: 2rem;
+        }
+
+        .results.hidden {
+            display: none;
+        }
+
+        .score {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .score.pass {
+            color: #dcfce7;
+        }
+
+        .score.fail {
+            color: #fecaca;
+        }
+
+        .results-message {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .retry-btn {
+            padding: 0.8rem 1.5rem;
+            background: var(--color-bg);
+            border: 2px solid white;
+            color: var(--color-primary);
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            margin-right: 1rem;
+        }
+
+        .retry-btn:hover {
+            background: white;
+            transform: translateY(-2px);
+        }
+
+        .home-btn {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+            padding: 0.8rem 1.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: var(--transition);
+        }
+
+        .home-btn:hover {
+            background: white;
+            color: var(--color-primary);
+            transform: translateY(-2px);
+        }
+
+        .quiz-selector-btn {
+            padding: 0.8rem 1.5rem;
+            background: var(--color-bg);
+            border: 2px solid var(--color-primary);
+            color: var(--color-primary);
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            min-width: 200px;
+        }
+
+        .quiz-selector-btn:hover {
+            background: var(--color-primary);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .quiz-selector-btn.active {
+            background: var(--color-primary);
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .container {
+                padding: 2rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="../index.html" class="back-link">← Назад ко всем темам</a>
+            <h1>Модальные глаголы</h1>
+            <p>Can, must, should - модальные глаголы для выражения способности, необходимости и совета</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Theory Section -->
+        <div class="content-section">
+            <h2 class="section-title">Теория</h2>
+            
+        <div class="rule-section">
+            <h3 class="rule-title">Главное про модальные глаголы</h3>
+            <div class="rule-content"></div>
+            <div class="examples"><div class="example">Модальные глаголы — это помощники, которые работают с другими глаголами.</div><div class="example">Они показывают:</div><div class="example">- способность (can — могу)</div><div class="example">- необходимость (must — должен)</div><div class="example">- совет (should — следует)</div><div class="example">- запрет (mustn't — нельзя)</div><div class="example">Три правила работы с модальными глаголами:</div><div class="example">1️⃣ После модального глагола идёт обычный глагол БЕЗ частицы to</div><div class="example">2️⃣ Модальные глаголы НЕ меняются по лицам (нет -s для he/she/it)</div><div class="example">3️⃣ Отрицания и вопросы строятся БЕЗ do/does</div></div>
+        </div>
+        
+
+        <div class="rule-section">
+            <h3 class="rule-title">Can / Can't</h3>
+            <div class="rule-content"></div>
+            <div class="examples"><div class="example">Can — это про способность, умение, возможность.</div><div class="example">Переводится как «могу», «умею», «можешь».</div><div class="example">Утверждения:</div><div class="example">I can swim. — Я умею плавать.</div><div class="example">She can speak English. — Она может говорить по-английски.</div><div class="example">They can help you. — Они могут тебе помочь.</div><div class="example">Отрицания (can't / cannot):</div><div class="example">I can't drive. — Я не умею водить.</div><div class="example">He can't come today. — Он не может прийти сегодня.</div><div class="example">We can't understand. — Мы не можем понять.</div><div class="example">Вопросы:</div><div class="example">Can you swim? — Ты умеешь плавать?</div><div class="example">Can she help me? — Она может мне помочь?</div><div class="example">Can they come? — Они могут прийти?</div><div class="example">💡 Совет:</div><div class="example">Can't = cannot (сокращённая форма)</div><div class="example">В разговорной речи почти всегда используют can't.</div><div class="example">Примеры использования:</div><div class="example">I can play guitar. (умение)</div><div class="example">Can I use your phone? (разрешение)</div><div class="example">We can go tomorrow. (возможность)</div></div>
+        </div>
+        
+
+        <div class="rule-section">
+            <h3 class="rule-title">Must / Mustn't</h3>
+            <div class="rule-content"></div>
+            <div class="examples"><div class="example">Must — это про необходимость, обязанность.</div><div class="example">Переводится как «должен», «нужно», «обязан».</div><div class="example">Утверждения:</div><div class="example">I must go. — Я должен идти.</div><div class="example">You must study. — Ты должен учиться.</div><div class="example">He must work. — Он должен работать.</div><div class="example">Отрицания (mustn't):</div><div class="example">ВАЖНО: mustn't = ЗАПРЕТ (нельзя!)</div><div class="example">You mustn't smoke here. — Тебе нельзя здесь курить.</div><div class="example">He mustn't be late. — Ему нельзя опаздывать.</div><div class="example">They mustn't leave. — Им нельзя уходить.</div><div class="example">💡 Совет:</div><div class="example">Mustn't ≠ «не должен»</div><div class="example">Mustn't = «нельзя», «запрещено»</div><div class="example">Если хочешь сказать «не обязан», используй don't have to:</div><div class="example">You don't have to come. — Тебе не обязательно приходить.</div><div class="example">Вопросы:</div><div class="example">Must I go? — Я должен идти?</div><div class="example">Must we wait? — Мы должны ждать?</div><div class="example">Must she stay? — Она должна остаться?</div></div>
+        </div>
+        
+
+        <div class="rule-section">
+            <h3 class="rule-title">Should / Shouldn't</h3>
+            <div class="rule-content"></div>
+            <div class="examples"><div class="example">Should — это про совет, рекомендацию.</div><div class="example">Переводится как «следует», «стоит», «должен бы».</div><div class="example">Утверждения:</div><div class="example">You should rest. — Тебе следует отдохнуть.</div><div class="example">He should study more. — Ему следует больше учиться.</div><div class="example">We should help them. — Нам следует им помочь.</div><div class="example">Отрицания (shouldn't):</div><div class="example">You shouldn't eat this. — Тебе не следует это есть.</div><div class="example">He shouldn't drive fast. — Ему не следует ездить быстро.</div><div class="example">They shouldn't worry. — Им не следует волноваться.</div><div class="example">Вопросы:</div><div class="example">Should I call her? — Мне следует ей позвонить?</div><div class="example">Should we go? — Нам следует идти?</div><div class="example">Should they wait? — Им следует подождать?</div><div class="example">💡 Совет:</div><div class="example">Should — это мягкий совет, не приказ.</div><div class="example">Must — строгая обязанность.</div><div class="example">Should — дружеская рекомендация.</div></div>
+        </div>
+        
+
+        <div class="rule-section">
+            <h3 class="rule-title">Разница между can, must, should</h3>
+            <div class="rule-content"></div>
+            <div class="examples"><div class="example">Can — могу (способность, возможность):</div><div class="example">I can swim. — Я умею плавать.</div><div class="example">Must — должен (строгая необходимость):</div><div class="example">I must study. — Я должен учиться.</div><div class="example">Should — следует (совет):</div><div class="example">I should rest. — Мне следует отдохнуть.</div><div class="example">Примеры в контексте:</div><div class="example">Can you help me? — Ты можешь мне помочь? (способность)</div><div class="example">You must help me! — Ты должен мне помочь! (обязанность)</div><div class="example">You should help me. — Тебе следует мне помочь. (совет)</div></div>
+        </div>
+        
+
+        <div class="rule-section">
+            <h3 class="rule-title">Типичные ошибки русскоговорящих</h3>
+            <div class="rule-content"></div>
+            <div class="examples"><div class="example">❌ He cans swim. → лишнее -s</div><div class="example">✔ He can swim.</div><div class="example">❌ I must to go. → лишнее to</div><div class="example">✔ I must go.</div><div class="example">❌ Do you can help? → неправильный порядок</div><div class="example">✔ Can you help?</div><div class="example">❌ He don't must come. → неправильное отрицание</div><div class="example">✔ He mustn't come.</div><div class="example">❌ She shoulds study. → лишнее -s</div><div class="example">✔ She should study.</div></div>
+        </div>
+        
+
+        <div class="rule-section">
+            <h3 class="rule-title">Главное про модальные глаголы</h3>
+            <div class="rule-content"></div>
+            <div class="examples"><div class="example">1️⃣ Can — способность и возможность</div><div class="example">2️⃣ Must — строгая необходимость и запрет (mustn't)</div><div class="example">3️⃣ Should — совет и рекомендация</div><div class="example">4️⃣ После модальных глаголов — обычный глагол БЕЗ to</div><div class="example">5️⃣ Модальные глаголы НЕ изменяются по лицам</div></div>
+        </div>
+        
+        </div>
+
+        <!-- Results Section (hidden initially) -->
+        <div id="results" class="results hidden">
+            <div class="score" id="score"></div>
+            <div class="results-message" id="results-message"></div>
+            <div>
+                <button class="retry-btn" onclick="retakeQuiz()">Пройти ещё раз</button>
+                <a href="../index.html" class="home-btn">На главную</a>
+            </div>
+        </div>
+
+        <!-- Quiz Section -->
+        <div class="quiz-section" id="quiz-section">
+            <h2 class="section-title">Тест</h2>
+
+            <!-- Quiz Selector (shown if multiple quizzes) -->
+            <div id="quiz-selector" style="margin-bottom: 2rem; display: flex; flex-direction: column; align-items: center; gap: 0.8rem;">
+                <button type="button" class="quiz-selector-btn" data-quiz="1" onclick="loadQuiz(1)">Тест 1</button>
+<button type="button" class="quiz-selector-btn" data-quiz="2" onclick="loadQuiz(2)">Тест 2</button>
+<button type="button" class="quiz-selector-btn" data-quiz="3" onclick="loadQuiz(3)">Тест 3</button>
+<button type="button" class="quiz-selector-btn" data-quiz="4" onclick="loadQuiz(4)">Тест 4</button>
+<button type="button" class="quiz-selector-btn" data-quiz="5" onclick="loadQuiz(5)">Тест 5</button>
+<button type="button" class="quiz-selector-btn" data-quiz="6" onclick="loadQuiz(6)">Тест 6</button>
+<button type="button" class="quiz-selector-btn" data-quiz="7" onclick="loadQuiz(7)">Тест 7</button>
+<button type="button" class="quiz-selector-btn" data-quiz="8" onclick="loadQuiz(8)">Тест 8</button>
+<button type="button" class="quiz-selector-btn" data-quiz="9" onclick="loadQuiz(9)">Тест 9</button>
+<button type="button" class="quiz-selector-btn" data-quiz="10" onclick="loadQuiz(10)">Тест 10</button>
+            </div>
+
+            <div id="quiz-placeholder" style="text-align: center; padding: 3rem; color: var(--color-text-light); display: block;">
+                <p style="font-size: 1.2rem;">Выберите тест, чтобы начать</p>
+            </div>
+
+            <form id="quiz-form" style="display: none;">
+                
+                <button type="submit" class="submit-btn" id="submit-btn">Проверить ответы</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const allQuizData = {"1": [{"id": 4937, "text": "I ___ swim very well.", "options": ["can", "cans", "can to", "am can"], "correct_index": 0}, {"id": 4938, "text": "She ___ speak three languages.", "options": ["can", "cans", "can to", "is can"], "correct_index": 0}, {"id": 4939, "text": "They ___ play football.", "options": ["can", "cans", "can to", "are can"], "correct_index": 0}, {"id": 4940, "text": "We ___ help you tomorrow.", "options": ["can", "cans", "can to", "are can"], "correct_index": 0}, {"id": 4941, "text": "He ___ drive a car.", "options": ["can", "cans", "can to", "is can"], "correct_index": 0}, {"id": 4942, "text": "You ___ use my phone.", "options": ["can", "cans", "can to", "are can"], "correct_index": 0}, {"id": 4943, "text": "It ___ wait here.", "options": ["can", "cans", "can to", "is can"], "correct_index": 0}, {"id": 4944, "text": "I ___ cook pasta.", "options": ["can", "cans", "can to", "am can"], "correct_index": 0}, {"id": 4945, "text": "She ___ dance salsa.", "options": ["can", "cans", "can to", "is can"], "correct_index": 0}, {"id": 4946, "text": "They ___ come tonight.", "options": ["can", "cans", "can to", "are can"], "correct_index": 0}, {"id": 4947, "text": "We ___ see the mountains.", "options": ["can", "cans", "can to", "are can"], "correct_index": 0}, {"id": 4948, "text": "He ___ understand Russian.", "options": ["can", "cans", "can to", "is can"], "correct_index": 0}, {"id": 4949, "text": "You ___ take this book.", "options": ["can", "cans", "can to", "are can"], "correct_index": 0}, {"id": 4950, "text": "It ___ fly very high.", "options": ["can", "cans", "can to", "is can"], "correct_index": 0}, {"id": 4951, "text": "I ___ hear the music.", "options": ["can", "cans", "can to", "am can"], "correct_index": 0}, {"id": 4952, "text": "She ___ run fast.", "options": ["can", "cans", "can to", "is can"], "correct_index": 0}, {"id": 4953, "text": "They ___ solve this problem.", "options": ["can", "cans", "can to", "are can"], "correct_index": 0}, {"id": 4954, "text": "We ___ finish this today.", "options": ["can", "cans", "can to", "are can"], "correct_index": 0}, {"id": 4955, "text": "He ___ read English books.", "options": ["can", "cans", "can to", "is can"], "correct_index": 0}, {"id": 4956, "text": "You ___ trust me.", "options": ["can", "cans", "can to", "are can"], "correct_index": 0}], "2": [{"id": 4957, "text": "I ___ swim.", "options": ["can't", "can not to", "don't can", "am not can"], "correct_index": 0}, {"id": 4958, "text": "She ___ speak Chinese.", "options": ["can't", "can not to", "doesn't can", "isn't can"], "correct_index": 0}, {"id": 4959, "text": "They ___ play tennis.", "options": ["can't", "can not to", "don't can", "aren't can"], "correct_index": 0}, {"id": 4960, "text": "We ___ help you today.", "options": ["can't", "can not to", "don't can", "aren't can"], "correct_index": 0}, {"id": 4961, "text": "He ___ drive a truck.", "options": ["can't", "can not to", "doesn't can", "isn't can"], "correct_index": 0}, {"id": 4962, "text": "You ___ use this computer.", "options": ["can't", "can not to", "don't can", "aren't can"], "correct_index": 0}, {"id": 4963, "text": "It ___ work properly.", "options": ["can't", "can not to", "doesn't can", "isn't can"], "correct_index": 0}, {"id": 4964, "text": "I ___ understand this.", "options": ["can't", "can not to", "don't can", "am not can"], "correct_index": 0}, {"id": 4965, "text": "She ___ come tomorrow.", "options": ["can't", "can not to", "doesn't can", "isn't can"], "correct_index": 0}, {"id": 4966, "text": "They ___ find the answer.", "options": ["can't", "can not to", "don't can", "aren't can"], "correct_index": 0}, {"id": 4967, "text": "We ___ see anything.", "options": ["can't", "can not to", "don't can", "aren't can"], "correct_index": 0}, {"id": 4968, "text": "He ___ remember the name.", "options": ["can't", "can not to", "doesn't can", "isn't can"], "correct_index": 0}, {"id": 4969, "text": "You ___ park here.", "options": ["can't", "can not to", "don't can", "aren't can"], "correct_index": 0}, {"id": 4970, "text": "It ___ be true.", "options": ["can't", "can not to", "doesn't can", "isn't can"], "correct_index": 0}, {"id": 4971, "text": "I ___ hear you well.", "options": ["can't", "can not to", "don't can", "am not can"], "correct_index": 0}, {"id": 4972, "text": "She ___ believe this.", "options": ["can't", "can not to", "doesn't can", "isn't can"], "correct_index": 0}, {"id": 4973, "text": "They ___ wait any longer.", "options": ["can't", "can not to", "don't can", "aren't can"], "correct_index": 0}, {"id": 4974, "text": "We ___ accept this offer.", "options": ["can't", "can not to", "don't can", "aren't can"], "correct_index": 0}, {"id": 4975, "text": "He ___ open the door.", "options": ["can't", "can not to", "doesn't can", "isn't can"], "correct_index": 0}, {"id": 4976, "text": "You ___ leave now.", "options": ["can't", "can not to", "don't can", "aren't can"], "correct_index": 0}], "3": [{"id": 4977, "text": "___ you swim?", "options": ["Can", "Do can", "Are can", "Cans"], "correct_index": 0}, {"id": 4978, "text": "___ she speak English?", "options": ["Can", "Does can", "Is can", "Cans"], "correct_index": 0}, {"id": 4979, "text": "___ they play guitar?", "options": ["Can", "Do can", "Are can", "Cans"], "correct_index": 0}, {"id": 4980, "text": "___ we help you?", "options": ["Can", "Do can", "Are can", "Cans"], "correct_index": 0}, {"id": 4981, "text": "___ he drive?", "options": ["Can", "Does can", "Is can", "Cans"], "correct_index": 0}, {"id": 4982, "text": "___ you come tonight?", "options": ["Can", "Do can", "Are can", "Cans"], "correct_index": 0}, {"id": 4983, "text": "___ it fly?", "options": ["Can", "Does can", "Is can", "Cans"], "correct_index": 0}, {"id": 4984, "text": "___ I use your phone?", "options": ["Can", "Do can", "Am can", "Cans"], "correct_index": 0}, {"id": 4985, "text": "___ she dance?", "options": ["Can", "Does can", "Is can", "Cans"], "correct_index": 0}, {"id": 4986, "text": "___ they understand?", "options": ["Can", "Do can", "Are can", "Cans"], "correct_index": 0}, {"id": 4987, "text": "___ we park here?", "options": ["Can", "Do can", "Are can", "Cans"], "correct_index": 0}, {"id": 4988, "text": "___ he cook?", "options": ["Can", "Does can", "Is can", "Cans"], "correct_index": 0}, {"id": 4989, "text": "___ you help me?", "options": ["Can", "Do can", "Are can", "Cans"], "correct_index": 0}, {"id": 4990, "text": "___ it work?", "options": ["Can", "Does can", "Is can", "Cans"], "correct_index": 0}, {"id": 4991, "text": "___ I sit here?", "options": ["Can", "Do can", "Am can", "Cans"], "correct_index": 0}, {"id": 4992, "text": "___ she come?", "options": ["Can", "Does can", "Is can", "Cans"], "correct_index": 0}, {"id": 4993, "text": "___ they wait?", "options": ["Can", "Do can", "Are can", "Cans"], "correct_index": 0}, {"id": 4994, "text": "___ we trust you?", "options": ["Can", "Do can", "Are can", "Cans"], "correct_index": 0}, {"id": 4995, "text": "___ he see us?", "options": ["Can", "Does can", "Is can", "Cans"], "correct_index": 0}, {"id": 4996, "text": "___ you hear me?", "options": ["Can", "Do can", "Are can", "Cans"], "correct_index": 0}], "4": [{"id": 4997, "text": "I ___ go to work.", "options": ["must", "musts", "must to", "am must"], "correct_index": 0}, {"id": 4998, "text": "She ___ study tonight.", "options": ["must", "musts", "must to", "is must"], "correct_index": 0}, {"id": 4999, "text": "They ___ finish this.", "options": ["must", "musts", "must to", "are must"], "correct_index": 0}, {"id": 5000, "text": "We ___ leave now.", "options": ["must", "musts", "must to", "are must"], "correct_index": 0}, {"id": 5001, "text": "He ___ call his mom.", "options": ["must", "musts", "must to", "is must"], "correct_index": 0}, {"id": 5002, "text": "You ___ listen carefully.", "options": ["must", "musts", "must to", "are must"], "correct_index": 0}, {"id": 5003, "text": "It ___ be ready.", "options": ["must", "musts", "must to", "is must"], "correct_index": 0}, {"id": 5004, "text": "I ___ tell the truth.", "options": ["must", "musts", "must to", "am must"], "correct_index": 0}, {"id": 5005, "text": "She ___ wear a uniform.", "options": ["must", "musts", "must to", "is must"], "correct_index": 0}, {"id": 5006, "text": "They ___ pay the bill.", "options": ["must", "musts", "must to", "are must"], "correct_index": 0}, {"id": 5007, "text": "We ___ be careful.", "options": ["must", "musts", "must to", "are must"], "correct_index": 0}, {"id": 5008, "text": "He ___ work harder.", "options": ["must", "musts", "must to", "is must"], "correct_index": 0}, {"id": 5009, "text": "You ___ follow the rules.", "options": ["must", "musts", "must to", "are must"], "correct_index": 0}, {"id": 5010, "text": "It ___ stop now.", "options": ["must", "musts", "must to", "is must"], "correct_index": 0}, {"id": 5011, "text": "I ___ remember this.", "options": ["must", "musts", "must to", "am must"], "correct_index": 0}, {"id": 5012, "text": "She ___ arrive on time.", "options": ["must", "musts", "must to", "is must"], "correct_index": 0}, {"id": 5013, "text": "They ___ wait here.", "options": ["must", "musts", "must to", "are must"], "correct_index": 0}, {"id": 5014, "text": "We ___ try again.", "options": ["must", "musts", "must to", "are must"], "correct_index": 0}, {"id": 5015, "text": "He ___ understand this.", "options": ["must", "musts", "must to", "is must"], "correct_index": 0}, {"id": 5016, "text": "You ___ believe me.", "options": ["must", "musts", "must to", "are must"], "correct_index": 0}], "5": [{"id": 5017, "text": "You ___ smoke here.", "options": ["mustn't", "must not to", "don't must", "aren't must"], "correct_index": 0}, {"id": 5018, "text": "He ___ be late.", "options": ["mustn't", "must not to", "doesn't must", "isn't must"], "correct_index": 0}, {"id": 5019, "text": "They ___ leave now.", "options": ["mustn't", "must not to", "don't must", "aren't must"], "correct_index": 0}, {"id": 5020, "text": "We ___ tell anyone.", "options": ["mustn't", "must not to", "don't must", "aren't must"], "correct_index": 0}, {"id": 5021, "text": "She ___ forget this.", "options": ["mustn't", "must not to", "doesn't must", "isn't must"], "correct_index": 0}, {"id": 5022, "text": "You ___ touch this.", "options": ["mustn't", "must not to", "don't must", "aren't must"], "correct_index": 0}, {"id": 5023, "text": "I ___ eat this.", "options": ["mustn't", "must not to", "don't must", "am not must"], "correct_index": 0}, {"id": 5024, "text": "It ___ break.", "options": ["mustn't", "must not to", "doesn't must", "isn't must"], "correct_index": 0}, {"id": 5025, "text": "He ___ drive fast.", "options": ["mustn't", "must not to", "doesn't must", "isn't must"], "correct_index": 0}, {"id": 5026, "text": "They ___ park here.", "options": ["mustn't", "must not to", "don't must", "aren't must"], "correct_index": 0}, {"id": 5027, "text": "We ___ waste time.", "options": ["mustn't", "must not to", "don't must", "aren't must"], "correct_index": 0}, {"id": 5028, "text": "She ___ use her phone.", "options": ["mustn't", "must not to", "doesn't must", "isn't must"], "correct_index": 0}, {"id": 5029, "text": "You ___ run here.", "options": ["mustn't", "must not to", "don't must", "aren't must"], "correct_index": 0}, {"id": 5030, "text": "I ___ worry about this.", "options": ["mustn't", "must not to", "don't must", "am not must"], "correct_index": 0}, {"id": 5031, "text": "It ___ get wet.", "options": ["mustn't", "must not to", "doesn't must", "isn't must"], "correct_index": 0}, {"id": 5032, "text": "He ___ miss the train.", "options": ["mustn't", "must not to", "doesn't must", "isn't must"], "correct_index": 0}, {"id": 5033, "text": "They ___ give up.", "options": ["mustn't", "must not to", "don't must", "aren't must"], "correct_index": 0}, {"id": 5034, "text": "We ___ make noise.", "options": ["mustn't", "must not to", "don't must", "aren't must"], "correct_index": 0}, {"id": 5035, "text": "She ___ be rude.", "options": ["mustn't", "must not to", "doesn't must", "isn't must"], "correct_index": 0}, {"id": 5036, "text": "You ___ cheat.", "options": ["mustn't", "must not to", "don't must", "aren't must"], "correct_index": 0}], "6": [{"id": 5037, "text": "You ___ rest more.", "options": ["should", "shoulds", "should to", "are should"], "correct_index": 0}, {"id": 5038, "text": "He ___ study harder.", "options": ["should", "shoulds", "should to", "is should"], "correct_index": 0}, {"id": 5039, "text": "They ___ call a doctor.", "options": ["should", "shoulds", "should to", "are should"], "correct_index": 0}, {"id": 5040, "text": "We ___ go home.", "options": ["should", "shoulds", "should to", "are should"], "correct_index": 0}, {"id": 5041, "text": "She ___ eat healthier.", "options": ["should", "shoulds", "should to", "is should"], "correct_index": 0}, {"id": 5042, "text": "You ___ drink water.", "options": ["should", "shoulds", "should to", "are should"], "correct_index": 0}, {"id": 5043, "text": "I ___ take a break.", "options": ["should", "shoulds", "should to", "am should"], "correct_index": 0}, {"id": 5044, "text": "It ___ be fine.", "options": ["should", "shoulds", "should to", "is should"], "correct_index": 0}, {"id": 5045, "text": "He ___ apologize.", "options": ["should", "shoulds", "should to", "is should"], "correct_index": 0}, {"id": 5046, "text": "They ___ try this.", "options": ["should", "shoulds", "should to", "are should"], "correct_index": 0}, {"id": 5047, "text": "We ___ help them.", "options": ["should", "shoulds", "should to", "are should"], "correct_index": 0}, {"id": 5048, "text": "She ___ see a dentist.", "options": ["should", "shoulds", "should to", "is should"], "correct_index": 0}, {"id": 5049, "text": "You ___ be careful.", "options": ["should", "shoulds", "should to", "are should"], "correct_index": 0}, {"id": 5050, "text": "I ___ listen to you.", "options": ["should", "shoulds", "should to", "am should"], "correct_index": 0}, {"id": 5051, "text": "It ___ work now.", "options": ["should", "shoulds", "should to", "is should"], "correct_index": 0}, {"id": 5052, "text": "He ___ tell the truth.", "options": ["should", "shoulds", "should to", "is should"], "correct_index": 0}, {"id": 5053, "text": "They ___ wait a bit.", "options": ["should", "shoulds", "should to", "are should"], "correct_index": 0}, {"id": 5054, "text": "We ___ check this.", "options": ["should", "shoulds", "should to", "are should"], "correct_index": 0}, {"id": 5055, "text": "She ___ take medicine.", "options": ["should", "shoulds", "should to", "is should"], "correct_index": 0}, {"id": 5056, "text": "You ___ trust me.", "options": ["should", "shoulds", "should to", "are should"], "correct_index": 0}], "7": [{"id": 5057, "text": "You ___ eat too much.", "options": ["shouldn't", "should not to", "don't should", "aren't should"], "correct_index": 0}, {"id": 5058, "text": "He ___ drive when tired.", "options": ["shouldn't", "should not to", "doesn't should", "isn't should"], "correct_index": 0}, {"id": 5059, "text": "They ___ waste money.", "options": ["shouldn't", "should not to", "don't should", "aren't should"], "correct_index": 0}, {"id": 5060, "text": "We ___ be late.", "options": ["shouldn't", "should not to", "don't should", "aren't should"], "correct_index": 0}, {"id": 5061, "text": "She ___ worry so much.", "options": ["shouldn't", "should not to", "doesn't should", "isn't should"], "correct_index": 0}, {"id": 5062, "text": "You ___ smoke.", "options": ["shouldn't", "should not to", "don't should", "aren't should"], "correct_index": 0}, {"id": 5063, "text": "I ___ stay up late.", "options": ["shouldn't", "should not to", "don't should", "am not should"], "correct_index": 0}, {"id": 5064, "text": "It ___ take long.", "options": ["shouldn't", "should not to", "doesn't should", "isn't should"], "correct_index": 0}, {"id": 5065, "text": "He ___ drink coffee at night.", "options": ["shouldn't", "should not to", "doesn't should", "isn't should"], "correct_index": 0}, {"id": 5066, "text": "They ___ argue.", "options": ["shouldn't", "should not to", "don't should", "aren't should"], "correct_index": 0}, {"id": 5067, "text": "We ___ give up.", "options": ["shouldn't", "should not to", "don't should", "aren't should"], "correct_index": 0}, {"id": 5068, "text": "She ___ skip breakfast.", "options": ["shouldn't", "should not to", "doesn't should", "isn't should"], "correct_index": 0}, {"id": 5069, "text": "You ___ be rude.", "options": ["shouldn't", "should not to", "don't should", "aren't should"], "correct_index": 0}, {"id": 5070, "text": "I ___ forget this.", "options": ["shouldn't", "should not to", "don't should", "am not should"], "correct_index": 0}, {"id": 5071, "text": "It ___ be difficult.", "options": ["shouldn't", "should not to", "doesn't should", "isn't should"], "correct_index": 0}, {"id": 5072, "text": "He ___ work too much.", "options": ["shouldn't", "should not to", "doesn't should", "isn't should"], "correct_index": 0}, {"id": 5073, "text": "They ___ complain.", "options": ["shouldn't", "should not to", "don't should", "aren't should"], "correct_index": 0}, {"id": 5074, "text": "We ___ rush.", "options": ["shouldn't", "should not to", "don't should", "aren't should"], "correct_index": 0}, {"id": 5075, "text": "She ___ use her phone now.", "options": ["shouldn't", "should not to", "doesn't should", "isn't should"], "correct_index": 0}, {"id": 5076, "text": "You ___ lie.", "options": ["shouldn't", "should not to", "don't should", "aren't should"], "correct_index": 0}], "8": [{"id": 5077, "text": "I ___ speak English.", "options": ["can", "must", "should", "cans"], "correct_index": 0}, {"id": 5078, "text": "You ___ study for the exam.", "options": ["can", "must", "should", "musts"], "correct_index": 1}, {"id": 5079, "text": "She ___ rest today.", "options": ["can", "must", "should", "shoulds"], "correct_index": 2}, {"id": 5080, "text": "They ___ swim very well.", "options": ["can", "must", "should", "cans"], "correct_index": 0}, {"id": 5081, "text": "We ___ leave immediately.", "options": ["can", "must", "should", "musts"], "correct_index": 1}, {"id": 5082, "text": "He ___ see a doctor.", "options": ["can", "must", "should", "shoulds"], "correct_index": 2}, {"id": 5083, "text": "You ___ play guitar.", "options": ["can", "must", "should", "cans"], "correct_index": 0}, {"id": 5084, "text": "I ___ finish this work.", "options": ["can", "must", "should", "musts"], "correct_index": 1}, {"id": 5085, "text": "She ___ try harder.", "options": ["can", "must", "should", "shoulds"], "correct_index": 2}, {"id": 5086, "text": "They ___ help us.", "options": ["can", "must", "should", "cans"], "correct_index": 0}, {"id": 5087, "text": "We ___ be honest.", "options": ["can", "must", "should", "musts"], "correct_index": 1}, {"id": 5088, "text": "He ___ eat healthier.", "options": ["can", "must", "should", "shoulds"], "correct_index": 2}, {"id": 5089, "text": "You ___ drive a car.", "options": ["can", "must", "should", "cans"], "correct_index": 0}, {"id": 5090, "text": "I ___ go to school.", "options": ["can", "must", "should", "musts"], "correct_index": 1}, {"id": 5091, "text": "She ___ call her mother.", "options": ["can", "must", "should", "shoulds"], "correct_index": 2}, {"id": 5092, "text": "They ___ speak Russian.", "options": ["can", "must", "should", "cans"], "correct_index": 0}, {"id": 5093, "text": "We ___ obey the law.", "options": ["can", "must", "should", "musts"], "correct_index": 1}, {"id": 5094, "text": "He ___ drink more water.", "options": ["can", "must", "should", "shoulds"], "correct_index": 2}, {"id": 5095, "text": "You ___ cook well.", "options": ["can", "must", "should", "cans"], "correct_index": 0}, {"id": 5096, "text": "I ___ pay the bills.", "options": ["can", "must", "should", "musts"], "correct_index": 1}], "9": [{"id": 5097, "text": "___ you swim?", "options": ["Can", "Must", "Should", "Do can"], "correct_index": 0}, {"id": 5098, "text": "___ I go now?", "options": ["Can", "Must", "Should", "Do must"], "correct_index": 1}, {"id": 5099, "text": "___ we call her?", "options": ["Can", "Must", "Should", "Do should"], "correct_index": 2}, {"id": 5100, "text": "___ she speak French?", "options": ["Can", "Must", "Should", "Does can"], "correct_index": 0}, {"id": 5101, "text": "___ they leave?", "options": ["Can", "Must", "Should", "Do must"], "correct_index": 1}, {"id": 5102, "text": "___ he study more?", "options": ["Can", "Must", "Should", "Does should"], "correct_index": 2}, {"id": 5103, "text": "___ you help me?", "options": ["Can", "Must", "Should", "Do can"], "correct_index": 0}, {"id": 5104, "text": "___ I wear a uniform?", "options": ["Can", "Must", "Should", "Do must"], "correct_index": 1}, {"id": 5105, "text": "___ we wait here?", "options": ["Can", "Must", "Should", "Do should"], "correct_index": 2}, {"id": 5106, "text": "___ it fly?", "options": ["Can", "Must", "Should", "Does can"], "correct_index": 0}, {"id": 5107, "text": "___ she finish this?", "options": ["Can", "Must", "Should", "Does must"], "correct_index": 1}, {"id": 5108, "text": "___ they apologize?", "options": ["Can", "Must", "Should", "Do should"], "correct_index": 2}, {"id": 5109, "text": "___ you understand?", "options": ["Can", "Must", "Should", "Do can"], "correct_index": 0}, {"id": 5110, "text": "___ I tell the truth?", "options": ["Can", "Must", "Should", "Do must"], "correct_index": 1}, {"id": 5111, "text": "___ we try again?", "options": ["Can", "Must", "Should", "Do should"], "correct_index": 2}, {"id": 5112, "text": "___ he cook?", "options": ["Can", "Must", "Should", "Does can"], "correct_index": 0}, {"id": 5113, "text": "___ they pay now?", "options": ["Can", "Must", "Should", "Do must"], "correct_index": 1}, {"id": 5114, "text": "___ she rest?", "options": ["Can", "Must", "Should", "Does should"], "correct_index": 2}, {"id": 5115, "text": "___ you see this?", "options": ["Can", "Must", "Should", "Do can"], "correct_index": 0}, {"id": 5116, "text": "___ I be careful?", "options": ["Can", "Must", "Should", "Do must"], "correct_index": 1}], "10": [{"id": 5117, "text": "I ___ swim.", "options": ["can't", "mustn't", "shouldn't", "don't can"], "correct_index": 0}, {"id": 5118, "text": "You ___ smoke here.", "options": ["can't", "mustn't", "shouldn't", "don't must"], "correct_index": 1}, {"id": 5119, "text": "She ___ worry.", "options": ["can't", "mustn't", "shouldn't", "doesn't should"], "correct_index": 2}, {"id": 5120, "text": "They ___ understand.", "options": ["can't", "mustn't", "shouldn't", "don't can"], "correct_index": 0}, {"id": 5121, "text": "We ___ touch this.", "options": ["can't", "mustn't", "shouldn't", "don't must"], "correct_index": 1}, {"id": 5122, "text": "He ___ eat junk food.", "options": ["can't", "mustn't", "shouldn't", "doesn't should"], "correct_index": 2}, {"id": 5123, "text": "You ___ speak Chinese.", "options": ["can't", "mustn't", "shouldn't", "don't can"], "correct_index": 0}, {"id": 5124, "text": "I ___ be late.", "options": ["can't", "mustn't", "shouldn't", "don't must"], "correct_index": 1}, {"id": 5125, "text": "She ___ skip class.", "options": ["can't", "mustn't", "shouldn't", "doesn't should"], "correct_index": 2}, {"id": 5126, "text": "They ___ help us.", "options": ["can't", "mustn't", "shouldn't", "don't can"], "correct_index": 0}, {"id": 5127, "text": "We ___ park here.", "options": ["can't", "mustn't", "shouldn't", "don't must"], "correct_index": 1}, {"id": 5128, "text": "He ___ work late.", "options": ["can't", "mustn't", "shouldn't", "doesn't should"], "correct_index": 2}, {"id": 5129, "text": "You ___ drive.", "options": ["can't", "mustn't", "shouldn't", "don't can"], "correct_index": 0}, {"id": 5130, "text": "I ___ give up.", "options": ["can't", "mustn't", "shouldn't", "don't must"], "correct_index": 1}, {"id": 5131, "text": "She ___ argue.", "options": ["can't", "mustn't", "shouldn't", "doesn't should"], "correct_index": 2}, {"id": 5132, "text": "They ___ finish today.", "options": ["can't", "mustn't", "shouldn't", "don't can"], "correct_index": 0}, {"id": 5133, "text": "We ___ waste time.", "options": ["can't", "mustn't", "shouldn't", "don't must"], "correct_index": 1}, {"id": 5134, "text": "He ___ complain.", "options": ["can't", "mustn't", "shouldn't", "doesn't should"], "correct_index": 2}, {"id": 5135, "text": "You ___ hear me.", "options": ["can't", "mustn't", "shouldn't", "don't can"], "correct_index": 0}, {"id": 5136, "text": "I ___ forget this.", "options": ["can't", "mustn't", "shouldn't", "don't must"], "correct_index": 1}]};
+        let currentQuizSet = 1;
+        const quizData = allQuizData[currentQuizSet] || [];
+
+        function checkAnswers(event) {
+            event.preventDefault();
+
+            const form = document.getElementById('quiz-form');
+            const formData = new FormData(form);
+
+            let correct = 0;
+            let total = quizData.length;
+
+            // Check each question
+            quizData.forEach((question, index) => {
+                const selectedAnswer = parseInt(formData.get(`question-${question.id}`));
+                const options = document.querySelectorAll(`input[name="question-${question.id}"]`);
+
+                options.forEach((option, optIndex) => {
+                    const label = option.closest('.option');
+                    if (optIndex === question.correct_index) {
+                        label.classList.add('correct');
+                    }
+                    if (selectedAnswer === optIndex && selectedAnswer !== question.correct_index) {
+                        label.classList.add('incorrect');
+                    }
+                    option.disabled = true;
+                });
+
+                if (selectedAnswer === question.correct_index) {
+                    correct++;
+                }
+            });
+
+            // Calculate score
+            const percentage = Math.round((correct / total) * 100);
+            const passed = percentage >= 70;
+
+            // Show results
+            const resultsDiv = document.getElementById('results');
+            const scoreDiv = document.getElementById('score');
+            const messageDiv = document.getElementById('results-message');
+
+            scoreDiv.textContent = `${percentage}%`;
+            scoreDiv.className = 'score ' + (passed ? 'pass' : 'fail');
+
+            messageDiv.textContent = `Вы ответили правильно на ${correct} из ${total} вопросов`;
+
+            resultsDiv.classList.remove('hidden');
+
+            // Disable submit button
+            document.getElementById('submit-btn').disabled = true;
+
+            // Scroll to results
+            resultsDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        function retakeQuiz() {
+            loadQuiz(currentQuizSet);
+        }
+
+        function loadQuiz(quizSet) {
+            currentQuizSet = quizSet;
+
+            // Hide placeholder, show form (if they exist)
+            const placeholder = document.getElementById('quiz-placeholder');
+            const form = document.getElementById('quiz-form');
+            if (placeholder) {
+                placeholder.style.display = 'none';
+            }
+            if (form.style.display === 'none') {
+                form.style.display = 'block';
+            }
+
+            // Update button states
+            document.querySelectorAll('.quiz-selector-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (parseInt(btn.dataset.quiz) === quizSet) {
+                    btn.classList.add('active');
+                }
+            });
+
+            // Get questions for this quiz set
+            const questions = allQuizData[quizSet] || [];
+
+            // Clear and rebuild quiz HTML
+            const submitBtn = document.getElementById('submit-btn');
+
+            // Remove all questions
+            const existingQuestions = form.querySelectorAll('.question');
+            existingQuestions.forEach(q => q.remove());
+
+            // Add new questions
+            questions.forEach((question, index) => {
+                const questionDiv = document.createElement('div');
+                questionDiv.className = 'question';
+                questionDiv.dataset.questionId = question.id;
+
+                let optionsHtml = '';
+                question.options.forEach((option, optIndex) => {
+                    optionsHtml += `
+                        <label class="option">
+                            <input type="radio" name="question-${question.id}" value="${optIndex}" required>
+                            <span>${option}</span>
+                        </label>
+                    `;
+                });
+
+                questionDiv.innerHTML = `
+                    <div class="question-text">${index + 1}. ${question.text}</div>
+                    <div class="options">
+                        ${optionsHtml}
+                    </div>
+                `;
+
+                form.insertBefore(questionDiv, submitBtn);
+            });
+
+            // Reset form state
+            form.reset();
+            submitBtn.disabled = false;
+            document.getElementById('results').classList.add('hidden');
+            document.querySelectorAll('.option').forEach(opt => {
+                opt.classList.remove('correct', 'incorrect');
+            });
+
+            // Scroll to quiz
+            form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        // Initialize: if only one quiz set, load it automatically
+        const quizSetCount = Object.keys(allQuizData).length;
+        if (quizSetCount === 1) {
+            // Single quiz - load immediately
+            loadQuiz(1);
+        }
+        // If multiple quiz sets, user must select one (placeholder will show)
+
+        document.getElementById('quiz-form').addEventListener('submit', checkAnswers);
+    </script>
+</body>
+</html>

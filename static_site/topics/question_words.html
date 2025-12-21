@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вопросительные слова - Английский язык</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary: #7c3aed;
+            --color-primary-dark: #6d28d9;
+            --color-primary-light: #a78bfa;
+            --color-secondary: #c4b5fd;
+            --color-accent: #ddd6fe;
+            --color-bg: #ffffff;
+            --color-bg-alt: #faf5ff;
+            --color-text: #1f2937;
+            --color-text-light: #6b7280;
+            --color-success: #10b981;
+            --color-error: #ef4444;
+            --font-display: 'Playfair Display', serif;
+            --font-body: 'DM Sans', sans-serif;
+            --shadow-sm: 0 2px 8px rgba(124, 58, 237, 0.08);
+            --shadow-md: 0 4px 20px rgba(124, 58, 237, 0.12);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        header {
+            background: var(--color-primary);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: white;
+            text-decoration: none;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            opacity: 0.9;
+            transition: var(--transition);
+        }
+
+        .back-link:hover {
+            opacity: 1;
+            transform: translateX(-3px);
+        }
+
+        header h1 {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+        }
+
+        .content-section {
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            color: var(--color-primary);
+            margin: 3rem 0 2rem;
+            text-align: center;
+        }
+
+        .rule-section {
+            background: var(--color-bg-alt);
+            border-left: 4px solid var(--color-primary);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .rule-title {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            color: var(--color-primary);
+            margin-bottom: 1rem;
+        }
+
+        .rule-content {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            white-space: pre-line;
+        }
+
+        .examples {
+            margin-top: 1.5rem;
+        }
+
+        .example {
+            background: var(--color-bg);
+            padding: 0.8rem 1.2rem;
+            margin-bottom: 0.5rem;
+            border-radius: 8px;
+            border-left: 3px solid var(--color-secondary);
+            font-family: monospace;
+            font-size: 1rem;
+        }
+
+        .quiz-section {
+            background: var(--color-bg-alt);
+            padding: 3rem;
+            border-radius: 16px;
+            margin-top: 3rem;
+        }
+
+        .question {
+            background: var(--color-bg);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
+            border: 2px solid transparent;
+            transition: var(--transition);
+        }
+
+        .question.correct {
+            border-color: var(--color-success);
+            background: #f0fdf4;
+        }
+
+        .question.incorrect {
+            border-color: var(--color-error);
+            background: #fef2f2;
+        }
+
+        .question-text {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            color: var(--color-text);
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .option {
+            display: flex;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            background: var(--color-bg-alt);
+            border: 2px solid var(--color-accent);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .option:hover {
+            border-color: var(--color-primary);
+            background: white;
+        }
+
+        .option input[type="radio"] {
+            margin-right: 1rem;
+            cursor: pointer;
+        }
+
+        .option.correct {
+            background: #dcfce7;
+            border-color: var(--color-success);
+        }
+
+        .option.incorrect {
+            background: #fee2e2;
+            border-color: var(--color-error);
+        }
+
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 1.2rem;
+            background: var(--color-primary);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 2rem;
+            transition: var(--transition);
+        }
+
+        .submit-btn:hover:not(:disabled) {
+            background: var(--color-primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .submit-btn:disabled {
+            background: var(--color-text-light);
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .results {
+            text-align: center;
+            padding: 2rem;
+            background: var(--color-primary);
+            color: white;
+            border-radius: 12px;
+            margin-top: 2rem;
+        }
+
+        .results.hidden {
+            display: none;
+        }
+
+        .score {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .score.pass {
+            color: #dcfce7;
+        }
+
+        .score.fail {
+            color: #fecaca;
+        }
+
+        .results-message {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .retry-btn {
+            padding: 0.8rem 1.5rem;
+            background: var(--color-bg);
+            border: 2px solid white;
+            color: var(--color-primary);
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            margin-right: 1rem;
+        }
+
+        .retry-btn:hover {
+            background: white;
+            transform: translateY(-2px);
+        }
+
+        .home-btn {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+            padding: 0.8rem 1.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: var(--transition);
+        }
+
+        .home-btn:hover {
+            background: white;
+            color: var(--color-primary);
+            transform: translateY(-2px);
+        }
+
+        .quiz-selector-btn {
+            padding: 0.8rem 1.5rem;
+            background: var(--color-bg);
+            border: 2px solid var(--color-primary);
+            color: var(--color-primary);
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            min-width: 200px;
+        }
+
+        .quiz-selector-btn:hover {
+            background: var(--color-primary);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .quiz-selector-btn.active {
+            background: var(--color-primary);
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .container {
+                padding: 2rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="../index.html" class="back-link">← Назад ко всем темам</a>
+            <h1>Вопросительные слова</h1>
+            <p>What, where, who, when, why, how - основные вопросительные слова</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Theory Section -->
+        <div class="content-section">
+            <h2 class="section-title">Теория</h2>
+            
+        <div class="rule-section">
+            <h3 class="rule-title">Главное про вопросительные слова</h3>
+            <div class="rule-content"></div>
+            <div class="examples"><div class="example">Вопросительные слова ставятся В НАЧАЛЕ вопроса.</div><div class="example">What do you do? — Что ты делаешь?</div><div class="example">Where do you live? — Где ты живёшь?</div><div class="example">Основные вопросительные слова (5W + 1H):</div><div class="example">- What (что)</div><div class="example">- Where (где)</div><div class="example">- Who (кто)</div><div class="example">- When (когда)</div><div class="example">- Why (почему)</div><div class="example">- How (как)</div><div class="example">What (что, какой)</div><div class="example">What — используем, чтобы узнать информацию о вещах, действиях.</div><div class="example">What is this? — Что это?</div><div class="example">What do you do? — Что ты делаешь? (Чем занимаешься?)</div><div class="example">What is your name? — Как тебя зовут?</div><div class="example">What time is it? — Который час?</div><div class="example">💡 Совет:</div><div class="example">What = что, какой</div><div class="example">Примеры:</div><div class="example">What do you like? — Что тебе нравится?</div><div class="example">What is your job? — Какая у тебя работа?</div><div class="example">What are you doing? — Что ты делаешь?</div><div class="example">What colour is it? — Какого это цвета?</div><div class="example">Where (где, куда)</div><div class="example">Where — используем, чтобы узнать МЕСТО.</div><div class="example">Where do you live? — Где ты живёшь?</div><div class="example">Where is the bank? — Где банк?</div><div class="example">Where are you? — Где ты?</div><div class="example">Where are you going? — Куда ты идёшь?</div><div class="example">💡 Совет:</div><div class="example">Where = где, куда (про место)</div><div class="example">Примеры:</div><div class="example">Where is the book? — Где книга?</div><div class="example">Where do you work? — Где ты работаешь?</div><div class="example">Where are my keys? — Где мои ключи?</div><div class="example">Where is he from? — Откуда он?</div><div class="example">Who (кто)</div><div class="example">Who — используем, чтобы узнать о ЛЮДЯХ.</div><div class="example">Who is this? — Кто это?</div><div class="example">Who are you? — Кто ты?</div><div class="example">Who is your friend? — Кто твой друг?</div><div class="example">Who lives here? — Кто здесь живёт?</div><div class="example">💡 Совет:</div><div class="example">Who = кто (про людей)</div><div class="example">После who глагол часто в 3-м лице:</div><div class="example">Who lives here? (не "who live")</div><div class="example">Примеры:</div><div class="example">Who is she? — Кто она?</div><div class="example">Who do you love? — Кого ты любишь?</div><div class="example">Who called me? — Кто мне звонил?</div><div class="example">Who works here? — Кто здесь работает?</div><div class="example">When (когда)</div><div class="example">When — используем, чтобы узнать о ВРЕМЕНИ.</div><div class="example">When is your birthday? — Когда твой день рождения?</div><div class="example">When do you work? — Когда ты работаешь?</div><div class="example">When did you arrive? — Когда ты приехал?</div><div class="example">When is the meeting? — Когда встреча?</div><div class="example">💡 Совет:</div><div class="example">When = когда (про время)</div><div class="example">Примеры:</div><div class="example">When do you wake up? — Когда ты просыпаешься?</div><div class="example">When is the exam? — Когда экзамен?</div><div class="example">When did you see her? — Когда ты её видел?</div><div class="example">When can you come? — Когда ты можешь прийти?</div><div class="example">Why (почему)</div><div class="example">Why — используем, чтобы узнать ПРИЧИНУ.</div><div class="example">Why are you sad? — Почему ты грустный?</div><div class="example">Why do you study English? — Почему ты учишь английский?</div><div class="example">Why is she late? — Почему она опоздала?</div><div class="example">Why not? — Почему нет?</div><div class="example">💡 Совет:</div><div class="example">Why = почему (про причину)</div><div class="example">Ответ часто начинается с Because (потому что):</div><div class="example">Why are you late? — Because I missed the bus.</div><div class="example">Примеры:</div><div class="example">Why do you like it? — Почему тебе это нравится?</div><div class="example">Why is he angry? — Почему он злой?</div><div class="example">Why did you leave? — Почему ты ушёл?</div><div class="example">Why don't you try? — Почему ты не попробуешь?</div><div class="example">How (как, каким образом)</div><div class="example">How — используем, чтобы узнать СПОСОБ, СОСТОЯНИЕ.</div><div class="example">How are you? — Как дела?</div><div class="example">How do you do this? — Как ты это делаешь?</div><div class="example">How old are you? — Сколько тебе лет?</div><div class="example">How much is it? — Сколько это стоит?</div><div class="example">💡 Совет:</div><div class="example">How = как, каким образом</div><div class="example">How + прилагательное = более специфичный вопрос:</div><div class="example">How old? (сколько лет)</div><div class="example">How much? (сколько, цена)</div><div class="example">How many? (сколько, количество)</div><div class="example">Примеры:</div><div class="example">How do you know? — Откуда ты знаешь?</div><div class="example">How is your mother? — Как твоя мама?</div><div class="example">How did you learn? — Как ты научился?</div><div class="example">How far is it? — Как далеко это?</div></div>
+        </div>
+        
+
+        <div class="rule-section">
+            <h3 class="rule-title">Структура вопросов</h3>
+            <div class="rule-content"></div>
+            <div class="examples"><div class="example">Со всеми вопросительными словами структура похожая:</div><div class="example">Вопросительное слово + вспомогательный глагол + подлежащее + глагол?</div><div class="example">What do you like?</div><div class="example">Where do you live?</div><div class="example">When does she work?</div><div class="example">Why are you sad?</div><div class="example">How do they know?</div><div class="example">С to be:</div><div class="example">Вопросительное слово + to be + подлежащее?</div><div class="example">Where is she?</div><div class="example">Who are you?</div><div class="example">How is he?</div><div class="example">Специальные конструкции с How</div><div class="example">How much (сколько — для неисчисляемых):</div><div class="example">How much water? — Сколько воды?</div><div class="example">How many (сколько — для исчисляемых):</div><div class="example">How many books? — Сколько книг?</div><div class="example">How old (сколько лет):</div><div class="example">How old are you? — Сколько тебе лет?</div><div class="example">How far (как далеко):</div><div class="example">How far is it? — Как далеко это?</div><div class="example">How long (как долго):</div><div class="example">How long does it take? — Сколько времени это занимает?</div></div>
+        </div>
+        
+
+        <div class="rule-section">
+            <h3 class="rule-title">Типичные ошибки русскоговорящих</h3>
+            <div class="rule-content"></div>
+            <div class="examples"><div class="example">❌ What you do? → пропущен вспомогательный глагол</div><div class="example">✔ What do you do?</div><div class="example">❌ Where you live? → пропущен do</div><div class="example">✔ Where do you live?</div><div class="example">❌ How you are? → неправильный порядок</div><div class="example">✔ How are you?</div><div class="example">❌ Who you are? → неправильный порядок с to be</div><div class="example">✔ Who are you?</div><div class="example">❌ When is your birthday? — On Monday. → путаница when/what</div><div class="example">✔ When is your birthday? — On June 5th.</div></div>
+        </div>
+        
+
+        <div class="rule-section">
+            <h3 class="rule-title">Главное про вопросительные слова</h3>
+            <div class="rule-content"></div>
+            <div class="examples"><div class="example">1️⃣ What — что, какой</div><div class="example">2️⃣ Where — где, куда</div><div class="example">3️⃣ Who — кто</div><div class="example">4️⃣ When — когда</div><div class="example">5️⃣ Why — почему</div><div class="example">6️⃣ How — как</div></div>
+        </div>
+        
+        </div>
+
+        <!-- Results Section (hidden initially) -->
+        <div id="results" class="results hidden">
+            <div class="score" id="score"></div>
+            <div class="results-message" id="results-message"></div>
+            <div>
+                <button class="retry-btn" onclick="retakeQuiz()">Пройти ещё раз</button>
+                <a href="../index.html" class="home-btn">На главную</a>
+            </div>
+        </div>
+
+        <!-- Quiz Section -->
+        <div class="quiz-section" id="quiz-section">
+            <h2 class="section-title">Тест</h2>
+
+            <!-- Quiz Selector (shown if multiple quizzes) -->
+            <div id="quiz-selector" style="margin-bottom: 2rem; display: flex; flex-direction: column; align-items: center; gap: 0.8rem;">
+                <button type="button" class="quiz-selector-btn" data-quiz="1" onclick="loadQuiz(1)">Тест 1</button>
+<button type="button" class="quiz-selector-btn" data-quiz="2" onclick="loadQuiz(2)">Тест 2</button>
+<button type="button" class="quiz-selector-btn" data-quiz="3" onclick="loadQuiz(3)">Тест 3</button>
+<button type="button" class="quiz-selector-btn" data-quiz="4" onclick="loadQuiz(4)">Тест 4</button>
+<button type="button" class="quiz-selector-btn" data-quiz="5" onclick="loadQuiz(5)">Тест 5</button>
+<button type="button" class="quiz-selector-btn" data-quiz="6" onclick="loadQuiz(6)">Тест 6</button>
+<button type="button" class="quiz-selector-btn" data-quiz="7" onclick="loadQuiz(7)">Тест 7</button>
+<button type="button" class="quiz-selector-btn" data-quiz="8" onclick="loadQuiz(8)">Тест 8</button>
+<button type="button" class="quiz-selector-btn" data-quiz="9" onclick="loadQuiz(9)">Тест 9</button>
+<button type="button" class="quiz-selector-btn" data-quiz="10" onclick="loadQuiz(10)">Тест 10</button>
+            </div>
+
+            <div id="quiz-placeholder" style="text-align: center; padding: 3rem; color: var(--color-text-light); display: block;">
+                <p style="font-size: 1.2rem;">Выберите тест, чтобы начать</p>
+            </div>
+
+            <form id="quiz-form" style="display: none;">
+                
+                <button type="submit" class="submit-btn" id="submit-btn">Проверить ответы</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const allQuizData = {"1": [{"id": 5537, "text": "___ is this?", "options": ["What", "Where", "Who", "When"], "correct_index": 0}, {"id": 5538, "text": "___ is your name?", "options": ["What", "Where", "Who", "When"], "correct_index": 0}, {"id": 5539, "text": "___ do you do?", "options": ["What", "Where", "Who", "When"], "correct_index": 0}, {"id": 5540, "text": "___ time is it?", "options": ["What", "Where", "Who", "When"], "correct_index": 0}, {"id": 5541, "text": "___ do you like?", "options": ["What", "Where", "Who", "When"], "correct_index": 0}, {"id": 5542, "text": "___ is your job?", "options": ["What", "Where", "Who", "When"], "correct_index": 0}, {"id": 5543, "text": "___ are you doing?", "options": ["What", "Where", "Who", "When"], "correct_index": 0}, {"id": 5544, "text": "___ colour is it?", "options": ["What", "Where", "Who", "When"], "correct_index": 0}, {"id": 5545, "text": "___ is that?", "options": ["What", "Where", "Who", "When"], "correct_index": 0}, {"id": 5546, "text": "___ do you want?", "options": ["What", "Where", "Who", "When"], "correct_index": 0}, {"id": 5547, "text": "___ is the problem?", "options": ["What", "Where", "Who", "When"], "correct_index": 0}, {"id": 5548, "text": "___ did you say?", "options": ["What", "Where", "Who", "When"], "correct_index": 0}, {"id": 5549, "text": "___ are you reading?", "options": ["What", "Where", "Who", "When"], "correct_index": 0}, {"id": 5550, "text": "___ is your phone number?", "options": ["What", "Where", "Who", "When"], "correct_index": 0}, {"id": 5551, "text": "___ kind of music do you like?", "options": ["What", "Where", "Who", "When"], "correct_index": 0}, {"id": 5552, "text": "___ is your address?", "options": ["What", "Where", "Who", "When"], "correct_index": 0}, {"id": 5553, "text": "___ do you think?", "options": ["What", "Where", "Who", "When"], "correct_index": 0}, {"id": 5554, "text": "___ is the answer?", "options": ["What", "Where", "Who", "When"], "correct_index": 0}, {"id": 5555, "text": "___ are you talking about?", "options": ["What", "Where", "Who", "When"], "correct_index": 0}, {"id": 5556, "text": "___ happened?", "options": ["What", "Where", "Who", "When"], "correct_index": 0}], "2": [{"id": 5557, "text": "___ do you live?", "options": ["What", "Where", "Who", "When"], "correct_index": 1}, {"id": 5558, "text": "___ is the bank?", "options": ["What", "Where", "Who", "When"], "correct_index": 1}, {"id": 5559, "text": "___ are you?", "options": ["What", "Where", "Who", "When"], "correct_index": 1}, {"id": 5560, "text": "___ are you going?", "options": ["What", "Where", "Who", "When"], "correct_index": 1}, {"id": 5561, "text": "___ is the book?", "options": ["What", "Where", "Who", "When"], "correct_index": 1}, {"id": 5562, "text": "___ do you work?", "options": ["What", "Where", "Who", "When"], "correct_index": 1}, {"id": 5563, "text": "___ are my keys?", "options": ["What", "Where", "Who", "When"], "correct_index": 1}, {"id": 5564, "text": "___ is he from?", "options": ["What", "Where", "Who", "When"], "correct_index": 1}, {"id": 5565, "text": "___ is the bathroom?", "options": ["What", "Where", "Who", "When"], "correct_index": 1}, {"id": 5566, "text": "___ are you from?", "options": ["What", "Where", "Who", "When"], "correct_index": 1}, {"id": 5567, "text": "___ does she live?", "options": ["What", "Where", "Who", "When"], "correct_index": 1}, {"id": 5568, "text": "___ is the station?", "options": ["What", "Where", "Who", "When"], "correct_index": 1}, {"id": 5569, "text": "___ can I park?", "options": ["What", "Where", "Who", "When"], "correct_index": 1}, {"id": 5570, "text": "___ is the meeting?", "options": ["What", "Where", "Who", "When"], "correct_index": 1}, {"id": 5571, "text": "___ is my phone?", "options": ["What", "Where", "Who", "When"], "correct_index": 1}, {"id": 5572, "text": "___ do they study?", "options": ["What", "Where", "Who", "When"], "correct_index": 1}, {"id": 5573, "text": "___ is the party?", "options": ["What", "Where", "Who", "When"], "correct_index": 1}, {"id": 5574, "text": "___ can I find it?", "options": ["What", "Where", "Who", "When"], "correct_index": 1}, {"id": 5575, "text": "___ should I go?", "options": ["What", "Where", "Who", "When"], "correct_index": 1}, {"id": 5576, "text": "___ is your house?", "options": ["What", "Where", "Who", "When"], "correct_index": 1}], "3": [{"id": 5577, "text": "___ is this?", "options": ["What", "Where", "Who", "When"], "correct_index": 2}, {"id": 5578, "text": "___ are you?", "options": ["What", "Where", "Who", "When"], "correct_index": 2}, {"id": 5579, "text": "___ is your friend?", "options": ["What", "Where", "Who", "When"], "correct_index": 2}, {"id": 5580, "text": "___ lives here?", "options": ["What", "Where", "Who", "When"], "correct_index": 2}, {"id": 5581, "text": "___ is she?", "options": ["What", "Where", "Who", "When"], "correct_index": 2}, {"id": 5582, "text": "___ do you love?", "options": ["What", "Where", "Who", "When"], "correct_index": 2}, {"id": 5583, "text": "___ called me?", "options": ["What", "Where", "Who", "When"], "correct_index": 2}, {"id": 5584, "text": "___ works here?", "options": ["What", "Where", "Who", "When"], "correct_index": 2}, {"id": 5585, "text": "___ is your teacher?", "options": ["What", "Where", "Who", "When"], "correct_index": 2}, {"id": 5586, "text": "___ did you see?", "options": ["What", "Where", "Who", "When"], "correct_index": 2}, {"id": 5587, "text": "___ is that man?", "options": ["What", "Where", "Who", "When"], "correct_index": 2}, {"id": 5588, "text": "___ knows the answer?", "options": ["What", "Where", "Who", "When"], "correct_index": 2}, {"id": 5589, "text": "___ is your boss?", "options": ["What", "Where", "Who", "When"], "correct_index": 2}, {"id": 5590, "text": "___ did you talk to?", "options": ["What", "Where", "Who", "When"], "correct_index": 2}, {"id": 5591, "text": "___ is he?", "options": ["What", "Where", "Who", "When"], "correct_index": 2}, {"id": 5592, "text": "___ are they?", "options": ["What", "Where", "Who", "When"], "correct_index": 2}, {"id": 5593, "text": "___ made this?", "options": ["What", "Where", "Who", "When"], "correct_index": 2}, {"id": 5594, "text": "___ is coming?", "options": ["What", "Where", "Who", "When"], "correct_index": 2}, {"id": 5595, "text": "___ told you?", "options": ["What", "Where", "Who", "When"], "correct_index": 2}, {"id": 5596, "text": "___ is your doctor?", "options": ["What", "Where", "Who", "When"], "correct_index": 2}], "4": [{"id": 5597, "text": "___ is your birthday?", "options": ["What", "Where", "Who", "When"], "correct_index": 3}, {"id": 5598, "text": "___ do you work?", "options": ["What", "Where", "Who", "When"], "correct_index": 3}, {"id": 5599, "text": "___ did you arrive?", "options": ["What", "Where", "Who", "When"], "correct_index": 3}, {"id": 5600, "text": "___ is the meeting?", "options": ["What", "Where", "Who", "When"], "correct_index": 3}, {"id": 5601, "text": "___ do you wake up?", "options": ["What", "Where", "Who", "When"], "correct_index": 3}, {"id": 5602, "text": "___ is the exam?", "options": ["What", "Where", "Who", "When"], "correct_index": 3}, {"id": 5603, "text": "___ did you see her?", "options": ["What", "Where", "Who", "When"], "correct_index": 3}, {"id": 5604, "text": "___ can you come?", "options": ["What", "Where", "Who", "When"], "correct_index": 3}, {"id": 5605, "text": "___ is the party?", "options": ["What", "Where", "Who", "When"], "correct_index": 3}, {"id": 5606, "text": "___ do you go to bed?", "options": ["What", "Where", "Who", "When"], "correct_index": 3}, {"id": 5607, "text": "___ does the class start?", "options": ["What", "Where", "Who", "When"], "correct_index": 3}, {"id": 5608, "text": "___ is the deadline?", "options": ["What", "Where", "Who", "When"], "correct_index": 3}, {"id": 5609, "text": "___ did it happen?", "options": ["What", "Where", "Who", "When"], "correct_index": 3}, {"id": 5610, "text": "___ will you finish?", "options": ["What", "Where", "Who", "When"], "correct_index": 3}, {"id": 5611, "text": "___ is your appointment?", "options": ["What", "Where", "Who", "When"], "correct_index": 3}, {"id": 5612, "text": "___ do they arrive?", "options": ["What", "Where", "Who", "When"], "correct_index": 3}, {"id": 5613, "text": "___ is the concert?", "options": ["What", "Where", "Who", "When"], "correct_index": 3}, {"id": 5614, "text": "___ should I call?", "options": ["What", "Where", "Who", "When"], "correct_index": 3}, {"id": 5615, "text": "___ is lunch?", "options": ["What", "Where", "Who", "When"], "correct_index": 3}, {"id": 5616, "text": "___ do you leave?", "options": ["What", "Where", "Who", "When"], "correct_index": 3}], "5": [{"id": 5617, "text": "___ are you sad?", "options": ["What", "How", "Why", "When"], "correct_index": 2}, {"id": 5618, "text": "___ do you study English?", "options": ["What", "How", "Why", "When"], "correct_index": 2}, {"id": 5619, "text": "___ is she late?", "options": ["What", "How", "Why", "When"], "correct_index": 2}, {"id": 5620, "text": "___ not?", "options": ["What", "How", "Why", "When"], "correct_index": 2}, {"id": 5621, "text": "___ do you like it?", "options": ["What", "How", "Why", "When"], "correct_index": 2}, {"id": 5622, "text": "___ is he angry?", "options": ["What", "How", "Why", "When"], "correct_index": 2}, {"id": 5623, "text": "___ did you leave?", "options": ["What", "How", "Why", "When"], "correct_index": 2}, {"id": 5624, "text": "___ don't you try?", "options": ["What", "How", "Why", "When"], "correct_index": 2}, {"id": 5625, "text": "___ are you here?", "options": ["What", "How", "Why", "When"], "correct_index": 2}, {"id": 5626, "text": "___ did she cry?", "options": ["What", "How", "Why", "When"], "correct_index": 2}, {"id": 5627, "text": "___ is it important?", "options": ["What", "How", "Why", "When"], "correct_index": 2}, {"id": 5628, "text": "___ do you ask?", "options": ["What", "How", "Why", "When"], "correct_index": 2}, {"id": 5629, "text": "___ is he happy?", "options": ["What", "How", "Why", "When"], "correct_index": 2}, {"id": 5630, "text": "___ did you call me?", "options": ["What", "How", "Why", "When"], "correct_index": 2}, {"id": 5631, "text": "___ are they laughing?", "options": ["What", "How", "Why", "When"], "correct_index": 2}, {"id": 5632, "text": "___ don't you come?", "options": ["What", "How", "Why", "When"], "correct_index": 2}, {"id": 5633, "text": "___ is she worried?", "options": ["What", "How", "Why", "When"], "correct_index": 2}, {"id": 5634, "text": "___ do you think so?", "options": ["What", "How", "Why", "When"], "correct_index": 2}, {"id": 5635, "text": "___ did it break?", "options": ["What", "How", "Why", "When"], "correct_index": 2}, {"id": 5636, "text": "___ is this necessary?", "options": ["What", "How", "Why", "When"], "correct_index": 2}], "6": [{"id": 5637, "text": "___ are you?", "options": ["What", "Where", "How", "When"], "correct_index": 2}, {"id": 5638, "text": "___ do you do this?", "options": ["What", "Where", "How", "When"], "correct_index": 2}, {"id": 5639, "text": "___ old are you?", "options": ["What", "Where", "How", "When"], "correct_index": 2}, {"id": 5640, "text": "___ much is it?", "options": ["What", "Where", "How", "When"], "correct_index": 2}, {"id": 5641, "text": "___ do you know?", "options": ["What", "Where", "How", "When"], "correct_index": 2}, {"id": 5642, "text": "___ is your mother?", "options": ["What", "Where", "How", "When"], "correct_index": 2}, {"id": 5643, "text": "___ did you learn?", "options": ["What", "Where", "How", "When"], "correct_index": 2}, {"id": 5644, "text": "___ far is it?", "options": ["What", "Where", "How", "When"], "correct_index": 2}, {"id": 5645, "text": "___ many books?", "options": ["What", "Where", "How", "When"], "correct_index": 2}, {"id": 5646, "text": "___ do you feel?", "options": ["What", "Where", "How", "When"], "correct_index": 2}, {"id": 5647, "text": "___ does it work?", "options": ["What", "Where", "How", "When"], "correct_index": 2}, {"id": 5648, "text": "___ long does it take?", "options": ["What", "Where", "How", "When"], "correct_index": 2}, {"id": 5649, "text": "___ can I help?", "options": ["What", "Where", "How", "When"], "correct_index": 2}, {"id": 5650, "text": "___ do you spell it?", "options": ["What", "Where", "How", "When"], "correct_index": 2}, {"id": 5651, "text": "___ tall are you?", "options": ["What", "Where", "How", "When"], "correct_index": 2}, {"id": 5652, "text": "___ often do you exercise?", "options": ["What", "Where", "How", "When"], "correct_index": 2}, {"id": 5653, "text": "___ was your day?", "options": ["What", "Where", "How", "When"], "correct_index": 2}, {"id": 5654, "text": "___ do you say it in English?", "options": ["What", "Where", "How", "When"], "correct_index": 2}, {"id": 5655, "text": "___ much time do you have?", "options": ["What", "Where", "How", "When"], "correct_index": 2}, {"id": 5656, "text": "___ many people are there?", "options": ["What", "Where", "How", "When"], "correct_index": 2}], "7": [{"id": 5657, "text": "___ is your name?", "options": ["What", "Where", "Who", "When"], "correct_index": 0}, {"id": 5658, "text": "___ do you live?", "options": ["What", "Where", "Who", "When"], "correct_index": 1}, {"id": 5659, "text": "___ is this?", "options": ["What", "Where", "Who", "When"], "correct_index": 2}, {"id": 5660, "text": "___ is the bank?", "options": ["What", "Where", "Who", "When"], "correct_index": 1}, {"id": 5661, "text": "___ do you do?", "options": ["What", "Where", "Who", "When"], "correct_index": 0}, {"id": 5662, "text": "___ are you?", "options": ["What", "Where", "Who", "When"], "correct_index": 2}, {"id": 5663, "text": "___ is your job?", "options": ["What", "Where", "Who", "When"], "correct_index": 0}, {"id": 5664, "text": "___ do you work?", "options": ["What", "Where", "Who", "When"], "correct_index": 1}, {"id": 5665, "text": "___ lives here?", "options": ["What", "Where", "Who", "When"], "correct_index": 2}, {"id": 5666, "text": "___ time is it?", "options": ["What", "Where", "Who", "When"], "correct_index": 0}, {"id": 5667, "text": "___ are my keys?", "options": ["What", "Where", "Who", "When"], "correct_index": 1}, {"id": 5668, "text": "___ is your friend?", "options": ["What", "Where", "Who", "When"], "correct_index": 2}, {"id": 5669, "text": "___ colour is it?", "options": ["What", "Where", "Who", "When"], "correct_index": 0}, {"id": 5670, "text": "___ is he from?", "options": ["What", "Where", "Who", "When"], "correct_index": 1}, {"id": 5671, "text": "___ called me?", "options": ["What", "Where", "Who", "When"], "correct_index": 2}, {"id": 5672, "text": "___ are you doing?", "options": ["What", "Where", "Who", "When"], "correct_index": 0}, {"id": 5673, "text": "___ is the bathroom?", "options": ["What", "Where", "Who", "When"], "correct_index": 1}, {"id": 5674, "text": "___ is she?", "options": ["What", "Where", "Who", "When"], "correct_index": 2}, {"id": 5675, "text": "___ do you like?", "options": ["What", "Where", "Who", "When"], "correct_index": 0}, {"id": 5676, "text": "___ are you going?", "options": ["What", "Where", "Who", "When"], "correct_index": 1}], "8": [{"id": 5677, "text": "___ is your birthday?", "options": ["How", "When", "Why", "What"], "correct_index": 1}, {"id": 5678, "text": "___ are you sad?", "options": ["How", "When", "Why", "What"], "correct_index": 2}, {"id": 5679, "text": "___ are you?", "options": ["How", "When", "Why", "What"], "correct_index": 0}, {"id": 5680, "text": "___ do you work?", "options": ["How", "When", "Why", "What"], "correct_index": 1}, {"id": 5681, "text": "___ do you study English?", "options": ["How", "When", "Why", "What"], "correct_index": 2}, {"id": 5682, "text": "___ old are you?", "options": ["How", "When", "Why", "What"], "correct_index": 0}, {"id": 5683, "text": "___ is the meeting?", "options": ["How", "When", "Why", "What"], "correct_index": 1}, {"id": 5684, "text": "___ is she late?", "options": ["How", "When", "Why", "What"], "correct_index": 2}, {"id": 5685, "text": "___ do you do this?", "options": ["How", "When", "Why", "What"], "correct_index": 0}, {"id": 5686, "text": "___ did you arrive?", "options": ["How", "When", "Why", "What"], "correct_index": 1}, {"id": 5687, "text": "___ did you leave?", "options": ["How", "When", "Why", "What"], "correct_index": 2}, {"id": 5688, "text": "___ much is it?", "options": ["How", "When", "Why", "What"], "correct_index": 0}, {"id": 5689, "text": "___ is the exam?", "options": ["How", "When", "Why", "What"], "correct_index": 1}, {"id": 5690, "text": "___ don't you try?", "options": ["How", "When", "Why", "What"], "correct_index": 2}, {"id": 5691, "text": "___ do you know?", "options": ["How", "When", "Why", "What"], "correct_index": 0}, {"id": 5692, "text": "___ can you come?", "options": ["How", "When", "Why", "What"], "correct_index": 1}, {"id": 5693, "text": "___ is he angry?", "options": ["How", "When", "Why", "What"], "correct_index": 2}, {"id": 5694, "text": "___ far is it?", "options": ["How", "When", "Why", "What"], "correct_index": 0}, {"id": 5695, "text": "___ is the party?", "options": ["How", "When", "Why", "What"], "correct_index": 1}, {"id": 5696, "text": "___ do you like it?", "options": ["How", "When", "Why", "What"], "correct_index": 2}], "9": [{"id": 5697, "text": "___ is your name?", "options": ["What", "Where", "Who", "How"], "correct_index": 0}, {"id": 5698, "text": "___ do you live?", "options": ["What", "Where", "Who", "How"], "correct_index": 1}, {"id": 5699, "text": "___ is this?", "options": ["What", "Where", "Who", "How"], "correct_index": 2}, {"id": 5700, "text": "___ are you?", "options": ["What", "Where", "Who", "How"], "correct_index": 3}, {"id": 5701, "text": "___ is your birthday?", "options": ["What", "Where", "When", "Why"], "correct_index": 2}, {"id": 5702, "text": "___ are you sad?", "options": ["What", "Where", "When", "Why"], "correct_index": 3}, {"id": 5703, "text": "___ time is it?", "options": ["What", "Where", "When", "Why"], "correct_index": 0}, {"id": 5704, "text": "___ is the bank?", "options": ["What", "Where", "When", "Why"], "correct_index": 1}, {"id": 5705, "text": "___ lives here?", "options": ["What", "Where", "Who", "Why"], "correct_index": 2}, {"id": 5706, "text": "___ old are you?", "options": ["What", "Where", "How", "Why"], "correct_index": 2}, {"id": 5707, "text": "___ do you work?", "options": ["What", "When", "Who", "Where"], "correct_index": 3}, {"id": 5708, "text": "___ do you study English?", "options": ["How", "When", "Why", "Where"], "correct_index": 2}, {"id": 5709, "text": "___ do you do?", "options": ["What", "Where", "Who", "How"], "correct_index": 0}, {"id": 5710, "text": "___ are my keys?", "options": ["What", "Where", "Who", "How"], "correct_index": 1}, {"id": 5711, "text": "___ is your friend?", "options": ["What", "Where", "Who", "How"], "correct_index": 2}, {"id": 5712, "text": "___ much is it?", "options": ["What", "Where", "How", "When"], "correct_index": 2}, {"id": 5713, "text": "___ is the meeting?", "options": ["What", "Where", "When", "How"], "correct_index": 2}, {"id": 5714, "text": "___ is she late?", "options": ["How", "When", "Why", "Where"], "correct_index": 2}, {"id": 5715, "text": "___ are you going?", "options": ["What", "Where", "Who", "When"], "correct_index": 1}, {"id": 5716, "text": "___ do you feel?", "options": ["What", "Where", "Who", "How"], "correct_index": 3}], "10": [{"id": 5717, "text": "___ is your phone number?", "options": ["What", "Where", "Who", "How"], "correct_index": 0}, {"id": 5718, "text": "___ does she live?", "options": ["What", "Where", "Who", "How"], "correct_index": 1}, {"id": 5719, "text": "___ told you?", "options": ["What", "Where", "Who", "How"], "correct_index": 2}, {"id": 5720, "text": "___ many books do you have?", "options": ["What", "Where", "Who", "How"], "correct_index": 3}, {"id": 5721, "text": "___ is the deadline?", "options": ["What", "When", "Why", "How"], "correct_index": 1}, {"id": 5722, "text": "___ did it happen?", "options": ["What", "When", "Why", "How"], "correct_index": 2}, {"id": 5723, "text": "___ kind of music do you like?", "options": ["What", "Where", "Who", "How"], "correct_index": 0}, {"id": 5724, "text": "___ is the party?", "options": ["What", "Where", "When", "How"], "correct_index": 1}, {"id": 5725, "text": "___ made this?", "options": ["What", "Where", "Who", "How"], "correct_index": 2}, {"id": 5726, "text": "___ often do you exercise?", "options": ["What", "Where", "When", "How"], "correct_index": 3}, {"id": 5727, "text": "___ is your address?", "options": ["What", "Where", "Who", "How"], "correct_index": 0}, {"id": 5728, "text": "___ can I park?", "options": ["What", "Where", "When", "How"], "correct_index": 1}, {"id": 5729, "text": "___ is coming?", "options": ["What", "Where", "Who", "How"], "correct_index": 2}, {"id": 5730, "text": "___ long does it take?", "options": ["What", "Where", "When", "How"], "correct_index": 3}, {"id": 5731, "text": "___ do you wake up?", "options": ["What", "When", "Why", "How"], "correct_index": 1}, {"id": 5732, "text": "___ is this necessary?", "options": ["What", "When", "Why", "How"], "correct_index": 2}, {"id": 5733, "text": "___ happened?", "options": ["What", "Where", "Who", "How"], "correct_index": 0}, {"id": 5734, "text": "___ should I go?", "options": ["What", "Where", "When", "How"], "correct_index": 1}, {"id": 5735, "text": "___ is your teacher?", "options": ["What", "Where", "Who", "How"], "correct_index": 2}, {"id": 5736, "text": "___ was your day?", "options": ["What", "Where", "When", "How"], "correct_index": 3}]};
+        let currentQuizSet = 1;
+        const quizData = allQuizData[currentQuizSet] || [];
+
+        function checkAnswers(event) {
+            event.preventDefault();
+
+            const form = document.getElementById('quiz-form');
+            const formData = new FormData(form);
+
+            let correct = 0;
+            let total = quizData.length;
+
+            // Check each question
+            quizData.forEach((question, index) => {
+                const selectedAnswer = parseInt(formData.get(`question-${question.id}`));
+                const options = document.querySelectorAll(`input[name="question-${question.id}"]`);
+
+                options.forEach((option, optIndex) => {
+                    const label = option.closest('.option');
+                    if (optIndex === question.correct_index) {
+                        label.classList.add('correct');
+                    }
+                    if (selectedAnswer === optIndex && selectedAnswer !== question.correct_index) {
+                        label.classList.add('incorrect');
+                    }
+                    option.disabled = true;
+                });
+
+                if (selectedAnswer === question.correct_index) {
+                    correct++;
+                }
+            });
+
+            // Calculate score
+            const percentage = Math.round((correct / total) * 100);
+            const passed = percentage >= 70;
+
+            // Show results
+            const resultsDiv = document.getElementById('results');
+            const scoreDiv = document.getElementById('score');
+            const messageDiv = document.getElementById('results-message');
+
+            scoreDiv.textContent = `${percentage}%`;
+            scoreDiv.className = 'score ' + (passed ? 'pass' : 'fail');
+
+            messageDiv.textContent = `Вы ответили правильно на ${correct} из ${total} вопросов`;
+
+            resultsDiv.classList.remove('hidden');
+
+            // Disable submit button
+            document.getElementById('submit-btn').disabled = true;
+
+            // Scroll to results
+            resultsDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        function retakeQuiz() {
+            loadQuiz(currentQuizSet);
+        }
+
+        function loadQuiz(quizSet) {
+            currentQuizSet = quizSet;
+
+            // Hide placeholder, show form (if they exist)
+            const placeholder = document.getElementById('quiz-placeholder');
+            const form = document.getElementById('quiz-form');
+            if (placeholder) {
+                placeholder.style.display = 'none';
+            }
+            if (form.style.display === 'none') {
+                form.style.display = 'block';
+            }
+
+            // Update button states
+            document.querySelectorAll('.quiz-selector-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (parseInt(btn.dataset.quiz) === quizSet) {
+                    btn.classList.add('active');
+                }
+            });
+
+            // Get questions for this quiz set
+            const questions = allQuizData[quizSet] || [];
+
+            // Clear and rebuild quiz HTML
+            const submitBtn = document.getElementById('submit-btn');
+
+            // Remove all questions
+            const existingQuestions = form.querySelectorAll('.question');
+            existingQuestions.forEach(q => q.remove());
+
+            // Add new questions
+            questions.forEach((question, index) => {
+                const questionDiv = document.createElement('div');
+                questionDiv.className = 'question';
+                questionDiv.dataset.questionId = question.id;
+
+                let optionsHtml = '';
+                question.options.forEach((option, optIndex) => {
+                    optionsHtml += `
+                        <label class="option">
+                            <input type="radio" name="question-${question.id}" value="${optIndex}" required>
+                            <span>${option}</span>
+                        </label>
+                    `;
+                });
+
+                questionDiv.innerHTML = `
+                    <div class="question-text">${index + 1}. ${question.text}</div>
+                    <div class="options">
+                        ${optionsHtml}
+                    </div>
+                `;
+
+                form.insertBefore(questionDiv, submitBtn);
+            });
+
+            // Reset form state
+            form.reset();
+            submitBtn.disabled = false;
+            document.getElementById('results').classList.add('hidden');
+            document.querySelectorAll('.option').forEach(opt => {
+                opt.classList.remove('correct', 'incorrect');
+            });
+
+            // Scroll to quiz
+            form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        // Initialize: if only one quiz set, load it automatically
+        const quizSetCount = Object.keys(allQuizData).length;
+        if (quizSetCount === 1) {
+            // Single quiz - load immediately
+            loadQuiz(1);
+        }
+        // If multiple quiz sets, user must select one (placeholder will show)
+
+        document.getElementById('quiz-form').addEventListener('submit', checkAnswers);
+    </script>
+</body>
+</html>

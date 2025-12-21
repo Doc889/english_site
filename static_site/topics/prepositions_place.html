@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Предлоги места - Английский язык</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary: #7c3aed;
+            --color-primary-dark: #6d28d9;
+            --color-primary-light: #a78bfa;
+            --color-secondary: #c4b5fd;
+            --color-accent: #ddd6fe;
+            --color-bg: #ffffff;
+            --color-bg-alt: #faf5ff;
+            --color-text: #1f2937;
+            --color-text-light: #6b7280;
+            --color-success: #10b981;
+            --color-error: #ef4444;
+            --font-display: 'Playfair Display', serif;
+            --font-body: 'DM Sans', sans-serif;
+            --shadow-sm: 0 2px 8px rgba(124, 58, 237, 0.08);
+            --shadow-md: 0 4px 20px rgba(124, 58, 237, 0.12);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        header {
+            background: var(--color-primary);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: white;
+            text-decoration: none;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            opacity: 0.9;
+            transition: var(--transition);
+        }
+
+        .back-link:hover {
+            opacity: 1;
+            transform: translateX(-3px);
+        }
+
+        header h1 {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+        }
+
+        .content-section {
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            color: var(--color-primary);
+            margin: 3rem 0 2rem;
+            text-align: center;
+        }
+
+        .rule-section {
+            background: var(--color-bg-alt);
+            border-left: 4px solid var(--color-primary);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .rule-title {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            color: var(--color-primary);
+            margin-bottom: 1rem;
+        }
+
+        .rule-content {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            white-space: pre-line;
+        }
+
+        .examples {
+            margin-top: 1.5rem;
+        }
+
+        .example {
+            background: var(--color-bg);
+            padding: 0.8rem 1.2rem;
+            margin-bottom: 0.5rem;
+            border-radius: 8px;
+            border-left: 3px solid var(--color-secondary);
+            font-family: monospace;
+            font-size: 1rem;
+        }
+
+        .quiz-section {
+            background: var(--color-bg-alt);
+            padding: 3rem;
+            border-radius: 16px;
+            margin-top: 3rem;
+        }
+
+        .question {
+            background: var(--color-bg);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
+            border: 2px solid transparent;
+            transition: var(--transition);
+        }
+
+        .question.correct {
+            border-color: var(--color-success);
+            background: #f0fdf4;
+        }
+
+        .question.incorrect {
+            border-color: var(--color-error);
+            background: #fef2f2;
+        }
+
+        .question-text {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            color: var(--color-text);
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .option {
+            display: flex;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            background: var(--color-bg-alt);
+            border: 2px solid var(--color-accent);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .option:hover {
+            border-color: var(--color-primary);
+            background: white;
+        }
+
+        .option input[type="radio"] {
+            margin-right: 1rem;
+            cursor: pointer;
+        }
+
+        .option.correct {
+            background: #dcfce7;
+            border-color: var(--color-success);
+        }
+
+        .option.incorrect {
+            background: #fee2e2;
+            border-color: var(--color-error);
+        }
+
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 1.2rem;
+            background: var(--color-primary);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 2rem;
+            transition: var(--transition);
+        }
+
+        .submit-btn:hover:not(:disabled) {
+            background: var(--color-primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .submit-btn:disabled {
+            background: var(--color-text-light);
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .results {
+            text-align: center;
+            padding: 2rem;
+            background: var(--color-primary);
+            color: white;
+            border-radius: 12px;
+            margin-top: 2rem;
+        }
+
+        .results.hidden {
+            display: none;
+        }
+
+        .score {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .score.pass {
+            color: #dcfce7;
+        }
+
+        .score.fail {
+            color: #fecaca;
+        }
+
+        .results-message {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .retry-btn {
+            padding: 0.8rem 1.5rem;
+            background: var(--color-bg);
+            border: 2px solid white;
+            color: var(--color-primary);
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            margin-right: 1rem;
+        }
+
+        .retry-btn:hover {
+            background: white;
+            transform: translateY(-2px);
+        }
+
+        .home-btn {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+            padding: 0.8rem 1.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: var(--transition);
+        }
+
+        .home-btn:hover {
+            background: white;
+            color: var(--color-primary);
+            transform: translateY(-2px);
+        }
+
+        .quiz-selector-btn {
+            padding: 0.8rem 1.5rem;
+            background: var(--color-bg);
+            border: 2px solid var(--color-primary);
+            color: var(--color-primary);
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            min-width: 200px;
+        }
+
+        .quiz-selector-btn:hover {
+            background: var(--color-primary);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .quiz-selector-btn.active {
+            background: var(--color-primary);
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .container {
+                padding: 2rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="../index.html" class="back-link">← Назад ко всем темам</a>
+            <h1>Предлоги места</h1>
+            <p>Предлоги in, on, under, next to, between для описания местоположения</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Theory Section -->
+        <div class="content-section">
+            <h2 class="section-title">Теория</h2>
+            
+        <div class="rule-section">
+            <h3 class="rule-title">Главное про предлоги места</h3>
+            <div class="rule-content"></div>
+            <div class="examples"><div class="example">Предлоги места отвечают на вопрос: ГДЕ?</div><div class="example">Where is the book? — It's ON the table.</div><div class="example">Основные предлоги:</div><div class="example">- in (в)</div><div class="example">- on (на)</div><div class="example">- under (под)</div><div class="example">- next to (рядом с)</div><div class="example">- between (между)</div><div class="example">Запомни: предлог идёт ПЕРЕД существительным.</div><div class="example">in (в, внутри)</div><div class="example">in — используем, когда что-то ВНУТРИ чего-то.</div><div class="example">The book is in the bag. — Книга в сумке.</div><div class="example">The cat is in the box. — Кошка в коробке.</div><div class="example">I live in Moscow. — Я живу в Москве.</div><div class="example">The keys are in my pocket. — Ключи в моём кармане.</div><div class="example">💡 Совет:</div><div class="example">in = внутри, в пространстве</div><div class="example">Примеры:</div><div class="example">The milk is in the fridge.</div><div class="example">She is in the room.</div><div class="example">There are people in the building.</div><div class="example">The pen is in the drawer.</div><div class="example">on (на, на поверхности)</div><div class="example">on — используем, когда что-то НА ПОВЕРХНОСТИ.</div><div class="example">The book is on the table. — Книга на столе.</div><div class="example">The picture is on the wall. — Картина на стене.</div><div class="example">The cat is on the roof. — Кошка на крыше.</div><div class="example">Your phone is on the sofa. — Твой телефон на диване.</div><div class="example">💡 Совет:</div><div class="example">on = на поверхности, сверху</div><div class="example">Примеры:</div><div class="example">The cup is on the desk.</div><div class="example">There are plates on the table.</div><div class="example">The bag is on the chair.</div><div class="example">The hat is on your head.</div><div class="example">under (под)</div><div class="example">under — используем, когда что-то ПОД чем-то.</div><div class="example">The cat is under the table. — Кошка под столом.</div><div class="example">The ball is under the bed. — Мяч под кроватью.</div><div class="example">The shoes are under the chair. — Туфли под стулом.</div><div class="example">The dog is under the tree. — Собака под деревом.</div><div class="example">💡 Совет:</div><div class="example">under = ниже чего-то, внизу</div><div class="example">Примеры:</div><div class="example">The pen is under the book.</div><div class="example">There's a box under the desk.</div><div class="example">The keys are under the newspaper.</div><div class="example">The cat sleeps under the blanket.</div><div class="example">next to (рядом с, около)</div><div class="example">next to — используем, когда что-то РЯДОМ, ОКОЛО.</div><div class="example">The bank is next to the shop. — Банк рядом с магазином.</div><div class="example">The chair is next to the table. — Стул рядом со столом.</div><div class="example">She sits next to me. — Она сидит рядом со мной.</div><div class="example">The cat is next to the dog. — Кошка рядом с собакой.</div><div class="example">💡 Совет:</div><div class="example">next to = близко, рядом</div><div class="example">Можно также сказать: near, beside</div><div class="example">Примеры:</div><div class="example">The cafe is next to my house.</div><div class="example">The lamp is next to the bed.</div><div class="example">He stands next to his friend.</div><div class="example">The park is next to the school.</div><div class="example">between (между)</div><div class="example">between — используем, когда что-то МЕЖДУ двумя объектами.</div><div class="example">The cat is between the boxes. — Кошка между коробками.</div><div class="example">I sit between Tom and Mary. — Я сижу между Томом и Мэри.</div><div class="example">The shop is between the bank and the cafe. — Магазин между банком и кафе.</div><div class="example">The ball is between the chairs. — Мяч между стульями.</div><div class="example">💡 Совет:</div><div class="example">between = между (двумя или более предметами)</div><div class="example">Примеры:</div><div class="example">The park is between two buildings.</div><div class="example">The pen is between the books.</div><div class="example">She stands between her parents.</div><div class="example">The table is between two chairs.</div><div class="example">Другие важные предлоги</div><div class="example">in front of (перед):</div><div class="example">The car is in front of the house. — Машина перед домом.</div><div class="example">behind (за, позади):</div><div class="example">The cat is behind the door. — Кошка за дверью.</div><div class="example">above (над):</div><div class="example">The lamp is above the table. — Лампа над столом.</div><div class="example">below (под, ниже):</div><div class="example">The temperature is below zero. — Температура ниже нуля.</div><div class="example">Сравнение предлогов</div><div class="example">in vs on:</div><div class="example">in the box (внутри коробки)</div><div class="example">on the box (на коробке, сверху)</div><div class="example">under vs below:</div><div class="example">under the table (прямо под столом)</div><div class="example">below the surface (ниже поверхности)</div><div class="example">next to vs between:</div><div class="example">next to the chair (рядом со стулом)</div><div class="example">between two chairs (между двумя стульями)</div></div>
+        </div>
+        
+
+        <div class="rule-section">
+            <h3 class="rule-title">Типичные ошибки русскоговорящих</h3>
+            <div class="rule-content"></div>
+            <div class="examples"><div class="example">❌ The book is the table. → пропущен предлог</div><div class="example">✔ The book is ON the table.</div><div class="example">❌ In the table → неправильный предлог</div><div class="example">✔ On the table.</div><div class="example">❌ The cat is on the box (когда кошка внутри) → неправильный предлог</div><div class="example">✔ The cat is IN the box.</div><div class="example">❌ Between the chair → нужно два объекта</div><div class="example">✔ Between the chairs / Next to the chair.</div><div class="example">❌ The picture is in the wall → неправильный предлог</div><div class="example">✔ The picture is ON the wall.</div></div>
+        </div>
+        
+
+        <div class="rule-section">
+            <h3 class="rule-title">Главное про предлоги места</h3>
+            <div class="rule-content"></div>
+            <div class="examples"><div class="example">1️⃣ in — внутри</div><div class="example">2️⃣ on — на поверхности</div><div class="example">3️⃣ under — под</div><div class="example">4️⃣ next to — рядом с</div><div class="example">5️⃣ between — между</div><div class="example">6️⃣ Предлог идёт ПЕРЕД существительным</div></div>
+        </div>
+        
+        </div>
+
+        <!-- Results Section (hidden initially) -->
+        <div id="results" class="results hidden">
+            <div class="score" id="score"></div>
+            <div class="results-message" id="results-message"></div>
+            <div>
+                <button class="retry-btn" onclick="retakeQuiz()">Пройти ещё раз</button>
+                <a href="../index.html" class="home-btn">На главную</a>
+            </div>
+        </div>
+
+        <!-- Quiz Section -->
+        <div class="quiz-section" id="quiz-section">
+            <h2 class="section-title">Тест</h2>
+
+            <!-- Quiz Selector (shown if multiple quizzes) -->
+            <div id="quiz-selector" style="margin-bottom: 2rem; display: flex; flex-direction: column; align-items: center; gap: 0.8rem;">
+                <button type="button" class="quiz-selector-btn" data-quiz="1" onclick="loadQuiz(1)">Тест 1</button>
+<button type="button" class="quiz-selector-btn" data-quiz="2" onclick="loadQuiz(2)">Тест 2</button>
+<button type="button" class="quiz-selector-btn" data-quiz="3" onclick="loadQuiz(3)">Тест 3</button>
+<button type="button" class="quiz-selector-btn" data-quiz="4" onclick="loadQuiz(4)">Тест 4</button>
+<button type="button" class="quiz-selector-btn" data-quiz="5" onclick="loadQuiz(5)">Тест 5</button>
+<button type="button" class="quiz-selector-btn" data-quiz="6" onclick="loadQuiz(6)">Тест 6</button>
+<button type="button" class="quiz-selector-btn" data-quiz="7" onclick="loadQuiz(7)">Тест 7</button>
+<button type="button" class="quiz-selector-btn" data-quiz="8" onclick="loadQuiz(8)">Тест 8</button>
+<button type="button" class="quiz-selector-btn" data-quiz="9" onclick="loadQuiz(9)">Тест 9</button>
+<button type="button" class="quiz-selector-btn" data-quiz="10" onclick="loadQuiz(10)">Тест 10</button>
+            </div>
+
+            <div id="quiz-placeholder" style="text-align: center; padding: 3rem; color: var(--color-text-light); display: block;">
+                <p style="font-size: 1.2rem;">Выберите тест, чтобы начать</p>
+            </div>
+
+            <form id="quiz-form" style="display: none;">
+                
+                <button type="submit" class="submit-btn" id="submit-btn">Проверить ответы</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const allQuizData = {"1": [{"id": 5337, "text": "The book is ___ the bag.", "options": ["in", "on", "under", "at"], "correct_index": 0}, {"id": 5338, "text": "The cat is ___ the box.", "options": ["in", "on", "under", "at"], "correct_index": 0}, {"id": 5339, "text": "I live ___ Moscow.", "options": ["in", "on", "under", "at"], "correct_index": 0}, {"id": 5340, "text": "The keys are ___ my pocket.", "options": ["in", "on", "under", "at"], "correct_index": 0}, {"id": 5341, "text": "The milk is ___ the fridge.", "options": ["in", "on", "under", "at"], "correct_index": 0}, {"id": 5342, "text": "She is ___ the room.", "options": ["in", "on", "under", "at"], "correct_index": 0}, {"id": 5343, "text": "The water is ___ the bottle.", "options": ["in", "on", "under", "at"], "correct_index": 0}, {"id": 5344, "text": "The pen is ___ the drawer.", "options": ["in", "on", "under", "at"], "correct_index": 0}, {"id": 5345, "text": "The people are ___ the building.", "options": ["in", "on", "under", "at"], "correct_index": 0}, {"id": 5346, "text": "The dog is ___ the house.", "options": ["in", "on", "under", "at"], "correct_index": 0}, {"id": 5347, "text": "The clothes are ___ the wardrobe.", "options": ["in", "on", "under", "at"], "correct_index": 0}, {"id": 5348, "text": "I am ___ the kitchen.", "options": ["in", "on", "under", "at"], "correct_index": 0}, {"id": 5349, "text": "The fish is ___ the water.", "options": ["in", "on", "under", "at"], "correct_index": 0}, {"id": 5350, "text": "The toys are ___ the box.", "options": ["in", "on", "under", "at"], "correct_index": 0}, {"id": 5351, "text": "She works ___ an office.", "options": ["in", "on", "under", "at"], "correct_index": 0}, {"id": 5352, "text": "The bird is ___ the cage.", "options": ["in", "on", "under", "at"], "correct_index": 0}, {"id": 5353, "text": "The money is ___ the wallet.", "options": ["in", "on", "under", "at"], "correct_index": 0}, {"id": 5354, "text": "The letter is ___ the envelope.", "options": ["in", "on", "under", "at"], "correct_index": 0}, {"id": 5355, "text": "The students are ___ the classroom.", "options": ["in", "on", "under", "at"], "correct_index": 0}, {"id": 5356, "text": "The car is ___ the garage.", "options": ["in", "on", "under", "at"], "correct_index": 0}], "2": [{"id": 5357, "text": "The book is ___ the table.", "options": ["in", "on", "under", "at"], "correct_index": 1}, {"id": 5358, "text": "The picture is ___ the wall.", "options": ["in", "on", "under", "at"], "correct_index": 1}, {"id": 5359, "text": "The cat is ___ the roof.", "options": ["in", "on", "under", "at"], "correct_index": 1}, {"id": 5360, "text": "The cup is ___ the desk.", "options": ["in", "on", "under", "at"], "correct_index": 1}, {"id": 5361, "text": "The plates are ___ the table.", "options": ["in", "on", "under", "at"], "correct_index": 1}, {"id": 5362, "text": "The bag is ___ the chair.", "options": ["in", "on", "under", "at"], "correct_index": 1}, {"id": 5363, "text": "The hat is ___ your head.", "options": ["in", "on", "under", "at"], "correct_index": 1}, {"id": 5364, "text": "The phone is ___ the sofa.", "options": ["in", "on", "under", "at"], "correct_index": 1}, {"id": 5365, "text": "The vase is ___ the shelf.", "options": ["in", "on", "under", "at"], "correct_index": 1}, {"id": 5366, "text": "The lamp is ___ the table.", "options": ["in", "on", "under", "at"], "correct_index": 1}, {"id": 5367, "text": "The clock is ___ the wall.", "options": ["in", "on", "under", "at"], "correct_index": 1}, {"id": 5368, "text": "The notebook is ___ the desk.", "options": ["in", "on", "under", "at"], "correct_index": 1}, {"id": 5369, "text": "The apple is ___ the plate.", "options": ["in", "on", "under", "at"], "correct_index": 1}, {"id": 5370, "text": "The bird is ___ the branch.", "options": ["in", "on", "under", "at"], "correct_index": 1}, {"id": 5371, "text": "The glasses are ___ the table.", "options": ["in", "on", "under", "at"], "correct_index": 1}, {"id": 5372, "text": "The calendar is ___ the wall.", "options": ["in", "on", "under", "at"], "correct_index": 1}, {"id": 5373, "text": "The keys are ___ the counter.", "options": ["in", "on", "under", "at"], "correct_index": 1}, {"id": 5374, "text": "The newspaper is ___ the bench.", "options": ["in", "on", "under", "at"], "correct_index": 1}, {"id": 5375, "text": "The butterfly is ___ the flower.", "options": ["in", "on", "under", "at"], "correct_index": 1}, {"id": 5376, "text": "The coat is ___ the hanger.", "options": ["in", "on", "under", "at"], "correct_index": 1}], "3": [{"id": 5377, "text": "The cat is ___ the table.", "options": ["in", "on", "under", "at"], "correct_index": 2}, {"id": 5378, "text": "The ball is ___ the bed.", "options": ["in", "on", "under", "at"], "correct_index": 2}, {"id": 5379, "text": "The shoes are ___ the chair.", "options": ["in", "on", "under", "at"], "correct_index": 2}, {"id": 5380, "text": "The dog is ___ the tree.", "options": ["in", "on", "under", "at"], "correct_index": 2}, {"id": 5381, "text": "The pen is ___ the book.", "options": ["in", "on", "under", "at"], "correct_index": 2}, {"id": 5382, "text": "The box is ___ the desk.", "options": ["in", "on", "under", "at"], "correct_index": 2}, {"id": 5383, "text": "The keys are ___ the newspaper.", "options": ["in", "on", "under", "at"], "correct_index": 2}, {"id": 5384, "text": "The cat sleeps ___ the blanket.", "options": ["in", "on", "under", "at"], "correct_index": 2}, {"id": 5385, "text": "The toys are ___ the bed.", "options": ["in", "on", "under", "at"], "correct_index": 2}, {"id": 5386, "text": "The mouse is ___ the sofa.", "options": ["in", "on", "under", "at"], "correct_index": 2}, {"id": 5387, "text": "The bag is ___ the table.", "options": ["in", "on", "under", "at"], "correct_index": 2}, {"id": 5388, "text": "The children hide ___ the stairs.", "options": ["in", "on", "under", "at"], "correct_index": 2}, {"id": 5389, "text": "The wallet is ___ the pillow.", "options": ["in", "on", "under", "at"], "correct_index": 2}, {"id": 5390, "text": "The car is ___ the bridge.", "options": ["in", "on", "under", "at"], "correct_index": 2}, {"id": 5391, "text": "The cat is ___ the car.", "options": ["in", "on", "under", "at"], "correct_index": 2}, {"id": 5392, "text": "The letter is ___ the books.", "options": ["in", "on", "under", "at"], "correct_index": 2}, {"id": 5393, "text": "The phone is ___ the cushion.", "options": ["in", "on", "under", "at"], "correct_index": 2}, {"id": 5394, "text": "The dog sits ___ the table.", "options": ["in", "on", "under", "at"], "correct_index": 2}, {"id": 5395, "text": "The glasses are ___ the newspaper.", "options": ["in", "on", "under", "at"], "correct_index": 2}, {"id": 5396, "text": "The socks are ___ the bed.", "options": ["in", "on", "under", "at"], "correct_index": 2}], "4": [{"id": 5397, "text": "The bank is ___ the shop.", "options": ["in", "on", "next to", "between"], "correct_index": 2}, {"id": 5398, "text": "The chair is ___ the table.", "options": ["in", "on", "next to", "between"], "correct_index": 2}, {"id": 5399, "text": "The cafe is ___ my house.", "options": ["in", "on", "next to", "between"], "correct_index": 2}, {"id": 5400, "text": "The lamp is ___ the bed.", "options": ["in", "on", "next to", "between"], "correct_index": 2}, {"id": 5401, "text": "The park is ___ the school.", "options": ["in", "on", "next to", "between"], "correct_index": 2}, {"id": 5402, "text": "She sits ___ me.", "options": ["in", "on", "next to", "between"], "correct_index": 2}, {"id": 5403, "text": "He stands ___ his friend.", "options": ["in", "on", "next to", "between"], "correct_index": 2}, {"id": 5404, "text": "The cat is ___ the dog.", "options": ["in", "on", "next to", "between"], "correct_index": 2}, {"id": 5405, "text": "The sofa is ___ the window.", "options": ["in", "on", "next to", "between"], "correct_index": 2}, {"id": 5406, "text": "The car is ___ the garage.", "options": ["in", "on", "next to", "between"], "correct_index": 2}, {"id": 5407, "text": "The shop is ___ the bank.", "options": ["in", "on", "next to", "between"], "correct_index": 2}, {"id": 5408, "text": "The bed is ___ the wardrobe.", "options": ["in", "on", "next to", "between"], "correct_index": 2}, {"id": 5409, "text": "The tree is ___ the house.", "options": ["in", "on", "next to", "between"], "correct_index": 2}, {"id": 5410, "text": "I live ___ the park.", "options": ["in", "on", "next to", "between"], "correct_index": 2}, {"id": 5411, "text": "The hotel is ___ the restaurant.", "options": ["in", "on", "next to", "between"], "correct_index": 2}, {"id": 5412, "text": "The phone is ___ the laptop.", "options": ["in", "on", "next to", "between"], "correct_index": 2}, {"id": 5413, "text": "The gym is ___ the supermarket.", "options": ["in", "on", "next to", "between"], "correct_index": 2}, {"id": 5414, "text": "The station is ___ the mall.", "options": ["in", "on", "next to", "between"], "correct_index": 2}, {"id": 5415, "text": "The vase is ___ the clock.", "options": ["in", "on", "next to", "between"], "correct_index": 2}, {"id": 5416, "text": "The bookshelf is ___ the desk.", "options": ["in", "on", "next to", "between"], "correct_index": 2}], "5": [{"id": 5417, "text": "The cat is ___ the boxes.", "options": ["in", "on", "next to", "between"], "correct_index": 3}, {"id": 5418, "text": "I sit ___ Tom and Mary.", "options": ["in", "on", "next to", "between"], "correct_index": 3}, {"id": 5419, "text": "The shop is ___ the bank and the cafe.", "options": ["in", "on", "next to", "between"], "correct_index": 3}, {"id": 5420, "text": "The ball is ___ the chairs.", "options": ["in", "on", "next to", "between"], "correct_index": 3}, {"id": 5421, "text": "The park is ___ two buildings.", "options": ["in", "on", "next to", "between"], "correct_index": 3}, {"id": 5422, "text": "The pen is ___ the books.", "options": ["in", "on", "next to", "between"], "correct_index": 3}, {"id": 5423, "text": "She stands ___ her parents.", "options": ["in", "on", "next to", "between"], "correct_index": 3}, {"id": 5424, "text": "The table is ___ two chairs.", "options": ["in", "on", "next to", "between"], "correct_index": 3}, {"id": 5425, "text": "The house is ___ two trees.", "options": ["in", "on", "next to", "between"], "correct_index": 3}, {"id": 5426, "text": "I stand ___ you and him.", "options": ["in", "on", "next to", "between"], "correct_index": 3}, {"id": 5427, "text": "The cafe is ___ the shop and the bank.", "options": ["in", "on", "next to", "between"], "correct_index": 3}, {"id": 5428, "text": "The sofa is ___ two lamps.", "options": ["in", "on", "next to", "between"], "correct_index": 3}, {"id": 5429, "text": "The dog sits ___ two cats.", "options": ["in", "on", "next to", "between"], "correct_index": 3}, {"id": 5430, "text": "The hotel is ___ the restaurant and the gym.", "options": ["in", "on", "next to", "between"], "correct_index": 3}, {"id": 5431, "text": "The bed is ___ two nightstands.", "options": ["in", "on", "next to", "between"], "correct_index": 3}, {"id": 5432, "text": "The car is ___ two trucks.", "options": ["in", "on", "next to", "between"], "correct_index": 3}, {"id": 5433, "text": "The bench is ___ two trees.", "options": ["in", "on", "next to", "between"], "correct_index": 3}, {"id": 5434, "text": "She sits ___ her friends.", "options": ["in", "on", "next to", "between"], "correct_index": 3}, {"id": 5435, "text": "The lamp is ___ the sofa and the chair.", "options": ["in", "on", "next to", "between"], "correct_index": 3}, {"id": 5436, "text": "The phone is ___ the laptop and the book.", "options": ["in", "on", "next to", "between"], "correct_index": 3}], "6": [{"id": 5437, "text": "The book is ___ the bag.", "options": ["in", "on", "under", "at"], "correct_index": 0}, {"id": 5438, "text": "The book is ___ the table.", "options": ["in", "on", "under", "at"], "correct_index": 1}, {"id": 5439, "text": "The cat is ___ the box.", "options": ["in", "on", "under", "at"], "correct_index": 0}, {"id": 5440, "text": "The cat is ___ the roof.", "options": ["in", "on", "under", "at"], "correct_index": 1}, {"id": 5441, "text": "The milk is ___ the fridge.", "options": ["in", "on", "under", "at"], "correct_index": 0}, {"id": 5442, "text": "The cup is ___ the desk.", "options": ["in", "on", "under", "at"], "correct_index": 1}, {"id": 5443, "text": "I live ___ London.", "options": ["in", "on", "under", "at"], "correct_index": 0}, {"id": 5444, "text": "The picture is ___ the wall.", "options": ["in", "on", "under", "at"], "correct_index": 1}, {"id": 5445, "text": "The water is ___ the glass.", "options": ["in", "on", "under", "at"], "correct_index": 0}, {"id": 5446, "text": "The phone is ___ the sofa.", "options": ["in", "on", "under", "at"], "correct_index": 1}, {"id": 5447, "text": "The people are ___ the room.", "options": ["in", "on", "under", "at"], "correct_index": 0}, {"id": 5448, "text": "The plates are ___ the table.", "options": ["in", "on", "under", "at"], "correct_index": 1}, {"id": 5449, "text": "The fish is ___ the water.", "options": ["in", "on", "under", "at"], "correct_index": 0}, {"id": 5450, "text": "The hat is ___ your head.", "options": ["in", "on", "under", "at"], "correct_index": 1}, {"id": 5451, "text": "The keys are ___ my pocket.", "options": ["in", "on", "under", "at"], "correct_index": 0}, {"id": 5452, "text": "The vase is ___ the shelf.", "options": ["in", "on", "under", "at"], "correct_index": 1}, {"id": 5453, "text": "The bird is ___ the cage.", "options": ["in", "on", "under", "at"], "correct_index": 0}, {"id": 5454, "text": "The bird is ___ the branch.", "options": ["in", "on", "under", "at"], "correct_index": 1}, {"id": 5455, "text": "The money is ___ the wallet.", "options": ["in", "on", "under", "at"], "correct_index": 0}, {"id": 5456, "text": "The clock is ___ the wall.", "options": ["in", "on", "under", "at"], "correct_index": 1}], "7": [{"id": 5457, "text": "The book is ___ the table.", "options": ["in", "on", "under", "next to"], "correct_index": 1}, {"id": 5458, "text": "The cat is ___ the box.", "options": ["in", "on", "under", "next to"], "correct_index": 0}, {"id": 5459, "text": "The ball is ___ the bed.", "options": ["in", "on", "under", "next to"], "correct_index": 2}, {"id": 5460, "text": "I live ___ Moscow.", "options": ["in", "on", "under", "next to"], "correct_index": 0}, {"id": 5461, "text": "The picture is ___ the wall.", "options": ["in", "on", "under", "next to"], "correct_index": 1}, {"id": 5462, "text": "The dog is ___ the tree.", "options": ["in", "on", "under", "next to"], "correct_index": 2}, {"id": 5463, "text": "The keys are ___ my pocket.", "options": ["in", "on", "under", "next to"], "correct_index": 0}, {"id": 5464, "text": "The cup is ___ the desk.", "options": ["in", "on", "under", "next to"], "correct_index": 1}, {"id": 5465, "text": "The shoes are ___ the chair.", "options": ["in", "on", "under", "next to"], "correct_index": 2}, {"id": 5466, "text": "The milk is ___ the fridge.", "options": ["in", "on", "under", "next to"], "correct_index": 0}, {"id": 5467, "text": "The phone is ___ the sofa.", "options": ["in", "on", "under", "next to"], "correct_index": 1}, {"id": 5468, "text": "The cat sleeps ___ the blanket.", "options": ["in", "on", "under", "next to"], "correct_index": 2}, {"id": 5469, "text": "The people are ___ the building.", "options": ["in", "on", "under", "next to"], "correct_index": 0}, {"id": 5470, "text": "The plates are ___ the table.", "options": ["in", "on", "under", "next to"], "correct_index": 1}, {"id": 5471, "text": "The toys are ___ the bed.", "options": ["in", "on", "under", "next to"], "correct_index": 2}, {"id": 5472, "text": "The water is ___ the bottle.", "options": ["in", "on", "under", "next to"], "correct_index": 0}, {"id": 5473, "text": "The hat is ___ your head.", "options": ["in", "on", "under", "next to"], "correct_index": 1}, {"id": 5474, "text": "The pen is ___ the book.", "options": ["in", "on", "under", "next to"], "correct_index": 2}, {"id": 5475, "text": "The fish is ___ the water.", "options": ["in", "on", "under", "next to"], "correct_index": 0}, {"id": 5476, "text": "The vase is ___ the shelf.", "options": ["in", "on", "under", "next to"], "correct_index": 1}], "8": [{"id": 5477, "text": "The chair is ___ the table.", "options": ["in", "on", "next to", "between"], "correct_index": 2}, {"id": 5478, "text": "The cat is ___ the boxes.", "options": ["in", "on", "next to", "between"], "correct_index": 3}, {"id": 5479, "text": "The bank is ___ the shop.", "options": ["in", "on", "next to", "between"], "correct_index": 2}, {"id": 5480, "text": "I sit ___ Tom and Mary.", "options": ["in", "on", "next to", "between"], "correct_index": 3}, {"id": 5481, "text": "The cafe is ___ my house.", "options": ["in", "on", "next to", "between"], "correct_index": 2}, {"id": 5482, "text": "The shop is ___ the bank and the cafe.", "options": ["in", "on", "next to", "between"], "correct_index": 3}, {"id": 5483, "text": "The lamp is ___ the bed.", "options": ["in", "on", "next to", "between"], "correct_index": 2}, {"id": 5484, "text": "The ball is ___ the chairs.", "options": ["in", "on", "next to", "between"], "correct_index": 3}, {"id": 5485, "text": "She sits ___ me.", "options": ["in", "on", "next to", "between"], "correct_index": 2}, {"id": 5486, "text": "The park is ___ two buildings.", "options": ["in", "on", "next to", "between"], "correct_index": 3}, {"id": 5487, "text": "The sofa is ___ the window.", "options": ["in", "on", "next to", "between"], "correct_index": 2}, {"id": 5488, "text": "The pen is ___ the books.", "options": ["in", "on", "next to", "between"], "correct_index": 3}, {"id": 5489, "text": "The tree is ___ the house.", "options": ["in", "on", "next to", "between"], "correct_index": 2}, {"id": 5490, "text": "She stands ___ her parents.", "options": ["in", "on", "next to", "between"], "correct_index": 3}, {"id": 5491, "text": "The bed is ___ the wardrobe.", "options": ["in", "on", "next to", "between"], "correct_index": 2}, {"id": 5492, "text": "The table is ___ two chairs.", "options": ["in", "on", "next to", "between"], "correct_index": 3}, {"id": 5493, "text": "I live ___ the park.", "options": ["in", "on", "next to", "between"], "correct_index": 2}, {"id": 5494, "text": "The house is ___ two trees.", "options": ["in", "on", "next to", "between"], "correct_index": 3}, {"id": 5495, "text": "The phone is ___ the laptop.", "options": ["in", "on", "next to", "between"], "correct_index": 2}, {"id": 5496, "text": "I stand ___ you and him.", "options": ["in", "on", "next to", "between"], "correct_index": 3}], "9": [{"id": 5497, "text": "The book is ___ the bag.", "options": ["in", "on", "under", "next to"], "correct_index": 0}, {"id": 5498, "text": "The cup is ___ the desk.", "options": ["in", "on", "under", "next to"], "correct_index": 1}, {"id": 5499, "text": "The cat is ___ the table.", "options": ["in", "on", "under", "next to"], "correct_index": 2}, {"id": 5500, "text": "The chair is ___ the table.", "options": ["in", "on", "under", "between"], "correct_index": 3}, {"id": 5501, "text": "The milk is ___ the fridge.", "options": ["in", "on", "under", "next to"], "correct_index": 0}, {"id": 5502, "text": "The picture is ___ the wall.", "options": ["in", "on", "under", "next to"], "correct_index": 1}, {"id": 5503, "text": "The ball is ___ the bed.", "options": ["in", "on", "under", "next to"], "correct_index": 2}, {"id": 5504, "text": "I sit ___ Tom and Mary.", "options": ["in", "on", "between", "next to"], "correct_index": 2}, {"id": 5505, "text": "I live ___ Moscow.", "options": ["in", "on", "under", "next to"], "correct_index": 0}, {"id": 5506, "text": "The phone is ___ the sofa.", "options": ["in", "on", "under", "next to"], "correct_index": 1}, {"id": 5507, "text": "The dog is ___ the tree.", "options": ["in", "on", "under", "next to"], "correct_index": 2}, {"id": 5508, "text": "The bank is ___ the shop.", "options": ["in", "on", "between", "next to"], "correct_index": 3}, {"id": 5509, "text": "The keys are ___ my pocket.", "options": ["in", "on", "under", "next to"], "correct_index": 0}, {"id": 5510, "text": "The plates are ___ the table.", "options": ["in", "on", "under", "next to"], "correct_index": 1}, {"id": 5511, "text": "The shoes are ___ the chair.", "options": ["in", "on", "under", "next to"], "correct_index": 2}, {"id": 5512, "text": "The shop is ___ the bank and the cafe.", "options": ["in", "on", "between", "next to"], "correct_index": 2}, {"id": 5513, "text": "The water is ___ the bottle.", "options": ["in", "on", "under", "next to"], "correct_index": 0}, {"id": 5514, "text": "The hat is ___ your head.", "options": ["in", "on", "under", "next to"], "correct_index": 1}, {"id": 5515, "text": "The toys are ___ the bed.", "options": ["in", "on", "under", "next to"], "correct_index": 2}, {"id": 5516, "text": "The cafe is ___ my house.", "options": ["in", "on", "between", "next to"], "correct_index": 3}], "10": [{"id": 5517, "text": "Where is the book? — It's ___ the table.", "options": ["in", "on", "under", "at"], "correct_index": 1}, {"id": 5518, "text": "Where is the cat? — It's ___ the box.", "options": ["in", "on", "under", "at"], "correct_index": 0}, {"id": 5519, "text": "Where are the shoes? — They're ___ the chair.", "options": ["in", "on", "under", "at"], "correct_index": 2}, {"id": 5520, "text": "Where is the bank? — It's ___ the shop.", "options": ["in", "on", "next to", "between"], "correct_index": 2}, {"id": 5521, "text": "Where do you live? — I live ___ London.", "options": ["in", "on", "under", "at"], "correct_index": 0}, {"id": 5522, "text": "Where is the picture? — It's ___ the wall.", "options": ["in", "on", "under", "at"], "correct_index": 1}, {"id": 5523, "text": "Where is the dog? — It's ___ the tree.", "options": ["in", "on", "under", "at"], "correct_index": 2}, {"id": 5524, "text": "Where do you sit? — I sit ___ Tom and Mary.", "options": ["in", "on", "between", "next to"], "correct_index": 2}, {"id": 5525, "text": "Where are the keys? — They're ___ my pocket.", "options": ["in", "on", "under", "at"], "correct_index": 0}, {"id": 5526, "text": "Where is the phone? — It's ___ the sofa.", "options": ["in", "on", "under", "at"], "correct_index": 1}, {"id": 5527, "text": "Where is the ball? — It's ___ the bed.", "options": ["in", "on", "under", "at"], "correct_index": 2}, {"id": 5528, "text": "Where is the cafe? — It's ___ my house.", "options": ["in", "on", "between", "next to"], "correct_index": 3}, {"id": 5529, "text": "Where is the milk? — It's ___ the fridge.", "options": ["in", "on", "under", "at"], "correct_index": 0}, {"id": 5530, "text": "Where are the plates? — They're ___ the table.", "options": ["in", "on", "under", "at"], "correct_index": 1}, {"id": 5531, "text": "Where is the cat? — It's ___ the table.", "options": ["in", "on", "under", "at"], "correct_index": 2}, {"id": 5532, "text": "Where is the shop? — It's ___ the bank and the cafe.", "options": ["in", "on", "between", "next to"], "correct_index": 2}, {"id": 5533, "text": "Where is the water? — It's ___ the bottle.", "options": ["in", "on", "under", "at"], "correct_index": 0}, {"id": 5534, "text": "Where is the hat? — It's ___ your head.", "options": ["in", "on", "under", "at"], "correct_index": 1}, {"id": 5535, "text": "Where are the toys? — They're ___ the bed.", "options": ["in", "on", "under", "at"], "correct_index": 2}, {"id": 5536, "text": "Where is the lamp? — It's ___ the bed.", "options": ["in", "on", "between", "next to"], "correct_index": 3}]};
+        let currentQuizSet = 1;
+        const quizData = allQuizData[currentQuizSet] || [];
+
+        function checkAnswers(event) {
+            event.preventDefault();
+
+            const form = document.getElementById('quiz-form');
+            const formData = new FormData(form);
+
+            let correct = 0;
+            let total = quizData.length;
+
+            // Check each question
+            quizData.forEach((question, index) => {
+                const selectedAnswer = parseInt(formData.get(`question-${question.id}`));
+                const options = document.querySelectorAll(`input[name="question-${question.id}"]`);
+
+                options.forEach((option, optIndex) => {
+                    const label = option.closest('.option');
+                    if (optIndex === question.correct_index) {
+                        label.classList.add('correct');
+                    }
+                    if (selectedAnswer === optIndex && selectedAnswer !== question.correct_index) {
+                        label.classList.add('incorrect');
+                    }
+                    option.disabled = true;
+                });
+
+                if (selectedAnswer === question.correct_index) {
+                    correct++;
+                }
+            });
+
+            // Calculate score
+            const percentage = Math.round((correct / total) * 100);
+            const passed = percentage >= 70;
+
+            // Show results
+            const resultsDiv = document.getElementById('results');
+            const scoreDiv = document.getElementById('score');
+            const messageDiv = document.getElementById('results-message');
+
+            scoreDiv.textContent = `${percentage}%`;
+            scoreDiv.className = 'score ' + (passed ? 'pass' : 'fail');
+
+            messageDiv.textContent = `Вы ответили правильно на ${correct} из ${total} вопросов`;
+
+            resultsDiv.classList.remove('hidden');
+
+            // Disable submit button
+            document.getElementById('submit-btn').disabled = true;
+
+            // Scroll to results
+            resultsDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        function retakeQuiz() {
+            loadQuiz(currentQuizSet);
+        }
+
+        function loadQuiz(quizSet) {
+            currentQuizSet = quizSet;
+
+            // Hide placeholder, show form (if they exist)
+            const placeholder = document.getElementById('quiz-placeholder');
+            const form = document.getElementById('quiz-form');
+            if (placeholder) {
+                placeholder.style.display = 'none';
+            }
+            if (form.style.display === 'none') {
+                form.style.display = 'block';
+            }
+
+            // Update button states
+            document.querySelectorAll('.quiz-selector-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (parseInt(btn.dataset.quiz) === quizSet) {
+                    btn.classList.add('active');
+                }
+            });
+
+            // Get questions for this quiz set
+            const questions = allQuizData[quizSet] || [];
+
+            // Clear and rebuild quiz HTML
+            const submitBtn = document.getElementById('submit-btn');
+
+            // Remove all questions
+            const existingQuestions = form.querySelectorAll('.question');
+            existingQuestions.forEach(q => q.remove());
+
+            // Add new questions
+            questions.forEach((question, index) => {
+                const questionDiv = document.createElement('div');
+                questionDiv.className = 'question';
+                questionDiv.dataset.questionId = question.id;
+
+                let optionsHtml = '';
+                question.options.forEach((option, optIndex) => {
+                    optionsHtml += `
+                        <label class="option">
+                            <input type="radio" name="question-${question.id}" value="${optIndex}" required>
+                            <span>${option}</span>
+                        </label>
+                    `;
+                });
+
+                questionDiv.innerHTML = `
+                    <div class="question-text">${index + 1}. ${question.text}</div>
+                    <div class="options">
+                        ${optionsHtml}
+                    </div>
+                `;
+
+                form.insertBefore(questionDiv, submitBtn);
+            });
+
+            // Reset form state
+            form.reset();
+            submitBtn.disabled = false;
+            document.getElementById('results').classList.add('hidden');
+            document.querySelectorAll('.option').forEach(opt => {
+                opt.classList.remove('correct', 'incorrect');
+            });
+
+            // Scroll to quiz
+            form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        // Initialize: if only one quiz set, load it automatically
+        const quizSetCount = Object.keys(allQuizData).length;
+        if (quizSetCount === 1) {
+            // Single quiz - load immediately
+            loadQuiz(1);
+        }
+        // If multiple quiz sets, user must select one (placeholder will show)
+
+        document.getElementById('quiz-form').addEventListener('submit', checkAnswers);
+    </script>
+</body>
+</html>

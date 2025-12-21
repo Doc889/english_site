@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Закладываем фундамент - Английский язык</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary: #7c3aed;
+            --color-primary-dark: #6d28d9;
+            --color-primary-light: #a78bfa;
+            --color-secondary: #c4b5fd;
+            --color-accent: #ddd6fe;
+            --color-bg: #ffffff;
+            --color-bg-alt: #faf5ff;
+            --color-text: #1f2937;
+            --color-text-light: #6b7280;
+            --color-success: #10b981;
+            --color-error: #ef4444;
+            --font-display: 'Playfair Display', serif;
+            --font-body: 'DM Sans', sans-serif;
+            --shadow-sm: 0 2px 8px rgba(124, 58, 237, 0.08);
+            --shadow-md: 0 4px 20px rgba(124, 58, 237, 0.12);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        header {
+            background: var(--color-primary);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: white;
+            text-decoration: none;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            opacity: 0.9;
+            transition: var(--transition);
+        }
+
+        .back-link:hover {
+            opacity: 1;
+            transform: translateX(-3px);
+        }
+
+        header h1 {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+        }
+
+        .content-section {
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            color: var(--color-primary);
+            margin: 3rem 0 2rem;
+            text-align: center;
+        }
+
+        .rule-section {
+            background: var(--color-bg-alt);
+            border-left: 4px solid var(--color-primary);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .rule-title {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            color: var(--color-primary);
+            margin-bottom: 1rem;
+        }
+
+        .rule-content {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            white-space: pre-line;
+        }
+
+        .examples {
+            margin-top: 1.5rem;
+        }
+
+        .example {
+            background: var(--color-bg);
+            padding: 0.8rem 1.2rem;
+            margin-bottom: 0.5rem;
+            border-radius: 8px;
+            border-left: 3px solid var(--color-secondary);
+            font-family: monospace;
+            font-size: 1rem;
+        }
+
+        .quiz-section {
+            background: var(--color-bg-alt);
+            padding: 3rem;
+            border-radius: 16px;
+            margin-top: 3rem;
+        }
+
+        .question {
+            background: var(--color-bg);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
+            border: 2px solid transparent;
+            transition: var(--transition);
+        }
+
+        .question.correct {
+            border-color: var(--color-success);
+            background: #f0fdf4;
+        }
+
+        .question.incorrect {
+            border-color: var(--color-error);
+            background: #fef2f2;
+        }
+
+        .question-text {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            color: var(--color-text);
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .option {
+            display: flex;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            background: var(--color-bg-alt);
+            border: 2px solid var(--color-accent);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .option:hover {
+            border-color: var(--color-primary);
+            background: white;
+        }
+
+        .option input[type="radio"] {
+            margin-right: 1rem;
+            cursor: pointer;
+        }
+
+        .option.correct {
+            background: #dcfce7;
+            border-color: var(--color-success);
+        }
+
+        .option.incorrect {
+            background: #fee2e2;
+            border-color: var(--color-error);
+        }
+
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 1.2rem;
+            background: var(--color-primary);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 2rem;
+            transition: var(--transition);
+        }
+
+        .submit-btn:hover:not(:disabled) {
+            background: var(--color-primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .submit-btn:disabled {
+            background: var(--color-text-light);
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .results {
+            text-align: center;
+            padding: 2rem;
+            background: var(--color-primary);
+            color: white;
+            border-radius: 12px;
+            margin-top: 2rem;
+        }
+
+        .results.hidden {
+            display: none;
+        }
+
+        .score {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .score.pass {
+            color: #dcfce7;
+        }
+
+        .score.fail {
+            color: #fecaca;
+        }
+
+        .results-message {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .retry-btn {
+            padding: 0.8rem 1.5rem;
+            background: var(--color-bg);
+            border: 2px solid white;
+            color: var(--color-primary);
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            margin-right: 1rem;
+        }
+
+        .retry-btn:hover {
+            background: white;
+            transform: translateY(-2px);
+        }
+
+        .home-btn {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+            padding: 0.8rem 1.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: var(--transition);
+        }
+
+        .home-btn:hover {
+            background: white;
+            color: var(--color-primary);
+            transform: translateY(-2px);
+        }
+
+        .quiz-selector-btn {
+            padding: 0.8rem 1.5rem;
+            background: var(--color-bg);
+            border: 2px solid var(--color-primary);
+            color: var(--color-primary);
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            min-width: 200px;
+        }
+
+        .quiz-selector-btn:hover {
+            background: var(--color-primary);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .quiz-selector-btn.active {
+            background: var(--color-primary);
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .container {
+                padding: 2rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="../index.html" class="back-link">← Назад ко всем темам</a>
+            <h1>Закладываем фундамент</h1>
+            <p>Базовые принципы английского языка: структура, глаголы и конструкции</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Theory Section -->
+        <div class="content-section">
+            <h2 class="section-title">Теория</h2>
+            
+        <div class="rule-section">
+            <h3 class="rule-title">Давай сразу договоримся об одной вещи</h3>
+            <div class="rule-content">Английский не сложный. Он просто не русский. И почти все проблемы начинаются ровно в тот момент, когда ты пытаешься обращаться с английским так, как привык с русским: переставлять слова как хочется, додумывать формы, переводить предложение «по смыслу». Английский так не работает. Зато он работает логично. И если ты поймёшь эту логику сейчас — дальше будет реально легко.</div>
+            
+        </div>
+        
+
+        <div class="rule-section">
+            <h3 class="rule-title">Английский — это язык структуры</h3>
+            <div class="rule-content">В русском языке смысл часто живёт в окончаниях. Мы можем менять слова местами, играться формами — и всё равно друг друга понимать. В английском всё держится на другом. Там смысл создаётся порядком слов. Есть чёткий скелет, и если ты его соблюдаешь — предложение работает. Если нет — разваливается, как бы правильно ни были выбраны слова.</div>
+            <div class="examples"><div class="example">кто → что делает → всё остальное</div><div class="example">I work here.</div><div class="example">She likes coffee.</div><div class="example">They live in London.</div></div>
+        </div>
+        
+
+        <div class="rule-section">
+            <h3 class="rule-title">Почему в английском нельзя говорить «как по-русски»</h3>
+            <div class="rule-content">По-русски мы спокойно говорим: «Я студент», «Я дома», «Холодно». В английском такие предложения просто не существуют. Там нельзя оставить фразу без глагола. Никогда. Поэтому появляется то, чего мы не привыкли замечать: глагол to be, который в русском чаще всего «прячется», а в английском — выходит на сцену.</div>
+            <div class="examples"><div class="example">I am a student. (не просто 'student')</div><div class="example">I am at home. (не просто 'at home')</div><div class="example">It is cold. (не просто 'cold')</div></div>
+        </div>
+        
+
+        <div class="rule-section">
+            <h3 class="rule-title">Если коротко: глагол — это всё</h3>
+            <div class="rule-content">Если очень сильно упростить английский язык, получится одна мысль: вся грамматика крутится вокруг глаголов. Времена — это про глаголы. Вопросы — это про глаголы. Отрицания — это тоже глаголы. Даже когда кажется, что «действия нет», глагол всё равно есть. Просто он означает не действие, а состояние.</div>
+            
+        </div>
+        
+
+        <div class="rule-section">
+            <h3 class="rule-title">Минимум, без которого предложение не живёт</h3>
+            <div class="rule-content">Чтобы английское предложение вообще считалось предложением, ему нужны две вещи: Кто-то. И то, что с ним происходит — или кем он является. Всё. Даже это уже полноценные, правильные предложения. Убери одну часть — и фраза перестаёт существовать.</div>
+            <div class="examples"><div class="example">I work.</div><div class="example">She is tired.</div><div class="example">It is cold.</div></div>
+        </div>
+        
+
+        <div class="rule-section">
+            <h3 class="rule-title">Фундамент: глагол to be</h3>
+            <div class="rule-content">Глагол to be — это не просто ещё один глагол. Это фундамент. Он нужен, когда ты: говоришь, кто ты; где ты; в каком ты состоянии; какой ты. И у него есть формы, которые просто надо принять как есть. Без философии. Без «почему так». Просто так устроен язык.</div>
+            <div class="examples"><div class="example">I am</div><div class="example">You are</div><div class="example">He / She / It is</div><div class="example">We / They are</div></div>
+        </div>
+        
+
+        <div class="rule-section">
+            <h3 class="rule-title">Почему нельзя сказать просто «student»</h3>
+            <div class="rule-content">Это один из самых частых ступоров. Почему нельзя сказать просто: student, doctor, work? Потому что английский не любит недосказанность. Ему важно, кто это и что именно происходит. Не потому что «так красивее», а потому что иначе язык не работает.</div>
+            <div class="examples"><div class="example">I am a student. (не просто 'student')</div><div class="example">She is a doctor. (не просто 'doctor')</div><div class="example">I work here. (не просто 'work')</div></div>
+        </div>
+        
+
+        <div class="rule-section">
+            <h3 class="rule-title">Английский — это конструктор, а не угадайка</h3>
+            <div class="rule-content">Хорошая новость: тебе не нужно чувствовать язык интуитивно, чтобы начать говорить правильно. Ты просто собираешь предложение из блоков. Подлежащее. Глагол. Дополнение. Ты не переводишь. Ты не подбираешь «похожее». Ты просто собираешь конструкцию. И это одна из самых сильных сторон английского языка.</div>
+            <div class="examples"><div class="example">I am learning English.</div></div>
+        </div>
+        
+
+        <div class="rule-section">
+            <h3 class="rule-title">Вопросы и отрицания — тоже по схеме</h3>
+            <div class="rule-content">В русском вопрос — это интонация. В английском — это структура. Появляются вспомогательные глаголы, меняется порядок слов — и всё, вопрос готов. То же самое с отрицаниями. Нельзя просто вставить «not» куда хочется. Это не «исключения». Это система. И она повторяется снова и снова.</div>
+            <div class="examples"><div class="example">I do not work.</div><div class="example">She is not ready.</div></div>
+        </div>
+        
+
+        <div class="rule-section">
+            <h3 class="rule-title">Самая важная смена мышления</h3>
+            <div class="rule-content">Пока ты думаешь: «Как это перевести с русского?» — будет тяжело. Как только ты начинаешь думать: «Какую структуру я сейчас использую?» — всё встаёт на места. Английский не переводят. Им оперируют.</div>
+            
+        </div>
+        
+
+        <div class="rule-section">
+            <h3 class="rule-title">Если вынести одну главную мысль</h3>
+            <div class="rule-content">Английский — это не хаос правил. Это система повторяющихся моделей. И ты только что познакомился с самой базовой из них. Дальше будет: проще, логичнее, и, что важно, гораздо интереснее. Потому что фундамент у тебя уже есть.</div>
+            
+        </div>
+        
+        </div>
+
+        <!-- Results Section (hidden initially) -->
+        <div id="results" class="results hidden">
+            <div class="score" id="score"></div>
+            <div class="results-message" id="results-message"></div>
+            <div>
+                <button class="retry-btn" onclick="retakeQuiz()">Пройти ещё раз</button>
+                <a href="../index.html" class="home-btn">На главную</a>
+            </div>
+        </div>
+
+        <!-- Quiz Section -->
+        <div class="quiz-section" id="quiz-section">
+            <h2 class="section-title">Тест</h2>
+
+            <!-- Quiz Selector (shown if multiple quizzes) -->
+            <div id="quiz-selector" style="margin-bottom: 2rem; display: flex; flex-direction: column; align-items: center; gap: 0.8rem;">
+                
+            </div>
+
+            <div id="quiz-placeholder" style="text-align: center; padding: 3rem; color: var(--color-text-light); display: none;">
+                <p style="font-size: 1.2rem;">Выберите тест, чтобы начать</p>
+            </div>
+
+            <form id="quiz-form" style="display: block;">
+                
+                <button type="submit" class="submit-btn" id="submit-btn">Проверить ответы</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const allQuizData = {"1": [{"id": 1, "text": "Что в английском языке чаще всего определяет смысл предложения?", "options": ["Окончания слов", "Интонация", "Порядок слов", "Длина предложения"], "correct_index": 2}, {"id": 2, "text": "Какая базовая структура английского предложения считается правильной?", "options": ["Что делает → кто → остальное", "Кто → что делает → остальное", "Остальное → кто → что делает", "Любой порядок допустим"], "correct_index": 1}, {"id": 3, "text": "Какое минимальное количество обязательных элементов есть в английском предложении?", "options": ["Одно слово", "Подлежащее и глагол", "Подлежащее, глагол и дополнение", "Глагол и прилагательное"], "correct_index": 1}, {"id": 4, "text": "Почему нельзя сказать просто: Student?", "options": ["Потому что нужно добавить артикль", "Потому что слово слишком короткое", "Потому что в предложении нет глагола", "Потому что это разговорная форма"], "correct_index": 2}, {"id": 5, "text": "Как правильно сказать «Я студент»?", "options": ["I student", "I be student", "I am student", "I am a student"], "correct_index": 3}, {"id": 6, "text": "Какой глагол используется, когда нет действия, но есть состояние или описание?", "options": ["To do", "To have", "To be", "To make"], "correct_index": 2}, {"id": 7, "text": "Выбери правильное предложение:", "options": ["She tired", "She is tired", "Is tired she", "She tired is"], "correct_index": 1}, {"id": 8, "text": "Почему в английском нельзя «выкинуть» глагол из предложения?", "options": ["Потому что так красивее", "Потому что это разговорный стиль", "Потому что без глагола предложение не существует", "Потому что так делают только носители"], "correct_index": 2}, {"id": 9, "text": "Как правильно сказать «Холодно»?", "options": ["Cold", "Is cold", "It cold", "It is cold"], "correct_index": 3}, {"id": 10, "text": "Что обязательно должно быть в английском предложении, даже если по-русски этого нет?", "options": ["Артикль", "Предлог", "Глагол", "Наречие"], "correct_index": 2}, {"id": 11, "text": "Как правильно сказать «Я работаю»?", "options": ["I working", "I am work", "I work", "Work I"], "correct_index": 2}, {"id": 12, "text": "Что означает мысль «английский — язык конструктора»?", "options": ["В нём много сложных правил", "Нужно угадывать формы слов", "Предложения собираются из чётких блоков", "Он подходит только для технических тем"], "correct_index": 2}, {"id": 13, "text": "Как правильно задать вопрос «Ты работаешь?»?", "options": ["You work?", "Do you work?", "Work you?", "Are you work?"], "correct_index": 1}, {"id": 14, "text": "Как правильно построить отрицание?", "options": ["I not work", "I no work", "I do not work", "I work not"], "correct_index": 2}]};
+        let currentQuizSet = 1;
+        const quizData = allQuizData[currentQuizSet] || [];
+
+        function checkAnswers(event) {
+            event.preventDefault();
+
+            const form = document.getElementById('quiz-form');
+            const formData = new FormData(form);
+
+            let correct = 0;
+            let total = quizData.length;
+
+            // Check each question
+            quizData.forEach((question, index) => {
+                const selectedAnswer = parseInt(formData.get(`question-${question.id}`));
+                const options = document.querySelectorAll(`input[name="question-${question.id}"]`);
+
+                options.forEach((option, optIndex) => {
+                    const label = option.closest('.option');
+                    if (optIndex === question.correct_index) {
+                        label.classList.add('correct');
+                    }
+                    if (selectedAnswer === optIndex && selectedAnswer !== question.correct_index) {
+                        label.classList.add('incorrect');
+                    }
+                    option.disabled = true;
+                });
+
+                if (selectedAnswer === question.correct_index) {
+                    correct++;
+                }
+            });
+
+            // Calculate score
+            const percentage = Math.round((correct / total) * 100);
+            const passed = percentage >= 70;
+
+            // Show results
+            const resultsDiv = document.getElementById('results');
+            const scoreDiv = document.getElementById('score');
+            const messageDiv = document.getElementById('results-message');
+
+            scoreDiv.textContent = `${percentage}%`;
+            scoreDiv.className = 'score ' + (passed ? 'pass' : 'fail');
+
+            messageDiv.textContent = `Вы ответили правильно на ${correct} из ${total} вопросов`;
+
+            resultsDiv.classList.remove('hidden');
+
+            // Disable submit button
+            document.getElementById('submit-btn').disabled = true;
+
+            // Scroll to results
+            resultsDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        function retakeQuiz() {
+            loadQuiz(currentQuizSet);
+        }
+
+        function loadQuiz(quizSet) {
+            currentQuizSet = quizSet;
+
+            // Hide placeholder, show form (if they exist)
+            const placeholder = document.getElementById('quiz-placeholder');
+            const form = document.getElementById('quiz-form');
+            if (placeholder) {
+                placeholder.style.display = 'none';
+            }
+            if (form.style.display === 'none') {
+                form.style.display = 'block';
+            }
+
+            // Update button states
+            document.querySelectorAll('.quiz-selector-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (parseInt(btn.dataset.quiz) === quizSet) {
+                    btn.classList.add('active');
+                }
+            });
+
+            // Get questions for this quiz set
+            const questions = allQuizData[quizSet] || [];
+
+            // Clear and rebuild quiz HTML
+            const submitBtn = document.getElementById('submit-btn');
+
+            // Remove all questions
+            const existingQuestions = form.querySelectorAll('.question');
+            existingQuestions.forEach(q => q.remove());
+
+            // Add new questions
+            questions.forEach((question, index) => {
+                const questionDiv = document.createElement('div');
+                questionDiv.className = 'question';
+                questionDiv.dataset.questionId = question.id;
+
+                let optionsHtml = '';
+                question.options.forEach((option, optIndex) => {
+                    optionsHtml += `
+                        <label class="option">
+                            <input type="radio" name="question-${question.id}" value="${optIndex}" required>
+                            <span>${option}</span>
+                        </label>
+                    `;
+                });
+
+                questionDiv.innerHTML = `
+                    <div class="question-text">${index + 1}. ${question.text}</div>
+                    <div class="options">
+                        ${optionsHtml}
+                    </div>
+                `;
+
+                form.insertBefore(questionDiv, submitBtn);
+            });
+
+            // Reset form state
+            form.reset();
+            submitBtn.disabled = false;
+            document.getElementById('results').classList.add('hidden');
+            document.querySelectorAll('.option').forEach(opt => {
+                opt.classList.remove('correct', 'incorrect');
+            });
+
+            // Scroll to quiz
+            form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        // Initialize: if only one quiz set, load it automatically
+        const quizSetCount = Object.keys(allQuizData).length;
+        if (quizSetCount === 1) {
+            // Single quiz - load immediately
+            loadQuiz(1);
+        }
+        // If multiple quiz sets, user must select one (placeholder will show)
+
+        document.getElementById('quiz-form').addEventListener('submit', checkAnswers);
+    </script>
+</body>
+</html>

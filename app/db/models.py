@@ -132,6 +132,7 @@ class Question(Base):
     correct_index = Column(Integer, nullable=False)
     explanation = Column(Text, nullable=False)
     display_order = Column(Integer, nullable=False)
+    quiz_set = Column(Integer, nullable=False, default=1)
     created_at = Column(DateTime(timezone=True), server_default=func.now())
 
     # Relationships

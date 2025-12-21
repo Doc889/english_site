@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Прилагательные - Английский язык</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary: #7c3aed;
+            --color-primary-dark: #6d28d9;
+            --color-primary-light: #a78bfa;
+            --color-secondary: #c4b5fd;
+            --color-accent: #ddd6fe;
+            --color-bg: #ffffff;
+            --color-bg-alt: #faf5ff;
+            --color-text: #1f2937;
+            --color-text-light: #6b7280;
+            --color-success: #10b981;
+            --color-error: #ef4444;
+            --font-display: 'Playfair Display', serif;
+            --font-body: 'DM Sans', sans-serif;
+            --shadow-sm: 0 2px 8px rgba(124, 58, 237, 0.08);
+            --shadow-md: 0 4px 20px rgba(124, 58, 237, 0.12);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        header {
+            background: var(--color-primary);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: white;
+            text-decoration: none;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            opacity: 0.9;
+            transition: var(--transition);
+        }
+
+        .back-link:hover {
+            opacity: 1;
+            transform: translateX(-3px);
+        }
+
+        header h1 {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+        }
+
+        .content-section {
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            color: var(--color-primary);
+            margin: 3rem 0 2rem;
+            text-align: center;
+        }
+
+        .rule-section {
+            background: var(--color-bg-alt);
+            border-left: 4px solid var(--color-primary);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .rule-title {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            color: var(--color-primary);
+            margin-bottom: 1rem;
+        }
+
+        .rule-content {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            white-space: pre-line;
+        }
+
+        .examples {
+            margin-top: 1.5rem;
+        }
+
+        .example {
+            background: var(--color-bg);
+            padding: 0.8rem 1.2rem;
+            margin-bottom: 0.5rem;
+            border-radius: 8px;
+            border-left: 3px solid var(--color-secondary);
+            font-family: monospace;
+            font-size: 1rem;
+        }
+
+        .quiz-section {
+            background: var(--color-bg-alt);
+            padding: 3rem;
+            border-radius: 16px;
+            margin-top: 3rem;
+        }
+
+        .question {
+            background: var(--color-bg);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
+            border: 2px solid transparent;
+            transition: var(--transition);
+        }
+
+        .question.correct {
+            border-color: var(--color-success);
+            background: #f0fdf4;
+        }
+
+        .question.incorrect {
+            border-color: var(--color-error);
+            background: #fef2f2;
+        }
+
+        .question-text {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            color: var(--color-text);
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .option {
+            display: flex;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            background: var(--color-bg-alt);
+            border: 2px solid var(--color-accent);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .option:hover {
+            border-color: var(--color-primary);
+            background: white;
+        }
+
+        .option input[type="radio"] {
+            margin-right: 1rem;
+            cursor: pointer;
+        }
+
+        .option.correct {
+            background: #dcfce7;
+            border-color: var(--color-success);
+        }
+
+        .option.incorrect {
+            background: #fee2e2;
+            border-color: var(--color-error);
+        }
+
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 1.2rem;
+            background: var(--color-primary);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 2rem;
+            transition: var(--transition);
+        }
+
+        .submit-btn:hover:not(:disabled) {
+            background: var(--color-primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .submit-btn:disabled {
+            background: var(--color-text-light);
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .results {
+            text-align: center;
+            padding: 2rem;
+            background: var(--color-primary);
+            color: white;
+            border-radius: 12px;
+            margin-top: 2rem;
+        }
+
+        .results.hidden {
+            display: none;
+        }
+
+        .score {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .score.pass {
+            color: #dcfce7;
+        }
+
+        .score.fail {
+            color: #fecaca;
+        }
+
+        .results-message {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .retry-btn {
+            padding: 0.8rem 1.5rem;
+            background: var(--color-bg);
+            border: 2px solid white;
+            color: var(--color-primary);
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            margin-right: 1rem;
+        }
+
+        .retry-btn:hover {
+            background: white;
+            transform: translateY(-2px);
+        }
+
+        .home-btn {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+            padding: 0.8rem 1.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: var(--transition);
+        }
+
+        .home-btn:hover {
+            background: white;
+            color: var(--color-primary);
+            transform: translateY(-2px);
+        }
+
+        .quiz-selector-btn {
+            padding: 0.8rem 1.5rem;
+            background: var(--color-bg);
+            border: 2px solid var(--color-primary);
+            color: var(--color-primary);
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            min-width: 200px;
+        }
+
+        .quiz-selector-btn:hover {
+            background: var(--color-primary);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .quiz-selector-btn.active {
+            background: var(--color-primary);
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .container {
+                padding: 2rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="../index.html" class="back-link">← Назад ко всем темам</a>
+            <h1>Прилагательные</h1>
+            <p>Позиция прилагательных, степени сравнения и формы</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Theory Section -->
+        <div class="content-section">
+            <h2 class="section-title">Теория</h2>
+            
+        <div class="rule-section">
+            <h3 class="rule-title">Прилагательные в английском — неизменяемые стикеры</h3>
+            <div class="rule-content">Прилагательное — это стикер, который ты просто прилепляешь к предмету. И всё. Оно никогда не меняется. Ни при каких обстоятельствах.
+
+В английском прилагательное:
+— не меняется по роду
+— не меняется по числу
+— не меняется по падежам
+
+Вообще. Никогда. Совсем.
+
+Русский мозг такой: «красивая девушка / красивый дом / красивые дома»
+
+А английский отвечает:
+beautiful girl
+beautiful house
+beautiful houses
+
+Одно слово. Всегда.</div>
+            
+        </div>
+        
+
+        <div class="rule-section">
+            <h3 class="rule-title">Позиция прилагательного в предложении</h3>
+            <div class="rule-content">В 90% случаев прилагательное СТОИТ ПЕРЕД существительным.
+
+Не после. Не «дом красивый». А «красивый дом».
+
+Это железное правило. Если ты ставишь прилагательное после существительного — ты почти всегда ошибаешься.
+
+Но есть второй вариант: прилагательное может стоять ПОСЛЕ глагола to be.
+
+Формула простая: subject + to be + adjective
+
+И вот тут важный момент: после to be НЕТ существительного, только прилагательное.</div>
+            <div class="examples"><div class="example">✅ a big house</div><div class="example">✅ an interesting idea</div><div class="example">✅ my old friend</div><div class="example">✅ The house is big</div><div class="example">✅ She is smart</div><div class="example">❌ She is a beautiful — ошибка</div><div class="example">✅ She is beautiful — правильно</div></div>
+        </div>
+        
+
+        <div class="rule-section">
+            <h3 class="rule-title">Степени сравнения прилагательных</h3>
+            <div class="rule-content">Если прилагательное короткое (1 слог): добавляем -er/-est
+
+Если длинное (2+ слога): используем more/most
+
+Логика простая:
+— короткие → меняются
+— длинные → через more / most
+
+И да, the в превосходной степени — почти всегда обязателен.
+
+Есть неправильные формы. Их мало, но они суперчастые. Их не надо понимать. Их надо принять, как факт жизни.</div>
+            <div class="examples"><div class="example">big → bigger → the biggest</div><div class="example">fast → faster → the fastest</div><div class="example">interesting → more interesting → the most interesting</div><div class="example">good → better → the best</div><div class="example">bad → worse → the worst</div><div class="example">the best day</div><div class="example">the worst idea</div></div>
+        </div>
+        
+
+        <div class="rule-section">
+            <h3 class="rule-title">Усиление прилагательных наречиями</h3>
+            <div class="rule-content">В английском нельзя сказать "очень красиво" через окончание. Нет «красивее» через форму слова, если это не сравнение.
+
+Чтобы усилить прилагательное, ты используешь наречия: very, really, quite
+
+Прилагательное само по себе — нейтральное, эмоции добавляются отдельными словами.</div>
+            <div class="examples"><div class="example">very interesting</div><div class="example">really boring</div><div class="example">quite nice</div></div>
+        </div>
+        
+
+        <div class="rule-section">
+            <h3 class="rule-title">Типичные ошибки русскоговорящих</h3>
+            <div class="rule-content">Вот самые частые ошибки, которые делают русскоговорящие студенты при изучении прилагательных.</div>
+            <div class="examples"><div class="example">❌ a house big</div><div class="example">✅ a big house</div><div class="example">❌ beautifuls houses</div><div class="example">✅ beautiful houses</div><div class="example">❌ she is a beautiful</div><div class="example">✅ she is beautiful</div><div class="example">❌ more better</div><div class="example">✅ better</div></div>
+        </div>
+        
+        </div>
+
+        <!-- Results Section (hidden initially) -->
+        <div id="results" class="results hidden">
+            <div class="score" id="score"></div>
+            <div class="results-message" id="results-message"></div>
+            <div>
+                <button class="retry-btn" onclick="retakeQuiz()">Пройти ещё раз</button>
+                <a href="../index.html" class="home-btn">На главную</a>
+            </div>
+        </div>
+
+        <!-- Quiz Section -->
+        <div class="quiz-section" id="quiz-section">
+            <h2 class="section-title">Тест</h2>
+
+            <!-- Quiz Selector (shown if multiple quizzes) -->
+            <div id="quiz-selector" style="margin-bottom: 2rem; display: flex; flex-direction: column; align-items: center; gap: 0.8rem;">
+                <button type="button" class="quiz-selector-btn" data-quiz="1" onclick="loadQuiz(1)">Тест 1</button>
+<button type="button" class="quiz-selector-btn" data-quiz="2" onclick="loadQuiz(2)">Тест 2</button>
+<button type="button" class="quiz-selector-btn" data-quiz="3" onclick="loadQuiz(3)">Тест 3</button>
+<button type="button" class="quiz-selector-btn" data-quiz="4" onclick="loadQuiz(4)">Тест 4</button>
+<button type="button" class="quiz-selector-btn" data-quiz="5" onclick="loadQuiz(5)">Тест 5</button>
+<button type="button" class="quiz-selector-btn" data-quiz="6" onclick="loadQuiz(6)">Тест 6</button>
+<button type="button" class="quiz-selector-btn" data-quiz="7" onclick="loadQuiz(7)">Тест 7</button>
+<button type="button" class="quiz-selector-btn" data-quiz="8" onclick="loadQuiz(8)">Тест 8</button>
+<button type="button" class="quiz-selector-btn" data-quiz="9" onclick="loadQuiz(9)">Тест 9</button>
+<button type="button" class="quiz-selector-btn" data-quiz="10" onclick="loadQuiz(10)">Тест 10</button>
+            </div>
+
+            <div id="quiz-placeholder" style="text-align: center; padding: 3rem; color: var(--color-text-light); display: block;">
+                <p style="font-size: 1.2rem;">Выберите тест, чтобы начать</p>
+            </div>
+
+            <form id="quiz-form" style="display: none;">
+                
+                <button type="submit" class="submit-btn" id="submit-btn">Проверить ответы</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const allQuizData = {"1": [{"id": 4544, "text": "She has ___ eyes.", "options": ["beautiful", "beautifuls", "a beautiful", "beautifully"], "correct_index": 0}, {"id": 4424, "text": "___ girls (красивые девушки)", "options": ["beautifuls", "beauties", "beautiful", "beautifuler"], "correct_index": 2}, {"id": 4444, "text": "She has a ___ car.", "options": ["beautiful red", "red beautiful", "beautifuls red", "reds beautiful"], "correct_index": 0}, {"id": 4384, "text": "This book is ___ than that one.", "options": ["big", "bigger", "biggest", "more big"], "correct_index": 1}, {"id": 4484, "text": "This is ___ biggest house in town.", "options": ["the", "a", "an", "–"], "correct_index": 0}, {"id": 4524, "text": "Правильная форма: красивые дома", "options": ["houses beautiful", "beautifuls houses", "houses beautifuls", "beautiful houses"], "correct_index": 3}, {"id": 4464, "text": "My car is faster ___ yours.", "options": ["than", "then", "that", "the"], "correct_index": 0}, {"id": 4504, "text": "The soup tastes ___.", "options": ["delicious", "a delicious", "deliciously", "deliciouses"], "correct_index": 0}, {"id": 4364, "text": "She has a ___ car.", "options": ["beautiful red", "red beautiful", "beautifuls red", "reds beautiful"], "correct_index": 0}, {"id": 4404, "text": "This pizza is ___ than that one.", "options": ["good", "better", "best", "more good"], "correct_index": 1}, {"id": 4485, "text": "He is ___ smartest student.", "options": ["a", "the", "an", "–"], "correct_index": 1}, {"id": 4465, "text": "She is taller ___ her sister.", "options": ["then", "than", "that", "the"], "correct_index": 1}, {"id": 4545, "text": "This pizza is ___ than that one.", "options": ["more good", "better", "gooder", "best"], "correct_index": 1}, {"id": 4445, "text": "The house ___ big.", "options": ["are", "is", "am", "be"], "correct_index": 1}, {"id": 4425, "text": "___ houses (большие дома)", "options": ["bigs", "biggs", "bigger", "big"], "correct_index": 3}, {"id": 4525, "text": "Правильная форма: она красивая", "options": ["she is a beautiful", "she beautiful", "she are beautiful", "she is beautiful"], "correct_index": 3}, {"id": 4505, "text": "She looks ___.", "options": ["a tired", "tired", "tiredly", "tireds"], "correct_index": 1}, {"id": 4385, "text": "She is ___ girl in school.", "options": ["youngest", "younger", "more young", "the youngest"], "correct_index": 3}, {"id": 4365, "text": "The house is ___.", "options": ["a big", "big", "bigs", "the bigs"], "correct_index": 1}, {"id": 4405, "text": "This is ___ pizza in town.", "options": ["better", "good", "the best", "more good"], "correct_index": 2}], "2": [{"id": 4526, "text": "Правильная форма: большой дом", "options": ["a house big", "big a house", "a bigs house", "a big house"], "correct_index": 3}, {"id": 4486, "text": "She is ___ most beautiful girl.", "options": ["an", "–", "the", "a"], "correct_index": 2}, {"id": 4386, "text": "My room is ___ than yours.", "options": ["cleaner", "more clean", "cleanest", "clean"], "correct_index": 0}, {"id": 4466, "text": "This book is more interesting ___ that one.", "options": ["the", "that", "than", "then"], "correct_index": 2}, {"id": 4406, "text": "The weather is ___ today than yesterday.", "options": ["badder", "bad", "worst", "worse"], "correct_index": 3}, {"id": 4546, "text": "He is ___ person I know.", "options": ["nicest", "nicer", "the nicest", "more nice"], "correct_index": 2}, {"id": 4366, "text": "This is ___ than that book.", "options": ["interesting", "interestinger", "more interesting", "most interesting"], "correct_index": 2}, {"id": 4426, "text": "I saw a ___ cat.", "options": ["black", "blacks", "cat black", "a black"], "correct_index": 0}, {"id": 4506, "text": "The flowers smell ___.", "options": ["nices", "nicely", "nice", "a nice"], "correct_index": 2}, {"id": 4446, "text": "I saw a ___ dog.", "options": ["black big", "bigs black", "big black", "blacks big"], "correct_index": 2}, {"id": 4427, "text": "She has ___ hair.", "options": ["longs", "long", "hair long", "a long"], "correct_index": 1}, {"id": 4367, "text": "He is ___ student in the class.", "options": ["best", "better", "more best", "the best"], "correct_index": 3}, {"id": 4547, "text": "I bought a ___ phone.", "options": ["news", "a new", "the new", "new"], "correct_index": 3}, {"id": 4527, "text": "Правильная форма: лучше", "options": ["more better", "more good", "gooder", "better"], "correct_index": 3}, {"id": 4507, "text": "He seems ___.", "options": ["happily", "a happy", "happys", "happy"], "correct_index": 3}, {"id": 4387, "text": "This is ___ day of the year.", "options": ["hotest", "the hottest", "hotter", "more hot"], "correct_index": 1}, {"id": 4487, "text": "This is ___ oldest building.", "options": ["–", "a", "an", "the"], "correct_index": 3}, {"id": 4467, "text": "He is older ___ me.", "options": ["that", "then", "the", "than"], "correct_index": 3}, {"id": 4447, "text": "She ___ smart.", "options": ["are", "am", "be", "is"], "correct_index": 3}, {"id": 4407, "text": "This is ___ day of the week.", "options": ["the worst", "worse", "bad", "more bad"], "correct_index": 0}], "3": [{"id": 4468, "text": "This house is bigger ___ mine.", "options": ["than", "then", "that", "the"], "correct_index": 0}, {"id": 4488, "text": "He is ___ fastest runner.", "options": ["the", "a", "an", "–"], "correct_index": 0}, {"id": 4388, "text": "He is ___ than his brother.", "options": ["carefuler", "more careful", "most careful", "carefullest"], "correct_index": 1}, {"id": 4368, "text": "I need a ___ car.", "options": ["fast", "faster", "fastest", "fasts"], "correct_index": 0}, {"id": 4408, "text": "The movie was ___ interesting.", "options": ["much", "very", "many", "more"], "correct_index": 1}, {"id": 4508, "text": "The music sounds ___.", "options": ["beautiful", "a beautiful", "beautifully", "beautifuls"], "correct_index": 0}, {"id": 4528, "text": "Правильная форма: самый интересный", "options": ["the interestingest", "most interesting", "more interesting", "the most interesting"], "correct_index": 3}, {"id": 4548, "text": "The movie was ___ boring.", "options": ["very", "much", "more", "the most"], "correct_index": 0}, {"id": 4428, "text": "___ cars (быстрые машины)", "options": ["fasts", "faster", "fast", "fastest"], "correct_index": 2}, {"id": 4448, "text": "He bought a ___ house.", "options": ["nice old", "old nice", "nices old", "olds nice"], "correct_index": 0}, {"id": 4389, "text": "This is ___ problem we have.", "options": ["difficulter", "more difficult", "most difficult", "the most difficult"], "correct_index": 3}, {"id": 4369, "text": "She is ___ beautiful.", "options": ["much", "very", "more", "the most"], "correct_index": 1}, {"id": 4409, "text": "She is ___ beautiful.", "options": ["much", "more", "very", "many"], "correct_index": 2}, {"id": 4429, "text": "He drives a ___ car.", "options": ["reds", "car red", "a red", "red"], "correct_index": 3}, {"id": 4449, "text": "The weather ___ cold.", "options": ["are", "is", "am", "be"], "correct_index": 1}, {"id": 4469, "text": "She is smarter ___ him.", "options": ["then", "than", "that", "the"], "correct_index": 1}, {"id": 4489, "text": "This is ___ best pizza.", "options": ["a", "the", "an", "–"], "correct_index": 1}, {"id": 4509, "text": "She feels ___.", "options": ["sickly", "sick", "sicks", "a sick"], "correct_index": 1}, {"id": 4529, "text": "Правильная форма: очень умный", "options": ["much smart", "many smart", "very smart", "more smart"], "correct_index": 2}, {"id": 4549, "text": "She is ___ her sister.", "options": ["taller then", "taller than", "more tall than", "tallest than"], "correct_index": 1}], "4": [{"id": 4410, "text": "The test was ___ difficult.", "options": ["more", "much", "many", "really"], "correct_index": 3}, {"id": 4470, "text": "Today is colder ___ yesterday.", "options": ["the", "that", "than", "then"], "correct_index": 2}, {"id": 4490, "text": "She is ___ youngest child.", "options": ["an", "–", "the", "a"], "correct_index": 2}, {"id": 4370, "text": "They live in ___ house.", "options": ["olds", "house old", "an old", "an house old"], "correct_index": 2}, {"id": 4530, "text": "Правильная форма: быстрые машины", "options": ["fasts cars", "fast cars", "cars fast", "faster cars"], "correct_index": 1}, {"id": 4510, "text": "The cake tastes ___.", "options": ["a sweet", "sweetly", "sweet", "sweets"], "correct_index": 2}, {"id": 4430, "text": "___ ideas (интересные идеи)", "options": ["interesting", "interestings", "interested", "interests"], "correct_index": 0}, {"id": 4450, "text": "She wore a ___ dress.", "options": ["blue long", "longs blue", "long blue", "blues long"], "correct_index": 2}, {"id": 4550, "text": "This is ___ expensive restaurant in town.", "options": ["most", "more", "the most", "much"], "correct_index": 2}, {"id": 4390, "text": "The red bag is ___ than the blue one.", "options": ["cheap", "more cheap", "cheaper", "cheapest"], "correct_index": 2}, {"id": 4511, "text": "He appears ___.", "options": ["confidently", "confidents", "a confident", "confident"], "correct_index": 3}, {"id": 4371, "text": "The movie ___ boring.", "options": ["am", "are", "be", "is"], "correct_index": 3}, {"id": 4431, "text": "They live in a ___ apartment.", "options": ["moderns", "modern", "apartment modern", "a modern"], "correct_index": 1}, {"id": 4491, "text": "This is ___ most expensive car.", "options": ["–", "a", "an", "the"], "correct_index": 3}, {"id": 4391, "text": "She is ___ singer in the competition.", "options": ["the amazingest", "most amazing", "more amazing", "the most amazing"], "correct_index": 3}, {"id": 4531, "text": "Правильная форма: старая книга", "options": ["an old book", "old an book", "a book old", "an olds book"], "correct_index": 0}, {"id": 4411, "text": "My result is ___ than yours.", "options": ["good", "better", "best", "more good"], "correct_index": 1}, {"id": 4551, "text": "He looks ___.", "options": ["a happy", "happily", "happys", "happy"], "correct_index": 3}, {"id": 4451, "text": "They ___ happy.", "options": ["is", "am", "be", "are"], "correct_index": 3}, {"id": 4471, "text": "This test is easier ___ the last one.", "options": ["that", "then", "the", "than"], "correct_index": 3}], "5": [{"id": 4372, "text": "___ girls are here.", "options": ["beautiful", "beautifuls", "beauties", "beautifuler"], "correct_index": 0}, {"id": 4492, "text": "He is ___ tallest player.", "options": ["the", "a", "an", "–"], "correct_index": 0}, {"id": 4552, "text": "This house is ___ than mine.", "options": ["bigger", "more big", "biger", "biggest"], "correct_index": 0}, {"id": 4452, "text": "They have a ___ table.", "options": ["small round", "round small", "smalls round", "rounds small"], "correct_index": 0}, {"id": 4432, "text": "___ books (старые книги)", "options": ["olds", "older", "old", "oldest"], "correct_index": 2}, {"id": 4392, "text": "Today is ___ than yesterday.", "options": ["colder", "cold", "coldest", "more cold"], "correct_index": 0}, {"id": 4472, "text": "My room is cleaner ___ yours.", "options": ["than", "then", "that", "the"], "correct_index": 0}, {"id": 4532, "text": "Правильная форма: хуже", "options": ["more bad", "worse", "badder", "more worse"], "correct_index": 1}, {"id": 4412, "text": "This is ___ important.", "options": ["many", "quite", "much", "more"], "correct_index": 1}, {"id": 4512, "text": "The weather seems ___.", "options": ["cold", "coldly", "colds", "a cold"], "correct_index": 0}, {"id": 4493, "text": "This is ___ worst day.", "options": ["a", "the", "an", "–"], "correct_index": 1}, {"id": 4513, "text": "She looks ___.", "options": ["a beautiful", "beautiful", "beautifully", "beautifuls"], "correct_index": 1}, {"id": 4433, "text": "I bought ___ shoes.", "options": ["news", "shoes new", "a new", "new"], "correct_index": 3}, {"id": 4553, "text": "She is ___ beautiful.", "options": ["much", "really", "more", "the most"], "correct_index": 1}, {"id": 4453, "text": "I ___ tired.", "options": ["is", "are", "be", "am"], "correct_index": 3}, {"id": 4373, "text": "He is ___ than me.", "options": ["tall", "taller", "more tall", "tallest"], "correct_index": 1}, {"id": 4413, "text": "Your English is ___ than mine.", "options": ["more good", "good", "better", "best"], "correct_index": 2}, {"id": 4473, "text": "She is more beautiful ___ before.", "options": ["then", "than", "that", "the"], "correct_index": 1}, {"id": 4533, "text": "Правильная форма: маленький ребенок", "options": ["small a child", "a child small", "a small child", "a smalls child"], "correct_index": 2}, {"id": 4393, "text": "This is ___ car in the parking lot.", "options": ["cheaper", "cheapest", "the cheapest", "most cheap"], "correct_index": 2}], "6": [{"id": 4474, "text": "He runs faster ___ everyone.", "options": ["the", "that", "than", "then"], "correct_index": 2}, {"id": 4514, "text": "The coffee smells ___.", "options": ["deliciously", "a delicious", "delicious", "deliciouses"], "correct_index": 2}, {"id": 4534, "text": "Правильная форма: они счастливы", "options": ["they is happy", "they are happy", "they happy", "they are a happy"], "correct_index": 1}, {"id": 4554, "text": "This car is ___ (быстрее).", "options": ["more fast", "fastest", "faster", "the fastest"], "correct_index": 2}, {"id": 4434, "text": "___ students (умные студенты)", "options": ["smart", "smarts", "smarter", "smartest"], "correct_index": 0}, {"id": 4374, "text": "This is ___ book in the library.", "options": ["older", "the oldest", "oldest", "more old"], "correct_index": 1}, {"id": 4494, "text": "She is ___ kindest person.", "options": ["an", "–", "the", "a"], "correct_index": 2}, {"id": 4454, "text": "I need a ___ bag.", "options": ["blacks large", "large black", "larges black", "black large"], "correct_index": 1}, {"id": 4414, "text": "This is ___ idea ever.", "options": ["worse", "bad", "more bad", "the worst"], "correct_index": 3}, {"id": 4394, "text": "He is ___ runner on the team.", "options": ["faster", "fastest", "more fast", "the fastest"], "correct_index": 3}, {"id": 4395, "text": "This movie is ___ than the first one.", "options": ["interestinger", "more interesting", "most interesting", "interesting"], "correct_index": 1}, {"id": 4535, "text": "Правильная форма: новый телефон", "options": ["phone new", "a news phone", "new a phone", "a new phone"], "correct_index": 3}, {"id": 4455, "text": "The movie ___ boring.", "options": ["are", "am", "is", "be"], "correct_index": 2}, {"id": 4475, "text": "This car is cheaper ___ that one.", "options": ["that", "then", "the", "than"], "correct_index": 3}, {"id": 4555, "text": "The weather ___ nice today.", "options": ["are", "am", "be", "is"], "correct_index": 3}, {"id": 4515, "text": "He feels ___.", "options": ["happily", "a happy", "happys", "happy"], "correct_index": 3}, {"id": 4415, "text": "She is ___ tired.", "options": ["really", "many", "much", "more"], "correct_index": 0}, {"id": 4375, "text": "My car is ___ than yours.", "options": ["fastest", "fast", "faster", "more fast"], "correct_index": 2}, {"id": 4435, "text": "She wore a ___ dress.", "options": ["blues", "blue", "dress blue", "a blue"], "correct_index": 1}, {"id": 4495, "text": "This is ___ longest road.", "options": ["–", "a", "an", "the"], "correct_index": 3}], "7": [{"id": 4456, "text": "She found a ___ book.", "options": ["old thin", "thin old", "thins old", "olds thin"], "correct_index": 1}, {"id": 4536, "text": "Правильная форма: самый лучший", "options": ["the best", "best", "better", "more best"], "correct_index": 0}, {"id": 4496, "text": "He is ___ strongest boy.", "options": ["the", "a", "an", "–"], "correct_index": 0}, {"id": 4436, "text": "___ flowers (красивые цветы)", "options": ["beautifuls", "beauties", "beautiful", "beautifuler"], "correct_index": 2}, {"id": 4376, "text": "She bought a ___ dress.", "options": ["news beautiful", "beautiful new", "new beautiful", "beautifuls new"], "correct_index": 1}, {"id": 4476, "text": "She is more confident ___ yesterday.", "options": ["than", "then", "that", "the"], "correct_index": 0}, {"id": 4516, "text": "The food tastes ___.", "options": ["wonderful", "wonderfully", "wonders", "a wonderful"], "correct_index": 0}, {"id": 4396, "text": "She is ___ person I know.", "options": ["the kindest", "more kind", "kinder", "kindest"], "correct_index": 0}, {"id": 4556, "text": "I need ___ coffee.", "options": ["hot", "a hot", "hots", "the hot"], "correct_index": 0}, {"id": 4416, "text": "His score is ___ than hers.", "options": ["good", "better", "best", "more good"], "correct_index": 1}, {"id": 4417, "text": "The book is ___ boring.", "options": ["much", "many", "very", "more"], "correct_index": 2}, {"id": 4517, "text": "She seems ___.", "options": ["nervously", "nervous", "a nervous", "nervouses"], "correct_index": 1}, {"id": 4457, "text": "We ___ ready.", "options": ["is", "am", "be", "are"], "correct_index": 3}, {"id": 4437, "text": "He has a ___ phone.", "options": ["news", "phone new", "new", "a new"], "correct_index": 2}, {"id": 4397, "text": "This test is ___ than the last one.", "options": ["hardest", "harder", "more hard", "hard"], "correct_index": 1}, {"id": 4377, "text": "The weather ___ cold.", "options": ["are", "am", "is", "be"], "correct_index": 2}, {"id": 4497, "text": "This is ___ hottest day.", "options": ["a", "the", "an", "–"], "correct_index": 1}, {"id": 4477, "text": "My phone is newer ___ yours.", "options": ["then", "than", "that", "the"], "correct_index": 1}, {"id": 4557, "text": "This is ___ (самый важный).", "options": ["more important", "the most important", "importanter", "most important"], "correct_index": 1}, {"id": 4537, "text": "Правильная форма: более дорогой", "options": ["expensiver", "more expensive", "most expensive", "the most expensive"], "correct_index": 1}], "8": [{"id": 4458, "text": "He drives a ___ car.", "options": ["fast red", "red fast", "fasts red", "reds fast"], "correct_index": 0}, {"id": 4438, "text": "___ dogs (маленькие собаки)", "options": ["smalls", "smaller", "smallest", "small"], "correct_index": 3}, {"id": 4558, "text": "___ books are on the table.", "options": ["olds", "older", "old", "oldest"], "correct_index": 2}, {"id": 4398, "text": "He is ___ teacher in school.", "options": ["popularst", "more popular", "the most popular", "most popular"], "correct_index": 2}, {"id": 4478, "text": "This problem is harder ___ I thought.", "options": ["the", "that", "than", "then"], "correct_index": 2}, {"id": 4498, "text": "She is ___ most talented singer.", "options": ["an", "–", "the", "a"], "correct_index": 2}, {"id": 4518, "text": "The room looks ___.", "options": ["cleanly", "cleans", "clean", "a clean"], "correct_index": 2}, {"id": 4378, "text": "I saw a ___ dog.", "options": ["bigs", "bigger", "biggest", "big"], "correct_index": 3}, {"id": 4538, "text": "Правильная форма: холодная вода", "options": ["water cold", "a colds water", "cold water", "cold a water"], "correct_index": 2}, {"id": 4418, "text": "That was ___ decision I made.", "options": ["worse", "the worst", "bad", "more bad"], "correct_index": 1}, {"id": 4379, "text": "This is ___ movie I've seen.", "options": ["the most interesting", "interestinger", "most interesting", "the interestingest"], "correct_index": 0}, {"id": 4479, "text": "He is stronger ___ his brother.", "options": ["that", "then", "the", "than"], "correct_index": 3}, {"id": 4499, "text": "This is ___ cheapest option.", "options": ["–", "a", "an", "the"], "correct_index": 3}, {"id": 4459, "text": "The books ___ expensive.", "options": ["is", "are", "am", "be"], "correct_index": 1}, {"id": 4419, "text": "He was ___ angry.", "options": ["much", "many", "really", "more"], "correct_index": 2}, {"id": 4519, "text": "He appears ___.", "options": ["angrily", "angries", "a angry", "angry"], "correct_index": 3}, {"id": 4439, "text": "We saw a ___ building.", "options": ["tall", "talls", "building tall", "a tall"], "correct_index": 0}, {"id": 4539, "text": "Правильная форма: умные студенты", "options": ["smarts students", "students smart", "smarter students", "smart students"], "correct_index": 3}, {"id": 4399, "text": "Summer is ___ than winter.", "options": ["the hottest", "hot", "more hot", "hotter"], "correct_index": 3}, {"id": 4559, "text": "She is ___ (моложе).", "options": ["more young", "youngest", "the youngest", "younger"], "correct_index": 3}], "9": [{"id": 4500, "text": "He is ___ most successful person.", "options": ["the", "a", "an", "–"], "correct_index": 0}, {"id": 4420, "text": "This is ___ movie I've seen.", "options": ["the worst", "worse", "bad", "more bad"], "correct_index": 0}, {"id": 4520, "text": "The flowers smell ___.", "options": ["sweet", "sweetly", "sweets", "a sweet"], "correct_index": 0}, {"id": 4560, "text": "He drives a ___ car.", "options": ["fast", "fasts", "faster", "the fastest"], "correct_index": 0}, {"id": 4480, "text": "The movie was longer ___ expected.", "options": ["than", "then", "that", "the"], "correct_index": 0}, {"id": 4400, "text": "This is ___ hotel in the city.", "options": ["the most comfortable", "most comfortable", "more comfortable", "the comfortablest"], "correct_index": 0}, {"id": 4540, "text": "Правильная форма: самый худший", "options": ["the worst", "worst", "worser", "more worst"], "correct_index": 0}, {"id": 4460, "text": "We saw a ___ bird.", "options": ["yellow small", "smalls yellow", "small yellow", "yellows small"], "correct_index": 2}, {"id": 4440, "text": "___ children (счастливые дети)", "options": ["happys", "happy", "happies", "happier"], "correct_index": 1}, {"id": 4380, "text": "We need ___ table.", "options": ["smalls", "a small", "small a", "a table small"], "correct_index": 1}, {"id": 4381, "text": "He ___ hungry.", "options": ["are", "am", "is", "be"], "correct_index": 2}, {"id": 4441, "text": "I need a ___ pen.", "options": ["blacks", "pen black", "black", "a black"], "correct_index": 2}, {"id": 4461, "text": "He ___ hungry.", "options": ["are", "am", "be", "is"], "correct_index": 3}, {"id": 4481, "text": "This lesson is more important ___ the last.", "options": ["then", "than", "that", "the"], "correct_index": 1}, {"id": 4501, "text": "This is ___ coldest winter.", "options": ["a", "the", "an", "–"], "correct_index": 1}, {"id": 4521, "text": "She feels ___.", "options": ["comfortably", "comfortable", "comfortables", "a comfortable"], "correct_index": 1}, {"id": 4401, "text": "She is ___ than before.", "options": ["confident", "more confident", "most confident", "confidenter"], "correct_index": 1}, {"id": 4421, "text": "This is ___ expensive.", "options": ["many", "much", "more", "quite"], "correct_index": 3}, {"id": 4561, "text": "This is ___ idea ever.", "options": ["worse", "the worst", "bad", "more bad"], "correct_index": 1}, {"id": 4541, "text": "Правильная форма: очень холодно", "options": ["much cold", "very cold", "many cold", "more cold"], "correct_index": 1}], "10": [{"id": 4422, "text": "The food was ___ delicious.", "options": ["really", "many", "much", "more"], "correct_index": 0}, {"id": 4542, "text": "Правильная форма: высокий человек", "options": ["man tall", "a talls man", "a tall man", "tall a man"], "correct_index": 2}, {"id": 4502, "text": "She is ___ most popular student.", "options": ["an", "–", "the", "a"], "correct_index": 2}, {"id": 4562, "text": "My room is ___ than yours.", "options": ["more clean", "cleanest", "cleaner", "clean"], "correct_index": 2}, {"id": 4522, "text": "The music sounds ___.", "options": ["loudly", "louds", "loud", "a loud"], "correct_index": 2}, {"id": 4482, "text": "She speaks louder ___ him.", "options": ["the", "that", "than", "then"], "correct_index": 2}, {"id": 4442, "text": "___ teachers (хорошие учителя)", "options": ["goods", "better", "best", "good"], "correct_index": 3}, {"id": 4462, "text": "I bought a ___ laptop.", "options": ["new expensive", "expensive new", "news expensive", "expensives new"], "correct_index": 0}, {"id": 4382, "text": "___ cars are expensive.", "options": ["fasts", "faster", "fastest", "fast"], "correct_index": 3}, {"id": 4402, "text": "This street is ___ than that one.", "options": ["longest", "more long", "long", "longer"], "correct_index": 3}, {"id": 4423, "text": "He is ___ smart.", "options": ["much", "more", "very", "many"], "correct_index": 2}, {"id": 4523, "text": "The situation seems ___.", "options": ["seriously", "serious", "seriouses", "a serious"], "correct_index": 1}, {"id": 4503, "text": "This is ___ most comfortable hotel.", "options": ["–", "a", "an", "the"], "correct_index": 3}, {"id": 4543, "text": "Правильная форма: более интересный", "options": ["interestinger", "most interesting", "the most interesting", "more interesting"], "correct_index": 3}, {"id": 4463, "text": "The children ___ quiet.", "options": ["is", "are", "am", "be"], "correct_index": 1}, {"id": 4563, "text": "She wore a ___ dress.", "options": ["red beautiful", "beautifuls red", "reds beautiful", "beautiful red"], "correct_index": 3}, {"id": 4403, "text": "This is ___ building in the city.", "options": ["taller", "tallest", "the tallest", "more tall"], "correct_index": 2}, {"id": 4443, "text": "She found a ___ bag.", "options": ["small", "smalls", "bag small", "a small"], "correct_index": 0}, {"id": 4383, "text": "She is ___ person here.", "options": ["the kindest", "kindest", "kinder", "more kind"], "correct_index": 0}, {"id": 4483, "text": "Winter is colder ___ autumn.", "options": ["that", "then", "the", "than"], "correct_index": 3}]};
+        let currentQuizSet = 1;
+        const quizData = allQuizData[currentQuizSet] || [];
+
+        function checkAnswers(event) {
+            event.preventDefault();
+
+            const form = document.getElementById('quiz-form');
+            const formData = new FormData(form);
+
+            let correct = 0;
+            let total = quizData.length;
+
+            // Check each question
+            quizData.forEach((question, index) => {
+                const selectedAnswer = parseInt(formData.get(`question-${question.id}`));
+                const options = document.querySelectorAll(`input[name="question-${question.id}"]`);
+
+                options.forEach((option, optIndex) => {
+                    const label = option.closest('.option');
+                    if (optIndex === question.correct_index) {
+                        label.classList.add('correct');
+                    }
+                    if (selectedAnswer === optIndex && selectedAnswer !== question.correct_index) {
+                        label.classList.add('incorrect');
+                    }
+                    option.disabled = true;
+                });
+
+                if (selectedAnswer === question.correct_index) {
+                    correct++;
+                }
+            });
+
+            // Calculate score
+            const percentage = Math.round((correct / total) * 100);
+            const passed = percentage >= 70;
+
+            // Show results
+            const resultsDiv = document.getElementById('results');
+            const scoreDiv = document.getElementById('score');
+            const messageDiv = document.getElementById('results-message');
+
+            scoreDiv.textContent = `${percentage}%`;
+            scoreDiv.className = 'score ' + (passed ? 'pass' : 'fail');
+
+            messageDiv.textContent = `Вы ответили правильно на ${correct} из ${total} вопросов`;
+
+            resultsDiv.classList.remove('hidden');
+
+            // Disable submit button
+            document.getElementById('submit-btn').disabled = true;
+
+            // Scroll to results
+            resultsDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        function retakeQuiz() {
+            loadQuiz(currentQuizSet);
+        }
+
+        function loadQuiz(quizSet) {
+            currentQuizSet = quizSet;
+
+            // Hide placeholder, show form (if they exist)
+            const placeholder = document.getElementById('quiz-placeholder');
+            const form = document.getElementById('quiz-form');
+            if (placeholder) {
+                placeholder.style.display = 'none';
+            }
+            if (form.style.display === 'none') {
+                form.style.display = 'block';
+            }
+
+            // Update button states
+            document.querySelectorAll('.quiz-selector-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (parseInt(btn.dataset.quiz) === quizSet) {
+                    btn.classList.add('active');
+                }
+            });
+
+            // Get questions for this quiz set
+            const questions = allQuizData[quizSet] || [];
+
+            // Clear and rebuild quiz HTML
+            const submitBtn = document.getElementById('submit-btn');
+
+            // Remove all questions
+            const existingQuestions = form.querySelectorAll('.question');
+            existingQuestions.forEach(q => q.remove());
+
+            // Add new questions
+            questions.forEach((question, index) => {
+                const questionDiv = document.createElement('div');
+                questionDiv.className = 'question';
+                questionDiv.dataset.questionId = question.id;
+
+                let optionsHtml = '';
+                question.options.forEach((option, optIndex) => {
+                    optionsHtml += `
+                        <label class="option">
+                            <input type="radio" name="question-${question.id}" value="${optIndex}" required>
+                            <span>${option}</span>
+                        </label>
+                    `;
+                });
+
+                questionDiv.innerHTML = `
+                    <div class="question-text">${index + 1}. ${question.text}</div>
+                    <div class="options">
+                        ${optionsHtml}
+                    </div>
+                `;
+
+                form.insertBefore(questionDiv, submitBtn);
+            });
+
+            // Reset form state
+            form.reset();
+            submitBtn.disabled = false;
+            document.getElementById('results').classList.add('hidden');
+            document.querySelectorAll('.option').forEach(opt => {
+                opt.classList.remove('correct', 'incorrect');
+            });
+
+            // Scroll to quiz
+            form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        // Initialize: if only one quiz set, load it automatically
+        const quizSetCount = Object.keys(allQuizData).length;
+        if (quizSetCount === 1) {
+            // Single quiz - load immediately
+            loadQuiz(1);
+        }
+        // If multiple quiz sets, user must select one (placeholder will show)
+
+        document.getElementById('quiz-form').addEventListener('submit', checkAnswers);
+    </script>
+</body>
+</html>

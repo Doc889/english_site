@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Английский язык - Бесплатное обучение</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary: #7c3aed;
+            --color-primary-dark: #6d28d9;
+            --color-primary-light: #a78bfa;
+            --color-secondary: #c4b5fd;
+            --color-accent: #ddd6fe;
+            --color-bg: #ffffff;
+            --color-bg-alt: #faf5ff;
+            --color-text: #1f2937;
+            --color-text-light: #6b7280;
+            --color-white: #ffffff;
+            --font-display: 'Playfair Display', serif;
+            --font-body: 'DM Sans', sans-serif;
+            --shadow-sm: 0 2px 8px rgba(124, 58, 237, 0.08);
+            --shadow-md: 0 4px 20px rgba(124, 58, 237, 0.12);
+            --shadow-lg: 0 8px 40px rgba(124, 58, 237, 0.16);
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        header {
+            top: 0;
+            z-index: 100;
+            background: rgba(250, 247, 244, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(124, 58, 237, 0.1);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .main-title {
+            font-family: var(--font-display);
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--color-primary);
+            margin-bottom: 1rem;
+            letter-spacing: -1px;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--color-text-light);
+            margin-bottom: 0.5rem;
+        }
+
+        .free-badge {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            background: var(--color-accent);
+            color: var(--color-primary);
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .level-section {
+            margin-bottom: 4rem;
+        }
+
+        .level-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 3px solid var(--color-primary);
+        }
+
+        .level-badge {
+            padding: 0.5rem 1.5rem;
+            background: var(--color-primary);
+            color: var(--color-white);
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .level-title {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            color: var(--color-text);
+            font-weight: 700;
+        }
+
+        .topics-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .topic-item {
+            background: var(--color-white);
+            border: 2px solid var(--color-accent);
+            padding: 1.5rem;
+            border-radius: 16px;
+            transition: var(--transition);
+            cursor: pointer;
+            text-decoration: none;
+            color: var(--color-text);
+            display: block;
+        }
+
+        .topic-item:hover {
+            border-color: var(--color-primary);
+            background: var(--color-bg-alt);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .topic-item h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--color-primary);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .topic-item h3::before {
+            content: '•';
+            font-size: 1.5rem;
+        }
+
+        .topic-item p {
+            font-size: 0.9rem;
+            color: var(--color-text-light);
+            line-height: 1.5;
+        }
+
+        footer {
+            background: var(--color-primary);
+            color: var(--color-white);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-content p {
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+
+        @media (max-width: 768px) {
+            .main-title {
+                font-size: 2.5rem;
+            }
+
+            .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .level-title {
+                font-size: 2rem;
+            }
+
+            .topics-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <div class="header-content">
+            <h1 class="main-title">Победи грамматику английского языка</h1>
+            <p class="subtitle">Перед тобой инструмент, с помощью которого ты поймёшь суть английского языка и навсегда закроешь свои пробелы в грамматике. Тебя ждут сотни тестов. Все зависит только от тебя.</p>
+            <span class="free-badge">100% Free Learning</span>
+        </div>
+    </header>
+
+    <main>
+        <section class="level-section">
+            <div class="level-header">
+                <span class="level-badge">Beginner</span>
+                <h2 class="level-title">Foundation Topics</h2>
+            </div>
+            <div id="topics-container" class="topics-list">
+                <!-- Topics will be inserted here -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>Бесплатная платформа для изучения английского языка</p>
+            <p>Все материалы доступны без регистрации</p>
+        </div>
+    </footer>
+
+    <script>
+        const topics = [{"id": "alphabet-pronunciation", "title": "Закладываем фундамент", "description": "Базовые принципы английского языка: структура, глаголы и конструкции", "difficulty": "beginner", "total_questions": 14}, {"id": "greetings-introductions", "title": "Существительные", "description": "Исчисляемые и неисчисляемые существительные, множественное число", "difficulty": "beginner", "total_questions": 8}, {"id": "articles", "title": "Артикли", "description": "Артикли a, an, the и нулевой артикль", "difficulty": "beginner", "total_questions": 200}, {"id": "pronouns", "title": "Местоимения", "description": "Личные, объектные, притяжательные и указательные местоимения", "difficulty": "beginner", "total_questions": 200}, {"id": "adjectives", "title": "Прилагательные", "description": "Позиция прилагательных, степени сравнения и формы", "difficulty": "beginner", "total_questions": 200}, {"id": "to_be", "title": "Глагол to be", "description": "Глагол to be (am/is/are) - самый базовый глагол английского языка", "difficulty": "beginner", "total_questions": 173}, {"id": "present_simple", "title": "Present Simple", "description": "Настоящее простое время - факты, привычки и рутина", "difficulty": "beginner", "total_questions": 200}, {"id": "modal_verbs", "title": "Модальные глаголы", "description": "Can, must, should - модальные глаголы для выражения способности, необходимости и совета", "difficulty": "beginner", "total_questions": 200}, {"id": "there_is_are", "title": "There is / There are", "description": "Конструкция для описания наличия предметов и людей", "difficulty": "beginner", "total_questions": 200}, {"id": "prepositions_place", "title": "Предлоги места", "description": "Предлоги in, on, under, next to, between для описания местоположения", "difficulty": "beginner", "total_questions": 200}, {"id": "question_words", "title": "Вопросительные слова", "description": "What, where, who, when, why, how - основные вопросительные слова", "difficulty": "beginner", "total_questions": 200}, {"id": "numbers_dates_time", "title": "Числа, даты и время", "description": "Как называть числа, даты и время по-английски", "difficulty": "beginner", "total_questions": 200}, {"id": "present_continuous", "title": "Present Continuous", "description": "Настоящее продолженное время для действий, происходящих сейчас", "difficulty": "beginner", "total_questions": 200}];
+
+        const container = document.getElementById('topics-container');
+
+        topics.forEach(topic => {
+            const card = document.createElement('a');
+            card.href = `topics/${topic.id}.html`;
+            card.className = 'topic-item';
+
+            card.innerHTML = `
+                <h3>${topic.title}</h3>
+                <p>${topic.description}</p>
+            `;
+
+            container.appendChild(card);
+        });
+    </script>
+</body>
+</html>
