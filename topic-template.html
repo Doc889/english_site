@@ -262,6 +262,38 @@
             transform: none;
         }
 
+        /* Quiz Selector */
+        .quiz-selector {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            max-width: 400px;
+            margin: 0 auto 3rem;
+        }
+
+        .quiz-btn {
+            padding: 1.2rem;
+            background: var(--color-bg);
+            border: 2px solid var(--color-accent);
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            color: var(--color-text);
+        }
+
+        .quiz-btn:hover {
+            border-color: var(--color-primary);
+            background: var(--color-bg-alt);
+        }
+
+        .quiz-btn.active {
+            background: var(--color-primary);
+            color: white;
+            border-color: var(--color-primary);
+        }
+
         .error-message {
             text-align: center;
             padding: 2rem;
@@ -306,6 +338,8 @@
                     Test your knowledge with <span id="question-count"></span> questions!
                 </p>
 
+                <div id="quiz-selector" class="quiz-selector" style="display: none;"></div>
+
                 <form id="quizForm">
                     <div id="questions-container"></div>
                     <button type="submit" class="submit-btn">Check Answers</button>
@@ -325,6 +359,11 @@
 
         // API base URL
         const API_BASE = window.location.origin + '/api';
+
+        // Global variables for quiz management
+        let allQuestions = [];
+        let currentQuizIndex = null;
+        const QUESTIONS_PER_QUIZ = 20;
 
         // Fetch and render topic content
         async function loadTopic() {
@@ -374,11 +413,76 @@
                 rulesContainer.appendChild(ruleCard);
             });
 
-            // Render questions
-            const questionsContainer = document.getElementById('questions-container');
+            // Store questions globally
+            allQuestions = data.questions;
             document.getElementById('question-count').textContent = data.questions.length;
 
-            data.questions.forEach((question, index) => {
+            // Check if this topic has 200 questions (should be split into quizzes)
+            const totalQuestions = data.questions.length;
+            const numQuizzes = Math.ceil(totalQuestions / QUESTIONS_PER_QUIZ);
+
+            if (totalQuestions === 200) {
+                // Show quiz selector for topics with 200 questions
+                renderQuizSelector(numQuizzes);
+            } else {
+                // Render all questions for topics with fewer questions
+                renderQuestions(allQuestions, 0);
+            }
+        }
+
+        function renderQuizSelector(numQuizzes) {
+            const selector = document.getElementById('quiz-selector');
+            selector.style.display = 'flex';
+            selector.innerHTML = '';
+
+            for (let i = 0; i < numQuizzes; i++) {
+                const btn = document.createElement('button');
+                btn.type = 'button';
+                btn.className = 'quiz-btn';
+                btn.textContent = `Тест ${i + 1}`;
+                btn.dataset.quizIndex = i;
+
+                btn.addEventListener('click', () => {
+                    selectQuiz(i);
+                });
+
+                selector.appendChild(btn);
+            }
+
+            // Initially hide questions form
+            document.getElementById('quizForm').style.display = 'none';
+        }
+
+        function selectQuiz(quizIndex) {
+            currentQuizIndex = quizIndex;
+
+            // Update active button
+            document.querySelectorAll('.quiz-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.querySelector(`[data-quiz-index="${quizIndex}"]`).classList.add('active');
+
+            // Get questions for this quiz
+            const startIdx = quizIndex * QUESTIONS_PER_QUIZ;
+            const endIdx = Math.min(startIdx + QUESTIONS_PER_QUIZ, allQuestions.length);
+            const quizQuestions = allQuestions.slice(startIdx, endIdx);
+
+            // Render questions
+            renderQuestions(quizQuestions, startIdx);
+
+            // Show form and reset results
+            document.getElementById('quizForm').style.display = 'block';
+            document.getElementById('results').style.display = 'none';
+
+            // Scroll to questions
+            document.getElementById('questions-container').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function renderQuestions(questions, startIndex) {
+            const questionsContainer = document.getElementById('questions-container');
+            questionsContainer.innerHTML = '';
+
+            questions.forEach((question, index) => {
                 const questionCard = document.createElement('div');
                 questionCard.className = 'question-card';
                 questionCard.dataset.questionId = question.id;
@@ -400,7 +504,7 @@
                 `).join('');
 
                 questionCard.innerHTML = `
-                    <h3 class="question-text">${index + 1}. ${question.question_text}</h3>
+                    <h3 class="question-text">${startIndex + index + 1}. ${question.question_text}</h3>
                     <div class="options-grid">
                         ${optionsHtml}
                     </div>
@@ -411,6 +515,11 @@
 
                 questionsContainer.appendChild(questionCard);
             });
+
+            // Reset submit button
+            const submitBtn = document.getElementById('quizForm').querySelector('.submit-btn');
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Check Answers';
         }
 
         // Handle quiz submission
