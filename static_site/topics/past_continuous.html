@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Past Continuous - Английский язык</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary: #7c3aed;
+            --color-primary-dark: #6d28d9;
+            --color-primary-light: #a78bfa;
+            --color-secondary: #c4b5fd;
+            --color-accent: #ddd6fe;
+            --color-bg: #ffffff;
+            --color-bg-alt: #faf5ff;
+            --color-text: #1f2937;
+            --color-text-light: #6b7280;
+            --color-success: #10b981;
+            --color-error: #ef4444;
+            --font-display: 'Playfair Display', serif;
+            --font-body: 'DM Sans', sans-serif;
+            --shadow-sm: 0 2px 8px rgba(124, 58, 237, 0.08);
+            --shadow-md: 0 4px 20px rgba(124, 58, 237, 0.12);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        header {
+            background: var(--color-primary);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: white;
+            text-decoration: none;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            opacity: 0.9;
+            transition: var(--transition);
+        }
+
+        .back-link:hover {
+            opacity: 1;
+            transform: translateX(-3px);
+        }
+
+        header h1 {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+        }
+
+        .content-section {
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            color: var(--color-primary);
+            margin: 3rem 0 2rem;
+            text-align: center;
+        }
+
+        .rule-section {
+            background: var(--color-bg-alt);
+            border-left: 4px solid var(--color-primary);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .rule-title {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            color: var(--color-primary);
+            margin-bottom: 1rem;
+        }
+
+        .rule-content {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            white-space: pre-line;
+        }
+
+        .examples {
+            margin-top: 1.5rem;
+        }
+
+        .example {
+            background: var(--color-bg);
+            padding: 0.8rem 1.2rem;
+            margin-bottom: 0.5rem;
+            border-radius: 8px;
+            border-left: 3px solid var(--color-secondary);
+            font-family: monospace;
+            font-size: 1rem;
+        }
+
+        .quiz-section {
+            background: var(--color-bg-alt);
+            padding: 3rem;
+            border-radius: 16px;
+            margin-top: 3rem;
+        }
+
+        .question {
+            background: var(--color-bg);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
+            border: 2px solid transparent;
+            transition: var(--transition);
+        }
+
+        .question.correct {
+            border-color: var(--color-success);
+            background: #f0fdf4;
+        }
+
+        .question.incorrect {
+            border-color: var(--color-error);
+            background: #fef2f2;
+        }
+
+        .question-text {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            color: var(--color-text);
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .option {
+            display: flex;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            background: var(--color-bg-alt);
+            border: 2px solid var(--color-accent);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .option:hover {
+            border-color: var(--color-primary);
+            background: white;
+        }
+
+        .option input[type="radio"] {
+            margin-right: 1rem;
+            cursor: pointer;
+        }
+
+        .option.correct {
+            background: #dcfce7;
+            border-color: var(--color-success);
+        }
+
+        .option.incorrect {
+            background: #fee2e2;
+            border-color: var(--color-error);
+        }
+
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 1.2rem;
+            background: var(--color-primary);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 2rem;
+            transition: var(--transition);
+        }
+
+        .submit-btn:hover:not(:disabled) {
+            background: var(--color-primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .submit-btn:disabled {
+            background: var(--color-text-light);
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .results {
+            text-align: center;
+            padding: 2rem;
+            background: var(--color-primary);
+            color: white;
+            border-radius: 12px;
+            margin-top: 2rem;
+        }
+
+        .results.hidden {
+            display: none;
+        }
+
+        .score {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .score.pass {
+            color: #dcfce7;
+        }
+
+        .score.fail {
+            color: #fecaca;
+        }
+
+        .results-message {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .retry-btn {
+            padding: 0.8rem 1.5rem;
+            background: var(--color-bg);
+            border: 2px solid white;
+            color: var(--color-primary);
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            margin-right: 1rem;
+        }
+
+        .retry-btn:hover {
+            background: white;
+            transform: translateY(-2px);
+        }
+
+        .home-btn {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+            padding: 0.8rem 1.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: var(--transition);
+        }
+
+        .home-btn:hover {
+            background: white;
+            color: var(--color-primary);
+            transform: translateY(-2px);
+        }
+
+        .quiz-selector-btn {
+            padding: 0.8rem 1.5rem;
+            background: var(--color-bg);
+            border: 2px solid var(--color-primary);
+            color: var(--color-primary);
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            min-width: 200px;
+        }
+
+        .quiz-selector-btn:hover {
+            background: var(--color-primary);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .quiz-selector-btn.active {
+            background: var(--color-primary);
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .container {
+                padding: 2rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="/" class="back-link">← Назад ко всем темам</a>
+            <h1>Past Continuous</h1>
+            <p>Прошедшее продолженное время для действий в процессе в прошлом</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Theory Section -->
+        <div class="content-section">
+            <h2 class="section-title">Теория</h2>
+
+        <div class="rule-section">
+            <h3 class="rule-title">Главное про Past Continuous</h3>
+            <div class="rule-content">Past Continuous = действие БЫЛО В ПРОЦЕССЕ в определённый момент в прошлом.
+
+Формула: was/were + глагол с -ing</div>
+            <div class="examples">
+                <div class="example">I was reading. — Я читал (в тот момент).</div>
+                <div class="example">She was sleeping. — Она спала (в тот момент).</div>
+                <div class="example">They were playing. — Они играли (в тот момент).</div>
+            </div>
+        </div>
+
+        <div class="rule-section">
+            <h3 class="rule-title">Как образуется Past Continuous</h3>
+            <div class="rule-content">Берём три составляющих:
+
+1️⃣ Подлежащее (I, you, he, she...)
+2️⃣ Форму to be в прошедшем времени (was, were)
+3️⃣ Глагол + окончание -ing
+
+Формула: подлежащее + was/were + глагол-ing</div>
+            <div class="examples">
+                <div class="example">I was working. — Я работал (в тот момент).</div>
+                <div class="example">You were studying. — Ты учился (в тот момент).</div>
+                <div class="example">He was eating. — Он ел (в тот момент).</div>
+                <div class="example">She was sleeping. — Она спала (в тот момент).</div>
+                <div class="example">We were watching. — Мы смотрели (в тот момент).</div>
+                <div class="example">They were playing. — Они играли (в тот момент).</div>
+            </div>
+        </div>
+
+        <div class="rule-section">
+            <h3 class="rule-title">Was или Were?</h3>
+            <div class="rule-content">Это важно!
+
+Was используется с I, he, she, it
+
+Were используется с you, we, they
+
+💡 Совет:
+Was — для единственного числа (кроме you)
+Were — для множественного числа и you</div>
+            <div class="examples">
+                <div class="example">I was reading.</div>
+                <div class="example">He was working.</div>
+                <div class="example">She was cooking.</div>
+                <div class="example">It was raining.</div>
+                <div class="example">You were studying.</div>
+                <div class="example">We were watching.</div>
+                <div class="example">They were playing.</div>
+            </div>
+        </div>
+
+        <div class="rule-section">
+            <h3 class="rule-title">Утверждения в Past Continuous</h3>
+            <div class="rule-content">Полные формы:</div>
+            <div class="examples">
+                <div class="example">I was working.</div>
+                <div class="example">You were studying.</div>
+                <div class="example">He was reading.</div>
+                <div class="example">She was cooking.</div>
+                <div class="example">It was raining.</div>
+                <div class="example">We were eating.</div>
+                <div class="example">They were playing.</div>
+                <div class="example">I was watching TV at 8 PM yesterday. — Я смотрел телевизор вчера в 8 вечера.</div>
+                <div class="example">She was talking on the phone when I came. — Она разговаривала по телефону, когда я пришёл.</div>
+                <div class="example">They were having dinner at 7 o'clock. — Они ужинали в 7 часов.</div>
+            </div>
+        </div>
+
+        <div class="rule-section">
+            <h3 class="rule-title">Отрицания в Past Continuous</h3>
+            <div class="rule-content">Отрицание строится просто: добавляем not после was/were.
+
+💡 Совет:
+Две формы сокращения:
+You were not / You weren't
+He was not / He wasn't</div>
+            <div class="examples">
+                <div class="example">I was not working. → I wasn't working.</div>
+                <div class="example">You were not studying. → You weren't studying.</div>
+                <div class="example">He was not reading. → He wasn't reading.</div>
+                <div class="example">She was not cooking. → She wasn't cooking.</div>
+                <div class="example">We were not eating. → We weren't eating.</div>
+                <div class="example">They were not playing. → They weren't playing.</div>
+                <div class="example">I wasn't watching TV. — Я не смотрел телевизор.</div>
+                <div class="example">She wasn't talking. — Она не разговаривала.</div>
+                <div class="example">They weren't playing. — Они не играли.</div>
+            </div>
+        </div>
+
+        <div class="rule-section">
+            <h3 class="rule-title">Вопросы в Past Continuous</h3>
+            <div class="rule-content">Вопросы: ставим was/were ПЕРЕД подлежащим.
+
+Короткие ответы:</div>
+            <div class="examples">
+                <div class="example">Was I working?</div>
+                <div class="example">Were you studying?</div>
+                <div class="example">Was he reading?</div>
+                <div class="example">Was she cooking?</div>
+                <div class="example">Were we eating?</div>
+                <div class="example">Were they playing?</div>
+                <div class="example">Were you watching TV? — Ты смотрел телевизор?</div>
+                <div class="example">Was she talking on the phone? — Она разговаривала по телефону?</div>
+                <div class="example">Were they having dinner? — Они ужинали?</div>
+                <div class="example">Were you working? — Yes, I was. / No, I wasn't.</div>
+                <div class="example">Was she reading? — Yes, she was. / No, she wasn't.</div>
+                <div class="example">Were they playing? — Yes, they were. / No, they weren't.</div>
+            </div>
+        </div>
+
+        <div class="rule-section">
+            <h3 class="rule-title">Когда используем Past Continuous</h3>
+            <div class="rule-content">1. Действие было В ПРОЦЕССЕ в определённый момент в прошлом
+
+2. Два действия происходили ОДНОВРЕМЕННО в прошлом
+
+3. Длительное действие было ПРЕРВАНО коротким (используем when)
+
+💡 Правило:
+Длительное действие (в процессе) — Past Continuous
+Короткое действие (прервало) — Past Simple
+
+4. Описание атмосферы, фона в прошлом</div>
+            <div class="examples">
+                <div class="example">I was reading a book at 5 PM yesterday. — Я читал книгу вчера в 5 вечера.</div>
+                <div class="example">She was sleeping at midnight. — Она спала в полночь.</div>
+                <div class="example">They were watching TV at 8 o'clock. — Они смотрели телевизор в 8 часов.</div>
+                <div class="example">While I was reading, she was cooking. — Пока я читал, она готовила.</div>
+                <div class="example">He was watching TV while his wife was working. — Он смотрел телевизор, пока его жена работала.</div>
+                <div class="example">I was sleeping when the phone rang. — Я спал, когда зазвонил телефон.</div>
+                <div class="example">She was cooking when he arrived. — Она готовила, когда он пришёл.</div>
+                <div class="example">They were playing football when it started raining. — Они играли в футбол, когда начался дождь.</div>
+                <div class="example">The sun was shining. Birds were singing. — Светило солнце. Пели птицы.</div>
+                <div class="example">People were walking in the park. Children were playing. — Люди гуляли в парке. Дети играли.</div>
+            </div>
+        </div>
+
+        <div class="rule-section">
+            <h3 class="rule-title">Слова-указатели Past Continuous</h3>
+            <div class="rule-content">at 5 o'clock yesterday — вчера в 5 часов
+at that moment — в тот момент
+at midnight — в полночь
+at noon — в полдень
+all day yesterday — вчера весь день
+all evening — весь вечер
+all morning — всё утро
+
+when — когда (для Past Simple)
+while — пока, в то время как (для Past Continuous)</div>
+            <div class="examples">
+                <div class="example">I was working at 9 AM yesterday. — Я работал вчера в 9 утра.</div>
+                <div class="example">She was studying all evening. — Она училась весь вечер.</div>
+                <div class="example">They were sleeping at midnight. — Они спали в полночь.</div>
+            </div>
+        </div>
+
+        <div class="rule-section">
+            <h3 class="rule-title">While или When?</h3>
+            <div class="rule-content">Это очень важное различие!
+
+WHILE (пока, в то время как) — используем с Past Continuous
+
+WHEN (когда) — используем с Past Simple
+
+💡 Совет:
+While + Past Continuous (длительное действие)
+When + Past Simple (короткое действие)</div>
+            <div class="examples">
+                <div class="example">While I was reading, she called. — Пока я читал, она позвонила.</div>
+                <div class="example">While they were playing, it started raining. — Пока они играли, начался дождь.</div>
+                <div class="example">I was reading when she called. — Я читал, когда она позвонила.</div>
+                <div class="example">They were playing when it started raining. — Они играли, когда начался дождь.</div>
+                <div class="example">While I was sleeping, the phone rang. — Пока я спал, зазвонил телефон.</div>
+                <div class="example">I was sleeping when the phone rang. — Я спал, когда зазвонил телефон.</div>
+            </div>
+        </div>
+
+        <div class="rule-section">
+            <h3 class="rule-title">Past Simple vs Past Continuous</h3>
+            <div class="rule-content">Это важное различие!
+
+Past Simple — законченное действие в прошлом
+
+Past Continuous — действие было В ПРОЦЕССЕ в прошлом
+
+Сравни:</div>
+            <div class="examples">
+                <div class="example">I worked yesterday. — Я работал вчера.</div>
+                <div class="example">I was working at 5 PM yesterday. — Я работал вчера в 5 вечера.</div>
+                <div class="example">He played football yesterday. — Он играл в футбол вчера (законченное действие).</div>
+                <div class="example">He was playing football at 3 PM. — Он играл в футбол в 3 часа дня (был в процессе).</div>
+                <div class="example">They lived in London. — Они жили в Лондоне (факт из прошлого).</div>
+                <div class="example">They were living in London in 2010. — Они жили в Лондоне в 2010 году (временная ситуация).</div>
+                <div class="example">I read a book. — Я прочитал книгу (законченное действие).</div>
+                <div class="example">I was reading a book when he came. — Я читал книгу, когда он пришёл (был в процессе).</div>
+            </div>
+        </div>
+
+        <div class="rule-section">
+            <h3 class="rule-title">Глаголы, которые НЕ используются в Continuous</h3>
+            <div class="rule-content">Некоторые глаголы почти НИКОГДА не используются в Continuous (включая Past Continuous):
+
+like, love, hate, want, need, know, understand, believe, remember, forget, prefer, see, hear, seem, belong
+
+💡 Совет:
+Эти глаголы описывают состояния, а не действия.</div>
+            <div class="examples">
+                <div class="example">❌ I was liking pizza. (неправильно)</div>
+                <div class="example">✔ I liked pizza. (правильно)</div>
+                <div class="example">❌ She was knowing the answer. (неправильно)</div>
+                <div class="example">✔ She knew the answer. (правильно)</div>
+                <div class="example">❌ They were wanting to go. (неправильно)</div>
+                <div class="example">✔ They wanted to go. (правильно)</div>
+            </div>
+        </div>
+
+        <div class="rule-section">
+            <h3 class="rule-title">Типичные ошибки русскоговорящих</h3>
+            <div class="rule-content"></div>
+            <div class="examples">
+                <div class="example">❌ I working yesterday. → пропущен was</div>
+                <div class="example">✔ I was working yesterday.</div>
+                <div class="example">❌ She were sleeping. → неправильная форма (нужен was)</div>
+                <div class="example">✔ She was sleeping.</div>
+                <div class="example">❌ He was work. → пропущено -ing</div>
+                <div class="example">✔ He was working.</div>
+                <div class="example">❌ They was playing. → неправильная форма (нужен were)</div>
+                <div class="example">✔ They were playing.</div>
+                <div class="example">❌ Were you work? → неправильная форма глагола</div>
+                <div class="example">✔ Were you working?</div>
+                <div class="example">❌ I was liking pizza. → этот глагол не используется в Continuous</div>
+                <div class="example">✔ I liked pizza.</div>
+                <div class="example">❌ While I read, she called. → нужен Past Continuous после while</div>
+                <div class="example">✔ While I was reading, she called.</div>
+                <div class="example">❌ I was reading when she was calling. → короткое действие должно быть в Past Simple</div>
+                <div class="example">✔ I was reading when she called.</div>
+            </div>
+        </div>
+
+        <div class="rule-section">
+            <h3 class="rule-title">Главное про Past Continuous</h3>
+            <div class="rule-content">1️⃣ Формула: was/were + глагол-ing
+2️⃣ Используется для действий, которые БЫЛИ В ПРОЦЕССЕ в прошлом
+3️⃣ Was — для I, he, she, it / Were — для you, we, they
+4️⃣ Отрицание: was/were + not + глагол-ing
+5️⃣ Вопрос: Was/Were + подлежащее + глагол-ing?
+6️⃣ While + Past Continuous / When + Past Simple
+7️⃣ Некоторые глаголы (like, know, want) НЕ используются в Continuous</div>
+            <div class="examples"></div>
+        </div>
+
+        </div>
+
+        <!-- Results Section (hidden initially) -->
+        <div id="results" class="results hidden">
+            <div class="score" id="score"></div>
+            <div class="results-message" id="results-message"></div>
+            <div>
+                <button class="retry-btn" onclick="retakeQuiz()">Пройти ещё раз</button>
+                <a href="/" class="home-btn">На главную</a>
+            </div>
+        </div>
+
+        <!-- Quiz Section -->
+        <div class="quiz-section" id="quiz-section">
+            <h2 class="section-title">Тест</h2>
+
+            <!-- Quiz Selector (shown if multiple quizzes) -->
+            <div id="quiz-selector" style="margin-bottom: 2rem; display: flex; flex-direction: column; align-items: center; gap: 0.8rem;">
+                <button type="button" class="quiz-selector-btn" data-quiz="1" onclick="loadQuiz(1)">Тест 1</button>
+<button type="button" class="quiz-selector-btn" data-quiz="2" onclick="loadQuiz(2)">Тест 2</button>
+<button type="button" class="quiz-selector-btn" data-quiz="3" onclick="loadQuiz(3)">Тест 3</button>
+<button type="button" class="quiz-selector-btn" data-quiz="4" onclick="loadQuiz(4)">Тест 4</button>
+<button type="button" class="quiz-selector-btn" data-quiz="5" onclick="loadQuiz(5)">Тест 5</button>
+<button type="button" class="quiz-selector-btn" data-quiz="6" onclick="loadQuiz(6)">Тест 6</button>
+<button type="button" class="quiz-selector-btn" data-quiz="7" onclick="loadQuiz(7)">Тест 7</button>
+<button type="button" class="quiz-selector-btn" data-quiz="8" onclick="loadQuiz(8)">Тест 8</button>
+<button type="button" class="quiz-selector-btn" data-quiz="9" onclick="loadQuiz(9)">Тест 9</button>
+<button type="button" class="quiz-selector-btn" data-quiz="10" onclick="loadQuiz(10)">Тест 10</button>
+            </div>
+
+            <div id="quiz-placeholder" style="text-align: center; padding: 3rem; color: var(--color-text-light); display: block;">
+                <p style="font-size: 1.2rem;">Выберите тест, чтобы начать</p>
+            </div>
+
+            <form id="quiz-form" style="display: none;">
+
+                <button type="submit" class="submit-btn" id="submit-btn">Проверить ответы</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const allQuizData = {"1": [{"id": 1, "text": "I ___ working yesterday.", "options": ["was", "were", "am", "is"], "correct_index": 0}, {"id": 2, "text": "You ___ studying at 5 PM.", "options": ["was", "were", "are", "is"], "correct_index": 1}, {"id": 3, "text": "He ___ reading a book.", "options": ["was", "were", "are", "is"], "correct_index": 0}, {"id": 4, "text": "She ___ cooking dinner.", "options": ["was", "were", "are", "is"], "correct_index": 0}, {"id": 5, "text": "It ___ raining yesterday.", "options": ["was", "were", "are", "is"], "correct_index": 0}, {"id": 6, "text": "We ___ watching TV.", "options": ["was", "were", "are", "is"], "correct_index": 1}, {"id": 7, "text": "They ___ playing football.", "options": ["was", "were", "are", "is"], "correct_index": 1}, {"id": 8, "text": "I ___ sleeping at midnight.", "options": ["was", "were", "am", "is"], "correct_index": 0}, {"id": 9, "text": "You ___ eating lunch.", "options": ["was", "were", "are", "is"], "correct_index": 1}, {"id": 10, "text": "He ___ listening to music.", "options": ["was", "were", "are", "is"], "correct_index": 0}, {"id": 11, "text": "She ___ talking on the phone.", "options": ["was", "were", "are", "is"], "correct_index": 0}, {"id": 12, "text": "It ___ snowing yesterday.", "options": ["was", "were", "are", "is"], "correct_index": 0}, {"id": 13, "text": "We ___ doing homework.", "options": ["was", "were", "are", "is"], "correct_index": 1}, {"id": 14, "text": "They ___ waiting for the bus.", "options": ["was", "were", "are", "is"], "correct_index": 1}, {"id": 15, "text": "I ___ drinking coffee.", "options": ["was", "were", "am", "is"], "correct_index": 0}, {"id": 16, "text": "You ___ writing an email.", "options": ["was", "were", "are", "is"], "correct_index": 1}, {"id": 17, "text": "He ___ sitting there.", "options": ["was", "were", "are", "is"], "correct_index": 0}, {"id": 18, "text": "She ___ standing here.", "options": ["was", "were", "are", "is"], "correct_index": 0}, {"id": 19, "text": "We ___ going home.", "options": ["was", "were", "are", "is"], "correct_index": 1}, {"id": 20, "text": "They ___ coming here.", "options": ["was", "were", "are", "is"], "correct_index": 1}], "2": [{"id": 21, "text": "I ___ reading a book at 5 PM.", "options": ["was read", "was reading", "were reading", "am reading"], "correct_index": 1}, {"id": 22, "text": "She ___ cooking when I arrived.", "options": ["was cook", "was cooking", "were cooking", "is cooking"], "correct_index": 1}, {"id": 23, "text": "They ___ playing football yesterday.", "options": ["was playing", "were play", "were playing", "are playing"], "correct_index": 2}, {"id": 24, "text": "He ___ watching TV at 8 o'clock.", "options": ["was watch", "was watching", "were watching", "is watching"], "correct_index": 1}, {"id": 25, "text": "We ___ studying all evening.", "options": ["was studying", "were study", "were studying", "are studying"], "correct_index": 2}, {"id": 26, "text": "You ___ sleeping at midnight.", "options": ["was sleeping", "were sleep", "were sleeping", "are sleeping"], "correct_index": 2}, {"id": 27, "text": "It ___ raining all day.", "options": ["was rain", "was raining", "were raining", "is raining"], "correct_index": 1}, {"id": 28, "text": "I ___ working at 9 AM.", "options": ["was work", "was working", "were working", "am working"], "correct_index": 1}, {"id": 29, "text": "She ___ listening to music.", "options": ["was listen", "was listening", "were listening", "is listening"], "correct_index": 1}, {"id": 30, "text": "They ___ eating dinner at 7 PM.", "options": ["was eating", "were eat", "were eating", "are eating"], "correct_index": 2}, {"id": 31, "text": "He ___ doing homework.", "options": ["was do", "was doing", "were doing", "is doing"], "correct_index": 1}, {"id": 32, "text": "We ___ talking about it.", "options": ["was talking", "were talk", "were talking", "are talking"], "correct_index": 2}, {"id": 33, "text": "You ___ waiting for me.", "options": ["was waiting", "were wait", "were waiting", "are waiting"], "correct_index": 2}, {"id": 34, "text": "It ___ getting dark.", "options": ["was get", "was getting", "were getting", "is getting"], "correct_index": 1}, {"id": 35, "text": "I ___ drinking tea.", "options": ["was drink", "was drinking", "were drinking", "am drinking"], "correct_index": 1}, {"id": 36, "text": "She ___ writing a letter.", "options": ["was write", "was writing", "were writing", "is writing"], "correct_index": 1}, {"id": 37, "text": "They ___ running in the park.", "options": ["was running", "were run", "were running", "are running"], "correct_index": 2}, {"id": 38, "text": "He ___ sitting in the garden.", "options": ["was sit", "was sitting", "were sitting", "is sitting"], "correct_index": 1}, {"id": 39, "text": "We ___ having fun.", "options": ["was having", "were have", "were having", "are having"], "correct_index": 2}, {"id": 40, "text": "I ___ thinking about you.", "options": ["was think", "was thinking", "were thinking", "am thinking"], "correct_index": 1}], "3": [{"id": 41, "text": "I ___ not working yesterday.", "options": ["was", "were", "am", "is"], "correct_index": 0}, {"id": 42, "text": "She ___ not sleeping at midnight.", "options": ["was", "were", "are", "is"], "correct_index": 0}, {"id": 43, "text": "They ___ not playing football.", "options": ["was", "were", "are", "is"], "correct_index": 1}, {"id": 44, "text": "He ___ watching TV.", "options": ["isn't", "wasn't", "weren't", "aren't"], "correct_index": 1}, {"id": 45, "text": "We ___ studying.", "options": ["wasn't", "weren't", "isn't", "aren't"], "correct_index": 1}, {"id": 46, "text": "You ___ listening.", "options": ["wasn't", "weren't", "isn't", "aren't"], "correct_index": 1}, {"id": 47, "text": "It ___ raining.", "options": ["wasn't", "weren't", "isn't", "aren't"], "correct_index": 0}, {"id": 48, "text": "I ___ reading.", "options": ["wasn't", "weren't", "isn't", "aren't"], "correct_index": 0}, {"id": 49, "text": "She ___ cooking.", "options": ["wasn't", "weren't", "isn't", "aren't"], "correct_index": 0}, {"id": 50, "text": "They ___ eating.", "options": ["wasn't", "weren't", "isn't", "aren't"], "correct_index": 1}, {"id": 51, "text": "He wasn't ___ to music.", "options": ["listen", "listening", "listened", "listens"], "correct_index": 1}, {"id": 52, "text": "We weren't ___ homework.", "options": ["do", "doing", "did", "does"], "correct_index": 1}, {"id": 53, "text": "You weren't ___ for the bus.", "options": ["wait", "waiting", "waited", "waits"], "correct_index": 1}, {"id": 54, "text": "It wasn't ___ well.", "options": ["work", "working", "worked", "works"], "correct_index": 1}, {"id": 55, "text": "I wasn't ___ coffee.", "options": ["drink", "drinking", "drank", "drinks"], "correct_index": 1}, {"id": 56, "text": "She wasn't ___ a letter.", "options": ["write", "writing", "wrote", "writes"], "correct_index": 1}, {"id": 57, "text": "They weren't ___ in the park.", "options": ["run", "running", "ran", "runs"], "correct_index": 1}, {"id": 58, "text": "He wasn't ___ there.", "options": ["sit", "sitting", "sat", "sits"], "correct_index": 1}, {"id": 59, "text": "We weren't ___ TV.", "options": ["watch", "watching", "watched", "watches"], "correct_index": 1}, {"id": 60, "text": "You weren't ___ on the phone.", "options": ["talk", "talking", "talked", "talks"], "correct_index": 1}], "4": [{"id": 61, "text": "___ you working yesterday?", "options": ["Was", "Were", "Are", "Do"], "correct_index": 1}, {"id": 62, "text": "___ she sleeping at midnight?", "options": ["Was", "Were", "Is", "Does"], "correct_index": 0}, {"id": 63, "text": "___ they playing football?", "options": ["Was", "Were", "Are", "Do"], "correct_index": 1}, {"id": 64, "text": "___ he reading a book?", "options": ["Was", "Were", "Is", "Does"], "correct_index": 0}, {"id": 65, "text": "___ I doing it right?", "options": ["Was", "Were", "Am", "Do"], "correct_index": 0}, {"id": 66, "text": "___ we eating at 7 PM?", "options": ["Was", "Were", "Are", "Do"], "correct_index": 1}, {"id": 67, "text": "___ it raining?", "options": ["Was", "Were", "Is", "Does"], "correct_index": 0}, {"id": 68, "text": "___ you listening?", "options": ["Was", "Were", "Are", "Do"], "correct_index": 1}, {"id": 69, "text": "___ she cooking?", "options": ["Was", "Were", "Is", "Does"], "correct_index": 0}, {"id": 70, "text": "___ they waiting?", "options": ["Was", "Were", "Are", "Do"], "correct_index": 1}, {"id": 71, "text": "Was he ___ TV?", "options": ["watch", "watching", "watched", "watches"], "correct_index": 1}, {"id": 72, "text": "Were they ___ football?", "options": ["play", "playing", "played", "plays"], "correct_index": 1}, {"id": 73, "text": "Was she ___ to music?", "options": ["listen", "listening", "listened", "listens"], "correct_index": 1}, {"id": 74, "text": "Were you ___ homework?", "options": ["do", "doing", "did", "does"], "correct_index": 1}, {"id": 75, "text": "Was it ___ yesterday?", "options": ["snow", "snowing", "snowed", "snows"], "correct_index": 1}, {"id": 76, "text": "Were we ___ dinner?", "options": ["have", "having", "had", "has"], "correct_index": 1}, {"id": 77, "text": "Was I ___ too loud?", "options": ["talk", "talking", "talked", "talks"], "correct_index": 1}, {"id": 78, "text": "Were you ___ for me?", "options": ["wait", "waiting", "waited", "waits"], "correct_index": 1}, {"id": 79, "text": "Was she ___ a letter?", "options": ["write", "writing", "wrote", "writes"], "correct_index": 1}, {"id": 80, "text": "Were they ___ in the garden?", "options": ["sit", "sitting", "sat", "sits"], "correct_index": 1}], "5": [{"id": 81, "text": "I was reading ___ she called.", "options": ["while", "when", "during", "at"], "correct_index": 1}, {"id": 82, "text": "___ I was sleeping, the phone rang.", "options": ["While", "When", "During", "At"], "correct_index": 0}, {"id": 83, "text": "She was cooking ___ he arrived.", "options": ["while", "when", "during", "at"], "correct_index": 1}, {"id": 84, "text": "___ they were playing, it started raining.", "options": ["While", "When", "During", "At"], "correct_index": 0}, {"id": 85, "text": "I met her ___ I was walking in the park.", "options": ["while", "when", "during", "at"], "correct_index": 0}, {"id": 86, "text": "He called ___ I was having dinner.", "options": ["while", "when", "during", "at"], "correct_index": 0}, {"id": 87, "text": "___ I arrived, she was watching TV.", "options": ["While", "When", "During", "At"], "correct_index": 1}, {"id": 88, "text": "They were studying ___ the teacher came in.", "options": ["while", "when", "during", "at"], "correct_index": 1}, {"id": 89, "text": "___ we were talking, he left.", "options": ["While", "When", "During", "At"], "correct_index": 0}, {"id": 90, "text": "She was sleeping ___ I got home.", "options": ["while", "when", "during", "at"], "correct_index": 1}, {"id": 91, "text": "___ it was raining, we stayed inside.", "options": ["While", "When", "During", "At"], "correct_index": 0}, {"id": 92, "text": "I saw him ___ he was running.", "options": ["while", "when", "during", "at"], "correct_index": 0}, {"id": 93, "text": "___ she opened the door, he was standing there.", "options": ["While", "When", "During", "At"], "correct_index": 1}, {"id": 94, "text": "We were eating ___ the lights went out.", "options": ["while", "when", "during", "at"], "correct_index": 1}, {"id": 95, "text": "___ I was working, she was sleeping.", "options": ["While", "When", "During", "At"], "correct_index": 0}, {"id": 96, "text": "He arrived ___ we were having lunch.", "options": ["while", "when", "during", "at"], "correct_index": 0}, {"id": 97, "text": "___ they finished, we were still working.", "options": ["While", "When", "During", "At"], "correct_index": 1}, {"id": 98, "text": "I was thinking about you ___ you called.", "options": ["while", "when", "during", "at"], "correct_index": 1}, {"id": 99, "text": "___ he was driving, he saw an accident.", "options": ["While", "When", "During", "At"], "correct_index": 0}, {"id": 100, "text": "She came in ___ I was talking on the phone.", "options": ["while", "when", "during", "at"], "correct_index": 0}], "6": [{"id": 101, "text": "I ___ a book when she called.", "options": ["read", "was reading", "am reading", "have read"], "correct_index": 1}, {"id": 102, "text": "She ___ when the phone rang.", "options": ["cooked", "was cooking", "is cooking", "has cooked"], "correct_index": 1}, {"id": 103, "text": "They ___ football yesterday.", "options": ["played", "were playing", "are playing", "have played"], "correct_index": 0}, {"id": 104, "text": "He ___ TV at 8 PM yesterday.", "options": ["watched", "was watching", "is watching", "has watched"], "correct_index": 1}, {"id": 105, "text": "We ___ in London in 2010.", "options": ["lived", "were living", "are living", "have lived"], "correct_index": 1}, {"id": 106, "text": "I ___ my homework and went to bed.", "options": ["finished", "was finishing", "am finishing", "have finished"], "correct_index": 0}, {"id": 107, "text": "She ___ all evening yesterday.", "options": ["studied", "was studying", "is studying", "has studied"], "correct_index": 1}, {"id": 108, "text": "They ___ dinner when I arrived.", "options": ["had", "were having", "are having", "have had"], "correct_index": 1}, {"id": 109, "text": "I ___ him at the party.", "options": ["met", "was meeting", "am meeting", "have met"], "correct_index": 0}, {"id": 110, "text": "He ___ while I was talking.", "options": ["left", "was leaving", "is leaving", "has left"], "correct_index": 0}, {"id": 111, "text": "We ___ TV when the lights went out.", "options": ["watched", "were watching", "are watching", "have watched"], "correct_index": 1}, {"id": 112, "text": "She ___ three books last month.", "options": ["read", "was reading", "is reading", "has read"], "correct_index": 0}, {"id": 113, "text": "I ___ at 9 AM yesterday.", "options": ["worked", "was working", "am working", "have worked"], "correct_index": 1}, {"id": 114, "text": "They ___ to music when I came in.", "options": ["listened", "were listening", "are listening", "have listened"], "correct_index": 1}, {"id": 115, "text": "He ___ the door and left.", "options": ["opened", "was opening", "is opening", "has opened"], "correct_index": 0}, {"id": 116, "text": "We ___ for the bus when it started raining.", "options": ["waited", "were waiting", "are waiting", "have waited"], "correct_index": 1}, {"id": 117, "text": "I ___ a noise and looked around.", "options": ["heard", "was hearing", "am hearing", "have heard"], "correct_index": 0}, {"id": 118, "text": "She ___ in the garden all afternoon.", "options": ["worked", "was working", "is working", "has worked"], "correct_index": 1}, {"id": 119, "text": "They ___ home at 10 PM.", "options": ["arrived", "were arriving", "are arriving", "have arrived"], "correct_index": 0}, {"id": 120, "text": "I ___ a shower when you called.", "options": ["took", "was taking", "am taking", "have taken"], "correct_index": 1}], "7": [{"id": 121, "text": "While I ___ a book, she ___ TV.", "options": ["read / watched", "was reading / was watching", "read / was watching", "was reading / watched"], "correct_index": 1}, {"id": 122, "text": "He ___ dinner while his wife ___ a letter.", "options": ["cooked / wrote", "was cooking / was writing", "cooked / was writing", "was cooking / wrote"], "correct_index": 1}, {"id": 123, "text": "While they ___ football, we ___ volleyball.", "options": ["played / played", "were playing / were playing", "played / were playing", "were playing / played"], "correct_index": 1}, {"id": 124, "text": "I ___ to music while you ___.", "options": ["listened / studied", "was listening / were studying", "listened / were studying", "was listening / studied"], "correct_index": 1}, {"id": 125, "text": "While she ___, he ___ on the phone.", "options": ["cooked / talked", "was cooking / was talking", "cooked / was talking", "was cooking / talked"], "correct_index": 1}, {"id": 126, "text": "We ___ TV while they ___ dinner.", "options": ["watched / had", "were watching / were having", "watched / were having", "were watching / had"], "correct_index": 1}, {"id": 127, "text": "While I ___, she ___ in the garden.", "options": ["worked / worked", "was working / was working", "worked / was working", "was working / worked"], "correct_index": 1}, {"id": 128, "text": "He ___ while she ___.", "options": ["read / wrote", "was reading / was writing", "read / was writing", "was reading / wrote"], "correct_index": 1}, {"id": 129, "text": "While you ___, I ___ for you.", "options": ["shopped / waited", "were shopping / was waiting", "shopped / was waiting", "were shopping / waited"], "correct_index": 1}, {"id": 130, "text": "They ___ while we ___.", "options": ["played / studied", "were playing / were studying", "played / were studying", "were playing / studied"], "correct_index": 1}, {"id": 131, "text": "While it ___, we ___ inside.", "options": ["rained / stayed", "was raining / were staying", "rained / were staying", "was raining / stayed"], "correct_index": 1}, {"id": 132, "text": "I ___ coffee while he ___ tea.", "options": ["drank / drank", "was drinking / was drinking", "drank / was drinking", "was drinking / drank"], "correct_index": 1}, {"id": 133, "text": "While she ___ homework, he ___ games.", "options": ["did / played", "was doing / was playing", "did / was playing", "was doing / played"], "correct_index": 1}, {"id": 134, "text": "We ___ while they ___.", "options": ["talked / listened", "were talking / were listening", "talked / were listening", "were talking / listened"], "correct_index": 1}, {"id": 135, "text": "While I ___ for the bus, you ___ in a taxi.", "options": ["waited / drove", "was waiting / were driving", "waited / were driving", "was waiting / drove"], "correct_index": 1}, {"id": 136, "text": "He ___ TV while I ___ a book.", "options": ["watched / read", "was watching / was reading", "watched / was reading", "was watching / read"], "correct_index": 1}, {"id": 137, "text": "While they ___ lunch, we ___ breakfast.", "options": ["had / had", "were having / were having", "had / were having", "were having / had"], "correct_index": 1}, {"id": 138, "text": "She ___ while he ___.", "options": ["sang / danced", "was singing / was dancing", "sang / was dancing", "was singing / danced"], "correct_index": 1}, {"id": 139, "text": "While you ___, I ___ the dishes.", "options": ["cooked / washed", "were cooking / was washing", "cooked / was washing", "were cooking / washed"], "correct_index": 1}, {"id": 140, "text": "I ___ while you ___.", "options": ["slept / worked", "was sleeping / were working", "slept / were working", "was sleeping / worked"], "correct_index": 1}], "8": [{"id": 141, "text": "I ___ when the phone ___.", "options": ["slept / rang", "was sleeping / rang", "slept / was ringing", "was sleeping / was ringing"], "correct_index": 1}, {"id": 142, "text": "She ___ dinner when he ___.", "options": ["cooked / arrived", "was cooking / arrived", "cooked / was arriving", "was cooking / was arriving"], "correct_index": 1}, {"id": 143, "text": "They ___ football when it ___ raining.", "options": ["played / started", "were playing / started", "played / was starting", "were playing / was starting"], "correct_index": 1}, {"id": 144, "text": "I ___ a book when she ___ in.", "options": ["read / came", "was reading / came", "read / was coming", "was reading / was coming"], "correct_index": 1}, {"id": 145, "text": "He ___ TV when the lights ___ out.", "options": ["watched / went", "was watching / went", "watched / were going", "was watching / were going"], "correct_index": 1}, {"id": 146, "text": "We ___ when you ___.", "options": ["ate / called", "were eating / called", "ate / were calling", "were eating / were calling"], "correct_index": 1}, {"id": 147, "text": "She ___ when I ___ her.", "options": ["slept / saw", "was sleeping / saw", "slept / was seeing", "was sleeping / was seeing"], "correct_index": 1}, {"id": 148, "text": "I ___ to music when my mom ___ home.", "options": ["listened / came", "was listening / came", "listened / was coming", "was listening / was coming"], "correct_index": 1}, {"id": 149, "text": "They ___ when the teacher ___ in.", "options": ["talked / came", "were talking / came", "talked / was coming", "were talking / was coming"], "correct_index": 1}, {"id": 150, "text": "He ___ homework when his friend ___.", "options": ["did / arrived", "was doing / arrived", "did / was arriving", "was doing / was arriving"], "correct_index": 1}, {"id": 151, "text": "We ___ for the bus when it ___.", "options": ["waited / came", "were waiting / came", "waited / was coming", "were waiting / was coming"], "correct_index": 1}, {"id": 152, "text": "I ___ a shower when someone ___ the door.", "options": ["took / knocked", "was taking / knocked", "took / was knocking", "was taking / was knocking"], "correct_index": 1}, {"id": 153, "text": "She ___ in the garden when it ___ to rain.", "options": ["worked / started", "was working / started", "worked / was starting", "was working / was starting"], "correct_index": 1}, {"id": 154, "text": "They ___ when I ___ them.", "options": ["danced / saw", "were dancing / saw", "danced / was seeing", "were dancing / was seeing"], "correct_index": 1}, {"id": 155, "text": "He ___ when she ___ him.", "options": ["ran / called", "was running / called", "ran / was calling", "was running / was calling"], "correct_index": 1}, {"id": 156, "text": "I ___ about you when you ___.", "options": ["thought / called", "was thinking / called", "thought / were calling", "was thinking / were calling"], "correct_index": 1}, {"id": 157, "text": "We ___ TV when you ___ at the door.", "options": ["watched / knocked", "were watching / knocked", "watched / were knocking", "were watching / were knocking"], "correct_index": 1}, {"id": 158, "text": "She ___ on the phone when I ___ in.", "options": ["talked / came", "was talking / came", "talked / was coming", "was talking / was coming"], "correct_index": 1}, {"id": 159, "text": "They ___ dinner when the doorbell ___.", "options": ["had / rang", "were having / rang", "had / was ringing", "were having / was ringing"], "correct_index": 1}, {"id": 160, "text": "I ___ when you ___ me.", "options": ["worked / interrupted", "was working / interrupted", "worked / were interrupting", "was working / were interrupting"], "correct_index": 1}], "9": [{"id": 161, "text": "I was working ___ 9 AM yesterday.", "options": ["at", "in", "on", "for"], "correct_index": 0}, {"id": 162, "text": "She was sleeping ___ midnight.", "options": ["at", "in", "on", "for"], "correct_index": 0}, {"id": 163, "text": "They were playing ___ all day yesterday.", "options": ["at", "in", "on", "for"], "correct_index": 3}, {"id": 164, "text": "He was studying ___ all evening.", "options": ["at", "in", "on", "for"], "correct_index": 3}, {"id": 165, "text": "We were watching TV ___ 8 o'clock.", "options": ["at", "in", "on", "for"], "correct_index": 0}, {"id": 166, "text": "I was reading ___ that moment.", "options": ["at", "in", "on", "for"], "correct_index": 0}, {"id": 167, "text": "She was cooking ___ all morning.", "options": ["at", "in", "on", "for"], "correct_index": 3}, {"id": 168, "text": "They were waiting ___ noon.", "options": ["at", "in", "on", "for"], "correct_index": 0}, {"id": 169, "text": "He was working ___ all afternoon.", "options": ["at", "in", "on", "for"], "correct_index": 3}, {"id": 170, "text": "We were eating ___ 7 PM.", "options": ["at", "in", "on", "for"], "correct_index": 0}, {"id": 171, "text": "I was sleeping ___ 3 hours.", "options": ["at", "in", "on", "for"], "correct_index": 3}, {"id": 172, "text": "She was talking ___ the phone ___ an hour.", "options": ["on / for", "at / for", "on / at", "in / for"], "correct_index": 0}, {"id": 173, "text": "They were playing football ___ two hours.", "options": ["at", "in", "on", "for"], "correct_index": 3}, {"id": 174, "text": "He was listening to music ___ all day.", "options": ["at", "in", "on", "for"], "correct_index": 3}, {"id": 175, "text": "We were studying ___ 5 o'clock.", "options": ["at", "in", "on", "for"], "correct_index": 0}, {"id": 176, "text": "I was working ___ the whole day.", "options": ["at", "in", "on", "for"], "correct_index": 3}, {"id": 177, "text": "She was writing ___ two hours.", "options": ["at", "in", "on", "for"], "correct_index": 3}, {"id": 178, "text": "They were waiting ___ that time.", "options": ["at", "in", "on", "for"], "correct_index": 0}, {"id": 179, "text": "He was running ___ all evening.", "options": ["at", "in", "on", "for"], "correct_index": 3}, {"id": 180, "text": "We were having dinner ___ 8 PM.", "options": ["at", "in", "on", "for"], "correct_index": 0}], "10": [{"id": 181, "text": "What ___ you doing at 5 PM yesterday?", "options": ["was", "were", "are", "do"], "correct_index": 1}, {"id": 182, "text": "I ___ reading a book.", "options": ["was", "were", "am", "is"], "correct_index": 0}, {"id": 183, "text": "She ___ cooking when I arrived.", "options": ["was", "were", "is", "are"], "correct_index": 0}, {"id": 184, "text": "They ___ playing football.", "options": ["wasn't", "weren't", "isn't", "aren't"], "correct_index": 1}, {"id": 185, "text": "___ he watching TV?", "options": ["Was", "Were", "Is", "Does"], "correct_index": 0}, {"id": 186, "text": "We ___ studying all evening.", "options": ["was", "were", "are", "is"], "correct_index": 1}, {"id": 187, "text": "I ___ not sleeping.", "options": ["was", "were", "am", "is"], "correct_index": 0}, {"id": 188, "text": "___ you working yesterday?", "options": ["Was", "Were", "Are", "Do"], "correct_index": 1}, {"id": 189, "text": "While I ___ reading, she called.", "options": ["was", "were", "am", "is"], "correct_index": 0}, {"id": 190, "text": "He ___ dinner when the phone rang.", "options": ["had", "was having", "has", "have"], "correct_index": 1}, {"id": 191, "text": "They ___ in London in 2010.", "options": ["lived", "were living", "live", "lives"], "correct_index": 1}, {"id": 192, "text": "I ___ a book when she ___ in.", "options": ["read / came", "was reading / came", "read / was coming", "was reading / was coming"], "correct_index": 1}, {"id": 193, "text": "___ it raining yesterday?", "options": ["Was", "Were", "Is", "Does"], "correct_index": 0}, {"id": 194, "text": "She ___ not listening.", "options": ["was", "were", "is", "are"], "correct_index": 0}, {"id": 195, "text": "While they ___ playing, we ___ studying.", "options": ["was / was", "were / were", "was / were", "were / was"], "correct_index": 1}, {"id": 196, "text": "I ___ him at the party.", "options": ["met", "was meeting", "meet", "meets"], "correct_index": 0}, {"id": 197, "text": "___ she sleeping at midnight?", "options": ["Was", "Were", "Is", "Does"], "correct_index": 0}, {"id": 198, "text": "We ___ TV when you called.", "options": ["watched", "were watching", "watch", "watches"], "correct_index": 1}, {"id": 199, "text": "He ___ homework all afternoon.", "options": ["did", "was doing", "does", "do"], "correct_index": 1}, {"id": 200, "text": "They ___ when I saw them.", "options": ["danced", "were dancing", "dance", "dances"], "correct_index": 1}]};
+        let currentQuizSet = 1;
+        const quizData = allQuizData[currentQuizSet] || [];
+
+        function checkAnswers(event) {
+            event.preventDefault();
+
+            const form = document.getElementById('quiz-form');
+            const formData = new FormData(form);
+
+            let correct = 0;
+            let total = quizData.length;
+
+            // Check each question
+            quizData.forEach((question, index) => {
+                const selectedAnswer = parseInt(formData.get(`question-${question.id}`));
+                const options = document.querySelectorAll(`input[name="question-${question.id}"]`);
+
+                options.forEach((option, optIndex) => {
+                    const label = option.closest('.option');
+                    if (optIndex === question.correct_index) {
+                        label.classList.add('correct');
+                    }
+                    if (selectedAnswer === optIndex && selectedAnswer !== question.correct_index) {
+                        label.classList.add('incorrect');
+                    }
+                    option.disabled = true;
+                });
+
+                if (selectedAnswer === question.correct_index) {
+                    correct++;
+                }
+            });
+
+            // Calculate score
+            const percentage = Math.round((correct / total) * 100);
+            const passed = percentage >= 70;
+
+            // Show results
+            const resultsDiv = document.getElementById('results');
+            const scoreDiv = document.getElementById('score');
+            const messageDiv = document.getElementById('results-message');
+
+            scoreDiv.textContent = `${percentage}%`;
+            scoreDiv.className = 'score ' + (passed ? 'pass' : 'fail');
+
+            messageDiv.textContent = `Вы ответили правильно на ${correct} из ${total} вопросов`;
+
+            resultsDiv.classList.remove('hidden');
+
+            // Disable submit button
+            document.getElementById('submit-btn').disabled = true;
+
+            // Scroll to results
+            resultsDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        function retakeQuiz() {
+            loadQuiz(currentQuizSet);
+        }
+
+        function loadQuiz(quizSet) {
+            currentQuizSet = quizSet;
+
+            // Hide placeholder, show form (if they exist)
+            const placeholder = document.getElementById('quiz-placeholder');
+            const form = document.getElementById('quiz-form');
+            if (placeholder) {
+                placeholder.style.display = 'none';
+            }
+            if (form.style.display === 'none') {
+                form.style.display = 'block';
+            }
+
+            // Update button states
+            document.querySelectorAll('.quiz-selector-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (parseInt(btn.dataset.quiz) === quizSet) {
+                    btn.classList.add('active');
+                }
+            });
+
+            // Get questions for this quiz set
+            const questions = allQuizData[quizSet] || [];
+
+            // Clear and rebuild quiz HTML
+            const submitBtn = document.getElementById('submit-btn');
+
+            // Remove all questions
+            const existingQuestions = form.querySelectorAll('.question');
+            existingQuestions.forEach(q => q.remove());
+
+            // Add new questions
+            questions.forEach((question, index) => {
+                const questionDiv = document.createElement('div');
+                questionDiv.className = 'question';
+                questionDiv.dataset.questionId = question.id;
+
+                let optionsHtml = '';
+                question.options.forEach((option, optIndex) => {
+                    optionsHtml += `
+                        <label class="option">
+                            <input type="radio" name="question-${question.id}" value="${optIndex}" required>
+                            <span>${option}</span>
+                        </label>
+                    `;
+                });
+
+                questionDiv.innerHTML = `
+                    <div class="question-text">${index + 1}. ${question.text}</div>
+                    <div class="options">
+                        ${optionsHtml}
+                    </div>
+                `;
+
+                form.insertBefore(questionDiv, submitBtn);
+            });
+
+            // Reset form state
+            form.reset();
+            submitBtn.disabled = false;
+            document.getElementById('results').classList.add('hidden');
+            document.querySelectorAll('.option').forEach(opt => {
+                opt.classList.remove('correct', 'incorrect');
+            });
+
+        }
+
+        // Initialize: if only one quiz set, load it automatically
+        const quizSetCount = Object.keys(allQuizData).length;
+        if (quizSetCount === 1) {
+            // Single quiz - load immediately
+            loadQuiz(1);
+        }
+        // If multiple quiz sets, user must select one (placeholder will show)
+
+        document.getElementById('quiz-form').addEventListener('submit', checkAnswers);
+    </script>
+</body>
+</html>

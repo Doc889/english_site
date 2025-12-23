@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Future Simple (Will) - Английский язык</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary: #7c3aed;
+            --color-primary-dark: #6d28d9;
+            --color-primary-light: #a78bfa;
+            --color-secondary: #c4b5fd;
+            --color-accent: #ddd6fe;
+            --color-bg: #ffffff;
+            --color-bg-alt: #faf5ff;
+            --color-text: #1f2937;
+            --color-text-light: #6b7280;
+            --color-white: #ffffff;
+            --color-success: #10b981;
+            --color-error: #ef4444;
+            --font-display: 'Playfair Display', serif;
+            --font-body: 'DM Sans', sans-serif;
+            --shadow-sm: 0 2px 8px rgba(124, 58, 237, 0.08);
+            --shadow-md: 0 4px 20px rgba(124, 58, 237, 0.12);
+            --shadow-lg: 0 8px 40px rgba(124, 58, 237, 0.16);
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.7;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+            color: var(--color-white);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: var(--color-accent);
+            text-decoration: none;
+            margin-bottom: 1rem;
+            transition: var(--transition);
+        }
+
+        .back-link:hover {
+            color: var(--color-white);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .description {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            color: var(--color-primary);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .rule-section {
+            background: var(--color-white);
+            border-left: 4px solid var(--color-primary);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .rule-title {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            color: var(--color-primary);
+            margin-bottom: 1rem;
+        }
+
+        .rule-content {
+            color: var(--color-text);
+            margin-bottom: 1rem;
+            line-height: 1.8;
+            white-space: pre-wrap;
+        }
+
+        .examples {
+            background: var(--color-bg-alt);
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+        }
+
+        .example {
+            padding: 0.5rem;
+            margin: 0.25rem 0;
+            font-family: monospace;
+            font-size: 0.95rem;
+        }
+
+        .quiz-section {
+            background: var(--color-bg-alt);
+            padding: 3rem 2rem;
+            margin-top: 3rem;
+            border-radius: 12px;
+        }
+
+        #quiz-selector {
+            margin-bottom: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .quiz-selector-btn {
+            padding: 1rem 2rem;
+            background: var(--color-bg);
+            border: 2px solid var(--color-primary);
+            color: var(--color-primary);
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            min-width: 250px;
+        }
+
+        .quiz-selector-btn:hover {
+            background: var(--color-primary);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .quiz-selector-btn.active {
+            background: var(--color-primary);
+            color: white;
+        }
+
+        #quiz-placeholder {
+            text-align: center;
+            padding: 3rem;
+            color: var(--color-text-light);
+        }
+
+        #quiz-form {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .question {
+            background: var(--color-white);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .question-text {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--color-text);
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .option {
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+            background: var(--color-bg);
+            border: 2px solid var(--color-accent);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .option:hover {
+            border-color: var(--color-primary);
+            background: var(--color-bg-alt);
+        }
+
+        .option input[type="radio"] {
+            margin-right: 1rem;
+            cursor: pointer;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1.2rem 2rem;
+            background: var(--color-primary);
+            color: var(--color-white);
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+            margin-top: 2rem;
+        }
+
+        .submit-btn:hover {
+            background: var(--color-primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .submit-btn:disabled {
+            background: var(--color-text-light);
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        #results {
+            max-width: 600px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: var(--color-white);
+            border-radius: 12px;
+            box-shadow: var(--shadow-lg);
+            text-align: center;
+        }
+
+        #results.hidden {
+            display: none;
+        }
+
+        .score {
+            font-family: var(--font-display);
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .score.pass {
+            color: var(--color-success);
+        }
+
+        .score.fail {
+            color: var(--color-error);
+        }
+
+        .feedback {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .retry-btn {
+            padding: 1rem 2rem;
+            background: var(--color-primary);
+            color: var(--color-white);
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            margin-top: 1rem;
+        }
+
+        .retry-btn:hover {
+            background: var(--color-primary-dark);
+        }
+
+        .home-btn {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.75rem 1.5rem;
+            background: var(--color-white);
+            color: var(--color-primary);
+            border: 2px solid var(--color-primary);
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .home-btn:hover {
+            background: var(--color-primary);
+            color: var(--color-white);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="../index.html" class="back-link">← Назад ко всем темам</a>
+            <h1>Future Simple (Will)</h1>
+            <p class="description">Будущее простое время — предсказания, обещания, спонтанные решения</p>
+        </div>
+    </header>
+
+    <main>
+        <h2 class="section-title">📚 Теория</h2>
+
+        
+        <div class="rule-section">
+            <h3 class="rule-title">1. Что такое Future Simple</h3>
+            <p class="rule-content"></p>
+            <div class="examples">
+                <div class="example">Future Simple — это будущее время, которое используется для:</div>
+                <div class="example">Предсказаний о будущем</div>
+                <div class="example">Обещаний</div>
+                <div class="example">Спонтанных решений (принятых в момент речи)</div>
+                <div class="example">Предложений помощи</div>
+                <div class="example">Формула: will + базовая форма глагола (без to)</div>
+                <div class="example">Примеры:</div>
+                <div class="example">I will go to the park tomorrow. (Я пойду в парк завтра)</div>
+                <div class="example">She will call you later. (Она позвонит тебе позже)</div>
+                <div class="example">They will help us. (Они помогут нам)</div>
+                <div class="example">💡 Совет:</div>
+                <div class="example">Will используется со ВСЕМИ местоимениями: I, you, he, she, it, we, they — всегда will.</div>
+                <div class="example">Никаких изменений глагола!</div>
+            </div>
+        </div>
+
+        <div class="rule-section">
+            <h3 class="rule-title">2. Утверждения (Affirmative)</h3>
+            <p class="rule-content"></p>
+        </div>
+
+        <div class="rule-section">
+            <h3 class="rule-title">Структура очень простая:</h3>
+            <p class="rule-content"></p>
+            <div class="examples">
+                <div class="example">Подлежащее + will + глагол (базовая форма)</div>
+                <div class="example">Примеры:</div>
+                <div class="example">I will work tomorrow. (Я буду работать завтра)</div>
+                <div class="example">You will see her soon. (Ты увидишь её скоро)</div>
+                <div class="example">He will come to the party. (Он придёт на вечеринку)</div>
+                <div class="example">She will study English. (Она будет учить английский)</div>
+                <div class="example">It will rain tomorrow. (Завтра будет дождь)</div>
+                <div class="example">We will travel next year. (Мы поедем в путешествие в следующем году)</div>
+                <div class="example">They will buy a car. (Они купят машину)</div>
+                <div class="example">💡 Совет:</div>
+                <div class="example">Сокращённая форма: I'll, you'll, he'll, she'll, we'll, they'll</div>
+                <div class="example">I will = I'll</div>
+                <div class="example">She will = She'll</div>
+            </div>
+        </div>
+
+        <div class="rule-section">
+            <h3 class="rule-title">3. Отрицания (Negative)</h3>
+            <p class="rule-content"></p>
+        </div>
+
+        <div class="rule-section">
+            <h3 class="rule-title">Чтобы сказать, что что-то НЕ произойдёт, используем will not или won't:</h3>
+            <p class="rule-content"></p>
+            <div class="examples">
+                <div class="example">Подлежащее + will not (won't) + глагол</div>
+                <div class="example">Примеры:</div>
+                <div class="example">I will not go to school tomorrow. (Я не пойду в школу завтра)</div>
+                <div class="example">I won't go to school tomorrow. (сокращённая форма)</div>
+                <div class="example">She will not call you. (Она не позвонит тебе)</div>
+                <div class="example">They won't help us. (Они не помогут нам)</div>
+                <div class="example">He won't come to the party. (Он не придёт на вечеринку)</div>
+                <div class="example">It won't rain today. (Сегодня не будет дождя)</div>
+                <div class="example">💡 Совет:</div>
+                <div class="example">won't = will not (это сокращение очень популярно!)</div>
+                <div class="example">После won't глагол всегда в базовой форме (без to, без -s, без -ed)</div>
+            </div>
+        </div>
+
+        <div class="rule-section">
+            <h3 class="rule-title">4. Вопросы (Questions)</h3>
+            <p class="rule-content"></p>
+        </div>
+
+        <div class="rule-section">
+            <h3 class="rule-title">Чтобы спросить о будущем, ставим will перед подлежащим:</h3>
+            <p class="rule-content"></p>
+            <div class="examples">
+                <div class="example">Will + подлежащее + глагол?</div>
+                <div class="example">Примеры:</div>
+                <div class="example">Will you help me? (Ты поможешь мне?)</div>
+                <div class="example">Will she come tomorrow? (Она придёт завтра?)</div>
+                <div class="example">Will they buy a house? (Они купят дом?)</div>
+                <div class="example">Will it rain? (Будет дождь?)</div>
+                <div class="example">Will we see you later? (Мы увидим тебя позже?)</div>
+                <div class="example">💡 Совет:</div>
+                <div class="example">В вопросах порядок слов: Will + подлежащее + глагол</div>
+                <div class="example">Глагол всегда в базовой форме!</div>
+            </div>
+        </div>
+
+        <div class="rule-section">
+            <h3 class="rule-title">5. Когда используем Future Simple</h3>
+            <p class="rule-content"></p>
+        </div>
+
+        <div class="rule-section">
+            <h3 class="rule-title">Предсказания (то, что мы думаем произойдёт):</h3>
+            <p class="rule-content"></p>
+            <div class="examples">
+                <div class="example">It will rain tomorrow. (Завтра будет дождь)</div>
+                <div class="example">She will be a doctor. (Она станет доктором)</div>
+                <div class="example">Обещания:</div>
+                <div class="example">I will call you. (Я позвоню тебе)</div>
+                <div class="example">We will help you. (Мы поможем тебе)</div>
+            </div>
+        </div>
+
+        <div class="rule-section">
+            <h3 class="rule-title">Спонтанные решения (принятые в момент речи):</h3>
+            <p class="rule-content"></p>
+            <div class="examples">
+                <div class="example">I'm hungry. I'll make a sandwich. (Я голоден. Я сделаю бутерброд)</div>
+                <div class="example">The phone is ringing. I'll answer it. (Телефон звонит. Я отвечу)</div>
+                <div class="example">Предложения помощи:</div>
+                <div class="example">I'll help you with your homework. (Я помогу тебе с домашней работой)</div>
+                <div class="example">Shall I open the window? (Мне открыть окно?)</div>
+                <div class="example">💡 Совет:</div>
+                <div class="example">Если решение запланировано заранее, используем be going to, а не will!</div>
+                <div class="example">Но если решение принято прямо сейчас — will.</div>
+            </div>
+        </div>
+
+        <div class="rule-section">
+            <h3 class="rule-title">6. Наречия времени (Time expressions)</h3>
+            <p class="rule-content"></p>
+            <div class="examples">
+                <div class="example">С Future Simple часто используются эти слова:</div>
+                <div class="example">tomorrow (завтра)</div>
+                <div class="example">next week / next month / next year (на следующей неделе / в следующем месяце / в следующем году)</div>
+                <div class="example">in the future (в будущем)</div>
+                <div class="example">soon (скоро)</div>
+                <div class="example">later (позже)</div>
+                <div class="example">tonight (сегодня вечером)</div>
+                <div class="example">in 2 days / in 5 years (через 2 дня / через 5 лет)</div>
+                <div class="example">Примеры:</div>
+                <div class="example">I will see you tomorrow. (Я увижу тебя завтра)</div>
+                <div class="example">She will call you later. (Она позвонит тебе позже)</div>
+                <div class="example">We will travel next summer. (Мы поедем в путешествие следующим летом)</div>
+                <div class="example">They will finish in 3 hours. (Они закончат через 3 часа)</div>
+                <div class="example">💡 Совет:</div>
+                <div class="example">Наречия времени обычно ставятся в конец предложения.</div>
+            </div>
+        </div>
+
+        <div class="rule-section">
+            <h3 class="rule-title">7. Типичные ошибки русскоговорящих</h3>
+            <p class="rule-content"></p>
+            <div class="examples">
+                <div class="example">❌ I will to go to the park. → лишнее "to"</div>
+                <div class="example">✔ I will go to the park.</div>
+                <div class="example">❌ She will goes to school. → лишнее -s</div>
+                <div class="example">✔ She will go to school.</div>
+                <div class="example">❌ Will he goes there? → лишнее -s</div>
+                <div class="example">✔ Will he go there?</div>
+                <div class="example">❌ I will not to help. → лишнее "to"</div>
+                <div class="example">✔ I will not help.</div>
+                <div class="example">❌ He won't goes. → лишнее -s</div>
+                <div class="example">✔ He won't go.</div>
+                <div class="example">❌ Tomorrow I go to the park. → нет will для будущего</div>
+                <div class="example">✔ Tomorrow I will go to the park.</div>
+                <div class="example">💡 Совет:</div>
+                <div class="example">После will всегда идёт глагол в базовой форме — без to, без окончаний!</div>
+            </div>
+        </div>
+
+        <div class="rule-section">
+            <h3 class="rule-title">8. Will vs Be Going To</h3>
+            <p class="rule-content"></p>
+            <div class="examples">
+                <div class="example">Will — спонтанное решение, обещание, предсказание:</div>
+                <div class="example">I'll help you. (Я помогу тебе — решение принято сейчас)</div>
+                <div class="example">It will rain. (Будет дождь — предсказание)</div>
+                <div class="example">Be going to — запланированное действие, намерение:</div>
+                <div class="example">I'm going to visit my friend tomorrow. (Я собираюсь навестить друга завтра — уже запланировано)</div>
+                <div class="example">It's going to rain. (Будет дождь — видим облака, есть признаки)</div>
+                <div class="example">💡 Совет:</div>
+                <div class="example">Will — когда решение ТОЛЬКО что принято.</div>
+                <div class="example">Be going to — когда решение уже было принято раньше.</div>
+            </div>
+        </div>
+
+        <div class="rule-section">
+            <h3 class="rule-title">9. Главное про Future Simple</h3>
+            <p class="rule-content"></p>
+            <div class="examples">
+                <div class="example">1️⃣ Формула: will + базовая форма глагола</div>
+                <div class="example">2️⃣ Работает со всеми местоимениями одинаково</div>
+                <div class="example">3️⃣ Отрицание: will not (won't)</div>
+                <div class="example">4️⃣ Вопрос: Will + подлежащее + глагол?</div>
+                <div class="example">5️⃣ Используем для: предсказаний, обещаний, спонтанных решений</div>
+            </div>
+        </div>
+
+        <div class="rule-section">
+            <h3 class="rule-title">6️⃣ Наречия времени: tomorrow, next week, soon, later, in the future</h3>
+            <p class="rule-content"></p>
+            <div class="examples">
+                <div class="example">7️⃣ После will НИКОГДА не ставим to!</div>
+            </div>
+        </div>
+
+
+        <div class="quiz-section">
+            <h2 class="section-title">✏️ Проверь себя</h2>
+            <p style="text-align: center; margin-bottom: 2rem; font-size: 1.1rem;">
+                Всего вопросов: 174
+            </p>
+
+            <div id="quiz-selector">
+            </div>
+
+            <div id="quiz-placeholder" style="display: none;">
+                <p style="font-size: 1.2rem;">Выберите тест, чтобы начать</p>
+            </div>
+
+            <form id="quiz-form" style="display: block;">
+                <button type="submit" class="submit-btn" id="submit-btn">Проверить ответы</button>
+            </form>
+
+            <div id="results" class="hidden">
+                <div class="score" id="score"></div>
+                <div class="feedback" id="feedback"></div>
+                <p id="details"></p>
+                <button class="retry-btn" onclick="retryQuiz()">Попробовать ещё раз</button>
+                <br>
+                <a href="../index.html" class="home-btn">На главную</a>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const allQuizData = {"1": [{"text": "I ___ go to the park tomorrow.", "options": ["will", "goes", "went", "going"], "correct_index": 0, "explanation": ""}, {"text": "She ___ call you later.", "options": ["will", "calls", "called", "calling"], "correct_index": 0, "explanation": ""}, {"text": "They ___ help us with the project.", "options": ["will", "helps", "helped", "helping"], "correct_index": 0, "explanation": ""}, {"text": "We ___ travel next summer.", "options": ["will", "travels", "traveled", "traveling"], "correct_index": 0, "explanation": ""}, {"text": "He ___ study English next year.", "options": ["will", "studies", "studied", "studying"], "correct_index": 0, "explanation": ""}, {"text": "You ___ see her soon.", "options": ["will", "sees", "saw", "seeing"], "correct_index": 0, "explanation": ""}, {"text": "It ___ rain tomorrow.", "options": ["will", "rains", "rained", "raining"], "correct_index": 0, "explanation": ""}, {"text": "I ___ work hard next week.", "options": ["will", "works", "worked", "working"], "correct_index": 0, "explanation": ""}, {"text": "She ___ come to the party tonight.", "options": ["will", "comes", "came", "coming"], "correct_index": 0, "explanation": ""}, {"text": "They ___ buy a new car.", "options": ["will", "buys", "bought", "buying"], "correct_index": 0, "explanation": ""}, {"text": "We ___ finish the work soon.", "options": ["will", "finishes", "finished", "finishing"], "correct_index": 0, "explanation": ""}, {"text": "He ___ visit his parents next month.", "options": ["will", "visits", "visited", "visiting"], "correct_index": 0, "explanation": ""}, {"text": "You ___ learn a lot.", "options": ["will", "learns", "learned", "learning"], "correct_index": 0, "explanation": ""}, {"text": "It ___ be sunny tomorrow.", "options": ["will", "is", "was", "being"], "correct_index": 0, "explanation": ""}, {"text": "I ___ make dinner tonight.", "options": ["will", "makes", "made", "making"], "correct_index": 0, "explanation": ""}, {"text": "She ___ write a book.", "options": ["will", "writes", "wrote", "writing"], "correct_index": 0, "explanation": ""}, {"text": "They ___ move to a new house.", "options": ["will", "moves", "moved", "moving"], "correct_index": 0, "explanation": ""}, {"text": "We ___ meet at 5 pm.", "options": ["will", "meets", "met", "meeting"], "correct_index": 0, "explanation": ""}, {"text": "He ___ get a new job.", "options": ["will", "gets", "got", "getting"], "correct_index": 0, "explanation": ""}, {"text": "You ___ be happy.", "options": ["will", "are", "were", "being"], "correct_index": 0, "explanation": ""}, {"text": "I ___ not go to school tomorrow.", "options": ["will", "do", "am", "is"], "correct_index": 0, "explanation": ""}, {"text": "She ___ not call you today.", "options": ["will", "does", "is", "are"], "correct_index": 0, "explanation": ""}, {"text": "They ___ not help us.", "options": ["will", "do", "are", "is"], "correct_index": 0, "explanation": ""}, {"text": "We ___ not travel this year.", "options": ["will", "do", "are", "is"], "correct_index": 0, "explanation": ""}, {"text": "He ___ not study tonight.", "options": ["will", "does", "is", "are"], "correct_index": 0, "explanation": ""}, {"text": "You ___ not see her tomorrow.", "options": ["will", "do", "are", "is"], "correct_index": 0, "explanation": ""}, {"text": "It ___ not rain today.", "options": ["will", "does", "is", "are"], "correct_index": 0, "explanation": ""}, {"text": "I ___ not work on Sunday.", "options": ["will", "do", "am", "is"], "correct_index": 0, "explanation": ""}, {"text": "She ___ not come to the party.", "options": ["will", "does", "is", "are"], "correct_index": 0, "explanation": ""}, {"text": "They ___ not buy a car.", "options": ["will", "do", "are", "is"], "correct_index": 0, "explanation": ""}, {"text": "We ___ not finish today.", "options": ["will", "do", "are", "is"], "correct_index": 0, "explanation": ""}, {"text": "He ___ not visit them.", "options": ["will", "does", "is", "are"], "correct_index": 0, "explanation": ""}, {"text": "You ___ not learn Spanish.", "options": ["will", "do", "are", "is"], "correct_index": 0, "explanation": ""}, {"text": "It ___ not be cold.", "options": ["will", "does", "is", "are"], "correct_index": 0, "explanation": ""}, {"text": "I ___ not make dinner.", "options": ["will", "do", "am", "is"], "correct_index": 0, "explanation": ""}, {"text": "She ___ not write today.", "options": ["will", "does", "is", "are"], "correct_index": 0, "explanation": ""}, {"text": "They ___ not move next month.", "options": ["will", "do", "are", "is"], "correct_index": 0, "explanation": ""}, {"text": "We ___ not meet tomorrow.", "options": ["will", "do", "are", "is"], "correct_index": 0, "explanation": ""}, {"text": "He ___ not get a job.", "options": ["will", "does", "is", "are"], "correct_index": 0, "explanation": ""}, {"text": "You ___ not be late.", "options": ["will", "do", "are", "is"], "correct_index": 0, "explanation": ""}, {"text": "I ___ visit my grandparents next week.", "options": ["will", "won't", "do", "don't"], "correct_index": 0, "explanation": ""}, {"text": "She ___ not eat meat.", "options": ["will", "won't", "does", "doesn't"], "correct_index": 1, "explanation": ""}, {"text": "They ___ help us tomorrow.", "options": ["will", "won't", "do", "don't"], "correct_index": 0, "explanation": ""}, {"text": "We ___ not go to the cinema.", "options": ["will", "won't", "do", "don't"], "correct_index": 1, "explanation": ""}, {"text": "He ___ study hard.", "options": ["will", "won't", "does", "doesn't"], "correct_index": 0, "explanation": ""}, {"text": "You ___ not see him today.", "options": ["will", "won't", "do", "don't"], "correct_index": 1, "explanation": ""}, {"text": "It ___ be hot tomorrow.", "options": ["will", "won't", "is", "isn't"], "correct_index": 0, "explanation": ""}, {"text": "I ___ not work tonight.", "options": ["will", "won't", "do", "don't"], "correct_index": 1, "explanation": ""}, {"text": "She ___ come to the meeting.", "options": ["will", "won't", "does", "doesn't"], "correct_index": 0, "explanation": ""}, {"text": "They ___ not buy a new phone.", "options": ["will", "won't", "do", "don't"], "correct_index": 1, "explanation": ""}, {"text": "We ___ finish the project.", "options": ["will", "won't", "do", "don't"], "correct_index": 0, "explanation": ""}, {"text": "He ___ not visit us.", "options": ["will", "won't", "does", "doesn't"], "correct_index": 1, "explanation": ""}, {"text": "You ___ learn quickly.", "options": ["will", "won't", "do", "don't"], "correct_index": 0, "explanation": ""}, {"text": "It ___ not rain today.", "options": ["will", "won't", "does", "doesn't"], "correct_index": 1, "explanation": ""}, {"text": "I ___ make a cake.", "options": ["will", "won't", "do", "don't"], "correct_index": 0, "explanation": ""}, {"text": "She ___ not write an email.", "options": ["will", "won't", "does", "doesn't"], "correct_index": 1, "explanation": ""}, {"text": "They ___ move next year.", "options": ["will", "won't", "do", "don't"], "correct_index": 0, "explanation": ""}, {"text": "We ___ not meet them.", "options": ["will", "won't", "do", "don't"], "correct_index": 1, "explanation": ""}, {"text": "He ___ get a promotion.", "options": ["will", "won't", "does", "doesn't"], "correct_index": 0, "explanation": ""}, {"text": "You ___ not be sad.", "options": ["will", "won't", "are", "aren't"], "correct_index": 1, "explanation": ""}, {"text": "I will see you ___.", "options": ["tomorrow", "yesterday", "now", "always"], "correct_index": 0, "explanation": ""}, {"text": "She will call ___.", "options": ["later", "ago", "before", "already"], "correct_index": 0, "explanation": ""}, {"text": "They will travel ___ summer.", "options": ["next", "last", "every", "this"], "correct_index": 0, "explanation": ""}, {"text": "We will meet ___ 2 hours.", "options": ["in", "ago", "for", "since"], "correct_index": 0, "explanation": ""}, {"text": "He will finish ___ week.", "options": ["next", "last", "every", "ago"], "correct_index": 0, "explanation": ""}, {"text": "You will see her ___.", "options": ["soon", "yesterday", "ago", "before"], "correct_index": 0, "explanation": ""}, {"text": "It will rain ___.", "options": ["tonight", "yesterday", "ago", "before"], "correct_index": 0, "explanation": ""}, {"text": "I will work ___ Monday.", "options": ["next", "last", "ago", "every"], "correct_index": 0, "explanation": ""}, {"text": "She will come ___ the future.", "options": ["in", "at", "on", "ago"], "correct_index": 0, "explanation": ""}, {"text": "They will buy a car ___ year.", "options": ["next", "last", "ago", "every"], "correct_index": 0, "explanation": ""}, {"text": "We will study ___ month.", "options": ["next", "last", "ago", "every"], "correct_index": 0, "explanation": ""}, {"text": "He will visit ___ 3 days.", "options": ["in", "ago", "for", "since"], "correct_index": 0, "explanation": ""}, {"text": "You will learn ___.", "options": ["soon", "yesterday", "ago", "before"], "correct_index": 0, "explanation": ""}, {"text": "It will be sunny ___.", "options": ["tomorrow", "yesterday", "ago", "before"], "correct_index": 0, "explanation": ""}, {"text": "I will call you ___.", "options": ["later", "ago", "before", "yesterday"], "correct_index": 0, "explanation": ""}, {"text": "She will write ___ week.", "options": ["next", "last", "ago", "every"], "correct_index": 0, "explanation": ""}, {"text": "They will move ___ 6 months.", "options": ["in", "ago", "for", "since"], "correct_index": 0, "explanation": ""}, {"text": "We will finish ___.", "options": ["soon", "yesterday", "ago", "before"], "correct_index": 0, "explanation": ""}, {"text": "He will arrive ___.", "options": ["tonight", "yesterday", "ago", "before"], "correct_index": 0, "explanation": ""}, {"text": "You will see ___ Friday.", "options": ["next", "last", "ago", "every"], "correct_index": 0, "explanation": ""}, {"text": "Will you help me? — Yes, I ___.", "options": ["will", "do", "am", "can"], "correct_index": 0, "explanation": ""}, {"text": "Will she come? — No, she ___.", "options": ["won't", "doesn't", "isn't", "can't"], "correct_index": 0, "explanation": ""}, {"text": "Will they travel? — Yes, they ___.", "options": ["will", "do", "are", "can"], "correct_index": 0, "explanation": ""}, {"text": "Will we finish? — No, we ___.", "options": ["won't", "don't", "aren't", "can't"], "correct_index": 0, "explanation": ""}, {"text": "Will he study? — Yes, he ___.", "options": ["will", "does", "is", "can"], "correct_index": 0, "explanation": ""}, {"text": "Will you go? — No, I ___.", "options": ["won't", "don't", "am not", "can't"], "correct_index": 0, "explanation": ""}, {"text": "Will it rain? — Yes, it ___.", "options": ["will", "does", "is", "can"], "correct_index": 0, "explanation": ""}, {"text": "Will I work? — No, you ___.", "options": ["won't", "don't", "aren't", "can't"], "correct_index": 0, "explanation": ""}, {"text": "Will she call? — Yes, she ___.", "options": ["will", "does", "is", "can"], "correct_index": 0, "explanation": ""}, {"text": "Will they buy? — No, they ___.", "options": ["won't", "don't", "aren't", "can't"], "correct_index": 0, "explanation": ""}, {"text": "Will we meet? — Yes, we ___.", "options": ["will", "do", "are", "can"], "correct_index": 0, "explanation": ""}, {"text": "Will he visit? — No, he ___.", "options": ["won't", "doesn't", "isn't", "can't"], "correct_index": 0, "explanation": ""}, {"text": "Will you learn? — Yes, I ___.", "options": ["will", "do", "am", "can"], "correct_index": 0, "explanation": ""}, {"text": "Will it be cold? — No, it ___.", "options": ["won't", "doesn't", "isn't", "can't"], "correct_index": 0, "explanation": ""}, {"text": "Will I make dinner? — Yes, you ___.", "options": ["will", "do", "are", "can"], "correct_index": 0, "explanation": ""}, {"text": "Will she write? — No, she ___.", "options": ["won't", "doesn't", "isn't", "can't"], "correct_index": 0, "explanation": ""}, {"text": "Will they move? — Yes, they ___.", "options": ["will", "do", "are", "can"], "correct_index": 0, "explanation": ""}, {"text": "Will we meet? — No, we ___.", "options": ["won't", "don't", "aren't", "can't"], "correct_index": 0, "explanation": ""}, {"text": "Will he get the job? — Yes, he ___.", "options": ["will", "does", "is", "can"], "correct_index": 0, "explanation": ""}, {"text": "Will you be there? — No, I ___.", "options": ["won't", "don't", "am not", "can't"], "correct_index": 0, "explanation": ""}, {"text": "I will ___ to the park.", "options": ["go", "goes", "going", "to go"], "correct_index": 0, "explanation": ""}, {"text": "She will ___ you tomorrow.", "options": ["call", "calls", "calling", "to call"], "correct_index": 0, "explanation": ""}, {"text": "They will ___ us.", "options": ["help", "helps", "helping", "to help"], "correct_index": 0, "explanation": ""}, {"text": "We will ___ next year.", "options": ["travel", "travels", "traveling", "to travel"], "correct_index": 0, "explanation": ""}, {"text": "He will ___ English.", "options": ["study", "studies", "studying", "to study"], "correct_index": 0, "explanation": ""}, {"text": "You will ___ her soon.", "options": ["see", "sees", "seeing", "to see"], "correct_index": 0, "explanation": ""}, {"text": "It will ___ tomorrow.", "options": ["rain", "rains", "raining", "to rain"], "correct_index": 0, "explanation": ""}, {"text": "I will ___ hard.", "options": ["work", "works", "working", "to work"], "correct_index": 0, "explanation": ""}, {"text": "She will ___ to the party.", "options": ["come", "comes", "coming", "to come"], "correct_index": 0, "explanation": ""}, {"text": "They will ___ a car.", "options": ["buy", "buys", "buying", "to buy"], "correct_index": 0, "explanation": ""}, {"text": "We will ___ the project.", "options": ["finish", "finishes", "finishing", "to finish"], "correct_index": 0, "explanation": ""}, {"text": "He will ___ his parents.", "options": ["visit", "visits", "visiting", "to visit"], "correct_index": 0, "explanation": ""}, {"text": "You will ___ a lot.", "options": ["learn", "learns", "learning", "to learn"], "correct_index": 0, "explanation": ""}, {"text": "It will ___ sunny.", "options": ["be", "is", "being", "to be"], "correct_index": 0, "explanation": ""}, {"text": "I will ___ dinner.", "options": ["make", "makes", "making", "to make"], "correct_index": 0, "explanation": ""}, {"text": "She will ___ a book.", "options": ["write", "writes", "writing", "to write"], "correct_index": 0, "explanation": ""}, {"text": "They will ___ to London.", "options": ["move", "moves", "moving", "to move"], "correct_index": 0, "explanation": ""}, {"text": "We will ___ at 5 pm.", "options": ["meet", "meets", "meeting", "to meet"], "correct_index": 0, "explanation": ""}, {"text": "He will ___ a job.", "options": ["get", "gets", "getting", "to get"], "correct_index": 0, "explanation": ""}, {"text": "You will ___ happy.", "options": ["be", "are", "being", "to be"], "correct_index": 0, "explanation": ""}, {"text": "I will to go to school. — Правильно:", "options": ["I will go to school", "I will going to school", "I go to school", "I will goes to school"], "correct_index": 0, "explanation": ""}, {"text": "She will calls you. — Правильно:", "options": ["She will call you", "She will calling you", "She calls you", "She will to call you"], "correct_index": 0, "explanation": ""}, {"text": "They will helps us. — Правильно:", "options": ["They will help us", "They will helping us", "They helps us", "They will to help us"], "correct_index": 0, "explanation": ""}, {"text": "He won't goes there. — Правильно:", "options": ["He won't go there", "He won't going there", "He not go there", "He won't to go there"], "correct_index": 0, "explanation": ""}, {"text": "Will she comes? — Правильно:", "options": ["Will she come?", "Will she coming?", "Will she to come?"], "correct_index": 0, "explanation": ""}, {"text": "I will not to work. — Правильно:", "options": ["I will not work", "I will not working", "I not work", "I do not work"], "correct_index": 0, "explanation": ""}, {"text": "They will traveling. — Правильно:", "options": ["They will travel", "They will to travel", "They travel", "They will travels"], "correct_index": 0, "explanation": ""}, {"text": "Will he goes? — Правильно:", "options": ["Will he go?", "Will he going?", "Will he to go?"], "correct_index": 0, "explanation": ""}, {"text": "She won't coming. — Правильно:", "options": ["She won't come", "She won't to come", "She doesn't come", "She won't comes"], "correct_index": 0, "explanation": ""}, {"text": "We will meets you. — Правильно:", "options": ["We will meet you", "We will meeting you", "We meets you", "We will to meet you"], "correct_index": 0, "explanation": ""}, {"text": "I will studying. — Правильно:", "options": ["I will study", "I will to study", "I study", "I will studies"], "correct_index": 0, "explanation": ""}, {"text": "He will to visit. — Правильно:", "options": ["He will visit", "He will visiting", "He visits", "He will visits"], "correct_index": 0, "explanation": ""}, {"text": "You will be goes. — Правильно:", "options": ["You will go", "You will be go", "You goes", "You will to go"], "correct_index": 0, "explanation": ""}, {"text": "It will rains. — Правильно:", "options": ["It will rain", "It will raining", "It rains", "It will to rain"], "correct_index": 0, "explanation": ""}, {"text": "Will they helps? — Правильно:", "options": ["Will they help?", "Will they helping?", "Will they to help?"], "correct_index": 0, "explanation": ""}, {"text": "She will not comes. — Правильно:", "options": ["She will not come", "She will not coming", "She not comes", "She will not to come"], "correct_index": 0, "explanation": ""}, {"text": "I will seeing you. — Правильно:", "options": ["I will see you", "I will to see you", "I see you", "I will sees you"], "correct_index": 0, "explanation": ""}, {"text": "They won't to help. — Правильно:", "options": ["They won't help", "They won't helping", "They not help", "They won't helps"], "correct_index": 0, "explanation": ""}, {"text": "Will you going? — Правильно:", "options": ["Will you go?", "Will you to go?", "Will you goes?"], "correct_index": 0, "explanation": ""}, {"text": "He will be coming. — Правильно (для Future Simple):", "options": ["He will come", "He will to come", "He comes", "He will comes"], "correct_index": 0, "explanation": ""}, {"text": "Tomorrow I ___ to the beach.", "options": ["will go", "go", "went", "going"], "correct_index": 0, "explanation": ""}, {"text": "She ___ call you later.", "options": ["won't", "doesn't", "isn't", "don't"], "correct_index": 0, "explanation": ""}, {"text": "We ___ travel next summer.", "options": ["will", "do", "are", "is"], "correct_index": 0, "explanation": ""}, {"text": "He ___ study tonight.", "options": ["won't", "doesn't", "isn't", "don't"], "correct_index": 0, "explanation": ""}, {"text": "It ___ rain tomorrow.", "options": ["will", "does", "is", "do"], "correct_index": 0, "explanation": ""}, {"text": "I ___ work on Sunday.", "options": ["won't", "don't", "am not", "isn't"], "correct_index": 0, "explanation": ""}, {"text": "They ___ buy a house next year.", "options": ["will", "do", "are", "is"], "correct_index": 0, "explanation": ""}, {"text": "We ___ meet tomorrow.", "options": ["won't", "don't", "aren't", "isn't"], "correct_index": 0, "explanation": ""}, {"text": "You ___ learn a lot.", "options": ["will", "do", "are", "is"], "correct_index": 0, "explanation": ""}, {"text": "It ___ be cold.", "options": ["won't", "doesn't", "isn't", "don't"], "correct_index": 0, "explanation": ""}, {"text": "She ___ write a letter.", "options": ["will", "does", "is", "do"], "correct_index": 0, "explanation": ""}, {"text": "They ___ move to London.", "options": ["won't", "don't", "aren't", "isn't"], "correct_index": 0, "explanation": ""}, {"text": "He ___ get the job.", "options": ["will", "does", "is", "do"], "correct_index": 0, "explanation": ""}, {"text": "You ___ be late.", "options": ["won't", "don't", "aren't", "isn't"], "correct_index": 0, "explanation": ""}, {"text": "I ___ ___ to the cinema tomorrow.", "options": ["will go", "will goes", "will to go", "will going"], "correct_index": 0, "explanation": ""}, {"text": "She ___ not ___ you today.", "options": ["will, call", "will, calls", "will, to call", "will, calling"], "correct_index": 0, "explanation": ""}, {"text": "___ they ___ us with the project?", "options": ["Will, help", "Will, helps", "Will, to help", "Will, helping"], "correct_index": 0, "explanation": ""}, {"text": "We ___ ___ next month.", "options": ["will travel", "will travels", "will to travel", "will traveling"], "correct_index": 0, "explanation": ""}, {"text": "He ___ ___ English next year.", "options": ["won't study", "won't studies", "won't to study", "won't studying"], "correct_index": 0, "explanation": ""}, {"text": "___ you ___ her soon?", "options": ["Will, see", "Will, sees", "Will, to see", "Will, seeing"], "correct_index": 0, "explanation": ""}, {"text": "It ___ ___ tomorrow.", "options": ["will rain", "will rains", "will to rain", "will raining"], "correct_index": 0, "explanation": ""}, {"text": "I ___ ___ hard tonight.", "options": ["won't work", "won't works", "won't to work", "won't working"], "correct_index": 0, "explanation": ""}, {"text": "___ she ___ to the party?", "options": ["Will, come", "Will, comes", "Will, to come", "Will, coming"], "correct_index": 0, "explanation": ""}, {"text": "They ___ ___ a new car.", "options": ["will buy", "will buys", "will to buy", "will buying"], "correct_index": 0, "explanation": ""}, {"text": "We ___ ___ the project on time.", "options": ["won't finish", "won't finishes", "won't to finish", "won't finishing"], "correct_index": 0, "explanation": ""}, {"text": "___ he ___ his parents next week?", "options": ["Will, visit", "Will, visits", "Will, to visit", "Will, visiting"], "correct_index": 0, "explanation": ""}, {"text": "You ___ ___ a lot from this.", "options": ["will learn", "will learns", "will to learn", "will learning"], "correct_index": 0, "explanation": ""}, {"text": "It ___ ___ sunny tomorrow.", "options": ["won't be", "won't is", "won't to be", "won't being"], "correct_index": 0, "explanation": ""}, {"text": "___ I ___ lunch?", "options": ["Will, make", "Will, makes", "Will, to make", "Will, making"], "correct_index": 0, "explanation": ""}, {"text": "She ___ ___ a book next year.", "options": ["will write", "will writes", "will to write", "will writing"], "correct_index": 0, "explanation": ""}, {"text": "They ___ ___ to a new house.", "options": ["won't move", "won't moves", "won't to move", "won't moving"], "correct_index": 0, "explanation": ""}, {"text": "___ we ___ at 6 pm?", "options": ["Will, meet", "Will, meets", "Will, to meet", "Will, meeting"], "correct_index": 0, "explanation": ""}, {"text": "He ___ ___ a new job.", "options": ["will get", "will gets", "will to get", "will getting"], "correct_index": 0, "explanation": ""}, {"text": "You ___ ___ happy about this.", "options": ["won't be", "won't is", "won't to be", "won't being"], "correct_index": 0, "explanation": ""}]};
+        let currentQuizSet = 1;
+
+        function loadQuiz(quizSet) {
+            currentQuizSet = quizSet;
+
+            const placeholder = document.getElementById('quiz-placeholder');
+            const form = document.getElementById('quiz-form');
+            if (placeholder) {
+                placeholder.style.display = 'none';
+            }
+            if (form.style.display === 'none') {
+                form.style.display = 'block';
+            }
+
+            document.querySelectorAll('.quiz-selector-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (parseInt(btn.dataset.quiz) === quizSet) {
+                    btn.classList.add('active');
+                }
+            });
+
+            const questions = allQuizData[quizSet] || [];
+            const submitBtn = document.getElementById('submit-btn');
+            const existingQuestions = form.querySelectorAll('.question');
+            existingQuestions.forEach(q => q.remove());
+
+            questions.forEach((question, index) => {
+                const questionDiv = document.createElement('div');
+                questionDiv.className = 'question';
+
+                let optionsHtml = '';
+                question.options.forEach((option, optIndex) => {
+                    optionsHtml += `
+                        <label class="option">
+                            <input type="radio" name="question-${index}" value="${optIndex}" required>
+                            <span>${option}</span>
+                        </label>
+                    `;
+                });
+
+                questionDiv.innerHTML = `
+                    <div class="question-text">${index + 1}. ${question.text}</div>
+                    <div class="options">
+                        ${optionsHtml}
+                    </div>
+                `;
+
+                form.insertBefore(questionDiv, submitBtn);
+            });
+
+            form.reset();
+            submitBtn.disabled = false;
+            document.getElementById('results').classList.add('hidden');
+        }
+
+        const quizSetCount = Object.keys(allQuizData).length;
+        if (quizSetCount === 1) {
+            loadQuiz(1);
+        }
+
+        document.getElementById('quiz-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const questions = allQuizData[currentQuizSet];
+            let correct = 0;
+
+            questions.forEach((question, index) => {
+                const selected = document.querySelector(`input[name="question-${index}"]:checked`);
+                if (selected && parseInt(selected.value) === question.correct_index) {
+                    correct++;
+                }
+            });
+
+            const total = questions.length;
+            const percentage = Math.round((correct / total) * 100);
+
+            document.getElementById('score').textContent = percentage + '%';
+            document.getElementById('score').className = percentage >= 70 ? 'score pass' : 'score fail';
+
+            let feedback;
+            if (percentage >= 90) {
+                feedback = 'Отлично!';
+            } else if (percentage >= 70) {
+                feedback = 'Хорошо!';
+            } else if (percentage >= 50) {
+                feedback = 'Неплохо, но можно лучше';
+            } else {
+                feedback = 'Нужно ещё поучить';
+            }
+
+            document.getElementById('feedback').textContent = feedback;
+            document.getElementById('details').textContent = `Правильных ответов: ${correct} из ${total}`;
+
+            document.getElementById('results').classList.remove('hidden');
+            document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+
+            this.querySelector('.submit-btn').disabled = true;
+        });
+
+        function retryQuiz() {
+            document.getElementById('results').classList.add('hidden');
+            document.getElementById('quiz-form').reset();
+            document.querySelector('.submit-btn').disabled = false;
+            document.getElementById('quiz-form').scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>

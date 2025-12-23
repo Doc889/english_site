@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be going to - Английский язык</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary: #7c3aed;
+            --color-primary-dark: #6d28d9;
+            --color-primary-light: #a78bfa;
+            --color-secondary: #c4b5fd;
+            --color-accent: #ddd6fe;
+            --color-bg: #ffffff;
+            --color-bg-alt: #faf5ff;
+            --color-text: #1f2937;
+            --color-text-light: #6b7280;
+            --color-success: #10b981;
+            --color-error: #ef4444;
+            --font-display: 'Playfair Display', serif;
+            --font-body: 'DM Sans', sans-serif;
+            --shadow-sm: 0 2px 8px rgba(124, 58, 237, 0.08);
+            --shadow-md: 0 4px 20px rgba(124, 58, 237, 0.12);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        header {
+            background: var(--color-primary);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: white;
+            text-decoration: none;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            opacity: 0.9;
+            transition: var(--transition);
+        }
+
+        .back-link:hover {
+            opacity: 1;
+            transform: translateX(-3px);
+        }
+
+        header h1 {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+        }
+
+        .content-section {
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            color: var(--color-primary);
+            margin: 3rem 0 2rem;
+            text-align: center;
+        }
+
+        .rule-section {
+            background: var(--color-bg-alt);
+            border-left: 4px solid var(--color-primary);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .rule-title {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            color: var(--color-primary);
+            margin-bottom: 1rem;
+        }
+
+        .rule-content {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            white-space: pre-line;
+        }
+
+        .examples {
+            margin-top: 1.5rem;
+        }
+
+        .example {
+            background: var(--color-bg);
+            padding: 0.8rem 1.2rem;
+            margin-bottom: 0.5rem;
+            border-radius: 8px;
+            border-left: 3px solid var(--color-secondary);
+            font-family: monospace;
+            font-size: 1rem;
+        }
+
+        .quiz-section {
+            background: var(--color-bg-alt);
+            padding: 3rem;
+            border-radius: 16px;
+            margin-top: 3rem;
+        }
+
+        .question {
+            background: var(--color-bg);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
+            border: 2px solid transparent;
+            transition: var(--transition);
+        }
+
+        .question.correct {
+            border-color: var(--color-success);
+            background: #f0fdf4;
+        }
+
+        .question.incorrect {
+            border-color: var(--color-error);
+            background: #fef2f2;
+        }
+
+        .question-text {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            color: var(--color-text);
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .option {
+            display: flex;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            background: var(--color-bg-alt);
+            border: 2px solid var(--color-accent);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .option:hover {
+            border-color: var(--color-primary);
+            background: white;
+        }
+
+        .option input[type="radio"] {
+            margin-right: 1rem;
+            cursor: pointer;
+        }
+
+        .option.correct {
+            background: #dcfce7;
+            border-color: var(--color-success);
+        }
+
+        .option.incorrect {
+            background: #fee2e2;
+            border-color: var(--color-error);
+        }
+
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 1.2rem;
+            background: var(--color-primary);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 2rem;
+            transition: var(--transition);
+        }
+
+        .submit-btn:hover:not(:disabled) {
+            background: var(--color-primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .submit-btn:disabled {
+            background: var(--color-text-light);
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .results {
+            text-align: center;
+            padding: 2rem;
+            background: var(--color-primary);
+            color: white;
+            border-radius: 12px;
+            margin-top: 2rem;
+        }
+
+        .results.hidden {
+            display: none;
+        }
+
+        .score {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .score.pass {
+            color: #dcfce7;
+        }
+
+        .score.fail {
+            color: #fecaca;
+        }
+
+        .results-message {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .retry-btn {
+            padding: 0.8rem 1.5rem;
+            background: var(--color-bg);
+            border: 2px solid white;
+            color: var(--color-primary);
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            margin-right: 1rem;
+        }
+
+        .retry-btn:hover {
+            background: white;
+            transform: translateY(-2px);
+        }
+
+        .home-btn {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+            padding: 0.8rem 1.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: var(--transition);
+        }
+
+        .home-btn:hover {
+            background: white;
+            color: var(--color-primary);
+            transform: translateY(-2px);
+        }
+
+        .quiz-selector-btn {
+            padding: 0.8rem 1.5rem;
+            background: var(--color-bg);
+            border: 2px solid var(--color-primary);
+            color: var(--color-primary);
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            min-width: 200px;
+        }
+
+        .quiz-selector-btn:hover {
+            background: var(--color-primary);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .quiz-selector-btn.active {
+            background: var(--color-primary);
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .container {
+                padding: 2rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="/" class="back-link">← Назад ко всем темам</a>
+            <h1>Be going to</h1>
+            <p>Конструкция be going to для планов и намерений</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Theory Section -->
+        <div class="content-section">
+            <h2 class="section-title">Теория</h2>
+
+        <div class="rule-section">
+            <h3 class="rule-title">Главное про be going to</h3>
+            <div class="rule-content"></div>
+            <div class="examples"><div class="example">Be going to используется для:</div><div class="example">1. Планов и намерений (то, что мы уже решили сделать)</div><div class="example">2. Очевидных предсказаний (когда мы ВИДИМ, что что-то произойдёт)</div><div class="example">Формула:</div><div class="example">am/is/are + going to + базовый глагол (инфинитив без to)</div><div class="example">I am going to study. — Я собираюсь учиться.</div><div class="example">She is going to travel. — Она собирается путешествовать.</div></div>
+        </div>
+
+
+        <div class="rule-section">
+            <h3 class="rule-title">Что такое конструкция be going to</h3>
+            <div class="rule-content"></div>
+            <div class="examples"><div class="example">Be going to = собираться сделать что-то</div><div class="example">Это способ говорить о будущем, когда у нас есть ПЛАН или НАМЕРЕНИЕ.</div><div class="example">I am going to learn English. — Я собираюсь учить английский.</div><div class="example">We are going to visit Paris. — Мы собираемся посетить Париж.</div><div class="example">He is going to start a business. — Он собирается начать бизнес.</div><div class="example">💡 Совет:</div><div class="example">Going to = собираться (будущее время)</div><div class="example">НЕ путай с going (идти) — здесь другое значение!</div></div>
+        </div>
+
+
+        <div class="rule-section">
+            <h3 class="rule-title">Формула: am/is/are + going to + глагол</h3>
+            <div class="rule-content"></div>
+            <div class="examples"><div class="example">Формула проста:</div><div class="example">Подлежащее + am/is/are + going to + базовый глагол</div><div class="example">I + am + going to + work = I am going to work.</div><div class="example">She + is + going to + study = She is going to study.</div><div class="example">They + are + going to + travel = They are going to travel.</div><div class="example">Примеры:</div><div class="example">I am going to buy a car. — Я собираюсь купить машину.</div><div class="example">She is going to call you. — Она собирается позвонить тебе.</div><div class="example">We are going to watch a movie. — Мы собираемся посмотреть фильм.</div><div class="example">They are going to move to London. — Они собираются переехать в Лондон.</div><div class="example">💡 Важно:</div><div class="example">После going to ВСЕГДА идёт базовый глагол (инфинитив БЕЗ to)!</div><div class="example">❌ I am going to to study (неправильно)</div><div class="example">✔ I am going to study (правильно)</div></div>
+        </div>
+
+
+        <div class="rule-section">
+            <h3 class="rule-title">Утверждения (Affirmative)</h3>
+            <div class="rule-content"></div>
+            <div class="examples"><div class="example">Утверждения — это когда мы говорим, что кто-то СОБИРАЕТСЯ что-то сделать.</div><div class="example">Формула:</div><div class="example">Подлежащее + am/is/are + going to + глагол</div><div class="example">I am going to sleep. — Я собираюсь спать.</div><div class="example">You are going to win. — Ты собираешься победить.</div><div class="example">He is going to leave. — Он собирается уйти.</div><div class="example">She is going to cook. — Она собирается готовить.</div><div class="example">It is going to rain. — Собирается дождь.</div><div class="example">We are going to help. — Мы собираемся помочь.</div><div class="example">They are going to arrive. — Они собираются прибыть.</div><div class="example">Сокращённые формы:</div><div class="example">I'm going to = I am going to</div><div class="example">She's going to = She is going to</div><div class="example">We're going to = We are going to</div><div class="example">Примеры:</div><div class="example">I'm going to take a shower. — Я собираюсь принять душ.</div><div class="example">He's going to visit his parents. — Он собирается навестить родителей.</div><div class="example">We're going to have a party. — Мы собираемся устроить вечеринку.</div></div>
+        </div>
+
+
+        <div class="rule-section">
+            <h3 class="rule-title">Отрицания (Negative)</h3>
+            <div class="rule-content"></div>
+            <div class="examples"><div class="example">Отрицания — это когда мы говорим, что кто-то НЕ СОБИРАЕТСЯ что-то делать.</div><div class="example">Формула:</div><div class="example">Подлежащее + am/is/are + NOT + going to + глагол</div><div class="example">I am not going to go. — Я не собираюсь идти.</div><div class="example">She is not going to come. — Она не собирается приходить.</div><div class="example">They are not going to buy it. — Они не собираются это покупать.</div><div class="example">Сокращённые формы:</div><div class="example">I'm not going to = I am not going to</div><div class="example">She isn't going to / She's not going to = She is not going to</div><div class="example">We aren't going to / We're not going to = We are not going to</div><div class="example">Примеры:</div><div class="example">I'm not going to eat this. — Я не собираюсь это есть.</div><div class="example">He isn't going to call her. — Он не собирается звонить ей.</div><div class="example">We aren't going to wait. — Мы не собираемся ждать.</div><div class="example">They're not going to help us. — Они не собираются нам помогать.</div><div class="example">💡 Совет:</div><div class="example">NOT ставится после am/is/are, но ПЕРЕД going to!</div></div>
+        </div>
+
+
+        <div class="rule-section">
+            <h3 class="rule-title">Вопросы (Questions)</h3>
+            <div class="rule-content"></div>
+            <div class="examples"><div class="example">Вопросы — это когда мы спрашиваем, СОБИРАЕТСЯ ли кто-то что-то делать.</div><div class="example">Формула:</div><div class="example">Am/Is/Are + подлежащее + going to + глагол?</div><div class="example">Am I going to pass? — Я собираюсь сдать?</div><div class="example">Is she going to come? — Она собирается прийти?</div><div class="example">Are you going to stay? — Ты собираешься остаться?</div><div class="example">Are they going to leave? — Они собираются уйти?</div><div class="example">Примеры:</div><div class="example">Are you going to study tonight? — Ты собираешься учиться сегодня вечером?</div><div class="example">Is he going to join us? — Он собирается присоединиться к нам?</div><div class="example">Are we going to meet tomorrow? — Мы собираемся встретиться завтра?</div><div class="example">What are you going to do? — Что ты собираешься делать?</div><div class="example">Where is she going to live? — Где она собирается жить?</div><div class="example">When are they going to arrive? — Когда они собираются прибыть?</div><div class="example">💡 Важно:</div><div class="example">В вопросах am/is/are выходит ВПЕРЁД (перед подлежащим)!</div></div>
+        </div>
+
+
+        <div class="rule-section">
+            <h3 class="rule-title">Когда используем be going to</h3>
+            <div class="rule-content"></div>
+            <div class="examples"><div class="example">1. Планы и намерения (то, что мы УЖЕ решили):</div><div class="example">I'm going to buy a new phone. — Я собираюсь купить новый телефон.</div><div class="example">(Я уже решил это, это мой план)</div><div class="example">We're going to move to Spain. — Мы собираемся переехать в Испанию.</div><div class="example">(Это наше намерение, мы уже об этом думали)</div><div class="example">2. Очевидные предсказания (когда мы ВИДИМ признаки):</div><div class="example">Look at those clouds! It's going to rain. — Посмотри на эти тучи! Будет дождь.</div><div class="example">(Я вижу тучи — очевидно, что будет дождь)</div><div class="example">Watch out! You're going to fall! — Осторожно! Ты сейчас упадёшь!</div><div class="example">(Я вижу, что человек сейчас упадёт)</div><div class="example">He's going to be late. — Он опоздает.</div><div class="example">(Есть признаки, что он опоздает)</div><div class="example">💡 Совет:</div><div class="example">Be going to = для планов, намерений и очевидных предсказаний.</div><div class="example">Ключевое слово — МЫ УЖЕ ЗНАЕМ или ВИДИМ, что это произойдёт.</div></div>
+        </div>
+
+
+        <div class="rule-section">
+            <h3 class="rule-title">Отличие от Future Simple (will)</h3>
+            <div class="rule-content"></div>
+            <div class="examples"><div class="example">Многие путают be going to и will. Вот главное отличие:</div><div class="example">Be going to — для ПЛАНОВ и НАМЕРЕНИЙ:</div><div class="example">I'm going to visit my grandma. — Я собираюсь навестить бабушку.</div><div class="example">(Я уже решил, это мой план)</div><div class="example">Will — для СПОНТАННЫХ решений и обещаний:</div><div class="example">I will help you. — Я помогу тебе.</div><div class="example">(Я только что решил, это спонтанное решение)</div><div class="example">Сравни:</div><div class="example">I'm going to eat pizza. — Я собираюсь съесть пиццу.</div><div class="example">(Я уже решил заранее)</div><div class="example">I will eat pizza. — Я съем пиццу.</div><div class="example">(Я только что решил)</div><div class="example">Look! It's going to rain. — Смотри! Будет дождь.</div><div class="example">(Я вижу признаки — тучи)</div><div class="example">I think it will rain tomorrow. — Думаю, завтра будет дождь.</div><div class="example">(Это просто моё мнение, предположение)</div><div class="example">💡 Ключевое отличие:</div><div class="example">Be going to = заранее спланированное действие или очевидное предсказание</div><div class="example">Will = спонтанное решение, обещание или простое предположение</div></div>
+        </div>
+
+
+        <div class="rule-section">
+            <h3 class="rule-title">Типичные ошибки русскоговорящих</h3>
+            <div class="rule-content"></div>
+            <div class="examples"><div class="example">❌ I going to study. → пропущен am/is/are</div><div class="example">✔ I am going to study.</div><div class="example">❌ She is going study. → пропущено to</div><div class="example">✔ She is going to study.</div><div class="example">❌ I am going to to work. → лишнее to</div><div class="example">✔ I am going to work.</div><div class="example">❌ He are going to come. → неправильный глагол to be</div><div class="example">✔ He is going to come.</div><div class="example">❌ I will going to study. → смешивание will и be going to</div><div class="example">✔ I am going to study. ИЛИ I will study.</div><div class="example">❌ They is going to play. → is вместо are</div><div class="example">✔ They are going to play.</div><div class="example">❌ Is she going to goes? → goes вместо базового глагола</div><div class="example">✔ Is she going to go?</div><div class="example">❌ I'm go to study. → go вместо going</div><div class="example">✔ I'm going to study.</div><div class="example">💡 Частая ошибка:</div><div class="example">Русскоговорящие часто забывают am/is/are или говорят "I will going to", смешивая две конструкции.</div></div>
+        </div>
+
+
+        <div class="rule-section">
+            <h3 class="rule-title">Главное про be going to</h3>
+            <div class="rule-content"></div>
+            <div class="examples"><div class="example">1️⃣ Формула: am/is/are + going to + глагол</div><div class="example">2️⃣ Используется для планов и намерений</div><div class="example">3️⃣ Используется для очевидных предсказаний</div><div class="example">4️⃣ Отличается от will (plan vs spontaneous decision)</div><div class="example">5️⃣ После going to — базовый глагол БЕЗ to</div><div class="example">6️⃣ В разговорной речи = gonna</div></div>
+        </div>
+
+        </div>
+
+        <!-- Results Section (hidden initially) -->
+        <div id="results" class="results hidden">
+            <div class="score" id="score"></div>
+            <div class="results-message" id="results-message"></div>
+            <div>
+                <button class="retry-btn" onclick="retakeQuiz()">Пройти ещё раз</button>
+                <a href="/" class="home-btn">На главную</a>
+            </div>
+        </div>
+
+        <!-- Quiz Section -->
+        <div class="quiz-section" id="quiz-section">
+            <h2 class="section-title">Тест</h2>
+
+            <!-- Quiz Selector (shown if multiple quizzes) -->
+            <div id="quiz-selector" style="margin-bottom: 2rem; display: flex; flex-direction: column; align-items: center; gap: 0.8rem;">
+                <button type="button" class="quiz-selector-btn" data-quiz="1" onclick="loadQuiz(1)">Тест 1</button>
+<button type="button" class="quiz-selector-btn" data-quiz="2" onclick="loadQuiz(2)">Тест 2</button>
+<button type="button" class="quiz-selector-btn" data-quiz="3" onclick="loadQuiz(3)">Тест 3</button>
+<button type="button" class="quiz-selector-btn" data-quiz="4" onclick="loadQuiz(4)">Тест 4</button>
+<button type="button" class="quiz-selector-btn" data-quiz="5" onclick="loadQuiz(5)">Тест 5</button>
+<button type="button" class="quiz-selector-btn" data-quiz="6" onclick="loadQuiz(6)">Тест 6</button>
+<button type="button" class="quiz-selector-btn" data-quiz="7" onclick="loadQuiz(7)">Тест 7</button>
+<button type="button" class="quiz-selector-btn" data-quiz="8" onclick="loadQuiz(8)">Тест 8</button>
+<button type="button" class="quiz-selector-btn" data-quiz="9" onclick="loadQuiz(9)">Тест 9</button>
+<button type="button" class="quiz-selector-btn" data-quiz="10" onclick="loadQuiz(10)">Тест 10</button>
+            </div>
+
+            <div id="quiz-placeholder" style="text-align: center; padding: 3rem; color: var(--color-text-light); display: block;">
+                <p style="font-size: 1.2rem;">Выберите тест, чтобы начать</p>
+            </div>
+
+            <form id="quiz-form" style="display: none;">
+
+                <button type="submit" class="submit-btn" id="submit-btn">Проверить ответы</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const allQuizData = {"1": [{"id": 1, "text": "I ___ going to study.", "options": ["am", "is", "are", "will"], "correct_index": 0}, {"id": 2, "text": "You ___ going to work.", "options": ["am", "is", "are", "will"], "correct_index": 2}, {"id": 3, "text": "We ___ going to travel.", "options": ["am", "is", "are", "will"], "correct_index": 2}, {"id": 4, "text": "They ___ going to leave.", "options": ["am", "is", "are", "will"], "correct_index": 2}, {"id": 5, "text": "I ___ going to sleep.", "options": ["am", "is", "are", "will"], "correct_index": 0}, {"id": 6, "text": "You ___ going to win.", "options": ["am", "is", "are", "will"], "correct_index": 2}, {"id": 7, "text": "We ___ going to help.", "options": ["am", "is", "are", "will"], "correct_index": 2}, {"id": 8, "text": "They ___ going to come.", "options": ["am", "is", "are", "will"], "correct_index": 2}, {"id": 9, "text": "I ___ going to buy a car.", "options": ["am", "is", "are", "will"], "correct_index": 0}, {"id": 10, "text": "You ___ going to eat.", "options": ["am", "is", "are", "will"], "correct_index": 2}, {"id": 11, "text": "We ___ going to watch a movie.", "options": ["am", "is", "are", "will"], "correct_index": 2}, {"id": 12, "text": "They ___ going to play.", "options": ["am", "is", "are", "will"], "correct_index": 2}, {"id": 13, "text": "I ___ going to visit my grandma.", "options": ["am", "is", "are", "will"], "correct_index": 0}, {"id": 14, "text": "You ___ going to stay home.", "options": ["am", "is", "are", "will"], "correct_index": 2}, {"id": 15, "text": "We ___ going to have a party.", "options": ["am", "is", "are", "will"], "correct_index": 2}, {"id": 16, "text": "They ___ going to move.", "options": ["am", "is", "are", "will"], "correct_index": 2}, {"id": 17, "text": "I ___ going to take a shower.", "options": ["am", "is", "are", "will"], "correct_index": 0}, {"id": 18, "text": "You ___ going to call her.", "options": ["am", "is", "are", "will"], "correct_index": 2}, {"id": 19, "text": "We ___ going to start.", "options": ["am", "is", "are", "will"], "correct_index": 2}, {"id": 20, "text": "They ___ going to finish.", "options": ["am", "is", "are", "will"], "correct_index": 2}], "2": [{"id": 21, "text": "He ___ going to study.", "options": ["am", "is", "are", "will"], "correct_index": 1}, {"id": 22, "text": "She ___ going to work.", "options": ["am", "is", "are", "will"], "correct_index": 1}, {"id": 23, "text": "It ___ going to rain.", "options": ["am", "is", "are", "will"], "correct_index": 1}, {"id": 24, "text": "He ___ going to leave.", "options": ["am", "is", "are", "will"], "correct_index": 1}, {"id": 25, "text": "She ___ going to sleep.", "options": ["am", "is", "are", "will"], "correct_index": 1}, {"id": 26, "text": "It ___ going to break.", "options": ["am", "is", "are", "will"], "correct_index": 1}, {"id": 27, "text": "He ___ going to win.", "options": ["am", "is", "are", "will"], "correct_index": 1}, {"id": 28, "text": "She ___ going to help.", "options": ["am", "is", "are", "will"], "correct_index": 1}, {"id": 29, "text": "It ___ going to snow.", "options": ["am", "is", "are", "will"], "correct_index": 1}, {"id": 30, "text": "He ___ going to come.", "options": ["am", "is", "are", "will"], "correct_index": 1}, {"id": 31, "text": "She ___ going to buy a car.", "options": ["am", "is", "are", "will"], "correct_index": 1}, {"id": 32, "text": "It ___ going to fall.", "options": ["am", "is", "are", "will"], "correct_index": 1}, {"id": 33, "text": "He ___ going to eat.", "options": ["am", "is", "are", "will"], "correct_index": 1}, {"id": 34, "text": "She ___ going to watch a movie.", "options": ["am", "is", "are", "will"], "correct_index": 1}, {"id": 35, "text": "It ___ going to explode.", "options": ["am", "is", "are", "will"], "correct_index": 1}, {"id": 36, "text": "He ___ going to play.", "options": ["am", "is", "are", "will"], "correct_index": 1}, {"id": 37, "text": "She ___ going to visit her parents.", "options": ["am", "is", "are", "will"], "correct_index": 1}, {"id": 38, "text": "It ___ going to start.", "options": ["am", "is", "are", "will"], "correct_index": 1}, {"id": 39, "text": "He ___ going to stay home.", "options": ["am", "is", "are", "will"], "correct_index": 1}, {"id": 40, "text": "She ___ going to call you.", "options": ["am", "is", "are", "will"], "correct_index": 1}], "3": [{"id": 41, "text": "I ___ not going to study.", "options": ["am", "is", "are", "will"], "correct_index": 0}, {"id": 42, "text": "You ___ not going to work.", "options": ["am", "is", "are", "will"], "correct_index": 2}, {"id": 43, "text": "We ___ not going to travel.", "options": ["am", "is", "are", "will"], "correct_index": 2}, {"id": 44, "text": "They ___ not going to leave.", "options": ["am", "is", "are", "will"], "correct_index": 2}, {"id": 45, "text": "I ___ not going to sleep.", "options": ["am", "is", "are", "will"], "correct_index": 0}, {"id": 46, "text": "You ___ not going to win.", "options": ["am", "is", "are", "will"], "correct_index": 2}, {"id": 47, "text": "We ___ not going to help.", "options": ["am", "is", "are", "will"], "correct_index": 2}, {"id": 48, "text": "They ___ not going to come.", "options": ["am", "is", "are", "will"], "correct_index": 2}, {"id": 49, "text": "I ___ not going to buy a car.", "options": ["am", "is", "are", "will"], "correct_index": 0}, {"id": 50, "text": "You ___ not going to eat.", "options": ["am", "is", "are", "will"], "correct_index": 2}, {"id": 51, "text": "We ___ not going to watch a movie.", "options": ["am", "is", "are", "will"], "correct_index": 2}, {"id": 52, "text": "They ___ not going to play.", "options": ["am", "is", "are", "will"], "correct_index": 2}, {"id": 53, "text": "I ___ not going to visit my grandma.", "options": ["am", "is", "are", "will"], "correct_index": 0}, {"id": 54, "text": "You ___ not going to stay home.", "options": ["am", "is", "are", "will"], "correct_index": 2}, {"id": 55, "text": "We ___ not going to have a party.", "options": ["am", "is", "are", "will"], "correct_index": 2}, {"id": 56, "text": "They ___ not going to move.", "options": ["am", "is", "are", "will"], "correct_index": 2}, {"id": 57, "text": "I ___ not going to take a shower.", "options": ["am", "is", "are", "will"], "correct_index": 0}, {"id": 58, "text": "You ___ not going to call her.", "options": ["am", "is", "are", "will"], "correct_index": 2}, {"id": 59, "text": "We ___ not going to start.", "options": ["am", "is", "are", "will"], "correct_index": 2}, {"id": 60, "text": "They ___ not going to finish.", "options": ["am", "is", "are", "will"], "correct_index": 2}], "4": [{"id": 61, "text": "He ___ not going to study.", "options": ["am", "is", "are", "will"], "correct_index": 1}, {"id": 62, "text": "She ___ not going to work.", "options": ["am", "is", "are", "will"], "correct_index": 1}, {"id": 63, "text": "It ___ not going to rain.", "options": ["am", "is", "are", "will"], "correct_index": 1}, {"id": 64, "text": "He ___ not going to leave.", "options": ["am", "is", "are", "will"], "correct_index": 1}, {"id": 65, "text": "She ___ not going to sleep.", "options": ["am", "is", "are", "will"], "correct_index": 1}, {"id": 66, "text": "It ___ not going to break.", "options": ["am", "is", "are", "will"], "correct_index": 1}, {"id": 67, "text": "He ___ not going to win.", "options": ["am", "is", "are", "will"], "correct_index": 1}, {"id": 68, "text": "She ___ not going to help.", "options": ["am", "is", "are", "will"], "correct_index": 1}, {"id": 69, "text": "It ___ not going to snow.", "options": ["am", "is", "are", "will"], "correct_index": 1}, {"id": 70, "text": "He ___ not going to come.", "options": ["am", "is", "are", "will"], "correct_index": 1}, {"id": 71, "text": "She ___ not going to buy a car.", "options": ["am", "is", "are", "will"], "correct_index": 1}, {"id": 72, "text": "It ___ not going to fall.", "options": ["am", "is", "are", "will"], "correct_index": 1}, {"id": 73, "text": "He ___ not going to eat.", "options": ["am", "is", "are", "will"], "correct_index": 1}, {"id": 74, "text": "She ___ not going to watch a movie.", "options": ["am", "is", "are", "will"], "correct_index": 1}, {"id": 75, "text": "It ___ not going to explode.", "options": ["am", "is", "are", "will"], "correct_index": 1}, {"id": 76, "text": "He ___ not going to play.", "options": ["am", "is", "are", "will"], "correct_index": 1}, {"id": 77, "text": "She ___ not going to visit her parents.", "options": ["am", "is", "are", "will"], "correct_index": 1}, {"id": 78, "text": "It ___ not going to start.", "options": ["am", "is", "are", "will"], "correct_index": 1}, {"id": 79, "text": "He ___ not going to stay home.", "options": ["am", "is", "are", "will"], "correct_index": 1}, {"id": 80, "text": "She ___ not going to call you.", "options": ["am", "is", "are", "will"], "correct_index": 1}], "5": [{"id": 81, "text": "___ I going to pass?", "options": ["Am", "Is", "Are", "Do"], "correct_index": 0}, {"id": 82, "text": "___ you going to come?", "options": ["Am", "Is", "Are", "Do"], "correct_index": 2}, {"id": 83, "text": "___ she going to stay?", "options": ["Am", "Is", "Are", "Do"], "correct_index": 1}, {"id": 84, "text": "___ we going to leave?", "options": ["Am", "Is", "Are", "Do"], "correct_index": 2}, {"id": 85, "text": "___ he going to help?", "options": ["Am", "Is", "Are", "Do"], "correct_index": 1}, {"id": 86, "text": "___ they going to win?", "options": ["Am", "Is", "Are", "Do"], "correct_index": 2}, {"id": 87, "text": "___ it going to rain?", "options": ["Am", "Is", "Are", "Do"], "correct_index": 1}, {"id": 88, "text": "___ I going to fail?", "options": ["Am", "Is", "Are", "Do"], "correct_index": 0}, {"id": 89, "text": "___ you going to eat?", "options": ["Am", "Is", "Are", "Do"], "correct_index": 2}, {"id": 90, "text": "___ she going to call?", "options": ["Am", "Is", "Are", "Do"], "correct_index": 1}, {"id": 91, "text": "___ we going to start?", "options": ["Am", "Is", "Are", "Do"], "correct_index": 2}, {"id": 92, "text": "___ he going to work?", "options": ["Am", "Is", "Are", "Do"], "correct_index": 1}, {"id": 93, "text": "___ they going to play?", "options": ["Am", "Is", "Are", "Do"], "correct_index": 2}, {"id": 94, "text": "___ it going to break?", "options": ["Am", "Is", "Are", "Do"], "correct_index": 1}, {"id": 95, "text": "___ I going to see you?", "options": ["Am", "Is", "Are", "Do"], "correct_index": 0}, {"id": 96, "text": "___ you going to buy it?", "options": ["Am", "Is", "Are", "Do"], "correct_index": 2}, {"id": 97, "text": "___ she going to move?", "options": ["Am", "Is", "Are", "Do"], "correct_index": 1}, {"id": 98, "text": "___ we going to meet?", "options": ["Am", "Is", "Are", "Do"], "correct_index": 2}, {"id": 99, "text": "___ he going to join us?", "options": ["Am", "Is", "Are", "Do"], "correct_index": 1}, {"id": 100, "text": "___ they going to visit?", "options": ["Am", "Is", "Are", "Do"], "correct_index": 2}], "6": [{"id": 101, "text": "I am going to ___ a book.", "options": ["read", "reading", "reads", "to read"], "correct_index": 0}, {"id": 102, "text": "She is going to ___ home.", "options": ["go", "going", "goes", "to go"], "correct_index": 0}, {"id": 103, "text": "We are going to ___ dinner.", "options": ["cook", "cooking", "cooks", "to cook"], "correct_index": 0}, {"id": 104, "text": "They are going to ___ the test.", "options": ["pass", "passing", "passes", "to pass"], "correct_index": 0}, {"id": 105, "text": "He is going to ___ a car.", "options": ["buy", "buying", "buys", "to buy"], "correct_index": 0}, {"id": 106, "text": "I am going to ___ English.", "options": ["study", "studying", "studies", "to study"], "correct_index": 0}, {"id": 107, "text": "You are going to ___ late.", "options": ["be", "being", "is", "to be"], "correct_index": 0}, {"id": 108, "text": "She is going to ___ her friend.", "options": ["call", "calling", "calls", "to call"], "correct_index": 0}, {"id": 109, "text": "We are going to ___ TV.", "options": ["watch", "watching", "watches", "to watch"], "correct_index": 0}, {"id": 110, "text": "They are going to ___ tomorrow.", "options": ["leave", "leaving", "leaves", "to leave"], "correct_index": 0}, {"id": 111, "text": "He is going to ___ a shower.", "options": ["take", "taking", "takes", "to take"], "correct_index": 0}, {"id": 112, "text": "I am going to ___ coffee.", "options": ["drink", "drinking", "drinks", "to drink"], "correct_index": 0}, {"id": 113, "text": "You are going to ___ the game.", "options": ["win", "winning", "wins", "to win"], "correct_index": 0}, {"id": 114, "text": "She is going to ___ a letter.", "options": ["write", "writing", "writes", "to write"], "correct_index": 0}, {"id": 115, "text": "We are going to ___ music.", "options": ["listen", "listening", "listens", "to listen"], "correct_index": 0}, {"id": 116, "text": "They are going to ___ the party.", "options": ["enjoy", "enjoying", "enjoys", "to enjoy"], "correct_index": 0}, {"id": 117, "text": "He is going to ___ his homework.", "options": ["do", "doing", "does", "to do"], "correct_index": 0}, {"id": 118, "text": "I am going to ___ early.", "options": ["sleep", "sleeping", "sleeps", "to sleep"], "correct_index": 0}, {"id": 119, "text": "You are going to ___ a mistake.", "options": ["make", "making", "makes", "to make"], "correct_index": 0}, {"id": 120, "text": "She is going to ___ the truth.", "options": ["tell", "telling", "tells", "to tell"], "correct_index": 0}], "7": [{"id": 121, "text": "I ___ help you. (\u0441\u043f\u043e\u043d\u0442\u0430\u043d\u043d\u043e\u0435 \u0440\u0435\u0448\u0435\u043d\u0438\u0435 \u0421\u0415\u0419\u0427\u0410\u0421)", "options": ["am going to", "will", "going to", "am will"], "correct_index": 1}, {"id": 122, "text": "She ___ visit her grandma next week. (\u043f\u043b\u0430\u043d, \u0437\u0430\u0440\u0430\u043d\u0435\u0435 \u0440\u0435\u0448\u0435\u043d\u043e)", "options": ["is going to", "will", "going to", "is will"], "correct_index": 0}, {"id": 123, "text": "Look at those clouds! It ___ rain. (\u043e\u0447\u0435\u0432\u0438\u0434\u043d\u043e\u0435 \u043f\u0440\u0435\u0434\u0441\u043a\u0430\u0437\u0430\u043d\u0438\u0435)", "options": ["is going to", "will", "going to", "is will"], "correct_index": 0}, {"id": 124, "text": "I think he ___ win. (\u043f\u0440\u043e\u0441\u0442\u043e \u043c\u043d\u0435\u043d\u0438\u0435)", "options": ["is going to", "will", "going to", "is will"], "correct_index": 1}, {"id": 125, "text": "We ___ move to Spain next year. (\u043f\u043b\u0430\u043d)", "options": ["are going to", "will", "going to", "are will"], "correct_index": 0}, {"id": 126, "text": "The phone is ringing. I ___ answer it. (\u0441\u043f\u043e\u043d\u0442\u0430\u043d\u043d\u043e\u0435 \u0440\u0435\u0448\u0435\u043d\u0438\u0435)", "options": ["am going to", "will", "going to", "am will"], "correct_index": 1}, {"id": 127, "text": "They ___ get married in June. (\u043f\u043b\u0430\u043d)", "options": ["are going to", "will", "going to", "are will"], "correct_index": 0}, {"id": 128, "text": "I promise I ___ call you. (\u043e\u0431\u0435\u0449\u0430\u043d\u0438\u0435)", "options": ["am going to", "will", "going to", "am will"], "correct_index": 1}, {"id": 129, "text": "Watch out! You ___ fall! (\u043e\u0447\u0435\u0432\u0438\u0434\u043d\u043e\u0435 \u043f\u0440\u0435\u0434\u0441\u043a\u0430\u0437\u0430\u043d\u0438\u0435)", "options": ["are going to", "will", "going to", "are will"], "correct_index": 0}, {"id": 130, "text": "Maybe it ___ snow tomorrow. (\u043f\u0440\u0435\u0434\u043f\u043e\u043b\u043e\u0436\u0435\u043d\u0438\u0435)", "options": ["is going to", "will", "going to", "is will"], "correct_index": 1}, {"id": 131, "text": "I ___ start a business. (\u043d\u0430\u043c\u0435\u0440\u0435\u043d\u0438\u0435, \u043f\u043b\u0430\u043d)", "options": ["am going to", "will", "going to", "am will"], "correct_index": 0}, {"id": 132, "text": "Don't worry, I ___ help you. (\u043e\u0431\u0435\u0449\u0430\u043d\u0438\u0435/\u0441\u043f\u043e\u043d\u0442\u0430\u043d\u043d\u043e\u0435)", "options": ["am going to", "will", "going to", "am will"], "correct_index": 1}, {"id": 133, "text": "He ___ be late. There's traffic. (\u043e\u0447\u0435\u0432\u0438\u0434\u043d\u043e\u0435 \u043f\u0440\u0435\u0434\u0441\u043a\u0430\u0437\u0430\u043d\u0438\u0435)", "options": ["is going to", "will", "going to", "is will"], "correct_index": 0}, {"id": 134, "text": "I think she ___ like this gift. (\u043c\u043d\u0435\u043d\u0438\u0435)", "options": ["is going to", "will", "going to", "is will"], "correct_index": 1}, {"id": 135, "text": "We ___ buy a new house. (\u043f\u043b\u0430\u043d)", "options": ["are going to", "will", "going to", "are will"], "correct_index": 0}, {"id": 136, "text": "I ___ open the window. (\u0441\u043f\u043e\u043d\u0442\u0430\u043d\u043d\u043e\u0435 \u0440\u0435\u0448\u0435\u043d\u0438\u0435)", "options": ["am going to", "will", "going to", "am will"], "correct_index": 1}, {"id": 137, "text": "She ___ have a baby in March. (\u043f\u043b\u0430\u043d, \u0438\u0437\u0432\u0435\u0441\u0442\u043d\u043e \u0437\u0430\u0440\u0430\u043d\u0435\u0435)", "options": ["is going to", "will", "going to", "is will"], "correct_index": 0}, {"id": 138, "text": "I believe you ___ succeed. (\u043c\u043d\u0435\u043d\u0438\u0435)", "options": ["are going to", "will", "going to", "are will"], "correct_index": 1}, {"id": 139, "text": "The building ___ collapse! Look! (\u043e\u0447\u0435\u0432\u0438\u0434\u043d\u043e\u0435 \u043f\u0440\u0435\u0434\u0441\u043a\u0430\u0437\u0430\u043d\u0438\u0435)", "options": ["is going to", "will", "going to", "is will"], "correct_index": 0}, {"id": 140, "text": "I ___ be there for you. (\u043e\u0431\u0435\u0449\u0430\u043d\u0438\u0435)", "options": ["am going to", "will", "going to", "am will"], "correct_index": 1}], "8": [{"id": 141, "text": "\u0412\u044b\u0431\u0435\u0440\u0438 \u043f\u0440\u0430\u0432\u0438\u043b\u044c\u043d\u043e\u0435 \u043f\u0440\u0435\u0434\u043b\u043e\u0436\u0435\u043d\u0438\u0435:", "options": ["I going to study.", "I am going to study.", "I will going to study.", "I am go to study."], "correct_index": 1}, {"id": 142, "text": "\u0412\u044b\u0431\u0435\u0440\u0438 \u043f\u0440\u0430\u0432\u0438\u043b\u044c\u043d\u043e\u0435 \u043f\u0440\u0435\u0434\u043b\u043e\u0436\u0435\u043d\u0438\u0435:", "options": ["She is going study.", "She going to study.", "She is going to study.", "She will going to study."], "correct_index": 2}, {"id": 143, "text": "\u0412\u044b\u0431\u0435\u0440\u0438 \u043f\u0440\u0430\u0432\u0438\u043b\u044c\u043d\u043e\u0435 \u043f\u0440\u0435\u0434\u043b\u043e\u0436\u0435\u043d\u0438\u0435:", "options": ["He are going to come.", "He is going to come.", "He going to come.", "He is go to come."], "correct_index": 1}, {"id": 144, "text": "\u0412\u044b\u0431\u0435\u0440\u0438 \u043f\u0440\u0430\u0432\u0438\u043b\u044c\u043d\u043e\u0435 \u043f\u0440\u0435\u0434\u043b\u043e\u0436\u0435\u043d\u0438\u0435:", "options": ["They is going to play.", "They going to play.", "They are going to play.", "They will going to play."], "correct_index": 2}, {"id": 145, "text": "\u0412\u044b\u0431\u0435\u0440\u0438 \u043f\u0440\u0430\u0432\u0438\u043b\u044c\u043d\u043e\u0435 \u043f\u0440\u0435\u0434\u043b\u043e\u0436\u0435\u043d\u0438\u0435:", "options": ["I am going to to work.", "I am going work.", "I going to work.", "I am going to work."], "correct_index": 3}, {"id": 146, "text": "\u0412\u044b\u0431\u0435\u0440\u0438 \u043f\u0440\u0430\u0432\u0438\u043b\u044c\u043d\u043e\u0435 \u043f\u0440\u0435\u0434\u043b\u043e\u0436\u0435\u043d\u0438\u0435:", "options": ["Is she going to goes?", "Is she going to go?", "She is going to go?", "Is she go to going?"], "correct_index": 1}, {"id": 147, "text": "\u0412\u044b\u0431\u0435\u0440\u0438 \u043f\u0440\u0430\u0432\u0438\u043b\u044c\u043d\u043e\u0435 \u043f\u0440\u0435\u0434\u043b\u043e\u0436\u0435\u043d\u0438\u0435:", "options": ["We not going to leave.", "We are not going to leave.", "We not are going to leave.", "We are going not to leave."], "correct_index": 1}, {"id": 148, "text": "\u0412\u044b\u0431\u0435\u0440\u0438 \u043f\u0440\u0430\u0432\u0438\u043b\u044c\u043d\u043e\u0435 \u043f\u0440\u0435\u0434\u043b\u043e\u0436\u0435\u043d\u0438\u0435:", "options": ["You going to win?", "Are you going win?", "Are you going to win?", "You are going to win?"], "correct_index": 2}, {"id": 149, "text": "\u0412\u044b\u0431\u0435\u0440\u0438 \u043f\u0440\u0430\u0432\u0438\u043b\u044c\u043d\u043e\u0435 \u043f\u0440\u0435\u0434\u043b\u043e\u0436\u0435\u043d\u0438\u0435:", "options": ["He is going to helps.", "He going to help.", "He is going help.", "He is going to help."], "correct_index": 3}, {"id": 150, "text": "\u0412\u044b\u0431\u0435\u0440\u0438 \u043f\u0440\u0430\u0432\u0438\u043b\u044c\u043d\u043e\u0435 \u043f\u0440\u0435\u0434\u043b\u043e\u0436\u0435\u043d\u0438\u0435:", "options": ["I'm go to study.", "I going to study.", "I'm going to study.", "I will going to study."], "correct_index": 2}, {"id": 151, "text": "\u0412\u044b\u0431\u0435\u0440\u0438 \u043f\u0440\u0430\u0432\u0438\u043b\u044c\u043d\u043e\u0435 \u043f\u0440\u0435\u0434\u043b\u043e\u0436\u0435\u043d\u0438\u0435:", "options": ["She not is going to come.", "She is not going to come.", "She is going to not come.", "She not going to come."], "correct_index": 1}, {"id": 152, "text": "\u0412\u044b\u0431\u0435\u0440\u0438 \u043f\u0440\u0430\u0432\u0438\u043b\u044c\u043d\u043e\u0435 \u043f\u0440\u0435\u0434\u043b\u043e\u0436\u0435\u043d\u0438\u0435:", "options": ["Am I going to pass?", "I am going to pass?", "Am going I to pass?", "I going to pass?"], "correct_index": 0}, {"id": 153, "text": "\u0412\u044b\u0431\u0435\u0440\u0438 \u043f\u0440\u0430\u0432\u0438\u043b\u044c\u043d\u043e\u0435 \u043f\u0440\u0435\u0434\u043b\u043e\u0436\u0435\u043d\u0438\u0435:", "options": ["They is going to travel.", "They are going to travel.", "They going to travel.", "They will going to travel."], "correct_index": 1}, {"id": 154, "text": "\u0412\u044b\u0431\u0435\u0440\u0438 \u043f\u0440\u0430\u0432\u0438\u043b\u044c\u043d\u043e\u0435 \u043f\u0440\u0435\u0434\u043b\u043e\u0436\u0435\u043d\u0438\u0435:", "options": ["It going to rain.", "It is going rain.", "It is going to rain.", "It will going to rain."], "correct_index": 2}, {"id": 155, "text": "\u0412\u044b\u0431\u0435\u0440\u0438 \u043f\u0440\u0430\u0432\u0438\u043b\u044c\u043d\u043e\u0435 \u043f\u0440\u0435\u0434\u043b\u043e\u0436\u0435\u043d\u0438\u0435:", "options": ["We are going to watching.", "We are going watch.", "We going to watch.", "We are going to watch."], "correct_index": 3}, {"id": 156, "text": "\u0412\u044b\u0431\u0435\u0440\u0438 \u043f\u0440\u0430\u0432\u0438\u043b\u044c\u043d\u043e\u0435 \u043f\u0440\u0435\u0434\u043b\u043e\u0436\u0435\u043d\u0438\u0435:", "options": ["Is he going to coming?", "He is going to come?", "Is he going to come?", "Is he go to come?"], "correct_index": 2}, {"id": 157, "text": "\u0412\u044b\u0431\u0435\u0440\u0438 \u043f\u0440\u0430\u0432\u0438\u043b\u044c\u043d\u043e\u0435 \u043f\u0440\u0435\u0434\u043b\u043e\u0436\u0435\u043d\u0438\u0435:", "options": ["You not going to eat.", "You are not going to eat.", "You are going not to eat.", "You not are going to eat."], "correct_index": 1}, {"id": 158, "text": "\u0412\u044b\u0431\u0435\u0440\u0438 \u043f\u0440\u0430\u0432\u0438\u043b\u044c\u043d\u043e\u0435 \u043f\u0440\u0435\u0434\u043b\u043e\u0436\u0435\u043d\u0438\u0435:", "options": ["I am going to buys a car.", "I am going buy a car.", "I going to buy a car.", "I am going to buy a car."], "correct_index": 3}, {"id": 159, "text": "\u0412\u044b\u0431\u0435\u0440\u0438 \u043f\u0440\u0430\u0432\u0438\u043b\u044c\u043d\u043e\u0435 \u043f\u0440\u0435\u0434\u043b\u043e\u0436\u0435\u043d\u0438\u0435:", "options": ["She is going to calls you.", "She going to call you.", "She is going to call you.", "She will going to call you."], "correct_index": 2}, {"id": 160, "text": "\u0412\u044b\u0431\u0435\u0440\u0438 \u043f\u0440\u0430\u0432\u0438\u043b\u044c\u043d\u043e\u0435 \u043f\u0440\u0435\u0434\u043b\u043e\u0436\u0435\u043d\u0438\u0435:", "options": ["Are we going to meeting?", "Are we going to meet?", "We are going to meet?", "Are we go to meet?"], "correct_index": 1}], "9": [{"id": 161, "text": "\u042f \u0441\u043e\u0431\u0438\u0440\u0430\u044e\u0441\u044c \u043a\u0443\u043f\u0438\u0442\u044c \u043c\u0430\u0448\u0438\u043d\u0443.", "options": ["I buy a car.", "I will buy a car.", "I am going to buy a car.", "I am buying a car."], "correct_index": 2}, {"id": 162, "text": "\u041e\u043d\u0430 \u0441\u043e\u0431\u0438\u0440\u0430\u0435\u0442\u0441\u044f \u043f\u043e\u0437\u0432\u043e\u043d\u0438\u0442\u044c \u0442\u0435\u0431\u0435.", "options": ["She calls you.", "She will call you.", "She is going to call you.", "She is calling you."], "correct_index": 2}, {"id": 163, "text": "\u041c\u044b \u0441\u043e\u0431\u0438\u0440\u0430\u0435\u043c\u0441\u044f \u043f\u043e\u0441\u043c\u043e\u0442\u0440\u0435\u0442\u044c \u0444\u0438\u043b\u044c\u043c.", "options": ["We watch a movie.", "We will watch a movie.", "We are going to watch a movie.", "We are watching a movie."], "correct_index": 2}, {"id": 164, "text": "\u041e\u043d\u0438 \u0441\u043e\u0431\u0438\u0440\u0430\u044e\u0442\u0441\u044f \u0443\u0435\u0445\u0430\u0442\u044c.", "options": ["They leave.", "They will leave.", "They are going to leave.", "They are leaving."], "correct_index": 2}, {"id": 165, "text": "\u042f \u043d\u0435 \u0441\u043e\u0431\u0438\u0440\u0430\u044e\u0441\u044c \u044d\u0442\u043e \u0435\u0441\u0442\u044c.", "options": ["I don't eat this.", "I will not eat this.", "I am not going to eat this.", "I am not eating this."], "correct_index": 2}, {"id": 166, "text": "\u041e\u043d \u043d\u0435 \u0441\u043e\u0431\u0438\u0440\u0430\u0435\u0442\u0441\u044f \u043f\u043e\u043c\u043e\u0433\u0430\u0442\u044c.", "options": ["He doesn't help.", "He will not help.", "He is not going to help.", "He is not helping."], "correct_index": 2}, {"id": 167, "text": "\u0422\u044b \u0441\u043e\u0431\u0438\u0440\u0430\u0435\u0448\u044c\u0441\u044f \u043e\u0441\u0442\u0430\u0442\u044c\u0441\u044f?", "options": ["Do you stay?", "Will you stay?", "Are you going to stay?", "Are you staying?"], "correct_index": 2}, {"id": 168, "text": "\u041e\u043d\u0430 \u0441\u043e\u0431\u0438\u0440\u0430\u0435\u0442\u0441\u044f \u0443\u0439\u0442\u0438?", "options": ["Does she leave?", "Will she leave?", "Is she going to leave?", "Is she leaving?"], "correct_index": 2}, {"id": 169, "text": "\u041f\u043e\u0441\u043c\u043e\u0442\u0440\u0438! \u0411\u0443\u0434\u0435\u0442 \u0434\u043e\u0436\u0434\u044c.", "options": ["Look! It rains.", "Look! It will rain.", "Look! It is going to rain.", "Look! It is raining."], "correct_index": 2}, {"id": 170, "text": "\u0427\u0442\u043e \u0442\u044b \u0441\u043e\u0431\u0438\u0440\u0430\u0435\u0448\u044c\u0441\u044f \u0434\u0435\u043b\u0430\u0442\u044c?", "options": ["What do you do?", "What will you do?", "What are you going to do?", "What are you doing?"], "correct_index": 2}, {"id": 171, "text": "\u0413\u0434\u0435 \u043e\u043d\u0430 \u0441\u043e\u0431\u0438\u0440\u0430\u0435\u0442\u0441\u044f \u0436\u0438\u0442\u044c?", "options": ["Where does she live?", "Where will she live?", "Where is she going to live?", "Where is she living?"], "correct_index": 2}, {"id": 172, "text": "\u041a\u043e\u0433\u0434\u0430 \u043e\u043d\u0438 \u0441\u043e\u0431\u0438\u0440\u0430\u044e\u0442\u0441\u044f \u043f\u0440\u0438\u0431\u044b\u0442\u044c?", "options": ["When do they arrive?", "When will they arrive?", "When are they going to arrive?", "When are they arriving?"], "correct_index": 2}, {"id": 173, "text": "\u042f \u0441\u043e\u0431\u0438\u0440\u0430\u044e\u0441\u044c \u043f\u0440\u0438\u043d\u044f\u0442\u044c \u0434\u0443\u0448.", "options": ["I take a shower.", "I will take a shower.", "I am going to take a shower.", "I am taking a shower."], "correct_index": 2}, {"id": 174, "text": "\u041e\u043d \u0441\u043e\u0431\u0438\u0440\u0430\u0435\u0442\u0441\u044f \u043d\u0430\u0432\u0435\u0441\u0442\u0438\u0442\u044c \u0440\u043e\u0434\u0438\u0442\u0435\u043b\u0435\u0439.", "options": ["He visits his parents.", "He will visit his parents.", "He is going to visit his parents.", "He is visiting his parents."], "correct_index": 2}, {"id": 175, "text": "\u041c\u044b \u043d\u0435 \u0441\u043e\u0431\u0438\u0440\u0430\u0435\u043c\u0441\u044f \u0436\u0434\u0430\u0442\u044c.", "options": ["We don't wait.", "We will not wait.", "We are not going to wait.", "We are not waiting."], "correct_index": 2}, {"id": 176, "text": "\u0422\u044b \u0441\u043e\u0431\u0438\u0440\u0430\u0435\u0448\u044c\u0441\u044f \u0443\u0447\u0438\u0442\u044c\u0441\u044f \u0441\u0435\u0433\u043e\u0434\u043d\u044f \u0432\u0435\u0447\u0435\u0440\u043e\u043c?", "options": ["Do you study tonight?", "Will you study tonight?", "Are you going to study tonight?", "Are you studying tonight?"], "correct_index": 2}, {"id": 177, "text": "\u041e\u043d \u0441\u043e\u0431\u0438\u0440\u0430\u0435\u0442\u0441\u044f \u043f\u0440\u0438\u0441\u043e\u0435\u0434\u0438\u043d\u0438\u0442\u044c\u0441\u044f \u043a \u043d\u0430\u043c?", "options": ["Does he join us?", "Will he join us?", "Is he going to join us?", "Is he joining us?"], "correct_index": 2}, {"id": 178, "text": "\u042f \u0441\u043e\u0431\u0438\u0440\u0430\u044e\u0441\u044c \u043f\u0435\u0440\u0435\u0435\u0445\u0430\u0442\u044c \u0432 \u0418\u0441\u043f\u0430\u043d\u0438\u044e.", "options": ["I move to Spain.", "I will move to Spain.", "I am going to move to Spain.", "I am moving to Spain."], "correct_index": 2}, {"id": 179, "text": "\u041e\u043d\u0430 \u0441\u043e\u0431\u0438\u0440\u0430\u0435\u0442\u0441\u044f \u0433\u043e\u0442\u043e\u0432\u0438\u0442\u044c?", "options": ["Does she cook?", "Will she cook?", "Is she going to cook?", "Is she cooking?"], "correct_index": 2}, {"id": 180, "text": "\u041e\u043d\u0438 \u043d\u0435 \u0441\u043e\u0431\u0438\u0440\u0430\u044e\u0442\u0441\u044f \u043d\u0430\u043c \u043f\u043e\u043c\u043e\u0433\u0430\u0442\u044c.", "options": ["They don't help us.", "They will not help us.", "They are not going to help us.", "They are not helping us."], "correct_index": 2}], "10": [{"id": 181, "text": "I ___ going to ___ a new phone next week.", "options": ["am / buy", "is / buy", "are / buying", "am / buying"], "correct_index": 0}, {"id": 182, "text": "___ she going to ___ us tomorrow?", "options": ["Is / visit", "Are / visit", "Is / visits", "Are / visiting"], "correct_index": 0}, {"id": 183, "text": "They ___ not going to ___ the party.", "options": ["is / attend", "are / attend", "is / attending", "are / attending"], "correct_index": 1}, {"id": 184, "text": "___ you going to ___ home today?", "options": ["Is / stay", "Are / stay", "Is / staying", "Are / staying"], "correct_index": 1}, {"id": 185, "text": "He ___ going to ___ late again.", "options": ["is / be", "are / be", "is / being", "are / being"], "correct_index": 0}, {"id": 186, "text": "We ___ not going to ___ this.", "options": ["is / do", "are / do", "is / doing", "are / doing"], "correct_index": 1}, {"id": 187, "text": "___ it going to ___?", "options": ["Is / rain", "Are / rain", "Is / raining", "Are / raining"], "correct_index": 0}, {"id": 188, "text": "I ___ going to ___ English every day.", "options": ["am / study", "is / study", "are / studying", "am / studying"], "correct_index": 0}, {"id": 189, "text": "She ___ not going to ___ the test.", "options": ["is / pass", "are / pass", "is / passes", "are / passing"], "correct_index": 0}, {"id": 190, "text": "___ they going to ___ the meeting?", "options": ["Is / cancel", "Are / cancel", "Is / canceling", "Are / canceling"], "correct_index": 1}, {"id": 191, "text": "What ___ you going to ___?", "options": ["is / do", "are / do", "is / doing", "are / doing"], "correct_index": 1}, {"id": 192, "text": "He ___ going to ___ a doctor.", "options": ["is / become", "are / become", "is / becomes", "are / becoming"], "correct_index": 0}, {"id": 193, "text": "We ___ going to ___ to Paris.", "options": ["is / travel", "are / travel", "is / traveling", "are / traveling"], "correct_index": 1}, {"id": 194, "text": "___ I going to ___ this exam?", "options": ["Is / pass", "Are / pass", "Am / pass", "Am / passing"], "correct_index": 2}, {"id": 195, "text": "Look! The vase ___ going to ___!", "options": ["is / fall", "are / fall", "is / falling", "are / falling"], "correct_index": 0}, {"id": 196, "text": "They ___ not going to ___ here.", "options": ["is / work", "are / work", "is / working", "are / working"], "correct_index": 1}, {"id": 197, "text": "Where ___ she going to ___?", "options": ["is / live", "are / live", "is / lives", "are / living"], "correct_index": 0}, {"id": 198, "text": "I ___ not going to ___ your help.", "options": ["am / need", "is / need", "are / needing", "am / needing"], "correct_index": 0}, {"id": 199, "text": "___ we going to ___ on time?", "options": ["Is / arrive", "Are / arrive", "Is / arriving", "Are / arriving"], "correct_index": 1}, {"id": 200, "text": "The show ___ going to ___ soon.", "options": ["is / start", "are / start", "is / starts", "are / starting"], "correct_index": 0}]};
+        let currentQuizSet = 1;
+        const quizData = allQuizData[currentQuizSet] || [];
+
+        function checkAnswers(event) {
+            event.preventDefault();
+
+            const form = document.getElementById('quiz-form');
+            const formData = new FormData(form);
+
+            let correct = 0;
+            let total = quizData.length;
+
+            // Check each question
+            quizData.forEach((question, index) => {
+                const selectedAnswer = parseInt(formData.get(`question-${question.id}`));
+                const options = document.querySelectorAll(`input[name="question-${question.id}"]`);
+
+                options.forEach((option, optIndex) => {
+                    const label = option.closest('.option');
+                    if (optIndex === question.correct_index) {
+                        label.classList.add('correct');
+                    }
+                    if (selectedAnswer === optIndex && selectedAnswer !== question.correct_index) {
+                        label.classList.add('incorrect');
+                    }
+                    option.disabled = true;
+                });
+
+                if (selectedAnswer === question.correct_index) {
+                    correct++;
+                }
+            });
+
+            // Calculate score
+            const percentage = Math.round((correct / total) * 100);
+            const passed = percentage >= 70;
+
+            // Show results
+            const resultsDiv = document.getElementById('results');
+            const scoreDiv = document.getElementById('score');
+            const messageDiv = document.getElementById('results-message');
+
+            scoreDiv.textContent = `${percentage}%`;
+            scoreDiv.className = 'score ' + (passed ? 'pass' : 'fail');
+
+            messageDiv.textContent = `Вы ответили правильно на ${correct} из ${total} вопросов`;
+
+            resultsDiv.classList.remove('hidden');
+
+            // Disable submit button
+            document.getElementById('submit-btn').disabled = true;
+
+            // Scroll to results
+            resultsDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        function retakeQuiz() {
+            loadQuiz(currentQuizSet);
+        }
+
+        function loadQuiz(quizSet) {
+            currentQuizSet = quizSet;
+
+            // Hide placeholder, show form (if they exist)
+            const placeholder = document.getElementById('quiz-placeholder');
+            const form = document.getElementById('quiz-form');
+            if (placeholder) {
+                placeholder.style.display = 'none';
+            }
+            if (form.style.display === 'none') {
+                form.style.display = 'block';
+            }
+
+            // Update button states
+            document.querySelectorAll('.quiz-selector-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (parseInt(btn.dataset.quiz) === quizSet) {
+                    btn.classList.add('active');
+                }
+            });
+
+            // Get questions for this quiz set
+            const questions = allQuizData[quizSet] || [];
+
+            // Clear and rebuild quiz HTML
+            const submitBtn = document.getElementById('submit-btn');
+
+            // Remove all questions
+            const existingQuestions = form.querySelectorAll('.question');
+            existingQuestions.forEach(q => q.remove());
+
+            // Add new questions
+            questions.forEach((question, index) => {
+                const questionDiv = document.createElement('div');
+                questionDiv.className = 'question';
+                questionDiv.dataset.questionId = question.id;
+
+                let optionsHtml = '';
+                question.options.forEach((option, optIndex) => {
+                    optionsHtml += `
+                        <label class="option">
+                            <input type="radio" name="question-${question.id}" value="${optIndex}" required>
+                            <span>${option}</span>
+                        </label>
+                    `;
+                });
+
+                questionDiv.innerHTML = `
+                    <div class="question-text">${index + 1}. ${question.text}</div>
+                    <div class="options">
+                        ${optionsHtml}
+                    </div>
+                `;
+
+                form.insertBefore(questionDiv, submitBtn);
+            });
+
+            // Reset form state
+            form.reset();
+            submitBtn.disabled = false;
+            document.getElementById('results').classList.add('hidden');
+            document.querySelectorAll('.option').forEach(opt => {
+                opt.classList.remove('correct', 'incorrect');
+            });
+
+        }
+
+        // Initialize: if only one quiz set, load it automatically
+        const quizSetCount = Object.keys(allQuizData).length;
+        if (quizSetCount === 1) {
+            // Single quiz - load immediately
+            loadQuiz(1);
+        }
+        // If multiple quiz sets, user must select one (placeholder will show)
+
+        document.getElementById('quiz-form').addEventListener('submit', checkAnswers);
+    </script>
+</body>
+</html>

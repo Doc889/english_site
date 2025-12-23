@@ -18,13 +18,15 @@
             --color-bg-alt: #faf5ff;
             --color-text: #1f2937;
             --color-text-light: #6b7280;
+            --color-white: #ffffff;
             --color-success: #10b981;
             --color-error: #ef4444;
             --font-display: 'Playfair Display', serif;
             --font-body: 'DM Sans', sans-serif;
             --shadow-sm: 0 2px 8px rgba(124, 58, 237, 0.08);
             --shadow-md: 0 4px 20px rgba(124, 58, 237, 0.12);
-            --transition: all 0.3s ease;
+            --shadow-lg: 0 8px 40px rgba(124, 58, 237, 0.16);
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         * {
@@ -40,63 +42,57 @@
             line-height: 1.7;
         }
 
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 3rem 2rem;
-        }
-
         header {
-            background: var(--color-primary);
-            color: white;
-            padding: 2rem;
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+            color: var(--color-white);
+            padding: 3rem 2rem;
             text-align: center;
         }
 
         .back-link {
             display: inline-block;
-            color: white;
+            color: var(--color-accent);
             text-decoration: none;
             margin-bottom: 1rem;
-            font-size: 0.9rem;
-            opacity: 0.9;
             transition: var(--transition);
         }
 
         .back-link:hover {
-            opacity: 1;
-            transform: translateX(-3px);
+            color: var(--color-white);
         }
 
-        header h1 {
+        h1 {
             font-family: var(--font-display);
             font-size: 3rem;
-            margin-bottom: 0.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
         }
 
-        header p {
+        .description {
             font-size: 1.2rem;
-            opacity: 0.95;
+            opacity: 0.9;
         }
 
-        .content-section {
-            margin-bottom: 3rem;
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
         }
 
         .section-title {
             font-family: var(--font-display);
             font-size: 2.5rem;
             color: var(--color-primary);
-            margin: 3rem 0 2rem;
+            margin-bottom: 2rem;
             text-align: center;
         }
 
         .rule-section {
-            background: var(--color-bg-alt);
+            background: var(--color-white);
             border-left: 4px solid var(--color-primary);
             padding: 2rem;
             margin-bottom: 2rem;
-            border-radius: 12px;
+            border-radius: 8px;
             box-shadow: var(--shadow-sm);
         }
 
@@ -108,203 +104,52 @@
         }
 
         .rule-content {
-            font-size: 1.1rem;
-            margin-bottom: 1.5rem;
+            color: var(--color-text);
+            margin-bottom: 1rem;
             line-height: 1.8;
-            white-space: pre-line;
+            white-space: pre-wrap;
         }
 
         .examples {
-            margin-top: 1.5rem;
+            background: var(--color-bg-alt);
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
         }
 
         .example {
-            background: var(--color-bg);
-            padding: 0.8rem 1.2rem;
-            margin-bottom: 0.5rem;
-            border-radius: 8px;
-            border-left: 3px solid var(--color-secondary);
+            padding: 0.5rem;
+            margin: 0.25rem 0;
             font-family: monospace;
-            font-size: 1rem;
+            font-size: 0.95rem;
         }
 
         .quiz-section {
             background: var(--color-bg-alt);
-            padding: 3rem;
-            border-radius: 16px;
+            padding: 3rem 2rem;
             margin-top: 3rem;
-        }
-
-        .question {
-            background: var(--color-bg);
-            padding: 2rem;
-            margin-bottom: 2rem;
             border-radius: 12px;
-            box-shadow: var(--shadow-sm);
-            border: 2px solid transparent;
-            transition: var(--transition);
         }
 
-        .question.correct {
-            border-color: var(--color-success);
-            background: #f0fdf4;
-        }
-
-        .question.incorrect {
-            border-color: var(--color-error);
-            background: #fef2f2;
-        }
-
-        .question-text {
-            font-size: 1.2rem;
-            margin-bottom: 1.5rem;
-            color: var(--color-text);
-        }
-
-        .options {
+        #quiz-selector {
+            margin-bottom: 2rem;
             display: flex;
             flex-direction: column;
-            gap: 1rem;
-        }
-
-        .option {
-            display: flex;
             align-items: center;
-            padding: 1rem 1.5rem;
-            background: var(--color-bg-alt);
-            border: 2px solid var(--color-accent);
-            border-radius: 8px;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .option:hover {
-            border-color: var(--color-primary);
-            background: white;
-        }
-
-        .option input[type="radio"] {
-            margin-right: 1rem;
-            cursor: pointer;
-        }
-
-        .option.correct {
-            background: #dcfce7;
-            border-color: var(--color-success);
-        }
-
-        .option.incorrect {
-            background: #fee2e2;
-            border-color: var(--color-error);
-        }
-
-        .submit-btn {
-            display: block;
-            width: 100%;
-            padding: 1.2rem;
-            background: var(--color-primary);
-            color: white;
-            border: none;
-            border-radius: 8px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            margin-top: 2rem;
-            transition: var(--transition);
-        }
-
-        .submit-btn:hover:not(:disabled) {
-            background: var(--color-primary-dark);
-            transform: translateY(-2px);
-        }
-
-        .submit-btn:disabled {
-            background: var(--color-text-light);
-            cursor: not-allowed;
-            transform: none;
-        }
-
-        .results {
-            text-align: center;
-            padding: 2rem;
-            background: var(--color-primary);
-            color: white;
-            border-radius: 12px;
-            margin-top: 2rem;
-        }
-
-        .results.hidden {
-            display: none;
-        }
-
-        .score {
-            font-size: 4rem;
-            font-weight: 800;
-            margin-bottom: 1rem;
-        }
-
-        .score.pass {
-            color: #dcfce7;
-        }
-
-        .score.fail {
-            color: #fecaca;
-        }
-
-        .results-message {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .retry-btn {
-            padding: 0.8rem 1.5rem;
-            background: var(--color-bg);
-            border: 2px solid white;
-            color: var(--color-primary);
-            border-radius: 8px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: var(--transition);
-            margin-right: 1rem;
-        }
-
-        .retry-btn:hover {
-            background: white;
-            transform: translateY(-2px);
-        }
-
-        .home-btn {
-            background: transparent;
-            color: white;
-            border: 2px solid white;
-            padding: 0.8rem 1.5rem;
-            font-size: 1rem;
-            font-weight: 600;
-            border-radius: 8px;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
-            transition: var(--transition);
-        }
-
-        .home-btn:hover {
-            background: white;
-            color: var(--color-primary);
-            transform: translateY(-2px);
+            gap: 0.8rem;
         }
 
         .quiz-selector-btn {
-            padding: 0.8rem 1.5rem;
+            padding: 1rem 2rem;
             background: var(--color-bg);
             border: 2px solid var(--color-primary);
             color: var(--color-primary);
             border-radius: 8px;
-            font-size: 1rem;
+            font-size: 1.1rem;
             font-weight: 600;
             cursor: pointer;
             transition: var(--transition);
-            min-width: 200px;
+            min-width: 250px;
         }
 
         .quiz-selector-btn:hover {
@@ -318,17 +163,160 @@
             color: white;
         }
 
+        #quiz-placeholder {
+            text-align: center;
+            padding: 3rem;
+            color: var(--color-text-light);
+        }
+
+        #quiz-form {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .question {
+            background: var(--color-white);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .question-text {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--color-text);
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .option {
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+            background: var(--color-bg);
+            border: 2px solid var(--color-accent);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .option:hover {
+            border-color: var(--color-primary);
+            background: var(--color-bg-alt);
+        }
+
+        .option input[type="radio"] {
+            margin-right: 1rem;
+            cursor: pointer;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1.2rem 2rem;
+            background: var(--color-primary);
+            color: var(--color-white);
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+            margin-top: 2rem;
+        }
+
+        .submit-btn:hover {
+            background: var(--color-primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .submit-btn:disabled {
+            background: var(--color-text-light);
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        #results {
+            max-width: 600px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: var(--color-white);
+            border-radius: 12px;
+            box-shadow: var(--shadow-lg);
+            text-align: center;
+        }
+
+        #results.hidden {
+            display: none;
+        }
+
+        .score {
+            font-family: var(--font-display);
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .score.pass {
+            color: var(--color-success);
+        }
+
+        .score.fail {
+            color: var(--color-error);
+        }
+
+        .feedback {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .retry-btn {
+            padding: 1rem 2rem;
+            background: var(--color-primary);
+            color: var(--color-white);
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            margin-top: 1rem;
+        }
+
+        .retry-btn:hover {
+            background: var(--color-primary-dark);
+        }
+
+        .home-btn {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.75rem 1.5rem;
+            background: var(--color-white);
+            color: var(--color-primary);
+            border: 2px solid var(--color-primary);
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .home-btn:hover {
+            background: var(--color-primary);
+            color: var(--color-white);
+        }
+
         @media (max-width: 768px) {
-            header h1 {
+            h1 {
                 font-size: 2rem;
             }
-
             .section-title {
                 font-size: 2rem;
-            }
-
-            .container {
-                padding: 2rem 1rem;
             }
         }
     </style>
@@ -338,149 +326,247 @@
         <div class="container">
             <a href="../index.html" class="back-link">← Назад ко всем темам</a>
             <h1>Числа, даты и время</h1>
-            <p>Как называть числа, даты и время по-английски</p>
+            <p class="description">Как называть числа, даты и время по-английски</p>
         </div>
     </header>
 
-    <div class="container">
-        <!-- Theory Section -->
-        <div class="content-section">
-            <h2 class="section-title">Теория</h2>
-            
+    <main>
+        <h2 class="section-title">📚 Теория</h2>
+
+        
         <div class="rule-section">
             <h3 class="rule-title">Главное про числа, даты и время</h3>
-            <div class="rule-content"></div>
-            <div class="examples"><div class="example">Числа в английском делятся на:</div><div class="example">- Количественные (one, two, three) — сколько</div><div class="example">- Порядковые (first, second, third) — какой по счёту</div><div class="example">Даты читаются особым образом.</div><div class="example">Время — тоже со своими правилами.</div><div class="example">Числа от 1 до 20</div><div class="example">Эти числа нужно просто запомнить:</div><div class="example">1 — one</div><div class="example">2 — two</div><div class="example">3 — three</div><div class="example">4 — four</div><div class="example">5 — five</div><div class="example">6 — six</div><div class="example">7 — seven</div><div class="example">8 — eight</div><div class="example">9 — nine</div><div class="example">10 — ten</div><div class="example">11 — eleven</div><div class="example">12 — twelve</div><div class="example">13 — thirteen</div><div class="example">14 — fourteen</div><div class="example">15 — fifteen</div><div class="example">16 — sixteen</div><div class="example">17 — seventeen</div><div class="example">18 — eighteen</div><div class="example">19 — nineteen</div><div class="example">20 — twenty</div><div class="example">💡 Совет:</div><div class="example">От 13 до 19 добавляем -teen</div><div class="example">Десятки</div><div class="example">20 — twenty</div><div class="example">30 — thirty</div><div class="example">40 — forty</div><div class="example">50 — fifty</div><div class="example">60 — sixty</div><div class="example">70 — seventy</div><div class="example">80 — eighty</div><div class="example">90 — ninety</div><div class="example">💡 Совет:</div><div class="example">Десятки заканчиваются на -ty</div><div class="example">Двузначные числа:</div><div class="example">21 — twenty-one</div><div class="example">35 — thirty-five</div><div class="example">47 — forty-seven</div><div class="example">99 — ninety-nine</div><div class="example">Сотни и тысячи</div><div class="example">100 — one hundred / a hundred</div><div class="example">200 — two hundred</div><div class="example">1,000 — one thousand / a thousand</div><div class="example">10,000 — ten thousand</div><div class="example">Примеры:</div><div class="example">256 — two hundred fifty-six</div><div class="example">1,543 — one thousand five hundred forty-three</div><div class="example">💡 Совет:</div><div class="example">В английском НЕ используют "and" после сотен:</div><div class="example">256 = two hundred fifty-six (не two hundred AND fifty-six)</div><div class="example">Порядковые числительные</div><div class="example">Порядковые числительные — это «первый», «второй», «третий».</div><div class="example">Особые формы (нужно запомнить):</div><div class="example">1st — first</div><div class="example">2nd — second</div><div class="example">3rd — third</div><div class="example">Остальные: добавляем -th:</div><div class="example">4th — fourth</div><div class="example">5th — fifth</div><div class="example">6th — sixth</div><div class="example">7th — seventh</div><div class="example">8th — eighth</div><div class="example">9th — ninth</div><div class="example">10th — tenth</div><div class="example">11th — eleventh</div><div class="example">12th — twelfth</div><div class="example">20th — twentieth</div><div class="example">21st — twenty-first</div><div class="example">30th — thirtieth</div><div class="example">100th — one hundredth</div><div class="example">Дни недели</div><div class="example">Monday — понедельник</div><div class="example">Tuesday — вторник</div><div class="example">Wednesday — среда</div><div class="example">Thursday — четверг</div><div class="example">Friday — пятница</div><div class="example">Saturday — суббота</div><div class="example">Sunday — воскресенье</div><div class="example">💡 Совет:</div><div class="example">Дни недели ВСЕГДА пишутся с большой буквы.</div><div class="example">Предлог: on</div><div class="example">on Monday — в понедельник</div><div class="example">on Friday — в пятницу</div><div class="example">Месяцы</div><div class="example">January — январь</div><div class="example">February — февраль</div><div class="example">March — март</div><div class="example">April — апрель</div><div class="example">May — май</div><div class="example">June — июнь</div><div class="example">July — июль</div><div class="example">August — август</div><div class="example">September — сентябрь</div><div class="example">October — октябрь</div><div class="example">November — ноябрь</div><div class="example">December — декабрь</div><div class="example">💡 Совет:</div><div class="example">Месяцы ВСЕГДА пишутся с большой буквы.</div><div class="example">Предлог: in</div><div class="example">in January — в январе</div><div class="example">in May — в мае</div><div class="example">Даты</div><div class="example">Даты в английском говорятся с порядковыми числительными:</div></div>
+            <p class="rule-content"></p>
+            <div class="examples">
+                <div class="example">Числа в английском делятся на:</div>
+                <div class="example">- Количественные (one, two, three) — сколько</div>
+                <div class="example">- Порядковые (first, second, third) — какой по счёту</div>
+                <div class="example">Даты читаются особым образом.</div>
+                <div class="example">Время — тоже со своими правилами.</div>
+                <div class="example">Числа от 1 до 20</div>
+                <div class="example">Эти числа нужно просто запомнить:</div>
+                <div class="example">1 — one</div>
+                <div class="example">2 — two</div>
+                <div class="example">3 — three</div>
+                <div class="example">4 — four</div>
+                <div class="example">5 — five</div>
+                <div class="example">6 — six</div>
+                <div class="example">7 — seven</div>
+                <div class="example">8 — eight</div>
+                <div class="example">9 — nine</div>
+                <div class="example">10 — ten</div>
+                <div class="example">11 — eleven</div>
+                <div class="example">12 — twelve</div>
+                <div class="example">13 — thirteen</div>
+                <div class="example">14 — fourteen</div>
+                <div class="example">15 — fifteen</div>
+                <div class="example">16 — sixteen</div>
+                <div class="example">17 — seventeen</div>
+                <div class="example">18 — eighteen</div>
+                <div class="example">19 — nineteen</div>
+                <div class="example">20 — twenty</div>
+                <div class="example">💡 Совет:</div>
+                <div class="example">От 13 до 19 добавляем -teen</div>
+                <div class="example">Десятки</div>
+                <div class="example">20 — twenty</div>
+                <div class="example">30 — thirty</div>
+                <div class="example">40 — forty</div>
+                <div class="example">50 — fifty</div>
+                <div class="example">60 — sixty</div>
+                <div class="example">70 — seventy</div>
+                <div class="example">80 — eighty</div>
+                <div class="example">90 — ninety</div>
+                <div class="example">💡 Совет:</div>
+                <div class="example">Десятки заканчиваются на -ty</div>
+                <div class="example">Двузначные числа:</div>
+                <div class="example">21 — twenty-one</div>
+                <div class="example">35 — thirty-five</div>
+                <div class="example">47 — forty-seven</div>
+                <div class="example">99 — ninety-nine</div>
+                <div class="example">Сотни и тысячи</div>
+                <div class="example">100 — one hundred / a hundred</div>
+                <div class="example">200 — two hundred</div>
+                <div class="example">1,000 — one thousand / a thousand</div>
+                <div class="example">10,000 — ten thousand</div>
+                <div class="example">Примеры:</div>
+                <div class="example">256 — two hundred fifty-six</div>
+                <div class="example">1,543 — one thousand five hundred forty-three</div>
+                <div class="example">💡 Совет:</div>
+                <div class="example">В английском НЕ используют "and" после сотен:</div>
+                <div class="example">256 = two hundred fifty-six (не two hundred AND fifty-six)</div>
+                <div class="example">Порядковые числительные</div>
+                <div class="example">Порядковые числительные — это «первый», «второй», «третий».</div>
+                <div class="example">Особые формы (нужно запомнить):</div>
+                <div class="example">1st — first</div>
+                <div class="example">2nd — second</div>
+                <div class="example">3rd — third</div>
+                <div class="example">Остальные: добавляем -th:</div>
+                <div class="example">4th — fourth</div>
+                <div class="example">5th — fifth</div>
+                <div class="example">6th — sixth</div>
+                <div class="example">7th — seventh</div>
+                <div class="example">8th — eighth</div>
+                <div class="example">9th — ninth</div>
+                <div class="example">10th — tenth</div>
+                <div class="example">11th — eleventh</div>
+                <div class="example">12th — twelfth</div>
+                <div class="example">20th — twentieth</div>
+                <div class="example">21st — twenty-first</div>
+                <div class="example">30th — thirtieth</div>
+                <div class="example">100th — one hundredth</div>
+                <div class="example">Дни недели</div>
+                <div class="example">Monday — понедельник</div>
+                <div class="example">Tuesday — вторник</div>
+                <div class="example">Wednesday — среда</div>
+                <div class="example">Thursday — четверг</div>
+                <div class="example">Friday — пятница</div>
+                <div class="example">Saturday — суббота</div>
+                <div class="example">Sunday — воскресенье</div>
+                <div class="example">💡 Совет:</div>
+                <div class="example">Дни недели ВСЕГДА пишутся с большой буквы.</div>
+                <div class="example">Предлог: on</div>
+                <div class="example">on Monday — в понедельник</div>
+                <div class="example">on Friday — в пятницу</div>
+                <div class="example">Месяцы</div>
+                <div class="example">January — январь</div>
+                <div class="example">February — февраль</div>
+                <div class="example">March — март</div>
+                <div class="example">April — апрель</div>
+                <div class="example">May — май</div>
+                <div class="example">June — июнь</div>
+                <div class="example">July — июль</div>
+                <div class="example">August — август</div>
+                <div class="example">September — сентябрь</div>
+                <div class="example">October — октябрь</div>
+                <div class="example">November — ноябрь</div>
+                <div class="example">December — декабрь</div>
+                <div class="example">💡 Совет:</div>
+                <div class="example">Месяцы ВСЕГДА пишутся с большой буквы.</div>
+                <div class="example">Предлог: in</div>
+                <div class="example">in January — в январе</div>
+                <div class="example">in May — в мае</div>
+                <div class="example">Даты</div>
+                <div class="example">Даты в английском говорятся с порядковыми числительными:</div>
+            </div>
         </div>
-        
 
         <div class="rule-section">
             <h3 class="rule-title">5 June = the fifth of June / June fifth</h3>
-            <div class="rule-content"></div>
-            <div class="examples"><div class="example">1 January = the first of January / January first</div><div class="example">22 March = the twenty-second of March / March twenty-second</div><div class="example">Как писать:</div><div class="example">5th June 2024</div><div class="example">June 5th, 2024</div><div class="example">5/6/2024 (осторожно: в США месяц/день/год!)</div><div class="example">Предлог: on</div><div class="example">on June 5th — 5-го июня</div><div class="example">on the first of January — первого января</div><div class="example">Время по часам</div><div class="example">Который час? — What time is it?</div><div class="example">Целые часы:</div><div class="example">1:00 — one o'clock</div><div class="example">2:00 — two o'clock</div><div class="example">12:00 — twelve o'clock</div><div class="example">После часа (минуты):</div><div class="example">2:10 — ten past two</div><div class="example">3:15 — quarter past three / three fifteen</div><div class="example">4:30 — half past four / four thirty</div><div class="example">5:45 — quarter to six / five forty-five</div><div class="example">6:50 — ten to seven / six fifty</div><div class="example">💡 Совет:</div><div class="example">past = после (для первых 30 минут)</div><div class="example">to = до (для последних 30 минут)</div><div class="example">AM / PM:</div><div class="example">AM — утро (с полуночи до полудня)</div><div class="example">PM — день/вечер (с полудня до полуночи)</div><div class="example">9:00 AM — 9 утра</div><div class="example">9:00 PM — 9 вечера</div><div class="example">Предлог: at</div><div class="example">at 5 o'clock — в 5 часов</div><div class="example">at half past three — в половине четвёртого</div><div class="example">at noon — в полдень</div><div class="example">at midnight — в полночь</div></div>
+            <p class="rule-content"></p>
+            <div class="examples">
+                <div class="example">1 January = the first of January / January first</div>
+                <div class="example">22 March = the twenty-second of March / March twenty-second</div>
+                <div class="example">Как писать:</div>
+                <div class="example">5th June 2024</div>
+                <div class="example">June 5th, 2024</div>
+                <div class="example">5/6/2024 (осторожно: в США месяц/день/год!)</div>
+                <div class="example">Предлог: on</div>
+                <div class="example">on June 5th — 5-го июня</div>
+                <div class="example">on the first of January — первого января</div>
+                <div class="example">Время по часам</div>
+                <div class="example">Который час? — What time is it?</div>
+                <div class="example">Целые часы:</div>
+                <div class="example">1:00 — one o'clock</div>
+                <div class="example">2:00 — two o'clock</div>
+                <div class="example">12:00 — twelve o'clock</div>
+                <div class="example">После часа (минуты):</div>
+                <div class="example">2:10 — ten past two</div>
+                <div class="example">3:15 — quarter past three / three fifteen</div>
+                <div class="example">4:30 — half past four / four thirty</div>
+                <div class="example">5:45 — quarter to six / five forty-five</div>
+                <div class="example">6:50 — ten to seven / six fifty</div>
+                <div class="example">💡 Совет:</div>
+                <div class="example">past = после (для первых 30 минут)</div>
+                <div class="example">to = до (для последних 30 минут)</div>
+                <div class="example">AM / PM:</div>
+                <div class="example">AM — утро (с полуночи до полудня)</div>
+                <div class="example">PM — день/вечер (с полудня до полуночи)</div>
+                <div class="example">9:00 AM — 9 утра</div>
+                <div class="example">9:00 PM — 9 вечера</div>
+                <div class="example">Предлог: at</div>
+                <div class="example">at 5 o'clock — в 5 часов</div>
+                <div class="example">at half past three — в половине четвёртого</div>
+                <div class="example">at noon — в полдень</div>
+                <div class="example">at midnight — в полночь</div>
+            </div>
         </div>
-        
 
         <div class="rule-section">
             <h3 class="rule-title">Типичные ошибки русскоговорящих</h3>
-            <div class="rule-content"></div>
-            <div class="examples"><div class="example">❌ In Monday → неправильный предлог</div><div class="example">✔ On Monday</div><div class="example">❌ At January → неправильный предлог</div><div class="example">✔ In January</div><div class="example">❌ Five and thirty → так не говорят</div><div class="example">✔ Thirty-five</div><div class="example">❌ The five June → неправильный порядок</div><div class="example">✔ June fifth / the fifth of June</div><div class="example">❌ In 5 o'clock → неправильный предлог</div><div class="example">✔ At 5 o'clock</div></div>
+            <p class="rule-content"></p>
+            <div class="examples">
+                <div class="example">❌ In Monday → неправильный предлог</div>
+                <div class="example">✔ On Monday</div>
+                <div class="example">❌ At January → неправильный предлог</div>
+                <div class="example">✔ In January</div>
+                <div class="example">❌ Five and thirty → так не говорят</div>
+                <div class="example">✔ Thirty-five</div>
+                <div class="example">❌ The five June → неправильный порядок</div>
+                <div class="example">✔ June fifth / the fifth of June</div>
+                <div class="example">❌ In 5 o'clock → неправильный предлог</div>
+                <div class="example">✔ At 5 o'clock</div>
+            </div>
         </div>
-        
 
         <div class="rule-section">
             <h3 class="rule-title">Главное про числа, даты и время</h3>
-            <div class="rule-content"></div>
-            <div class="examples"><div class="example">1️⃣ Числа: one, two, three... twenty, thirty...</div><div class="example">2️⃣ Порядковые: first, second, third, fourth...</div><div class="example">3️⃣ Дни: on Monday, on Friday</div><div class="example">4️⃣ Месяцы: in January, in May</div><div class="example">5️⃣ Даты: on June 5th</div><div class="example">6️⃣ Время: at 5 o'clock, at half past three</div></div>
-        </div>
-        
-        </div>
-
-        <!-- Results Section (hidden initially) -->
-        <div id="results" class="results hidden">
-            <div class="score" id="score"></div>
-            <div class="results-message" id="results-message"></div>
-            <div>
-                <button class="retry-btn" onclick="retakeQuiz()">Пройти ещё раз</button>
-                <a href="../index.html" class="home-btn">На главную</a>
+            <p class="rule-content"></p>
+            <div class="examples">
+                <div class="example">1️⃣ Числа: one, two, three... twenty, thirty...</div>
+                <div class="example">2️⃣ Порядковые: first, second, third, fourth...</div>
+                <div class="example">3️⃣ Дни: on Monday, on Friday</div>
+                <div class="example">4️⃣ Месяцы: in January, in May</div>
+                <div class="example">5️⃣ Даты: on June 5th</div>
+                <div class="example">6️⃣ Время: at 5 o'clock, at half past three</div>
             </div>
         </div>
 
-        <!-- Quiz Section -->
-        <div class="quiz-section" id="quiz-section">
-            <h2 class="section-title">Тест</h2>
 
-            <!-- Quiz Selector (shown if multiple quizzes) -->
-            <div id="quiz-selector" style="margin-bottom: 2rem; display: flex; flex-direction: column; align-items: center; gap: 0.8rem;">
+        <div class="quiz-section">
+            <h2 class="section-title">✏️ Проверь себя</h2>
+            <p style="text-align: center; margin-bottom: 2rem; font-size: 1.1rem;">
+                Всего вопросов: 200
+            </p>
+
+            <div id="quiz-selector">
                 <button type="button" class="quiz-selector-btn" data-quiz="1" onclick="loadQuiz(1)">Тест 1</button>
-<button type="button" class="quiz-selector-btn" data-quiz="2" onclick="loadQuiz(2)">Тест 2</button>
-<button type="button" class="quiz-selector-btn" data-quiz="3" onclick="loadQuiz(3)">Тест 3</button>
-<button type="button" class="quiz-selector-btn" data-quiz="4" onclick="loadQuiz(4)">Тест 4</button>
-<button type="button" class="quiz-selector-btn" data-quiz="5" onclick="loadQuiz(5)">Тест 5</button>
-<button type="button" class="quiz-selector-btn" data-quiz="6" onclick="loadQuiz(6)">Тест 6</button>
-<button type="button" class="quiz-selector-btn" data-quiz="7" onclick="loadQuiz(7)">Тест 7</button>
-<button type="button" class="quiz-selector-btn" data-quiz="8" onclick="loadQuiz(8)">Тест 8</button>
-<button type="button" class="quiz-selector-btn" data-quiz="9" onclick="loadQuiz(9)">Тест 9</button>
-<button type="button" class="quiz-selector-btn" data-quiz="10" onclick="loadQuiz(10)">Тест 10</button>
+                <button type="button" class="quiz-selector-btn" data-quiz="2" onclick="loadQuiz(2)">Тест 2</button>
+                <button type="button" class="quiz-selector-btn" data-quiz="3" onclick="loadQuiz(3)">Тест 3</button>
+                <button type="button" class="quiz-selector-btn" data-quiz="4" onclick="loadQuiz(4)">Тест 4</button>
+                <button type="button" class="quiz-selector-btn" data-quiz="5" onclick="loadQuiz(5)">Тест 5</button>
+                <button type="button" class="quiz-selector-btn" data-quiz="6" onclick="loadQuiz(6)">Тест 6</button>
+                <button type="button" class="quiz-selector-btn" data-quiz="7" onclick="loadQuiz(7)">Тест 7</button>
+                <button type="button" class="quiz-selector-btn" data-quiz="8" onclick="loadQuiz(8)">Тест 8</button>
+                <button type="button" class="quiz-selector-btn" data-quiz="9" onclick="loadQuiz(9)">Тест 9</button>
+                <button type="button" class="quiz-selector-btn" data-quiz="10" onclick="loadQuiz(10)">Тест 10</button>
             </div>
 
-            <div id="quiz-placeholder" style="text-align: center; padding: 3rem; color: var(--color-text-light); display: block;">
+            <div id="quiz-placeholder" style="display: block;">
                 <p style="font-size: 1.2rem;">Выберите тест, чтобы начать</p>
             </div>
 
             <form id="quiz-form" style="display: none;">
-                
                 <button type="submit" class="submit-btn" id="submit-btn">Проверить ответы</button>
             </form>
+
+            <div id="results" class="hidden">
+                <div class="score" id="score"></div>
+                <div class="feedback" id="feedback"></div>
+                <p id="details"></p>
+                <button class="retry-btn" onclick="retryQuiz()">Попробовать ещё раз</button>
+                <br>
+                <a href="../index.html" class="home-btn">На главную</a>
+            </div>
         </div>
-    </div>
+    </main>
 
     <script>
-        const allQuizData = {"1": [{"id": 5737, "text": "How do you say '7'?", "options": ["six", "seven", "eight", "nine"], "correct_index": 1}, {"id": 5738, "text": "How do you say '12'?", "options": ["twelve", "twenty", "eleven", "thirteen"], "correct_index": 0}, {"id": 5739, "text": "How do you say '15'?", "options": ["fourteen", "fifteen", "sixteen", "fifty"], "correct_index": 1}, {"id": 5740, "text": "How do you say '3'?", "options": ["tree", "three", "free", "there"], "correct_index": 1}, {"id": 5741, "text": "How do you say '10'?", "options": ["ten", "teen", "tan", "tin"], "correct_index": 0}, {"id": 5742, "text": "How do you say '1'?", "options": ["one", "won", "on", "an"], "correct_index": 0}, {"id": 5743, "text": "How do you say '18'?", "options": ["eighty", "eighteen", "eight", "eightteen"], "correct_index": 1}, {"id": 5744, "text": "How do you say '5'?", "options": ["fife", "five", "fiv", "fieve"], "correct_index": 1}, {"id": 5745, "text": "How do you say '13'?", "options": ["thirty", "threeteen", "thirteen", "thirteen"], "correct_index": 2}, {"id": 5746, "text": "How do you say '20'?", "options": ["twenty", "twunty", "twente", "twelty"], "correct_index": 0}, {"id": 5747, "text": "How do you say '11'?", "options": ["eleven", "onety-one", "leven", "elefen"], "correct_index": 0}, {"id": 5748, "text": "How do you say '8'?", "options": ["ate", "eight", "eith", "eigth"], "correct_index": 1}, {"id": 5749, "text": "How do you say '19'?", "options": ["ninety", "nineteen", "ninetin", "nineten"], "correct_index": 1}, {"id": 5750, "text": "How do you say '4'?", "options": ["for", "four", "fore", "foor"], "correct_index": 1}, {"id": 5751, "text": "How do you say '16'?", "options": ["sixteen", "sixty", "sixtee", "siksten"], "correct_index": 0}, {"id": 5752, "text": "How do you say '2'?", "options": ["to", "too", "two", "tue"], "correct_index": 2}, {"id": 5753, "text": "How do you say '17'?", "options": ["seventy", "seventeen", "seventee", "sebenteen"], "correct_index": 1}, {"id": 5754, "text": "How do you say '6'?", "options": ["siks", "six", "sex", "sicks"], "correct_index": 1}, {"id": 5755, "text": "How do you say '14'?", "options": ["forty", "forteen", "fourteen", "fourten"], "correct_index": 2}, {"id": 5756, "text": "How do you say '9'?", "options": ["nine", "nein", "nyne", "nin"], "correct_index": 0}], "2": [{"id": 5757, "text": "How do you say '30'?", "options": ["thirty", "thirteen", "therty", "threety"], "correct_index": 0}, {"id": 5758, "text": "How do you say '50'?", "options": ["fivety", "fifty", "fivty", "fiftee"], "correct_index": 1}, {"id": 5759, "text": "How do you say '21'?", "options": ["twenty-one", "twenty one", "twentyone", "two-one"], "correct_index": 0}, {"id": 5760, "text": "How do you say '40'?", "options": ["fourty", "forty", "forteen", "fourthy"], "correct_index": 1}, {"id": 5761, "text": "How do you say '60'?", "options": ["sixty", "sixteen", "sikty", "sixtee"], "correct_index": 0}, {"id": 5762, "text": "How do you say '75'?", "options": ["seventy-five", "seventy five", "seven-five", "seventyfive"], "correct_index": 0}, {"id": 5763, "text": "How do you say '80'?", "options": ["eighty", "eighteen", "eightty", "eightie"], "correct_index": 0}, {"id": 5764, "text": "How do you say '90'?", "options": ["ninety", "nineteen", "nintee", "ninetie"], "correct_index": 0}, {"id": 5765, "text": "How do you say '33'?", "options": ["thirty-three", "thirty three", "thirtythree", "three-three"], "correct_index": 0}, {"id": 5766, "text": "How do you say '45'?", "options": ["forty-five", "fourty-five", "four-five", "fortyfive"], "correct_index": 0}, {"id": 5767, "text": "How do you say '67'?", "options": ["sixty-seven", "sixty seven", "sixtyseven", "six-seven"], "correct_index": 0}, {"id": 5768, "text": "How do you say '89'?", "options": ["eighty-nine", "eighty nine", "eightynine", "eight-nine"], "correct_index": 0}, {"id": 5769, "text": "How do you say '22'?", "options": ["twenty-two", "twenty two", "twentytwo", "two-two"], "correct_index": 0}, {"id": 5770, "text": "How do you say '70'?", "options": ["seventy", "seventeen", "seventee", "seventie"], "correct_index": 0}, {"id": 5771, "text": "How do you say '100'?", "options": ["one hundred", "hundred", "one hunderd", "a hunderd"], "correct_index": 0}, {"id": 5772, "text": "How do you say '55'?", "options": ["fifty-five", "fifty five", "fiftyfive", "five-five"], "correct_index": 0}, {"id": 5773, "text": "How do you say '44'?", "options": ["forty-four", "fourty-four", "fortyfour", "four-four"], "correct_index": 0}, {"id": 5774, "text": "How do you say '99'?", "options": ["ninety-nine", "ninety nine", "ninetynine", "nine-nine"], "correct_index": 0}, {"id": 5775, "text": "How do you say '36'?", "options": ["thirty-six", "thirty six", "thirtysix", "three-six"], "correct_index": 0}, {"id": 5776, "text": "How do you say '88'?", "options": ["eighty-eight", "eighty eight", "eightyeight", "eight-eight"], "correct_index": 0}], "3": [{"id": 5777, "text": "The ___ of March", "options": ["first", "one", "oneth", "fist"], "correct_index": 0}, {"id": 5778, "text": "The ___ day", "options": ["second", "two", "twoth", "secund"], "correct_index": 0}, {"id": 5779, "text": "The ___ place", "options": ["third", "three", "threeth", "therd"], "correct_index": 0}, {"id": 5780, "text": "The ___ floor", "options": ["fourth", "four", "forth", "fourt"], "correct_index": 0}, {"id": 5781, "text": "The ___ time", "options": ["fifth", "five", "fiveth", "fift"], "correct_index": 0}, {"id": 5782, "text": "The ___ chapter", "options": ["sixth", "six", "sixt", "sikth"], "correct_index": 0}, {"id": 5783, "text": "The ___ week", "options": ["seventh", "seven", "sevth", "sevent"], "correct_index": 0}, {"id": 5784, "text": "The ___ month", "options": ["eighth", "eight", "eightth", "eith"], "correct_index": 0}, {"id": 5785, "text": "The ___ grade", "options": ["ninth", "nine", "nineth", "nint"], "correct_index": 0}, {"id": 5786, "text": "The ___ year", "options": ["tenth", "ten", "teeth", "tent"], "correct_index": 0}, {"id": 5787, "text": "The ___ lesson", "options": ["eleventh", "eleven", "elevent", "elevnth"], "correct_index": 0}, {"id": 5788, "text": "The ___ hour", "options": ["twelfth", "twelve", "twelft", "twelvth"], "correct_index": 0}, {"id": 5789, "text": "May ___", "options": ["5th", "5st", "5nd", "5rd"], "correct_index": 0}, {"id": 5790, "text": "March ___", "options": ["21st", "21th", "21nd", "21rd"], "correct_index": 0}, {"id": 5791, "text": "June ___", "options": ["2nd", "2th", "2st", "2rd"], "correct_index": 0}, {"id": 5792, "text": "July ___", "options": ["3rd", "3th", "3st", "3nd"], "correct_index": 0}, {"id": 5793, "text": "April ___", "options": ["15th", "15st", "15nd", "15rd"], "correct_index": 0}, {"id": 5794, "text": "January ___", "options": ["1st", "1th", "1nd", "1rd"], "correct_index": 0}, {"id": 5795, "text": "December ___", "options": ["31st", "31th", "31nd", "31rd"], "correct_index": 0}, {"id": 5796, "text": "August ___", "options": ["20th", "20st", "20nd", "20rd"], "correct_index": 0}], "4": [{"id": 5797, "text": "The first day of the week is ___.", "options": ["Monday", "Sunday", "Saturday", "Tuesday"], "correct_index": 0}, {"id": 5798, "text": "I work ___ Monday.", "options": ["in", "on", "at", "to"], "correct_index": 1}, {"id": 5799, "text": "How do you spell Wednesday?", "options": ["Wensday", "Wednesday", "Wendsday", "Wednsday"], "correct_index": 1}, {"id": 5800, "text": "___ is after Monday.", "options": ["Tuesday", "Sunday", "Friday", "Wednesday"], "correct_index": 0}, {"id": 5801, "text": "The weekend is ___ and Sunday.", "options": ["Friday", "Monday", "Saturday", "Thursday"], "correct_index": 2}, {"id": 5802, "text": "I have class ___ Friday.", "options": ["in", "on", "at", "to"], "correct_index": 1}, {"id": 5803, "text": "___ comes before Thursday.", "options": ["Friday", "Wednesday", "Tuesday", "Saturday"], "correct_index": 1}, {"id": 5804, "text": "How many days in a week?", "options": ["six", "seven", "eight", "five"], "correct_index": 1}, {"id": 5805, "text": "Sunday is ___ the weekend.", "options": ["in", "on", "at", "to"], "correct_index": 1}, {"id": 5806, "text": "___ is between Tuesday and Thursday.", "options": ["Monday", "Friday", "Wednesday", "Saturday"], "correct_index": 2}, {"id": 5807, "text": "I don't work ___ Saturday.", "options": ["in", "on", "at", "to"], "correct_index": 1}, {"id": 5808, "text": "The last day of the workweek is ___.", "options": ["Thursday", "Friday", "Saturday", "Sunday"], "correct_index": 1}, {"id": 5809, "text": "___ comes after Wednesday.", "options": ["Tuesday", "Friday", "Thursday", "Monday"], "correct_index": 2}, {"id": 5810, "text": "I go to the gym ___ Monday and Wednesday.", "options": ["in", "on", "at", "to"], "correct_index": 1}, {"id": 5811, "text": "___ is the middle of the week.", "options": ["Monday", "Wednesday", "Friday", "Sunday"], "correct_index": 1}, {"id": 5812, "text": "We have a meeting ___ Thursday.", "options": ["in", "on", "at", "to"], "correct_index": 1}, {"id": 5813, "text": "___ comes before Saturday.", "options": ["Thursday", "Friday", "Sunday", "Monday"], "correct_index": 1}, {"id": 5814, "text": "I rest ___ Sunday.", "options": ["in", "on", "at", "to"], "correct_index": 1}, {"id": 5815, "text": "___ is after Sunday.", "options": ["Saturday", "Monday", "Friday", "Tuesday"], "correct_index": 1}, {"id": 5816, "text": "Tuesday comes after ___.", "options": ["Wednesday", "Monday", "Thursday", "Friday"], "correct_index": 1}], "5": [{"id": 5817, "text": "The first month is ___.", "options": ["January", "February", "March", "April"], "correct_index": 0}, {"id": 5818, "text": "I was born ___ May.", "options": ["in", "on", "at", "to"], "correct_index": 0}, {"id": 5819, "text": "___ has 28 or 29 days.", "options": ["January", "February", "March", "April"], "correct_index": 1}, {"id": 5820, "text": "Summer months: June, July, ___.", "options": ["August", "September", "May", "October"], "correct_index": 0}, {"id": 5821, "text": "___ is the last month.", "options": ["November", "December", "October", "September"], "correct_index": 1}, {"id": 5822, "text": "Spring starts ___ March.", "options": ["in", "on", "at", "to"], "correct_index": 0}, {"id": 5823, "text": "___ comes after June.", "options": ["May", "July", "August", "September"], "correct_index": 1}, {"id": 5824, "text": "How many months in a year?", "options": ["ten", "eleven", "twelve", "thirteen"], "correct_index": 2}, {"id": 5825, "text": "Christmas is ___ December.", "options": ["in", "on", "at", "to"], "correct_index": 0}, {"id": 5826, "text": "___ is before April.", "options": ["May", "February", "March", "June"], "correct_index": 2}, {"id": 5827, "text": "Halloween is ___ October.", "options": ["in", "on", "at", "to"], "correct_index": 0}, {"id": 5828, "text": "___ comes after August.", "options": ["July", "September", "October", "November"], "correct_index": 1}, {"id": 5829, "text": "The third month is ___.", "options": ["January", "February", "March", "April"], "correct_index": 2}, {"id": 5830, "text": "Winter months: December, January, ___.", "options": ["March", "February", "November", "October"], "correct_index": 1}, {"id": 5831, "text": "___ is between March and May.", "options": ["February", "April", "June", "January"], "correct_index": 1}, {"id": 5832, "text": "My birthday is ___ July.", "options": ["in", "on", "at", "to"], "correct_index": 0}, {"id": 5833, "text": "___ has 31 days.", "options": ["February", "April", "June", "January"], "correct_index": 3}, {"id": 5834, "text": "Autumn starts ___ September.", "options": ["in", "on", "at", "to"], "correct_index": 0}, {"id": 5835, "text": "___ comes before November.", "options": ["September", "December", "October", "August"], "correct_index": 2}, {"id": 5836, "text": "The shortest month is ___.", "options": ["January", "February", "March", "June"], "correct_index": 1}], "6": [{"id": 5837, "text": "How do you say June 5th?", "options": ["five June", "the fifth of June", "June fiveth", "fiveth June"], "correct_index": 1}, {"id": 5838, "text": "I have an exam ___ June 5th.", "options": ["in", "on", "at", "to"], "correct_index": 1}, {"id": 5839, "text": "January ___", "options": ["1th", "1st", "1nd", "1rd"], "correct_index": 1}, {"id": 5840, "text": "The ___ of March", "options": ["first", "oneth", "firth", "firsted"], "correct_index": 0}, {"id": 5841, "text": "My birthday is ___ the 15th.", "options": ["in", "on", "at", "to"], "correct_index": 1}, {"id": 5842, "text": "December ___ is Christmas.", "options": ["25st", "25th", "25nd", "25rd"], "correct_index": 1}, {"id": 5843, "text": "How do you write March 22?", "options": ["22th March", "March 22nd", "March 22th", "22st March"], "correct_index": 1}, {"id": 5844, "text": "The meeting is ___ May 10th.", "options": ["in", "on", "at", "to"], "correct_index": 1}, {"id": 5845, "text": "July ___ is Independence Day (US).", "options": ["4st", "4th", "4nd", "4rd"], "correct_index": 1}, {"id": 5846, "text": "I arrive ___ the 3rd of June.", "options": ["in", "on", "at", "to"], "correct_index": 1}, {"id": 5847, "text": "February ___", "options": ["14th", "14st", "14nd", "14rd"], "correct_index": 0}, {"id": 5848, "text": "The ___ of January", "options": ["third", "threeth", "thirth", "thirded"], "correct_index": 0}, {"id": 5849, "text": "Classes start ___ September 1st.", "options": ["in", "on", "at", "to"], "correct_index": 1}, {"id": 5850, "text": "Halloween is October ___.", "options": ["31st", "31th", "31nd", "31rd"], "correct_index": 0}, {"id": 5851, "text": "The exam is ___ the 20th.", "options": ["in", "on", "at", "to"], "correct_index": 1}, {"id": 5852, "text": "April ___", "options": ["1st", "1th", "1nd", "1rd"], "correct_index": 0}, {"id": 5853, "text": "New Year is January ___.", "options": ["1st", "1th", "1nd", "1rd"], "correct_index": 0}, {"id": 5854, "text": "The deadline is ___ March 15th.", "options": ["in", "on", "at", "to"], "correct_index": 1}, {"id": 5855, "text": "June ___", "options": ["21st", "21th", "21nd", "21rd"], "correct_index": 0}, {"id": 5856, "text": "I was born ___ May 5th.", "options": ["in", "on", "at", "to"], "correct_index": 1}], "7": [{"id": 5857, "text": "What time is it? It's 5:00.", "options": ["five o'clock", "five clock", "five hour", "o'clock five"], "correct_index": 0}, {"id": 5858, "text": "The meeting is ___ 3 o'clock.", "options": ["in", "on", "at", "to"], "correct_index": 2}, {"id": 5859, "text": "12:00 PM is ___.", "options": ["midnight", "noon", "evening", "morning"], "correct_index": 1}, {"id": 5860, "text": "I wake up ___ 7 o'clock.", "options": ["in", "on", "at", "to"], "correct_index": 2}, {"id": 5861, "text": "12:00 AM is ___.", "options": ["noon", "midnight", "evening", "morning"], "correct_index": 1}, {"id": 5862, "text": "What time is it? 10:00.", "options": ["ten o'clock", "ten clock", "o'clock ten", "ten hour"], "correct_index": 0}, {"id": 5863, "text": "The class starts ___ 9 o'clock.", "options": ["in", "on", "at", "to"], "correct_index": 2}, {"id": 5864, "text": "I have lunch ___ noon.", "options": ["in", "on", "at", "to"], "correct_index": 2}, {"id": 5865, "text": "8:00 PM means ___.", "options": ["8 in the morning", "8 in the evening", "8 at noon", "8 at midnight"], "correct_index": 1}, {"id": 5866, "text": "I go to bed ___ midnight.", "options": ["in", "on", "at", "to"], "correct_index": 2}, {"id": 5867, "text": "What time is it? 6:00.", "options": ["six o'clock", "six clock", "o'clock six", "six hour"], "correct_index": 0}, {"id": 5868, "text": "The store opens ___ 10 o'clock.", "options": ["in", "on", "at", "to"], "correct_index": 2}, {"id": 5869, "text": "7:00 AM means ___.", "options": ["7 in the evening", "7 in the morning", "7 at noon", "7 at night"], "correct_index": 1}, {"id": 5870, "text": "We meet ___ 5 o'clock.", "options": ["in", "on", "at", "to"], "correct_index": 2}, {"id": 5871, "text": "What time is it? 1:00.", "options": ["one o'clock", "one clock", "o'clock one", "one hour"], "correct_index": 0}, {"id": 5872, "text": "Dinner is ___ 6 o'clock.", "options": ["in", "on", "at", "to"], "correct_index": 2}, {"id": 5873, "text": "2:00 PM is ___ in the afternoon.", "options": ["two o'clock", "two clock", "two hour", "o'clock two"], "correct_index": 0}, {"id": 5874, "text": "I finish work ___ 5 o'clock.", "options": ["in", "on", "at", "to"], "correct_index": 2}, {"id": 5875, "text": "What time is it? 11:00.", "options": ["eleven o'clock", "eleven clock", "o'clock eleven", "eleven hour"], "correct_index": 0}, {"id": 5876, "text": "The movie starts ___ 8 o'clock.", "options": ["in", "on", "at", "to"], "correct_index": 2}], "8": [{"id": 5877, "text": "3:15 = ___", "options": ["quarter past three", "three past quarter", "quarter to three", "three quarter"], "correct_index": 0}, {"id": 5878, "text": "4:30 = ___", "options": ["half past four", "four past half", "half to four", "four half"], "correct_index": 0}, {"id": 5879, "text": "5:45 = ___", "options": ["quarter past five", "half past five", "quarter to six", "five forty"], "correct_index": 2}, {"id": 5880, "text": "2:10 = ___", "options": ["ten past two", "two past ten", "ten to two", "two ten"], "correct_index": 0}, {"id": 5881, "text": "6:50 = ___", "options": ["ten past six", "half past six", "ten to seven", "six fifty"], "correct_index": 2}, {"id": 5882, "text": "I arrive ___ half past three.", "options": ["in", "on", "at", "to"], "correct_index": 2}, {"id": 5883, "text": "7:15 = ___", "options": ["quarter past seven", "quarter to seven", "half past seven", "seven quarter"], "correct_index": 0}, {"id": 5884, "text": "The meeting is ___ quarter to five.", "options": ["in", "on", "at", "to"], "correct_index": 2}, {"id": 5885, "text": "9:30 = ___", "options": ["half past nine", "nine past half", "half to nine", "quarter past nine"], "correct_index": 0}, {"id": 5886, "text": "I leave ___ ten to six.", "options": ["in", "on", "at", "to"], "correct_index": 2}, {"id": 5887, "text": "8:45 = ___", "options": ["quarter past eight", "half past eight", "quarter to nine", "eight forty"], "correct_index": 2}, {"id": 5888, "text": "1:20 = ___", "options": ["twenty past one", "one past twenty", "twenty to one", "one twenty"], "correct_index": 0}, {"id": 5889, "text": "The bus comes ___ twenty past five.", "options": ["in", "on", "at", "to"], "correct_index": 2}, {"id": 5890, "text": "11:30 = ___", "options": ["half past eleven", "eleven past half", "quarter past eleven", "eleven half"], "correct_index": 0}, {"id": 5891, "text": "4:55 = ___", "options": ["five past four", "five to five", "half past four", "quarter to five"], "correct_index": 1}, {"id": 5892, "text": "I wake up ___ quarter past six.", "options": ["in", "on", "at", "to"], "correct_index": 2}, {"id": 5893, "text": "10:15 = ___", "options": ["quarter past ten", "quarter to ten", "half past ten", "ten quarter"], "correct_index": 0}, {"id": 5894, "text": "3:40 = ___", "options": ["twenty past three", "twenty to four", "half past three", "forty past three"], "correct_index": 1}, {"id": 5895, "text": "The class ends ___ twenty to four.", "options": ["in", "on", "at", "to"], "correct_index": 2}, {"id": 5896, "text": "12:30 = ___", "options": ["half past twelve", "twelve past half", "quarter past twelve", "twelve half"], "correct_index": 0}], "9": [{"id": 5897, "text": "9:00 AM is ___.", "options": ["9 in the morning", "9 in the evening", "9 at night", "9 at noon"], "correct_index": 0}, {"id": 5898, "text": "9:00 PM is ___.", "options": ["9 in the morning", "9 in the evening", "9 at noon", "9 at midnight"], "correct_index": 1}, {"id": 5899, "text": "I have breakfast ___ 8 AM.", "options": ["in", "on", "at", "to"], "correct_index": 2}, {"id": 5900, "text": "Midnight is ___.", "options": ["12 AM", "12 PM", "0 PM", "24 AM"], "correct_index": 0}, {"id": 5901, "text": "Noon is ___.", "options": ["12 AM", "12 PM", "0 AM", "24 PM"], "correct_index": 1}, {"id": 5902, "text": "I go to bed ___ 11 PM.", "options": ["in", "on", "at", "to"], "correct_index": 2}, {"id": 5903, "text": "6:00 AM means ___.", "options": ["six in the morning", "six in the evening", "six at noon", "six at night"], "correct_index": 0}, {"id": 5904, "text": "6:00 PM means ___.", "options": ["six in the morning", "six in the evening", "six at noon", "six at midnight"], "correct_index": 1}, {"id": 5905, "text": "I work ___ the morning.", "options": ["in", "on", "at", "to"], "correct_index": 0}, {"id": 5906, "text": "The store closes ___ 9 PM.", "options": ["in", "on", "at", "to"], "correct_index": 2}, {"id": 5907, "text": "I study ___ the evening.", "options": ["in", "on", "at", "to"], "correct_index": 0}, {"id": 5908, "text": "3:00 AM is ___.", "options": ["3 in the morning", "3 in the afternoon", "3 in the evening", "3 at noon"], "correct_index": 0}, {"id": 5909, "text": "I have lunch ___ the afternoon.", "options": ["in", "on", "at", "to"], "correct_index": 0}, {"id": 5910, "text": "The party starts ___ 7 PM.", "options": ["in", "on", "at", "to"], "correct_index": 2}, {"id": 5911, "text": "I sleep ___ night.", "options": ["in", "on", "at", "to"], "correct_index": 3}, {"id": 5912, "text": "4:00 PM is ___.", "options": ["4 in the morning", "4 in the afternoon", "4 in the night", "4 at midnight"], "correct_index": 1}, {"id": 5913, "text": "I wake up early ___ the morning.", "options": ["in", "on", "at", "to"], "correct_index": 0}, {"id": 5914, "text": "The meeting is ___ 10 AM.", "options": ["in", "on", "at", "to"], "correct_index": 2}, {"id": 5915, "text": "I watch TV ___ the evening.", "options": ["in", "on", "at", "to"], "correct_index": 0}, {"id": 5916, "text": "11:00 PM is ___.", "options": ["11 in the morning", "11 at night", "11 at noon", "11 at midnight"], "correct_index": 1}], "10": [{"id": 5917, "text": "How do you say '25'?", "options": ["twenty-five", "two-five", "twentyfive", "twenty five"], "correct_index": 0}, {"id": 5918, "text": "The ___ of June", "options": ["first", "one", "oneth", "firth"], "correct_index": 0}, {"id": 5919, "text": "I wake up ___ 7 o'clock.", "options": ["in", "on", "at", "to"], "correct_index": 2}, {"id": 5920, "text": "___ comes after Tuesday.", "options": ["Monday", "Wednesday", "Thursday", "Friday"], "correct_index": 1}, {"id": 5921, "text": "I was born ___ May.", "options": ["in", "on", "at", "to"], "correct_index": 0}, {"id": 5922, "text": "3:30 = ___", "options": ["half past three", "three past half", "quarter past three", "three thirty"], "correct_index": 0}, {"id": 5923, "text": "How do you say '12'?", "options": ["twenty", "twelve", "twelfth", "tenth"], "correct_index": 1}, {"id": 5924, "text": "My birthday is ___ June 15th.", "options": ["in", "on", "at", "to"], "correct_index": 1}, {"id": 5925, "text": "The third month is ___.", "options": ["February", "March", "April", "May"], "correct_index": 1}, {"id": 5926, "text": "I have lunch ___ noon.", "options": ["in", "on", "at", "to"], "correct_index": 2}, {"id": 5927, "text": "How do you say '50'?", "options": ["fifteen", "fifty", "five", "fivety"], "correct_index": 1}, {"id": 5928, "text": "___ is the last month.", "options": ["November", "December", "October", "September"], "correct_index": 1}, {"id": 5929, "text": "4:15 = ___", "options": ["quarter past four", "quarter to four", "half past four", "four quarter"], "correct_index": 0}, {"id": 5930, "text": "I work ___ Monday.", "options": ["in", "on", "at", "to"], "correct_index": 1}, {"id": 5931, "text": "January ___", "options": ["1st", "1th", "1nd", "1rd"], "correct_index": 0}, {"id": 5932, "text": "9:00 PM means ___.", "options": ["9 in the morning", "9 in the evening", "9 at noon", "9 at midnight"], "correct_index": 1}, {"id": 5933, "text": "How do you say '33'?", "options": ["thirty-three", "three-three", "thirtythree", "thirty three"], "correct_index": 0}, {"id": 5934, "text": "The meeting is ___ May 10th.", "options": ["in", "on", "at", "to"], "correct_index": 1}, {"id": 5935, "text": "___ comes before Saturday.", "options": ["Thursday", "Friday", "Sunday", "Monday"], "correct_index": 1}, {"id": 5936, "text": "I finish work ___ 5 PM.", "options": ["in", "on", "at", "to"], "correct_index": 2}]};
+        const allQuizData = {"1": [{"text": "How do you say '25'?", "options": ["twenty-five", "two-five", "twentyfive", "twenty five"], "correct_index": 0, "explanation": ""}, {"text": "The first day of the week is ___.", "options": ["Monday", "Sunday", "Saturday", "Tuesday"], "correct_index": 0, "explanation": ""}, {"text": "The first month is ___.", "options": ["January", "February", "March", "April"], "correct_index": 0, "explanation": ""}, {"text": "How do you say '30'?", "options": ["thirty", "thirteen", "therty", "threety"], "correct_index": 0, "explanation": ""}, {"text": "What time is it? It's 5:00.", "options": ["five o'clock", "five clock", "five hour", "o'clock five"], "correct_index": 0, "explanation": ""}, {"text": "9:00 AM is ___.", "options": ["9 in the morning", "9 in the evening", "9 at night", "9 at noon"], "correct_index": 0, "explanation": ""}, {"text": "How do you say June 5th?", "options": ["five June", "the fifth of June", "June fiveth", "fiveth June"], "correct_index": 1, "explanation": ""}, {"text": "3:15 = ___", "options": ["quarter past three", "three past quarter", "quarter to three", "three quarter"], "correct_index": 0, "explanation": ""}, {"text": "How do you say '7'?", "options": ["six", "seven", "eight", "nine"], "correct_index": 1, "explanation": ""}, {"text": "The ___ of March", "options": ["first", "one", "oneth", "fist"], "correct_index": 0, "explanation": ""}, {"text": "The meeting is ___ 3 o'clock.", "options": ["in", "on", "at", "to"], "correct_index": 2, "explanation": ""}, {"text": "I have an exam ___ June 5th.", "options": ["in", "on", "at", "to"], "correct_index": 1, "explanation": ""}, {"text": "The ___ of June", "options": ["first", "one", "oneth", "firth"], "correct_index": 0, "explanation": ""}, {"text": "I was born ___ May.", "options": ["in", "on", "at", "to"], "correct_index": 0, "explanation": ""}, {"text": "I work ___ Monday.", "options": ["in", "on", "at", "to"], "correct_index": 1, "explanation": ""}, {"text": "9:00 PM is ___.", "options": ["9 in the morning", "9 in the evening", "9 at noon", "9 at midnight"], "correct_index": 1, "explanation": ""}, {"text": "4:30 = ___", "options": ["half past four", "four past half", "half to four", "four half"], "correct_index": 0, "explanation": ""}, {"text": "How do you say '50'?", "options": ["fivety", "fifty", "fivty", "fiftee"], "correct_index": 1, "explanation": ""}, {"text": "How do you say '12'?", "options": ["twelve", "twenty", "eleven", "thirteen"], "correct_index": 0, "explanation": ""}, {"text": "The ___ day", "options": ["second", "two", "twoth", "secund"], "correct_index": 0, "explanation": ""}], "2": [{"text": "I have breakfast ___ 8 AM.", "options": ["in", "on", "at", "to"], "correct_index": 2, "explanation": ""}, {"text": "12:00 PM is ___.", "options": ["midnight", "noon", "evening", "morning"], "correct_index": 1, "explanation": ""}, {"text": "How do you say '21'?", "options": ["twenty-one", "twenty one", "twentyone", "two-one"], "correct_index": 0, "explanation": ""}, {"text": "January ___", "options": ["1th", "1st", "1nd", "1rd"], "correct_index": 1, "explanation": ""}, {"text": "The ___ place", "options": ["third", "three", "threeth", "therd"], "correct_index": 0, "explanation": ""}, {"text": "I wake up ___ 7 o'clock.", "options": ["in", "on", "at", "to"], "correct_index": 2, "explanation": ""}, {"text": "How do you say '15'?", "options": ["fourteen", "fifteen", "sixteen", "fifty"], "correct_index": 1, "explanation": ""}, {"text": "How do you spell Wednesday?", "options": ["Wensday", "Wednesday", "Wendsday", "Wednsday"], "correct_index": 1, "explanation": ""}, {"text": "5:45 = ___", "options": ["quarter past five", "half past five", "quarter to six", "five forty"], "correct_index": 2, "explanation": ""}, {"text": "___ has 28 or 29 days.", "options": ["January", "February", "March", "April"], "correct_index": 1, "explanation": ""}, {"text": "___ is after Monday.", "options": ["Tuesday", "Sunday", "Friday", "Wednesday"], "correct_index": 0, "explanation": ""}, {"text": "How do you say '3'?", "options": ["tree", "three", "free", "there"], "correct_index": 1, "explanation": ""}, {"text": "___ comes after Tuesday.", "options": ["Monday", "Wednesday", "Thursday", "Friday"], "correct_index": 1, "explanation": ""}, {"text": "Midnight is ___.", "options": ["12 AM", "12 PM", "0 PM", "24 AM"], "correct_index": 0, "explanation": ""}, {"text": "2:10 = ___", "options": ["ten past two", "two past ten", "ten to two", "two ten"], "correct_index": 0, "explanation": ""}, {"text": "How do you say '40'?", "options": ["fourty", "forty", "forteen", "fourthy"], "correct_index": 1, "explanation": ""}, {"text": "I wake up ___ 7 o'clock.", "options": ["in", "on", "at", "to"], "correct_index": 2, "explanation": ""}, {"text": "The ___ of March", "options": ["first", "oneth", "firth", "firsted"], "correct_index": 0, "explanation": ""}, {"text": "Summer months: June, July, ___.", "options": ["August", "September", "May", "October"], "correct_index": 0, "explanation": ""}, {"text": "The ___ floor", "options": ["fourth", "four", "forth", "fourt"], "correct_index": 0, "explanation": ""}], "3": [{"text": "My birthday is ___ the 15th.", "options": ["in", "on", "at", "to"], "correct_index": 1, "explanation": ""}, {"text": "12:00 AM is ___.", "options": ["noon", "midnight", "evening", "morning"], "correct_index": 1, "explanation": ""}, {"text": "How do you say '60'?", "options": ["sixty", "sixteen", "sikty", "sixtee"], "correct_index": 0, "explanation": ""}, {"text": "How do you say '10'?", "options": ["ten", "teen", "tan", "tin"], "correct_index": 0, "explanation": ""}, {"text": "The ___ time", "options": ["fifth", "five", "fiveth", "fift"], "correct_index": 0, "explanation": ""}, {"text": "6:50 = ___", "options": ["ten past six", "half past six", "ten to seven", "six fifty"], "correct_index": 2, "explanation": ""}, {"text": "Noon is ___.", "options": ["12 AM", "12 PM", "0 AM", "24 PM"], "correct_index": 1, "explanation": ""}, {"text": "I was born ___ May.", "options": ["in", "on", "at", "to"], "correct_index": 0, "explanation": ""}, {"text": "The weekend is ___ and Sunday.", "options": ["Friday", "Monday", "Saturday", "Thursday"], "correct_index": 2, "explanation": ""}, {"text": "___ is the last month.", "options": ["November", "December", "October", "September"], "correct_index": 1, "explanation": ""}, {"text": "How do you say '75'?", "options": ["seventy-five", "seventy five", "seven-five", "seventyfive"], "correct_index": 0, "explanation": ""}, {"text": "How do you say '1'?", "options": ["one", "won", "on", "an"], "correct_index": 0, "explanation": ""}, {"text": "The ___ chapter", "options": ["sixth", "six", "sixt", "sikth"], "correct_index": 0, "explanation": ""}, {"text": "I have class ___ Friday.", "options": ["in", "on", "at", "to"], "correct_index": 1, "explanation": ""}, {"text": "Spring starts ___ March.", "options": ["in", "on", "at", "to"], "correct_index": 0, "explanation": ""}, {"text": "December ___ is Christmas.", "options": ["25st", "25th", "25nd", "25rd"], "correct_index": 1, "explanation": ""}, {"text": "What time is it? 10:00.", "options": ["ten o'clock", "ten clock", "o'clock ten", "ten hour"], "correct_index": 0, "explanation": ""}, {"text": "I arrive ___ half past three.", "options": ["in", "on", "at", "to"], "correct_index": 2, "explanation": ""}, {"text": "I go to bed ___ 11 PM.", "options": ["in", "on", "at", "to"], "correct_index": 2, "explanation": ""}, {"text": "3:30 = ___", "options": ["half past three", "three past half", "quarter past three", "three thirty"], "correct_index": 0, "explanation": ""}], "4": [{"text": "The ___ week", "options": ["seventh", "seven", "sevth", "sevent"], "correct_index": 0, "explanation": ""}, {"text": "How do you write March 22?", "options": ["22th March", "March 22nd", "March 22th", "22st March"], "correct_index": 1, "explanation": ""}, {"text": "The class starts ___ 9 o'clock.", "options": ["in", "on", "at", "to"], "correct_index": 2, "explanation": ""}, {"text": "How do you say '18'?", "options": ["eighty", "eighteen", "eight", "eightteen"], "correct_index": 1, "explanation": ""}, {"text": "6:00 AM means ___.", "options": ["six in the morning", "six in the evening", "six at noon", "six at night"], "correct_index": 0, "explanation": ""}, {"text": "7:15 = ___", "options": ["quarter past seven", "quarter to seven", "half past seven", "seven quarter"], "correct_index": 0, "explanation": ""}, {"text": "___ comes before Thursday.", "options": ["Friday", "Wednesday", "Tuesday", "Saturday"], "correct_index": 1, "explanation": ""}, {"text": "___ comes after June.", "options": ["May", "July", "August", "September"], "correct_index": 1, "explanation": ""}, {"text": "How do you say '12'?", "options": ["twenty", "twelve", "twelfth", "tenth"], "correct_index": 1, "explanation": ""}, {"text": "How do you say '80'?", "options": ["eighty", "eighteen", "eightty", "eightie"], "correct_index": 0, "explanation": ""}, {"text": "The meeting is ___ quarter to five.", "options": ["in", "on", "at", "to"], "correct_index": 2, "explanation": ""}, {"text": "How do you say '5'?", "options": ["fife", "five", "fiv", "fieve"], "correct_index": 1, "explanation": ""}, {"text": "How many days in a week?", "options": ["six", "seven", "eight", "five"], "correct_index": 1, "explanation": ""}, {"text": "I have lunch ___ noon.", "options": ["in", "on", "at", "to"], "correct_index": 2, "explanation": ""}, {"text": "How do you say '90'?", "options": ["ninety", "nineteen", "nintee", "ninetie"], "correct_index": 0, "explanation": ""}, {"text": "6:00 PM means ___.", "options": ["six in the morning", "six in the evening", "six at noon", "six at midnight"], "correct_index": 1, "explanation": ""}, {"text": "The ___ month", "options": ["eighth", "eight", "eightth", "eith"], "correct_index": 0, "explanation": ""}, {"text": "My birthday is ___ June 15th.", "options": ["in", "on", "at", "to"], "correct_index": 1, "explanation": ""}, {"text": "How many months in a year?", "options": ["ten", "eleven", "twelve", "thirteen"], "correct_index": 2, "explanation": ""}, {"text": "The meeting is ___ May 10th.", "options": ["in", "on", "at", "to"], "correct_index": 1, "explanation": ""}], "5": [{"text": "How do you say '13'?", "options": ["thirty", "threeteen", "thirteen", "thirteen"], "correct_index": 2, "explanation": ""}, {"text": "8:00 PM means ___.", "options": ["8 in the morning", "8 in the evening", "8 at noon", "8 at midnight"], "correct_index": 1, "explanation": ""}, {"text": "The third month is ___.", "options": ["February", "March", "April", "May"], "correct_index": 1, "explanation": ""}, {"text": "Christmas is ___ December.", "options": ["in", "on", "at", "to"], "correct_index": 0, "explanation": ""}, {"text": "Sunday is ___ the weekend.", "options": ["in", "on", "at", "to"], "correct_index": 1, "explanation": ""}, {"text": "How do you say '33'?", "options": ["thirty-three", "thirty three", "thirtythree", "three-three"], "correct_index": 0, "explanation": ""}, {"text": "July ___ is Independence Day (US).", "options": ["4st", "4th", "4nd", "4rd"], "correct_index": 1, "explanation": ""}, {"text": "I work ___ the morning.", "options": ["in", "on", "at", "to"], "correct_index": 0, "explanation": ""}, {"text": "The ___ grade", "options": ["ninth", "nine", "nineth", "nint"], "correct_index": 0, "explanation": ""}, {"text": "9:30 = ___", "options": ["half past nine", "nine past half", "half to nine", "quarter past nine"], "correct_index": 0, "explanation": ""}, {"text": "I go to bed ___ midnight.", "options": ["in", "on", "at", "to"], "correct_index": 2, "explanation": ""}, {"text": "I leave ___ ten to six.", "options": ["in", "on", "at", "to"], "correct_index": 2, "explanation": ""}, {"text": "___ is between Tuesday and Thursday.", "options": ["Monday", "Friday", "Wednesday", "Saturday"], "correct_index": 2, "explanation": ""}, {"text": "I have lunch ___ noon.", "options": ["in", "on", "at", "to"], "correct_index": 2, "explanation": ""}, {"text": "___ is before April.", "options": ["May", "February", "March", "June"], "correct_index": 2, "explanation": ""}, {"text": "How do you say '20'?", "options": ["twenty", "twunty", "twente", "twelty"], "correct_index": 0, "explanation": ""}, {"text": "The ___ year", "options": ["tenth", "ten", "teeth", "tent"], "correct_index": 0, "explanation": ""}, {"text": "I arrive ___ the 3rd of June.", "options": ["in", "on", "at", "to"], "correct_index": 1, "explanation": ""}, {"text": "The store closes ___ 9 PM.", "options": ["in", "on", "at", "to"], "correct_index": 2, "explanation": ""}, {"text": "How do you say '45'?", "options": ["forty-five", "fourty-five", "four-five", "fortyfive"], "correct_index": 0, "explanation": ""}], "6": [{"text": "February ___", "options": ["14th", "14st", "14nd", "14rd"], "correct_index": 0, "explanation": ""}, {"text": "8:45 = ___", "options": ["quarter past eight", "half past eight", "quarter to nine", "eight forty"], "correct_index": 2, "explanation": ""}, {"text": "I study ___ the evening.", "options": ["in", "on", "at", "to"], "correct_index": 0, "explanation": ""}, {"text": "How do you say '50'?", "options": ["fifteen", "fifty", "five", "fivety"], "correct_index": 1, "explanation": ""}, {"text": "I don't work ___ Saturday.", "options": ["in", "on", "at", "to"], "correct_index": 1, "explanation": ""}, {"text": "How do you say '11'?", "options": ["eleven", "onety-one", "leven", "elefen"], "correct_index": 0, "explanation": ""}, {"text": "What time is it? 6:00.", "options": ["six o'clock", "six clock", "o'clock six", "six hour"], "correct_index": 0, "explanation": ""}, {"text": "Halloween is ___ October.", "options": ["in", "on", "at", "to"], "correct_index": 0, "explanation": ""}, {"text": "The ___ lesson", "options": ["eleventh", "eleven", "elevent", "elevnth"], "correct_index": 0, "explanation": ""}, {"text": "How do you say '67'?", "options": ["sixty-seven", "sixty seven", "sixtyseven", "six-seven"], "correct_index": 0, "explanation": ""}, {"text": "How do you say '89'?", "options": ["eighty-nine", "eighty nine", "eightynine", "eight-nine"], "correct_index": 0, "explanation": ""}, {"text": "3:00 AM is ___.", "options": ["3 in the morning", "3 in the afternoon", "3 in the evening", "3 at noon"], "correct_index": 0, "explanation": ""}, {"text": "___ comes after August.", "options": ["July", "September", "October", "November"], "correct_index": 1, "explanation": ""}, {"text": "The ___ of January", "options": ["third", "threeth", "thirth", "thirded"], "correct_index": 0, "explanation": ""}, {"text": "___ is the last month.", "options": ["November", "December", "October", "September"], "correct_index": 1, "explanation": ""}, {"text": "1:20 = ___", "options": ["twenty past one", "one past twenty", "twenty to one", "one twenty"], "correct_index": 0, "explanation": ""}, {"text": "The ___ hour", "options": ["twelfth", "twelve", "twelft", "twelvth"], "correct_index": 0, "explanation": ""}, {"text": "How do you say '8'?", "options": ["ate", "eight", "eith", "eigth"], "correct_index": 1, "explanation": ""}, {"text": "The last day of the workweek is ___.", "options": ["Thursday", "Friday", "Saturday", "Sunday"], "correct_index": 1, "explanation": ""}, {"text": "The store opens ___ 10 o'clock.", "options": ["in", "on", "at", "to"], "correct_index": 2, "explanation": ""}], "7": [{"text": "The third month is ___.", "options": ["January", "February", "March", "April"], "correct_index": 2, "explanation": ""}, {"text": "I have lunch ___ the afternoon.", "options": ["in", "on", "at", "to"], "correct_index": 0, "explanation": ""}, {"text": "7:00 AM means ___.", "options": ["7 in the evening", "7 in the morning", "7 at noon", "7 at night"], "correct_index": 1, "explanation": ""}, {"text": "___ comes after Wednesday.", "options": ["Tuesday", "Friday", "Thursday", "Monday"], "correct_index": 2, "explanation": ""}, {"text": "How do you say '19'?", "options": ["ninety", "nineteen", "ninetin", "nineten"], "correct_index": 1, "explanation": ""}, {"text": "Classes start ___ September 1st.", "options": ["in", "on", "at", "to"], "correct_index": 1, "explanation": ""}, {"text": "The bus comes ___ twenty past five.", "options": ["in", "on", "at", "to"], "correct_index": 2, "explanation": ""}, {"text": "How do you say '22'?", "options": ["twenty-two", "twenty two", "twentytwo", "two-two"], "correct_index": 0, "explanation": ""}, {"text": "4:15 = ___", "options": ["quarter past four", "quarter to four", "half past four", "four quarter"], "correct_index": 0, "explanation": ""}, {"text": "May ___", "options": ["5th", "5st", "5nd", "5rd"], "correct_index": 0, "explanation": ""}, {"text": "March ___", "options": ["21st", "21th", "21nd", "21rd"], "correct_index": 0, "explanation": ""}, {"text": "11:30 = ___", "options": ["half past eleven", "eleven past half", "quarter past eleven", "eleven half"], "correct_index": 0, "explanation": ""}, {"text": "Winter months: December, January, ___.", "options": ["March", "February", "November", "October"], "correct_index": 1, "explanation": ""}, {"text": "I go to the gym ___ Monday and Wednesday.", "options": ["in", "on", "at", "to"], "correct_index": 1, "explanation": ""}, {"text": "How do you say '70'?", "options": ["seventy", "seventeen", "seventee", "seventie"], "correct_index": 0, "explanation": ""}, {"text": "How do you say '4'?", "options": ["for", "four", "fore", "foor"], "correct_index": 1, "explanation": ""}, {"text": "We meet ___ 5 o'clock.", "options": ["in", "on", "at", "to"], "correct_index": 2, "explanation": ""}, {"text": "Halloween is October ___.", "options": ["31st", "31th", "31nd", "31rd"], "correct_index": 0, "explanation": ""}, {"text": "I work ___ Monday.", "options": ["in", "on", "at", "to"], "correct_index": 1, "explanation": ""}, {"text": "The party starts ___ 7 PM.", "options": ["in", "on", "at", "to"], "correct_index": 2, "explanation": ""}], "8": [{"text": "___ is between March and May.", "options": ["February", "April", "June", "January"], "correct_index": 1, "explanation": ""}, {"text": "___ is the middle of the week.", "options": ["Monday", "Wednesday", "Friday", "Sunday"], "correct_index": 1, "explanation": ""}, {"text": "January ___", "options": ["1st", "1th", "1nd", "1rd"], "correct_index": 0, "explanation": ""}, {"text": "How do you say '100'?", "options": ["one hundred", "hundred", "one hunderd", "a hunderd"], "correct_index": 0, "explanation": ""}, {"text": "The exam is ___ the 20th.", "options": ["in", "on", "at", "to"], "correct_index": 1, "explanation": ""}, {"text": "What time is it? 1:00.", "options": ["one o'clock", "one clock", "o'clock one", "one hour"], "correct_index": 0, "explanation": ""}, {"text": "4:55 = ___", "options": ["five past four", "five to five", "half past four", "quarter to five"], "correct_index": 1, "explanation": ""}, {"text": "How do you say '16'?", "options": ["sixteen", "sixty", "sixtee", "siksten"], "correct_index": 0, "explanation": ""}, {"text": "I sleep ___ night.", "options": ["in", "on", "at", "to"], "correct_index": 3, "explanation": ""}, {"text": "June ___", "options": ["2nd", "2th", "2st", "2rd"], "correct_index": 0, "explanation": ""}, {"text": "How do you say '2'?", "options": ["to", "too", "two", "tue"], "correct_index": 2, "explanation": ""}, {"text": "April ___", "options": ["1st", "1th", "1nd", "1rd"], "correct_index": 0, "explanation": ""}, {"text": "Dinner is ___ 6 o'clock.", "options": ["in", "on", "at", "to"], "correct_index": 2, "explanation": ""}, {"text": "My birthday is ___ July.", "options": ["in", "on", "at", "to"], "correct_index": 0, "explanation": ""}, {"text": "July ___", "options": ["3rd", "3th", "3st", "3nd"], "correct_index": 0, "explanation": ""}, {"text": "I wake up ___ quarter past six.", "options": ["in", "on", "at", "to"], "correct_index": 2, "explanation": ""}, {"text": "We have a meeting ___ Thursday.", "options": ["in", "on", "at", "to"], "correct_index": 1, "explanation": ""}, {"text": "4:00 PM is ___.", "options": ["4 in the morning", "4 in the afternoon", "4 in the night", "4 at midnight"], "correct_index": 1, "explanation": ""}, {"text": "How do you say '55'?", "options": ["fifty-five", "fifty five", "fiftyfive", "five-five"], "correct_index": 0, "explanation": ""}, {"text": "9:00 PM means ___.", "options": ["9 in the morning", "9 in the evening", "9 at noon", "9 at midnight"], "correct_index": 1, "explanation": ""}], "9": [{"text": "2:00 PM is ___ in the afternoon.", "options": ["two o'clock", "two clock", "two hour", "o'clock two"], "correct_index": 0, "explanation": ""}, {"text": "April ___", "options": ["15th", "15st", "15nd", "15rd"], "correct_index": 0, "explanation": ""}, {"text": "10:15 = ___", "options": ["quarter past ten", "quarter to ten", "half past ten", "ten quarter"], "correct_index": 0, "explanation": ""}, {"text": "How do you say '33'?", "options": ["thirty-three", "three-three", "thirtythree", "thirty three"], "correct_index": 0, "explanation": ""}, {"text": "New Year is January ___.", "options": ["1st", "1th", "1nd", "1rd"], "correct_index": 0, "explanation": ""}, {"text": "How do you say '44'?", "options": ["forty-four", "fourty-four", "fortyfour", "four-four"], "correct_index": 0, "explanation": ""}, {"text": "I wake up early ___ the morning.", "options": ["in", "on", "at", "to"], "correct_index": 0, "explanation": ""}, {"text": "___ has 31 days.", "options": ["February", "April", "June", "January"], "correct_index": 3, "explanation": ""}, {"text": "___ comes before Saturday.", "options": ["Thursday", "Friday", "Sunday", "Monday"], "correct_index": 1, "explanation": ""}, {"text": "How do you say '17'?", "options": ["seventy", "seventeen", "seventee", "sebenteen"], "correct_index": 1, "explanation": ""}, {"text": "How do you say '6'?", "options": ["siks", "six", "sex", "sicks"], "correct_index": 1, "explanation": ""}, {"text": "I rest ___ Sunday.", "options": ["in", "on", "at", "to"], "correct_index": 1, "explanation": ""}, {"text": "Autumn starts ___ September.", "options": ["in", "on", "at", "to"], "correct_index": 0, "explanation": ""}, {"text": "The deadline is ___ March 15th.", "options": ["in", "on", "at", "to"], "correct_index": 1, "explanation": ""}, {"text": "I finish work ___ 5 o'clock.", "options": ["in", "on", "at", "to"], "correct_index": 2, "explanation": ""}, {"text": "3:40 = ___", "options": ["twenty past three", "twenty to four", "half past three", "forty past three"], "correct_index": 1, "explanation": ""}, {"text": "How do you say '99'?", "options": ["ninety-nine", "ninety nine", "ninetynine", "nine-nine"], "correct_index": 0, "explanation": ""}, {"text": "January ___", "options": ["1st", "1th", "1nd", "1rd"], "correct_index": 0, "explanation": ""}, {"text": "The meeting is ___ May 10th.", "options": ["in", "on", "at", "to"], "correct_index": 1, "explanation": ""}, {"text": "The meeting is ___ 10 AM.", "options": ["in", "on", "at", "to"], "correct_index": 2, "explanation": ""}], "10": [{"text": "December ___", "options": ["31st", "31th", "31nd", "31rd"], "correct_index": 0, "explanation": ""}, {"text": "I watch TV ___ the evening.", "options": ["in", "on", "at", "to"], "correct_index": 0, "explanation": ""}, {"text": "What time is it? 11:00.", "options": ["eleven o'clock", "eleven clock", "o'clock eleven", "eleven hour"], "correct_index": 0, "explanation": ""}, {"text": "___ comes before Saturday.", "options": ["Thursday", "Friday", "Sunday", "Monday"], "correct_index": 1, "explanation": ""}, {"text": "The class ends ___ twenty to four.", "options": ["in", "on", "at", "to"], "correct_index": 2, "explanation": ""}, {"text": "June ___", "options": ["21st", "21th", "21nd", "21rd"], "correct_index": 0, "explanation": ""}, {"text": "___ is after Sunday.", "options": ["Saturday", "Monday", "Friday", "Tuesday"], "correct_index": 1, "explanation": ""}, {"text": "___ comes before November.", "options": ["September", "December", "October", "August"], "correct_index": 2, "explanation": ""}, {"text": "How do you say '14'?", "options": ["forty", "forteen", "fourteen", "fourten"], "correct_index": 2, "explanation": ""}, {"text": "How do you say '36'?", "options": ["thirty-six", "thirty six", "thirtysix", "three-six"], "correct_index": 0, "explanation": ""}, {"text": "August ___", "options": ["20th", "20st", "20nd", "20rd"], "correct_index": 0, "explanation": ""}, {"text": "12:30 = ___", "options": ["half past twelve", "twelve past half", "quarter past twelve", "twelve half"], "correct_index": 0, "explanation": ""}, {"text": "The movie starts ___ 8 o'clock.", "options": ["in", "on", "at", "to"], "correct_index": 2, "explanation": ""}, {"text": "11:00 PM is ___.", "options": ["11 in the morning", "11 at night", "11 at noon", "11 at midnight"], "correct_index": 1, "explanation": ""}, {"text": "The shortest month is ___.", "options": ["January", "February", "March", "June"], "correct_index": 1, "explanation": ""}, {"text": "I finish work ___ 5 PM.", "options": ["in", "on", "at", "to"], "correct_index": 2, "explanation": ""}, {"text": "How do you say '88'?", "options": ["eighty-eight", "eighty eight", "eightyeight", "eight-eight"], "correct_index": 0, "explanation": ""}, {"text": "Tuesday comes after ___.", "options": ["Wednesday", "Monday", "Thursday", "Friday"], "correct_index": 1, "explanation": ""}, {"text": "How do you say '9'?", "options": ["nine", "nein", "nyne", "nin"], "correct_index": 0, "explanation": ""}, {"text": "I was born ___ May 5th.", "options": ["in", "on", "at", "to"], "correct_index": 1, "explanation": ""}]};
         let currentQuizSet = 1;
-        const quizData = allQuizData[currentQuizSet] || [];
-
-        function checkAnswers(event) {
-            event.preventDefault();
-
-            const form = document.getElementById('quiz-form');
-            const formData = new FormData(form);
-
-            let correct = 0;
-            let total = quizData.length;
-
-            // Check each question
-            quizData.forEach((question, index) => {
-                const selectedAnswer = parseInt(formData.get(`question-${question.id}`));
-                const options = document.querySelectorAll(`input[name="question-${question.id}"]`);
-
-                options.forEach((option, optIndex) => {
-                    const label = option.closest('.option');
-                    if (optIndex === question.correct_index) {
-                        label.classList.add('correct');
-                    }
-                    if (selectedAnswer === optIndex && selectedAnswer !== question.correct_index) {
-                        label.classList.add('incorrect');
-                    }
-                    option.disabled = true;
-                });
-
-                if (selectedAnswer === question.correct_index) {
-                    correct++;
-                }
-            });
-
-            // Calculate score
-            const percentage = Math.round((correct / total) * 100);
-            const passed = percentage >= 70;
-
-            // Show results
-            const resultsDiv = document.getElementById('results');
-            const scoreDiv = document.getElementById('score');
-            const messageDiv = document.getElementById('results-message');
-
-            scoreDiv.textContent = `${percentage}%`;
-            scoreDiv.className = 'score ' + (passed ? 'pass' : 'fail');
-
-            messageDiv.textContent = `Вы ответили правильно на ${correct} из ${total} вопросов`;
-
-            resultsDiv.classList.remove('hidden');
-
-            // Disable submit button
-            document.getElementById('submit-btn').disabled = true;
-
-            // Scroll to results
-            resultsDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }
-
-        function retakeQuiz() {
-            loadQuiz(currentQuizSet);
-        }
 
         function loadQuiz(quizSet) {
             currentQuizSet = quizSet;
 
-            // Hide placeholder, show form (if they exist)
             const placeholder = document.getElementById('quiz-placeholder');
             const form = document.getElementById('quiz-form');
             if (placeholder) {
@@ -490,7 +576,6 @@
                 form.style.display = 'block';
             }
 
-            // Update button states
             document.querySelectorAll('.quiz-selector-btn').forEach(btn => {
                 btn.classList.remove('active');
                 if (parseInt(btn.dataset.quiz) === quizSet) {
@@ -498,27 +583,20 @@
                 }
             });
 
-            // Get questions for this quiz set
             const questions = allQuizData[quizSet] || [];
-
-            // Clear and rebuild quiz HTML
             const submitBtn = document.getElementById('submit-btn');
-
-            // Remove all questions
             const existingQuestions = form.querySelectorAll('.question');
             existingQuestions.forEach(q => q.remove());
 
-            // Add new questions
             questions.forEach((question, index) => {
                 const questionDiv = document.createElement('div');
                 questionDiv.className = 'question';
-                questionDiv.dataset.questionId = question.id;
 
                 let optionsHtml = '';
                 question.options.forEach((option, optIndex) => {
                     optionsHtml += `
                         <label class="option">
-                            <input type="radio" name="question-${question.id}" value="${optIndex}" required>
+                            <input type="radio" name="question-${index}" value="${optIndex}" required>
                             <span>${option}</span>
                         </label>
                     `;
@@ -534,27 +612,61 @@
                 form.insertBefore(questionDiv, submitBtn);
             });
 
-            // Reset form state
             form.reset();
             submitBtn.disabled = false;
             document.getElementById('results').classList.add('hidden');
-            document.querySelectorAll('.option').forEach(opt => {
-                opt.classList.remove('correct', 'incorrect');
-            });
-
-            // Scroll to quiz
-            form.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
 
-        // Initialize: if only one quiz set, load it automatically
         const quizSetCount = Object.keys(allQuizData).length;
         if (quizSetCount === 1) {
-            // Single quiz - load immediately
             loadQuiz(1);
         }
-        // If multiple quiz sets, user must select one (placeholder will show)
 
-        document.getElementById('quiz-form').addEventListener('submit', checkAnswers);
+        document.getElementById('quiz-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const questions = allQuizData[currentQuizSet];
+            let correct = 0;
+
+            questions.forEach((question, index) => {
+                const selected = document.querySelector(`input[name="question-${index}"]:checked`);
+                if (selected && parseInt(selected.value) === question.correct_index) {
+                    correct++;
+                }
+            });
+
+            const total = questions.length;
+            const percentage = Math.round((correct / total) * 100);
+
+            document.getElementById('score').textContent = percentage + '%';
+            document.getElementById('score').className = percentage >= 70 ? 'score pass' : 'score fail';
+
+            let feedback;
+            if (percentage >= 90) {
+                feedback = 'Отлично!';
+            } else if (percentage >= 70) {
+                feedback = 'Хорошо!';
+            } else if (percentage >= 50) {
+                feedback = 'Неплохо, но можно лучше';
+            } else {
+                feedback = 'Нужно ещё поучить';
+            }
+
+            document.getElementById('feedback').textContent = feedback;
+            document.getElementById('details').textContent = `Правильных ответов: ${correct} из ${total}`;
+
+            document.getElementById('results').classList.remove('hidden');
+            document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+
+            this.querySelector('.submit-btn').disabled = true;
+        });
+
+        function retryQuiz() {
+            document.getElementById('results').classList.add('hidden');
+            document.getElementById('quiz-form').reset();
+            document.querySelector('.submit-btn').disabled = false;
+            document.getElementById('quiz-form').scrollIntoView({ behavior: 'smooth' });
+        }
     </script>
 </body>
 </html>

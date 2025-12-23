@@ -18,13 +18,15 @@
             --color-bg-alt: #faf5ff;
             --color-text: #1f2937;
             --color-text-light: #6b7280;
+            --color-white: #ffffff;
             --color-success: #10b981;
             --color-error: #ef4444;
             --font-display: 'Playfair Display', serif;
             --font-body: 'DM Sans', sans-serif;
             --shadow-sm: 0 2px 8px rgba(124, 58, 237, 0.08);
             --shadow-md: 0 4px 20px rgba(124, 58, 237, 0.12);
-            --transition: all 0.3s ease;
+            --shadow-lg: 0 8px 40px rgba(124, 58, 237, 0.16);
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         * {
@@ -40,63 +42,57 @@
             line-height: 1.7;
         }
 
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 3rem 2rem;
-        }
-
         header {
-            background: var(--color-primary);
-            color: white;
-            padding: 2rem;
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+            color: var(--color-white);
+            padding: 3rem 2rem;
             text-align: center;
         }
 
         .back-link {
             display: inline-block;
-            color: white;
+            color: var(--color-accent);
             text-decoration: none;
             margin-bottom: 1rem;
-            font-size: 0.9rem;
-            opacity: 0.9;
             transition: var(--transition);
         }
 
         .back-link:hover {
-            opacity: 1;
-            transform: translateX(-3px);
+            color: var(--color-white);
         }
 
-        header h1 {
+        h1 {
             font-family: var(--font-display);
             font-size: 3rem;
-            margin-bottom: 0.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
         }
 
-        header p {
+        .description {
             font-size: 1.2rem;
-            opacity: 0.95;
+            opacity: 0.9;
         }
 
-        .content-section {
-            margin-bottom: 3rem;
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
         }
 
         .section-title {
             font-family: var(--font-display);
             font-size: 2.5rem;
             color: var(--color-primary);
-            margin: 3rem 0 2rem;
+            margin-bottom: 2rem;
             text-align: center;
         }
 
         .rule-section {
-            background: var(--color-bg-alt);
+            background: var(--color-white);
             border-left: 4px solid var(--color-primary);
             padding: 2rem;
             margin-bottom: 2rem;
-            border-radius: 12px;
+            border-radius: 8px;
             box-shadow: var(--shadow-sm);
         }
 
@@ -108,203 +104,52 @@
         }
 
         .rule-content {
-            font-size: 1.1rem;
-            margin-bottom: 1.5rem;
+            color: var(--color-text);
+            margin-bottom: 1rem;
             line-height: 1.8;
-            white-space: pre-line;
+            white-space: pre-wrap;
         }
 
         .examples {
-            margin-top: 1.5rem;
+            background: var(--color-bg-alt);
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
         }
 
         .example {
-            background: var(--color-bg);
-            padding: 0.8rem 1.2rem;
-            margin-bottom: 0.5rem;
-            border-radius: 8px;
-            border-left: 3px solid var(--color-secondary);
+            padding: 0.5rem;
+            margin: 0.25rem 0;
             font-family: monospace;
-            font-size: 1rem;
+            font-size: 0.95rem;
         }
 
         .quiz-section {
             background: var(--color-bg-alt);
-            padding: 3rem;
-            border-radius: 16px;
+            padding: 3rem 2rem;
             margin-top: 3rem;
-        }
-
-        .question {
-            background: var(--color-bg);
-            padding: 2rem;
-            margin-bottom: 2rem;
             border-radius: 12px;
-            box-shadow: var(--shadow-sm);
-            border: 2px solid transparent;
-            transition: var(--transition);
         }
 
-        .question.correct {
-            border-color: var(--color-success);
-            background: #f0fdf4;
-        }
-
-        .question.incorrect {
-            border-color: var(--color-error);
-            background: #fef2f2;
-        }
-
-        .question-text {
-            font-size: 1.2rem;
-            margin-bottom: 1.5rem;
-            color: var(--color-text);
-        }
-
-        .options {
+        #quiz-selector {
+            margin-bottom: 2rem;
             display: flex;
             flex-direction: column;
-            gap: 1rem;
-        }
-
-        .option {
-            display: flex;
             align-items: center;
-            padding: 1rem 1.5rem;
-            background: var(--color-bg-alt);
-            border: 2px solid var(--color-accent);
-            border-radius: 8px;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .option:hover {
-            border-color: var(--color-primary);
-            background: white;
-        }
-
-        .option input[type="radio"] {
-            margin-right: 1rem;
-            cursor: pointer;
-        }
-
-        .option.correct {
-            background: #dcfce7;
-            border-color: var(--color-success);
-        }
-
-        .option.incorrect {
-            background: #fee2e2;
-            border-color: var(--color-error);
-        }
-
-        .submit-btn {
-            display: block;
-            width: 100%;
-            padding: 1.2rem;
-            background: var(--color-primary);
-            color: white;
-            border: none;
-            border-radius: 8px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            margin-top: 2rem;
-            transition: var(--transition);
-        }
-
-        .submit-btn:hover:not(:disabled) {
-            background: var(--color-primary-dark);
-            transform: translateY(-2px);
-        }
-
-        .submit-btn:disabled {
-            background: var(--color-text-light);
-            cursor: not-allowed;
-            transform: none;
-        }
-
-        .results {
-            text-align: center;
-            padding: 2rem;
-            background: var(--color-primary);
-            color: white;
-            border-radius: 12px;
-            margin-top: 2rem;
-        }
-
-        .results.hidden {
-            display: none;
-        }
-
-        .score {
-            font-size: 4rem;
-            font-weight: 800;
-            margin-bottom: 1rem;
-        }
-
-        .score.pass {
-            color: #dcfce7;
-        }
-
-        .score.fail {
-            color: #fecaca;
-        }
-
-        .results-message {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .retry-btn {
-            padding: 0.8rem 1.5rem;
-            background: var(--color-bg);
-            border: 2px solid white;
-            color: var(--color-primary);
-            border-radius: 8px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: var(--transition);
-            margin-right: 1rem;
-        }
-
-        .retry-btn:hover {
-            background: white;
-            transform: translateY(-2px);
-        }
-
-        .home-btn {
-            background: transparent;
-            color: white;
-            border: 2px solid white;
-            padding: 0.8rem 1.5rem;
-            font-size: 1rem;
-            font-weight: 600;
-            border-radius: 8px;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
-            transition: var(--transition);
-        }
-
-        .home-btn:hover {
-            background: white;
-            color: var(--color-primary);
-            transform: translateY(-2px);
+            gap: 0.8rem;
         }
 
         .quiz-selector-btn {
-            padding: 0.8rem 1.5rem;
+            padding: 1rem 2rem;
             background: var(--color-bg);
             border: 2px solid var(--color-primary);
             color: var(--color-primary);
             border-radius: 8px;
-            font-size: 1rem;
+            font-size: 1.1rem;
             font-weight: 600;
             cursor: pointer;
             transition: var(--transition);
-            min-width: 200px;
+            min-width: 250px;
         }
 
         .quiz-selector-btn:hover {
@@ -318,17 +163,160 @@
             color: white;
         }
 
+        #quiz-placeholder {
+            text-align: center;
+            padding: 3rem;
+            color: var(--color-text-light);
+        }
+
+        #quiz-form {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .question {
+            background: var(--color-white);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .question-text {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--color-text);
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .option {
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+            background: var(--color-bg);
+            border: 2px solid var(--color-accent);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .option:hover {
+            border-color: var(--color-primary);
+            background: var(--color-bg-alt);
+        }
+
+        .option input[type="radio"] {
+            margin-right: 1rem;
+            cursor: pointer;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1.2rem 2rem;
+            background: var(--color-primary);
+            color: var(--color-white);
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+            margin-top: 2rem;
+        }
+
+        .submit-btn:hover {
+            background: var(--color-primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .submit-btn:disabled {
+            background: var(--color-text-light);
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        #results {
+            max-width: 600px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: var(--color-white);
+            border-radius: 12px;
+            box-shadow: var(--shadow-lg);
+            text-align: center;
+        }
+
+        #results.hidden {
+            display: none;
+        }
+
+        .score {
+            font-family: var(--font-display);
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .score.pass {
+            color: var(--color-success);
+        }
+
+        .score.fail {
+            color: var(--color-error);
+        }
+
+        .feedback {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .retry-btn {
+            padding: 1rem 2rem;
+            background: var(--color-primary);
+            color: var(--color-white);
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            margin-top: 1rem;
+        }
+
+        .retry-btn:hover {
+            background: var(--color-primary-dark);
+        }
+
+        .home-btn {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.75rem 1.5rem;
+            background: var(--color-white);
+            color: var(--color-primary);
+            border: 2px solid var(--color-primary);
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .home-btn:hover {
+            background: var(--color-primary);
+            color: var(--color-white);
+        }
+
         @media (max-width: 768px) {
-            header h1 {
+            h1 {
                 font-size: 2rem;
             }
-
             .section-title {
                 font-size: 2rem;
-            }
-
-            .container {
-                padding: 2rem 1rem;
             }
         }
     </style>
@@ -338,180 +326,135 @@
         <div class="container">
             <a href="../index.html" class="back-link">← Назад ко всем темам</a>
             <h1>Артикли</h1>
-            <p>Артикли a, an, the и нулевой артикль</p>
+            <p class="description">Артикли a, an, the и нулевой артикль</p>
         </div>
     </header>
 
-    <div class="container">
-        <!-- Theory Section -->
-        <div class="content-section">
-            <h2 class="section-title">Теория</h2>
-            
+    <main>
+        <h2 class="section-title">📚 Теория</h2>
+
+        
         <div class="rule-section">
             <h3 class="rule-title">Что такое артикли и зачем они нужны</h3>
-            <div class="rule-content">Артикли — это почти всегда головная боль для русскоговорящих. Но давай сразу разберёмся без паники: на самом деле всё логично.
+            <p class="rule-content">Артикли — это почти всегда головная боль для русскоговорящих. Но давай сразу разберёмся без паники: на самом деле всё логично.
 
 Английский любит уточнять, о чём идёт речь. Артикль — это как ярлык на существительном:
 - этот конкретный предмет?
 - любой из множества?
 - вообще про категорию?
 
-Именно это «ярлык» и называется артиклем.</div>
-            
+Именно это «ярлык» и называется артиклем.</p>
         </div>
-        
 
         <div class="rule-section">
             <h3 class="rule-title">A / An — один из множества</h3>
-            <div class="rule-content">Когда ты говоришь о чём-то одном, но не конкретном, используй a или an.
+            <p class="rule-content">Когда ты говоришь о чём-то одном, но не конкретном, используй a или an.
 
 Простое правило:
 - a перед словами, которые начинаются на согласный звук
 - an перед словами, которые начинаются на гласный звук (звук важнее буквы!)
 
-Главная мысль: ты говоришь о ком-то или о чём-то в общем, впервые упоминая это.</div>
-            <div class="examples"><div class="example">a book, a car, a friend</div><div class="example">an apple, an idea, an hour</div><div class="example">I saw a dog in the park. (любой пес, не конкретный)</div><div class="example">She wants an apple. (любое яблоко, не определённое)</div></div>
+Главная мысль: ты говоришь о ком-то или о чём-то в общем, впервые упоминая это.</p>
+            <div class="examples">
+                <div class="example">a book, a car, a friend</div>
+                <div class="example">an apple, an idea, an hour</div>
+                <div class="example">I saw a dog in the park. (любой пес, не конкретный)</div>
+                <div class="example">She wants an apple. (любое яблоко, не определённое)</div>
+            </div>
         </div>
-        
 
         <div class="rule-section">
             <h3 class="rule-title">The — конкретный, известный, уникальный</h3>
-            <div class="rule-content">Когда мы говорим о чём-то конкретном, уже известном собеседнику, ставим the.
+            <p class="rule-content">Когда мы говорим о чём-то конкретном, уже известном собеседнику, ставим the.
 
-Главная мысль: the = мы оба знаем, о чём речь.</div>
-            <div class="examples"><div class="example">I saw the dog again. (мы уже говорили про этого пса)</div><div class="example">The sun rises in the east. (единственный в своём роде)</div></div>
+Главная мысль: the = мы оба знаем, о чём речь.</p>
+            <div class="examples">
+                <div class="example">I saw the dog again. (мы уже говорили про этого пса)</div>
+                <div class="example">The sun rises in the east. (единственный в своём роде)</div>
+            </div>
         </div>
-        
 
         <div class="rule-section">
             <h3 class="rule-title">Нулевой артикль</h3>
-            <div class="rule-content">Да, иногда артикль вообще не нужен. Это называется нулевой артикль, и он тоже имеет свою логику.
+            <p class="rule-content">Да, иногда артикль вообще не нужен. Это называется нулевой артикль, и он тоже имеет свою логику.
 
-Правило простое: нет ярлыка = говорим про что-то в общем, категорию, абстракцию.</div>
-            <div class="examples"><div class="example">I like coffee. (вообще кофе как напиток, не конкретное)</div><div class="example">Children like to play. (дети вообще, не конкретные)</div><div class="example">I go to school. (про заведение как категорию, не конкретную школу)</div></div>
+Правило простое: нет ярлыка = говорим про что-то в общем, категорию, абстракцию.</p>
+            <div class="examples">
+                <div class="example">I like coffee. (вообще кофе как напиток, не конкретное)</div>
+                <div class="example">Children like to play. (дети вообще, не конкретные)</div>
+                <div class="example">I go to school. (про заведение как категорию, не конкретную школу)</div>
+            </div>
         </div>
-        
 
         <div class="rule-section">
             <h3 class="rule-title">Типичные ошибки русскоговорящих</h3>
-            <div class="rule-content">Вот самые частые ошибки, которые делают русскоговорящие студенты при изучении артиклей.</div>
-            <div class="examples"><div class="example">❌ I saw dog. → нет артикля</div><div class="example">❌ I want apple. → нет a/an</div><div class="example">❌ The coffee is good. (когда говорим про кофе вообще — нужен нулевой артикль)</div><div class="example">✔ I saw a dog.</div><div class="example">✔ I want an apple.</div><div class="example">✔ I like coffee.</div></div>
+            <p class="rule-content">Вот самые частые ошибки, которые делают русскоговорящие студенты при изучении артиклей.</p>
+            <div class="examples">
+                <div class="example">❌ I saw dog. → нет артикля</div>
+                <div class="example">❌ I want apple. → нет a/an</div>
+                <div class="example">❌ The coffee is good. (когда говорим про кофе вообще — нужен нулевой артикль)</div>
+                <div class="example">✔ I saw a dog.</div>
+                <div class="example">✔ I want an apple.</div>
+                <div class="example">✔ I like coffee.</div>
+            </div>
         </div>
-        
 
         <div class="rule-section">
             <h3 class="rule-title">Главное, что нужно понять про артикли</h3>
-            <div class="rule-content">Если запомнишь это, большая часть ошибок в английском будет уже закрыта.</div>
-            <div class="examples"><div class="example">A / An = один, любой, впервые упоминаем</div><div class="example">The = конкретный, известный, уникальный</div><div class="example">Нулевой артикль = вообще, категория, абстракция</div></div>
-        </div>
-        
-        </div>
-
-        <!-- Results Section (hidden initially) -->
-        <div id="results" class="results hidden">
-            <div class="score" id="score"></div>
-            <div class="results-message" id="results-message"></div>
-            <div>
-                <button class="retry-btn" onclick="retakeQuiz()">Пройти ещё раз</button>
-                <a href="../index.html" class="home-btn">На главную</a>
+            <p class="rule-content">Если запомнишь это, большая часть ошибок в английском будет уже закрыта.</p>
+            <div class="examples">
+                <div class="example">A / An = один, любой, впервые упоминаем</div>
+                <div class="example">The = конкретный, известный, уникальный</div>
+                <div class="example">Нулевой артикль = вообще, категория, абстракция</div>
             </div>
         </div>
 
-        <!-- Quiz Section -->
-        <div class="quiz-section" id="quiz-section">
-            <h2 class="section-title">Тест</h2>
 
-            <!-- Quiz Selector (shown if multiple quizzes) -->
-            <div id="quiz-selector" style="margin-bottom: 2rem; display: flex; flex-direction: column; align-items: center; gap: 0.8rem;">
+        <div class="quiz-section">
+            <h2 class="section-title">✏️ Проверь себя</h2>
+            <p style="text-align: center; margin-bottom: 2rem; font-size: 1.1rem;">
+                Всего вопросов: 200
+            </p>
+
+            <div id="quiz-selector">
                 <button type="button" class="quiz-selector-btn" data-quiz="1" onclick="loadQuiz(1)">Тест 1</button>
-<button type="button" class="quiz-selector-btn" data-quiz="2" onclick="loadQuiz(2)">Тест 2</button>
-<button type="button" class="quiz-selector-btn" data-quiz="3" onclick="loadQuiz(3)">Тест 3</button>
-<button type="button" class="quiz-selector-btn" data-quiz="4" onclick="loadQuiz(4)">Тест 4</button>
-<button type="button" class="quiz-selector-btn" data-quiz="5" onclick="loadQuiz(5)">Тест 5</button>
-<button type="button" class="quiz-selector-btn" data-quiz="6" onclick="loadQuiz(6)">Тест 6</button>
-<button type="button" class="quiz-selector-btn" data-quiz="7" onclick="loadQuiz(7)">Тест 7</button>
-<button type="button" class="quiz-selector-btn" data-quiz="8" onclick="loadQuiz(8)">Тест 8</button>
-<button type="button" class="quiz-selector-btn" data-quiz="9" onclick="loadQuiz(9)">Тест 9</button>
-<button type="button" class="quiz-selector-btn" data-quiz="10" onclick="loadQuiz(10)">Тест 10</button>
+                <button type="button" class="quiz-selector-btn" data-quiz="2" onclick="loadQuiz(2)">Тест 2</button>
+                <button type="button" class="quiz-selector-btn" data-quiz="3" onclick="loadQuiz(3)">Тест 3</button>
+                <button type="button" class="quiz-selector-btn" data-quiz="4" onclick="loadQuiz(4)">Тест 4</button>
+                <button type="button" class="quiz-selector-btn" data-quiz="5" onclick="loadQuiz(5)">Тест 5</button>
+                <button type="button" class="quiz-selector-btn" data-quiz="6" onclick="loadQuiz(6)">Тест 6</button>
+                <button type="button" class="quiz-selector-btn" data-quiz="7" onclick="loadQuiz(7)">Тест 7</button>
+                <button type="button" class="quiz-selector-btn" data-quiz="8" onclick="loadQuiz(8)">Тест 8</button>
+                <button type="button" class="quiz-selector-btn" data-quiz="9" onclick="loadQuiz(9)">Тест 9</button>
+                <button type="button" class="quiz-selector-btn" data-quiz="10" onclick="loadQuiz(10)">Тест 10</button>
             </div>
 
-            <div id="quiz-placeholder" style="text-align: center; padding: 3rem; color: var(--color-text-light); display: block;">
+            <div id="quiz-placeholder" style="display: block;">
                 <p style="font-size: 1.2rem;">Выберите тест, чтобы начать</p>
             </div>
 
             <form id="quiz-form" style="display: none;">
-                
                 <button type="submit" class="submit-btn" id="submit-btn">Проверить ответы</button>
             </form>
+
+            <div id="results" class="hidden">
+                <div class="score" id="score"></div>
+                <div class="feedback" id="feedback"></div>
+                <p id="details"></p>
+                <button class="retry-btn" onclick="retryQuiz()">Попробовать ещё раз</button>
+                <br>
+                <a href="../index.html" class="home-btn">На главную</a>
+            </div>
         </div>
-    </div>
+    </main>
 
     <script>
-        const allQuizData = {"1": [{"id": 3604, "text": "I saw ___ owl in the forest.", "options": ["a", "an", "the", "–"], "correct_index": 1}, {"id": 3484, "text": "I saw ___ iguana in the zoo.", "options": ["a", "an", "the", "–"], "correct_index": 1}, {"id": 3504, "text": "I saw ___ owl in the tree.", "options": ["a", "an", "the", "–"], "correct_index": 1}, {"id": 3444, "text": "I saw ___ owl in the tree.", "options": ["a", "an", "the", "–"], "correct_index": 1}, {"id": 3544, "text": "I saw ___ elephant near the river.", "options": ["a", "an", "the", "–"], "correct_index": 1}, {"id": 3584, "text": "I found ___ egg on the table.", "options": ["a", "an", "the", "–"], "correct_index": 1}, {"id": 3524, "text": "I saw ___ octopus at the aquarium.", "options": ["a", "an", "the", "–"], "correct_index": 1}, {"id": 3564, "text": "She is looking for ___ job in IT.", "options": ["A", "An", "The", "–"], "correct_index": 0}, {"id": 3424, "text": "I saw ___ cat in the garden.", "options": ["a", "an", "the", "–"], "correct_index": 0}, {"id": 3464, "text": "I found ___ egg on the table.", "options": ["a", "an", "the", "–"], "correct_index": 1}, {"id": 3545, "text": "She bought ___ old dress.", "options": ["a", "an", "the", "–"], "correct_index": 0}, {"id": 3525, "text": "She wants ___ cat as a pet.", "options": ["a", "an", "the", "–"], "correct_index": 0}, {"id": 3605, "text": "She bought ___ new book.", "options": ["a", "an", "the", "–"], "correct_index": 0}, {"id": 3505, "text": "She bought ___ old chair.", "options": ["a", "an", "the", "–"], "correct_index": 0}, {"id": 3485, "text": "She bought ___ book about history.", "options": ["a", "an", "the", "–"], "correct_index": 0}, {"id": 3585, "text": "She wants ___ cat as a pet.", "options": ["a", "an", "the", "–"], "correct_index": 0}, {"id": 3565, "text": "He bought ___ expensive watch.", "options": ["A", "An", "The", "–"], "correct_index": 1}, {"id": 3445, "text": "She has ___ orange dress.", "options": ["a", "an", "the", "–"], "correct_index": 1}, {"id": 3425, "text": "She wants to buy ___ umbrella.", "options": ["a", "an", "the", "–"], "correct_index": 1}, {"id": 3465, "text": "She wants ___ cat as a pet.", "options": ["a", "an", "the", "–"], "correct_index": 0}], "2": [{"id": 3586, "text": "___ Pacific Ocean is very deep.", "options": ["A", "An", "The", "–"], "correct_index": 2}, {"id": 3546, "text": "___ Atlantic Ocean is very wide.", "options": ["A", "An", "The", "–"], "correct_index": 2}, {"id": 3446, "text": "___ Amazon River is very long.", "options": ["A", "An", "The", "–"], "correct_index": 2}, {"id": 3526, "text": "___ Pacific Ocean is very large.", "options": ["A", "An", "The", "–"], "correct_index": 2}, {"id": 3466, "text": "___ Pacific Ocean is very deep.", "options": ["A", "An", "The", "–"], "correct_index": 2}, {"id": 3606, "text": "___ Nile River is very long.", "options": ["A", "An", "The", "–"], "correct_index": 2}, {"id": 3426, "text": "___ Moon looks beautiful tonight.", "options": ["A", "An", "The", "–"], "correct_index": 2}, {"id": 3486, "text": "___ Atlantic Ocean is wide.", "options": ["A", "An", "The", "–"], "correct_index": 2}, {"id": 3566, "text": "___ Earth goes around the Sun.", "options": ["A", "An", "The", "–"], "correct_index": 2}, {"id": 3506, "text": "___ Sahara Desert is very hot.", "options": ["A", "An", "The", "–"], "correct_index": 2}, {"id": 3487, "text": "I drink ___ water every day.", "options": ["a", "an", "the", "–"], "correct_index": 3}, {"id": 3427, "text": "I usually drink ___ coffee in the morning.", "options": ["a", "an", "the", "–"], "correct_index": 3}, {"id": 3607, "text": "I usually drink ___ tea in the morning.", "options": ["a", "an", "the", "–"], "correct_index": 3}, {"id": 3587, "text": "I like drinking ___ milk in the morning.", "options": ["a", "an", "the", "–"], "correct_index": 3}, {"id": 3567, "text": "I don’t like ___ sugar in my coffee.", "options": ["A", "An", "The", "–"], "correct_index": 3}, {"id": 3447, "text": "I drink ___ tea every morning.", "options": ["a", "an", "the", "–"], "correct_index": 3}, {"id": 3547, "text": "I usually drink ___ milk in the morning.", "options": ["a", "an", "the", "–"], "correct_index": 3}, {"id": 3527, "text": "I drink ___ tea every morning.", "options": ["a", "an", "the", "–"], "correct_index": 3}, {"id": 3507, "text": "I usually drink ___ juice in the morning.", "options": ["a", "an", "the", "–"], "correct_index": 3}, {"id": 3467, "text": "I like drinking ___ milk in the morning.", "options": ["a", "an", "the", "–"], "correct_index": 3}], "3": [{"id": 3528, "text": "He bought ___ old painting.", "options": ["a", "an", "the", "–"], "correct_index": 1}, {"id": 3548, "text": "He found ___ unusual coin.", "options": ["a", "an", "the", "–"], "correct_index": 1}, {"id": 3448, "text": "He bought ___ old book yesterday.", "options": ["a", "an", "the", "–"], "correct_index": 0}, {"id": 3428, "text": "He is reading ___ interesting book.", "options": ["a", "an", "the", "–"], "correct_index": 1}, {"id": 3468, "text": "He bought ___ old painting.", "options": ["a", "an", "the", "–"], "correct_index": 0}, {"id": 3568, "text": "She adopted ___ small puppy.", "options": ["A", "An", "The", "–"], "correct_index": 0}, {"id": 3588, "text": "He bought ___ old painting.", "options": ["a", "an", "the", "–"], "correct_index": 1}, {"id": 3608, "text": "He found ___ interesting stone.", "options": ["a", "an", "the", "–"], "correct_index": 1}, {"id": 3488, "text": "He found ___ interesting coin.", "options": ["a", "an", "the", "–"], "correct_index": 1}, {"id": 3508, "text": "He found ___ unusual coin.", "options": ["a", "an", "the", "–"], "correct_index": 1}, {"id": 3449, "text": "We visited ___ Great Wall of China.", "options": ["a", "an", "the", "–"], "correct_index": 2}, {"id": 3429, "text": "We visited ___ Eiffel Tower last summer.", "options": ["a", "an", "the", "–"], "correct_index": 2}, {"id": 3469, "text": "We climbed ___ Mount Everest last year.", "options": ["a", "an", "the", "–"], "correct_index": 2}, {"id": 3489, "text": "We visited ___ Statue of Liberty last summer.", "options": ["a", "an", "the", "–"], "correct_index": 2}, {"id": 3509, "text": "We visited ___ Colosseum in Rome.", "options": ["a", "an", "the", "–"], "correct_index": 2}, {"id": 3529, "text": "We visited ___ Statue of Liberty.", "options": ["a", "an", "the", "–"], "correct_index": 2}, {"id": 3549, "text": "We visited ___ Colosseum in Rome.", "options": ["a", "an", "the", "–"], "correct_index": 2}, {"id": 3569, "text": "We stayed at ___ hotel near the airport.", "options": ["A", "An", "The", "–"], "correct_index": 0}, {"id": 3589, "text": "We visited ___ Statue of Liberty.", "options": ["a", "an", "the", "–"], "correct_index": 2}, {"id": 3609, "text": "We visited ___ Great Wall of China.", "options": ["a", "an", "the", "–"], "correct_index": 2}], "4": [{"id": 3470, "text": "I need ___ hour to finish my homework.", "options": ["a", "an", "the", "–"], "correct_index": 1}, {"id": 3530, "text": "I need ___ egg for breakfast.", "options": ["a", "an", "the", "–"], "correct_index": 1}, {"id": 3550, "text": "I need ___ hour to finish my homework.", "options": ["a", "an", "the", "–"], "correct_index": 1}, {"id": 3430, "text": "I need ___ pen to write this note.", "options": ["a", "an", "the", "–"], "correct_index": 0}, {"id": 3590, "text": "I need ___ egg for breakfast.", "options": ["a", "an", "the", "–"], "correct_index": 1}, {"id": 3570, "text": "He has ___ idea how to solve this problem.", "options": ["A", "An", "The", "–"], "correct_index": 1}, {"id": 3490, "text": "I need ___ egg for the recipe.", "options": ["a", "an", "the", "–"], "correct_index": 1}, {"id": 3510, "text": "I need ___ hour to finish my homework.", "options": ["a", "an", "the", "–"], "correct_index": 1}, {"id": 3610, "text": "I need ___ hour to finish my task.", "options": ["a", "an", "the", "–"], "correct_index": 1}, {"id": 3450, "text": "I need ___ notebook for class.", "options": ["a", "an", "the", "–"], "correct_index": 0}, {"id": 3571, "text": "___ manager called you this morning.", "options": ["A", "An", "The", "–"], "correct_index": 2}, {"id": 3431, "text": "She is ___ best singer in our class.", "options": ["a", "an", "the", "–"], "correct_index": 2}, {"id": 3491, "text": "She is ___ smartest girl in the class.", "options": ["a", "an", "the", "–"], "correct_index": 2}, {"id": 3551, "text": "She is ___ tallest student in class.", "options": ["a", "an", "the", "–"], "correct_index": 2}, {"id": 3451, "text": "She is ___ smartest student in class.", "options": ["a", "an", "the", "–"], "correct_index": 2}, {"id": 3591, "text": "She is ___ most talented girl in the choir.", "options": ["a", "an", "the", "–"], "correct_index": 2}, {"id": 3471, "text": "She is ___ most talented singer in the choir.", "options": ["a", "an", "the", "–"], "correct_index": 2}, {"id": 3611, "text": "She is ___ fastest runner in the school.", "options": ["a", "an", "the", "–"], "correct_index": 2}, {"id": 3511, "text": "She is ___ tallest student in the class.", "options": ["a", "an", "the", "–"], "correct_index": 2}, {"id": 3531, "text": "She is ___ most talented girl in the choir.", "options": ["a", "an", "the", "–"], "correct_index": 2}], "5": [{"id": 3432, "text": "I saw ___ elephant in the zoo.", "options": ["a", "an", "the", "–"], "correct_index": 1}, {"id": 3552, "text": "I saw ___ eagle at the cliff.", "options": ["a", "an", "the", "–"], "correct_index": 1}, {"id": 3612, "text": "I saw ___ eagle flying high.", "options": ["a", "an", "the", "–"], "correct_index": 1}, {"id": 3512, "text": "I saw ___ eagle at the cliff.", "options": ["a", "an", "the", "–"], "correct_index": 1}, {"id": 3492, "text": "I saw ___ eagle flying in the sky.", "options": ["a", "an", "the", "–"], "correct_index": 1}, {"id": 3452, "text": "I saw ___ iguana in the garden.", "options": ["a", "an", "the", "–"], "correct_index": 1}, {"id": 3532, "text": "I saw ___ iguana in the zoo.", "options": ["a", "an", "the", "–"], "correct_index": 1}, {"id": 3592, "text": "I saw ___ iguana in the zoo.", "options": ["a", "an", "the", "–"], "correct_index": 1}, {"id": 3472, "text": "I saw ___ octopus at the aquarium.", "options": ["a", "an", "the", "–"], "correct_index": 1}, {"id": 3572, "text": "She plays ___ piano very well.", "options": ["A", "An", "The", "–"], "correct_index": 2}, {"id": 3553, "text": "___ elephants are very large.", "options": ["A", "An", "The", "–"], "correct_index": 3}, {"id": 3573, "text": "I usually eat ___ breakfast at home.", "options": ["A", "An", "The", "–"], "correct_index": 3}, {"id": 3493, "text": "___ tigers are dangerous animals.", "options": ["A", "An", "The", "–"], "correct_index": 3}, {"id": 3613, "text": "___ whales are huge animals.", "options": ["A", "An", "The", "–"], "correct_index": 3}, {"id": 3513, "text": "___ elephants are large animals.", "options": ["A", "An", "The", "–"], "correct_index": 3}, {"id": 3433, "text": "___ lions are very strong animals.", "options": ["A", "An", "The", "–"], "correct_index": 3}, {"id": 3473, "text": "___ giraffes eat leaves from tall trees.", "options": ["A", "An", "The", "–"], "correct_index": 3}, {"id": 3533, "text": "___ lions live in Africa.", "options": ["A", "An", "The", "–"], "correct_index": 3}, {"id": 3593, "text": "___ lions live in Africa.", "options": ["A", "An", "The", "–"], "correct_index": 3}, {"id": 3453, "text": "___ tigers are very dangerous.", "options": ["A", "An", "The", "–"], "correct_index": 3}], "6": [{"id": 3534, "text": "He bought ___ apple and ___ banana.", "options": ["a / a", "an / a", "the / the", "a / an"], "correct_index": 1}, {"id": 3574, "text": "He works as ___ engineer.", "options": ["A", "An", "The", "–"], "correct_index": 1}, {"id": 3594, "text": "He bought ___ apple and ___ banana.", "options": ["a / a", "an / a", "the / the", "a / an"], "correct_index": 1}, {"id": 3614, "text": "He bought ___ sandwich and ___ juice.", "options": ["a / a", "an / a", "the / the", "a / an"], "correct_index": 3}, {"id": 3494, "text": "He bought ___ apple and ___ banana.", "options": ["a / a", "an / a", "the / the", "a / an"], "correct_index": 1}, {"id": 3434, "text": "He wants to eat ___ apple.", "options": ["a", "an", "the", "–"], "correct_index": 1}, {"id": 3554, "text": "He wants ___ sandwich and ___ juice.", "options": ["a / a", "an / a", "the / the", "a / an"], "correct_index": 3}, {"id": 3514, "text": "He wants ___ sandwich and ___ water.", "options": ["a / a", "an / a", "the / the", "a / an"], "correct_index": 3}, {"id": 3474, "text": "He wants ___ sandwich and ___ juice.", "options": ["a / a", "an / a", "the / the", "a / an"], "correct_index": 3}, {"id": 3454, "text": "He wants ___ sandwich for lunch.", "options": ["a", "an", "the", "–"], "correct_index": 0}, {"id": 3455, "text": "___ Nile is the longest river in the world.", "options": ["A", "An", "The", "–"], "correct_index": 2}, {"id": 3595, "text": "___ Himalayas are very high.", "options": ["A", "An", "The", "–"], "correct_index": 2}, {"id": 3515, "text": "___ Alps are beautiful in winter.", "options": ["A", "An", "The", "–"], "correct_index": 2}, {"id": 3535, "text": "___ Himalayas are very high.", "options": ["A", "An", "The", "–"], "correct_index": 2}, {"id": 3615, "text": "___ Alps are covered with snow in winter.", "options": ["A", "An", "The", "–"], "correct_index": 2}, {"id": 3575, "text": "___ police are investigating the case.", "options": ["A", "An", "The", "–"], "correct_index": 2}, {"id": 3475, "text": "___ Amazon rainforest is huge.", "options": ["A", "An", "The", "–"], "correct_index": 2}, {"id": 3435, "text": "___ Pacific Ocean is huge.", "options": ["A", "An", "The", "–"], "correct_index": 2}, {"id": 3495, "text": "___ Himalayas are very tall.", "options": ["A", "An", "The", "–"], "correct_index": 2}, {"id": 3555, "text": "___ Alps are beautiful in winter.", "options": ["A", "An", "The", "–"], "correct_index": 2}], "7": [{"id": 3516, "text": "I need ___ notebook and ___ pen.", "options": ["a / a", "an / a", "the / the", "a / an"], "correct_index": 3}, {"id": 3596, "text": "I need ___ pencil and ___ eraser.", "options": ["a / a", "an / a", "the / the", "a / an"], "correct_index": 3}, {"id": 3556, "text": "I need ___ notebook and ___ pen.", "options": ["a / a", "an / a", "the / the", "a / an"], "correct_index": 3}, {"id": 3496, "text": "I need ___ notebook and ___ pen.", "options": ["a / a", "an / a", "the / the", "a / an"], "correct_index": 3}, {"id": 3436, "text": "I bought ___ orange and ___ banana.", "options": ["a / a", "an / a", "the / the", "a / an"], "correct_index": 1}, {"id": 3536, "text": "I need ___ pencil and ___ eraser.", "options": ["a / a", "an / a", "the / the", "a / an"], "correct_index": 3}, {"id": 3576, "text": "She felt ___ fear when she heard the noise.", "options": ["A", "An", "The", "–"], "correct_index": 3}, {"id": 3456, "text": "I need ___ eraser and ___ pencil.", "options": ["a / a", "an / a", "the / the", "a / an"], "correct_index": 1}, {"id": 3616, "text": "I need ___ notebook and ___ pencil.", "options": ["a / a", "an / a", "the / the", "a / an"], "correct_index": 3}, {"id": 3476, "text": "I need ___ pencil and ___ eraser.", "options": ["a / a", "an / a", "the / the", "a / an"], "correct_index": 3}, {"id": 3477, "text": "She usually goes to ___ office by car.", "options": ["a", "an", "the", "–"], "correct_index": 2}, {"id": 3577, "text": "We need ___ taxi right now.", "options": ["A", "An", "The", "–"], "correct_index": 0}, {"id": 3517, "text": "She usually goes to ___ hospital by bus.", "options": ["a", "an", "the", "–"], "correct_index": 2}, {"id": 3497, "text": "She usually goes to ___ hospital by bus.", "options": ["a", "an", "the", "–"], "correct_index": 2}, {"id": 3457, "text": "She goes to ___ university by bus.", "options": ["a", "an", "the", "–"], "correct_index": 1}, {"id": 3437, "text": "She usually goes to ___ school by bus.", "options": ["a", "an", "the", "–"], "correct_index": 3}, {"id": 3557, "text": "She usually goes to ___ hospital by bus.", "options": ["a", "an", "the", "–"], "correct_index": 2}, {"id": 3537, "text": "She usually goes to ___ university by bus.", "options": ["a", "an", "the", "–"], "correct_index": 1}, {"id": 3617, "text": "She usually goes to ___ hospital for checkups.", "options": ["a", "an", "the", "–"], "correct_index": 2}, {"id": 3597, "text": "She usually goes to ___ university by bus.", "options": ["a", "an", "the", "–"], "correct_index": 1}], "8": [{"id": 3518, "text": "___ stars shine at night.", "options": ["A", "An", "The", "–"], "correct_index": 3}, {"id": 3498, "text": "___ sun rises in the east.", "options": ["A", "An", "The", "–"], "correct_index": 2}, {"id": 3618, "text": "___ stars shine brightly in the night sky.", "options": ["A", "An", "The", "–"], "correct_index": 3}, {"id": 3458, "text": "___ stars are shining in the sky.", "options": ["A", "An", "The", "–"], "correct_index": 3}, {"id": 3538, "text": "___ sun rises in the east.", "options": ["A", "An", "The", "–"], "correct_index": 2}, {"id": 3558, "text": "___ stars shine at night.", "options": ["A", "An", "The", "–"], "correct_index": 3}, {"id": 3578, "text": "___ information you gave me was helpful.", "options": ["A", "An", "The", "–"], "correct_index": 2}, {"id": 3438, "text": "___ Sun is shining brightly today.", "options": ["A", "An", "The", "–"], "correct_index": 2}, {"id": 3598, "text": "___ sun rises in the east.", "options": ["A", "An", "The", "–"], "correct_index": 2}, {"id": 3478, "text": "___ stars shine brightly at night.", "options": ["A", "An", "The", "–"], "correct_index": 3}, {"id": 3439, "text": "I saw ___ dog and ___ cat in the park.", "options": ["a / a", "an / a", "the / the", "a / the"], "correct_index": 0}, {"id": 3539, "text": "I saw ___ fox and ___ rabbit in the forest.", "options": ["a / a", "an / a", "the / the", "a / the"], "correct_index": 0}, {"id": 3559, "text": "I saw ___ rabbit and ___ fox in the forest.", "options": ["a / a", "an / a", "the / the", "a / the"], "correct_index": 0}, {"id": 3519, "text": "I saw ___ rabbit and ___ fox in the forest.", "options": ["a / a", "an / a", "the / the", "a / the"], "correct_index": 0}, {"id": 3479, "text": "I saw ___ mouse and ___ cat in the kitchen.", "options": ["a / a", "an / a", "the / the", "a / the"], "correct_index": 0}, {"id": 3579, "text": "He likes listening to ___ music while working.", "options": ["A", "An", "The", "–"], "correct_index": 3}, {"id": 3499, "text": "I saw ___ fox and ___ rabbit in the forest.", "options": ["a / a", "an / a", "the / the", "a / the"], "correct_index": 0}, {"id": 3599, "text": "I saw ___ fox and ___ rabbit in the forest.", "options": ["a / a", "an / a", "the / the", "a / the"], "correct_index": 0}, {"id": 3459, "text": "I saw ___ rabbit and ___ fox in the forest.", "options": ["a / a", "an / a", "the / the", "a / the"], "correct_index": 0}, {"id": 3619, "text": "I saw ___ rabbit and ___ squirrel in the garden.", "options": ["a / a", "an / a", "the / the", "a / the"], "correct_index": 0}], "9": [{"id": 3560, "text": "He is reading ___ article about technology.", "options": ["a", "an", "the", "–"], "correct_index": 1}, {"id": 3480, "text": "He is reading ___ article about technology.", "options": ["a", "an", "the", "–"], "correct_index": 1}, {"id": 3580, "text": "She found ___ solution to the problem.", "options": ["A", "An", "The", "–"], "correct_index": 0}, {"id": 3620, "text": "He is reading ___ article about history.", "options": ["a", "an", "the", "–"], "correct_index": 1}, {"id": 3540, "text": "He is reading ___ article about science.", "options": ["a", "an", "the", "–"], "correct_index": 1}, {"id": 3460, "text": "He is reading ___ article in the newspaper.", "options": ["a", "an", "the", "–"], "correct_index": 1}, {"id": 3600, "text": "He is reading ___ article about science.", "options": ["a", "an", "the", "–"], "correct_index": 1}, {"id": 3520, "text": "He is reading ___ article about technology.", "options": ["a", "an", "the", "–"], "correct_index": 1}, {"id": 3500, "text": "He is reading ___ article about science.", "options": ["a", "an", "the", "–"], "correct_index": 1}, {"id": 3440, "text": "He is reading ___ book about space.", "options": ["a", "an", "the", "–"], "correct_index": 0}, {"id": 3441, "text": "We are going to ___ restaurant tonight.", "options": ["a", "an", "the", "–"], "correct_index": 0}, {"id": 3501, "text": "We went to ___ cinema yesterday.", "options": ["a", "an", "the", "–"], "correct_index": 2}, {"id": 3521, "text": "We went to ___ theater yesterday.", "options": ["a", "an", "the", "–"], "correct_index": 2}, {"id": 3541, "text": "We went to ___ cinema yesterday.", "options": ["a", "an", "the", "–"], "correct_index": 2}, {"id": 3561, "text": "We went to ___ theater yesterday.", "options": ["a", "an", "the", "–"], "correct_index": 2}, {"id": 3581, "text": "We visited ___ museum of modern art.", "options": ["A", "An", "The", "–"], "correct_index": 2}, {"id": 3461, "text": "We went to ___ park yesterday.", "options": ["a", "an", "the", "–"], "correct_index": 2}, {"id": 3481, "text": "We went to ___ museum yesterday.", "options": ["a", "an", "the", "–"], "correct_index": 2}, {"id": 3621, "text": "We went to ___ theater last weekend.", "options": ["a", "an", "the", "–"], "correct_index": 2}, {"id": 3601, "text": "We went to ___ cinema yesterday.", "options": ["a", "an", "the", "–"], "correct_index": 2}], "10": [{"id": 3482, "text": "___ sky looks gray today.", "options": ["A", "An", "The", "–"], "correct_index": 3}, {"id": 3602, "text": "___ sky is clear today.", "options": ["A", "An", "The", "–"], "correct_index": 3}, {"id": 3562, "text": "___ sky is gray today.", "options": ["A", "An", "The", "–"], "correct_index": 3}, {"id": 3622, "text": "___ sky is cloudy today.", "options": ["A", "An", "The", "–"], "correct_index": 3}, {"id": 3582, "text": "___ honesty is very important in relationships.", "options": ["A", "An", "The", "–"], "correct_index": 3}, {"id": 3542, "text": "___ sky is clear today.", "options": ["A", "An", "The", "–"], "correct_index": 3}, {"id": 3502, "text": "___ sky is clear today.", "options": ["A", "An", "The", "–"], "correct_index": 3}, {"id": 3522, "text": "___ sky is gray today.", "options": ["A", "An", "The", "–"], "correct_index": 3}, {"id": 3442, "text": "___ moon looks amazing tonight.", "options": ["A", "An", "The", "–"], "correct_index": 2}, {"id": 3462, "text": "___ sky is blue today.", "options": ["A", "An", "The", "–"], "correct_index": 3}, {"id": 3483, "text": "I don’t like ___ traffic in the city.", "options": ["a", "an", "the", "–"], "correct_index": 3}, {"id": 3583, "text": "He opened ___ window to get some fresh air.", "options": ["A", "An", "The", "–"], "correct_index": 0}, {"id": 3563, "text": "I don’t like ___ traffic in the city.", "options": ["a", "an", "the", "–"], "correct_index": 3}, {"id": 3603, "text": "I don’t like ___ noise in the street.", "options": ["a", "an", "the", "–"], "correct_index": 3}, {"id": 3523, "text": "I don’t like ___ traffic in the city.", "options": ["a", "an", "the", "–"], "correct_index": 3}, {"id": 3623, "text": "I don’t like ___ noise near my house.", "options": ["a", "an", "the", "–"], "correct_index": 3}, {"id": 3463, "text": "I don’t like ___ noise in the street.", "options": ["a", "an", "the", "–"], "correct_index": 3}, {"id": 3503, "text": "I don’t like ___ noise at night.", "options": ["a", "an", "the", "–"], "correct_index": 3}, {"id": 3443, "text": "I don’t like ___ music that is too loud.", "options": ["a", "an", "the", "–"], "correct_index": 3}, {"id": 3543, "text": "I don’t like ___ noise in the street.", "options": ["a", "an", "the", "–"], "correct_index": 3}]};
+        const allQuizData = {"1": [{"text": "I need ___ notebook and ___ pen.", "options": ["a / a", "an / a", "the / the", "a / an"], "correct_index": 3, "explanation": "Правильный ответ: D"}, {"text": "I saw ___ owl in the forest.", "options": ["a", "an", "the", "–"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "I saw ___ elephant in the zoo.", "options": ["a", "an", "the", "–"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "He bought ___ apple and ___ banana.", "options": ["a / a", "an / a", "the / the", "a / an"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "___ stars shine at night.", "options": ["A", "An", "The", "–"], "correct_index": 3, "explanation": "Правильный ответ: D"}, {"text": "___ Pacific Ocean is very deep.", "options": ["A", "An", "The", "–"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "I need ___ hour to finish my homework.", "options": ["a", "an", "the", "–"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "He bought ___ old painting.", "options": ["a", "an", "the", "–"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "___ sky looks gray today.", "options": ["A", "An", "The", "–"], "correct_index": 3, "explanation": "Правильный ответ: D"}, {"text": "He is reading ___ article about technology.", "options": ["a", "an", "the", "–"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "He is reading ___ article about technology.", "options": ["a", "an", "the", "–"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "He works as ___ engineer.", "options": ["A", "An", "The", "–"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "___ sky is clear today.", "options": ["A", "An", "The", "–"], "correct_index": 3, "explanation": "Правильный ответ: D"}, {"text": "I saw ___ eagle at the cliff.", "options": ["a", "an", "the", "–"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "I need ___ pencil and ___ eraser.", "options": ["a / a", "an / a", "the / the", "a / an"], "correct_index": 3, "explanation": "Правильный ответ: D"}, {"text": "He found ___ unusual coin.", "options": ["a", "an", "the", "–"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "___ Atlantic Ocean is very wide.", "options": ["A", "An", "The", "–"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "___ sun rises in the east.", "options": ["A", "An", "The", "–"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "I saw ___ iguana in the zoo.", "options": ["a", "an", "the", "–"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "I need ___ egg for breakfast.", "options": ["a", "an", "the", "–"], "correct_index": 1, "explanation": "Правильный ответ: B"}], "2": [{"text": "___ Amazon River is very long.", "options": ["A", "An", "The", "–"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "He bought ___ apple and ___ banana.", "options": ["a / a", "an / a", "the / the", "a / an"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "He bought ___ old book yesterday.", "options": ["a", "an", "the", "–"], "correct_index": 0, "explanation": "Правильный ответ: A"}, {"text": "___ sky is gray today.", "options": ["A", "An", "The", "–"], "correct_index": 3, "explanation": "Правильный ответ: D"}, {"text": "I need ___ hour to finish my homework.", "options": ["a", "an", "the", "–"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "I need ___ notebook and ___ pen.", "options": ["a / a", "an / a", "the / the", "a / an"], "correct_index": 3, "explanation": "Правильный ответ: D"}, {"text": "She found ___ solution to the problem.", "options": ["A", "An", "The", "–"], "correct_index": 0, "explanation": "Правильный ответ: A"}, {"text": "___ stars shine brightly in the night sky.", "options": ["A", "An", "The", "–"], "correct_index": 3, "explanation": "Правильный ответ: D"}, {"text": "I saw ___ eagle flying high.", "options": ["a", "an", "the", "–"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "I saw ___ owl in the tree.", "options": ["a", "an", "the", "–"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "I saw ___ eagle at the cliff.", "options": ["a", "an", "the", "–"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "He is reading ___ interesting book.", "options": ["a", "an", "the", "–"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "___ Pacific Ocean is very large.", "options": ["A", "An", "The", "–"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "I saw ___ owl in the tree.", "options": ["a", "an", "the", "–"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "He bought ___ sandwich and ___ juice.", "options": ["a / a", "an / a", "the / the", "a / an"], "correct_index": 3, "explanation": "Правильный ответ: D"}, {"text": "He is reading ___ article about history.", "options": ["a", "an", "the", "–"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "___ sky is cloudy today.", "options": ["A", "An", "The", "–"], "correct_index": 3, "explanation": "Правильный ответ: D"}, {"text": "I need ___ notebook and ___ pen.", "options": ["a / a", "an / a", "the / the", "a / an"], "correct_index": 3, "explanation": "Правильный ответ: D"}, {"text": "I need ___ pen to write this note.", "options": ["a", "an", "the", "–"], "correct_index": 0, "explanation": "Правильный ответ: A"}, {"text": "___ stars are shining in the sky.", "options": ["A", "An", "The", "–"], "correct_index": 3, "explanation": "Правильный ответ: D"}], "3": [{"text": "___ Pacific Ocean is very deep.", "options": ["A", "An", "The", "–"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "He bought ___ old painting.", "options": ["a", "an", "the", "–"], "correct_index": 0, "explanation": "Правильный ответ: A"}, {"text": "He is reading ___ article about science.", "options": ["a", "an", "the", "–"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "I bought ___ orange and ___ banana.", "options": ["a / a", "an / a", "the / the", "a / an"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "___ honesty is very important in relationships.", "options": ["A", "An", "The", "–"], "correct_index": 3, "explanation": "Правильный ответ: D"}, {"text": "I saw ___ eagle flying in the sky.", "options": ["a", "an", "the", "–"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "He bought ___ apple and ___ banana.", "options": ["a / a", "an / a", "the / the", "a / an"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "I saw ___ elephant near the river.", "options": ["a", "an", "the", "–"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "I need ___ egg for breakfast.", "options": ["a", "an", "the", "–"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "___ sun rises in the east.", "options": ["A", "An", "The", "–"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "He has ___ idea how to solve this problem.", "options": ["A", "An", "The", "–"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "___ stars shine at night.", "options": ["A", "An", "The", "–"], "correct_index": 3, "explanation": "Правильный ответ: D"}, {"text": "___ Nile River is very long.", "options": ["A", "An", "The", "–"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "I need ___ pencil and ___ eraser.", "options": ["a / a", "an / a", "the / the", "a / an"], "correct_index": 3, "explanation": "Правильный ответ: D"}, {"text": "She adopted ___ small puppy.", "options": ["A", "An", "The", "–"], "correct_index": 0, "explanation": "Правильный ответ: A"}, {"text": "I found ___ egg on the table.", "options": ["a", "an", "the", "–"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "___ sky is clear today.", "options": ["A", "An", "The", "–"], "correct_index": 3, "explanation": "Правильный ответ: D"}, {"text": "I saw ___ iguana in the garden.", "options": ["a", "an", "the", "–"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "He is reading ___ article in the newspaper.", "options": ["a", "an", "the", "–"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "He wants to eat ___ apple.", "options": ["a", "an", "the", "–"], "correct_index": 1, "explanation": "Правильный ответ: B"}], "4": [{"text": "He wants ___ sandwich and ___ juice.", "options": ["a / a", "an / a", "the / the", "a / an"], "correct_index": 3, "explanation": "Правильный ответ: D"}, {"text": "___ Moon looks beautiful tonight.", "options": ["A", "An", "The", "–"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "I need ___ egg for the recipe.", "options": ["a", "an", "the", "–"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "___ sky is clear today.", "options": ["A", "An", "The", "–"], "correct_index": 3, "explanation": "Правильный ответ: D"}, {"text": "He is reading ___ article about science.", "options": ["a", "an", "the", "–"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "He bought ___ old painting.", "options": ["a", "an", "the", "–"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "I saw ___ octopus at the aquarium.", "options": ["a", "an", "the", "–"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "___ information you gave me was helpful.", "options": ["A", "An", "The", "–"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "I saw ___ iguana in the zoo.", "options": ["a", "an", "the", "–"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "She felt ___ fear when she heard the noise.", "options": ["A", "An", "The", "–"], "correct_index": 3, "explanation": "Правильный ответ: D"}, {"text": "I saw ___ iguana in the zoo.", "options": ["a", "an", "the", "–"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "He found ___ interesting stone.", "options": ["a", "an", "the", "–"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "He is reading ___ article about technology.", "options": ["a", "an", "the", "–"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "___ sky is gray today.", "options": ["A", "An", "The", "–"], "correct_index": 3, "explanation": "Правильный ответ: D"}, {"text": "She is looking for ___ job in IT.", "options": ["A", "An", "The", "–"], "correct_index": 0, "explanation": "Правильный ответ: A"}, {"text": "___ Atlantic Ocean is wide.", "options": ["A", "An", "The", "–"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "___ Sun is shining brightly today.", "options": ["A", "An", "The", "–"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "I need ___ eraser and ___ pencil.", "options": ["a / a", "an / a", "the / the", "a / an"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "I need ___ hour to finish my homework.", "options": ["a", "an", "the", "–"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "He wants ___ sandwich and ___ water.", "options": ["a / a", "an / a", "the / the", "a / an"], "correct_index": 3, "explanation": "Правильный ответ: D"}], "5": [{"text": "He wants ___ sandwich and ___ juice.", "options": ["a / a", "an / a", "the / the", "a / an"], "correct_index": 3, "explanation": "Правильный ответ: D"}, {"text": "I saw ___ cat in the garden.", "options": ["a", "an", "the", "–"], "correct_index": 0, "explanation": "Правильный ответ: A"}, {"text": "___ sun rises in the east.", "options": ["A", "An", "The", "–"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "I saw ___ octopus at the aquarium.", "options": ["a", "an", "the", "–"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "He found ___ interesting coin.", "options": ["a", "an", "the", "–"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "___ moon looks amazing tonight.", "options": ["A", "An", "The", "–"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "I need ___ notebook and ___ pencil.", "options": ["a / a", "an / a", "the / the", "a / an"], "correct_index": 3, "explanation": "Правильный ответ: D"}, {"text": "I need ___ hour to finish my task.", "options": ["a", "an", "the", "–"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "He is reading ___ article about science.", "options": ["a", "an", "the", "–"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "___ Earth goes around the Sun.", "options": ["A", "An", "The", "–"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "___ sky is blue today.", "options": ["A", "An", "The", "–"], "correct_index": 3, "explanation": "Правильный ответ: D"}, {"text": "___ stars shine brightly at night.", "options": ["A", "An", "The", "–"], "correct_index": 3, "explanation": "Правильный ответ: D"}, {"text": "I need ___ notebook for class.", "options": ["a", "an", "the", "–"], "correct_index": 0, "explanation": "Правильный ответ: A"}, {"text": "I need ___ pencil and ___ eraser.", "options": ["a / a", "an / a", "the / the", "a / an"], "correct_index": 3, "explanation": "Правильный ответ: D"}, {"text": "She plays ___ piano very well.", "options": ["A", "An", "The", "–"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "I found ___ egg on the table.", "options": ["a", "an", "the", "–"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "He found ___ unusual coin.", "options": ["a", "an", "the", "–"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "___ Sahara Desert is very hot.", "options": ["A", "An", "The", "–"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "He wants ___ sandwich for lunch.", "options": ["a", "an", "the", "–"], "correct_index": 0, "explanation": "Правильный ответ: A"}, {"text": "He is reading ___ book about space.", "options": ["a", "an", "the", "–"], "correct_index": 0, "explanation": "Правильный ответ: A"}], "6": [{"text": "She bought ___ old dress.", "options": ["a", "an", "the", "–"], "correct_index": 0, "explanation": "Правильный ответ: A"}, {"text": "I don’t like ___ traffic in the city.", "options": ["a", "an", "the", "–"], "correct_index": 3, "explanation": "Правильный ответ: D"}, {"text": "We visited ___ Great Wall of China.", "options": ["a", "an", "the", "–"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "___ Nile is the longest river in the world.", "options": ["A", "An", "The", "–"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "We are going to ___ restaurant tonight.", "options": ["a", "an", "the", "–"], "correct_index": 0, "explanation": "Правильный ответ: A"}, {"text": "She usually goes to ___ office by car.", "options": ["a", "an", "the", "–"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "___ manager called you this morning.", "options": ["A", "An", "The", "–"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "I drink ___ water every day.", "options": ["a", "an", "the", "–"], "correct_index": 3, "explanation": "Правильный ответ: D"}, {"text": "I saw ___ dog and ___ cat in the park.", "options": ["a / a", "an / a", "the / the", "a / the"], "correct_index": 0, "explanation": "Правильный ответ: A"}, {"text": "___ elephants are very large.", "options": ["A", "An", "The", "–"], "correct_index": 3, "explanation": "Правильный ответ: D"}, {"text": "___ Himalayas are very high.", "options": ["A", "An", "The", "–"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "We went to ___ cinema yesterday.", "options": ["a", "an", "the", "–"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "She wants ___ cat as a pet.", "options": ["a", "an", "the", "–"], "correct_index": 0, "explanation": "Правильный ответ: A"}, {"text": "I saw ___ fox and ___ rabbit in the forest.", "options": ["a / a", "an / a", "the / the", "a / the"], "correct_index": 0, "explanation": "Правильный ответ: A"}, {"text": "I usually eat ___ breakfast at home.", "options": ["A", "An", "The", "–"], "correct_index": 3, "explanation": "Правильный ответ: D"}, {"text": "We need ___ taxi right now.", "options": ["A", "An", "The", "–"], "correct_index": 0, "explanation": "Правильный ответ: A"}, {"text": "He opened ___ window to get some fresh air.", "options": ["A", "An", "The", "–"], "correct_index": 0, "explanation": "Правильный ответ: A"}, {"text": "I usually drink ___ coffee in the morning.", "options": ["a", "an", "the", "–"], "correct_index": 3, "explanation": "Правильный ответ: D"}, {"text": "We visited ___ Eiffel Tower last summer.", "options": ["a", "an", "the", "–"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "She is ___ best singer in our class.", "options": ["a", "an", "the", "–"], "correct_index": 2, "explanation": "Правильный ответ: C"}], "7": [{"text": "We went to ___ theater yesterday.", "options": ["a", "an", "the", "–"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "She usually goes to ___ hospital by bus.", "options": ["a", "an", "the", "–"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "I saw ___ rabbit and ___ fox in the forest.", "options": ["a / a", "an / a", "the / the", "a / the"], "correct_index": 0, "explanation": "Правильный ответ: A"}, {"text": "___ Alps are beautiful in winter.", "options": ["A", "An", "The", "–"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "She is ___ smartest girl in the class.", "options": ["a", "an", "the", "–"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "___ tigers are dangerous animals.", "options": ["A", "An", "The", "–"], "correct_index": 3, "explanation": "Правильный ответ: D"}, {"text": "She bought ___ new book.", "options": ["a", "an", "the", "–"], "correct_index": 0, "explanation": "Правильный ответ: A"}, {"text": "I don’t like ___ traffic in the city.", "options": ["a", "an", "the", "–"], "correct_index": 3, "explanation": "Правильный ответ: D"}, {"text": "I usually drink ___ tea in the morning.", "options": ["a", "an", "the", "–"], "correct_index": 3, "explanation": "Правильный ответ: D"}, {"text": "We climbed ___ Mount Everest last year.", "options": ["a", "an", "the", "–"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "She usually goes to ___ hospital by bus.", "options": ["a", "an", "the", "–"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "I like drinking ___ milk in the morning.", "options": ["a", "an", "the", "–"], "correct_index": 3, "explanation": "Правильный ответ: D"}, {"text": "I saw ___ rabbit and ___ fox in the forest.", "options": ["a / a", "an / a", "the / the", "a / the"], "correct_index": 0, "explanation": "Правильный ответ: A"}, {"text": "___ whales are huge animals.", "options": ["A", "An", "The", "–"], "correct_index": 3, "explanation": "Правильный ответ: D"}, {"text": "We visited ___ Statue of Liberty last summer.", "options": ["a", "an", "the", "–"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "She bought ___ old chair.", "options": ["a", "an", "the", "–"], "correct_index": 0, "explanation": "Правильный ответ: A"}, {"text": "I don’t like ___ noise in the street.", "options": ["a", "an", "the", "–"], "correct_index": 3, "explanation": "Правильный ответ: D"}, {"text": "She is ___ tallest student in class.", "options": ["a", "an", "the", "–"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "___ Himalayas are very high.", "options": ["A", "An", "The", "–"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "We went to ___ cinema yesterday.", "options": ["a", "an", "the", "–"], "correct_index": 2, "explanation": "Правильный ответ: C"}], "8": [{"text": "I don’t like ___ sugar in my coffee.", "options": ["A", "An", "The", "–"], "correct_index": 3, "explanation": "Правильный ответ: D"}, {"text": "She goes to ___ university by bus.", "options": ["a", "an", "the", "–"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "I saw ___ mouse and ___ cat in the kitchen.", "options": ["a / a", "an / a", "the / the", "a / the"], "correct_index": 0, "explanation": "Правильный ответ: A"}, {"text": "She bought ___ book about history.", "options": ["a", "an", "the", "–"], "correct_index": 0, "explanation": "Правильный ответ: A"}, {"text": "She is ___ smartest student in class.", "options": ["a", "an", "the", "–"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "___ Alps are covered with snow in winter.", "options": ["A", "An", "The", "–"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "We visited ___ Colosseum in Rome.", "options": ["a", "an", "the", "–"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "I don’t like ___ traffic in the city.", "options": ["a", "an", "the", "–"], "correct_index": 3, "explanation": "Правильный ответ: D"}, {"text": "We went to ___ theater yesterday.", "options": ["a", "an", "the", "–"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "___ elephants are large animals.", "options": ["A", "An", "The", "–"], "correct_index": 3, "explanation": "Правильный ответ: D"}, {"text": "___ police are investigating the case.", "options": ["A", "An", "The", "–"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "We visited ___ Statue of Liberty.", "options": ["a", "an", "the", "–"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "We visited ___ museum of modern art.", "options": ["A", "An", "The", "–"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "I drink ___ tea every morning.", "options": ["a", "an", "the", "–"], "correct_index": 3, "explanation": "Правильный ответ: D"}, {"text": "She wants ___ cat as a pet.", "options": ["a", "an", "the", "–"], "correct_index": 0, "explanation": "Правильный ответ: A"}, {"text": "She is ___ most talented girl in the choir.", "options": ["a", "an", "the", "–"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "I don’t like ___ noise near my house.", "options": ["a", "an", "the", "–"], "correct_index": 3, "explanation": "Правильный ответ: D"}, {"text": "He likes listening to ___ music while working.", "options": ["A", "An", "The", "–"], "correct_index": 3, "explanation": "Правильный ответ: D"}, {"text": "___ lions are very strong animals.", "options": ["A", "An", "The", "–"], "correct_index": 3, "explanation": "Правильный ответ: D"}, {"text": "She usually goes to ___ school by bus.", "options": ["a", "an", "the", "–"], "correct_index": 3, "explanation": "Правильный ответ: D"}], "9": [{"text": "We visited ___ Colosseum in Rome.", "options": ["a", "an", "the", "–"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "___ giraffes eat leaves from tall trees.", "options": ["A", "An", "The", "–"], "correct_index": 3, "explanation": "Правильный ответ: D"}, {"text": "We went to ___ park yesterday.", "options": ["a", "an", "the", "–"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "___ Amazon rainforest is huge.", "options": ["A", "An", "The", "–"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "He bought ___ expensive watch.", "options": ["A", "An", "The", "–"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "I saw ___ fox and ___ rabbit in the forest.", "options": ["a / a", "an / a", "the / the", "a / the"], "correct_index": 0, "explanation": "Правильный ответ: A"}, {"text": "I don’t like ___ noise in the street.", "options": ["a", "an", "the", "–"], "correct_index": 3, "explanation": "Правильный ответ: D"}, {"text": "I usually drink ___ milk in the morning.", "options": ["a", "an", "the", "–"], "correct_index": 3, "explanation": "Правильный ответ: D"}, {"text": "She usually goes to ___ hospital by bus.", "options": ["a", "an", "the", "–"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "She is ___ most talented singer in the choir.", "options": ["a", "an", "the", "–"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "I saw ___ fox and ___ rabbit in the forest.", "options": ["a / a", "an / a", "the / the", "a / the"], "correct_index": 0, "explanation": "Правильный ответ: A"}, {"text": "She is ___ fastest runner in the school.", "options": ["a", "an", "the", "–"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "I drink ___ tea every morning.", "options": ["a", "an", "the", "–"], "correct_index": 3, "explanation": "Правильный ответ: D"}, {"text": "___ lions live in Africa.", "options": ["A", "An", "The", "–"], "correct_index": 3, "explanation": "Правильный ответ: D"}, {"text": "We went to ___ museum yesterday.", "options": ["a", "an", "the", "–"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "We stayed at ___ hotel near the airport.", "options": ["A", "An", "The", "–"], "correct_index": 0, "explanation": "Правильный ответ: A"}, {"text": "She has ___ orange dress.", "options": ["a", "an", "the", "–"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "___ Pacific Ocean is huge.", "options": ["A", "An", "The", "–"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "She usually goes to ___ university by bus.", "options": ["a", "an", "the", "–"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "I don’t like ___ noise at night.", "options": ["a", "an", "the", "–"], "correct_index": 3, "explanation": "Правильный ответ: D"}], "10": [{"text": "She wants to buy ___ umbrella.", "options": ["a", "an", "the", "–"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "I usually drink ___ juice in the morning.", "options": ["a", "an", "the", "–"], "correct_index": 3, "explanation": "Правильный ответ: D"}, {"text": "I don’t like ___ music that is too loud.", "options": ["a", "an", "the", "–"], "correct_index": 3, "explanation": "Правильный ответ: D"}, {"text": "We visited ___ Statue of Liberty.", "options": ["a", "an", "the", "–"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "___ lions live in Africa.", "options": ["A", "An", "The", "–"], "correct_index": 3, "explanation": "Правильный ответ: D"}, {"text": "She is ___ tallest student in the class.", "options": ["a", "an", "the", "–"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "I saw ___ rabbit and ___ fox in the forest.", "options": ["a / a", "an / a", "the / the", "a / the"], "correct_index": 0, "explanation": "Правильный ответ: A"}, {"text": "We went to ___ theater last weekend.", "options": ["a", "an", "the", "–"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "___ Himalayas are very tall.", "options": ["A", "An", "The", "–"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "She usually goes to ___ hospital for checkups.", "options": ["a", "an", "the", "–"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "She is ___ most talented girl in the choir.", "options": ["a", "an", "the", "–"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "We visited ___ Great Wall of China.", "options": ["a", "an", "the", "–"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "___ tigers are very dangerous.", "options": ["A", "An", "The", "–"], "correct_index": 3, "explanation": "Правильный ответ: D"}, {"text": "I saw ___ rabbit and ___ squirrel in the garden.", "options": ["a / a", "an / a", "the / the", "a / the"], "correct_index": 0, "explanation": "Правильный ответ: A"}, {"text": "I like drinking ___ milk in the morning.", "options": ["a", "an", "the", "–"], "correct_index": 3, "explanation": "Правильный ответ: D"}, {"text": "___ Alps are beautiful in winter.", "options": ["A", "An", "The", "–"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "She wants ___ cat as a pet.", "options": ["a", "an", "the", "–"], "correct_index": 0, "explanation": "Правильный ответ: A"}, {"text": "She usually goes to ___ university by bus.", "options": ["a", "an", "the", "–"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "I don’t like ___ noise in the street.", "options": ["a", "an", "the", "–"], "correct_index": 3, "explanation": "Правильный ответ: D"}, {"text": "We went to ___ cinema yesterday.", "options": ["a", "an", "the", "–"], "correct_index": 2, "explanation": "Правильный ответ: C"}]};
         let currentQuizSet = 1;
-        const quizData = allQuizData[currentQuizSet] || [];
-
-        function checkAnswers(event) {
-            event.preventDefault();
-
-            const form = document.getElementById('quiz-form');
-            const formData = new FormData(form);
-
-            let correct = 0;
-            let total = quizData.length;
-
-            // Check each question
-            quizData.forEach((question, index) => {
-                const selectedAnswer = parseInt(formData.get(`question-${question.id}`));
-                const options = document.querySelectorAll(`input[name="question-${question.id}"]`);
-
-                options.forEach((option, optIndex) => {
-                    const label = option.closest('.option');
-                    if (optIndex === question.correct_index) {
-                        label.classList.add('correct');
-                    }
-                    if (selectedAnswer === optIndex && selectedAnswer !== question.correct_index) {
-                        label.classList.add('incorrect');
-                    }
-                    option.disabled = true;
-                });
-
-                if (selectedAnswer === question.correct_index) {
-                    correct++;
-                }
-            });
-
-            // Calculate score
-            const percentage = Math.round((correct / total) * 100);
-            const passed = percentage >= 70;
-
-            // Show results
-            const resultsDiv = document.getElementById('results');
-            const scoreDiv = document.getElementById('score');
-            const messageDiv = document.getElementById('results-message');
-
-            scoreDiv.textContent = `${percentage}%`;
-            scoreDiv.className = 'score ' + (passed ? 'pass' : 'fail');
-
-            messageDiv.textContent = `Вы ответили правильно на ${correct} из ${total} вопросов`;
-
-            resultsDiv.classList.remove('hidden');
-
-            // Disable submit button
-            document.getElementById('submit-btn').disabled = true;
-
-            // Scroll to results
-            resultsDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }
-
-        function retakeQuiz() {
-            loadQuiz(currentQuizSet);
-        }
 
         function loadQuiz(quizSet) {
             currentQuizSet = quizSet;
 
-            // Hide placeholder, show form (if they exist)
             const placeholder = document.getElementById('quiz-placeholder');
             const form = document.getElementById('quiz-form');
             if (placeholder) {
@@ -521,7 +464,6 @@
                 form.style.display = 'block';
             }
 
-            // Update button states
             document.querySelectorAll('.quiz-selector-btn').forEach(btn => {
                 btn.classList.remove('active');
                 if (parseInt(btn.dataset.quiz) === quizSet) {
@@ -529,27 +471,20 @@
                 }
             });
 
-            // Get questions for this quiz set
             const questions = allQuizData[quizSet] || [];
-
-            // Clear and rebuild quiz HTML
             const submitBtn = document.getElementById('submit-btn');
-
-            // Remove all questions
             const existingQuestions = form.querySelectorAll('.question');
             existingQuestions.forEach(q => q.remove());
 
-            // Add new questions
             questions.forEach((question, index) => {
                 const questionDiv = document.createElement('div');
                 questionDiv.className = 'question';
-                questionDiv.dataset.questionId = question.id;
 
                 let optionsHtml = '';
                 question.options.forEach((option, optIndex) => {
                     optionsHtml += `
                         <label class="option">
-                            <input type="radio" name="question-${question.id}" value="${optIndex}" required>
+                            <input type="radio" name="question-${index}" value="${optIndex}" required>
                             <span>${option}</span>
                         </label>
                     `;
@@ -565,27 +500,61 @@
                 form.insertBefore(questionDiv, submitBtn);
             });
 
-            // Reset form state
             form.reset();
             submitBtn.disabled = false;
             document.getElementById('results').classList.add('hidden');
-            document.querySelectorAll('.option').forEach(opt => {
-                opt.classList.remove('correct', 'incorrect');
-            });
-
-            // Scroll to quiz
-            form.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
 
-        // Initialize: if only one quiz set, load it automatically
         const quizSetCount = Object.keys(allQuizData).length;
         if (quizSetCount === 1) {
-            // Single quiz - load immediately
             loadQuiz(1);
         }
-        // If multiple quiz sets, user must select one (placeholder will show)
 
-        document.getElementById('quiz-form').addEventListener('submit', checkAnswers);
+        document.getElementById('quiz-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const questions = allQuizData[currentQuizSet];
+            let correct = 0;
+
+            questions.forEach((question, index) => {
+                const selected = document.querySelector(`input[name="question-${index}"]:checked`);
+                if (selected && parseInt(selected.value) === question.correct_index) {
+                    correct++;
+                }
+            });
+
+            const total = questions.length;
+            const percentage = Math.round((correct / total) * 100);
+
+            document.getElementById('score').textContent = percentage + '%';
+            document.getElementById('score').className = percentage >= 70 ? 'score pass' : 'score fail';
+
+            let feedback;
+            if (percentage >= 90) {
+                feedback = 'Отлично!';
+            } else if (percentage >= 70) {
+                feedback = 'Хорошо!';
+            } else if (percentage >= 50) {
+                feedback = 'Неплохо, но можно лучше';
+            } else {
+                feedback = 'Нужно ещё поучить';
+            }
+
+            document.getElementById('feedback').textContent = feedback;
+            document.getElementById('details').textContent = `Правильных ответов: ${correct} из ${total}`;
+
+            document.getElementById('results').classList.remove('hidden');
+            document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+
+            this.querySelector('.submit-btn').disabled = true;
+        });
+
+        function retryQuiz() {
+            document.getElementById('results').classList.add('hidden');
+            document.getElementById('quiz-form').reset();
+            document.querySelector('.submit-btn').disabled = false;
+            document.getElementById('quiz-form').scrollIntoView({ behavior: 'smooth' });
+        }
     </script>
 </body>
 </html>

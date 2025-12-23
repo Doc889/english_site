@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Present Perfect - Английский язык</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary: #7c3aed;
+            --color-primary-dark: #6d28d9;
+            --color-primary-light: #a78bfa;
+            --color-secondary: #c4b5fd;
+            --color-accent: #ddd6fe;
+            --color-bg: #ffffff;
+            --color-bg-alt: #faf5ff;
+            --color-text: #1f2937;
+            --color-text-light: #6b7280;
+            --color-success: #10b981;
+            --color-error: #ef4444;
+            --font-display: 'Playfair Display', serif;
+            --font-body: 'DM Sans', sans-serif;
+            --shadow-sm: 0 2px 8px rgba(124, 58, 237, 0.08);
+            --shadow-md: 0 4px 20px rgba(124, 58, 237, 0.12);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        header {
+            background: var(--color-primary);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: white;
+            text-decoration: none;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            opacity: 0.9;
+            transition: var(--transition);
+        }
+
+        .back-link:hover {
+            opacity: 1;
+            transform: translateX(-3px);
+        }
+
+        header h1 {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+        }
+
+        .content-section {
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            color: var(--color-primary);
+            margin: 3rem 0 2rem;
+            text-align: center;
+        }
+
+        .rule-section {
+            background: var(--color-bg-alt);
+            border-left: 4px solid var(--color-primary);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .rule-title {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            color: var(--color-primary);
+            margin-bottom: 1rem;
+        }
+
+        .rule-content {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            white-space: pre-line;
+        }
+
+        .examples {
+            margin-top: 1.5rem;
+        }
+
+        .example {
+            background: var(--color-bg);
+            padding: 0.8rem 1.2rem;
+            margin-bottom: 0.5rem;
+            border-radius: 8px;
+            border-left: 3px solid var(--color-secondary);
+            font-family: monospace;
+            font-size: 1rem;
+        }
+
+        .quiz-section {
+            background: var(--color-bg-alt);
+            padding: 3rem;
+            border-radius: 16px;
+            margin-top: 3rem;
+        }
+
+        .question {
+            background: var(--color-bg);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
+            border: 2px solid transparent;
+            transition: var(--transition);
+        }
+
+        .question.correct {
+            border-color: var(--color-success);
+            background: #f0fdf4;
+        }
+
+        .question.incorrect {
+            border-color: var(--color-error);
+            background: #fef2f2;
+        }
+
+        .question-text {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            color: var(--color-text);
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .option {
+            display: flex;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            background: var(--color-bg-alt);
+            border: 2px solid var(--color-accent);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .option:hover {
+            border-color: var(--color-primary);
+            background: white;
+        }
+
+        .option input[type="radio"] {
+            margin-right: 1rem;
+            cursor: pointer;
+        }
+
+        .option.correct {
+            background: #dcfce7;
+            border-color: var(--color-success);
+        }
+
+        .option.incorrect {
+            background: #fee2e2;
+            border-color: var(--color-error);
+        }
+
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 1.2rem;
+            background: var(--color-primary);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 2rem;
+            transition: var(--transition);
+        }
+
+        .submit-btn:hover:not(:disabled) {
+            background: var(--color-primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .submit-btn:disabled {
+            background: var(--color-text-light);
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .results {
+            text-align: center;
+            padding: 2rem;
+            background: var(--color-primary);
+            color: white;
+            border-radius: 12px;
+            margin-top: 2rem;
+        }
+
+        .results.hidden {
+            display: none;
+        }
+
+        .score {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .score.pass {
+            color: #dcfce7;
+        }
+
+        .score.fail {
+            color: #fecaca;
+        }
+
+        .results-message {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .retry-btn {
+            padding: 0.8rem 1.5rem;
+            background: var(--color-bg);
+            border: 2px solid white;
+            color: var(--color-primary);
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            margin-right: 1rem;
+        }
+
+        .retry-btn:hover {
+            background: white;
+            transform: translateY(-2px);
+        }
+
+        .home-btn {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+            padding: 0.8rem 1.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: var(--transition);
+        }
+
+        .home-btn:hover {
+            background: white;
+            color: var(--color-primary);
+            transform: translateY(-2px);
+        }
+
+        .quiz-selector-btn {
+            padding: 0.8rem 1.5rem;
+            background: var(--color-bg);
+            border: 2px solid var(--color-primary);
+            color: var(--color-primary);
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            min-width: 200px;
+        }
+
+        .quiz-selector-btn:hover {
+            background: var(--color-primary);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .quiz-selector-btn.active {
+            background: var(--color-primary);
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .container {
+                padding: 2rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="/" class="back-link">← Назад ко всем темам</a>
+            <h1>Present Perfect</h1>
+            <p>Настоящее совершённое время - связь прошлого с настоящим</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Theory Section -->
+        <div class="content-section">
+            <h2 class="section-title">Теория</h2>
+
+        <div class="rule-section">
+            <h3 class="rule-title">Главное про Present Perfect</h3>
+            <div class="rule-content"></div>
+            <div class="examples"><div class="example">Present Perfect — это про прошлое, которое ВАЖНО СЕЙЧАС.</div><div class="example">I have finished my work. — Я закончил работу (и сейчас свободен).</div><div class="example">She has lost her keys. — Она потеряла ключи (и до сих пор не нашла).</div><div class="example">Формула простая:</div><div class="example">have/has + Past Participle (третья форма глагола)</div></div>
+        </div>
+
+
+        <div class="rule-section">
+            <h3 class="rule-title">Что такое Present Perfect</h3>
+            <div class="rule-content"></div>
+            <div class="examples"><div class="example">Present Perfect — это время, которое соединяет прошлое с настоящим.</div><div class="example">Мы используем его, когда:</div><div class="example">1. Действие произошло, НО ВАЖЕН РЕЗУЛЬТАТ СЕЙЧАС</div><div class="example">2. Время не указано (или не важно)</div><div class="example">3. Опыт в жизни (ever, never)</div><div class="example">I have seen this film. — Я видел этот фильм (в своей жизни).</div><div class="example">He has broken his leg. — Он сломал ногу (и она до сих пор сломана).</div><div class="example">They have moved to London. — Они переехали в Лондон (и живут там сейчас).</div><div class="example">💡 Главное:</div><div class="example">Present Perfect = прошлое + связь с настоящим</div></div>
+        </div>
+
+
+        <div class="rule-section">
+            <h3 class="rule-title">Формула: have/has + Past Participle</h3>
+            <div class="rule-content"></div>
+            <div class="examples"><div class="example">Формула Present Perfect:</div><div class="example">have/has + Past Participle (V3)</div><div class="example">I/You/We/They + HAVE + V3</div><div class="example">He/She/It + HAS + V3</div><div class="example">Примеры:</div><div class="example">I have worked. — Я поработал.</div><div class="example">She has eaten. — Она поела.</div><div class="example">They have arrived. — Они приехали.</div><div class="example">💡 Важно:</div><div class="example">Past Participle — это 3-я форма глагола.</div><div class="example">Правильные глаголы: work → worked</div><div class="example">Неправильные глаголы: see → seen, go → gone, eat → eaten</div></div>
+        </div>
+
+
+        <div class="rule-section">
+            <h3 class="rule-title">Утверждения (Affirmative)</h3>
+            <div class="rule-content"></div>
+            <div class="examples"><div class="example">Утвердительная форма:</div><div class="example">I have finished.</div><div class="example">You have learned.</div><div class="example">He has gone.</div><div class="example">She has called.</div><div class="example">It has stopped.</div><div class="example">We have done it.</div><div class="example">They have arrived.</div><div class="example">Примеры:</div><div class="example">I have finished my homework. — Я закончил домашку.</div><div class="example">She has called you three times. — Она звонила тебе три раза.</div><div class="example">We have lived here for 5 years. — Мы живём здесь 5 лет.</div><div class="example">💡 Сокращения:</div><div class="example">I have = I've</div><div class="example">He has = He's</div><div class="example">They have = They've</div></div>
+        </div>
+
+
+        <div class="rule-section">
+            <h3 class="rule-title">Отрицания (Negative)</h3>
+            <div class="rule-content"></div>
+            <div class="examples"><div class="example">Отрицательная форма:</div><div class="example">have/has + NOT + V3</div><div class="example">I have not (haven't) seen him.</div><div class="example">She has not (hasn't) finished.</div><div class="example">They have not (haven't) arrived.</div><div class="example">Примеры:</div><div class="example">I haven't done my homework yet. — Я ещё не сделал домашку.</div><div class="example">He hasn't called me. — Он мне не звонил.</div><div class="example">We haven't been to Paris. — Мы не были в Париже.</div><div class="example">💡 Сокращения:</div><div class="example">have not = haven't</div><div class="example">has not = hasn't</div></div>
+        </div>
+
+
+        <div class="rule-section">
+            <h3 class="rule-title">Вопросы (Questions)</h3>
+            <div class="rule-content"></div>
+            <div class="examples"><div class="example">Вопросительная форма:</div><div class="example">Have/Has + подлежащее + V3?</div><div class="example">Have you finished?</div><div class="example">Has she called?</div><div class="example">Have they arrived?</div><div class="example">Примеры:</div><div class="example">Have you ever been to London? — Ты когда-нибудь был в Лондоне?</div><div class="example">Has he done his homework? — Он сделал домашку?</div><div class="example">Have they arrived yet? — Они уже приехали?</div><div class="example">Краткие ответы:</div><div class="example">Yes, I have. / No, I haven't.</div><div class="example">Yes, she has. / No, she hasn't.</div></div>
+        </div>
+
+
+        <div class="rule-section">
+            <h3 class="rule-title">Когда используем Present Perfect</h3>
+            <div class="rule-content"></div>
+            <div class="examples"><div class="example">Present Perfect используем в следующих случаях:</div><div class="example">1. Опыт в жизни (ever, never):</div><div class="example">I have been to Japan. — Я был в Японии (в жизни).</div><div class="example">2. Результат в настоящем:</div><div class="example">She has lost her phone. — Она потеряла телефон (и не может найти).</div><div class="example">3. Недавнее прошлое (just):</div><div class="example">I have just finished. — Я только что закончил.</div><div class="example">4. Незаконченный период (today, this week):</div><div class="example">I have seen him today. — Я видел его сегодня.</div><div class="example">5. Длительность до настоящего (for, since):</div><div class="example">We have lived here for 5 years. — Мы живём здесь 5 лет.</div></div>
+        </div>
+
+
+        <div class="rule-section">
+            <h3 class="rule-title">Already, yet, just, ever, never</h3>
+            <div class="rule-content"></div>
+            <div class="examples"><div class="example">Важные слова-маркеры Present Perfect:</div><div class="example">JUST (только что):</div><div class="example">I have just arrived. — Я только что приехал.</div><div class="example">ALREADY (уже — в утверждениях):</div><div class="example">She has already finished. — Она уже закончила.</div><div class="example">YET (ещё, уже — в вопросах и отрицаниях):</div><div class="example">Have you finished yet? — Ты уже закончил?</div><div class="example">I haven't finished yet. — Я ещё не закончил.</div><div class="example">EVER (когда-нибудь — в вопросах):</div><div class="example">Have you ever been to Paris? — Ты когда-нибудь был в Париже?</div><div class="example">NEVER (никогда):</div><div class="example">I have never seen this film. — Я никогда не видел этот фильм.</div><div class="example">💡 Позиция:</div><div class="example">just, already, never — перед Past Participle</div><div class="example">yet — в конце предложения</div><div class="example">ever — в вопросах перед Past Participle</div></div>
+        </div>
+
+
+        <div class="rule-section">
+            <h3 class="rule-title">For и since (длительность)</h3>
+            <div class="rule-content"></div>
+            <div class="examples"><div class="example">FOR — как долго (период времени):</div><div class="example">for 5 years — 5 лет</div><div class="example">for 2 months — 2 месяца</div><div class="example">for a week — неделю</div><div class="example">I have worked here for 3 years. — Я работаю здесь 3 года.</div><div class="example">SINCE — с какого момента (точка во времени):</div><div class="example">since 2020 — с 2020 года</div><div class="example">since Monday — с понедельника</div><div class="example">since yesterday — со вчерашнего дня</div><div class="example">She has lived here since 2015. — Она живёт здесь с 2015 года.</div><div class="example">💡 Важно:</div><div class="example">for + период (for 5 years)</div><div class="example">since + момент времени (since 2020)</div></div>
+        </div>
+
+
+        <div class="rule-section">
+            <h3 class="rule-title">Отличие от Past Simple</h3>
+            <div class="rule-content"></div>
+            <div class="examples"><div class="example">Present Perfect vs Past Simple — главная путаница для русских!</div><div class="example">PAST SIMPLE — когда указано время в прошлом:</div><div class="example">I saw him yesterday. — Я видел его вчера.</div><div class="example">PRESENT PERFECT — когда время не указано или не важно:</div><div class="example">I have seen this film. — Я видел этот фильм.</div><div class="example">PAST SIMPLE — законченное действие в прошлом:</div><div class="example">I lived in London in 2015. — Я жил в Лондоне в 2015.</div><div class="example">PRESENT PERFECT — связь с настоящим:</div><div class="example">I have lived in London for 5 years. — Я живу в Лондоне 5 лет.</div><div class="example">💡 Правило:</div><div class="example">Указано КОГДА (yesterday, last week, in 2015) = Past Simple</div><div class="example">НЕ указано когда или важен результат = Present Perfect</div><div class="example">Маркеры времени:</div><div class="example">Past Simple: yesterday, last week, ago, in 2015</div><div class="example">Present Perfect: just, already, yet, ever, never, for, since, today, this week</div></div>
+        </div>
+
+
+        <div class="rule-section">
+            <h3 class="rule-title">Типичные ошибки русскоговорящих</h3>
+            <div class="rule-content"></div>
+            <div class="examples"><div class="example">Ошибка 1: Путают с Past Simple</div><div class="example">❌ I have seen him yesterday.</div><div class="example">✔ I saw him yesterday. (указано КОГДА)</div><div class="example">❌ I saw this film. (без указания времени)</div><div class="example">✔ I have seen this film.</div><div class="example">Ошибка 2: Забывают has для 3-го лица</div><div class="example">❌ She have finished.</div><div class="example">✔ She has finished.</div><div class="example">Ошибка 3: Используют вторую форму вместо третьей</div><div class="example">❌ I have went.</div><div class="example">✔ I have gone.</div><div class="example">❌ She has wrote.</div><div class="example">✔ She has written.</div><div class="example">Ошибка 4: Неправильная позиция yet и already</div><div class="example">❌ I yet haven't finished.</div><div class="example">✔ I haven't finished yet.</div><div class="example">❌ She finished already.</div><div class="example">✔ She has already finished.</div><div class="example">Ошибка 5: Путают for и since</div><div class="example">❌ I have worked here since 5 years.</div><div class="example">✔ I have worked here for 5 years.</div><div class="example">❌ She has lived here for 2020.</div><div class="example">✔ She has lived here since 2020.</div><div class="example">Ошибка 6: Используют Present Perfect с конкретным временем в прошлом</div><div class="example">❌ I have seen him last week.</div><div class="example">✔ I saw him last week.</div></div>
+        </div>
+
+
+        <div class="rule-section">
+            <h3 class="rule-title">Главное про Present Perfect (Summary)</h3>
+            <div class="rule-content"></div>
+            <div class="examples"><div class="example">1. Формула: have/has + Past Participle (V3)</div><div class="example">2. Когда используем:</div><div class="example">   - Опыт в жизни</div><div class="example">   - Результат важен сейчас</div><div class="example">   - Недавнее прошлое</div><div class="example">   - Длительность до настоящего</div><div class="example">3. Ключевые слова:</div><div class="example">   - just, already, yet</div><div class="example">   - ever, never</div><div class="example">   - for (период), since (момент)</div><div class="example">4. Отличие от Past Simple:</div><div class="example">   - Past Simple = указано КОГДА</div><div class="example">   - Present Perfect = НЕ указано когда, важен результат</div><div class="example">5. Помни:</div><div class="example">   - He/She/It → HAS</div><div class="example">   - I/You/We/They → HAVE</div><div class="example">   - 3-я форма глагола (V3)</div></div>
+        </div>
+
+        </div>
+
+        <!-- Results Section (hidden initially) -->
+        <div id="results" class="results hidden">
+            <div class="score" id="score"></div>
+            <div class="results-message" id="results-message"></div>
+            <div>
+                <button class="retry-btn" onclick="retakeQuiz()">Пройти ещё раз</button>
+                <a href="/" class="home-btn">На главную</a>
+            </div>
+        </div>
+
+        <!-- Quiz Section -->
+        <div class="quiz-section" id="quiz-section">
+            <h2 class="section-title">Тест</h2>
+
+            <!-- Quiz Selector (shown if multiple quizzes) -->
+            <div id="quiz-selector" style="margin-bottom: 2rem; display: flex; flex-direction: column; align-items: center; gap: 0.8rem;">
+                <button type="button" class="quiz-selector-btn" data-quiz="1" onclick="loadQuiz(1)">Тест 1</button>
+<button type="button" class="quiz-selector-btn" data-quiz="2" onclick="loadQuiz(2)">Тест 2</button>
+<button type="button" class="quiz-selector-btn" data-quiz="3" onclick="loadQuiz(3)">Тест 3</button>
+<button type="button" class="quiz-selector-btn" data-quiz="4" onclick="loadQuiz(4)">Тест 4</button>
+<button type="button" class="quiz-selector-btn" data-quiz="5" onclick="loadQuiz(5)">Тест 5</button>
+<button type="button" class="quiz-selector-btn" data-quiz="6" onclick="loadQuiz(6)">Тест 6</button>
+<button type="button" class="quiz-selector-btn" data-quiz="7" onclick="loadQuiz(7)">Тест 7</button>
+<button type="button" class="quiz-selector-btn" data-quiz="8" onclick="loadQuiz(8)">Тест 8</button>
+<button type="button" class="quiz-selector-btn" data-quiz="9" onclick="loadQuiz(9)">Тест 9</button>
+<button type="button" class="quiz-selector-btn" data-quiz="10" onclick="loadQuiz(10)">Тест 10</button>
+            </div>
+
+            <div id="quiz-placeholder" style="text-align: center; padding: 3rem; color: var(--color-text-light); display: block;">
+                <p style="font-size: 1.2rem;">Выберите тест, чтобы начать</p>
+            </div>
+
+            <form id="quiz-form" style="display: none;">
+
+                <button type="submit" class="submit-btn" id="submit-btn">Проверить ответы</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const allQuizData = {"1": [{"id": 1, "text": "I ___ finished my homework.", "options": ["have", "has", "had", "having"], "correct_index": 0}, {"id": 2, "text": "She ___ called you three times.", "options": ["have", "has", "had", "having"], "correct_index": 1}, {"id": 3, "text": "They ___ arrived at the airport.", "options": ["have", "has", "had", "having"], "correct_index": 0}, {"id": 4, "text": "He ___ gone to the store.", "options": ["have", "has", "had", "having"], "correct_index": 1}, {"id": 5, "text": "We ___ seen this film before.", "options": ["have", "has", "had", "having"], "correct_index": 0}, {"id": 6, "text": "It ___ stopped raining.", "options": ["have", "has", "had", "having"], "correct_index": 1}, {"id": 7, "text": "You ___ done a great job.", "options": ["have", "has", "had", "having"], "correct_index": 0}, {"id": 8, "text": "She ___ lost her keys.", "options": ["have", "has", "had", "having"], "correct_index": 1}, {"id": 9, "text": "They ___ lived here for years.", "options": ["have", "has", "had", "having"], "correct_index": 0}, {"id": 10, "text": "He ___ written a book.", "options": ["have", "has", "had", "having"], "correct_index": 1}, {"id": 11, "text": "I ___ eaten lunch already.", "options": ["have", "has", "had", "having"], "correct_index": 0}, {"id": 12, "text": "We ___ bought a new car.", "options": ["have", "has", "had", "having"], "correct_index": 0}, {"id": 13, "text": "She ___ broken her phone.", "options": ["have", "has", "had", "having"], "correct_index": 1}, {"id": 14, "text": "They ___ moved to a new house.", "options": ["have", "has", "had", "having"], "correct_index": 0}, {"id": 15, "text": "He ___ learned to drive.", "options": ["have", "has", "had", "having"], "correct_index": 1}, {"id": 16, "text": "You ___ worked very hard.", "options": ["have", "has", "had", "having"], "correct_index": 0}, {"id": 17, "text": "It ___ been a long day.", "options": ["have", "has", "had", "having"], "correct_index": 1}, {"id": 18, "text": "We ___ finished the project.", "options": ["have", "has", "had", "having"], "correct_index": 0}, {"id": 19, "text": "She ___ visited Paris twice.", "options": ["have", "has", "had", "having"], "correct_index": 1}, {"id": 20, "text": "I ___ never been to Japan.", "options": ["have", "has", "had", "having"], "correct_index": 0}], "2": [{"id": 21, "text": "I have ___ this film.", "options": ["see", "saw", "seen", "seeing"], "correct_index": 2}, {"id": 22, "text": "She has ___ her homework.", "options": ["do", "did", "done", "doing"], "correct_index": 2}, {"id": 23, "text": "They have ___ to London.", "options": ["go", "went", "gone", "going"], "correct_index": 2}, {"id": 24, "text": "He has ___ a letter.", "options": ["write", "wrote", "written", "writing"], "correct_index": 2}, {"id": 25, "text": "We have ___ lunch.", "options": ["eat", "ate", "eaten", "eating"], "correct_index": 2}, {"id": 26, "text": "I have ___ my keys.", "options": ["lose", "lost", "losed", "losing"], "correct_index": 1}, {"id": 27, "text": "She has ___ the car.", "options": ["break", "broke", "broken", "breaking"], "correct_index": 2}, {"id": 28, "text": "They have ___ the book.", "options": ["read", "readed", "red", "reading"], "correct_index": 0}, {"id": 29, "text": "He has ___ home.", "options": ["come", "came", "comed", "coming"], "correct_index": 0}, {"id": 30, "text": "We have ___ English for 3 years.", "options": ["study", "studied", "studyed", "studying"], "correct_index": 1}, {"id": 31, "text": "I have ___ to play guitar.", "options": ["learn", "learned", "learnt", "learning"], "correct_index": 1}, {"id": 32, "text": "She has ___ a new house.", "options": ["buy", "bought", "buyed", "buying"], "correct_index": 1}, {"id": 33, "text": "They have ___ a mistake.", "options": ["make", "made", "maked", "making"], "correct_index": 1}, {"id": 34, "text": "He has ___ the window.", "options": ["open", "opened", "openned", "opening"], "correct_index": 1}, {"id": 35, "text": "We have ___ three times.", "options": ["try", "tried", "tryed", "trying"], "correct_index": 1}, {"id": 36, "text": "I have ___ her the news.", "options": ["tell", "told", "telled", "telling"], "correct_index": 1}, {"id": 37, "text": "She has ___ the answer.", "options": ["find", "found", "finded", "finding"], "correct_index": 1}, {"id": 38, "text": "They have ___ the song.", "options": ["sing", "sang", "sung", "singing"], "correct_index": 2}, {"id": 39, "text": "He has ___ a lot of water.", "options": ["drink", "drank", "drunk", "drinking"], "correct_index": 2}, {"id": 40, "text": "We have ___ for the bus.", "options": ["wait", "waited", "waitted", "waiting"], "correct_index": 1}], "3": [{"id": 41, "text": "I ___ finished my work yet.", "options": ["haven't", "hasn't", "don't have", "doesn't have"], "correct_index": 0}, {"id": 42, "text": "She ___ called me.", "options": ["haven't", "hasn't", "don't have", "doesn't have"], "correct_index": 1}, {"id": 43, "text": "They ___ arrived yet.", "options": ["haven't", "hasn't", "don't have", "doesn't have"], "correct_index": 0}, {"id": 44, "text": "He ___ done his homework.", "options": ["haven't", "hasn't", "don't have", "doesn't have"], "correct_index": 1}, {"id": 45, "text": "We ___ seen this film.", "options": ["haven't", "hasn't", "don't have", "doesn't have"], "correct_index": 0}, {"id": 46, "text": "I ___ been to Paris.", "options": ["haven't", "hasn't", "don't have", "doesn't have"], "correct_index": 0}, {"id": 47, "text": "She ___ eaten lunch yet.", "options": ["haven't", "hasn't", "don't have", "doesn't have"], "correct_index": 1}, {"id": 48, "text": "They ___ visited us.", "options": ["haven't", "hasn't", "don't have", "doesn't have"], "correct_index": 0}, {"id": 49, "text": "He ___ finished reading.", "options": ["haven't", "hasn't", "don't have", "doesn't have"], "correct_index": 1}, {"id": 50, "text": "We ___ bought the tickets.", "options": ["haven't", "hasn't", "don't have", "doesn't have"], "correct_index": 0}, {"id": 51, "text": "You ___ told me the truth.", "options": ["haven't", "hasn't", "don't have", "doesn't have"], "correct_index": 0}, {"id": 52, "text": "It ___ stopped raining.", "options": ["haven't", "hasn't", "don't have", "doesn't have"], "correct_index": 1}, {"id": 53, "text": "I ___ heard from him.", "options": ["haven't", "hasn't", "don't have", "doesn't have"], "correct_index": 0}, {"id": 54, "text": "She ___ answered my email.", "options": ["haven't", "hasn't", "don't have", "doesn't have"], "correct_index": 1}, {"id": 55, "text": "They ___ decided yet.", "options": ["haven't", "hasn't", "don't have", "doesn't have"], "correct_index": 0}, {"id": 56, "text": "He ___ learned to swim.", "options": ["haven't", "hasn't", "don't have", "doesn't have"], "correct_index": 1}, {"id": 57, "text": "We ___ met before.", "options": ["haven't", "hasn't", "don't have", "doesn't have"], "correct_index": 0}, {"id": 58, "text": "You ___ explained it clearly.", "options": ["haven't", "hasn't", "don't have", "doesn't have"], "correct_index": 0}, {"id": 59, "text": "She ___ found her keys.", "options": ["haven't", "hasn't", "don't have", "doesn't have"], "correct_index": 1}, {"id": 60, "text": "I ___ spoken to him today.", "options": ["haven't", "hasn't", "don't have", "doesn't have"], "correct_index": 0}], "4": [{"id": 61, "text": "___ you finished your homework?", "options": ["Have", "Has", "Do", "Does"], "correct_index": 0}, {"id": 62, "text": "___ she called you?", "options": ["Have", "Has", "Do", "Does"], "correct_index": 1}, {"id": 63, "text": "___ they arrived yet?", "options": ["Have", "Has", "Do", "Does"], "correct_index": 0}, {"id": 64, "text": "___ he done his work?", "options": ["Have", "Has", "Do", "Does"], "correct_index": 1}, {"id": 65, "text": "___ we met before?", "options": ["Have", "Has", "Do", "Does"], "correct_index": 0}, {"id": 66, "text": "___ you ever been to London?", "options": ["Have", "Has", "Do", "Does"], "correct_index": 0}, {"id": 67, "text": "___ she seen this film?", "options": ["Have", "Has", "Do", "Does"], "correct_index": 1}, {"id": 68, "text": "___ they left already?", "options": ["Have", "Has", "Do", "Does"], "correct_index": 0}, {"id": 69, "text": "___ he eaten lunch?", "options": ["Have", "Has", "Do", "Does"], "correct_index": 1}, {"id": 70, "text": "___ you heard the news?", "options": ["Have", "Has", "Do", "Does"], "correct_index": 0}, {"id": 71, "text": "___ it stopped raining?", "options": ["Have", "Has", "Do", "Does"], "correct_index": 1}, {"id": 72, "text": "___ we finished?", "options": ["Have", "Has", "Do", "Does"], "correct_index": 0}, {"id": 73, "text": "___ you seen my keys?", "options": ["Have", "Has", "Do", "Does"], "correct_index": 0}, {"id": 74, "text": "___ she told you?", "options": ["Have", "Has", "Do", "Does"], "correct_index": 1}, {"id": 75, "text": "___ they arrived yet?", "options": ["Have", "Has", "Do", "Does"], "correct_index": 0}, {"id": 76, "text": "___ he finished reading?", "options": ["Have", "Has", "Do", "Does"], "correct_index": 1}, {"id": 77, "text": "___ you tried this before?", "options": ["Have", "Has", "Do", "Does"], "correct_index": 0}, {"id": 78, "text": "___ she called back?", "options": ["Have", "Has", "Do", "Does"], "correct_index": 1}, {"id": 79, "text": "___ we been here before?", "options": ["Have", "Has", "Do", "Does"], "correct_index": 0}, {"id": 80, "text": "___ he learned anything?", "options": ["Have", "Has", "Do", "Does"], "correct_index": 1}], "5": [{"id": 81, "text": "I have ___ finished my work.", "options": ["just", "yet", "ago", "yesterday"], "correct_index": 0}, {"id": 82, "text": "She has ___ left.", "options": ["just", "yet", "ago", "yesterday"], "correct_index": 0}, {"id": 83, "text": "Have you finished ___?", "options": ["just", "already", "yet", "ago"], "correct_index": 2}, {"id": 84, "text": "They have ___ arrived.", "options": ["yet", "ago", "already", "yesterday"], "correct_index": 2}, {"id": 85, "text": "He hasn't called me ___.", "options": ["just", "already", "ago", "yet"], "correct_index": 3}, {"id": 86, "text": "I have ___ eaten lunch.", "options": ["yet", "already", "ago", "yesterday"], "correct_index": 1}, {"id": 87, "text": "Have you ___ finished?", "options": ["already", "just", "yet", "ago"], "correct_index": 2}, {"id": 88, "text": "She has ___ been there.", "options": ["yet", "already", "ago", "yesterday"], "correct_index": 1}, {"id": 89, "text": "They haven't arrived ___.", "options": ["just", "already", "ago", "yet"], "correct_index": 3}, {"id": 90, "text": "He has ___ called you.", "options": ["yet", "just", "ago", "yesterday"], "correct_index": 1}, {"id": 91, "text": "We have ___ done it.", "options": ["yet", "ago", "already", "yesterday"], "correct_index": 2}, {"id": 92, "text": "Have they left ___?", "options": ["just", "already", "ago", "yet"], "correct_index": 3}, {"id": 93, "text": "I have ___ seen her.", "options": ["yet", "just", "ago", "yesterday"], "correct_index": 1}, {"id": 94, "text": "She hasn't finished ___.", "options": ["just", "already", "ago", "yet"], "correct_index": 3}, {"id": 95, "text": "They have ___ started.", "options": ["yet", "ago", "just", "yesterday"], "correct_index": 2}, {"id": 96, "text": "He has ___ arrived.", "options": ["yet", "ago", "already", "yesterday"], "correct_index": 2}, {"id": 97, "text": "Have you ___ done it?", "options": ["just", "already", "ago", "yet"], "correct_index": 3}, {"id": 98, "text": "We have ___ heard.", "options": ["yet", "ago", "just", "yesterday"], "correct_index": 2}, {"id": 99, "text": "She has ___ left the office.", "options": ["yet", "ago", "already", "yesterday"], "correct_index": 2}, {"id": 100, "text": "I haven't seen him ___.", "options": ["just", "already", "ago", "yet"], "correct_index": 3}], "6": [{"id": 101, "text": "Have you ___ been to Paris?", "options": ["ever", "never", "already", "yet"], "correct_index": 0}, {"id": 102, "text": "I have ___ seen this film.", "options": ["ever", "never", "already", "yet"], "correct_index": 1}, {"id": 103, "text": "Has she ___ tried sushi?", "options": ["ever", "never", "already", "yet"], "correct_index": 0}, {"id": 104, "text": "They have ___ been late.", "options": ["ever", "never", "already", "yet"], "correct_index": 1}, {"id": 105, "text": "Have you ___ met him?", "options": ["ever", "never", "already", "yet"], "correct_index": 0}, {"id": 106, "text": "I have ___ eaten snails.", "options": ["ever", "never", "already", "yet"], "correct_index": 1}, {"id": 107, "text": "Has he ___ visited Japan?", "options": ["ever", "never", "already", "yet"], "correct_index": 0}, {"id": 108, "text": "We have ___ forgotten.", "options": ["ever", "never", "already", "yet"], "correct_index": 1}, {"id": 109, "text": "Have they ___ been here?", "options": ["ever", "never", "already", "yet"], "correct_index": 0}, {"id": 110, "text": "She has ___ learned to drive.", "options": ["ever", "never", "already", "yet"], "correct_index": 1}, {"id": 111, "text": "Have you ___ seen a whale?", "options": ["ever", "never", "already", "yet"], "correct_index": 0}, {"id": 112, "text": "I have ___ lied to you.", "options": ["ever", "never", "already", "yet"], "correct_index": 1}, {"id": 113, "text": "Has she ___ played tennis?", "options": ["ever", "never", "already", "yet"], "correct_index": 0}, {"id": 114, "text": "They have ___ tried it.", "options": ["ever", "never", "already", "yet"], "correct_index": 1}, {"id": 115, "text": "Have you ___ been abroad?", "options": ["ever", "never", "already", "yet"], "correct_index": 0}, {"id": 116, "text": "He has ___ smoked.", "options": ["ever", "never", "already", "yet"], "correct_index": 1}, {"id": 117, "text": "Have they ___ lived in a big city?", "options": ["ever", "never", "already", "yet"], "correct_index": 0}, {"id": 118, "text": "We have ___ missed a class.", "options": ["ever", "never", "already", "yet"], "correct_index": 1}, {"id": 119, "text": "Has he ___ won a prize?", "options": ["ever", "never", "already", "yet"], "correct_index": 0}, {"id": 120, "text": "I have ___ been so happy.", "options": ["ever", "never", "already", "yet"], "correct_index": 1}], "7": [{"id": 121, "text": "I have worked here ___ 5 years.", "options": ["for", "since", "ago", "during"], "correct_index": 0}, {"id": 122, "text": "She has lived here ___ 2020.", "options": ["for", "since", "ago", "during"], "correct_index": 1}, {"id": 123, "text": "They have known each other ___ a long time.", "options": ["for", "since", "ago", "during"], "correct_index": 0}, {"id": 124, "text": "He has been sick ___ Monday.", "options": ["for", "since", "ago", "during"], "correct_index": 1}, {"id": 125, "text": "We have studied English ___ 6 months.", "options": ["for", "since", "ago", "during"], "correct_index": 0}, {"id": 126, "text": "I have had this car ___ 2019.", "options": ["for", "since", "ago", "during"], "correct_index": 1}, {"id": 127, "text": "She has worked there ___ 10 years.", "options": ["for", "since", "ago", "during"], "correct_index": 0}, {"id": 128, "text": "They have lived together ___ they got married.", "options": ["for", "since", "ago", "during"], "correct_index": 1}, {"id": 129, "text": "He has been here ___ two hours.", "options": ["for", "since", "ago", "during"], "correct_index": 0}, {"id": 130, "text": "We have known them ___ last year.", "options": ["for", "since", "ago", "during"], "correct_index": 1}, {"id": 131, "text": "I have played tennis ___ I was a child.", "options": ["for", "since", "ago", "during"], "correct_index": 1}, {"id": 132, "text": "She has been a teacher ___ 15 years.", "options": ["for", "since", "ago", "during"], "correct_index": 0}, {"id": 133, "text": "They have lived in London ___ 2015.", "options": ["for", "since", "ago", "during"], "correct_index": 1}, {"id": 134, "text": "He has studied here ___ 3 years.", "options": ["for", "since", "ago", "during"], "correct_index": 0}, {"id": 135, "text": "We have been friends ___ we were kids.", "options": ["for", "since", "ago", "during"], "correct_index": 1}, {"id": 136, "text": "I have had this job ___ 6 months.", "options": ["for", "since", "ago", "during"], "correct_index": 0}, {"id": 137, "text": "She has been ill ___ yesterday.", "options": ["for", "since", "ago", "during"], "correct_index": 1}, {"id": 138, "text": "They have owned the house ___ 20 years.", "options": ["for", "since", "ago", "during"], "correct_index": 0}, {"id": 139, "text": "He has lived here ___ he was born.", "options": ["for", "since", "ago", "during"], "correct_index": 1}, {"id": 140, "text": "We have waited ___ an hour.", "options": ["for", "since", "ago", "during"], "correct_index": 0}], "8": [{"id": 141, "text": "I ___ him yesterday.", "options": ["have seen", "saw", "see", "seen"], "correct_index": 1}, {"id": 142, "text": "She ___ to Paris three times.", "options": ["have been", "has been", "was", "were"], "correct_index": 1}, {"id": 143, "text": "They ___ the film last week.", "options": ["have watched", "watched", "watch", "watching"], "correct_index": 1}, {"id": 144, "text": "I ___ this book before.", "options": ["have read", "read", "readed", "reading"], "correct_index": 0}, {"id": 145, "text": "He ___ home an hour ago.", "options": ["have arrived", "has arrived", "arrived", "arriving"], "correct_index": 2}, {"id": 146, "text": "We ___ in this city for 5 years.", "options": ["have lived", "lived", "live", "living"], "correct_index": 0}, {"id": 147, "text": "She ___ her keys yesterday.", "options": ["have lost", "has lost", "lost", "losing"], "correct_index": 2}, {"id": 148, "text": "I ___ never ___ sushi.", "options": ["have / eaten", "has / eaten", "did / eat", "ate"], "correct_index": 0}, {"id": 149, "text": "They ___ to London in 2015.", "options": ["have moved", "moved", "move", "moving"], "correct_index": 1}, {"id": 150, "text": "He ___ just ___ lunch.", "options": ["have / finished", "has / finished", "finished", "finishing"], "correct_index": 1}, {"id": 151, "text": "We ___ this film last night.", "options": ["have seen", "saw", "see", "seeing"], "correct_index": 1}, {"id": 152, "text": "I ___ there many times.", "options": ["have been", "was", "am", "been"], "correct_index": 0}, {"id": 153, "text": "She ___ him last month.", "options": ["have met", "has met", "met", "meeting"], "correct_index": 2}, {"id": 154, "text": "They ___ already ___ their homework.", "options": ["have / done", "did", "do", "doing"], "correct_index": 0}, {"id": 155, "text": "He ___ in 1990.", "options": ["have been born", "was born", "is born", "born"], "correct_index": 1}, {"id": 156, "text": "I ___ her since Monday.", "options": ["haven't seen", "didn't see", "don't see", "not see"], "correct_index": 0}, {"id": 157, "text": "We ___ the answer two days ago.", "options": ["have found", "found", "find", "finding"], "correct_index": 1}, {"id": 158, "text": "She ___ ever ___ to Japan.", "options": ["have / been", "has / been", "was", "were"], "correct_index": 1}, {"id": 159, "text": "They ___ the project yesterday.", "options": ["have finished", "finished", "finish", "finishing"], "correct_index": 1}, {"id": 160, "text": "I ___ my wallet.", "options": ["have lost", "lost", "lose", "losing"], "correct_index": 0}], "9": [{"id": 161, "text": "I ___ my homework. Can I go out?", "options": ["have finished", "finished", "finish", "am finishing"], "correct_index": 0}, {"id": 162, "text": "She ___ to work by bus yesterday.", "options": ["have gone", "has gone", "went", "go"], "correct_index": 2}, {"id": 163, "text": "___ you ever ___ a ghost?", "options": ["Have / seen", "Did / see", "Do / see", "Are / seeing"], "correct_index": 0}, {"id": 164, "text": "They ___ in Paris for 3 years now.", "options": ["have lived", "lived", "live", "are living"], "correct_index": 0}, {"id": 165, "text": "He ___ his leg last month.", "options": ["have broken", "has broken", "broke", "break"], "correct_index": 2}, {"id": 166, "text": "We ___ just ___ dinner.", "options": ["have / had", "has / had", "had", "having"], "correct_index": 0}, {"id": 167, "text": "I ___ this book when I was young.", "options": ["have read", "read", "am reading", "reading"], "correct_index": 1}, {"id": 168, "text": "___ she ___ the email yet?", "options": ["Have / sent", "Has / sent", "Did / send", "Does / send"], "correct_index": 1}, {"id": 169, "text": "They ___ never ___ skiing.", "options": ["have / been", "has / been", "were", "are"], "correct_index": 0}, {"id": 170, "text": "He ___ to London three times last year.", "options": ["have been", "has been", "was", "went"], "correct_index": 3}, {"id": 171, "text": "We ___ already ___ that film.", "options": ["have / seen", "has / seen", "saw", "see"], "correct_index": 0}, {"id": 172, "text": "She ___ her keys. She can't find them.", "options": ["have lost", "has lost", "lost", "loses"], "correct_index": 1}, {"id": 173, "text": "I ___ him two days ago.", "options": ["have met", "met", "meet", "meeting"], "correct_index": 1}, {"id": 174, "text": "___ you ___ your homework yet?", "options": ["Have / done", "Did / do", "Do / do", "Are / doing"], "correct_index": 0}, {"id": 175, "text": "They ___ here since 2015.", "options": ["have worked", "worked", "work", "are working"], "correct_index": 0}, {"id": 176, "text": "He ___ not ___ me since Monday.", "options": ["have / called", "has / called", "did / call", "does / call"], "correct_index": 1}, {"id": 177, "text": "We ___ to Paris in 2018.", "options": ["have been", "were", "are", "been"], "correct_index": 1}, {"id": 178, "text": "She ___ just ___.", "options": ["have / arrived", "has / arrived", "arrived", "arriving"], "correct_index": 1}, {"id": 179, "text": "I ___ for you for an hour!", "options": ["have waited", "waited", "wait", "am waiting"], "correct_index": 0}, {"id": 180, "text": "___ he ___ the news?", "options": ["Have / heard", "Has / heard", "Did / hear", "Does / hear"], "correct_index": 1}], "10": [{"id": 181, "text": "How long ___ you ___ English?", "options": ["have / studied", "do / study", "did / study", "are / studying"], "correct_index": 0}, {"id": 182, "text": "I ___ him since we were children.", "options": ["have known", "know", "knew", "knowing"], "correct_index": 0}, {"id": 183, "text": "She ___ three emails today.", "options": ["have sent", "has sent", "sent", "send"], "correct_index": 1}, {"id": 184, "text": "They ___ to the new house last week.", "options": ["have moved", "moved", "move", "moving"], "correct_index": 1}, {"id": 185, "text": "___ you ever ___ Mexican food?", "options": ["Have / tried", "Did / try", "Do / try", "Are / trying"], "correct_index": 0}, {"id": 186, "text": "He ___ not ___ his homework yet.", "options": ["have / finished", "has / finished", "did / finish", "does / finish"], "correct_index": 1}, {"id": 187, "text": "We ___ this restaurant before. It's good.", "options": ["have visited", "visited", "visit", "visiting"], "correct_index": 0}, {"id": 188, "text": "I ___ my phone. Have you seen it?", "options": ["have lost", "lost", "lose", "am losing"], "correct_index": 0}, {"id": 189, "text": "She ___ in Paris from 2010 to 2015.", "options": ["have lived", "has lived", "lived", "lives"], "correct_index": 2}, {"id": 190, "text": "___ they ___ the project yet?", "options": ["Have / finished", "Did / finish", "Do / finish", "Are / finishing"], "correct_index": 0}, {"id": 191, "text": "He ___ just ___ me the news.", "options": ["have / told", "has / told", "told", "tells"], "correct_index": 1}, {"id": 192, "text": "We ___ never ___ so tired.", "options": ["have / felt", "has / felt", "felt", "feel"], "correct_index": 0}, {"id": 193, "text": "I ___ to call you but my phone died.", "options": ["have tried", "tried", "try", "trying"], "correct_index": 1}, {"id": 194, "text": "___ she ___ her car?", "options": ["Have / sold", "Has / sold", "Did / sell", "Does / sell"], "correct_index": 1}, {"id": 195, "text": "They ___ in that house for 20 years.", "options": ["have lived", "lived", "live", "living"], "correct_index": 0}, {"id": 196, "text": "How many times ___ you ___ to London?", "options": ["have / been", "did / go", "do / go", "are / going"], "correct_index": 0}, {"id": 197, "text": "She ___ not ___ breakfast yet.", "options": ["have / eaten", "has / eaten", "did / eat", "does / eat"], "correct_index": 1}, {"id": 198, "text": "I ___ my keys somewhere. I can't remember where.", "options": ["have left", "left", "leave", "leaving"], "correct_index": 0}, {"id": 199, "text": "He ___ all his exams last month.", "options": ["have passed", "has passed", "passed", "passes"], "correct_index": 2}, {"id": 200, "text": "___ you ___ the answer yet?", "options": ["Have / found", "Did / find", "Do / find", "Are / finding"], "correct_index": 0}]};
+        let currentQuizSet = 1;
+        const quizData = allQuizData[currentQuizSet] || [];
+
+        function checkAnswers(event) {
+            event.preventDefault();
+
+            const form = document.getElementById('quiz-form');
+            const formData = new FormData(form);
+
+            let correct = 0;
+            let total = quizData.length;
+
+            // Check each question
+            quizData.forEach((question, index) => {
+                const selectedAnswer = parseInt(formData.get(`question-${question.id}`));
+                const options = document.querySelectorAll(`input[name="question-${question.id}"]`);
+
+                options.forEach((option, optIndex) => {
+                    const label = option.closest('.option');
+                    if (optIndex === question.correct_index) {
+                        label.classList.add('correct');
+                    }
+                    if (selectedAnswer === optIndex && selectedAnswer !== question.correct_index) {
+                        label.classList.add('incorrect');
+                    }
+                    option.disabled = true;
+                });
+
+                if (selectedAnswer === question.correct_index) {
+                    correct++;
+                }
+            });
+
+            // Calculate score
+            const percentage = Math.round((correct / total) * 100);
+            const passed = percentage >= 70;
+
+            // Show results
+            const resultsDiv = document.getElementById('results');
+            const scoreDiv = document.getElementById('score');
+            const messageDiv = document.getElementById('results-message');
+
+            scoreDiv.textContent = `${percentage}%`;
+            scoreDiv.className = 'score ' + (passed ? 'pass' : 'fail');
+
+            messageDiv.textContent = `Вы ответили правильно на ${correct} из ${total} вопросов`;
+
+            resultsDiv.classList.remove('hidden');
+
+            // Disable submit button
+            document.getElementById('submit-btn').disabled = true;
+
+            // Scroll to results
+            resultsDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        function retakeQuiz() {
+            loadQuiz(currentQuizSet);
+        }
+
+        function loadQuiz(quizSet) {
+            currentQuizSet = quizSet;
+
+            // Hide placeholder, show form (if they exist)
+            const placeholder = document.getElementById('quiz-placeholder');
+            const form = document.getElementById('quiz-form');
+            if (placeholder) {
+                placeholder.style.display = 'none';
+            }
+            if (form.style.display === 'none') {
+                form.style.display = 'block';
+            }
+
+            // Update button states
+            document.querySelectorAll('.quiz-selector-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (parseInt(btn.dataset.quiz) === quizSet) {
+                    btn.classList.add('active');
+                }
+            });
+
+            // Get questions for this quiz set
+            const questions = allQuizData[quizSet] || [];
+
+            // Clear and rebuild quiz HTML
+            const submitBtn = document.getElementById('submit-btn');
+
+            // Remove all questions
+            const existingQuestions = form.querySelectorAll('.question');
+            existingQuestions.forEach(q => q.remove());
+
+            // Add new questions
+            questions.forEach((question, index) => {
+                const questionDiv = document.createElement('div');
+                questionDiv.className = 'question';
+                questionDiv.dataset.questionId = question.id;
+
+                let optionsHtml = '';
+                question.options.forEach((option, optIndex) => {
+                    optionsHtml += `
+                        <label class="option">
+                            <input type="radio" name="question-${question.id}" value="${optIndex}" required>
+                            <span>${option}</span>
+                        </label>
+                    `;
+                });
+
+                questionDiv.innerHTML = `
+                    <div class="question-text">${index + 1}. ${question.text}</div>
+                    <div class="options">
+                        ${optionsHtml}
+                    </div>
+                `;
+
+                form.insertBefore(questionDiv, submitBtn);
+            });
+
+            // Reset form state
+            form.reset();
+            submitBtn.disabled = false;
+            document.getElementById('results').classList.add('hidden');
+            document.querySelectorAll('.option').forEach(opt => {
+                opt.classList.remove('correct', 'incorrect');
+            });
+
+        }
+
+        // Initialize: if only one quiz set, load it automatically
+        const quizSetCount = Object.keys(allQuizData).length;
+        if (quizSetCount === 1) {
+            // Single quiz - load immediately
+            loadQuiz(1);
+        }
+        // If multiple quiz sets, user must select one (placeholder will show)
+
+        document.getElementById('quiz-form').addEventListener('submit', checkAnswers);
+    </script>
+</body>
+</html>

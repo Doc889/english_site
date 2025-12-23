@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Past Simple - Английский язык</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary: #7c3aed;
+            --color-primary-dark: #6d28d9;
+            --color-primary-light: #a78bfa;
+            --color-secondary: #c4b5fd;
+            --color-accent: #ddd6fe;
+            --color-bg: #ffffff;
+            --color-bg-alt: #faf5ff;
+            --color-text: #1f2937;
+            --color-text-light: #6b7280;
+            --color-success: #10b981;
+            --color-error: #ef4444;
+            --font-display: 'Playfair Display', serif;
+            --font-body: 'DM Sans', sans-serif;
+            --shadow-sm: 0 2px 8px rgba(124, 58, 237, 0.08);
+            --shadow-md: 0 4px 20px rgba(124, 58, 237, 0.12);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        header {
+            background: var(--color-primary);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: white;
+            text-decoration: none;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            opacity: 0.9;
+            transition: var(--transition);
+        }
+
+        .back-link:hover {
+            opacity: 1;
+            transform: translateX(-3px);
+        }
+
+        header h1 {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+        }
+
+        .content-section {
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            color: var(--color-primary);
+            margin: 3rem 0 2rem;
+            text-align: center;
+        }
+
+        .rule-section {
+            background: var(--color-bg-alt);
+            border-left: 4px solid var(--color-primary);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .rule-title {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            color: var(--color-primary);
+            margin-bottom: 1rem;
+        }
+
+        .rule-content {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            white-space: pre-line;
+        }
+
+        .examples {
+            margin-top: 1.5rem;
+        }
+
+        .example {
+            background: var(--color-bg);
+            padding: 0.8rem 1.2rem;
+            margin-bottom: 0.5rem;
+            border-radius: 8px;
+            border-left: 3px solid var(--color-secondary);
+            font-family: monospace;
+            font-size: 1rem;
+        }
+
+        .quiz-section {
+            background: var(--color-bg-alt);
+            padding: 3rem;
+            border-radius: 16px;
+            margin-top: 3rem;
+        }
+
+        .question {
+            background: var(--color-bg);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
+            border: 2px solid transparent;
+            transition: var(--transition);
+        }
+
+        .question.correct {
+            border-color: var(--color-success);
+            background: #f0fdf4;
+        }
+
+        .question.incorrect {
+            border-color: var(--color-error);
+            background: #fef2f2;
+        }
+
+        .question-text {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            color: var(--color-text);
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .option {
+            display: flex;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            background: var(--color-bg-alt);
+            border: 2px solid var(--color-accent);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .option:hover {
+            border-color: var(--color-primary);
+            background: white;
+        }
+
+        .option input[type="radio"] {
+            margin-right: 1rem;
+            cursor: pointer;
+        }
+
+        .option.correct {
+            background: #dcfce7;
+            border-color: var(--color-success);
+        }
+
+        .option.incorrect {
+            background: #fee2e2;
+            border-color: var(--color-error);
+        }
+
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 1.2rem;
+            background: var(--color-primary);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 2rem;
+            transition: var(--transition);
+        }
+
+        .submit-btn:hover:not(:disabled) {
+            background: var(--color-primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .submit-btn:disabled {
+            background: var(--color-text-light);
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .results {
+            text-align: center;
+            padding: 2rem;
+            background: var(--color-primary);
+            color: white;
+            border-radius: 12px;
+            margin-top: 2rem;
+        }
+
+        .results.hidden {
+            display: none;
+        }
+
+        .score {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .score.pass {
+            color: #dcfce7;
+        }
+
+        .score.fail {
+            color: #fecaca;
+        }
+
+        .results-message {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .retry-btn {
+            padding: 0.8rem 1.5rem;
+            background: var(--color-bg);
+            border: 2px solid white;
+            color: var(--color-primary);
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            margin-right: 1rem;
+        }
+
+        .retry-btn:hover {
+            background: white;
+            transform: translateY(-2px);
+        }
+
+        .home-btn {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+            padding: 0.8rem 1.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: var(--transition);
+        }
+
+        .home-btn:hover {
+            background: white;
+            color: var(--color-primary);
+            transform: translateY(-2px);
+        }
+
+        .quiz-selector-btn {
+            padding: 0.8rem 1.5rem;
+            background: var(--color-bg);
+            border: 2px solid var(--color-primary);
+            color: var(--color-primary);
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            min-width: 200px;
+        }
+
+        .quiz-selector-btn:hover {
+            background: var(--color-primary);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .quiz-selector-btn.active {
+            background: var(--color-primary);
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .container {
+                padding: 2rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="/" class="back-link">← Назад ко всем темам</a>
+            <h1>Past Simple</h1>
+            <p>Прошедшее простое время - правильные и неправильные глаголы</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Theory Section -->
+        <div class="content-section">
+            <h2 class="section-title">Теория</h2>
+
+        <div class="rule-section">
+            <h3 class="rule-title">Что такое Past Simple</h3>
+            <div class="rule-content">Past Simple используется когда:
+- Действие произошло в прошлом и полностью завершилось
+- Есть указание на конкретное время в прошлом (yesterday, last week, in 2015)
+- Последовательность действий в прошлом
+
+Главная идея: Past Simple = завершенное действие в прошлом.</div>
+            <div class="examples"><div class="example">I visited my grandmother yesterday. (Я навестил бабушку вчера)</div><div class="example">She worked in Moscow in 2020. (Она работала в Москве в 2020 году)</div><div class="example">They played football last weekend. (Они играли в футбол на прошлых выходных)</div><div class="example">💡 Past Simple = что-то случилось и закончилось. Это прошлое, которое больше не продолжается.</div></div>
+        </div>
+
+
+        <div class="rule-section">
+            <h3 class="rule-title">Правильные глаголы</h3>
+            <div class="rule-content">Большинство глаголов образуют Past Simple просто добавляя окончание -ed:
+
+глагол + -ed
+
+Особые правила написания:
+- Если глагол заканчивается на -e, добавляем только -d
+- Если глагол заканчивается на согласную + y, меняем y на i и добавляем -ed
+- Если глагол из одного слога заканчивается на согласную после короткой гласной, удваиваем согласную</div>
+            <div class="examples"><div class="example">work → worked (работал)</div><div class="example">play → played (играл)</div><div class="example">watch → watched (смотрел)</div><div class="example">live → lived, love → loved (заканчивается на -e)</div><div class="example">study → studied, try → tried (согласная + y)</div><div class="example">stop → stopped, plan → planned (удвоение согласной)</div><div class="example">💡 Большинство глаголов правильные, поэтому просто добавляй -ed!</div></div>
+        </div>
+
+
+        <div class="rule-section">
+            <h3 class="rule-title">Неправильные глаголы</h3>
+            <div class="rule-content">Некоторые глаголы не подчиняются правилу -ed. Их нужно просто запомнить.
+
+Основные неправильные глаголы (таблица самых важных):</div>
+            <div class="examples"><div class="example">go → went (ходить, ехать)</div><div class="example">come → came (приходить)</div><div class="example">see → saw (видеть)</div><div class="example">do → did (делать)</div><div class="example">make → made (делать, создавать)</div><div class="example">have → had (иметь)</div><div class="example">get → got (получать)</div><div class="example">give → gave (давать)</div><div class="example">take → took (брать)</div><div class="example">know → knew (знать)</div><div class="example">think → thought (думать)</div><div class="example">say → said (говорить, сказать)</div><div class="example">tell → told (рассказывать)</div><div class="example">find → found (находить)</div><div class="example">buy → bought (покупать)</div><div class="example">eat → ate (есть)</div><div class="example">drink → drank (пить)</div><div class="example">write → wrote (писать)</div><div class="example">read → read (читать, произносится как "ред")</div><div class="example">speak → spoke (говорить)</div><div class="example">teach → taught (учить)</div><div class="example">feel → felt (чувствовать)</div><div class="example">leave → left (уходить, покидать)</div><div class="example">meet → met (встречать)</div><div class="example">bring → brought (приносить)</div><div class="example">💡 Неправильные глаголы нужно учить наизусть. Начни с самых частых: go-went, do-did, have-had, see-saw.</div></div>
+        </div>
+
+
+        <div class="rule-section">
+            <h3 class="rule-title">Утверждения</h3>
+            <div class="rule-content">Для всех лиц (I, you, he, she, it, we, they) форма глагола одинаковая:
+
+подлежащее + глагол в Past Simple</div>
+            <div class="examples"><div class="example">I worked yesterday. (Я работал вчера)</div><div class="example">You visited London last year. (Ты посетил Лондон в прошлом году)</div><div class="example">He played football on Sunday. (Он играл в футбол в воскресенье)</div><div class="example">She watched a movie. (Она посмотрела фильм)</div><div class="example">We studied English. (Мы учили английский)</div><div class="example">They bought a car. (Они купили машину)</div><div class="example">💡 В утверждениях не нужен вспомогательный глагол! Просто используй Past Simple форму глагола.</div></div>
+        </div>
+
+
+        <div class="rule-section">
+            <h3 class="rule-title">Отрицания</h3>
+            <div class="rule-content">Для отрицаний используем вспомогательный глагол did + not (didn't):
+
+подлежащее + did not (didn't) + глагол в начальной форме</div>
+            <div class="examples"><div class="example">I didn't work yesterday. (Я не работал вчера)</div><div class="example">She didn't watch TV. (Она не смотрела телевизор)</div><div class="example">They didn't buy a car. (Они не купили машину)</div><div class="example">He didn't go to school. (Он не ходил в школу)</div><div class="example">💡 После didn't глагол всегда в начальной форме (инфинитив без to).</div><div class="example">❌ didn't worked → ✔ didn't work</div><div class="example">❌ didn't went → ✔ didn't go</div></div>
+        </div>
+
+
+        <div class="rule-section">
+            <h3 class="rule-title">Вопросы</h3>
+            <div class="rule-content">Для вопросов ставим did в начало предложения:
+
+Did + подлежащее + глагол в начальной форме?</div>
+            <div class="examples"><div class="example">Did you work yesterday? (Ты работал вчера?)</div><div class="example">Did she visit London? (Она посещала Лондон?)</div><div class="example">Did they play football? (Они играли в футбол?)</div><div class="example">Did he watch the movie? (Он смотрел фильм?)</div><div class="example">💡 В вопросах тоже используем начальную форму глагола после did.</div><div class="example">❌ Did you went? → ✔ Did you go?</div><div class="example">❌ Did she worked? → ✔ Did she work?</div></div>
+        </div>
+
+
+        <div class="rule-section">
+            <h3 class="rule-title">Наречия времени</h3>
+            <div class="rule-content">Эти слова показывают, что действие было в прошлом:
+
+yesterday (вчера)
+last week/month/year (на прошлой неделе/в прошлом месяце/году)
+last Monday/Tuesday (в прошлый понедельник/вторник)
+ago (назад): two days ago, a week ago, three years ago
+in + год: in 2020, in 1995
+when I was young (когда я был молодым)</div>
+            <div class="examples"><div class="example">I saw him yesterday. (Я видел его вчера)</div><div class="example">She lived in Paris last year. (Она жила в Париже в прошлом году)</div><div class="example">They visited us two weeks ago. (Они навестили нас две недели назад)</div><div class="example">He worked here in 2019. (Он работал здесь в 2019 году)</div><div class="example">💡 Слова-маркеры Past Simple помогают понять, что нужно использовать прошедшее время.</div></div>
+        </div>
+
+
+        <div class="rule-section">
+            <h3 class="rule-title">Отличие от Present Simple</h3>
+            <div class="rule-content">Present Simple = обычные действия, привычки, факты
+Past Simple = завершенные действия в прошлом</div>
+            <div class="examples"><div class="example">Present Simple: I work every day. (Я работаю каждый день — это привычка)</div><div class="example">Past Simple: I worked yesterday. (Я работал вчера — одно конкретное действие)</div><div class="example">Present Simple: She lives in Moscow. (Она живет в Москве — сейчас)</div><div class="example">Past Simple: She lived in Moscow. (Она жила в Москве — раньше, но сейчас уже нет)</div><div class="example">💡 Если есть yesterday, last, ago — используй Past Simple.</div><div class="example">💡 Если есть usually, always, every — используй Present Simple.</div></div>
+        </div>
+
+
+        <div class="rule-section">
+            <h3 class="rule-title">Типичные ошибки русскоговорящих</h3>
+            <div class="rule-content">Самые частые ошибки при использовании Past Simple.</div>
+            <div class="examples"><div class="example">❌ I goed to school. → неправильная форма go</div><div class="example">✔ I went to school.</div><div class="example">❌ She didn't came home. → лишнее окончание после didn't</div><div class="example">✔ She didn't come home.</div><div class="example">❌ Did you saw him? → лишнее окончание после did</div><div class="example">✔ Did you see him?</div><div class="example">❌ He buyed a car. → неправильная форма buy</div><div class="example">✔ He bought a car.</div><div class="example">❌ Yesterday I go to the cinema. → используется Present Simple вместо Past Simple</div><div class="example">✔ Yesterday I went to the cinema.</div><div class="example">💡 Главная ошибка — использовать неправильную форму глагола или забывать, что после did/didn't нужна начальная форма.</div></div>
+        </div>
+
+
+        <div class="rule-section">
+            <h3 class="rule-title">Главное про Past Simple</h3>
+            <div class="rule-content">Ключевые моменты, которые нужно запомнить:</div>
+            <div class="examples"><div class="example">Past Simple = завершенные действия в прошлом</div><div class="example">Правильные глаголы: глагол + -ed</div><div class="example">Неправильные глаголы нужно запомнить (go-went, see-saw, do-did)</div><div class="example">Отрицания: didn't + начальная форма глагола</div><div class="example">Вопросы: Did + подлежащее + начальная форма глагола?</div><div class="example">Маркеры времени: yesterday, last, ago, in + год</div><div class="example">После did/didn't всегда используется начальная форма глагола</div></div>
+        </div>
+
+        </div>
+
+        <!-- Results Section (hidden initially) -->
+        <div id="results" class="results hidden">
+            <div class="score" id="score"></div>
+            <div class="results-message" id="results-message"></div>
+            <div>
+                <button class="retry-btn" onclick="retakeQuiz()">Пройти ещё раз</button>
+                <a href="/" class="home-btn">На главную</a>
+            </div>
+        </div>
+
+        <!-- Quiz Section -->
+        <div class="quiz-section" id="quiz-section">
+            <h2 class="section-title">Тест</h2>
+
+            <!-- Quiz Selector (shown if multiple quizzes) -->
+            <div id="quiz-selector" style="margin-bottom: 2rem; display: flex; flex-direction: column; align-items: center; gap: 0.8rem;">
+                <button type="button" class="quiz-selector-btn" data-quiz="1" onclick="loadQuiz(1)">Тест 1</button>
+<button type="button" class="quiz-selector-btn" data-quiz="2" onclick="loadQuiz(2)">Тест 2</button>
+<button type="button" class="quiz-selector-btn" data-quiz="3" onclick="loadQuiz(3)">Тест 3</button>
+<button type="button" class="quiz-selector-btn" data-quiz="4" onclick="loadQuiz(4)">Тест 4</button>
+<button type="button" class="quiz-selector-btn" data-quiz="5" onclick="loadQuiz(5)">Тест 5</button>
+<button type="button" class="quiz-selector-btn" data-quiz="6" onclick="loadQuiz(6)">Тест 6</button>
+<button type="button" class="quiz-selector-btn" data-quiz="7" onclick="loadQuiz(7)">Тест 7</button>
+<button type="button" class="quiz-selector-btn" data-quiz="8" onclick="loadQuiz(8)">Тест 8</button>
+<button type="button" class="quiz-selector-btn" data-quiz="9" onclick="loadQuiz(9)">Тест 9</button>
+<button type="button" class="quiz-selector-btn" data-quiz="10" onclick="loadQuiz(10)">Тест 10</button>
+            </div>
+
+            <div id="quiz-placeholder" style="text-align: center; padding: 3rem; color: var(--color-text-light); display: block;">
+                <p style="font-size: 1.2rem;">Выберите тест, чтобы начать</p>
+            </div>
+
+            <form id="quiz-form" style="display: none;">
+
+                <button type="submit" class="submit-btn" id="submit-btn">Проверить ответы</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const allQuizData = {
+            "1": [
+                {"text": "I ___ to school yesterday.", "options": ["go", "goes", "went", "going"], "correct_index": 2},
+                {"text": "She ___ her homework last night.", "options": ["do", "did", "does", "doing"], "correct_index": 1},
+                {"text": "They ___ football on Sunday.", "options": ["play", "plays", "played", "playing"], "correct_index": 2},
+                {"text": "We ___ a movie last weekend.", "options": ["watch", "watched", "watches", "watching"], "correct_index": 1},
+                {"text": "He ___ his friend yesterday.", "options": ["see", "sees", "saw", "seeing"], "correct_index": 2},
+                {"text": "You ___ a book last week.", "options": ["read", "reads", "readed", "reading"], "correct_index": 0},
+                {"text": "It ___ yesterday.", "options": ["rain", "rains", "rained", "raining"], "correct_index": 2},
+                {"text": "I ___ breakfast this morning.", "options": ["eat", "eats", "ate", "eating"], "correct_index": 2},
+                {"text": "She ___ to music yesterday.", "options": ["listen", "listens", "listened", "listening"], "correct_index": 2},
+                {"text": "They ___ a new car last month.", "options": ["buy", "buys", "bought", "buying"], "correct_index": 2},
+                {"text": "We ___ English last year.", "options": ["study", "studies", "studied", "studying"], "correct_index": 2},
+                {"text": "He ___ me a letter.", "options": ["write", "writes", "wrote", "writing"], "correct_index": 2},
+                {"text": "You ___ at home yesterday.", "options": ["was", "were", "are", "is"], "correct_index": 1},
+                {"text": "She ___ happy last week.", "options": ["was", "were", "is", "are"], "correct_index": 0},
+                {"text": "They ___ in Paris last summer.", "options": ["was", "were", "are", "is"], "correct_index": 1},
+                {"text": "I ___ coffee this morning.", "options": ["drink", "drinks", "drank", "drinking"], "correct_index": 2},
+                {"text": "He ___ his keys yesterday.", "options": ["find", "finds", "found", "finding"], "correct_index": 2},
+                {"text": "We ___ to the park on Sunday.", "options": ["go", "goes", "went", "going"], "correct_index": 2},
+                {"text": "She ___ her phone last week.", "options": ["lose", "loses", "lost", "losing"], "correct_index": 2},
+                {"text": "They ___ dinner at 7 pm.", "options": ["have", "has", "had", "having"], "correct_index": 2}
+            ],
+            "2": [
+                {"text": "I ___ not go to work yesterday.", "options": ["do", "did", "does", "doing"], "correct_index": 1},
+                {"text": "She ___ not watch TV last night.", "options": ["do", "did", "does", "doing"], "correct_index": 1},
+                {"text": "They ___ not play football on Monday.", "options": ["do", "did", "does", "doing"], "correct_index": 1},
+                {"text": "We ___ not study English last week.", "options": ["do", "did", "does", "doing"], "correct_index": 1},
+                {"text": "He ___ not see the movie.", "options": ["do", "did", "does", "doing"], "correct_index": 1},
+                {"text": "You ___ not eat breakfast this morning.", "options": ["do", "did", "does", "doing"], "correct_index": 1},
+                {"text": "It ___ not rain yesterday.", "options": ["do", "did", "does", "doing"], "correct_index": 1},
+                {"text": "I ___ not buy a new phone.", "options": ["do", "did", "does", "doing"], "correct_index": 1},
+                {"text": "She ___ not write a letter.", "options": ["do", "did", "does", "doing"], "correct_index": 1},
+                {"text": "They ___ not come to the party.", "options": ["do", "did", "does", "doing"], "correct_index": 1},
+                {"text": "We ___ not visit our friends.", "options": ["do", "did", "does", "doing"], "correct_index": 1},
+                {"text": "He ___ not finish his homework.", "options": ["do", "did", "does", "doing"], "correct_index": 1},
+                {"text": "You ___ not call me yesterday.", "options": ["do", "did", "does", "doing"], "correct_index": 1},
+                {"text": "I ___ not at home yesterday.", "options": ["was", "were", "wasn't", "weren't"], "correct_index": 2},
+                {"text": "She ___ not happy last week.", "options": ["was", "were", "wasn't", "weren't"], "correct_index": 2},
+                {"text": "They ___ not in Paris last summer.", "options": ["was", "were", "wasn't", "weren't"], "correct_index": 3},
+                {"text": "We ___ not ready for the test.", "options": ["was", "were", "wasn't", "weren't"], "correct_index": 3},
+                {"text": "He ___ not at school yesterday.", "options": ["was", "were", "wasn't", "weren't"], "correct_index": 2},
+                {"text": "You ___ not at the party.", "options": ["was", "were", "wasn't", "weren't"], "correct_index": 3},
+                {"text": "It ___ not cold yesterday.", "options": ["was", "were", "wasn't", "weren't"], "correct_index": 2}
+            ],
+            "3": [
+                {"text": "Did you ___ to school yesterday?", "options": ["go", "goes", "went", "going"], "correct_index": 0},
+                {"text": "Did she ___ her homework?", "options": ["do", "does", "did", "doing"], "correct_index": 0},
+                {"text": "Did they ___ football on Sunday?", "options": ["play", "plays", "played", "playing"], "correct_index": 0},
+                {"text": "Did we ___ a movie last weekend?", "options": ["watch", "watches", "watched", "watching"], "correct_index": 0},
+                {"text": "Did he ___ his friend yesterday?", "options": ["see", "sees", "saw", "seeing"], "correct_index": 0},
+                {"text": "Did you ___ a book last week?", "options": ["read", "reads", "readed", "reading"], "correct_index": 0},
+                {"text": "Did it ___ yesterday?", "options": ["rain", "rains", "rained", "raining"], "correct_index": 0},
+                {"text": "Did I ___ breakfast this morning?", "options": ["eat", "eats", "ate", "eating"], "correct_index": 0},
+                {"text": "Did she ___ to music yesterday?", "options": ["listen", "listens", "listened", "listening"], "correct_index": 0},
+                {"text": "Did they ___ a new car last month?", "options": ["buy", "buys", "bought", "buying"], "correct_index": 0},
+                {"text": "Did we ___ English last year?", "options": ["study", "studies", "studied", "studying"], "correct_index": 0},
+                {"text": "Did he ___ you a letter?", "options": ["write", "writes", "wrote", "writing"], "correct_index": 0},
+                {"text": "___ you at home yesterday?", "options": ["Was", "Were", "Did", "Do"], "correct_index": 1},
+                {"text": "___ she happy last week?", "options": ["Was", "Were", "Did", "Do"], "correct_index": 0},
+                {"text": "___ they in Paris last summer?", "options": ["Was", "Were", "Did", "Do"], "correct_index": 1},
+                {"text": "Did I ___ coffee this morning?", "options": ["drink", "drinks", "drank", "drinking"], "correct_index": 0},
+                {"text": "Did he ___ his keys yesterday?", "options": ["find", "finds", "found", "finding"], "correct_index": 0},
+                {"text": "Did we ___ to the park on Sunday?", "options": ["go", "goes", "went", "going"], "correct_index": 0},
+                {"text": "Did she ___ her phone last week?", "options": ["lose", "loses", "lost", "losing"], "correct_index": 0},
+                {"text": "Did they ___ dinner at 7 pm?", "options": ["have", "has", "had", "having"], "correct_index": 0}
+            ],
+            "4": [
+                {"text": "Yesterday I ___ a great movie.", "options": ["watch", "watches", "watched", "watching"], "correct_index": 2},
+                {"text": "Last week she ___ to London.", "options": ["go", "goes", "went", "going"], "correct_index": 2},
+                {"text": "Two days ago they ___ a new house.", "options": ["buy", "buys", "bought", "buying"], "correct_index": 2},
+                {"text": "In 2020 we ___ in Moscow.", "options": ["live", "lives", "lived", "living"], "correct_index": 2},
+                {"text": "Last night he ___ late.", "options": ["work", "works", "worked", "working"], "correct_index": 2},
+                {"text": "Yesterday you ___ very happy.", "options": ["was", "were", "are", "is"], "correct_index": 1},
+                {"text": "Last summer it ___ very hot.", "options": ["was", "were", "is", "are"], "correct_index": 0},
+                {"text": "Three years ago I ___ English.", "options": ["study", "studies", "studied", "studying"], "correct_index": 2},
+                {"text": "Last Monday she ___ sick.", "options": ["was", "were", "is", "are"], "correct_index": 0},
+                {"text": "Yesterday they ___ at the park.", "options": ["was", "were", "are", "is"], "correct_index": 1},
+                {"text": "Last year we ___ many countries.", "options": ["visit", "visits", "visited", "visiting"], "correct_index": 2},
+                {"text": "Two weeks ago he ___ his job.", "options": ["change", "changes", "changed", "changing"], "correct_index": 2},
+                {"text": "Yesterday I ___ my old friend.", "options": ["meet", "meets", "met", "meeting"], "correct_index": 2},
+                {"text": "Last night she ___ a delicious cake.", "options": ["make", "makes", "made", "making"], "correct_index": 2},
+                {"text": "Last Friday they ___ to a concert.", "options": ["go", "goes", "went", "going"], "correct_index": 2},
+                {"text": "Yesterday you ___ me a message.", "options": ["send", "sends", "sent", "sending"], "correct_index": 2},
+                {"text": "Last week it ___ every day.", "options": ["rain", "rains", "rained", "raining"], "correct_index": 2},
+                {"text": "In 2019 I ___ in a bank.", "options": ["work", "works", "worked", "working"], "correct_index": 2},
+                {"text": "Last month she ___ a new car.", "options": ["buy", "buys", "bought", "buying"], "correct_index": 2},
+                {"text": "Yesterday we ___ a good time.", "options": ["have", "has", "had", "having"], "correct_index": 2}
+            ],
+            "5": [
+                {"text": "I didn't ___ to the party.", "options": ["go", "goes", "went", "going"], "correct_index": 0},
+                {"text": "She didn't ___ the answer.", "options": ["know", "knows", "knew", "knowing"], "correct_index": 0},
+                {"text": "They didn't ___ their homework.", "options": ["do", "does", "did", "doing"], "correct_index": 0},
+                {"text": "We didn't ___ the movie.", "options": ["like", "likes", "liked", "liking"], "correct_index": 0},
+                {"text": "He didn't ___ breakfast.", "options": ["eat", "eats", "ate", "eating"], "correct_index": 0},
+                {"text": "You didn't ___ me yesterday.", "options": ["call", "calls", "called", "calling"], "correct_index": 0},
+                {"text": "It didn't ___ last night.", "options": ["rain", "rains", "rained", "raining"], "correct_index": 0},
+                {"text": "I didn't ___ the book.", "options": ["read", "reads", "readed", "reading"], "correct_index": 0},
+                {"text": "She didn't ___ to school.", "options": ["go", "goes", "went", "going"], "correct_index": 0},
+                {"text": "They didn't ___ the test.", "options": ["pass", "passes", "passed", "passing"], "correct_index": 0},
+                {"text": "We didn't ___ TV yesterday.", "options": ["watch", "watches", "watched", "watching"], "correct_index": 0},
+                {"text": "He didn't ___ his keys.", "options": ["find", "finds", "found", "finding"], "correct_index": 0},
+                {"text": "You didn't ___ at home.", "options": ["stay", "stays", "stayed", "staying"], "correct_index": 0},
+                {"text": "I ___ late yesterday.", "options": ["wasn't", "weren't", "didn't", "don't"], "correct_index": 0},
+                {"text": "She ___ happy with the result.", "options": ["wasn't", "weren't", "didn't", "don't"], "correct_index": 0},
+                {"text": "They ___ at the meeting.", "options": ["wasn't", "weren't", "didn't", "don't"], "correct_index": 1},
+                {"text": "We ___ ready for the exam.", "options": ["wasn't", "weren't", "didn't", "don't"], "correct_index": 1},
+                {"text": "He ___ interested in the topic.", "options": ["wasn't", "weren't", "didn't", "don't"], "correct_index": 0},
+                {"text": "You ___ at school yesterday.", "options": ["wasn't", "weren't", "didn't", "don't"], "correct_index": 1},
+                {"text": "It ___ a good idea.", "options": ["wasn't", "weren't", "didn't", "don't"], "correct_index": 0}
+            ],
+            "6": [
+                {"text": "Last year I ___ to Italy.", "options": ["travel", "travels", "traveled", "travelling"], "correct_index": 2},
+                {"text": "She ___ a new job in 2022.", "options": ["start", "starts", "started", "starting"], "correct_index": 2},
+                {"text": "They ___ tennis yesterday.", "options": ["play", "plays", "played", "playing"], "correct_index": 2},
+                {"text": "We ___ our grandparents last week.", "options": ["visit", "visits", "visited", "visiting"], "correct_index": 2},
+                {"text": "He ___ a song for her.", "options": ["write", "writes", "wrote", "writing"], "correct_index": 2},
+                {"text": "You ___ very tired yesterday.", "options": ["was", "were", "are", "is"], "correct_index": 1},
+                {"text": "It ___ a beautiful day.", "options": ["was", "were", "is", "are"], "correct_index": 0},
+                {"text": "I ___ my wallet last night.", "options": ["lose", "loses", "lost", "losing"], "correct_index": 2},
+                {"text": "She ___ me the truth.", "options": ["tell", "tells", "told", "telling"], "correct_index": 2},
+                {"text": "They ___ the game yesterday.", "options": ["win", "wins", "won", "winning"], "correct_index": 2},
+                {"text": "We ___ about you.", "options": ["think", "thinks", "thought", "thinking"], "correct_index": 2},
+                {"text": "He ___ a lot of books.", "options": ["read", "reads", "readed", "reading"], "correct_index": 0},
+                {"text": "You ___ me flowers.", "options": ["give", "gives", "gave", "giving"], "correct_index": 2},
+                {"text": "I ___ early this morning.", "options": ["wake", "wakes", "woke", "waking"], "correct_index": 2},
+                {"text": "She ___ Spanish in school.", "options": ["learn", "learns", "learned", "learning"], "correct_index": 2},
+                {"text": "They ___ the bus to work.", "options": ["take", "takes", "took", "taking"], "correct_index": 2},
+                {"text": "We ___ at a restaurant.", "options": ["eat", "eats", "ate", "eating"], "correct_index": 2},
+                {"text": "He ___ his car last month.", "options": ["sell", "sells", "sold", "selling"], "correct_index": 2},
+                {"text": "You ___ a good student.", "options": ["was", "were", "are", "is"], "correct_index": 1},
+                {"text": "It ___ very cold last winter.", "options": ["was", "were", "is", "are"], "correct_index": 0}
+            ],
+            "7": [
+                {"text": "Did I ___ you yesterday?", "options": ["see", "sees", "saw", "seeing"], "correct_index": 0},
+                {"text": "Did she ___ the answer?", "options": ["know", "knows", "knew", "knowing"], "correct_index": 0},
+                {"text": "Did they ___ the house?", "options": ["clean", "cleans", "cleaned", "cleaning"], "correct_index": 0},
+                {"text": "Did we ___ on time?", "options": ["arrive", "arrives", "arrived", "arriving"], "correct_index": 0},
+                {"text": "Did he ___ his homework?", "options": ["finish", "finishes", "finished", "finishing"], "correct_index": 0},
+                {"text": "Did you ___ the news?", "options": ["hear", "hears", "heard", "hearing"], "correct_index": 0},
+                {"text": "Did it ___ last night?", "options": ["snow", "snows", "snowed", "snowing"], "correct_index": 0},
+                {"text": "Did I ___ something wrong?", "options": ["do", "does", "did", "doing"], "correct_index": 0},
+                {"text": "Did she ___ you a gift?", "options": ["give", "gives", "gave", "giving"], "correct_index": 0},
+                {"text": "Did they ___ the game?", "options": ["win", "wins", "won", "winning"], "correct_index": 0},
+                {"text": "Did we ___ to him?", "options": ["speak", "speaks", "spoke", "speaking"], "correct_index": 0},
+                {"text": "Did he ___ early?", "options": ["leave", "leaves", "left", "leaving"], "correct_index": 0},
+                {"text": "Did you ___ happy?", "options": ["feel", "feels", "felt", "feeling"], "correct_index": 0},
+                {"text": "___ I right about this?", "options": ["Was", "Were", "Did", "Do"], "correct_index": 0},
+                {"text": "___ she at home yesterday?", "options": ["Was", "Were", "Did", "Do"], "correct_index": 0},
+                {"text": "___ they late for class?", "options": ["Was", "Were", "Did", "Do"], "correct_index": 1},
+                {"text": "___ we wrong?", "options": ["Was", "Were", "Did", "Do"], "correct_index": 1},
+                {"text": "___ he your teacher?", "options": ["Was", "Were", "Did", "Do"], "correct_index": 0},
+                {"text": "___ you tired after work?", "options": ["Was", "Were", "Did", "Do"], "correct_index": 1},
+                {"text": "___ it expensive?", "options": ["Was", "Were", "Did", "Do"], "correct_index": 0}
+            ],
+            "8": [
+                {"text": "I ___ my keys this morning.", "options": ["forget", "forgets", "forgot", "forgetting"], "correct_index": 2},
+                {"text": "She ___ me a story.", "options": ["tell", "tells", "told", "telling"], "correct_index": 2},
+                {"text": "They ___ the bus yesterday.", "options": ["miss", "misses", "missed", "missing"], "correct_index": 2},
+                {"text": "We ___ a lot of fun.", "options": ["have", "has", "had", "having"], "correct_index": 2},
+                {"text": "He ___ his bike to school.", "options": ["ride", "rides", "rode", "riding"], "correct_index": 2},
+                {"text": "You ___ a great job.", "options": ["do", "does", "did", "doing"], "correct_index": 2},
+                {"text": "It ___ all day yesterday.", "options": ["rain", "rains", "rained", "raining"], "correct_index": 2},
+                {"text": "I ___ my room last night.", "options": ["clean", "cleans", "cleaned", "cleaning"], "correct_index": 2},
+                {"text": "She ___ a beautiful dress.", "options": ["wear", "wears", "wore", "wearing"], "correct_index": 2},
+                {"text": "They ___ pizza for dinner.", "options": ["choose", "chooses", "chose", "choosing"], "correct_index": 2},
+                {"text": "We ___ the train to Paris.", "options": ["take", "takes", "took", "taking"], "correct_index": 2},
+                {"text": "He ___ a new laptop.", "options": ["get", "gets", "got", "getting"], "correct_index": 2},
+                {"text": "You ___ me your number.", "options": ["give", "gives", "gave", "giving"], "correct_index": 2},
+                {"text": "I ___ at the library yesterday.", "options": ["was", "were", "am", "is"], "correct_index": 0},
+                {"text": "She ___ very kind to me.", "options": ["was", "were", "is", "are"], "correct_index": 0},
+                {"text": "They ___ my best friends.", "options": ["was", "were", "are", "is"], "correct_index": 1},
+                {"text": "We ___ excited about the trip.", "options": ["was", "were", "are", "is"], "correct_index": 1},
+                {"text": "He ___ the winner.", "options": ["was", "were", "is", "are"], "correct_index": 0},
+                {"text": "You ___ right about that.", "options": ["was", "were", "are", "is"], "correct_index": 1},
+                {"text": "It ___ a difficult question.", "options": ["was", "were", "is", "are"], "correct_index": 0}
+            ],
+            "9": [
+                {"text": "Last night I ___ a strange dream.", "options": ["have", "has", "had", "having"], "correct_index": 2},
+                {"text": "Yesterday she ___ her car.", "options": ["wash", "washes", "washed", "washing"], "correct_index": 2},
+                {"text": "Two years ago they ___ in Berlin.", "options": ["live", "lives", "lived", "living"], "correct_index": 2},
+                {"text": "Last week we ___ a party.", "options": ["organize", "organizes", "organized", "organizing"], "correct_index": 2},
+                {"text": "Last month he ___ his driving test.", "options": ["pass", "passes", "passed", "passing"], "correct_index": 2},
+                {"text": "Yesterday you ___ me a favor.", "options": ["do", "does", "did", "doing"], "correct_index": 2},
+                {"text": "Last summer it ___ very rainy.", "options": ["was", "were", "is", "are"], "correct_index": 0},
+                {"text": "Three days ago I ___ my cousin.", "options": ["meet", "meets", "met", "meeting"], "correct_index": 2},
+                {"text": "Last week she ___ sick.", "options": ["was", "were", "is", "are"], "correct_index": 0},
+                {"text": "Yesterday they ___ at the beach.", "options": ["was", "were", "are", "is"], "correct_index": 1},
+                {"text": "Last year we ___ a new house.", "options": ["buy", "buys", "bought", "buying"], "correct_index": 2},
+                {"text": "Last night he ___ until midnight.", "options": ["work", "works", "worked", "working"], "correct_index": 2},
+                {"text": "Yesterday I ___ you at the mall.", "options": ["see", "sees", "saw", "seeing"], "correct_index": 2},
+                {"text": "Last Monday she ___ a present for me.", "options": ["bring", "brings", "brought", "bringing"], "correct_index": 2},
+                {"text": "Last weekend they ___ a mountain.", "options": ["climb", "climbs", "climbed", "climbing"], "correct_index": 2},
+                {"text": "Yesterday you ___ a great idea.", "options": ["have", "has", "had", "having"], "correct_index": 2},
+                {"text": "Last night it ___ very windy.", "options": ["was", "were", "is", "are"], "correct_index": 0},
+                {"text": "Two weeks ago I ___ my homework.", "options": ["forget", "forgets", "forgot", "forgetting"], "correct_index": 2},
+                {"text": "Last year she ___ French.", "options": ["study", "studies", "studied", "studying"], "correct_index": 2},
+                {"text": "Yesterday we ___ a good time.", "options": ["have", "has", "had", "having"], "correct_index": 2}
+            ],
+            "10": [
+                {"text": "I didn't ___ what you said.", "options": ["understand", "understands", "understood", "understanding"], "correct_index": 0},
+                {"text": "She didn't ___ the door.", "options": ["close", "closes", "closed", "closing"], "correct_index": 0},
+                {"text": "They didn't ___ the project.", "options": ["finish", "finishes", "finished", "finishing"], "correct_index": 0},
+                {"text": "We didn't ___ each other.", "options": ["meet", "meets", "met", "meeting"], "correct_index": 0},
+                {"text": "He didn't ___ the question.", "options": ["answer", "answers", "answered", "answering"], "correct_index": 0},
+                {"text": "You didn't ___ any mistakes.", "options": ["make", "makes", "made", "making"], "correct_index": 0},
+                {"text": "It didn't ___ well.", "options": ["work", "works", "worked", "working"], "correct_index": 0},
+                {"text": "I didn't ___ anything.", "options": ["say", "says", "said", "saying"], "correct_index": 0},
+                {"text": "She didn't ___ my message.", "options": ["get", "gets", "got", "getting"], "correct_index": 0},
+                {"text": "They didn't ___ the instructions.", "options": ["follow", "follows", "followed", "following"], "correct_index": 0},
+                {"text": "We didn't ___ permission.", "options": ["ask", "asks", "asked", "asking"], "correct_index": 0},
+                {"text": "He didn't ___ the medicine.", "options": ["take", "takes", "took", "taking"], "correct_index": 0},
+                {"text": "You didn't ___ me the truth.", "options": ["tell", "tells", "told", "telling"], "correct_index": 0},
+                {"text": "I ___ hungry yesterday.", "options": ["wasn't", "weren't", "didn't", "don't"], "correct_index": 0},
+                {"text": "She ___ interested in the film.", "options": ["wasn't", "weren't", "didn't", "don't"], "correct_index": 0},
+                {"text": "They ___ at home last night.", "options": ["wasn't", "weren't", "didn't", "don't"], "correct_index": 1},
+                {"text": "We ___ surprised by the news.", "options": ["wasn't", "weren't", "didn't", "don't"], "correct_index": 1},
+                {"text": "He ___ the captain of the team.", "options": ["wasn't", "weren't", "didn't", "don't"], "correct_index": 0},
+                {"text": "You ___ invited to the party.", "options": ["wasn't", "weren't", "didn't", "don't"], "correct_index": 1},
+                {"text": "It ___ easy to do.", "options": ["wasn't", "weren't", "didn't", "don't"], "correct_index": 0}
+            ]
+        };
+
+        let currentQuizSet = 1;
+        const quizData = allQuizData[currentQuizSet] || [];
+
+        function checkAnswers(event) {
+            event.preventDefault();
+
+            const form = document.getElementById('quiz-form');
+            const formData = new FormData(form);
+
+            let correct = 0;
+            let total = quizData.length;
+
+            // Check each question
+            quizData.forEach((question, index) => {
+                const selectedAnswer = parseInt(formData.get(`question-${index}`));
+                const options = document.querySelectorAll(`input[name="question-${index}"]`);
+
+                options.forEach((option, optIndex) => {
+                    const label = option.closest('.option');
+                    if (optIndex === question.correct_index) {
+                        label.classList.add('correct');
+                    }
+                    if (selectedAnswer === optIndex && selectedAnswer !== question.correct_index) {
+                        label.classList.add('incorrect');
+                    }
+                    option.disabled = true;
+                });
+
+                if (selectedAnswer === question.correct_index) {
+                    correct++;
+                }
+            });
+
+            // Calculate score
+            const percentage = Math.round((correct / total) * 100);
+            const passed = percentage >= 70;
+
+            // Show results
+            const resultsDiv = document.getElementById('results');
+            const scoreDiv = document.getElementById('score');
+            const messageDiv = document.getElementById('results-message');
+
+            scoreDiv.textContent = `${percentage}%`;
+            scoreDiv.className = 'score ' + (passed ? 'pass' : 'fail');
+
+            messageDiv.textContent = `Вы ответили правильно на ${correct} из ${total} вопросов`;
+
+            resultsDiv.classList.remove('hidden');
+
+            // Disable submit button
+            document.getElementById('submit-btn').disabled = true;
+
+            // Scroll to results
+            resultsDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        function retakeQuiz() {
+            loadQuiz(currentQuizSet);
+        }
+
+        function loadQuiz(quizSet) {
+            currentQuizSet = quizSet;
+
+            // Hide placeholder, show form (if they exist)
+            const placeholder = document.getElementById('quiz-placeholder');
+            const form = document.getElementById('quiz-form');
+            if (placeholder) {
+                placeholder.style.display = 'none';
+            }
+            if (form.style.display === 'none') {
+                form.style.display = 'block';
+            }
+
+            // Update button states
+            document.querySelectorAll('.quiz-selector-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (parseInt(btn.dataset.quiz) === quizSet) {
+                    btn.classList.add('active');
+                }
+            });
+
+            // Get questions for this quiz set
+            const questions = allQuizData[quizSet] || [];
+
+            // Clear and rebuild quiz HTML
+            const submitBtn = document.getElementById('submit-btn');
+
+            // Remove all questions
+            const existingQuestions = form.querySelectorAll('.question');
+            existingQuestions.forEach(q => q.remove());
+
+            // Add new questions
+            questions.forEach((question, index) => {
+                const questionDiv = document.createElement('div');
+                questionDiv.className = 'question';
+                questionDiv.dataset.questionId = index;
+
+                let optionsHtml = '';
+                question.options.forEach((option, optIndex) => {
+                    optionsHtml += `
+                        <label class="option">
+                            <input type="radio" name="question-${index}" value="${optIndex}" required>
+                            <span>${option}</span>
+                        </label>
+                    `;
+                });
+
+                questionDiv.innerHTML = `
+                    <div class="question-text">${index + 1}. ${question.text}</div>
+                    <div class="options">
+                        ${optionsHtml}
+                    </div>
+                `;
+
+                form.insertBefore(questionDiv, submitBtn);
+            });
+
+            // Reset form state
+            form.reset();
+            submitBtn.disabled = false;
+            document.getElementById('results').classList.add('hidden');
+            document.querySelectorAll('.option').forEach(opt => {
+                opt.classList.remove('correct', 'incorrect');
+            });
+
+        }
+
+        // Initialize: if only one quiz set, load it automatically
+        const quizSetCount = Object.keys(allQuizData).length;
+        if (quizSetCount === 1) {
+            // Single quiz - load immediately
+            loadQuiz(1);
+        }
+        // If multiple quiz sets, user must select one (placeholder will show)
+
+        document.getElementById('quiz-form').addEventListener('submit', checkAnswers);
+    </script>
+</body>
+</html>

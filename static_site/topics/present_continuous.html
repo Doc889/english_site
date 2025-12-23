@@ -18,13 +18,15 @@
             --color-bg-alt: #faf5ff;
             --color-text: #1f2937;
             --color-text-light: #6b7280;
+            --color-white: #ffffff;
             --color-success: #10b981;
             --color-error: #ef4444;
             --font-display: 'Playfair Display', serif;
             --font-body: 'DM Sans', sans-serif;
             --shadow-sm: 0 2px 8px rgba(124, 58, 237, 0.08);
             --shadow-md: 0 4px 20px rgba(124, 58, 237, 0.12);
-            --transition: all 0.3s ease;
+            --shadow-lg: 0 8px 40px rgba(124, 58, 237, 0.16);
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         * {
@@ -40,63 +42,57 @@
             line-height: 1.7;
         }
 
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 3rem 2rem;
-        }
-
         header {
-            background: var(--color-primary);
-            color: white;
-            padding: 2rem;
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+            color: var(--color-white);
+            padding: 3rem 2rem;
             text-align: center;
         }
 
         .back-link {
             display: inline-block;
-            color: white;
+            color: var(--color-accent);
             text-decoration: none;
             margin-bottom: 1rem;
-            font-size: 0.9rem;
-            opacity: 0.9;
             transition: var(--transition);
         }
 
         .back-link:hover {
-            opacity: 1;
-            transform: translateX(-3px);
+            color: var(--color-white);
         }
 
-        header h1 {
+        h1 {
             font-family: var(--font-display);
             font-size: 3rem;
-            margin-bottom: 0.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
         }
 
-        header p {
+        .description {
             font-size: 1.2rem;
-            opacity: 0.95;
+            opacity: 0.9;
         }
 
-        .content-section {
-            margin-bottom: 3rem;
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
         }
 
         .section-title {
             font-family: var(--font-display);
             font-size: 2.5rem;
             color: var(--color-primary);
-            margin: 3rem 0 2rem;
+            margin-bottom: 2rem;
             text-align: center;
         }
 
         .rule-section {
-            background: var(--color-bg-alt);
+            background: var(--color-white);
             border-left: 4px solid var(--color-primary);
             padding: 2rem;
             margin-bottom: 2rem;
-            border-radius: 12px;
+            border-radius: 8px;
             box-shadow: var(--shadow-sm);
         }
 
@@ -108,203 +104,52 @@
         }
 
         .rule-content {
-            font-size: 1.1rem;
-            margin-bottom: 1.5rem;
+            color: var(--color-text);
+            margin-bottom: 1rem;
             line-height: 1.8;
-            white-space: pre-line;
+            white-space: pre-wrap;
         }
 
         .examples {
-            margin-top: 1.5rem;
+            background: var(--color-bg-alt);
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
         }
 
         .example {
-            background: var(--color-bg);
-            padding: 0.8rem 1.2rem;
-            margin-bottom: 0.5rem;
-            border-radius: 8px;
-            border-left: 3px solid var(--color-secondary);
+            padding: 0.5rem;
+            margin: 0.25rem 0;
             font-family: monospace;
-            font-size: 1rem;
+            font-size: 0.95rem;
         }
 
         .quiz-section {
             background: var(--color-bg-alt);
-            padding: 3rem;
-            border-radius: 16px;
+            padding: 3rem 2rem;
             margin-top: 3rem;
-        }
-
-        .question {
-            background: var(--color-bg);
-            padding: 2rem;
-            margin-bottom: 2rem;
             border-radius: 12px;
-            box-shadow: var(--shadow-sm);
-            border: 2px solid transparent;
-            transition: var(--transition);
         }
 
-        .question.correct {
-            border-color: var(--color-success);
-            background: #f0fdf4;
-        }
-
-        .question.incorrect {
-            border-color: var(--color-error);
-            background: #fef2f2;
-        }
-
-        .question-text {
-            font-size: 1.2rem;
-            margin-bottom: 1.5rem;
-            color: var(--color-text);
-        }
-
-        .options {
+        #quiz-selector {
+            margin-bottom: 2rem;
             display: flex;
             flex-direction: column;
-            gap: 1rem;
-        }
-
-        .option {
-            display: flex;
             align-items: center;
-            padding: 1rem 1.5rem;
-            background: var(--color-bg-alt);
-            border: 2px solid var(--color-accent);
-            border-radius: 8px;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .option:hover {
-            border-color: var(--color-primary);
-            background: white;
-        }
-
-        .option input[type="radio"] {
-            margin-right: 1rem;
-            cursor: pointer;
-        }
-
-        .option.correct {
-            background: #dcfce7;
-            border-color: var(--color-success);
-        }
-
-        .option.incorrect {
-            background: #fee2e2;
-            border-color: var(--color-error);
-        }
-
-        .submit-btn {
-            display: block;
-            width: 100%;
-            padding: 1.2rem;
-            background: var(--color-primary);
-            color: white;
-            border: none;
-            border-radius: 8px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            margin-top: 2rem;
-            transition: var(--transition);
-        }
-
-        .submit-btn:hover:not(:disabled) {
-            background: var(--color-primary-dark);
-            transform: translateY(-2px);
-        }
-
-        .submit-btn:disabled {
-            background: var(--color-text-light);
-            cursor: not-allowed;
-            transform: none;
-        }
-
-        .results {
-            text-align: center;
-            padding: 2rem;
-            background: var(--color-primary);
-            color: white;
-            border-radius: 12px;
-            margin-top: 2rem;
-        }
-
-        .results.hidden {
-            display: none;
-        }
-
-        .score {
-            font-size: 4rem;
-            font-weight: 800;
-            margin-bottom: 1rem;
-        }
-
-        .score.pass {
-            color: #dcfce7;
-        }
-
-        .score.fail {
-            color: #fecaca;
-        }
-
-        .results-message {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .retry-btn {
-            padding: 0.8rem 1.5rem;
-            background: var(--color-bg);
-            border: 2px solid white;
-            color: var(--color-primary);
-            border-radius: 8px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: var(--transition);
-            margin-right: 1rem;
-        }
-
-        .retry-btn:hover {
-            background: white;
-            transform: translateY(-2px);
-        }
-
-        .home-btn {
-            background: transparent;
-            color: white;
-            border: 2px solid white;
-            padding: 0.8rem 1.5rem;
-            font-size: 1rem;
-            font-weight: 600;
-            border-radius: 8px;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
-            transition: var(--transition);
-        }
-
-        .home-btn:hover {
-            background: white;
-            color: var(--color-primary);
-            transform: translateY(-2px);
+            gap: 0.8rem;
         }
 
         .quiz-selector-btn {
-            padding: 0.8rem 1.5rem;
+            padding: 1rem 2rem;
             background: var(--color-bg);
             border: 2px solid var(--color-primary);
             color: var(--color-primary);
             border-radius: 8px;
-            font-size: 1rem;
+            font-size: 1.1rem;
             font-weight: 600;
             cursor: pointer;
             transition: var(--transition);
-            min-width: 200px;
+            min-width: 250px;
         }
 
         .quiz-selector-btn:hover {
@@ -318,17 +163,160 @@
             color: white;
         }
 
+        #quiz-placeholder {
+            text-align: center;
+            padding: 3rem;
+            color: var(--color-text-light);
+        }
+
+        #quiz-form {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .question {
+            background: var(--color-white);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .question-text {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--color-text);
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .option {
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+            background: var(--color-bg);
+            border: 2px solid var(--color-accent);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .option:hover {
+            border-color: var(--color-primary);
+            background: var(--color-bg-alt);
+        }
+
+        .option input[type="radio"] {
+            margin-right: 1rem;
+            cursor: pointer;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1.2rem 2rem;
+            background: var(--color-primary);
+            color: var(--color-white);
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+            margin-top: 2rem;
+        }
+
+        .submit-btn:hover {
+            background: var(--color-primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .submit-btn:disabled {
+            background: var(--color-text-light);
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        #results {
+            max-width: 600px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: var(--color-white);
+            border-radius: 12px;
+            box-shadow: var(--shadow-lg);
+            text-align: center;
+        }
+
+        #results.hidden {
+            display: none;
+        }
+
+        .score {
+            font-family: var(--font-display);
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .score.pass {
+            color: var(--color-success);
+        }
+
+        .score.fail {
+            color: var(--color-error);
+        }
+
+        .feedback {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .retry-btn {
+            padding: 1rem 2rem;
+            background: var(--color-primary);
+            color: var(--color-white);
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            margin-top: 1rem;
+        }
+
+        .retry-btn:hover {
+            background: var(--color-primary-dark);
+        }
+
+        .home-btn {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.75rem 1.5rem;
+            background: var(--color-white);
+            color: var(--color-primary);
+            border: 2px solid var(--color-primary);
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .home-btn:hover {
+            background: var(--color-primary);
+            color: var(--color-white);
+        }
+
         @media (max-width: 768px) {
-            header h1 {
+            h1 {
                 font-size: 2rem;
             }
-
             .section-title {
                 font-size: 2rem;
-            }
-
-            .container {
-                padding: 2rem 1rem;
             }
         }
     </style>
@@ -338,156 +326,248 @@
         <div class="container">
             <a href="../index.html" class="back-link">← Назад ко всем темам</a>
             <h1>Present Continuous</h1>
-            <p>Настоящее продолженное время для действий, происходящих сейчас</p>
+            <p class="description">Настоящее продолженное время для действий, происходящих сейчас</p>
         </div>
     </header>
 
-    <div class="container">
-        <!-- Theory Section -->
-        <div class="content-section">
-            <h2 class="section-title">Теория</h2>
-            
+    <main>
+        <h2 class="section-title">📚 Теория</h2>
+
+        
         <div class="rule-section">
             <h3 class="rule-title">Главное про Present Continuous</h3>
-            <div class="rule-content"></div>
-            <div class="examples"><div class="example">Present Continuous = действие происходит СЕЙЧАС, В ДАННЫЙ МОМЕНТ.</div><div class="example">Формула: to be + глагол с -ing</div><div class="example">I am reading. — Я читаю (сейчас).</div><div class="example">She is sleeping. — Она спит (сейчас).</div><div class="example">They are playing. — Они играют (сейчас).</div><div class="example">Как образуется Present Continuous</div><div class="example">Берём три составляющих:</div><div class="example">1️⃣ Подлежащее (I, you, he, she...)</div><div class="example">2️⃣ Форму to be (am, is, are)</div><div class="example">3️⃣ Глагол + окончание -ing</div><div class="example">Формула: подлежащее + am/is/are + глагол-ing</div><div class="example">Примеры:</div><div class="example">I am working. — Я работаю (сейчас).</div><div class="example">You are studying. — Ты учишься (сейчас).</div><div class="example">He is eating. — Он ест (сейчас).</div><div class="example">She is sleeping. — Она спит (сейчас).</div><div class="example">We are watching. — Мы смотрим (сейчас).</div><div class="example">They are playing. — Они играют (сейчас).</div><div class="example">Как добавить -ing к глаголу</div></div>
+            <p class="rule-content"></p>
+            <div class="examples">
+                <div class="example">Present Continuous = действие происходит СЕЙЧАС, В ДАННЫЙ МОМЕНТ.</div>
+                <div class="example">Формула: to be + глагол с -ing</div>
+                <div class="example">I am reading. — Я читаю (сейчас).</div>
+                <div class="example">She is sleeping. — Она спит (сейчас).</div>
+                <div class="example">They are playing. — Они играют (сейчас).</div>
+                <div class="example">Как образуется Present Continuous</div>
+                <div class="example">Берём три составляющих:</div>
+                <div class="example">1️⃣ Подлежащее (I, you, he, she...)</div>
+                <div class="example">2️⃣ Форму to be (am, is, are)</div>
+                <div class="example">3️⃣ Глагол + окончание -ing</div>
+                <div class="example">Формула: подлежащее + am/is/are + глагол-ing</div>
+                <div class="example">Примеры:</div>
+                <div class="example">I am working. — Я работаю (сейчас).</div>
+                <div class="example">You are studying. — Ты учишься (сейчас).</div>
+                <div class="example">He is eating. — Он ест (сейчас).</div>
+                <div class="example">She is sleeping. — Она спит (сейчас).</div>
+                <div class="example">We are watching. — Мы смотрим (сейчас).</div>
+                <div class="example">They are playing. — Они играют (сейчас).</div>
+                <div class="example">Как добавить -ing к глаголу</div>
+            </div>
         </div>
-        
 
         <div class="rule-section">
             <h3 class="rule-title">Большинство глаголов: просто добавляем -ing</h3>
-            <div class="rule-content"></div>
-            <div class="examples"><div class="example">work → working</div><div class="example">play → playing</div><div class="example">read → reading</div><div class="example">watch → watching</div><div class="example">Глаголы на -e: убираем -e, добавляем -ing</div><div class="example">make → making</div><div class="example">write → writing</div><div class="example">come → coming</div><div class="example">take → taking</div><div class="example">Короткие глаголы (согласная-гласная-согласная): удваиваем последнюю букву</div><div class="example">run → running</div><div class="example">sit → sitting</div><div class="example">stop → stopping</div><div class="example">swim → swimming</div><div class="example">НО: если ударение не на последнем слоге, НЕ удваиваем:</div><div class="example">open → opening (не openning)</div><div class="example">visit → visiting (не visitting)</div><div class="example">💡 Совет:</div><div class="example">Большинство глаголов — просто +ing</div><div class="example">Только некоторые требуют изменений</div><div class="example">Утверждения в Present Continuous</div><div class="example">Полные формы:</div><div class="example">I am working.</div><div class="example">You are studying.</div><div class="example">He is reading.</div><div class="example">She is cooking.</div><div class="example">It is raining.</div><div class="example">We are eating.</div><div class="example">They are playing.</div><div class="example">Краткие формы (чаще используются):</div><div class="example">I'm working.</div><div class="example">You're studying.</div><div class="example">He's reading.</div><div class="example">She's cooking.</div><div class="example">It's raining.</div><div class="example">We're eating.</div><div class="example">They're playing.</div><div class="example">Примеры:</div><div class="example">I'm watching TV now. — Я смотрю телевизор сейчас.</div><div class="example">She's talking on the phone. — Она разговаривает по телефону.</div><div class="example">They're having lunch. — Они обедают.</div><div class="example">Отрицания в Present Continuous</div><div class="example">Отрицание строится просто: добавляем not после to be.</div><div class="example">I am not working. → I'm not working.</div><div class="example">You are not studying. → You aren't studying.</div><div class="example">He is not reading. → He isn't reading.</div><div class="example">She is not cooking. → She isn't cooking.</div><div class="example">We are not eating. → We aren't eating.</div><div class="example">They are not playing. → They aren't playing.</div><div class="example">💡 Совет:</div><div class="example">Две формы сокращения:</div><div class="example">You're not / You aren't</div><div class="example">He's not / He isn't</div><div class="example">Примеры:</div><div class="example">I'm not watching TV. — Я не смотрю телевизор.</div><div class="example">She isn't talking. — Она не разговаривает.</div><div class="example">They aren't playing. — Они не играют.</div></div>
+            <p class="rule-content"></p>
+            <div class="examples">
+                <div class="example">work → working</div>
+                <div class="example">play → playing</div>
+                <div class="example">read → reading</div>
+                <div class="example">watch → watching</div>
+                <div class="example">Глаголы на -e: убираем -e, добавляем -ing</div>
+                <div class="example">make → making</div>
+                <div class="example">write → writing</div>
+                <div class="example">come → coming</div>
+                <div class="example">take → taking</div>
+                <div class="example">Короткие глаголы (согласная-гласная-согласная): удваиваем последнюю букву</div>
+                <div class="example">run → running</div>
+                <div class="example">sit → sitting</div>
+                <div class="example">stop → stopping</div>
+                <div class="example">swim → swimming</div>
+                <div class="example">НО: если ударение не на последнем слоге, НЕ удваиваем:</div>
+                <div class="example">open → opening (не openning)</div>
+                <div class="example">visit → visiting (не visitting)</div>
+                <div class="example">💡 Совет:</div>
+                <div class="example">Большинство глаголов — просто +ing</div>
+                <div class="example">Только некоторые требуют изменений</div>
+                <div class="example">Утверждения в Present Continuous</div>
+                <div class="example">Полные формы:</div>
+                <div class="example">I am working.</div>
+                <div class="example">You are studying.</div>
+                <div class="example">He is reading.</div>
+                <div class="example">She is cooking.</div>
+                <div class="example">It is raining.</div>
+                <div class="example">We are eating.</div>
+                <div class="example">They are playing.</div>
+                <div class="example">Краткие формы (чаще используются):</div>
+                <div class="example">I'm working.</div>
+                <div class="example">You're studying.</div>
+                <div class="example">He's reading.</div>
+                <div class="example">She's cooking.</div>
+                <div class="example">It's raining.</div>
+                <div class="example">We're eating.</div>
+                <div class="example">They're playing.</div>
+                <div class="example">Примеры:</div>
+                <div class="example">I'm watching TV now. — Я смотрю телевизор сейчас.</div>
+                <div class="example">She's talking on the phone. — Она разговаривает по телефону.</div>
+                <div class="example">They're having lunch. — Они обедают.</div>
+                <div class="example">Отрицания в Present Continuous</div>
+                <div class="example">Отрицание строится просто: добавляем not после to be.</div>
+                <div class="example">I am not working. → I'm not working.</div>
+                <div class="example">You are not studying. → You aren't studying.</div>
+                <div class="example">He is not reading. → He isn't reading.</div>
+                <div class="example">She is not cooking. → She isn't cooking.</div>
+                <div class="example">We are not eating. → We aren't eating.</div>
+                <div class="example">They are not playing. → They aren't playing.</div>
+                <div class="example">💡 Совет:</div>
+                <div class="example">Две формы сокращения:</div>
+                <div class="example">You're not / You aren't</div>
+                <div class="example">He's not / He isn't</div>
+                <div class="example">Примеры:</div>
+                <div class="example">I'm not watching TV. — Я не смотрю телевизор.</div>
+                <div class="example">She isn't talking. — Она не разговаривает.</div>
+                <div class="example">They aren't playing. — Они не играют.</div>
+            </div>
         </div>
-        
 
         <div class="rule-section">
             <h3 class="rule-title">Вопросы в Present Continuous</h3>
-            <div class="rule-content"></div>
-            <div class="examples"><div class="example">Вопросы: ставим to be ПЕРЕД подлежащим.</div><div class="example">Am I working?</div><div class="example">Are you studying?</div><div class="example">Is he reading?</div><div class="example">Is she cooking?</div><div class="example">Are we eating?</div><div class="example">Are they playing?</div><div class="example">Примеры:</div><div class="example">Are you watching TV? — Ты смотришь телевизор?</div><div class="example">Is she talking on the phone? — Она разговаривает по телефону?</div><div class="example">Are they having lunch? — Они обедают?</div><div class="example">Короткие ответы:</div><div class="example">Are you working? — Yes, I am. / No, I'm not.</div><div class="example">Is she reading? — Yes, she is. / No, she isn't.</div><div class="example">Are they playing? — Yes, they are. / No, they aren't.</div><div class="example">Когда используем Present Continuous</div><div class="example">1. Действие происходит СЕЙЧАС, в момент речи:</div><div class="example">I'm reading a book (right now). — Я читаю книгу (прямо сейчас).</div><div class="example">She's sleeping (at the moment). — Она спит (в данный момент).</div><div class="example">2. Временная ситуация:</div><div class="example">I'm staying at a hotel this week. — Я живу в отеле на этой неделе.</div><div class="example">He's working in Moscow this month. — Он работает в Москве в этом месяце.</div><div class="example">3. Планы на будущее (с указанием времени):</div><div class="example">I'm meeting her tomorrow. — Я встречаюсь с ней завтра.</div><div class="example">We're flying to Paris next week. — Мы летим в Париж на следующей неделе.</div><div class="example">Слова-указатели Present Continuous</div><div class="example">now — сейчас</div><div class="example">at the moment — в данный момент</div><div class="example">right now — прямо сейчас</div><div class="example">currently — в настоящее время</div><div class="example">today — сегодня</div><div class="example">this week — на этой неделе</div><div class="example">this month — в этом месяце</div><div class="example">Look! — Смотри!</div><div class="example">Listen! — Слушай!</div><div class="example">Примеры:</div><div class="example">I'm working now. — Я работаю сейчас.</div><div class="example">Look! It's raining! — Смотри! Идёт дождь!</div><div class="example">She's studying at the moment. — Она учится в данный момент.</div><div class="example">Present Simple vs Present Continuous</div><div class="example">Это важное различие!</div><div class="example">Present Simple — привычка, регулярное действие:</div><div class="example">I work every day. — Я работаю каждый день.</div><div class="example">Present Continuous — действие происходит сейчас:</div><div class="example">I'm working now. — Я работаю сейчас.</div><div class="example">Сравни:</div><div class="example">He plays football (regularly). — Он играет в футбол (регулярно).</div><div class="example">He is playing football (now). — Он играет в футбол (сейчас).</div><div class="example">They live in London (permanently). — Они живут в Лондоне (постоянно).</div><div class="example">They are staying in London (temporarily). — Они живут в Лондоне (временно).</div><div class="example">Глаголы, которые НЕ используются в Continuous</div><div class="example">Некоторые глаголы почти НИКОГДА не используются в Continuous:</div><div class="example">like, love, hate, want, need, know, understand, believe, remember, forget, prefer, see, hear</div><div class="example">❌ I am liking pizza. (неправильно)</div><div class="example">✔ I like pizza. (правильно)</div><div class="example">❌ She is knowing the answer. (неправильно)</div><div class="example">✔ She knows the answer. (правильно)</div><div class="example">💡 Совет:</div><div class="example">Эти глаголы описывают состояния, а не действия.</div></div>
+            <p class="rule-content"></p>
+            <div class="examples">
+                <div class="example">Вопросы: ставим to be ПЕРЕД подлежащим.</div>
+                <div class="example">Am I working?</div>
+                <div class="example">Are you studying?</div>
+                <div class="example">Is he reading?</div>
+                <div class="example">Is she cooking?</div>
+                <div class="example">Are we eating?</div>
+                <div class="example">Are they playing?</div>
+                <div class="example">Примеры:</div>
+                <div class="example">Are you watching TV? — Ты смотришь телевизор?</div>
+                <div class="example">Is she talking on the phone? — Она разговаривает по телефону?</div>
+                <div class="example">Are they having lunch? — Они обедают?</div>
+                <div class="example">Короткие ответы:</div>
+                <div class="example">Are you working? — Yes, I am. / No, I'm not.</div>
+                <div class="example">Is she reading? — Yes, she is. / No, she isn't.</div>
+                <div class="example">Are they playing? — Yes, they are. / No, they aren't.</div>
+                <div class="example">Когда используем Present Continuous</div>
+                <div class="example">1. Действие происходит СЕЙЧАС, в момент речи:</div>
+                <div class="example">I'm reading a book (right now). — Я читаю книгу (прямо сейчас).</div>
+                <div class="example">She's sleeping (at the moment). — Она спит (в данный момент).</div>
+                <div class="example">2. Временная ситуация:</div>
+                <div class="example">I'm staying at a hotel this week. — Я живу в отеле на этой неделе.</div>
+                <div class="example">He's working in Moscow this month. — Он работает в Москве в этом месяце.</div>
+                <div class="example">3. Планы на будущее (с указанием времени):</div>
+                <div class="example">I'm meeting her tomorrow. — Я встречаюсь с ней завтра.</div>
+                <div class="example">We're flying to Paris next week. — Мы летим в Париж на следующей неделе.</div>
+                <div class="example">Слова-указатели Present Continuous</div>
+                <div class="example">now — сейчас</div>
+                <div class="example">at the moment — в данный момент</div>
+                <div class="example">right now — прямо сейчас</div>
+                <div class="example">currently — в настоящее время</div>
+                <div class="example">today — сегодня</div>
+                <div class="example">this week — на этой неделе</div>
+                <div class="example">this month — в этом месяце</div>
+                <div class="example">Look! — Смотри!</div>
+                <div class="example">Listen! — Слушай!</div>
+                <div class="example">Примеры:</div>
+                <div class="example">I'm working now. — Я работаю сейчас.</div>
+                <div class="example">Look! It's raining! — Смотри! Идёт дождь!</div>
+                <div class="example">She's studying at the moment. — Она учится в данный момент.</div>
+                <div class="example">Present Simple vs Present Continuous</div>
+                <div class="example">Это важное различие!</div>
+                <div class="example">Present Simple — привычка, регулярное действие:</div>
+                <div class="example">I work every day. — Я работаю каждый день.</div>
+                <div class="example">Present Continuous — действие происходит сейчас:</div>
+                <div class="example">I'm working now. — Я работаю сейчас.</div>
+                <div class="example">Сравни:</div>
+                <div class="example">He plays football (regularly). — Он играет в футбол (регулярно).</div>
+                <div class="example">He is playing football (now). — Он играет в футбол (сейчас).</div>
+                <div class="example">They live in London (permanently). — Они живут в Лондоне (постоянно).</div>
+                <div class="example">They are staying in London (temporarily). — Они живут в Лондоне (временно).</div>
+                <div class="example">Глаголы, которые НЕ используются в Continuous</div>
+                <div class="example">Некоторые глаголы почти НИКОГДА не используются в Continuous:</div>
+                <div class="example">like, love, hate, want, need, know, understand, believe, remember, forget, prefer, see, hear</div>
+                <div class="example">❌ I am liking pizza. (неправильно)</div>
+                <div class="example">✔ I like pizza. (правильно)</div>
+                <div class="example">❌ She is knowing the answer. (неправильно)</div>
+                <div class="example">✔ She knows the answer. (правильно)</div>
+                <div class="example">💡 Совет:</div>
+                <div class="example">Эти глаголы описывают состояния, а не действия.</div>
+            </div>
         </div>
-        
 
         <div class="rule-section">
             <h3 class="rule-title">Типичные ошибки русскоговорящих</h3>
-            <div class="rule-content"></div>
-            <div class="examples"><div class="example">❌ I working now. → пропущен to be</div><div class="example">✔ I am working now.</div><div class="example">❌ She is work. → пропущено -ing</div><div class="example">✔ She is working.</div><div class="example">❌ He playing football. → пропущен is</div><div class="example">✔ He is playing football.</div><div class="example">❌ Are you work? → неправильная форма глагола</div><div class="example">✔ Are you working?</div><div class="example">❌ I am liking pizza. → этот глагол не используется в Continuous</div><div class="example">✔ I like pizza.</div><div class="example">❌ They are stoping. → неправильное написание</div><div class="example">✔ They are stopping.</div></div>
+            <p class="rule-content"></p>
+            <div class="examples">
+                <div class="example">❌ I working now. → пропущен to be</div>
+                <div class="example">✔ I am working now.</div>
+                <div class="example">❌ She is work. → пропущено -ing</div>
+                <div class="example">✔ She is working.</div>
+                <div class="example">❌ He playing football. → пропущен is</div>
+                <div class="example">✔ He is playing football.</div>
+                <div class="example">❌ Are you work? → неправильная форма глагола</div>
+                <div class="example">✔ Are you working?</div>
+                <div class="example">❌ I am liking pizza. → этот глагол не используется в Continuous</div>
+                <div class="example">✔ I like pizza.</div>
+                <div class="example">❌ They are stoping. → неправильное написание</div>
+                <div class="example">✔ They are stopping.</div>
+            </div>
         </div>
-        
 
         <div class="rule-section">
             <h3 class="rule-title">Главное про Present Continuous</h3>
-            <div class="rule-content"></div>
-            <div class="examples"><div class="example">1️⃣ Формула: am/is/are + глагол-ing</div><div class="example">2️⃣ Используется для действий, происходящих СЕЙЧАС</div><div class="example">3️⃣ Большинство глаголов: просто +ing</div><div class="example">4️⃣ Отрицание: am/is/are + not + глагол-ing</div><div class="example">5️⃣ Вопрос: Am/Is/Are + подлежащее + глагол-ing?</div><div class="example">6️⃣ Некоторые глаголы (like, know, want) НЕ используются в Continuous</div></div>
-        </div>
-        
-        </div>
-
-        <!-- Results Section (hidden initially) -->
-        <div id="results" class="results hidden">
-            <div class="score" id="score"></div>
-            <div class="results-message" id="results-message"></div>
-            <div>
-                <button class="retry-btn" onclick="retakeQuiz()">Пройти ещё раз</button>
-                <a href="../index.html" class="home-btn">На главную</a>
+            <p class="rule-content"></p>
+            <div class="examples">
+                <div class="example">1️⃣ Формула: am/is/are + глагол-ing</div>
+                <div class="example">2️⃣ Используется для действий, происходящих СЕЙЧАС</div>
+                <div class="example">3️⃣ Большинство глаголов: просто +ing</div>
+                <div class="example">4️⃣ Отрицание: am/is/are + not + глагол-ing</div>
+                <div class="example">5️⃣ Вопрос: Am/Is/Are + подлежащее + глагол-ing?</div>
+                <div class="example">6️⃣ Некоторые глаголы (like, know, want) НЕ используются в Continuous</div>
             </div>
         </div>
 
-        <!-- Quiz Section -->
-        <div class="quiz-section" id="quiz-section">
-            <h2 class="section-title">Тест</h2>
 
-            <!-- Quiz Selector (shown if multiple quizzes) -->
-            <div id="quiz-selector" style="margin-bottom: 2rem; display: flex; flex-direction: column; align-items: center; gap: 0.8rem;">
+        <div class="quiz-section">
+            <h2 class="section-title">✏️ Проверь себя</h2>
+            <p style="text-align: center; margin-bottom: 2rem; font-size: 1.1rem;">
+                Всего вопросов: 200
+            </p>
+
+            <div id="quiz-selector">
                 <button type="button" class="quiz-selector-btn" data-quiz="1" onclick="loadQuiz(1)">Тест 1</button>
-<button type="button" class="quiz-selector-btn" data-quiz="2" onclick="loadQuiz(2)">Тест 2</button>
-<button type="button" class="quiz-selector-btn" data-quiz="3" onclick="loadQuiz(3)">Тест 3</button>
-<button type="button" class="quiz-selector-btn" data-quiz="4" onclick="loadQuiz(4)">Тест 4</button>
-<button type="button" class="quiz-selector-btn" data-quiz="5" onclick="loadQuiz(5)">Тест 5</button>
-<button type="button" class="quiz-selector-btn" data-quiz="6" onclick="loadQuiz(6)">Тест 6</button>
-<button type="button" class="quiz-selector-btn" data-quiz="7" onclick="loadQuiz(7)">Тест 7</button>
-<button type="button" class="quiz-selector-btn" data-quiz="8" onclick="loadQuiz(8)">Тест 8</button>
-<button type="button" class="quiz-selector-btn" data-quiz="9" onclick="loadQuiz(9)">Тест 9</button>
-<button type="button" class="quiz-selector-btn" data-quiz="10" onclick="loadQuiz(10)">Тест 10</button>
+                <button type="button" class="quiz-selector-btn" data-quiz="2" onclick="loadQuiz(2)">Тест 2</button>
+                <button type="button" class="quiz-selector-btn" data-quiz="3" onclick="loadQuiz(3)">Тест 3</button>
+                <button type="button" class="quiz-selector-btn" data-quiz="4" onclick="loadQuiz(4)">Тест 4</button>
+                <button type="button" class="quiz-selector-btn" data-quiz="5" onclick="loadQuiz(5)">Тест 5</button>
+                <button type="button" class="quiz-selector-btn" data-quiz="6" onclick="loadQuiz(6)">Тест 6</button>
+                <button type="button" class="quiz-selector-btn" data-quiz="7" onclick="loadQuiz(7)">Тест 7</button>
+                <button type="button" class="quiz-selector-btn" data-quiz="8" onclick="loadQuiz(8)">Тест 8</button>
+                <button type="button" class="quiz-selector-btn" data-quiz="9" onclick="loadQuiz(9)">Тест 9</button>
+                <button type="button" class="quiz-selector-btn" data-quiz="10" onclick="loadQuiz(10)">Тест 10</button>
             </div>
 
-            <div id="quiz-placeholder" style="text-align: center; padding: 3rem; color: var(--color-text-light); display: block;">
+            <div id="quiz-placeholder" style="display: block;">
                 <p style="font-size: 1.2rem;">Выберите тест, чтобы начать</p>
             </div>
 
             <form id="quiz-form" style="display: none;">
-                
                 <button type="submit" class="submit-btn" id="submit-btn">Проверить ответы</button>
             </form>
+
+            <div id="results" class="hidden">
+                <div class="score" id="score"></div>
+                <div class="feedback" id="feedback"></div>
+                <p id="details"></p>
+                <button class="retry-btn" onclick="retryQuiz()">Попробовать ещё раз</button>
+                <br>
+                <a href="../index.html" class="home-btn">На главную</a>
+            </div>
         </div>
-    </div>
+    </main>
 
     <script>
-        const allQuizData = {"1": [{"id": 5937, "text": "work → ___", "options": ["working", "workking", "workin", "workeing"], "correct_index": 0}, {"id": 5938, "text": "play → ___", "options": ["plaiing", "playing", "playying", "plaing"], "correct_index": 1}, {"id": 5939, "text": "read → ___", "options": ["reading", "readding", "readin", "readeing"], "correct_index": 0}, {"id": 5940, "text": "watch → ___", "options": ["watcing", "watchhing", "watching", "watchin"], "correct_index": 2}, {"id": 5941, "text": "study → ___", "options": ["studing", "studying", "studyying", "studing"], "correct_index": 1}, {"id": 5942, "text": "sleep → ___", "options": ["sleeping", "sleepping", "sleepin", "sleepeing"], "correct_index": 0}, {"id": 5943, "text": "talk → ___", "options": ["talking", "talkking", "talkin", "talkeing"], "correct_index": 0}, {"id": 5944, "text": "listen → ___", "options": ["listening", "listenning", "listenin", "listeneing"], "correct_index": 0}, {"id": 5945, "text": "walk → ___", "options": ["walking", "walkking", "walkin", "walkeing"], "correct_index": 0}, {"id": 5946, "text": "eat → ___", "options": ["eating", "eatting", "eatin", "eateing"], "correct_index": 0}, {"id": 5947, "text": "drink → ___", "options": ["drinking", "drinkking", "drinkin", "drinkeing"], "correct_index": 0}, {"id": 5948, "text": "cook → ___", "options": ["cooking", "cookking", "cookin", "cookeing"], "correct_index": 0}, {"id": 5949, "text": "clean → ___", "options": ["cleaning", "cleannnig", "cleanin", "cleaneing"], "correct_index": 0}, {"id": 5950, "text": "teach → ___", "options": ["teacing", "teaching", "teachhing", "teachin"], "correct_index": 1}, {"id": 5951, "text": "learn → ___", "options": ["learning", "learnning", "learnin", "learneing"], "correct_index": 0}, {"id": 5952, "text": "help → ___", "options": ["helping", "helpping", "helpin", "helpeing"], "correct_index": 0}, {"id": 5953, "text": "wait → ___", "options": ["waiting", "waitting", "waitin", "waiteing"], "correct_index": 0}, {"id": 5954, "text": "call → ___", "options": ["calling", "callling", "callin", "calleing"], "correct_index": 0}, {"id": 5955, "text": "start → ___", "options": ["starting", "startting", "startin", "starteing"], "correct_index": 0}, {"id": 5956, "text": "finish → ___", "options": ["finishing", "finishhing", "finishin", "finisheing"], "correct_index": 0}], "2": [{"id": 5957, "text": "make → ___", "options": ["makeing", "making", "makking", "makiing"], "correct_index": 1}, {"id": 5958, "text": "write → ___", "options": ["writeing", "writing", "writting", "writiing"], "correct_index": 1}, {"id": 5959, "text": "come → ___", "options": ["comeing", "coming", "comming", "comiing"], "correct_index": 1}, {"id": 5960, "text": "take → ___", "options": ["takeing", "taking", "takking", "takiing"], "correct_index": 1}, {"id": 5961, "text": "have → ___", "options": ["haveing", "having", "havving", "haviing"], "correct_index": 1}, {"id": 5962, "text": "live → ___", "options": ["liveing", "living", "livving", "liviing"], "correct_index": 1}, {"id": 5963, "text": "give → ___", "options": ["giveing", "giving", "givving", "giviing"], "correct_index": 1}, {"id": 5964, "text": "use → ___", "options": ["useing", "using", "ussing", "usiing"], "correct_index": 1}, {"id": 5965, "text": "dance → ___", "options": ["danceing", "dancing", "danccing", "danciing"], "correct_index": 1}, {"id": 5966, "text": "drive → ___", "options": ["driveing", "driving", "drivving", "driviing"], "correct_index": 1}, {"id": 5967, "text": "ride → ___", "options": ["rideing", "riding", "ridding", "ridiing"], "correct_index": 1}, {"id": 5968, "text": "smile → ___", "options": ["smileing", "smiling", "smilling", "smiliing"], "correct_index": 1}, {"id": 5969, "text": "leave → ___", "options": ["leaveing", "leaving", "leavving", "leaviing"], "correct_index": 1}, {"id": 5970, "text": "arrive → ___", "options": ["arriveing", "arriving", "arrivving", "arriviing"], "correct_index": 1}, {"id": 5971, "text": "close → ___", "options": ["closeing", "closing", "clossing", "closiing"], "correct_index": 1}, {"id": 5972, "text": "hope → ___", "options": ["hopeing", "hoping", "hopping", "hopiing"], "correct_index": 1}, {"id": 5973, "text": "save → ___", "options": ["saveing", "saving", "savving", "saviing"], "correct_index": 1}, {"id": 5974, "text": "move → ___", "options": ["moveing", "moving", "movving", "moviing"], "correct_index": 1}, {"id": 5975, "text": "change → ___", "options": ["changeing", "changing", "changgin", "changiing"], "correct_index": 1}, {"id": 5976, "text": "lose → ___", "options": ["loseing", "losing", "lossing", "losiing"], "correct_index": 1}], "3": [{"id": 5977, "text": "run → ___", "options": ["runing", "running", "runniing", "runnin"], "correct_index": 1}, {"id": 5978, "text": "sit → ___", "options": ["siting", "sitting", "sittiing", "sittin"], "correct_index": 1}, {"id": 5979, "text": "stop → ___", "options": ["stoping", "stopping", "stoppiing", "stoppin"], "correct_index": 1}, {"id": 5980, "text": "swim → ___", "options": ["swiming", "swimming", "swimmiing", "swimmin"], "correct_index": 1}, {"id": 5981, "text": "get → ___", "options": ["geting", "getting", "gettiing", "gettin"], "correct_index": 1}, {"id": 5982, "text": "put → ___", "options": ["puting", "putting", "puttiing", "puttin"], "correct_index": 1}, {"id": 5983, "text": "cut → ___", "options": ["cuting", "cutting", "cuttiing", "cuttin"], "correct_index": 1}, {"id": 5984, "text": "plan → ___", "options": ["planing", "planning", "planniing", "plannin"], "correct_index": 1}, {"id": 5985, "text": "begin → ___", "options": ["begining", "beginning", "beginniing", "beginnin"], "correct_index": 1}, {"id": 5986, "text": "forget → ___", "options": ["forgeting", "forgetting", "forgettiing", "forgettin"], "correct_index": 1}, {"id": 5987, "text": "НО: open → ___", "options": ["opening", "openning", "openiing", "openin"], "correct_index": 0}, {"id": 5988, "text": "НО: happen → ___", "options": ["happening", "happenning", "happeniing", "happenin"], "correct_index": 0}, {"id": 5989, "text": "НО: listen → ___", "options": ["listening", "listenning", "listeniing", "listenin"], "correct_index": 0}, {"id": 5990, "text": "НО: visit → ___", "options": ["visiting", "visitting", "visitiing", "visitin"], "correct_index": 0}, {"id": 5991, "text": "win → ___", "options": ["wining", "winning", "winniing", "winnin"], "correct_index": 1}, {"id": 5992, "text": "set → ___", "options": ["seting", "setting", "settiing", "settin"], "correct_index": 1}, {"id": 5993, "text": "let → ___", "options": ["leting", "letting", "lettiing", "lettin"], "correct_index": 1}, {"id": 5994, "text": "shop → ___", "options": ["shoping", "shopping", "shoppiing", "shoppin"], "correct_index": 1}, {"id": 5995, "text": "drop → ___", "options": ["droping", "dropping", "droppiing", "droppin"], "correct_index": 1}, {"id": 5996, "text": "НО: enter → ___", "options": ["entering", "enterring", "enteriing", "enterin"], "correct_index": 0}], "4": [{"id": 5997, "text": "I ___ working now.", "options": ["am", "is", "are", "be"], "correct_index": 0}, {"id": 5998, "text": "You ___ studying English.", "options": ["am", "is", "are", "be"], "correct_index": 2}, {"id": 5999, "text": "We ___ watching TV.", "options": ["am", "is", "are", "be"], "correct_index": 2}, {"id": 6000, "text": "They ___ playing football.", "options": ["am", "is", "are", "be"], "correct_index": 2}, {"id": 6001, "text": "I ___ reading a book.", "options": ["am", "is", "are", "be"], "correct_index": 0}, {"id": 6002, "text": "You ___ eating lunch.", "options": ["am", "is", "are", "be"], "correct_index": 2}, {"id": 6003, "text": "We ___ learning English.", "options": ["am", "is", "are", "be"], "correct_index": 2}, {"id": 6004, "text": "They ___ sleeping now.", "options": ["am", "is", "are", "be"], "correct_index": 2}, {"id": 6005, "text": "I ___ cooking dinner.", "options": ["am", "is", "are", "be"], "correct_index": 0}, {"id": 6006, "text": "You ___ listening to music.", "options": ["am", "is", "are", "be"], "correct_index": 2}, {"id": 6007, "text": "We ___ doing homework.", "options": ["am", "is", "are", "be"], "correct_index": 2}, {"id": 6008, "text": "They ___ talking.", "options": ["am", "is", "are", "be"], "correct_index": 2}, {"id": 6009, "text": "I ___ drinking coffee.", "options": ["am", "is", "are", "be"], "correct_index": 0}, {"id": 6010, "text": "You ___ writing an email.", "options": ["am", "is", "are", "be"], "correct_index": 2}, {"id": 6011, "text": "We ___ having fun.", "options": ["am", "is", "are", "be"], "correct_index": 2}, {"id": 6012, "text": "They ___ waiting for the bus.", "options": ["am", "is", "are", "be"], "correct_index": 2}, {"id": 6013, "text": "I ___ sitting here.", "options": ["am", "is", "are", "be"], "correct_index": 0}, {"id": 6014, "text": "You ___ standing there.", "options": ["am", "is", "are", "be"], "correct_index": 2}, {"id": 6015, "text": "We ___ going home.", "options": ["am", "is", "are", "be"], "correct_index": 2}, {"id": 6016, "text": "They ___ coming now.", "options": ["am", "is", "are", "be"], "correct_index": 2}], "5": [{"id": 6017, "text": "He ___ working now.", "options": ["am", "is", "are", "be"], "correct_index": 1}, {"id": 6018, "text": "She ___ studying English.", "options": ["am", "is", "are", "be"], "correct_index": 1}, {"id": 6019, "text": "It ___ raining.", "options": ["am", "is", "are", "be"], "correct_index": 1}, {"id": 6020, "text": "He ___ playing football.", "options": ["am", "is", "are", "be"], "correct_index": 1}, {"id": 6021, "text": "She ___ reading a book.", "options": ["am", "is", "are", "be"], "correct_index": 1}, {"id": 6022, "text": "It ___ snowing.", "options": ["am", "is", "are", "be"], "correct_index": 1}, {"id": 6023, "text": "He ___ eating lunch.", "options": ["am", "is", "are", "be"], "correct_index": 1}, {"id": 6024, "text": "She ___ sleeping now.", "options": ["am", "is", "are", "be"], "correct_index": 1}, {"id": 6025, "text": "It ___ working well.", "options": ["am", "is", "are", "be"], "correct_index": 1}, {"id": 6026, "text": "He ___ cooking dinner.", "options": ["am", "is", "are", "be"], "correct_index": 1}, {"id": 6027, "text": "She ___ listening to music.", "options": ["am", "is", "are", "be"], "correct_index": 1}, {"id": 6028, "text": "It ___ getting dark.", "options": ["am", "is", "are", "be"], "correct_index": 1}, {"id": 6029, "text": "He ___ doing homework.", "options": ["am", "is", "are", "be"], "correct_index": 1}, {"id": 6030, "text": "She ___ talking on the phone.", "options": ["am", "is", "are", "be"], "correct_index": 1}, {"id": 6031, "text": "It ___ starting now.", "options": ["am", "is", "are", "be"], "correct_index": 1}, {"id": 6032, "text": "He ___ drinking water.", "options": ["am", "is", "are", "be"], "correct_index": 1}, {"id": 6033, "text": "She ___ writing a letter.", "options": ["am", "is", "are", "be"], "correct_index": 1}, {"id": 6034, "text": "It ___ getting better.", "options": ["am", "is", "are", "be"], "correct_index": 1}, {"id": 6035, "text": "He ___ sitting there.", "options": ["am", "is", "are", "be"], "correct_index": 1}, {"id": 6036, "text": "She ___ coming here.", "options": ["am", "is", "are", "be"], "correct_index": 1}], "6": [{"id": 6037, "text": "I ___ not working.", "options": ["am", "is", "are", "be"], "correct_index": 0}, {"id": 6038, "text": "He ___ not studying.", "options": ["am", "is", "are", "be"], "correct_index": 1}, {"id": 6039, "text": "They ___ not playing.", "options": ["am", "is", "are", "be"], "correct_index": 2}, {"id": 6040, "text": "She ___ not reading.", "options": ["am", "is", "are", "be"], "correct_index": 1}, {"id": 6041, "text": "We ___ not eating.", "options": ["am", "is", "are", "be"], "correct_index": 2}, {"id": 6042, "text": "You ___ not sleeping.", "options": ["am", "is", "are", "be"], "correct_index": 2}, {"id": 6043, "text": "It ___ not raining.", "options": ["am", "is", "are", "be"], "correct_index": 1}, {"id": 6044, "text": "I'm ___ watching TV.", "options": ["am", "not", "are", "no"], "correct_index": 1}, {"id": 6045, "text": "He ___ listening.", "options": ["isn't", "aren't", "amn't", "not"], "correct_index": 0}, {"id": 6046, "text": "They ___ talking.", "options": ["isn't", "aren't", "amn't", "not"], "correct_index": 1}, {"id": 6047, "text": "She ___ cooking.", "options": ["isn't", "aren't", "amn't", "not"], "correct_index": 0}, {"id": 6048, "text": "We ___ waiting.", "options": ["isn't", "aren't", "amn't", "not"], "correct_index": 1}, {"id": 6049, "text": "You ___ working.", "options": ["isn't", "aren't", "amn't", "not"], "correct_index": 1}, {"id": 6050, "text": "It ___ working.", "options": ["isn't", "aren't", "amn't", "not"], "correct_index": 0}, {"id": 6051, "text": "I ___ going.", "options": ["'m not", "isn't", "aren't", "amn't"], "correct_index": 0}, {"id": 6052, "text": "He ___ coming.", "options": ["'m not", "isn't", "aren't", "amn't"], "correct_index": 1}, {"id": 6053, "text": "They ___ leaving.", "options": ["'m not", "isn't", "aren't", "amn't"], "correct_index": 2}, {"id": 6054, "text": "She ___ sitting.", "options": ["'m not", "isn't", "aren't", "amn't"], "correct_index": 1}, {"id": 6055, "text": "We ___ standing.", "options": ["'m not", "isn't", "aren't", "amn't"], "correct_index": 2}, {"id": 6056, "text": "You ___ running.", "options": ["'m not", "isn't", "aren't", "amn't"], "correct_index": 2}], "7": [{"id": 6057, "text": "___ you working?", "options": ["Am", "Is", "Are", "Do"], "correct_index": 2}, {"id": 6058, "text": "___ he studying?", "options": ["Am", "Is", "Are", "Does"], "correct_index": 1}, {"id": 6059, "text": "___ they playing?", "options": ["Am", "Is", "Are", "Do"], "correct_index": 2}, {"id": 6060, "text": "___ she reading?", "options": ["Am", "Is", "Are", "Does"], "correct_index": 1}, {"id": 6061, "text": "___ I doing it right?", "options": ["Am", "Is", "Are", "Do"], "correct_index": 0}, {"id": 6062, "text": "___ we eating now?", "options": ["Am", "Is", "Are", "Do"], "correct_index": 2}, {"id": 6063, "text": "___ it raining?", "options": ["Am", "Is", "Are", "Does"], "correct_index": 1}, {"id": 6064, "text": "___ you listening?", "options": ["Am", "Is", "Are", "Do"], "correct_index": 2}, {"id": 6065, "text": "___ he coming?", "options": ["Am", "Is", "Are", "Does"], "correct_index": 1}, {"id": 6066, "text": "___ they waiting?", "options": ["Am", "Is", "Are", "Do"], "correct_index": 2}, {"id": 6067, "text": "___ she sleeping?", "options": ["Am", "Is", "Are", "Does"], "correct_index": 1}, {"id": 6068, "text": "___ I late?", "options": ["Am", "Is", "Are", "Do"], "correct_index": 0}, {"id": 6069, "text": "___ we going?", "options": ["Am", "Is", "Are", "Do"], "correct_index": 2}, {"id": 6070, "text": "___ it working?", "options": ["Am", "Is", "Are", "Does"], "correct_index": 1}, {"id": 6071, "text": "___ you watching TV?", "options": ["Am", "Is", "Are", "Do"], "correct_index": 2}, {"id": 6072, "text": "___ he talking?", "options": ["Am", "Is", "Are", "Does"], "correct_index": 1}, {"id": 6073, "text": "___ they leaving?", "options": ["Am", "Is", "Are", "Do"], "correct_index": 2}, {"id": 6074, "text": "___ she writing?", "options": ["Am", "Is", "Are", "Does"], "correct_index": 1}, {"id": 6075, "text": "___ I bothering you?", "options": ["Am", "Is", "Are", "Do"], "correct_index": 0}, {"id": 6076, "text": "___ we staying here?", "options": ["Am", "Is", "Are", "Do"], "correct_index": 2}], "8": [{"id": 6077, "text": "I ___ English every day.", "options": ["study", "am studying", "studying", "studies"], "correct_index": 0}, {"id": 6078, "text": "I ___ English now.", "options": ["study", "am studying", "studying", "studies"], "correct_index": 1}, {"id": 6079, "text": "He ___ football on Sundays.", "options": ["play", "is playing", "playing", "plays"], "correct_index": 3}, {"id": 6080, "text": "He ___ football at the moment.", "options": ["play", "is playing", "playing", "plays"], "correct_index": 1}, {"id": 6081, "text": "They ___ in London.", "options": ["live", "are living", "living", "lives"], "correct_index": 0}, {"id": 6082, "text": "They ___ in a hotel this week.", "options": ["stay", "are staying", "staying", "stays"], "correct_index": 1}, {"id": 6083, "text": "She ___ to school every day.", "options": ["go", "is going", "going", "goes"], "correct_index": 3}, {"id": 6084, "text": "She ___ to school now.", "options": ["go", "is going", "going", "goes"], "correct_index": 1}, {"id": 6085, "text": "We ___ English.", "options": ["like", "are liking", "liking", "likes"], "correct_index": 0}, {"id": 6086, "text": "We ___ dinner now.", "options": ["have", "are having", "having", "has"], "correct_index": 1}, {"id": 6087, "text": "I ___ tea every morning.", "options": ["drink", "am drinking", "drinking", "drinks"], "correct_index": 0}, {"id": 6088, "text": "I ___ tea right now.", "options": ["drink", "am drinking", "drinking", "drinks"], "correct_index": 1}, {"id": 6089, "text": "He ___ TV every evening.", "options": ["watch", "is watching", "watching", "watches"], "correct_index": 3}, {"id": 6090, "text": "He ___ TV at the moment.", "options": ["watch", "is watching", "watching", "watches"], "correct_index": 1}, {"id": 6091, "text": "They usually ___ at 7 AM.", "options": ["wake up", "are waking up", "waking up", "wakes up"], "correct_index": 0}, {"id": 6092, "text": "They ___ up right now.", "options": ["wake", "are waking", "waking", "wakes"], "correct_index": 1}, {"id": 6093, "text": "She always ___ to music.", "options": ["listen", "is listening", "listening", "listens"], "correct_index": 3}, {"id": 6094, "text": "She ___ to music now.", "options": ["listen", "is listening", "listening", "listens"], "correct_index": 1}, {"id": 6095, "text": "I often ___ books.", "options": ["read", "am reading", "reading", "reads"], "correct_index": 0}, {"id": 6096, "text": "I ___ a book right now.", "options": ["read", "am reading", "reading", "reads"], "correct_index": 1}], "9": [{"id": 6097, "text": "I'm working ___.", "options": ["now", "every day", "always", "usually"], "correct_index": 0}, {"id": 6098, "text": "She studies ___.", "options": ["now", "every day", "at the moment", "right now"], "correct_index": 1}, {"id": 6099, "text": "They are playing ___.", "options": ["always", "often", "at the moment", "usually"], "correct_index": 2}, {"id": 6100, "text": "He goes to school ___.", "options": ["now", "right now", "at the moment", "every day"], "correct_index": 3}, {"id": 6101, "text": "We ___ watching TV now.", "options": ["am", "is", "are", "do"], "correct_index": 2}, {"id": 6102, "text": "I ___ like pizza.", "options": ["am", "is", "are", "X"], "correct_index": 3}, {"id": 6103, "text": "Look! It ___ raining.", "options": ["is", "does", "rains", "rain"], "correct_index": 0}, {"id": 6104, "text": "She ___ works on Monday.", "options": ["is", "does", "are", "always"], "correct_index": 3}, {"id": 6105, "text": "Listen! He ___ singing.", "options": ["is", "does", "sings", "sing"], "correct_index": 0}, {"id": 6106, "text": "They usually ___ at home.", "options": ["are", "is", "staying", "stay"], "correct_index": 3}, {"id": 6107, "text": "I'm ___ a book right now.", "options": ["read", "reading", "reads", "to read"], "correct_index": 1}, {"id": 6108, "text": "She ___ English every day.", "options": ["study", "is studying", "studies", "studying"], "correct_index": 2}, {"id": 6109, "text": "We're ___ lunch at the moment.", "options": ["have", "having", "has", "to have"], "correct_index": 1}, {"id": 6110, "text": "He always ___ breakfast.", "options": ["eat", "is eating", "eats", "eating"], "correct_index": 2}, {"id": 6111, "text": "They're ___ to school now.", "options": ["go", "going", "goes", "to go"], "correct_index": 1}, {"id": 6112, "text": "I ___ coffee every morning.", "options": ["drink", "am drinking", "drinks", "drinking"], "correct_index": 0}, {"id": 6113, "text": "She's ___ on the phone now.", "options": ["talk", "talking", "talks", "to talk"], "correct_index": 1}, {"id": 6114, "text": "We often ___ football.", "options": ["play", "are playing", "plays", "playing"], "correct_index": 0}, {"id": 6115, "text": "He's ___ his homework right now.", "options": ["do", "doing", "does", "to do"], "correct_index": 1}, {"id": 6116, "text": "They never ___ late.", "options": ["are", "is", "being", "be"], "correct_index": 0}], "10": [{"id": 6117, "text": "What ___ you doing?", "options": ["am", "is", "are", "do"], "correct_index": 2}, {"id": 6118, "text": "I ___ working now.", "options": ["am", "is", "are", "do"], "correct_index": 0}, {"id": 6119, "text": "She ___ reading a book.", "options": ["am", "is", "are", "does"], "correct_index": 1}, {"id": 6120, "text": "They ___ playing football.", "options": ["am", "is", "are", "do"], "correct_index": 2}, {"id": 6121, "text": "He ___ not listening.", "options": ["am", "is", "are", "does"], "correct_index": 1}, {"id": 6122, "text": "___ it raining?", "options": ["Am", "Is", "Are", "Does"], "correct_index": 1}, {"id": 6123, "text": "We ___ studying English.", "options": ["am", "is", "are", "do"], "correct_index": 2}, {"id": 6124, "text": "I ___ not sleeping.", "options": ["am", "is", "are", "do"], "correct_index": 0}, {"id": 6125, "text": "___ you watching TV?", "options": ["Am", "Is", "Are", "Do"], "correct_index": 2}, {"id": 6126, "text": "She ___ cooking dinner.", "options": ["am", "is", "are", "does"], "correct_index": 1}, {"id": 6127, "text": "make → ___", "options": ["makeing", "making", "makking", "makiing"], "correct_index": 1}, {"id": 6128, "text": "run → ___", "options": ["runing", "running", "runniing", "runnin"], "correct_index": 1}, {"id": 6129, "text": "I ___ like pizza.", "options": ["am", "am liking", "like", "liking"], "correct_index": 2}, {"id": 6130, "text": "He ___ to school every day.", "options": ["go", "is going", "goes", "going"], "correct_index": 2}, {"id": 6131, "text": "They're ___ now.", "options": ["leave", "leaving", "leaves", "to leave"], "correct_index": 1}, {"id": 6132, "text": "She always ___ early.", "options": ["wake up", "is waking up", "wakes up", "waking up"], "correct_index": 2}, {"id": 6133, "text": "Look! He ___ coming.", "options": ["is", "does", "comes", "come"], "correct_index": 0}, {"id": 6134, "text": "We ___ tea every morning.", "options": ["drink", "are drinking", "drinks", "drinking"], "correct_index": 0}, {"id": 6135, "text": "I'm ___ a letter right now.", "options": ["write", "writing", "writes", "to write"], "correct_index": 1}, {"id": 6136, "text": "They usually ___ at 8 PM.", "options": ["eat", "are eating", "eats", "eating"], "correct_index": 0}]};
+        const allQuizData = {"1": [{"text": "What ___ you doing?", "options": ["am", "is", "are", "do"], "correct_index": 2, "explanation": ""}, {"text": "I ___ working now.", "options": ["am", "is", "are", "be"], "correct_index": 0, "explanation": ""}, {"text": "He ___ working now.", "options": ["am", "is", "are", "be"], "correct_index": 1, "explanation": ""}, {"text": "make → ___", "options": ["makeing", "making", "makking", "makiing"], "correct_index": 1, "explanation": ""}, {"text": "___ you working?", "options": ["Am", "Is", "Are", "Do"], "correct_index": 2, "explanation": ""}, {"text": "I'm working ___.", "options": ["now", "every day", "always", "usually"], "correct_index": 0, "explanation": ""}, {"text": "I ___ not working.", "options": ["am", "is", "are", "be"], "correct_index": 0, "explanation": ""}, {"text": "I ___ English every day.", "options": ["study", "am studying", "studying", "studies"], "correct_index": 0, "explanation": ""}, {"text": "work → ___", "options": ["working", "workking", "workin", "workeing"], "correct_index": 0, "explanation": ""}, {"text": "run → ___", "options": ["runing", "running", "runniing", "runnin"], "correct_index": 1, "explanation": ""}, {"text": "___ he studying?", "options": ["Am", "Is", "Are", "Does"], "correct_index": 1, "explanation": ""}, {"text": "He ___ not studying.", "options": ["am", "is", "are", "be"], "correct_index": 1, "explanation": ""}, {"text": "I ___ working now.", "options": ["am", "is", "are", "do"], "correct_index": 0, "explanation": ""}, {"text": "She ___ studying English.", "options": ["am", "is", "are", "be"], "correct_index": 1, "explanation": ""}, {"text": "You ___ studying English.", "options": ["am", "is", "are", "be"], "correct_index": 2, "explanation": ""}, {"text": "She studies ___.", "options": ["now", "every day", "at the moment", "right now"], "correct_index": 1, "explanation": ""}, {"text": "I ___ English now.", "options": ["study", "am studying", "studying", "studies"], "correct_index": 1, "explanation": ""}, {"text": "write → ___", "options": ["writeing", "writing", "writting", "writiing"], "correct_index": 1, "explanation": ""}, {"text": "play → ___", "options": ["plaiing", "playing", "playying", "plaing"], "correct_index": 1, "explanation": ""}, {"text": "sit → ___", "options": ["siting", "sitting", "sittiing", "sittin"], "correct_index": 1, "explanation": ""}], "2": [{"text": "They are playing ___.", "options": ["always", "often", "at the moment", "usually"], "correct_index": 2, "explanation": ""}, {"text": "___ they playing?", "options": ["Am", "Is", "Are", "Do"], "correct_index": 2, "explanation": ""}, {"text": "come → ___", "options": ["comeing", "coming", "comming", "comiing"], "correct_index": 1, "explanation": ""}, {"text": "They ___ not playing.", "options": ["am", "is", "are", "be"], "correct_index": 2, "explanation": ""}, {"text": "stop → ___", "options": ["stoping", "stopping", "stoppiing", "stoppin"], "correct_index": 1, "explanation": ""}, {"text": "She ___ reading a book.", "options": ["am", "is", "are", "does"], "correct_index": 1, "explanation": ""}, {"text": "read → ___", "options": ["reading", "readding", "readin", "readeing"], "correct_index": 0, "explanation": ""}, {"text": "We ___ watching TV.", "options": ["am", "is", "are", "be"], "correct_index": 2, "explanation": ""}, {"text": "He ___ football on Sundays.", "options": ["play", "is playing", "playing", "plays"], "correct_index": 3, "explanation": ""}, {"text": "It ___ raining.", "options": ["am", "is", "are", "be"], "correct_index": 1, "explanation": ""}, {"text": "They ___ playing football.", "options": ["am", "is", "are", "be"], "correct_index": 2, "explanation": ""}, {"text": "watch → ___", "options": ["watcing", "watchhing", "watching", "watchin"], "correct_index": 2, "explanation": ""}, {"text": "They ___ playing football.", "options": ["am", "is", "are", "do"], "correct_index": 2, "explanation": ""}, {"text": "He goes to school ___.", "options": ["now", "right now", "at the moment", "every day"], "correct_index": 3, "explanation": ""}, {"text": "He ___ football at the moment.", "options": ["play", "is playing", "playing", "plays"], "correct_index": 1, "explanation": ""}, {"text": "take → ___", "options": ["takeing", "taking", "takking", "takiing"], "correct_index": 1, "explanation": ""}, {"text": "___ she reading?", "options": ["Am", "Is", "Are", "Does"], "correct_index": 1, "explanation": ""}, {"text": "She ___ not reading.", "options": ["am", "is", "are", "be"], "correct_index": 1, "explanation": ""}, {"text": "He ___ playing football.", "options": ["am", "is", "are", "be"], "correct_index": 1, "explanation": ""}, {"text": "swim → ___", "options": ["swiming", "swimming", "swimmiing", "swimmin"], "correct_index": 1, "explanation": ""}], "3": [{"text": "We ___ not eating.", "options": ["am", "is", "are", "be"], "correct_index": 2, "explanation": ""}, {"text": "___ I doing it right?", "options": ["Am", "Is", "Are", "Do"], "correct_index": 0, "explanation": ""}, {"text": "have → ___", "options": ["haveing", "having", "havving", "haviing"], "correct_index": 1, "explanation": ""}, {"text": "study → ___", "options": ["studing", "studying", "studyying", "studing"], "correct_index": 1, "explanation": ""}, {"text": "get → ___", "options": ["geting", "getting", "gettiing", "gettin"], "correct_index": 1, "explanation": ""}, {"text": "They ___ in London.", "options": ["live", "are living", "living", "lives"], "correct_index": 0, "explanation": ""}, {"text": "We ___ watching TV now.", "options": ["am", "is", "are", "do"], "correct_index": 2, "explanation": ""}, {"text": "He ___ not listening.", "options": ["am", "is", "are", "does"], "correct_index": 1, "explanation": ""}, {"text": "I ___ reading a book.", "options": ["am", "is", "are", "be"], "correct_index": 0, "explanation": ""}, {"text": "She ___ reading a book.", "options": ["am", "is", "are", "be"], "correct_index": 1, "explanation": ""}, {"text": "live → ___", "options": ["liveing", "living", "livving", "liviing"], "correct_index": 1, "explanation": ""}, {"text": "sleep → ___", "options": ["sleeping", "sleepping", "sleepin", "sleepeing"], "correct_index": 0, "explanation": ""}, {"text": "put → ___", "options": ["puting", "putting", "puttiing", "puttin"], "correct_index": 1, "explanation": ""}, {"text": "You ___ eating lunch.", "options": ["am", "is", "are", "be"], "correct_index": 2, "explanation": ""}, {"text": "It ___ snowing.", "options": ["am", "is", "are", "be"], "correct_index": 1, "explanation": ""}, {"text": "You ___ not sleeping.", "options": ["am", "is", "are", "be"], "correct_index": 2, "explanation": ""}, {"text": "___ we eating now?", "options": ["Am", "Is", "Are", "Do"], "correct_index": 2, "explanation": ""}, {"text": "They ___ in a hotel this week.", "options": ["stay", "are staying", "staying", "stays"], "correct_index": 1, "explanation": ""}, {"text": "I ___ like pizza.", "options": ["am", "is", "are", "X"], "correct_index": 3, "explanation": ""}, {"text": "___ it raining?", "options": ["Am", "Is", "Are", "Does"], "correct_index": 1, "explanation": ""}], "4": [{"text": "cut → ___", "options": ["cuting", "cutting", "cuttiing", "cuttin"], "correct_index": 1, "explanation": ""}, {"text": "It ___ not raining.", "options": ["am", "is", "are", "be"], "correct_index": 1, "explanation": ""}, {"text": "___ it raining?", "options": ["Am", "Is", "Are", "Does"], "correct_index": 1, "explanation": ""}, {"text": "talk → ___", "options": ["talking", "talkking", "talkin", "talkeing"], "correct_index": 0, "explanation": ""}, {"text": "Look! It ___ raining.", "options": ["is", "does", "rains", "rain"], "correct_index": 0, "explanation": ""}, {"text": "She ___ to school every day.", "options": ["go", "is going", "going", "goes"], "correct_index": 3, "explanation": ""}, {"text": "We ___ learning English.", "options": ["am", "is", "are", "be"], "correct_index": 2, "explanation": ""}, {"text": "He ___ eating lunch.", "options": ["am", "is", "are", "be"], "correct_index": 1, "explanation": ""}, {"text": "We ___ studying English.", "options": ["am", "is", "are", "do"], "correct_index": 2, "explanation": ""}, {"text": "give → ___", "options": ["giveing", "giving", "givving", "giviing"], "correct_index": 1, "explanation": ""}, {"text": "She ___ to school now.", "options": ["go", "is going", "going", "goes"], "correct_index": 1, "explanation": ""}, {"text": "listen → ___", "options": ["listening", "listenning", "listenin", "listeneing"], "correct_index": 0, "explanation": ""}, {"text": "They ___ sleeping now.", "options": ["am", "is", "are", "be"], "correct_index": 2, "explanation": ""}, {"text": "___ you listening?", "options": ["Am", "Is", "Are", "Do"], "correct_index": 2, "explanation": ""}, {"text": "use → ___", "options": ["useing", "using", "ussing", "usiing"], "correct_index": 1, "explanation": ""}, {"text": "She ___ works on Monday.", "options": ["is", "does", "are", "always"], "correct_index": 3, "explanation": ""}, {"text": "plan → ___", "options": ["planing", "planning", "planniing", "plannin"], "correct_index": 1, "explanation": ""}, {"text": "I ___ not sleeping.", "options": ["am", "is", "are", "do"], "correct_index": 0, "explanation": ""}, {"text": "She ___ sleeping now.", "options": ["am", "is", "are", "be"], "correct_index": 1, "explanation": ""}, {"text": "I'm ___ watching TV.", "options": ["am", "not", "are", "no"], "correct_index": 1, "explanation": ""}], "5": [{"text": "walk → ___", "options": ["walking", "walkking", "walkin", "walkeing"], "correct_index": 0, "explanation": ""}, {"text": "___ he coming?", "options": ["Am", "Is", "Are", "Does"], "correct_index": 1, "explanation": ""}, {"text": "___ you watching TV?", "options": ["Am", "Is", "Are", "Do"], "correct_index": 2, "explanation": ""}, {"text": "It ___ working well.", "options": ["am", "is", "are", "be"], "correct_index": 1, "explanation": ""}, {"text": "I ___ cooking dinner.", "options": ["am", "is", "are", "be"], "correct_index": 0, "explanation": ""}, {"text": "dance → ___", "options": ["danceing", "dancing", "danccing", "danciing"], "correct_index": 1, "explanation": ""}, {"text": "He ___ listening.", "options": ["isn't", "aren't", "amn't", "not"], "correct_index": 0, "explanation": ""}, {"text": "Listen! He ___ singing.", "options": ["is", "does", "sings", "sing"], "correct_index": 0, "explanation": ""}, {"text": "begin → ___", "options": ["begining", "beginning", "beginniing", "beginnin"], "correct_index": 1, "explanation": ""}, {"text": "We ___ English.", "options": ["like", "are liking", "liking", "likes"], "correct_index": 0, "explanation": ""}, {"text": "___ they waiting?", "options": ["Am", "Is", "Are", "Do"], "correct_index": 2, "explanation": ""}, {"text": "We ___ dinner now.", "options": ["have", "are having", "having", "has"], "correct_index": 1, "explanation": ""}, {"text": "You ___ listening to music.", "options": ["am", "is", "are", "be"], "correct_index": 2, "explanation": ""}, {"text": "She ___ cooking dinner.", "options": ["am", "is", "are", "does"], "correct_index": 1, "explanation": ""}, {"text": "He ___ cooking dinner.", "options": ["am", "is", "are", "be"], "correct_index": 1, "explanation": ""}, {"text": "eat → ___", "options": ["eating", "eatting", "eatin", "eateing"], "correct_index": 0, "explanation": ""}, {"text": "forget → ___", "options": ["forgeting", "forgetting", "forgettiing", "forgettin"], "correct_index": 1, "explanation": ""}, {"text": "They ___ talking.", "options": ["isn't", "aren't", "amn't", "not"], "correct_index": 1, "explanation": ""}, {"text": "They usually ___ at home.", "options": ["are", "is", "staying", "stay"], "correct_index": 3, "explanation": ""}, {"text": "drive → ___", "options": ["driveing", "driving", "drivving", "driviing"], "correct_index": 1, "explanation": ""}], "6": [{"text": "She ___ cooking.", "options": ["isn't", "aren't", "amn't", "not"], "correct_index": 0, "explanation": ""}, {"text": "I ___ tea every morning.", "options": ["drink", "am drinking", "drinking", "drinks"], "correct_index": 0, "explanation": ""}, {"text": "I'm ___ a book right now.", "options": ["read", "reading", "reads", "to read"], "correct_index": 1, "explanation": ""}, {"text": "make → ___", "options": ["makeing", "making", "makking", "makiing"], "correct_index": 1, "explanation": ""}, {"text": "We ___ doing homework.", "options": ["am", "is", "are", "be"], "correct_index": 2, "explanation": ""}, {"text": "drink → ___", "options": ["drinking", "drinkking", "drinkin", "drinkeing"], "correct_index": 0, "explanation": ""}, {"text": "___ she sleeping?", "options": ["Am", "Is", "Are", "Does"], "correct_index": 1, "explanation": ""}, {"text": "She ___ listening to music.", "options": ["am", "is", "are", "be"], "correct_index": 1, "explanation": ""}, {"text": "НО: open → ___", "options": ["opening", "openning", "openiing", "openin"], "correct_index": 0, "explanation": ""}, {"text": "ride → ___", "options": ["rideing", "riding", "ridding", "ridiing"], "correct_index": 1, "explanation": ""}, {"text": "smile → ___", "options": ["smileing", "smiling", "smilling", "smiliing"], "correct_index": 1, "explanation": ""}, {"text": "She ___ English every day.", "options": ["study", "is studying", "studies", "studying"], "correct_index": 2, "explanation": ""}, {"text": "It ___ getting dark.", "options": ["am", "is", "are", "be"], "correct_index": 1, "explanation": ""}, {"text": "We ___ waiting.", "options": ["isn't", "aren't", "amn't", "not"], "correct_index": 1, "explanation": ""}, {"text": "run → ___", "options": ["runing", "running", "runniing", "runnin"], "correct_index": 1, "explanation": ""}, {"text": "I ___ tea right now.", "options": ["drink", "am drinking", "drinking", "drinks"], "correct_index": 1, "explanation": ""}, {"text": "НО: happen → ___", "options": ["happening", "happenning", "happeniing", "happenin"], "correct_index": 0, "explanation": ""}, {"text": "cook → ___", "options": ["cooking", "cookking", "cookin", "cookeing"], "correct_index": 0, "explanation": ""}, {"text": "They ___ talking.", "options": ["am", "is", "are", "be"], "correct_index": 2, "explanation": ""}, {"text": "___ I late?", "options": ["Am", "Is", "Are", "Do"], "correct_index": 0, "explanation": ""}], "7": [{"text": "He ___ doing homework.", "options": ["am", "is", "are", "be"], "correct_index": 1, "explanation": ""}, {"text": "We're ___ lunch at the moment.", "options": ["have", "having", "has", "to have"], "correct_index": 1, "explanation": ""}, {"text": "___ we going?", "options": ["Am", "Is", "Are", "Do"], "correct_index": 2, "explanation": ""}, {"text": "I ___ drinking coffee.", "options": ["am", "is", "are", "be"], "correct_index": 0, "explanation": ""}, {"text": "clean → ___", "options": ["cleaning", "cleannnig", "cleanin", "cleaneing"], "correct_index": 0, "explanation": ""}, {"text": "You ___ working.", "options": ["isn't", "aren't", "amn't", "not"], "correct_index": 1, "explanation": ""}, {"text": "He ___ TV every evening.", "options": ["watch", "is watching", "watching", "watches"], "correct_index": 3, "explanation": ""}, {"text": "leave → ___", "options": ["leaveing", "leaving", "leavving", "leaviing"], "correct_index": 1, "explanation": ""}, {"text": "I ___ like pizza.", "options": ["am", "am liking", "like", "liking"], "correct_index": 2, "explanation": ""}, {"text": "НО: listen → ___", "options": ["listening", "listenning", "listeniing", "listenin"], "correct_index": 0, "explanation": ""}, {"text": "НО: visit → ___", "options": ["visiting", "visitting", "visitiing", "visitin"], "correct_index": 0, "explanation": ""}, {"text": "He ___ TV at the moment.", "options": ["watch", "is watching", "watching", "watches"], "correct_index": 1, "explanation": ""}, {"text": "She ___ talking on the phone.", "options": ["am", "is", "are", "be"], "correct_index": 1, "explanation": ""}, {"text": "You ___ writing an email.", "options": ["am", "is", "are", "be"], "correct_index": 2, "explanation": ""}, {"text": "arrive → ___", "options": ["arriveing", "arriving", "arrivving", "arriviing"], "correct_index": 1, "explanation": ""}, {"text": "teach → ___", "options": ["teacing", "teaching", "teachhing", "teachin"], "correct_index": 1, "explanation": ""}, {"text": "___ it working?", "options": ["Am", "Is", "Are", "Does"], "correct_index": 1, "explanation": ""}, {"text": "It ___ working.", "options": ["isn't", "aren't", "amn't", "not"], "correct_index": 0, "explanation": ""}, {"text": "He ___ to school every day.", "options": ["go", "is going", "goes", "going"], "correct_index": 2, "explanation": ""}, {"text": "He always ___ breakfast.", "options": ["eat", "is eating", "eats", "eating"], "correct_index": 2, "explanation": ""}], "8": [{"text": "It ___ starting now.", "options": ["am", "is", "are", "be"], "correct_index": 1, "explanation": ""}, {"text": "We ___ having fun.", "options": ["am", "is", "are", "be"], "correct_index": 2, "explanation": ""}, {"text": "They're ___ now.", "options": ["leave", "leaving", "leaves", "to leave"], "correct_index": 1, "explanation": ""}, {"text": "close → ___", "options": ["closeing", "closing", "clossing", "closiing"], "correct_index": 1, "explanation": ""}, {"text": "I ___ going.", "options": ["'m not", "isn't", "aren't", "amn't"], "correct_index": 0, "explanation": ""}, {"text": "___ you watching TV?", "options": ["Am", "Is", "Are", "Do"], "correct_index": 2, "explanation": ""}, {"text": "They usually ___ at 7 AM.", "options": ["wake up", "are waking up", "waking up", "wakes up"], "correct_index": 0, "explanation": ""}, {"text": "learn → ___", "options": ["learning", "learnning", "learnin", "learneing"], "correct_index": 0, "explanation": ""}, {"text": "They're ___ to school now.", "options": ["go", "going", "goes", "to go"], "correct_index": 1, "explanation": ""}, {"text": "win → ___", "options": ["wining", "winning", "winniing", "winnin"], "correct_index": 1, "explanation": ""}, {"text": "help → ___", "options": ["helping", "helpping", "helpin", "helpeing"], "correct_index": 0, "explanation": ""}, {"text": "He ___ coming.", "options": ["'m not", "isn't", "aren't", "amn't"], "correct_index": 1, "explanation": ""}, {"text": "___ he talking?", "options": ["Am", "Is", "Are", "Does"], "correct_index": 1, "explanation": ""}, {"text": "He ___ drinking water.", "options": ["am", "is", "are", "be"], "correct_index": 1, "explanation": ""}, {"text": "set → ___", "options": ["seting", "setting", "settiing", "settin"], "correct_index": 1, "explanation": ""}, {"text": "They ___ up right now.", "options": ["wake", "are waking", "waking", "wakes"], "correct_index": 1, "explanation": ""}, {"text": "They ___ waiting for the bus.", "options": ["am", "is", "are", "be"], "correct_index": 2, "explanation": ""}, {"text": "I ___ coffee every morning.", "options": ["drink", "am drinking", "drinks", "drinking"], "correct_index": 0, "explanation": ""}, {"text": "hope → ___", "options": ["hopeing", "hoping", "hopping", "hopiing"], "correct_index": 1, "explanation": ""}, {"text": "She always ___ early.", "options": ["wake up", "is waking up", "wakes up", "waking up"], "correct_index": 2, "explanation": ""}], "9": [{"text": "___ they leaving?", "options": ["Am", "Is", "Are", "Do"], "correct_index": 2, "explanation": ""}, {"text": "let → ___", "options": ["leting", "letting", "lettiing", "lettin"], "correct_index": 1, "explanation": ""}, {"text": "She always ___ to music.", "options": ["listen", "is listening", "listening", "listens"], "correct_index": 3, "explanation": ""}, {"text": "Look! He ___ coming.", "options": ["is", "does", "comes", "come"], "correct_index": 0, "explanation": ""}, {"text": "They ___ leaving.", "options": ["'m not", "isn't", "aren't", "amn't"], "correct_index": 2, "explanation": ""}, {"text": "save → ___", "options": ["saveing", "saving", "savving", "saviing"], "correct_index": 1, "explanation": ""}, {"text": "She's ___ on the phone now.", "options": ["talk", "talking", "talks", "to talk"], "correct_index": 1, "explanation": ""}, {"text": "She ___ writing a letter.", "options": ["am", "is", "are", "be"], "correct_index": 1, "explanation": ""}, {"text": "I ___ sitting here.", "options": ["am", "is", "are", "be"], "correct_index": 0, "explanation": ""}, {"text": "wait → ___", "options": ["waiting", "waitting", "waitin", "waiteing"], "correct_index": 0, "explanation": ""}, {"text": "call → ___", "options": ["calling", "callling", "callin", "calleing"], "correct_index": 0, "explanation": ""}, {"text": "You ___ standing there.", "options": ["am", "is", "are", "be"], "correct_index": 2, "explanation": ""}, {"text": "It ___ getting better.", "options": ["am", "is", "are", "be"], "correct_index": 1, "explanation": ""}, {"text": "She ___ sitting.", "options": ["'m not", "isn't", "aren't", "amn't"], "correct_index": 1, "explanation": ""}, {"text": "___ she writing?", "options": ["Am", "Is", "Are", "Does"], "correct_index": 1, "explanation": ""}, {"text": "She ___ to music now.", "options": ["listen", "is listening", "listening", "listens"], "correct_index": 1, "explanation": ""}, {"text": "move → ___", "options": ["moveing", "moving", "movving", "moviing"], "correct_index": 1, "explanation": ""}, {"text": "shop → ___", "options": ["shoping", "shopping", "shoppiing", "shoppin"], "correct_index": 1, "explanation": ""}, {"text": "We ___ tea every morning.", "options": ["drink", "are drinking", "drinks", "drinking"], "correct_index": 0, "explanation": ""}, {"text": "We often ___ football.", "options": ["play", "are playing", "plays", "playing"], "correct_index": 0, "explanation": ""}], "10": [{"text": "drop → ___", "options": ["droping", "dropping", "droppiing", "droppin"], "correct_index": 1, "explanation": ""}, {"text": "He's ___ his homework right now.", "options": ["do", "doing", "does", "to do"], "correct_index": 1, "explanation": ""}, {"text": "___ I bothering you?", "options": ["Am", "Is", "Are", "Do"], "correct_index": 0, "explanation": ""}, {"text": "I'm ___ a letter right now.", "options": ["write", "writing", "writes", "to write"], "correct_index": 1, "explanation": ""}, {"text": "I often ___ books.", "options": ["read", "am reading", "reading", "reads"], "correct_index": 0, "explanation": ""}, {"text": "We ___ standing.", "options": ["'m not", "isn't", "aren't", "amn't"], "correct_index": 2, "explanation": ""}, {"text": "We ___ going home.", "options": ["am", "is", "are", "be"], "correct_index": 2, "explanation": ""}, {"text": "He ___ sitting there.", "options": ["am", "is", "are", "be"], "correct_index": 1, "explanation": ""}, {"text": "start → ___", "options": ["starting", "startting", "startin", "starteing"], "correct_index": 0, "explanation": ""}, {"text": "change → ___", "options": ["changeing", "changing", "changgin", "changiing"], "correct_index": 1, "explanation": ""}, {"text": "НО: enter → ___", "options": ["entering", "enterring", "enteriing", "enterin"], "correct_index": 0, "explanation": ""}, {"text": "I ___ a book right now.", "options": ["read", "am reading", "reading", "reads"], "correct_index": 1, "explanation": ""}, {"text": "___ we staying here?", "options": ["Am", "Is", "Are", "Do"], "correct_index": 2, "explanation": ""}, {"text": "They never ___ late.", "options": ["are", "is", "being", "be"], "correct_index": 0, "explanation": ""}, {"text": "She ___ coming here.", "options": ["am", "is", "are", "be"], "correct_index": 1, "explanation": ""}, {"text": "They usually ___ at 8 PM.", "options": ["eat", "are eating", "eats", "eating"], "correct_index": 0, "explanation": ""}, {"text": "lose → ___", "options": ["loseing", "losing", "lossing", "losiing"], "correct_index": 1, "explanation": ""}, {"text": "They ___ coming now.", "options": ["am", "is", "are", "be"], "correct_index": 2, "explanation": ""}, {"text": "finish → ___", "options": ["finishing", "finishhing", "finishin", "finisheing"], "correct_index": 0, "explanation": ""}, {"text": "You ___ running.", "options": ["'m not", "isn't", "aren't", "amn't"], "correct_index": 2, "explanation": ""}]};
         let currentQuizSet = 1;
-        const quizData = allQuizData[currentQuizSet] || [];
-
-        function checkAnswers(event) {
-            event.preventDefault();
-
-            const form = document.getElementById('quiz-form');
-            const formData = new FormData(form);
-
-            let correct = 0;
-            let total = quizData.length;
-
-            // Check each question
-            quizData.forEach((question, index) => {
-                const selectedAnswer = parseInt(formData.get(`question-${question.id}`));
-                const options = document.querySelectorAll(`input[name="question-${question.id}"]`);
-
-                options.forEach((option, optIndex) => {
-                    const label = option.closest('.option');
-                    if (optIndex === question.correct_index) {
-                        label.classList.add('correct');
-                    }
-                    if (selectedAnswer === optIndex && selectedAnswer !== question.correct_index) {
-                        label.classList.add('incorrect');
-                    }
-                    option.disabled = true;
-                });
-
-                if (selectedAnswer === question.correct_index) {
-                    correct++;
-                }
-            });
-
-            // Calculate score
-            const percentage = Math.round((correct / total) * 100);
-            const passed = percentage >= 70;
-
-            // Show results
-            const resultsDiv = document.getElementById('results');
-            const scoreDiv = document.getElementById('score');
-            const messageDiv = document.getElementById('results-message');
-
-            scoreDiv.textContent = `${percentage}%`;
-            scoreDiv.className = 'score ' + (passed ? 'pass' : 'fail');
-
-            messageDiv.textContent = `Вы ответили правильно на ${correct} из ${total} вопросов`;
-
-            resultsDiv.classList.remove('hidden');
-
-            // Disable submit button
-            document.getElementById('submit-btn').disabled = true;
-
-            // Scroll to results
-            resultsDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }
-
-        function retakeQuiz() {
-            loadQuiz(currentQuizSet);
-        }
 
         function loadQuiz(quizSet) {
             currentQuizSet = quizSet;
 
-            // Hide placeholder, show form (if they exist)
             const placeholder = document.getElementById('quiz-placeholder');
             const form = document.getElementById('quiz-form');
             if (placeholder) {
@@ -497,7 +577,6 @@
                 form.style.display = 'block';
             }
 
-            // Update button states
             document.querySelectorAll('.quiz-selector-btn').forEach(btn => {
                 btn.classList.remove('active');
                 if (parseInt(btn.dataset.quiz) === quizSet) {
@@ -505,27 +584,20 @@
                 }
             });
 
-            // Get questions for this quiz set
             const questions = allQuizData[quizSet] || [];
-
-            // Clear and rebuild quiz HTML
             const submitBtn = document.getElementById('submit-btn');
-
-            // Remove all questions
             const existingQuestions = form.querySelectorAll('.question');
             existingQuestions.forEach(q => q.remove());
 
-            // Add new questions
             questions.forEach((question, index) => {
                 const questionDiv = document.createElement('div');
                 questionDiv.className = 'question';
-                questionDiv.dataset.questionId = question.id;
 
                 let optionsHtml = '';
                 question.options.forEach((option, optIndex) => {
                     optionsHtml += `
                         <label class="option">
-                            <input type="radio" name="question-${question.id}" value="${optIndex}" required>
+                            <input type="radio" name="question-${index}" value="${optIndex}" required>
                             <span>${option}</span>
                         </label>
                     `;
@@ -541,27 +613,61 @@
                 form.insertBefore(questionDiv, submitBtn);
             });
 
-            // Reset form state
             form.reset();
             submitBtn.disabled = false;
             document.getElementById('results').classList.add('hidden');
-            document.querySelectorAll('.option').forEach(opt => {
-                opt.classList.remove('correct', 'incorrect');
-            });
-
-            // Scroll to quiz
-            form.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
 
-        // Initialize: if only one quiz set, load it automatically
         const quizSetCount = Object.keys(allQuizData).length;
         if (quizSetCount === 1) {
-            // Single quiz - load immediately
             loadQuiz(1);
         }
-        // If multiple quiz sets, user must select one (placeholder will show)
 
-        document.getElementById('quiz-form').addEventListener('submit', checkAnswers);
+        document.getElementById('quiz-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const questions = allQuizData[currentQuizSet];
+            let correct = 0;
+
+            questions.forEach((question, index) => {
+                const selected = document.querySelector(`input[name="question-${index}"]:checked`);
+                if (selected && parseInt(selected.value) === question.correct_index) {
+                    correct++;
+                }
+            });
+
+            const total = questions.length;
+            const percentage = Math.round((correct / total) * 100);
+
+            document.getElementById('score').textContent = percentage + '%';
+            document.getElementById('score').className = percentage >= 70 ? 'score pass' : 'score fail';
+
+            let feedback;
+            if (percentage >= 90) {
+                feedback = 'Отлично!';
+            } else if (percentage >= 70) {
+                feedback = 'Хорошо!';
+            } else if (percentage >= 50) {
+                feedback = 'Неплохо, но можно лучше';
+            } else {
+                feedback = 'Нужно ещё поучить';
+            }
+
+            document.getElementById('feedback').textContent = feedback;
+            document.getElementById('details').textContent = `Правильных ответов: ${correct} из ${total}`;
+
+            document.getElementById('results').classList.remove('hidden');
+            document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+
+            this.querySelector('.submit-btn').disabled = true;
+        });
+
+        function retryQuiz() {
+            document.getElementById('results').classList.add('hidden');
+            document.getElementById('quiz-form').reset();
+            document.querySelector('.submit-btn').disabled = false;
+            document.getElementById('quiz-form').scrollIntoView({ behavior: 'smooth' });
+        }
     </script>
 </body>
 </html>

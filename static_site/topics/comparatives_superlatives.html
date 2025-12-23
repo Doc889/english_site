@@ -1,0 +1,1154 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сравнительная и превосходная степень - Английский язык</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary: #7c3aed;
+            --color-primary-dark: #6d28d9;
+            --color-primary-light: #a78bfa;
+            --color-secondary: #c4b5fd;
+            --color-accent: #ddd6fe;
+            --color-bg: #ffffff;
+            --color-bg-alt: #faf5ff;
+            --color-text: #1f2937;
+            --color-text-light: #6b7280;
+            --color-white: #ffffff;
+            --color-success: #10b981;
+            --color-error: #ef4444;
+            --font-display: 'Playfair Display', serif;
+            --font-body: 'DM Sans', sans-serif;
+            --shadow-sm: 0 2px 8px rgba(124, 58, 237, 0.08);
+            --shadow-md: 0 4px 20px rgba(124, 58, 237, 0.12);
+            --shadow-lg: 0 8px 40px rgba(124, 58, 237, 0.16);
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.7;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+            color: var(--color-white);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: var(--color-accent);
+            text-decoration: none;
+            margin-bottom: 1rem;
+            transition: var(--transition);
+        }
+
+        .back-link:hover {
+            color: var(--color-white);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .description {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            color: var(--color-primary);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .rule-section {
+            background: var(--color-white);
+            border-left: 4px solid var(--color-primary);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .rule-title {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            color: var(--color-primary);
+            margin-bottom: 1rem;
+        }
+
+        .rule-content {
+            color: var(--color-text);
+            margin-bottom: 1rem;
+            line-height: 1.8;
+            white-space: pre-wrap;
+        }
+
+        .examples {
+            background: var(--color-bg-alt);
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+        }
+
+        .example {
+            padding: 0.5rem;
+            margin: 0.25rem 0;
+            font-family: monospace;
+            font-size: 0.95rem;
+        }
+
+        .quiz-section {
+            background: var(--color-bg-alt);
+            padding: 3rem 2rem;
+            margin-top: 3rem;
+        }
+
+        #quiz-selector {
+            margin-bottom: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .quiz-selector-btn {
+            padding: 0.8rem 1.5rem;
+            background: var(--color-bg);
+            border: 2px solid var(--color-primary);
+            color: var(--color-primary);
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            min-width: 200px;
+        }
+
+        .quiz-selector-btn:hover {
+            background: var(--color-primary);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .quiz-selector-btn.active {
+            background: var(--color-primary);
+            color: white;
+        }
+
+        #quiz-placeholder {
+            text-align: center;
+            padding: 3rem;
+            color: var(--color-text-light);
+        }
+
+        #quiz-form {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .question {
+            background: var(--color-white);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .question-text {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--color-text);
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .option {
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+            background: var(--color-bg);
+            border: 2px solid var(--color-accent);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .option:hover {
+            border-color: var(--color-primary);
+            background: var(--color-bg-alt);
+        }
+
+        .option input[type="radio"] {
+            margin-right: 1rem;
+            cursor: pointer;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1rem 2rem;
+            background: var(--color-primary);
+            color: var(--color-white);
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+            margin-top: 2rem;
+        }
+
+        .submit-btn:hover {
+            background: var(--color-primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .submit-btn:disabled {
+            background: var(--color-text-light);
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        #results {
+            max-width: 600px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: var(--color-white);
+            border-radius: 12px;
+            box-shadow: var(--shadow-lg);
+            text-align: center;
+        }
+
+        #results.hidden {
+            display: none;
+        }
+
+        .score {
+            font-family: var(--font-display);
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .score.pass {
+            color: var(--color-success);
+        }
+
+        .score.fail {
+            color: var(--color-error);
+        }
+
+        .feedback {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .retry-btn {
+            padding: 1rem 2rem;
+            background: var(--color-primary);
+            color: var(--color-white);
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            margin-top: 1rem;
+        }
+
+        .retry-btn:hover {
+            background: var(--color-primary-dark);
+        }
+
+        .home-btn {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.75rem 1.5rem;
+            background: var(--color-white);
+            color: var(--color-primary);
+            border: 2px solid var(--color-primary);
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .home-btn:hover {
+            background: var(--color-primary);
+            color: var(--color-white);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="../index.html" class="back-link">← Назад ко всем темам</a>
+            <h1>Сравнительная и превосходная степень</h1>
+            <p class="description">Как сравнивать предметы и говорить о самом-самом: bigger, the biggest, more beautiful</p>
+        </div>
+    </header>
+
+    <main>
+        <h2 class="section-title">Теория</h2>
+
+        
+        <div class="rule-section">
+            <h3 class="rule-title">Главное про степени сравнения</h3>
+            <p class="rule-content"></p>
+            <div class="examples">
+                <div class="example">Степени сравнения — это формы прилагательного:</div>
+                <div class="example">1️⃣ Положительная степень (обычная форма):</div>
+                <div class="example">big — большой</div>
+                <div class="example">smart — умный</div>
+                <div class="example">2️⃣ Сравнительная степень (comparative):</div>
+                <div class="example">bigger — больше</div>
+                <div class="example">smarter — умнее</div>
+                <div class="example">Используется для сравнения ДВУХ предметов</div>
+                <div class="example">3️⃣ Превосходная степень (superlative):</div>
+                <div class="example">biggest — самый большой</div>
+                <div class="example">smartest — самый умный</div>
+                <div class="example">Используется, когда говорим, что что-то САМОЕ-САМОЕ</div>
+                <div class="example">Примеры:</div>
+                <div class="example">This car is big. (положительная)</div>
+                <div class="example">This car is bigger than that one. (сравнительная)</div>
+                <div class="example">This is the biggest car in the world. (превосходная)</div>
+            </div>
+        </div>
+
+        <div class="rule-section">
+            <h3 class="rule-title">Сравнительная степень / Comparative</h3>
+            <p class="rule-content"></p>
+            <div class="examples">
+                <div class="example">Сравнительная степень используется, чтобы сравнить ДВА предмета.</div>
+                <div class="example">Структура:</div>
+                <div class="example">A + be + прилагательное-er + than + B</div>
+                <div class="example">Tom is taller than John. — Том выше, чем Джон.</div>
+                <div class="example">Или с more:</div>
+                <div class="example">A + be + more + прилагательное + than + B</div>
+                <div class="example">This book is more interesting than that one. — Эта книга интереснее, чем та.</div>
+                <div class="example">💡 Совет:</div>
+                <div class="example">Всегда используем than (чем) для сравнения.</div>
+                <div class="example">Примеры:</div>
+                <div class="example">My car is faster than yours. — Моя машина быстрее твоей.</div>
+                <div class="example">She is younger than me. — Она моложе меня.</div>
+                <div class="example">This task is more difficult than the previous one. — Эта задача сложнее предыдущей.</div>
+            </div>
+        </div>
+
+        <div class="rule-section">
+            <h3 class="rule-title">Превосходная степень / Superlative</h3>
+            <p class="rule-content"></p>
+            <div class="examples">
+                <div class="example">Превосходная степень используется, когда что-то САМОЕ-САМОЕ из всех.</div>
+                <div class="example">Структура:</div>
+                <div class="example">A + be + the + прилагательное-est</div>
+                <div class="example">He is the tallest boy in the class. — Он самый высокий мальчик в классе.</div>
+                <div class="example">Или с most:</div>
+                <div class="example">A + be + the most + прилагательное</div>
+                <div class="example">This is the most interesting book I've read. — Это самая интересная книга, которую я читал.</div>
+                <div class="example">💡 Совет:</div>
+                <div class="example">ВСЕГДА используем артикль THE перед превосходной степенью!</div>
+                <div class="example">Примеры:</div>
+                <div class="example">This is the fastest car in the world. — Это самая быстрая машина в мире.</div>
+                <div class="example">She is the youngest student. — Она самая молодая студентка.</div>
+                <div class="example">It's the most difficult task. — Это самая сложная задача.</div>
+            </div>
+        </div>
+
+        <div class="rule-section">
+            <h3 class="rule-title">Односложные слова / short adjectives</h3>
+            <p class="rule-content"></p>
+            <div class="examples">
+                <div class="example">Односложные прилагательные (1 слог) — добавляем -er/-est:</div>
+                <div class="example">tall → taller → tallest</div>
+                <div class="example">fast → faster → fastest</div>
+                <div class="example">old → older → oldest</div>
+                <div class="example">cheap → cheaper → cheapest</div>
+                <div class="example">Примеры:</div>
+                <div class="example">My house is bigger than yours. — Мой дом больше твоего.</div>
+                <div class="example">This is the smallest phone. — Это самый маленький телефон.</div>
+                <div class="example">ОСОБЫЕ ПРАВИЛА написания:</div>
+                <div class="example">1️⃣ Если прилагательное оканчивается на -e, добавляем только -r/-st:</div>
+                <div class="example">large → larger → largest</div>
+                <div class="example">nice → nicer → nicest</div>
+                <div class="example">2️⃣ Если оканчивается на согласную + гласную + согласную, удваиваем последнюю согласную:</div>
+                <div class="example">big → bigger → biggest</div>
+                <div class="example">hot → hotter → hottest</div>
+                <div class="example">fat → fatter → fattest</div>
+                <div class="example">3️⃣ Если оканчивается на -y, меняем y на i и добавляем -er/-est:</div>
+                <div class="example">happy → happier → happiest</div>
+                <div class="example">easy → easier → easiest</div>
+                <div class="example">dirty → dirtier → dirtiest</div>
+                <div class="example">Примеры:</div>
+                <div class="example">This room is nicer than the other one. — Эта комната лучше другой.</div>
+                <div class="example">It's the hottest day of summer. — Это самый жаркий день лета.</div>
+                <div class="example">She is happier now. — Она счастливее сейчас.</div>
+            </div>
+        </div>
+
+        <div class="rule-section">
+            <h3 class="rule-title">Многосложные слова / long adjectives</h3>
+            <p class="rule-content"></p>
+            <div class="examples">
+                <div class="example">Многосложные прилагательные (2+ слога) — используем more/most:</div>
+                <div class="example">beautiful → more beautiful → most beautiful</div>
+                <div class="example">interesting → more interesting → most interesting</div>
+                <div class="example">expensive → more expensive → most expensive</div>
+                <div class="example">difficult → more difficult → most difficult</div>
+                <div class="example">💡 Совет:</div>
+                <div class="example">НЕ добавляем -er/-est к длинным словам!</div>
+                <div class="example">❌ beautifuler</div>
+                <div class="example">✔ more beautiful</div>
+                <div class="example">Примеры:</div>
+                <div class="example">This dress is more expensive than that one. — Это платье дороже того.</div>
+                <div class="example">He is more intelligent than his brother. — Он умнее своего брата.</div>
+                <div class="example">This is the most beautiful place I've seen. — Это самое красивое место, которое я видел.</div>
+                <div class="example">ИСКЛЮЧЕНИЕ для двусложных на -y, -er, -ow, -le:</div>
+                <div class="example">clever → cleverer → cleverest</div>
+                <div class="example">narrow → narrower → narrowest</div>
+                <div class="example">simple → simpler → simplest</div>
+            </div>
+        </div>
+
+        <div class="rule-section">
+            <h3 class="rule-title">Неправильные формы / Irregular</h3>
+            <p class="rule-content"></p>
+            <div class="examples">
+                <div class="example">Некоторые прилагательные имеют НЕПРАВИЛЬНЫЕ формы — их нужно запомнить!</div>
+                <div class="example">good → better → best (хороший)</div>
+                <div class="example">This book is good.</div>
+                <div class="example">This book is better than that one.</div>
+                <div class="example">This is the best book.</div>
+                <div class="example">bad → worse → worst (плохой)</div>
+                <div class="example">My English is bad.</div>
+                <div class="example">My English is worse than yours.</div>
+                <div class="example">It's the worst result.</div>
+                <div class="example">far → farther/further → farthest/furthest (далёкий)</div>
+                <div class="example">The shop is far.</div>
+                <div class="example">The shop is farther than I thought.</div>
+                <div class="example">It's the farthest shop from here.</div>
+                <div class="example">little → less → least (маленький, мало)</div>
+                <div class="example">I have little time.</div>
+                <div class="example">I have less time than you.</div>
+                <div class="example">It's the least important task.</div>
+                <div class="example">many/much → more → most (много)</div>
+                <div class="example">I have many books.</div>
+                <div class="example">I have more books than you.</div>
+                <div class="example">I have the most books in the class.</div>
+                <div class="example">💡 Совет:</div>
+                <div class="example">Эти формы нужно ВЫУЧИТЬ наизусть!</div>
+                <div class="example">Примеры:</div>
+                <div class="example">Your result is better than mine. — Твой результат лучше моего.</div>
+                <div class="example">This is the worst movie ever. — Это худший фильм за всё время.</div>
+                <div class="example">I need more time. — Мне нужно больше времени.</div>
+                <div class="example">This is the best pizza in town. — Это лучшая пицца в городе.</div>
+                <div class="example">Конструкции as / as (одинаковые)</div>
+                <div class="example">Используется, чтобы сказать, что два предмета ОДИНАКОВЫЕ.</div>
+                <div class="example">Структура:</div>
+                <div class="example">A + be + as + прилагательное + as + B</div>
+                <div class="example">Tom is as tall as John. — Том такой же высокий, как Джон.</div>
+                <div class="example">This book is as interesting as that one. — Эта книга такая же интересная, как та.</div>
+                <div class="example">Отрицательная форма (НЕ такой...как):</div>
+                <div class="example">A + be + not as + прилагательное + as + B</div>
+                <div class="example">Tom is not as tall as John. — Том не такой высокий, как Джон.</div>
+                <div class="example">This car is not as fast as that one. — Эта машина не такая быстрая, как та.</div>
+                <div class="example">💡 Совет:</div>
+                <div class="example">В конструкции as...as используем ОБЫЧНУЮ форму прилагательного (не -er, не more)!</div>
+                <div class="example">Примеры:</div>
+                <div class="example">My house is as big as yours. — Мой дом такой же большой, как твой.</div>
+                <div class="example">She is as smart as her sister. — Она такая же умная, как её сестра.</div>
+                <div class="example">This test is not as difficult as the previous one. — Этот тест не такой сложный, как предыдущий.</div>
+                <div class="example">He is not as young as he looks. — Он не такой молодой, как выглядит.</div>
+            </div>
+        </div>
+
+        <div class="rule-section">
+            <h3 class="rule-title">Конструкции с than / сравнение</h3>
+            <p class="rule-content"></p>
+            <div class="examples">
+                <div class="example">Than используется ТОЛЬКО со сравнительной степенью!</div>
+                <div class="example">С -er:</div>
+                <div class="example">bigger than — больше чем</div>
+                <div class="example">faster than — быстрее чем</div>
+                <div class="example">С more:</div>
+                <div class="example">more beautiful than — красивее чем</div>
+                <div class="example">more expensive than — дороже чем</div>
+                <div class="example">Примеры:</div>
+                <div class="example">This house is bigger than that one. — Этот дом больше того.</div>
+                <div class="example">She is more beautiful than her sister. — Она красивее своей сестры.</div>
+                <div class="example">My car is faster than yours. — Моя машина быстрее твоей.</div>
+                <div class="example">This book is more interesting than the movie. — Эта книга интереснее фильма.</div>
+                <div class="example">💡 Совет:</div>
+                <div class="example">После than часто идёт объектный падеж местоимения:</div>
+                <div class="example">He is taller than me. (разговорный)</div>
+                <div class="example">He is taller than I am. (формальный)</div>
+            </div>
+        </div>
+
+        <div class="rule-section">
+            <h3 class="rule-title">Конструкции с the...in / of</h3>
+            <p class="rule-content"></p>
+            <div class="examples">
+                <div class="example">Превосходная степень часто используется с in/of:</div>
+                <div class="example">the + -est/most + in + место</div>
+                <div class="example">the tallest in the class — самый высокий в классе</div>
+                <div class="example">the best in the world — лучший в мире</div>
+                <div class="example">the + -est/most + of + группа</div>
+                <div class="example">the oldest of all — самый старый из всех</div>
+                <div class="example">the most expensive of the three — самый дорогой из трёх</div>
+                <div class="example">Примеры:</div>
+                <div class="example">He is the tallest in the class. — Он самый высокий в классе.</div>
+                <div class="example">This is the best restaurant in the city. — Это лучший ресторан в городе.</div>
+                <div class="example">She is the youngest of the sisters. — Она самая младшая из сестёр.</div>
+                <div class="example">This is the most difficult of all tasks. — Это самая сложная из всех задач.</div>
+            </div>
+        </div>
+
+        <div class="rule-section">
+            <h3 class="rule-title">Усиление сравнения / much и a little</h3>
+            <p class="rule-content"></p>
+            <div class="examples">
+                <div class="example">Можно усилить сравнение с помощью слов:</div>
+                <div class="example">much/a lot/far + сравнительная степень = ГОРАЗДО, НАМНОГО</div>
+                <div class="example">This car is much faster than that one. — Эта машина НАМНОГО быстрее той.</div>
+                <div class="example">She is a lot younger than him. — Она ГОРАЗДО моложе его.</div>
+                <div class="example">This book is far more interesting. — Эта книга НАМНОГО интереснее.</div>
+                <div class="example">a little/a bit/slightly + сравнительная степень = НЕМНОГО, ЧУТЬ-ЧУТЬ</div>
+                <div class="example">This house is a little bigger. — Этот дом немного больше.</div>
+                <div class="example">She is a bit taller than me. — Она чуть выше меня.</div>
+                <div class="example">This task is slightly more difficult. — Эта задача чуть сложнее.</div>
+                <div class="example">Примеры:</div>
+                <div class="example">This exam was much easier than the last one. — Этот экзамен был намного легче предыдущего.</div>
+                <div class="example">My new phone is far better than the old one. — Мой новый телефон гораздо лучше старого.</div>
+                <div class="example">This room is a little warmer. — Эта комната немного теплее.</div>
+            </div>
+        </div>
+
+        <div class="rule-section">
+            <h3 class="rule-title">Типичные ошибки русскоговорящих</h3>
+            <p class="rule-content"></p>
+            <div class="examples">
+                <div class="example">❌ more better, most best — двойное сравнение</div>
+                <div class="example">✔ better, best</div>
+                <div class="example">❌ This is biggest car. — забыли артикль the</div>
+                <div class="example">✔ This is the biggest car.</div>
+                <div class="example">❌ He is more tall than me. — неправильно для короткого слова</div>
+                <div class="example">✔ He is taller than me.</div>
+                <div class="example">❌ She is beautifuler. — добавили -er к длинному слову</div>
+                <div class="example">✔ She is more beautiful.</div>
+                <div class="example">❌ My car is faster. (без than) — непонятно, с чем сравниваем</div>
+                <div class="example">✔ My car is faster than yours.</div>
+                <div class="example">❌ He is as tall than John. — смешали as...as и than</div>
+                <div class="example">✔ He is as tall as John.</div>
+                <div class="example">✔ He is taller than John.</div>
+                <div class="example">❌ This is better that that. — that вместо than</div>
+                <div class="example">✔ This is better than that.</div>
+                <div class="example">❌ She is the most smartest. — двойное превосходное</div>
+                <div class="example">✔ She is the smartest.</div>
+                <div class="example">❌ This car is expensiver. — неправильное окончание</div>
+                <div class="example">✔ This car is more expensive.</div>
+                <div class="example">❌ He is more good. — неправильная форма</div>
+                <div class="example">✔ He is better.</div>
+            </div>
+        </div>
+
+        <div class="rule-section">
+            <h3 class="rule-title">Главное про степени сравнения</h3>
+            <p class="rule-content">A) This is better that. B) This is better than that. C) This is better then that. D) This is better as that. ✅ B
+A) This is interestinger. B) This is more interesting. C) This is most interesting. D) This is interestingest. ✅ B</p>
+            <div class="examples">
+                <div class="example">1️⃣ Короткие слова (1 слог): -er / -est</div>
+                <div class="example">tall → taller → tallest</div>
+                <div class="example">2️⃣ Длинные слова (2+ слога): more / most</div>
+                <div class="example">beautiful → more beautiful → most beautiful</div>
+                <div class="example">3️⃣ Неправильные формы (выучить!):</div>
+                <div class="example">good → better → best</div>
+                <div class="example">bad → worse → worst</div>
+                <div class="example">4️⃣ Сравнительная + than:</div>
+                <div class="example">This is bigger than that.</div>
+                <div class="example">5️⃣ Превосходная + the:</div>
+                <div class="example">This is the biggest.</div>
+                <div class="example">6️⃣ Одинаковые: as...as</div>
+                <div class="example">He is as tall as me.</div>
+                <div class="example">КВИЗ 1 — Short adjectives: -er</div>
+                <div class="example">My house is ___ than yours.</div>
+                <div class="example">A) big B) bigger C) more big D) biggest ✅ B</div>
+                <div class="example">She is ___ than her sister.</div>
+                <div class="example">A) tall B) more tall C) taller D) tallest ✅ C</div>
+                <div class="example">This book is ___ than that one.</div>
+                <div class="example">A) cheap B) cheaper C) more cheap D) cheapest ✅ B</div>
+                <div class="example">Today is ___ than yesterday.</div>
+                <div class="example">A) hot B) more hot C) hotter D) hottest ✅ C</div>
+                <div class="example">This test is ___ than the last one.</div>
+                <div class="example">A) easy B) easier C) more easy D) easiest ✅ B</div>
+                <div class="example">My car is ___ than yours.</div>
+                <div class="example">A) fast B) faster C) more fast D) fastest ✅ B</div>
+                <div class="example">This room is ___ than the other one.</div>
+                <div class="example">A) clean B) cleaner C) more clean D) cleanest ✅ B</div>
+                <div class="example">He is ___ than his brother.</div>
+                <div class="example">A) young B) younger C) more young D) youngest ✅ B</div>
+                <div class="example">This chair is ___ than the sofa.</div>
+                <div class="example">A) hard B) harder C) more hard D) hardest ✅ B</div>
+                <div class="example">The weather is ___ than last week.</div>
+                <div class="example">A) cold B) colder C) more cold D) coldest ✅ B</div>
+                <div class="example">This bag is ___ than mine.</div>
+                <div class="example">A) heavy B) heavier C) more heavy D) heaviest ✅ B</div>
+                <div class="example">My phone is ___ than yours.</div>
+                <div class="example">A) new B) newer C) more new D) newest ✅ B</div>
+                <div class="example">This street is ___ than the main road.</div>
+                <div class="example">A) quiet B) quieter C) more quiet D) quietest ✅ B</div>
+                <div class="example">The coffee is ___ than the tea.</div>
+                <div class="example">A) strong B) stronger C) more strong D) strongest ✅ B</div>
+                <div class="example">This jacket is ___ than that one.</div>
+                <div class="example">A) warm B) warmer C) more warm D) warmest ✅ B</div>
+                <div class="example">My dog is ___ than yours.</div>
+                <div class="example">A) small B) smaller C) more small D) smallest ✅ B</div>
+                <div class="example">This movie is ___ than the book.</div>
+                <div class="example">A) short B) shorter C) more short D) shortest ✅ B</div>
+                <div class="example">Her hair is ___ than mine.</div>
+                <div class="example">A) long B) longer C) more long D) longest ✅ B</div>
+                <div class="example">This question is ___ than I thought.</div>
+                <div class="example">A) hard B) harder C) more hard D) hardest ✅ B</div>
+                <div class="example">The river is ___ than the lake.</div>
+                <div class="example">A) deep B) deeper C) more deep D) deepest ✅ B</div>
+                <div class="example">КВИЗ 2 — Superlative: -est</div>
+                <div class="example">This is the ___ house in the street.</div>
+                <div class="example">A) big B) bigger C) biggest D) more big ✅ C</div>
+                <div class="example">She is the ___ student in the class.</div>
+                <div class="example">A) smart B) smarter C) smartest D) more smart ✅ C</div>
+                <div class="example">This is the ___ car I've ever seen.</div>
+                <div class="example">A) fast B) faster C) fastest D) more fast ✅ C</div>
+                <div class="example">Today is the ___ day of the year.</div>
+                <div class="example">A) hot B) hotter C) hottest D) more hot ✅ C</div>
+                <div class="example">He is the ___ person I know.</div>
+                <div class="example">A) kind B) kinder C) kindest D) more kind ✅ C</div>
+                <div class="example">This is the ___ book in the library.</div>
+                <div class="example">A) old B) older C) oldest D) more old ✅ C</div>
+                <div class="example">She is the ___ girl in the school.</div>
+                <div class="example">A) tall B) taller C) tallest D) more tall ✅ C</div>
+                <div class="example">This is the ___ test we've had.</div>
+                <div class="example">A) easy B) easier C) easiest D) more easy ✅ C</div>
+                <div class="example">This is the ___ room in the house.</div>
+                <div class="example">A) small B) smaller C) smallest D) more small ✅ C</div>
+                <div class="example">He is the ___ runner in the team.</div>
+                <div class="example">A) fast B) faster C) fastest D) more fast ✅ C</div>
+                <div class="example">This is the ___ coffee I've tasted.</div>
+                <div class="example">A) strong B) stronger C) strongest D) more strong ✅ C</div>
+                <div class="example">She has the ___ hair in the family.</div>
+                <div class="example">A) long B) longer C) longest D) more long ✅ C</div>
+                <div class="example">This is the ___ mountain in the world.</div>
+                <div class="example">A) high B) higher C) highest D) more high ✅ C</div>
+                <div class="example">He is the ___ boy in the class.</div>
+                <div class="example">A) young B) younger C) youngest D) more young ✅ C</div>
+                <div class="example">This is the ___ street in the city.</div>
+                <div class="example">A) wide B) wider C) widest D) more wide ✅ C</div>
+                <div class="example">She is the ___ person in the office.</div>
+                <div class="example">A) busy B) busier C) busiest D) more busy ✅ C</div>
+                <div class="example">This is the ___ joke I've heard.</div>
+                <div class="example">A) funny B) funnier C) funniest D) more funny ✅ C</div>
+                <div class="example">He has the ___ voice in the choir.</div>
+                <div class="example">A) loud B) louder C) loudest D) more loud ✅ C</div>
+                <div class="example">This is the ___ lake in the country.</div>
+                <div class="example">A) deep B) deeper C) deepest D) more deep ✅ C</div>
+                <div class="example">She is the ___ worker here.</div>
+                <div class="example">A) hard B) harder C) hardest D) more hard ✅ C</div>
+                <div class="example">КВИЗ 3 — Long adjectives: more</div>
+                <div class="example">This book is ___ than that one.</div>
+                <div class="example">A) interesting B) more interesting C) interestinger D) most interesting ✅ B</div>
+                <div class="example">She is ___ than her friend.</div>
+                <div class="example">A) beautiful B) more beautiful C) beautifuler D) most beautiful ✅ B</div>
+                <div class="example">This task is ___ than the previous one.</div>
+                <div class="example">A) difficult B) more difficult C) difficulter D) most difficult ✅ B</div>
+                <div class="example">My new job is ___ than the old one.</div>
+                <div class="example">A) interesting B) more interesting C) interestinger D) most interesting ✅ B</div>
+                <div class="example">This car is ___ than that one.</div>
+                <div class="example">A) expensive B) more expensive C) expensiver D) most expensive ✅ B</div>
+                <div class="example">The movie is ___ than the book.</div>
+                <div class="example">A) boring B) more boring C) boringer D) most boring ✅ B</div>
+                <div class="example">This problem is ___ than I thought.</div>
+                <div class="example">A) serious B) more serious C) seriouser D) most serious ✅ B</div>
+                <div class="example">She is ___ than me.</div>
+                <div class="example">A) careful B) more careful C) carefuler D) most careful ✅ B</div>
+                <div class="example">This subject is ___ than math.</div>
+                <div class="example">A) important B) more important C) importanter D) most important ✅ B</div>
+                <div class="example">The weather is ___ than yesterday.</div>
+                <div class="example">A) pleasant B) more pleasant C) pleasanter D) most pleasant ✅ B</div>
+                <div class="example">This hotel is ___ than the other one.</div>
+                <div class="example">A) comfortable B) more comfortable C) comfortabler D) most comfortable ✅ B</div>
+                <div class="example">He is ___ than his brother.</div>
+                <div class="example">A) intelligent B) more intelligent C) intelligenter D) most intelligent ✅ B</div>
+                <div class="example">This exercise is ___ than the last one.</div>
+                <div class="example">A) complicated B) more complicated C) complicateder D) most complicated ✅ B</div>
+                <div class="example">The new system is ___ than the old one.</div>
+                <div class="example">A) efficient B) more efficient C) efficienter D) most efficient ✅ B</div>
+                <div class="example">This dress is ___ than that one.</div>
+                <div class="example">A) elegant B) more elegant C) eleganter D) most elegant ✅ B</div>
+                <div class="example">The situation is ___ than before.</div>
+                <div class="example">A) dangerous B) more dangerous C) dangerouser D) most dangerous ✅ B</div>
+                <div class="example">This song is ___ than the previous one.</div>
+                <div class="example">A) popular B) more popular C) popularer D) most popular ✅ B</div>
+                <div class="example">She is ___ than him.</div>
+                <div class="example">A) experienced B) more experienced C) experienceder D) most experienced ✅ B</div>
+                <div class="example">This offer is ___ than the first one.</div>
+                <div class="example">A) attractive B) more attractive C) attractiver D) most attractive ✅ B</div>
+                <div class="example">The project is ___ than we expected.</div>
+                <div class="example">A) challenging B) more challenging C) challenginger D) most challenging ✅ B</div>
+                <div class="example">КВИЗ 4 — Superlative: most</div>
+                <div class="example">This is the ___ book I've read.</div>
+                <div class="example">A) interesting B) more interesting C) interestinger D) most interesting ✅ D</div>
+                <div class="example">She is the ___ woman I know.</div>
+                <div class="example">A) beautiful B) more beautiful C) beautifuler D) most beautiful ✅ D</div>
+                <div class="example">This is the ___ task we've had.</div>
+                <div class="example">A) difficult B) more difficult C) difficulter D) most difficult ✅ D</div>
+                <div class="example">This is the ___ car in the showroom.</div>
+                <div class="example">A) expensive B) more expensive C) expensiver D) most expensive ✅ D</div>
+                <div class="example">He is the ___ person in the team.</div>
+                <div class="example">A) talented B) more talented C) talenteder D) most talented ✅ D</div>
+                <div class="example">This is the ___ movie I've seen.</div>
+                <div class="example">A) boring B) more boring C) boringer D) most boring ✅ D</div>
+                <div class="example">She is the ___ student in the class.</div>
+                <div class="example">A) intelligent B) more intelligent C) intelligenter D) most intelligent ✅ D</div>
+                <div class="example">This is the ___ problem we face.</div>
+                <div class="example">A) serious B) more serious C) seriouser D) most serious ✅ D</div>
+                <div class="example">This is the ___ building in the city.</div>
+                <div class="example">A) modern B) more modern C) moderning D) most modern ✅ D</div>
+                <div class="example">He is the ___ driver I know.</div>
+                <div class="example">A) careful B) more careful C) carefuler D) most careful ✅ D</div>
+                <div class="example">This is the ___ discovery in science.</div>
+                <div class="example">A) important B) more important C) importanter D) most important ✅ D</div>
+                <div class="example">She has the ___ voice in the competition.</div>
+                <div class="example">A) powerful B) more powerful C) powerfuler D) most powerful ✅ D</div>
+                <div class="example">This is the ___ hotel in the resort.</div>
+                <div class="example">A) comfortable B) more comfortable C) comfortabler D) most comfortable ✅ D</div>
+                <div class="example">This is the ___ place I've visited.</div>
+                <div class="example">A) beautiful B) more beautiful C) beautifuler D) most beautiful ✅ D</div>
+                <div class="example">He is the ___ player on the team.</div>
+                <div class="example">A) valuable B) more valuable C) valuabler D) most valuable ✅ D</div>
+                <div class="example">This is the ___ solution to the problem.</div>
+                <div class="example">A) effective B) more effective C) effectiver D) most effective ✅ D</div>
+                <div class="example">She is the ___ person I've met.</div>
+                <div class="example">A) interesting B) more interesting C) interestinger D) most interesting ✅ D</div>
+                <div class="example">This is the ___ event of the year.</div>
+                <div class="example">A) exciting B) more exciting C) excitinger D) most exciting ✅ D</div>
+                <div class="example">This is the ___ restaurant in town.</div>
+                <div class="example">A) popular B) more popular C) popularer D) most popular ✅ D</div>
+                <div class="example">He gave the ___ speech at the conference.</div>
+                <div class="example">A) impressive B) more impressive C) impressiver D) most impressive ✅ D</div>
+                <div class="example">КВИЗ 5 — Irregular forms: good, bad</div>
+                <div class="example">This pizza is ___ than the one I had yesterday.</div>
+                <div class="example">A) good B) better C) more good D) best ✅ B</div>
+                <div class="example">This is the ___ pizza in town.</div>
+                <div class="example">A) good B) better C) more good D) best ✅ D</div>
+                <div class="example">My English is ___ than my French.</div>
+                <div class="example">A) good B) better C) more good D) best ✅ B</div>
+                <div class="example">He is the ___ student in the class.</div>
+                <div class="example">A) good B) better C) more good D) best ✅ D</div>
+                <div class="example">This movie is ___ than the last one.</div>
+                <div class="example">A) bad B) worse C) more bad D) worst ✅ B</div>
+                <div class="example">This is the ___ movie I've ever seen.</div>
+                <div class="example">A) bad B) worse C) more bad D) worst ✅ D</div>
+                <div class="example">Today's weather is ___ than yesterday's.</div>
+                <div class="example">A) bad B) worse C) more bad D) worst ✅ B</div>
+                <div class="example">This is the ___ result we've had.</div>
+                <div class="example">A) bad B) worse C) more bad D) worst ✅ D</div>
+                <div class="example">Your idea is ___ than mine.</div>
+                <div class="example">A) good B) better C) more good D) best ✅ B</div>
+                <div class="example">This is the ___ idea yet.</div>
+                <div class="example">A) good B) better C) more good D) best ✅ D</div>
+                <div class="example">The traffic today is ___ than usual.</div>
+                <div class="example">A) bad B) worse C) more bad D) worst ✅ B</div>
+                <div class="example">This is the ___ traffic jam I've seen.</div>
+                <div class="example">A) bad B) worse C) more bad D) worst ✅ D</div>
+                <div class="example">Her new job is ___ than the previous one.</div>
+                <div class="example">A) good B) better C) more good D) best ✅ B</div>
+                <div class="example">This is the ___ job I've ever had.</div>
+                <div class="example">A) good B) better C) more good D) best ✅ D</div>
+                <div class="example">The situation is ___ than before.</div>
+                <div class="example">A) bad B) worse C) more bad D) worst ✅ B</div>
+                <div class="example">This is the ___ situation we've faced.</div>
+                <div class="example">A) bad B) worse C) more bad D) worst ✅ D</div>
+                <div class="example">This restaurant is ___ than that one.</div>
+                <div class="example">A) good B) better C) more good D) best ✅ B</div>
+                <div class="example">This is the ___ restaurant in the city.</div>
+                <div class="example">A) good B) better C) more good D) best ✅ D</div>
+                <div class="example">His health is ___ than last year.</div>
+                <div class="example">A) bad B) worse C) more bad D) worst ✅ B</div>
+                <div class="example">This is the ___ headache I've had.</div>
+                <div class="example">A) bad B) worse C) more bad D) worst ✅ D</div>
+                <div class="example">КВИЗ 6 — Irregular forms: much/many, little, far</div>
+                <div class="example">I have ___ books than you.</div>
+                <div class="example">A) many B) more C) most D) much ✅ B</div>
+                <div class="example">She has the ___ money in the family.</div>
+                <div class="example">A) many B) more C) most D) much ✅ C</div>
+                <div class="example">I need ___ time to finish.</div>
+                <div class="example">A) many B) more C) most D) much ✅ B</div>
+                <div class="example">This is the ___ important task.</div>
+                <div class="example">A) little B) less C) least D) much ✅ C</div>
+                <div class="example">The shop is ___ than I thought.</div>
+                <div class="example">A) far B) farther C) farthest D) more far ✅ B</div>
+                <div class="example">This is the ___ place from here.</div>
+                <div class="example">A) far B) farther C) farthest D) more far ✅ C</div>
+                <div class="example">I have ___ experience than him.</div>
+                <div class="example">A) little B) less C) least D) few ✅ B</div>
+                <div class="example">This is the ___ expensive option.</div>
+                <div class="example">A) little B) less C) least D) few ✅ C</div>
+                <div class="example">We need ___ people for the project.</div>
+                <div class="example">A) many B) more C) most D) much ✅ B</div>
+                <div class="example">He has the ___ friends in the group.</div>
+                <div class="example">A) many B) more C) most D) much ✅ C</div>
+                <div class="example">This problem requires ___ attention.</div>
+                <div class="example">A) little B) less C) least D) few ✅ B</div>
+                <div class="example">This is the ___ popular choice.</div>
+                <div class="example">A) little B) less C) least D) few ✅ C</div>
+                <div class="example">The station is ___ than the airport.</div>
+                <div class="example">A) far B) farther C) farthest D) more far ✅ B</div>
+                <div class="example">This is the ___ point we can reach.</div>
+                <div class="example">A) far B) farther C) farthest D) more far ✅ C</div>
+                <div class="example">I have ___ free time now.</div>
+                <div class="example">A) little B) less C) least D) few ✅ B</div>
+                <div class="example">This city has the ___ pollution.</div>
+                <div class="example">A) little B) less C) least D) few ✅ C</div>
+                <div class="example">We have ___ work to do today.</div>
+                <div class="example">A) many B) more C) most D) much ✅ B</div>
+                <div class="example">She made the ___ mistakes in the test.</div>
+                <div class="example">A) many B) more C) most D) much ✅ C</div>
+                <div class="example">I need ___ information about this.</div>
+                <div class="example">A) many B) more C) most D) much ✅ B</div>
+                <div class="example">This is the ___ crowded area.</div>
+                <div class="example">A) little B) less C) least D) few ✅ C</div>
+                <div class="example">КВИЗ 7 — as...as construction</div>
+                <div class="example">She is ___ tall ___ her sister.</div>
+                <div class="example">A) as / as B) as / than C) more / than D) so / as ✅ A</div>
+                <div class="example">My car is ___ fast ___ yours.</div>
+                <div class="example">A) as / as B) as / than C) more / as D) so / than ✅ A</div>
+                <div class="example">This book is not ___ interesting ___ that one.</div>
+                <div class="example">A) as / as B) as / than C) so / than D) more / as ✅ A</div>
+                <div class="example">He is ___ smart ___ his brother.</div>
+                <div class="example">A) as / as B) as / than C) more / than D) so / as ✅ A</div>
+                <div class="example">This test is ___ difficult ___ the last one.</div>
+                <div class="example">A) as / as B) as / than C) more / as D) so / than ✅ A</div>
+                <div class="example">My house is not ___ big ___ yours.</div>
+                <div class="example">A) as / as B) as / than C) so / as D) more / than ✅ A</div>
+                <div class="example">She speaks English ___ well ___ a native.</div>
+                <div class="example">A) as / as B) as / than C) so / than D) more / as ✅ A</div>
+                <div class="example">This coffee is ___ strong ___ the tea.</div>
+                <div class="example">A) as / as B) as / than C) more / than D) so / as ✅ A</div>
+                <div class="example">The movie is not ___ good ___ the book.</div>
+                <div class="example">A) as / as B) as / than C) so / than D) more / as ✅ A</div>
+                <div class="example">He is ___ old ___ me.</div>
+                <div class="example">A) as / as B) as / than C) more / as D) so / than ✅ A</div>
+                <div class="example">This room is ___ warm ___ the other one.</div>
+                <div class="example">A) as / as B) as / than C) more / as D) so / than ✅ A</div>
+                <div class="example">She is not ___ busy ___ him.</div>
+                <div class="example">A) as / as B) as / than C) so / as D) more / than ✅ A</div>
+                <div class="example">This phone is ___ expensive ___ that one.</div>
+                <div class="example">A) as / as B) as / than C) more / than D) so / as ✅ A</div>
+                <div class="example">The weather is not ___ cold ___ yesterday.</div>
+                <div class="example">A) as / as B) as / than C) so / than D) more / as ✅ A</div>
+                <div class="example">He runs ___ fast ___ his friend.</div>
+                <div class="example">A) as / as B) as / than C) more / as D) so / than ✅ A</div>
+                <div class="example">This task is ___ easy ___ I thought.</div>
+                <div class="example">A) as / as B) as / than C) so / than D) more / as ✅ A</div>
+                <div class="example">She is not ___ young ___ she looks.</div>
+                <div class="example">A) as / as B) as / than C) so / as D) more / than ✅ A</div>
+                <div class="example">This bag is ___ heavy ___ mine.</div>
+                <div class="example">A) as / as B) as / than C) more / than D) so / as ✅ A</div>
+                <div class="example">He is ___ tall ___ his father.</div>
+                <div class="example">A) as / as B) as / than C) more / as D) so / than ✅ A</div>
+                <div class="example">This dress is not ___ beautiful ___ that one.</div>
+                <div class="example">A) as / as B) as / than C) so / than D) more / as ✅ A</div>
+                <div class="example">КВИЗ 8 — Using 'the' with superlatives</div>
+                <div class="example">This is ___ tallest building in the city.</div>
+                <div class="example">A) a B) an C) the D) - ✅ C</div>
+                <div class="example">She is ___ smartest student in the class.</div>
+                <div class="example">A) a B) an C) the D) - ✅ C</div>
+                <div class="example">He is ___ fastest runner on the team.</div>
+                <div class="example">A) a B) an C) the D) - ✅ C</div>
+                <div class="example">This is ___ most expensive car in the shop.</div>
+                <div class="example">A) a B) an C) the D) - ✅ C</div>
+                <div class="example">She has ___ longest hair in the school.</div>
+                <div class="example">A) a B) an C) the D) - ✅ C</div>
+                <div class="example">This is ___ best pizza I've ever had.</div>
+                <div class="example">A) a B) an C) the D) - ✅ C</div>
+                <div class="example">He is ___ oldest person here.</div>
+                <div class="example">A) a B) an C) the D) - ✅ C</div>
+                <div class="example">This is ___ most beautiful place I've seen.</div>
+                <div class="example">A) a B) an C) the D) - ✅ C</div>
+                <div class="example">She is ___ youngest in the family.</div>
+                <div class="example">A) a B) an C) the D) - ✅ C</div>
+                <div class="example">This is ___ worst movie I've watched.</div>
+                <div class="example">A) a B) an C) the D) - ✅ C</div>
+                <div class="example">He has ___ biggest house in the neighborhood.</div>
+                <div class="example">A) a B) an C) the D) - ✅ C</div>
+                <div class="example">This is ___ most difficult test we've had.</div>
+                <div class="example">A) a B) an C) the D) - ✅ C</div>
+                <div class="example">She is ___ most talented singer here.</div>
+                <div class="example">A) a B) an C) the D) - ✅ C</div>
+                <div class="example">This is ___ smallest phone in the store.</div>
+                <div class="example">A) a B) an C) the D) - ✅ C</div>
+                <div class="example">He is ___ most experienced teacher.</div>
+                <div class="example">A) a B) an C) the D) - ✅ C</div>
+                <div class="example">This is ___ hottest day of the year.</div>
+                <div class="example">A) a B) an C) the D) - ✅ C</div>
+                <div class="example">She is ___ most popular girl in school.</div>
+                <div class="example">A) a B) an C) the D) - ✅ C</div>
+                <div class="example">This is ___ least expensive option.</div>
+                <div class="example">A) a B) an C) the D) - ✅ C</div>
+                <div class="example">He is ___ best player on the team.</div>
+                <div class="example">A) a B) an C) the D) - ✅ C</div>
+                <div class="example">This is ___ farthest I've ever traveled.</div>
+                <div class="example">A) a B) an C) the D) - ✅ C</div>
+                <div class="example">КВИЗ 9 — Mixed comparative and superlative</div>
+                <div class="example">This book is ___ than that one.</div>
+                <div class="example">A) interesting B) more interesting C) most interesting D) the most interesting ✅ B</div>
+                <div class="example">This is ___ book I've read.</div>
+                <div class="example">A) interesting B) more interesting C) most interesting D) the most interesting ✅ D</div>
+                <div class="example">My house is ___ than yours.</div>
+                <div class="example">A) big B) bigger C) biggest D) the biggest ✅ B</div>
+                <div class="example">This is ___ house in the street.</div>
+                <div class="example">A) big B) bigger C) biggest D) the biggest ✅ D</div>
+                <div class="example">She is ___ than me.</div>
+                <div class="example">A) tall B) taller C) tallest D) the tallest ✅ B</div>
+                <div class="example">She is ___ in the class.</div>
+                <div class="example">A) tall B) taller C) tallest D) the tallest ✅ D</div>
+                <div class="example">This car is ___ than that one.</div>
+                <div class="example">A) expensive B) more expensive C) most expensive D) the most expensive ✅ B</div>
+                <div class="example">This is ___ car in the showroom.</div>
+                <div class="example">A) expensive B) more expensive C) most expensive D) the most expensive ✅ D</div>
+                <div class="example">He is ___ than his brother.</div>
+                <div class="example">A) good B) better C) best D) the best ✅ B</div>
+                <div class="example">He is ___ student in the school.</div>
+                <div class="example">A) good B) better C) best D) the best ✅ D</div>
+                <div class="example">Today is ___ than yesterday.</div>
+                <div class="example">A) hot B) hotter C) hottest D) the hottest ✅ B</div>
+                <div class="example">This is ___ day of the year.</div>
+                <div class="example">A) hot B) hotter C) hottest D) the hottest ✅ D</div>
+                <div class="example">This problem is ___ than the last one.</div>
+                <div class="example">A) difficult B) more difficult C) most difficult D) the most difficult ✅ B</div>
+                <div class="example">This is ___ problem we've had.</div>
+                <div class="example">A) difficult B) more difficult C) most difficult D) the most difficult ✅ D</div>
+                <div class="example">My result is ___ than yours.</div>
+                <div class="example">A) bad B) worse C) worst D) the worst ✅ B</div>
+                <div class="example">This is ___ result I've had.</div>
+                <div class="example">A) bad B) worse C) worst D) the worst ✅ D</div>
+                <div class="example">She is ___ than her friend.</div>
+                <div class="example">A) beautiful B) more beautiful C) most beautiful D) the most beautiful ✅ B</div>
+                <div class="example">She is ___ woman here.</div>
+                <div class="example">A) beautiful B) more beautiful C) most beautiful D) the most beautiful ✅ D</div>
+                <div class="example">This test is ___ than I thought.</div>
+                <div class="example">A) easy B) easier C) easiest D) the easiest ✅ B</div>
+                <div class="example">This is ___ test we've had.</div>
+                <div class="example">A) easy B) easier C) easiest D) the easiest ✅ D</div>
+                <div class="example">КВИЗ 10 — Common mistakes and corrections</div>
+                <div class="example">Which is correct?</div>
+                <div class="example">A) more better B) better C) more good D) gooder ✅ B</div>
+                <div class="example">Which is correct?</div>
+                <div class="example">A) the most best B) the best C) the better D) most best ✅ B</div>
+                <div class="example">Which is correct?</div>
+                <div class="example">A) more tall B) taller C) most tall D) tallest ✅ B</div>
+                <div class="example">Which is correct?</div>
+                <div class="example">A) beautifuler B) more beautiful C) beautifuller D) beauty ✅ B</div>
+                <div class="example">Which is correct?</div>
+                <div class="example">A) biggest B) most big C) more big D) bigger than ✅ A</div>
+                <div class="example">Which is correct: "This is ___ car."</div>
+                <div class="example">A) fastest B) the fastest C) more fast D) faster ✅ B</div>
+                <div class="example">Which is correct?</div>
+                <div class="example">A) as tall than B) as tall as C) so tall than D) more tall as ✅ B</div>
+                <div class="example">Which is correct?</div>
+                <div class="example">A) expensiver B) more expensive C) most expensive D) expensivest ✅ B</div>
+                <div class="example">Which is correct?</div>
+                <div class="example">A) He is tall as me. B) He is as tall as me. C) He is tall than me. D) He is so tall as me. ✅ B</div>
+                <div class="example">Which is correct?</div>
+                <div class="example">A) the most smartest B) the smartest C) most smartest D) more smartest ✅ B</div>
+                <div class="example">Which is correct?</div>
+                <div class="example">Which is correct?</div>
+                <div class="example">A) more easy B) easier C) more easier D) easyer ✅ B</div>
+                <div class="example">Which is correct?</div>
+                <div class="example">A) the bigger B) biggest C) the biggest D) most big ✅ C</div>
+                <div class="example">Which is correct?</div>
+                <div class="example">A) I have more much money. B) I have more money. C) I have most money. D) I have mucher money. ✅ B</div>
+                <div class="example">Which is correct?</div>
+                <div class="example">A) She is youngest. B) She is the youngest. C) She is more young. D) She is younger than. ✅ B</div>
+                <div class="example">Which is correct?</div>
+                <div class="example">A) farer B) more far C) farther D) farrer ✅ C</div>
+                <div class="example">Which is correct?</div>
+                <div class="example">Which is correct?</div>
+                <div class="example">A) as good than B) as good as C) so good than D) more good as ✅ B</div>
+                <div class="example">Which is correct?</div>
+                <div class="example">A) He is more old. B) He is older. C) He is more older. D) He is olderer. ✅ B</div>
+                <div class="example">Which is correct?</div>
+                <div class="example">A) the worser B) the worst C) the worse D) most bad ✅ B</div>
+            </div>
+        </div>
+
+
+        <div class="quiz-section">
+            <h2 class="section-title">Проверь себя</h2>
+
+            <div id="quiz-selector">
+                
+            </div>
+
+            <div id="quiz-placeholder" style="display: none;">
+                <p style="font-size: 1.2rem;">Выберите тест, чтобы начать</p>
+            </div>
+
+            <form id="quiz-form" style="display: block;">
+                <button type="submit" class="submit-btn" id="submit-btn">Проверить ответы</button>
+            </form>
+
+            <div id="results" class="hidden">
+                <div class="score" id="score"></div>
+                <div class="feedback" id="feedback"></div>
+                <p id="details"></p>
+                <button class="retry-btn" onclick="retryQuiz()">Попробовать ещё раз</button>
+                <br>
+                <a href="../index.html" class="home-btn">На главную</a>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const allQuizData = {};
+        let currentQuizSet = 1;
+
+        function loadQuiz(quizSet) {
+            currentQuizSet = quizSet;
+
+            const placeholder = document.getElementById('quiz-placeholder');
+            const form = document.getElementById('quiz-form');
+            if (placeholder) {
+                placeholder.style.display = 'none';
+            }
+            if (form.style.display === 'none') {
+                form.style.display = 'block';
+            }
+
+            document.querySelectorAll('.quiz-selector-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (parseInt(btn.dataset.quiz) === quizSet) {
+                    btn.classList.add('active');
+                }
+            });
+
+            const questions = allQuizData[quizSet] || [];
+            const submitBtn = document.getElementById('submit-btn');
+            const existingQuestions = form.querySelectorAll('.question');
+            existingQuestions.forEach(q => q.remove());
+
+            questions.forEach((question, index) => {
+                const questionDiv = document.createElement('div');
+                questionDiv.className = 'question';
+
+                let optionsHtml = '';
+                question.options.forEach((option, optIndex) => {
+                    optionsHtml += `
+                        <label class="option">
+                            <input type="radio" name="question-${index}" value="${optIndex}" required>
+                            <span>${option}</span>
+                        </label>
+                    `;
+                });
+
+                questionDiv.innerHTML = `
+                    <div class="question-text">${index + 1}. ${question.text}</div>
+                    <div class="options">
+                        ${optionsHtml}
+                    </div>
+                `;
+
+                form.insertBefore(questionDiv, submitBtn);
+            });
+
+            form.reset();
+            submitBtn.disabled = false;
+            document.getElementById('results').classList.add('hidden');
+
+            form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        const quizSetCount = Object.keys(allQuizData).length;
+        if (quizSetCount === 1) {
+            loadQuiz(1);
+        }
+
+        document.getElementById('quiz-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const questions = allQuizData[currentQuizSet];
+            let correct = 0;
+
+            questions.forEach((question, index) => {
+                const selected = document.querySelector(`input[name="question-${index}"]:checked`);
+                if (selected && parseInt(selected.value) === question.correct_index) {
+                    correct++;
+                }
+            });
+
+            const total = questions.length;
+            const percentage = Math.round((correct / total) * 100);
+
+            document.getElementById('score').textContent = percentage + '%';
+            document.getElementById('score').className = percentage >= 70 ? 'score pass' : 'score fail';
+
+            let feedback;
+            if (percentage >= 90) {
+                feedback = 'Отлично!';
+            } else if (percentage >= 70) {
+                feedback = 'Хорошо!';
+            } else if (percentage >= 50) {
+                feedback = 'Неплохо, но можно лучше';
+            } else {
+                feedback = 'Нужно ещё поучить';
+            }
+
+            document.getElementById('feedback').textContent = feedback;
+            document.getElementById('details').textContent = `Правильных ответов: ${correct} из ${total}`;
+
+            document.getElementById('results').classList.remove('hidden');
+            document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+
+            this.querySelector('.submit-btn').disabled = true;
+        });
+
+        function retryQuiz() {
+            document.getElementById('results').classList.add('hidden');
+            document.getElementById('quiz-form').reset();
+            document.querySelector('.submit-btn').disabled = false;
+            document.getElementById('quiz-form').scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>

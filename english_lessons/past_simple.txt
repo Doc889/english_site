@@ -1,0 +1,937 @@
+Past Simple
+
+Слушай, Past Simple — это время, которое описывает события, которые произошли в прошлом и уже закончились.
+Для русскоговорящих это кажется проще, чем Present Simple, потому что похоже на наше прошедшее время. Но есть важные тонкости, особенно с неправильными глаголами.
+
+Главная идея: Past Simple = завершенное действие в прошлом.
+
+1. Что такое Past Simple
+
+Past Simple используется когда:
+- Действие произошло в прошлом и полностью завершилось
+- Есть указание на конкретное время в прошлом (yesterday, last week, in 2015)
+- Последовательность действий в прошлом
+
+Примеры:
+
+I visited my grandmother yesterday. (Я навестил бабушку вчера)
+
+She worked in Moscow in 2020. (Она работала в Москве в 2020 году)
+
+They played football last weekend. (Они играли в футбол на прошлых выходных)
+
+💡 Совет:
+Past Simple = что-то случилось и закончилось. Это прошлое, которое больше не продолжается.
+
+2. Правильные глаголы (Regular Verbs)
+
+Большинство глаголов образуют Past Simple просто добавляя окончание -ed:
+
+глагол + -ed
+
+Примеры:
+
+work → worked (работал)
+play → played (играл)
+watch → watched (смотрел)
+help → helped (помогал)
+clean → cleaned (убирал)
+
+Особые правила написания:
+
+Если глагол заканчивается на -e, добавляем только -d:
+live → lived, love → loved, like → liked
+
+Если глагол заканчивается на согласную + y, меняем y на i и добавляем -ed:
+study → studied, try → tried, carry → carried
+
+Если глагол из одного слога заканчивается на согласную после короткой гласной, удваиваем согласную:
+stop → stopped, plan → planned
+
+💡 Совет:
+Большинство глаголов правильные, поэтому просто добавляй -ed!
+
+3. Неправильные глаголы (Irregular Verbs)
+
+Некоторые глаголы не подчиняются правилу -ed. Их нужно просто запомнить.
+
+Основные неправильные глаголы:
+
+go → went (ходить, ехать)
+come → came (приходить)
+see → saw (видеть)
+do → did (делать)
+make → made (делать, создавать)
+have → had (иметь)
+get → got (получать)
+give → gave (давать)
+take → took (брать)
+know → knew (знать)
+think → thought (думать)
+say → said (говорить, сказать)
+tell → told (рассказывать)
+find → found (находить)
+buy → bought (покупать)
+eat → ate (есть)
+drink → drank (пить)
+write → wrote (писать)
+read → read (читать, но произносится как "ред")
+speak → spoke (говорить)
+teach → taught (учить)
+learn → learnt/learned (учиться)
+feel → felt (чувствовать)
+leave → left (уходить, покидать)
+meet → met (встречать)
+bring → brought (приносить)
+begin → began (начинать)
+become → became (становиться)
+break → broke (ломать)
+choose → chose (выбирать)
+hear → heard (слышать)
+lose → lost (терять)
+pay → paid (платить)
+sell → sold (продавать)
+send → sent (отправлять)
+sit → sat (сидеть)
+stand → stood (стоять)
+understand → understood (понимать)
+win → won (выигрывать)
+wear → wore (носить одежду)
+
+💡 Совет:
+Неправильные глаголы нужно учить наизусть. Начни с самых частых: go-went, do-did, have-had, see-saw.
+
+4. Утверждения (Affirmative)
+
+Для всех лиц (I, you, he, she, it, we, they) форма глагола одинаковая:
+
+подлежащее + глагол в Past Simple
+
+Примеры:
+
+I worked yesterday. (Я работал вчера)
+
+You visited London last year. (Ты посетил Лондон в прошлом году)
+
+He played football on Sunday. (Он играл в футбол в воскресенье)
+
+She watched a movie. (Она посмотрела фильм)
+
+It rained yesterday. (Вчера шел дождь)
+
+We studied English. (Мы учили английский)
+
+They bought a car. (Они купили машину)
+
+💡 Совет:
+В утверждениях не нужен вспомогательный глагол! Просто используй Past Simple форму глагола.
+
+5. Отрицания (Negative)
+
+Для отрицаний используем вспомогательный глагол did + not (didn't):
+
+подлежащее + did not (didn't) + глагол в начальной форме
+
+Примеры:
+
+I didn't work yesterday. (Я не работал вчера)
+
+You didn't visit London. (Ты не посещал Лондон)
+
+He didn't play football. (Он не играл в футбол)
+
+She didn't watch TV. (Она не смотрела телевизор)
+
+It didn't rain yesterday. (Вчера не было дождя)
+
+We didn't study English. (Мы не учили английский)
+
+They didn't buy a car. (Они не купили машину)
+
+💡 Совет:
+После didn't глагол всегда в начальной форме (инфинитив без to).
+❌ didn't worked → ✔ didn't work
+❌ didn't went → ✔ didn't go
+
+6. Вопросы (Questions)
+
+Для вопросов ставим did в начало предложения:
+
+Did + подлежащее + глагол в начальной форме?
+
+Примеры:
+
+Did you work yesterday? (Ты работал вчера?)
+
+Did she visit London? (Она посещала Лондон?)
+
+Did they play football? (Они играли в футбол?)
+
+Did he watch the movie? (Он смотрел фильм?)
+
+Did it rain yesterday? (Вчера был дождь?)
+
+Did we study together? (Мы учились вместе?)
+
+Did I tell you this story? (Я рассказывал тебе эту историю?)
+
+💡 Совет:
+В вопросах тоже используем начальную форму глагола после did.
+❌ Did you went? → ✔ Did you go?
+❌ Did she worked? → ✔ Did she work?
+
+7. Наречия времени для Past Simple
+
+Эти слова показывают, что действие было в прошлом:
+
+yesterday (вчера)
+
+last week/month/year (на прошлой неделе/в прошлом месяце/году)
+
+last Monday/Tuesday (в прошлый понедельник/вторник)
+
+ago (назад): two days ago, a week ago, three years ago
+
+in + год: in 2020, in 1995
+
+when I was young (когда я был молодым)
+
+Примеры в предложениях:
+
+I saw him yesterday. (Я видел его вчера)
+
+She lived in Paris last year. (Она жила в Париже в прошлом году)
+
+They visited us two weeks ago. (Они навестили нас две недели назад)
+
+He worked here in 2019. (Он работал здесь в 2019 году)
+
+We met when I was a student. (Мы встретились, когда я был студентом)
+
+💡 Совет:
+Слова-маркеры Past Simple помогают понять, что нужно использовать прошедшее время.
+
+8. Отличие от Present Simple
+
+Present Simple = обычные действия, привычки, факты
+Past Simple = завершенные действия в прошлом
+
+Сравнение:
+
+Present Simple: I work every day. (Я работаю каждый день — это привычка)
+Past Simple: I worked yesterday. (Я работал вчера — одно конкретное действие)
+
+Present Simple: She lives in Moscow. (Она живет в Москве — сейчас)
+Past Simple: She lived in Moscow. (Она жила в Москве — раньше, но сейчас уже нет)
+
+Present Simple: They play football on weekends. (Они играют в футбол по выходным — регулярно)
+Past Simple: They played football last Sunday. (Они играли в футбол в прошлое воскресенье — один раз)
+
+💡 Совет:
+Если есть yesterday, last, ago — используй Past Simple.
+Если есть usually, always, every — используй Present Simple.
+
+9. Типичные ошибки русскоговорящих
+
+Самые частые ошибки при использовании Past Simple:
+
+❌ I goed to school. → неправильная форма go
+✔ I went to school.
+
+❌ She didn't came home. → лишнее окончание после didn't
+✔ She didn't come home.
+
+❌ Did you saw him? → лишнее окончание после did
+✔ Did you see him?
+
+❌ He buyed a car. → неправильная форма buy
+✔ He bought a car.
+
+❌ We eated pizza. → неправильная форма eat
+✔ We ate pizza.
+
+❌ Yesterday I go to the cinema. → используется Present Simple вместо Past Simple
+✔ Yesterday I went to the cinema.
+
+❌ Last week she is in London. → используется to be в Present вместо Past
+✔ Last week she was in London.
+
+💡 Совет:
+Главная ошибка — использовать неправильную форму глагола или забывать, что после did/didn't нужна начальная форма.
+
+10. Глагол to be в Past Simple
+
+Глагол to be имеет особые формы в прошедшем времени:
+
+I / He / She / It → was
+You / We / They → were
+
+Утверждения:
+
+I was at home. (Я был дома)
+She was happy. (Она была счастлива)
+We were students. (Мы были студентами)
+They were in Paris. (Они были в Париже)
+
+Отрицания:
+
+I was not (wasn't) at home.
+She was not (wasn't) happy.
+We were not (weren't) students.
+They were not (weren't) in Paris.
+
+Вопросы:
+
+Was I right? (Я был прав?)
+Was she happy? (Она была счастлива?)
+Were you at home? (Ты был дома?)
+Were they in Paris? (Они были в Париже?)
+
+💡 Совет:
+Глагол to be не использует did в Past Simple! Он изменяется на was/were.
+
+Главное про Past Simple
+
+Past Simple = завершенные действия в прошлом
+
+Правильные глаголы: глагол + -ed
+
+Неправильные глаголы нужно запомнить (go-went, see-saw, do-did)
+
+Отрицания: didn't + начальная форма глагола
+
+Вопросы: Did + подлежащее + начальная форма глагола?
+
+Маркеры времени: yesterday, last, ago, in + год
+
+После did/didn't всегда используется начальная форма глагола
+
+
+КВИЗ 1 — Past Simple
+
+I ___ to school yesterday.
+A) go B) goes C) went D) going ✅ C
+
+She ___ her homework last night.
+A) do B) did C) does D) doing ✅ B
+
+They ___ football on Sunday.
+A) play B) plays C) played D) playing ✅ C
+
+We ___ a movie last weekend.
+A) watch B) watched C) watches D) watching ✅ B
+
+He ___ his friend yesterday.
+A) see B) sees C) saw D) seeing ✅ C
+
+You ___ a book last week.
+A) read B) reads C) readed D) reading ✅ A
+
+It ___ yesterday.
+A) rain B) rains C) rained D) raining ✅ C
+
+I ___ breakfast this morning.
+A) eat B) eats C) ate D) eating ✅ C
+
+She ___ to music yesterday.
+A) listen B) listens C) listened D) listening ✅ C
+
+They ___ a new car last month.
+A) buy B) buys C) bought D) buying ✅ C
+
+We ___ English last year.
+A) study B) studies C) studied D) studying ✅ C
+
+He ___ me a letter.
+A) write B) writes C) wrote D) writing ✅ C
+
+You ___ at home yesterday.
+A) was B) were C) are D) is ✅ B
+
+She ___ happy last week.
+A) was B) were C) is D) are ✅ A
+
+They ___ in Paris last summer.
+A) was B) were C) are D) is ✅ B
+
+I ___ coffee this morning.
+A) drink B) drinks C) drank D) drinking ✅ C
+
+He ___ his keys yesterday.
+A) find B) finds C) found D) finding ✅ C
+
+We ___ to the park on Sunday.
+A) go B) goes C) went D) going ✅ C
+
+She ___ her phone last week.
+A) lose B) loses C) lost D) losing ✅ C
+
+They ___ dinner at 7 pm.
+A) have B) has C) had D) having ✅ C
+
+
+КВИЗ 2 — Past Simple
+
+I ___ not go to work yesterday.
+A) do B) did C) does D) doing ✅ B
+
+She ___ not watch TV last night.
+A) do B) did C) does D) doing ✅ B
+
+They ___ not play football on Monday.
+A) do B) did C) does D) doing ✅ B
+
+We ___ not study English last week.
+A) do B) did C) does D) doing ✅ B
+
+He ___ not see the movie.
+A) do B) did C) does D) doing ✅ B
+
+You ___ not eat breakfast this morning.
+A) do B) did C) does D) doing ✅ B
+
+It ___ not rain yesterday.
+A) do B) did C) does D) doing ✅ B
+
+I ___ not buy a new phone.
+A) do B) did C) does D) doing ✅ B
+
+She ___ not write a letter.
+A) do B) did C) does D) doing ✅ B
+
+They ___ not come to the party.
+A) do B) did C) does D) doing ✅ B
+
+We ___ not visit our friends.
+A) do B) did C) does D) doing ✅ B
+
+He ___ not finish his homework.
+A) do B) did C) does D) doing ✅ B
+
+You ___ not call me yesterday.
+A) do B) did C) does D) doing ✅ B
+
+I ___ not at home yesterday.
+A) was B) were C) wasn't D) weren't ✅ C
+
+She ___ not happy last week.
+A) was B) were C) wasn't D) weren't ✅ C
+
+They ___ not in Paris last summer.
+A) was B) were C) wasn't D) weren't ✅ D
+
+We ___ not ready for the test.
+A) was B) were C) wasn't D) weren't ✅ D
+
+He ___ not at school yesterday.
+A) was B) were C) wasn't D) weren't ✅ C
+
+You ___ not at the party.
+A) was B) were C) wasn't D) weren't ✅ D
+
+It ___ not cold yesterday.
+A) was B) were C) wasn't D) weren't ✅ C
+
+
+КВИЗ 3 — Past Simple
+
+Did you ___ to school yesterday?
+A) go B) goes C) went D) going ✅ A
+
+Did she ___ her homework?
+A) do B) does C) did D) doing ✅ A
+
+Did they ___ football on Sunday?
+A) play B) plays C) played D) playing ✅ A
+
+Did we ___ a movie last weekend?
+A) watch B) watches C) watched D) watching ✅ A
+
+Did he ___ his friend yesterday?
+A) see B) sees C) saw D) seeing ✅ A
+
+Did you ___ a book last week?
+A) read B) reads C) readed D) reading ✅ A
+
+Did it ___ yesterday?
+A) rain B) rains C) rained D) raining ✅ A
+
+Did I ___ breakfast this morning?
+A) eat B) eats C) ate D) eating ✅ A
+
+Did she ___ to music yesterday?
+A) listen B) listens C) listened D) listening ✅ A
+
+Did they ___ a new car last month?
+A) buy B) buys C) bought D) buying ✅ A
+
+Did we ___ English last year?
+A) study B) studies C) studied D) studying ✅ A
+
+Did he ___ you a letter?
+A) write B) writes C) wrote D) writing ✅ A
+
+___ you at home yesterday?
+A) Was B) Were C) Did D) Do ✅ B
+
+___ she happy last week?
+A) Was B) Were C) Did D) Do ✅ A
+
+___ they in Paris last summer?
+A) Was B) Were C) Did D) Do ✅ B
+
+Did I ___ coffee this morning?
+A) drink B) drinks C) drank D) drinking ✅ A
+
+Did he ___ his keys yesterday?
+A) find B) finds C) found D) finding ✅ A
+
+Did we ___ to the park on Sunday?
+A) go B) goes C) went D) going ✅ A
+
+Did she ___ her phone last week?
+A) lose B) loses C) lost D) losing ✅ A
+
+Did they ___ dinner at 7 pm?
+A) have B) has C) had D) having ✅ A
+
+
+КВИЗ 4 — Past Simple
+
+Yesterday I ___ a great movie.
+A) watch B) watches C) watched D) watching ✅ C
+
+Last week she ___ to London.
+A) go B) goes C) went D) going ✅ C
+
+Two days ago they ___ a new house.
+A) buy B) buys C) bought D) buying ✅ C
+
+In 2020 we ___ in Moscow.
+A) live B) lives C) lived D) living ✅ C
+
+Last night he ___ late.
+A) work B) works C) worked D) working ✅ C
+
+Yesterday you ___ very happy.
+A) was B) were C) are D) is ✅ B
+
+Last summer it ___ very hot.
+A) was B) were C) is D) are ✅ A
+
+Three years ago I ___ English.
+A) study B) studies C) studied D) studying ✅ C
+
+Last Monday she ___ sick.
+A) was B) were C) is D) are ✅ A
+
+Yesterday they ___ at the park.
+A) was B) were C) are D) is ✅ B
+
+Last year we ___ many countries.
+A) visit B) visits C) visited D) visiting ✅ C
+
+Two weeks ago he ___ his job.
+A) change B) changes C) changed D) changing ✅ C
+
+Yesterday I ___ my old friend.
+A) meet B) meets C) met D) meeting ✅ C
+
+Last night she ___ a delicious cake.
+A) make B) makes C) made D) making ✅ C
+
+Last Friday they ___ to a concert.
+A) go B) goes C) went D) going ✅ C
+
+Yesterday you ___ me a message.
+A) send B) sends C) sent D) sending ✅ C
+
+Last week it ___ every day.
+A) rain B) rains C) rained D) raining ✅ C
+
+In 2019 I ___ in a bank.
+A) work B) works C) worked D) working ✅ C
+
+Last month she ___ a new car.
+A) buy B) buys C) bought D) buying ✅ C
+
+Yesterday we ___ a good time.
+A) have B) has C) had D) having ✅ C
+
+
+КВИЗ 5 — Past Simple
+
+I didn't ___ to the party.
+A) go B) goes C) went D) going ✅ A
+
+She didn't ___ the answer.
+A) know B) knows C) knew D) knowing ✅ A
+
+They didn't ___ their homework.
+A) do B) does C) did D) doing ✅ A
+
+We didn't ___ the movie.
+A) like B) likes C) liked D) liking ✅ A
+
+He didn't ___ breakfast.
+A) eat B) eats C) ate D) eating ✅ A
+
+You didn't ___ me yesterday.
+A) call B) calls C) called D) calling ✅ A
+
+It didn't ___ last night.
+A) rain B) rains C) rained D) raining ✅ A
+
+I didn't ___ the book.
+A) read B) reads C) readed D) reading ✅ A
+
+She didn't ___ to school.
+A) go B) goes C) went D) going ✅ A
+
+They didn't ___ the test.
+A) pass B) passes C) passed D) passing ✅ A
+
+We didn't ___ TV yesterday.
+A) watch B) watches C) watched D) watching ✅ A
+
+He didn't ___ his keys.
+A) find B) finds C) found D) finding ✅ A
+
+You didn't ___ at home.
+A) stay B) stays C) stayed D) staying ✅ A
+
+I ___ late yesterday.
+A) wasn't B) weren't C) didn't D) don't ✅ A
+
+She ___ happy with the result.
+A) wasn't B) weren't C) didn't D) don't ✅ A
+
+They ___ at the meeting.
+A) wasn't B) weren't C) didn't D) don't ✅ B
+
+We ___ ready for the exam.
+A) wasn't B) weren't C) didn't D) don't ✅ B
+
+He ___ interested in the topic.
+A) wasn't B) weren't C) didn't D) don't ✅ A
+
+You ___ at school yesterday.
+A) wasn't B) weren't C) didn't D) don't ✅ B
+
+It ___ a good idea.
+A) wasn't B) weren't C) didn't D) don't ✅ A
+
+
+КВИЗ 6 — Past Simple
+
+Last year I ___ to Italy.
+A) travel B) travels C) traveled D) travelling ✅ C
+
+She ___ a new job in 2022.
+A) start B) starts C) started D) starting ✅ C
+
+They ___ tennis yesterday.
+A) play B) plays C) played D) playing ✅ C
+
+We ___ our grandparents last week.
+A) visit B) visits C) visited D) visiting ✅ C
+
+He ___ a song for her.
+A) write B) writes C) wrote D) writing ✅ C
+
+You ___ very tired yesterday.
+A) was B) were C) are D) is ✅ B
+
+It ___ a beautiful day.
+A) was B) were C) is D) are ✅ A
+
+I ___ my wallet last night.
+A) lose B) loses C) lost D) losing ✅ C
+
+She ___ me the truth.
+A) tell B) tells C) told D) telling ✅ C
+
+They ___ the game yesterday.
+A) win B) wins C) won D) winning ✅ C
+
+We ___ about you.
+A) think B) thinks C) thought D) thinking ✅ C
+
+He ___ a lot of books.
+A) read B) reads C) readed D) reading ✅ A
+
+You ___ me flowers.
+A) give B) gives C) gave D) giving ✅ C
+
+I ___ early this morning.
+A) wake B) wakes C) woke D) waking ✅ C
+
+She ___ Spanish in school.
+A) learn B) learns C) learned D) learning ✅ C
+
+They ___ the bus to work.
+A) take B) takes C) took D) taking ✅ C
+
+We ___ at a restaurant.
+A) eat B) eats C) ate D) eating ✅ C
+
+He ___ his car last month.
+A) sell B) sells C) sold D) selling ✅ C
+
+You ___ a good student.
+A) was B) were C) are D) is ✅ B
+
+It ___ very cold last winter.
+A) was B) were C) is D) are ✅ A
+
+
+КВИЗ 7 — Past Simple
+
+Did I ___ you yesterday?
+A) see B) sees C) saw D) seeing ✅ A
+
+Did she ___ the answer?
+A) know B) knows C) knew D) knowing ✅ A
+
+Did they ___ the house?
+A) clean B) cleans C) cleaned D) cleaning ✅ A
+
+Did we ___ on time?
+A) arrive B) arrives C) arrived D) arriving ✅ A
+
+Did he ___ his homework?
+A) finish B) finishes C) finished D) finishing ✅ A
+
+Did you ___ the news?
+A) hear B) hears C) heard D) hearing ✅ A
+
+Did it ___ last night?
+A) snow B) snows C) snowed D) snowing ✅ A
+
+Did I ___ something wrong?
+A) do B) does C) did D) doing ✅ A
+
+Did she ___ you a gift?
+A) give B) gives C) gave D) giving ✅ A
+
+Did they ___ the game?
+A) win B) wins C) won D) winning ✅ A
+
+Did we ___ to him?
+A) speak B) speaks C) spoke D) speaking ✅ A
+
+Did he ___ early?
+A) leave B) leaves C) left D) leaving ✅ A
+
+Did you ___ happy?
+A) feel B) feels C) felt D) feeling ✅ A
+
+___ I right about this?
+A) Was B) Were C) Did D) Do ✅ A
+
+___ she at home yesterday?
+A) Was B) Were C) Did D) Do ✅ A
+
+___ they late for class?
+A) Was B) Were C) Did D) Do ✅ B
+
+___ we wrong?
+A) Was B) Were C) Did D) Do ✅ B
+
+___ he your teacher?
+A) Was B) Were C) Did D) Do ✅ A
+
+___ you tired after work?
+A) Was B) Were C) Did D) Do ✅ B
+
+___ it expensive?
+A) Was B) Were C) Did D) Do ✅ A
+
+
+КВИЗ 8 — Past Simple
+
+I ___ my keys this morning.
+A) forget B) forgets C) forgot D) forgetting ✅ C
+
+She ___ me a story.
+A) tell B) tells C) told D) telling ✅ C
+
+They ___ the bus yesterday.
+A) miss B) misses C) missed D) missing ✅ C
+
+We ___ a lot of fun.
+A) have B) has C) had D) having ✅ C
+
+He ___ his bike to school.
+A) ride B) rides C) rode D) riding ✅ C
+
+You ___ a great job.
+A) do B) does C) did D) doing ✅ C
+
+It ___ all day yesterday.
+A) rain B) rains C) rained D) raining ✅ C
+
+I ___ my room last night.
+A) clean B) cleans C) cleaned D) cleaning ✅ C
+
+She ___ a beautiful dress.
+A) wear B) wears C) wore D) wearing ✅ C
+
+They ___ pizza for dinner.
+A) choose B) chooses C) chose D) choosing ✅ C
+
+We ___ the train to Paris.
+A) take B) takes C) took D) taking ✅ C
+
+He ___ a new laptop.
+A) get B) gets C) got D) getting ✅ C
+
+You ___ me your number.
+A) give B) gives C) gave D) giving ✅ C
+
+I ___ at the library yesterday.
+A) was B) were C) am D) is ✅ A
+
+She ___ very kind to me.
+A) was B) were C) is D) are ✅ A
+
+They ___ my best friends.
+A) was B) were C) are D) is ✅ B
+
+We ___ excited about the trip.
+A) was B) were C) are D) is ✅ B
+
+He ___ the winner.
+A) was B) were C) is D) are ✅ A
+
+You ___ right about that.
+A) was B) were C) are D) is ✅ B
+
+It ___ a difficult question.
+A) was B) were C) is D) are ✅ A
+
+
+КВИЗ 9 — Past Simple
+
+Last night I ___ a strange dream.
+A) have B) has C) had D) having ✅ C
+
+Yesterday she ___ her car.
+A) wash B) washes C) washed D) washing ✅ C
+
+Two years ago they ___ in Berlin.
+A) live B) lives C) lived D) living ✅ C
+
+Last week we ___ a party.
+A) organize B) organizes C) organized D) organizing ✅ C
+
+Last month he ___ his driving test.
+A) pass B) passes C) passed D) passing ✅ C
+
+Yesterday you ___ me a favor.
+A) do B) does C) did D) doing ✅ C
+
+Last summer it ___ very rainy.
+A) was B) were C) is D) are ✅ A
+
+Three days ago I ___ my cousin.
+A) meet B) meets C) met D) meeting ✅ C
+
+Last week she ___ sick.
+A) was B) were C) is D) are ✅ A
+
+Yesterday they ___ at the beach.
+A) was B) were C) are D) is ✅ B
+
+Last year we ___ a new house.
+A) buy B) buys C) bought D) buying ✅ C
+
+Last night he ___ until midnight.
+A) work B) works C) worked D) working ✅ C
+
+Yesterday I ___ you at the mall.
+A) see B) sees C) saw D) seeing ✅ C
+
+Last Monday she ___ a present for me.
+A) bring B) brings C) brought D) bringing ✅ C
+
+Last weekend they ___ a mountain.
+A) climb B) climbs C) climbed D) climbing ✅ C
+
+Yesterday you ___ a great idea.
+A) have B) has C) had D) having ✅ C
+
+Last night it ___ very windy.
+A) was B) were C) is D) are ✅ A
+
+Two weeks ago I ___ my homework.
+A) forget B) forgets C) forgot D) forgetting ✅ C
+
+Last year she ___ French.
+A) study B) studies C) studied D) studying ✅ C
+
+Yesterday we ___ a good time.
+A) have B) has C) had D) having ✅ C
+
+
+КВИЗ 10 — Past Simple
+
+I didn't ___ what you said.
+A) understand B) understands C) understood D) understanding ✅ A
+
+She didn't ___ the door.
+A) close B) closes C) closed D) closing ✅ A
+
+They didn't ___ the project.
+A) finish B) finishes C) finished D) finishing ✅ A
+
+We didn't ___ each other.
+A) meet B) meets C) met D) meeting ✅ A
+
+He didn't ___ the question.
+A) answer B) answers C) answered D) answering ✅ A
+
+You didn't ___ any mistakes.
+A) make B) makes C) made D) making ✅ A
+
+It didn't ___ well.
+A) work B) works C) worked D) working ✅ A
+
+I didn't ___ anything.
+A) say B) says C) said D) saying ✅ A
+
+She didn't ___ my message.
+A) get B) gets C) got D) getting ✅ A
+
+They didn't ___ the instructions.
+A) follow B) follows C) followed D) following ✅ A
+
+We didn't ___ permission.
+A) ask B) asks C) asked D) asking ✅ A
+
+He didn't ___ the medicine.
+A) take B) takes C) took D) taking ✅ A
+
+You didn't ___ me the truth.
+A) tell B) tells C) told D) telling ✅ A
+
+I ___ hungry yesterday.
+A) wasn't B) weren't C) didn't D) don't ✅ A
+
+She ___ interested in the film.
+A) wasn't B) weren't C) didn't D) don't ✅ A
+
+They ___ at home last night.
+A) wasn't B) weren't C) didn't D) don't ✅ B
+
+We ___ surprised by the news.
+A) wasn't B) weren't C) didn't D) don't ✅ B
+
+He ___ the captain of the team.
+A) wasn't B) weren't C) didn't D) don't ✅ A
+
+You ___ invited to the party.
+A) wasn't B) weren't C) didn't D) don't ✅ B
+
+It ___ easy to do.
+A) wasn't B) weren't C) didn't D) don't ✅ A

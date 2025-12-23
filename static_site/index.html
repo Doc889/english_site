@@ -50,14 +50,9 @@
             z-index: 100;
             background: rgba(250, 247, 244, 0.95);
             backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(124, 58, 237, 0.1);
+            border-bottom: 1px solid rgba(212, 102, 79, 0.1);
             padding: 3rem 2rem;
             text-align: center;
-        }
-
-        .header-content {
-            max-width: 1200px;
-            margin: 0 auto;
         }
 
         .main-title {
@@ -206,12 +201,10 @@
     </style>
 </head>
 <body>
-    <header id="header">
-        <div class="header-content">
-            <h1 class="main-title">Победи грамматику английского языка</h1>
-            <p class="subtitle">Перед тобой инструмент, с помощью которого ты поймёшь суть английского языка и навсегда закроешь свои пробелы в грамматике. Тебя ждут сотни тестов. Все зависит только от тебя.</p>
-            <span class="free-badge">100% Free Learning</span>
-        </div>
+    <header>
+        <h1 class="main-title">Победи грамматику английского языка</h1>
+        <p class="subtitle">Перед тобой инструмент, с помощью которого ты поймёшь суть английского языка и навсегда закроешь свои пробелы в грамматике. Тебя ждут сотни тестов. Все зависит только от тебя.</p>
+        <span class="free-badge">100% Free Learning</span>
     </header>
 
     <main>
@@ -234,11 +227,31 @@
     </footer>
 
     <script>
-        const topics = [{"id": "alphabet-pronunciation", "title": "Закладываем фундамент", "description": "Базовые принципы английского языка: структура, глаголы и конструкции", "difficulty": "beginner", "total_questions": 14}, {"id": "greetings-introductions", "title": "Существительные", "description": "Исчисляемые и неисчисляемые существительные, множественное число", "difficulty": "beginner", "total_questions": 8}, {"id": "articles", "title": "Артикли", "description": "Артикли a, an, the и нулевой артикль", "difficulty": "beginner", "total_questions": 200}, {"id": "pronouns", "title": "Местоимения", "description": "Личные, объектные, притяжательные и указательные местоимения", "difficulty": "beginner", "total_questions": 200}, {"id": "adjectives", "title": "Прилагательные", "description": "Позиция прилагательных, степени сравнения и формы", "difficulty": "beginner", "total_questions": 200}, {"id": "to_be", "title": "Глагол to be", "description": "Глагол to be (am/is/are) - самый базовый глагол английского языка", "difficulty": "beginner", "total_questions": 173}, {"id": "present_simple", "title": "Present Simple", "description": "Настоящее простое время - факты, привычки и рутина", "difficulty": "beginner", "total_questions": 200}, {"id": "modal_verbs", "title": "Модальные глаголы", "description": "Can, must, should - модальные глаголы для выражения способности, необходимости и совета", "difficulty": "beginner", "total_questions": 200}, {"id": "there_is_are", "title": "There is / There are", "description": "Конструкция для описания наличия предметов и людей", "difficulty": "beginner", "total_questions": 200}, {"id": "prepositions_place", "title": "Предлоги места", "description": "Предлоги in, on, under, next to, between для описания местоположения", "difficulty": "beginner", "total_questions": 200}, {"id": "question_words", "title": "Вопросительные слова", "description": "What, where, who, when, why, how - основные вопросительные слова", "difficulty": "beginner", "total_questions": 200}, {"id": "numbers_dates_time", "title": "Числа, даты и время", "description": "Как называть числа, даты и время по-английски", "difficulty": "beginner", "total_questions": 200}, {"id": "present_continuous", "title": "Present Continuous", "description": "Настоящее продолженное время для действий, происходящих сейчас", "difficulty": "beginner", "total_questions": 200}];
+        const topics = [{"id": "alphabet-pronunciation", "title": "Закладываем фундамент", "description": "Базовые принципы английского языка: структура, глаголы и конструкции", "total_questions": 14}, {"id": "greetings-introductions", "title": "Существительные", "description": "Исчисляемые и неисчисляемые существительные, множественное число", "total_questions": 8}, {"id": "articles", "title": "Артикли", "description": "Артикли a, an, the и нулевой артикль", "total_questions": 200}, {"id": "pronouns", "title": "Местоимения", "description": "Личные, объектные, притяжательные и указательные местоимения", "total_questions": 200}, {"id": "adjectives", "title": "Прилагательные", "description": "Позиция прилагательных, степени сравнения и формы", "total_questions": 200}, {"id": "to_be", "title": "Глагол to be", "description": "Глагол to be (am/is/are) - самый базовый глагол английского языка", "total_questions": 173}, {"id": "present_simple", "title": "Present Simple", "description": "Настоящее простое время - факты, привычки и рутина", "total_questions": 200}, {"id": "modal_verbs", "title": "Модальные глаголы", "description": "Can, must, should - модальные глаголы для выражения способности, необходимости и совета", "total_questions": 200}, {"id": "there_is_are", "title": "There is / There are", "description": "Конструкция для описания наличия предметов и людей", "total_questions": 200}, {"id": "prepositions_place", "title": "Предлоги места", "description": "Предлоги in, on, under, next to, between для описания местоположения", "total_questions": 200}, {"id": "question_words", "title": "Вопросительные слова", "description": "What, where, who, when, why, how - основные вопросительные слова", "total_questions": 200}, {"id": "numbers_dates_time", "title": "Числа, даты и время", "description": "Как называть числа, даты и время по-английски", "total_questions": 200}, {"id": "present_continuous", "title": "Present Continuous", "description": "Настоящее продолженное время для действий, происходящих сейчас", "total_questions": 200}, {"id": "future_simple", "title": "Future Simple (Will)", "description": "Будущее простое время — предсказания, обещания, спонтанные решения", "total_questions": 174}];
 
         const container = document.getElementById('topics-container');
 
-        topics.forEach(topic => {
+        // Filter to show only topics up to present_continuous
+        const allowedTopics = topics.filter(topic => {
+            const topicOrder = [
+                'alphabet-pronunciation',
+                'greetings-introductions',
+                'articles',
+                'pronouns',
+                'adjectives',
+                'to_be',
+                'present_simple',
+                'modal_verbs',
+                'there_is_are',
+                'prepositions_place',
+                'question_words',
+                'numbers_dates_time',
+                'present_continuous'
+            ];
+            return topicOrder.includes(topic.id);
+        });
+
+        allowedTopics.forEach(topic => {
             const card = document.createElement('a');
             card.href = `topics/${topic.id}.html`;
             card.className = 'topic-item';

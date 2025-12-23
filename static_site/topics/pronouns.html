@@ -18,13 +18,15 @@
             --color-bg-alt: #faf5ff;
             --color-text: #1f2937;
             --color-text-light: #6b7280;
+            --color-white: #ffffff;
             --color-success: #10b981;
             --color-error: #ef4444;
             --font-display: 'Playfair Display', serif;
             --font-body: 'DM Sans', sans-serif;
             --shadow-sm: 0 2px 8px rgba(124, 58, 237, 0.08);
             --shadow-md: 0 4px 20px rgba(124, 58, 237, 0.12);
-            --transition: all 0.3s ease;
+            --shadow-lg: 0 8px 40px rgba(124, 58, 237, 0.16);
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         * {
@@ -40,63 +42,57 @@
             line-height: 1.7;
         }
 
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 3rem 2rem;
-        }
-
         header {
-            background: var(--color-primary);
-            color: white;
-            padding: 2rem;
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+            color: var(--color-white);
+            padding: 3rem 2rem;
             text-align: center;
         }
 
         .back-link {
             display: inline-block;
-            color: white;
+            color: var(--color-accent);
             text-decoration: none;
             margin-bottom: 1rem;
-            font-size: 0.9rem;
-            opacity: 0.9;
             transition: var(--transition);
         }
 
         .back-link:hover {
-            opacity: 1;
-            transform: translateX(-3px);
+            color: var(--color-white);
         }
 
-        header h1 {
+        h1 {
             font-family: var(--font-display);
             font-size: 3rem;
-            margin-bottom: 0.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
         }
 
-        header p {
+        .description {
             font-size: 1.2rem;
-            opacity: 0.95;
+            opacity: 0.9;
         }
 
-        .content-section {
-            margin-bottom: 3rem;
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
         }
 
         .section-title {
             font-family: var(--font-display);
             font-size: 2.5rem;
             color: var(--color-primary);
-            margin: 3rem 0 2rem;
+            margin-bottom: 2rem;
             text-align: center;
         }
 
         .rule-section {
-            background: var(--color-bg-alt);
+            background: var(--color-white);
             border-left: 4px solid var(--color-primary);
             padding: 2rem;
             margin-bottom: 2rem;
-            border-radius: 12px;
+            border-radius: 8px;
             box-shadow: var(--shadow-sm);
         }
 
@@ -108,203 +104,52 @@
         }
 
         .rule-content {
-            font-size: 1.1rem;
-            margin-bottom: 1.5rem;
+            color: var(--color-text);
+            margin-bottom: 1rem;
             line-height: 1.8;
-            white-space: pre-line;
+            white-space: pre-wrap;
         }
 
         .examples {
-            margin-top: 1.5rem;
+            background: var(--color-bg-alt);
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
         }
 
         .example {
-            background: var(--color-bg);
-            padding: 0.8rem 1.2rem;
-            margin-bottom: 0.5rem;
-            border-radius: 8px;
-            border-left: 3px solid var(--color-secondary);
+            padding: 0.5rem;
+            margin: 0.25rem 0;
             font-family: monospace;
-            font-size: 1rem;
+            font-size: 0.95rem;
         }
 
         .quiz-section {
             background: var(--color-bg-alt);
-            padding: 3rem;
-            border-radius: 16px;
+            padding: 3rem 2rem;
             margin-top: 3rem;
-        }
-
-        .question {
-            background: var(--color-bg);
-            padding: 2rem;
-            margin-bottom: 2rem;
             border-radius: 12px;
-            box-shadow: var(--shadow-sm);
-            border: 2px solid transparent;
-            transition: var(--transition);
         }
 
-        .question.correct {
-            border-color: var(--color-success);
-            background: #f0fdf4;
-        }
-
-        .question.incorrect {
-            border-color: var(--color-error);
-            background: #fef2f2;
-        }
-
-        .question-text {
-            font-size: 1.2rem;
-            margin-bottom: 1.5rem;
-            color: var(--color-text);
-        }
-
-        .options {
+        #quiz-selector {
+            margin-bottom: 2rem;
             display: flex;
             flex-direction: column;
-            gap: 1rem;
-        }
-
-        .option {
-            display: flex;
             align-items: center;
-            padding: 1rem 1.5rem;
-            background: var(--color-bg-alt);
-            border: 2px solid var(--color-accent);
-            border-radius: 8px;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .option:hover {
-            border-color: var(--color-primary);
-            background: white;
-        }
-
-        .option input[type="radio"] {
-            margin-right: 1rem;
-            cursor: pointer;
-        }
-
-        .option.correct {
-            background: #dcfce7;
-            border-color: var(--color-success);
-        }
-
-        .option.incorrect {
-            background: #fee2e2;
-            border-color: var(--color-error);
-        }
-
-        .submit-btn {
-            display: block;
-            width: 100%;
-            padding: 1.2rem;
-            background: var(--color-primary);
-            color: white;
-            border: none;
-            border-radius: 8px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            margin-top: 2rem;
-            transition: var(--transition);
-        }
-
-        .submit-btn:hover:not(:disabled) {
-            background: var(--color-primary-dark);
-            transform: translateY(-2px);
-        }
-
-        .submit-btn:disabled {
-            background: var(--color-text-light);
-            cursor: not-allowed;
-            transform: none;
-        }
-
-        .results {
-            text-align: center;
-            padding: 2rem;
-            background: var(--color-primary);
-            color: white;
-            border-radius: 12px;
-            margin-top: 2rem;
-        }
-
-        .results.hidden {
-            display: none;
-        }
-
-        .score {
-            font-size: 4rem;
-            font-weight: 800;
-            margin-bottom: 1rem;
-        }
-
-        .score.pass {
-            color: #dcfce7;
-        }
-
-        .score.fail {
-            color: #fecaca;
-        }
-
-        .results-message {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .retry-btn {
-            padding: 0.8rem 1.5rem;
-            background: var(--color-bg);
-            border: 2px solid white;
-            color: var(--color-primary);
-            border-radius: 8px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: var(--transition);
-            margin-right: 1rem;
-        }
-
-        .retry-btn:hover {
-            background: white;
-            transform: translateY(-2px);
-        }
-
-        .home-btn {
-            background: transparent;
-            color: white;
-            border: 2px solid white;
-            padding: 0.8rem 1.5rem;
-            font-size: 1rem;
-            font-weight: 600;
-            border-radius: 8px;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
-            transition: var(--transition);
-        }
-
-        .home-btn:hover {
-            background: white;
-            color: var(--color-primary);
-            transform: translateY(-2px);
+            gap: 0.8rem;
         }
 
         .quiz-selector-btn {
-            padding: 0.8rem 1.5rem;
+            padding: 1rem 2rem;
             background: var(--color-bg);
             border: 2px solid var(--color-primary);
             color: var(--color-primary);
             border-radius: 8px;
-            font-size: 1rem;
+            font-size: 1.1rem;
             font-weight: 600;
             cursor: pointer;
             transition: var(--transition);
-            min-width: 200px;
+            min-width: 250px;
         }
 
         .quiz-selector-btn:hover {
@@ -318,17 +163,160 @@
             color: white;
         }
 
+        #quiz-placeholder {
+            text-align: center;
+            padding: 3rem;
+            color: var(--color-text-light);
+        }
+
+        #quiz-form {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .question {
+            background: var(--color-white);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .question-text {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--color-text);
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .option {
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+            background: var(--color-bg);
+            border: 2px solid var(--color-accent);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .option:hover {
+            border-color: var(--color-primary);
+            background: var(--color-bg-alt);
+        }
+
+        .option input[type="radio"] {
+            margin-right: 1rem;
+            cursor: pointer;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1.2rem 2rem;
+            background: var(--color-primary);
+            color: var(--color-white);
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+            margin-top: 2rem;
+        }
+
+        .submit-btn:hover {
+            background: var(--color-primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .submit-btn:disabled {
+            background: var(--color-text-light);
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        #results {
+            max-width: 600px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: var(--color-white);
+            border-radius: 12px;
+            box-shadow: var(--shadow-lg);
+            text-align: center;
+        }
+
+        #results.hidden {
+            display: none;
+        }
+
+        .score {
+            font-family: var(--font-display);
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .score.pass {
+            color: var(--color-success);
+        }
+
+        .score.fail {
+            color: var(--color-error);
+        }
+
+        .feedback {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .retry-btn {
+            padding: 1rem 2rem;
+            background: var(--color-primary);
+            color: var(--color-white);
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            margin-top: 1rem;
+        }
+
+        .retry-btn:hover {
+            background: var(--color-primary-dark);
+        }
+
+        .home-btn {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.75rem 1.5rem;
+            background: var(--color-white);
+            color: var(--color-primary);
+            border: 2px solid var(--color-primary);
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .home-btn:hover {
+            background: var(--color-primary);
+            color: var(--color-white);
+        }
+
         @media (max-width: 768px) {
-            header h1 {
+            h1 {
                 font-size: 2rem;
             }
-
             .section-title {
                 font-size: 2rem;
-            }
-
-            .container {
-                padding: 2rem 1rem;
             }
         }
     </style>
@@ -338,200 +326,199 @@
         <div class="container">
             <a href="../index.html" class="back-link">← Назад ко всем темам</a>
             <h1>Местоимения</h1>
-            <p>Личные, объектные, притяжательные и указательные местоимения</p>
+            <p class="description">Личные, объектные, притяжательные и указательные местоимения</p>
         </div>
     </header>
 
-    <div class="container">
-        <!-- Theory Section -->
-        <div class="content-section">
-            <h2 class="section-title">Теория</h2>
-            
+    <main>
+        <h2 class="section-title">📚 Теория</h2>
+
+        
         <div class="rule-section">
             <h3 class="rule-title">Местоимения — зачем они вообще нужны</h3>
-            <div class="rule-content">Давай сразу честно: если убрать местоимения, английский развалится.
+            <p class="rule-content">Давай сразу честно: если убрать местоимения, английский развалится.
 
 Ты не сможешь сказать:
 - кто делает действие
 - на кого оно направлено
 - кому что принадлежит
 
-Поэтому местоимения — это не «дополнение», а скелет речи.</div>
-            
+Поэтому местоимения — это не «дополнение», а скелет речи.</p>
         </div>
-        
 
         <div class="rule-section">
             <h3 class="rule-title">Личные местоимения (Subject Pronouns)</h3>
-            <div class="rule-content">Это кто выполняет действие.
+            <p class="rule-content">Это кто выполняет действие.
 
 Главное правило, которое нужно вбить в голову:
-👉 в английском предложение без подлежащего почти не существует.</div>
-            <div class="examples"><div class="example">I — я</div><div class="example">You — ты / вы</div><div class="example">He — он</div><div class="example">She — она</div><div class="example">It — оно</div><div class="example">We — мы</div><div class="example">They — они</div><div class="example">❌ Go to work.</div><div class="example">✔ I go to work.</div><div class="example">❌ Is student.</div><div class="example">✔ She is a student.</div></div>
+👉 в английском предложение без подлежащего почти не существует.</p>
+            <div class="examples">
+                <div class="example">I — я</div>
+                <div class="example">You — ты / вы</div>
+                <div class="example">He — он</div>
+                <div class="example">She — она</div>
+                <div class="example">It — оно</div>
+                <div class="example">We — мы</div>
+                <div class="example">They — они</div>
+                <div class="example">❌ Go to work.</div>
+                <div class="example">✔ I go to work.</div>
+                <div class="example">❌ Is student.</div>
+                <div class="example">✔ She is a student.</div>
+            </div>
         </div>
-        
 
         <div class="rule-section">
             <h3 class="rule-title">Очень важный момент для русскоговорящих</h3>
-            <div class="rule-content">В русском можно сказать: "Пошёл в магазин."
+            <p class="rule-content">В русском можно сказать: "Пошёл в магазин."
 
-В английском так нельзя. Ты обязан сказать, кто пошёл.</div>
-            
+В английском так нельзя. Ты обязан сказать, кто пошёл.</p>
         </div>
-        
 
         <div class="rule-section">
             <h3 class="rule-title">Объектные местоимения (Object Pronouns)</h3>
-            <div class="rule-content">Теперь смотри: если личные местоимения — кто делает, то объектные — на кого направлено действие.</div>
-            <div class="examples"><div class="example">me — меня / мне</div><div class="example">you — тебя / тебе</div><div class="example">him — его / ему</div><div class="example">her — её / ей</div><div class="example">it — его / её (не человек)</div><div class="example">us — нас / нам</div><div class="example">them — их / им</div><div class="example">She sees me.</div><div class="example">I like him.</div><div class="example">They help us.</div><div class="example">❌ She sees I.</div><div class="example">✔ She sees me.</div></div>
+            <p class="rule-content">Теперь смотри: если личные местоимения — кто делает, то объектные — на кого направлено действие.</p>
+            <div class="examples">
+                <div class="example">me — меня / мне</div>
+                <div class="example">you — тебя / тебе</div>
+                <div class="example">him — его / ему</div>
+                <div class="example">her — её / ей</div>
+                <div class="example">it — его / её (не человек)</div>
+                <div class="example">us — нас / нам</div>
+                <div class="example">them — их / им</div>
+                <div class="example">She sees me.</div>
+                <div class="example">I like him.</div>
+                <div class="example">They help us.</div>
+                <div class="example">❌ She sees I.</div>
+                <div class="example">✔ She sees me.</div>
+            </div>
         </div>
-        
 
         <div class="rule-section">
             <h3 class="rule-title">Притяжательные местоимения — часть 1 (my, your…)</h3>
-            <div class="rule-content">Это чей? чья? чьё?
+            <p class="rule-content">Это чей? чья? чьё?
 
-Они всегда стоят перед существительным.</div>
-            <div class="examples"><div class="example">my — мой</div><div class="example">your — твой / ваш</div><div class="example">his — его</div><div class="example">her — её</div><div class="example">its — его / её (для предметов и животных)</div><div class="example">our — наш</div><div class="example">their — их</div><div class="example">✔ my phone</div><div class="example">✔ her bag</div><div class="example">✔ their house</div><div class="example">❌ mine phone</div><div class="example">❌ her is bag</div></div>
+Они всегда стоят перед существительным.</p>
+            <div class="examples">
+                <div class="example">my — мой</div>
+                <div class="example">your — твой / ваш</div>
+                <div class="example">his — его</div>
+                <div class="example">her — её</div>
+                <div class="example">its — его / её (для предметов и животных)</div>
+                <div class="example">our — наш</div>
+                <div class="example">their — их</div>
+                <div class="example">✔ my phone</div>
+                <div class="example">✔ her bag</div>
+                <div class="example">✔ their house</div>
+                <div class="example">❌ mine phone</div>
+                <div class="example">❌ her is bag</div>
+            </div>
         </div>
-        
 
         <div class="rule-section">
             <h3 class="rule-title">Притяжательные местоимения — часть 2 (mine, yours…)</h3>
-            <div class="rule-content">А теперь внимание, здесь часто ломаются.
+            <p class="rule-content">А теперь внимание, здесь часто ломаются.
 
-👉 после них НЕТ существительного.</div>
-            <div class="examples"><div class="example">mine — мой</div><div class="example">yours — твой</div><div class="example">his — его</div><div class="example">hers — её</div><div class="example">its — его / её</div><div class="example">ours — наш</div><div class="example">theirs — их</div><div class="example">✔ This phone is mine.</div><div class="example">✔ The bag is hers.</div><div class="example">❌ mine phone</div><div class="example">❌ hers bag</div></div>
+👉 после них НЕТ существительного.</p>
+            <div class="examples">
+                <div class="example">mine — мой</div>
+                <div class="example">yours — твой</div>
+                <div class="example">his — его</div>
+                <div class="example">hers — её</div>
+                <div class="example">its — его / её</div>
+                <div class="example">ours — наш</div>
+                <div class="example">theirs — их</div>
+                <div class="example">✔ This phone is mine.</div>
+                <div class="example">✔ The bag is hers.</div>
+                <div class="example">❌ mine phone</div>
+                <div class="example">❌ hers bag</div>
+            </div>
         </div>
-        
 
         <div class="rule-section">
             <h3 class="rule-title">Указательные местоимения (this / that)</h3>
-            <div class="rule-content">Они показывают где и сколько.</div>
-            <div class="examples"><div class="example">this — это (близко, одно)</div><div class="example">that — то (далеко, одно)</div><div class="example">these — эти (близко, много)</div><div class="example">those — те (далеко, много)</div><div class="example">This book is interesting.</div><div class="example">That car is expensive.</div><div class="example">These shoes are new.</div><div class="example">Those houses are old.</div></div>
+            <p class="rule-content">Они показывают где и сколько.</p>
+            <div class="examples">
+                <div class="example">this — это (близко, одно)</div>
+                <div class="example">that — то (далеко, одно)</div>
+                <div class="example">these — эти (близко, много)</div>
+                <div class="example">those — те (далеко, много)</div>
+                <div class="example">This book is interesting.</div>
+                <div class="example">That car is expensive.</div>
+                <div class="example">These shoes are new.</div>
+                <div class="example">Those houses are old.</div>
+            </div>
         </div>
-        
 
         <div class="rule-section">
             <h3 class="rule-title">Типичные ошибки русскоговорящих</h3>
-            <div class="rule-content">Вот самые частые ошибки при использовании местоимений.</div>
-            <div class="examples"><div class="example">❌ She loves I</div><div class="example">✔ She loves me</div><div class="example">❌ This are my friends</div><div class="example">✔ These are my friends</div><div class="example">❌ This is mine bag</div><div class="example">✔ This is my bag</div></div>
+            <p class="rule-content">Вот самые частые ошибки при использовании местоимений.</p>
+            <div class="examples">
+                <div class="example">❌ She loves I</div>
+                <div class="example">✔ She loves me</div>
+                <div class="example">❌ This are my friends</div>
+                <div class="example">✔ These are my friends</div>
+                <div class="example">❌ This is mine bag</div>
+                <div class="example">✔ This is my bag</div>
+            </div>
         </div>
-        
 
         <div class="rule-section">
             <h3 class="rule-title">Что важно вынести из этого топика</h3>
-            <div class="rule-content">Если ты это понял — ты уже говоришь намного чище, чем большинство beginners.</div>
-            <div class="examples"><div class="example">1️⃣ В английском всегда есть подлежащее</div><div class="example">2️⃣ I ≠ me</div><div class="example">3️⃣ my ≠ mine</div><div class="example">4️⃣ this / that зависит от расстояния и количества</div></div>
-        </div>
-        
-        </div>
-
-        <!-- Results Section (hidden initially) -->
-        <div id="results" class="results hidden">
-            <div class="score" id="score"></div>
-            <div class="results-message" id="results-message"></div>
-            <div>
-                <button class="retry-btn" onclick="retakeQuiz()">Пройти ещё раз</button>
-                <a href="../index.html" class="home-btn">На главную</a>
+            <p class="rule-content">Если ты это понял — ты уже говоришь намного чище, чем большинство beginners.</p>
+            <div class="examples">
+                <div class="example">1️⃣ В английском всегда есть подлежащее</div>
+                <div class="example">2️⃣ I ≠ me</div>
+                <div class="example">3️⃣ my ≠ mine</div>
+                <div class="example">4️⃣ this / that зависит от расстояния и количества</div>
             </div>
         </div>
 
-        <!-- Quiz Section -->
-        <div class="quiz-section" id="quiz-section">
-            <h2 class="section-title">Тест</h2>
 
-            <!-- Quiz Selector (shown if multiple quizzes) -->
-            <div id="quiz-selector" style="margin-bottom: 2rem; display: flex; flex-direction: column; align-items: center; gap: 0.8rem;">
+        <div class="quiz-section">
+            <h2 class="section-title">✏️ Проверь себя</h2>
+            <p style="text-align: center; margin-bottom: 2rem; font-size: 1.1rem;">
+                Всего вопросов: 200
+            </p>
+
+            <div id="quiz-selector">
                 <button type="button" class="quiz-selector-btn" data-quiz="1" onclick="loadQuiz(1)">Тест 1</button>
-<button type="button" class="quiz-selector-btn" data-quiz="2" onclick="loadQuiz(2)">Тест 2</button>
-<button type="button" class="quiz-selector-btn" data-quiz="3" onclick="loadQuiz(3)">Тест 3</button>
-<button type="button" class="quiz-selector-btn" data-quiz="4" onclick="loadQuiz(4)">Тест 4</button>
-<button type="button" class="quiz-selector-btn" data-quiz="5" onclick="loadQuiz(5)">Тест 5</button>
-<button type="button" class="quiz-selector-btn" data-quiz="6" onclick="loadQuiz(6)">Тест 6</button>
-<button type="button" class="quiz-selector-btn" data-quiz="7" onclick="loadQuiz(7)">Тест 7</button>
-<button type="button" class="quiz-selector-btn" data-quiz="8" onclick="loadQuiz(8)">Тест 8</button>
-<button type="button" class="quiz-selector-btn" data-quiz="9" onclick="loadQuiz(9)">Тест 9</button>
-<button type="button" class="quiz-selector-btn" data-quiz="10" onclick="loadQuiz(10)">Тест 10</button>
+                <button type="button" class="quiz-selector-btn" data-quiz="2" onclick="loadQuiz(2)">Тест 2</button>
+                <button type="button" class="quiz-selector-btn" data-quiz="3" onclick="loadQuiz(3)">Тест 3</button>
+                <button type="button" class="quiz-selector-btn" data-quiz="4" onclick="loadQuiz(4)">Тест 4</button>
+                <button type="button" class="quiz-selector-btn" data-quiz="5" onclick="loadQuiz(5)">Тест 5</button>
+                <button type="button" class="quiz-selector-btn" data-quiz="6" onclick="loadQuiz(6)">Тест 6</button>
+                <button type="button" class="quiz-selector-btn" data-quiz="7" onclick="loadQuiz(7)">Тест 7</button>
+                <button type="button" class="quiz-selector-btn" data-quiz="8" onclick="loadQuiz(8)">Тест 8</button>
+                <button type="button" class="quiz-selector-btn" data-quiz="9" onclick="loadQuiz(9)">Тест 9</button>
+                <button type="button" class="quiz-selector-btn" data-quiz="10" onclick="loadQuiz(10)">Тест 10</button>
             </div>
 
-            <div id="quiz-placeholder" style="text-align: center; padding: 3rem; color: var(--color-text-light); display: block;">
+            <div id="quiz-placeholder" style="display: block;">
                 <p style="font-size: 1.2rem;">Выберите тест, чтобы начать</p>
             </div>
 
             <form id="quiz-form" style="display: none;">
-                
                 <button type="submit" class="submit-btn" id="submit-btn">Проверить ответы</button>
             </form>
+
+            <div id="results" class="hidden">
+                <div class="score" id="score"></div>
+                <div class="feedback" id="feedback"></div>
+                <p id="details"></p>
+                <button class="retry-btn" onclick="retryQuiz()">Попробовать ещё раз</button>
+                <br>
+                <a href="../index.html" class="home-btn">На главную</a>
+            </div>
         </div>
-    </div>
+    </main>
 
     <script>
-        const allQuizData = {"1": [{"id": 3804, "text": "___ is my turn.", "options": ["This", "These", "Those", "Them"], "correct_index": 0}, {"id": 3684, "text": "___ is raining again.", "options": ["He", "She", "It", "They"], "correct_index": 2}, {"id": 3704, "text": "___ is my responsibility.", "options": ["This", "These", "Those", "Them"], "correct_index": 0}, {"id": 3644, "text": "She is taller than ___.", "options": ["I", "me", "my", "mine"], "correct_index": 1}, {"id": 3744, "text": "___ is my seat.", "options": ["These", "Those", "This", "Them"], "correct_index": 2}, {"id": 3784, "text": "___ is interesting.", "options": ["This", "These", "Those", "Them"], "correct_index": 0}, {"id": 3724, "text": "___ was my idea.", "options": ["This", "These", "Those", "Them"], "correct_index": 0}, {"id": 3764, "text": "___ was a mistake.", "options": ["This", "These", "Those", "Them"], "correct_index": 0}, {"id": 3624, "text": "She likes ___ very much.", "options": ["I", "me", "my", "mine"], "correct_index": 1}, {"id": 3664, "text": "___ is my favorite movie.", "options": ["These", "Those", "This", "Them"], "correct_index": 2}, {"id": 3745, "text": "She called ___.", "options": ["I", "me", "my", "mine"], "correct_index": 1}, {"id": 3725, "text": "He thanked ___.", "options": ["I", "me", "my", "mine"], "correct_index": 1}, {"id": 3805, "text": "She called ___.", "options": ["I", "me", "my", "mine"], "correct_index": 1}, {"id": 3705, "text": "She invited ___.", "options": ["I", "me", "my", "mine"], "correct_index": 1}, {"id": 3685, "text": "I like ___ very much.", "options": ["she", "her", "hers", "herself"], "correct_index": 1}, {"id": 3785, "text": "I like ___.", "options": ["she", "her", "hers", "herself"], "correct_index": 1}, {"id": 3765, "text": "He blamed ___.", "options": ["I", "me", "my", "mine"], "correct_index": 1}, {"id": 3645, "text": "___ don’t like cold weather.", "options": ["Me", "My", "Mine", "I"], "correct_index": 3}, {"id": 3625, "text": "___ am ready to start.", "options": ["Me", "My", "I", "Mine"], "correct_index": 2}, {"id": 3665, "text": "___ are my friends.", "options": ["This", "That", "These", "It"], "correct_index": 2}], "2": [{"id": 3786, "text": "___ are expensive tickets.", "options": ["This", "That", "These", "It"], "correct_index": 2}, {"id": 3746, "text": "___ arrived late.", "options": ["Him", "He", "His", "Himself"], "correct_index": 1}, {"id": 3646, "text": "He gave ___ the keys.", "options": ["we", "us", "our", "ours"], "correct_index": 1}, {"id": 3726, "text": "___ are waiting outside.", "options": ["Them", "Their", "They", "Theirs"], "correct_index": 2}, {"id": 3666, "text": "I don’t know ___.", "options": ["she", "her", "hers", "herself"], "correct_index": 1}, {"id": 3806, "text": "___ arrived early.", "options": ["Him", "He", "His", "Himself"], "correct_index": 1}, {"id": 3626, "text": "They invited ___ to the party.", "options": ["we", "us", "our", "ours"], "correct_index": 1}, {"id": 3686, "text": "___ forgot his wallet.", "options": ["Him", "He", "His", "Himself"], "correct_index": 1}, {"id": 3766, "text": "___ is my fault.", "options": ["It", "He", "She", "They"], "correct_index": 0}, {"id": 3706, "text": "___ knows the answer.", "options": ["Him", "He", "His", "Himself"], "correct_index": 1}, {"id": 3687, "text": "Can you help ___ with this?", "options": ["we", "us", "our", "ours"], "correct_index": 1}, {"id": 3627, "text": "___ lives next door.", "options": ["Him", "He", "His", "Himself"], "correct_index": 1}, {"id": 3807, "text": "We trust ___.", "options": ["they", "them", "their", "theirs"], "correct_index": 1}, {"id": 3787, "text": "___ didn’t answer.", "options": ["Him", "He", "His", "Himself"], "correct_index": 1}, {"id": 3767, "text": "___ are not ready.", "options": ["Us", "We", "Our", "Ours"], "correct_index": 1}, {"id": 3647, "text": "___ works in this company.", "options": ["Him", "He", "His", "Himself"], "correct_index": 1}, {"id": 3747, "text": "We invited ___.", "options": ["they", "them", "their", "theirs"], "correct_index": 1}, {"id": 3727, "text": "___ problem is serious.", "options": ["His", "Him", "He", "Himself"], "correct_index": 0}, {"id": 3707, "text": "They helped ___.", "options": ["we", "us", "our", "ours"], "correct_index": 1}, {"id": 3667, "text": "___ broke the window.", "options": ["Him", "He", "His", "Himself"], "correct_index": 1}], "3": [{"id": 3728, "text": "The problem is ___.", "options": ["his", "him", "he", "himself"], "correct_index": 0}, {"id": 3748, "text": "___ plan failed.", "options": ["Our", "Ours", "We", "Us"], "correct_index": 0}, {"id": 3648, "text": "Can you see ___ clearly?", "options": ["I", "me", "my", "mine"], "correct_index": 1}, {"id": 3628, "text": "Can you help ___?", "options": ["I", "me", "my", "mine"], "correct_index": 1}, {"id": 3668, "text": "She saw ___ yesterday.", "options": ["I", "me", "my", "mine"], "correct_index": 1}, {"id": 3768, "text": "She believes ___.", "options": ["he", "him", "his", "himself"], "correct_index": 1}, {"id": 3788, "text": "They invited ___.", "options": ["we", "us", "our", "ours"], "correct_index": 1}, {"id": 3808, "text": "___ idea worked.", "options": ["Our", "Ours", "We", "Us"], "correct_index": 0}, {"id": 3688, "text": "___ room is bigger than mine.", "options": ["Your", "Yours", "You", "Yourself"], "correct_index": 0}, {"id": 3708, "text": "___ idea was rejected.", "options": ["Her", "Hers", "She", "Herself"], "correct_index": 0}, {"id": 3649, "text": "They asked ___ to wait.", "options": ["we", "us", "our", "ours"], "correct_index": 1}, {"id": 3629, "text": "We saw ___ at the station.", "options": ["they", "them", "their", "theirs"], "correct_index": 1}, {"id": 3669, "text": "___ house is old.", "options": ["Their", "Theirs", "Them", "They"], "correct_index": 0}, {"id": 3689, "text": "That room is ___.", "options": ["your", "you", "yours", "yourself"], "correct_index": 2}, {"id": 3709, "text": "The idea was ___.", "options": ["her", "she", "hers", "herself"], "correct_index": 2}, {"id": 3729, "text": "___ are delicious.", "options": ["This", "That", "These", "It"], "correct_index": 2}, {"id": 3749, "text": "The plan was ___.", "options": ["our", "us", "ours", "we"], "correct_index": 2}, {"id": 3769, "text": "___ answer is correct.", "options": ["Your", "Yours", "You", "Yourself"], "correct_index": 0}, {"id": 3789, "text": "___ house is new.", "options": ["Their", "Theirs", "Them", "They"], "correct_index": 0}, {"id": 3809, "text": "The idea was ___.", "options": ["our", "us", "ours", "we"], "correct_index": 2}], "4": [{"id": 3670, "text": "The house is ___.", "options": ["their", "them", "theirs", "they"], "correct_index": 2}, {"id": 3730, "text": "___ is too loud.", "options": ["These", "Those", "This", "Them"], "correct_index": 2}, {"id": 3750, "text": "___ are expensive shoes.", "options": ["This", "That", "These", "It"], "correct_index": 2}, {"id": 3630, "text": "___ is my best friend.", "options": ["Her", "She", "Hers", "Herself"], "correct_index": 1}, {"id": 3790, "text": "The house is ___.", "options": ["their", "them", "theirs", "they"], "correct_index": 2}, {"id": 3770, "text": "The answer is ___.", "options": ["your", "you", "yours", "yourself"], "correct_index": 2}, {"id": 3690, "text": "___ are my classmates.", "options": ["This", "That", "These", "It"], "correct_index": 2}, {"id": 3710, "text": "___ are expensive.", "options": ["This", "That", "These", "It"], "correct_index": 2}, {"id": 3810, "text": "___ are beautiful flowers.", "options": ["This", "That", "These", "It"], "correct_index": 2}, {"id": 3650, "text": "___ forgot her phone at home.", "options": ["Her", "She", "Hers", "Herself"], "correct_index": 1}, {"id": 3771, "text": "___ are my notes.", "options": ["This", "That", "These", "It"], "correct_index": 2}, {"id": 3631, "text": "She called ___ yesterday.", "options": ["he", "him", "his", "himself"], "correct_index": 1}, {"id": 3691, "text": "___ car over there is new.", "options": ["This", "That", "These", "Those"], "correct_index": 1}, {"id": 3751, "text": "___ belongs to him.", "options": ["This", "These", "Those", "Them"], "correct_index": 0}, {"id": 3651, "text": "I met ___ last week.", "options": ["he", "him", "his", "himself"], "correct_index": 1}, {"id": 3791, "text": "___ is not mine.", "options": ["This", "These", "Those", "Them"], "correct_index": 0}, {"id": 3671, "text": "___ doesn’t work here anymore.", "options": ["Him", "He", "His", "Himself"], "correct_index": 1}, {"id": 3811, "text": "___ belongs to her.", "options": ["This", "These", "Those", "Them"], "correct_index": 0}, {"id": 3711, "text": "___ jacket do you like?", "options": ["Which", "What", "Who", "Whose"], "correct_index": 3}, {"id": 3731, "text": "She trusts ___.", "options": ["we", "us", "our", "ours"], "correct_index": 1}], "5": [{"id": 3632, "text": "___ don’t understand this rule.", "options": ["Me", "My", "Mine", "I"], "correct_index": 3}, {"id": 3752, "text": "He likes ___.", "options": ["she", "her", "hers", "herself"], "correct_index": 1}, {"id": 3812, "text": "He thanked ___.", "options": ["I", "me", "my", "mine"], "correct_index": 1}, {"id": 3712, "text": "This jacket is ___.", "options": ["my", "me", "mine", "I"], "correct_index": 2}, {"id": 3692, "text": "She looked at ___.", "options": ["I", "me", "my", "mine"], "correct_index": 1}, {"id": 3652, "text": "___ are responsible for this project.", "options": ["Them", "Their", "They", "Theirs"], "correct_index": 2}, {"id": 3732, "text": "___ opinion matters.", "options": ["Your", "Yours", "You", "Yourself"], "correct_index": 0}, {"id": 3792, "text": "She trusts ___.", "options": ["I", "me", "my", "mine"], "correct_index": 1}, {"id": 3672, "text": "Can you hear ___?", "options": ["I", "me", "my", "mine"], "correct_index": 1}, {"id": 3772, "text": "___ doesn’t work.", "options": ["These", "Those", "This", "Them"], "correct_index": 2}, {"id": 3753, "text": "___ doesn’t matter.", "options": ["These", "Those", "This", "Them"], "correct_index": 2}, {"id": 3773, "text": "They trust ___.", "options": ["we", "us", "our", "ours"], "correct_index": 1}, {"id": 3693, "text": "___ like to travel.", "options": ["Us", "We", "Our", "Ours"], "correct_index": 1}, {"id": 3813, "text": "___ doesn’t matter now.", "options": ["These", "Those", "This", "Them"], "correct_index": 2}, {"id": 3713, "text": "___ jacket is blue.", "options": ["Mine", "My", "Me", "I"], "correct_index": 1}, {"id": 3633, "text": "The teacher praised ___.", "options": ["we", "us", "our", "ours"], "correct_index": 1}, {"id": 3673, "text": "___ are late again.", "options": ["Them", "Their", "They", "Theirs"], "correct_index": 2}, {"id": 3733, "text": "The opinion is ___.", "options": ["your", "you", "yours", "yourself"], "correct_index": 2}, {"id": 3793, "text": "___ don’t agree.", "options": ["Us", "We", "Our", "Ours"], "correct_index": 1}, {"id": 3653, "text": "She trusts ___.", "options": ["we", "us", "our", "ours"], "correct_index": 1}], "6": [{"id": 3734, "text": "___ forgot their keys.", "options": ["Them", "Their", "They", "Theirs"], "correct_index": 2}, {"id": 3774, "text": "___ jacket is warm.", "options": ["His", "Him", "He", "Himself"], "correct_index": 0}, {"id": 3794, "text": "___ opinion matters.", "options": ["His", "Him", "He", "Himself"], "correct_index": 0}, {"id": 3814, "text": "___ phone is ringing.", "options": ["His", "Him", "He", "Himself"], "correct_index": 0}, {"id": 3694, "text": "This pen is ___.", "options": ["my", "me", "mine", "I"], "correct_index": 2}, {"id": 3634, "text": "This is ___ phone.", "options": ["mine", "my", "me", "I"], "correct_index": 1}, {"id": 3754, "text": "___ phone is missing.", "options": ["My", "Mine", "Me", "I"], "correct_index": 0}, {"id": 3714, "text": "___ didn’t call back.", "options": ["Him", "He", "His", "Himself"], "correct_index": 1}, {"id": 3674, "text": "This book is ___.", "options": ["my", "me", "mine", "I"], "correct_index": 2}, {"id": 3654, "text": "This is ___ problem, not mine.", "options": ["your", "yours", "you", "yourself"], "correct_index": 0}, {"id": 3655, "text": "The problem is ___.", "options": ["your", "you", "yours", "yourself"], "correct_index": 2}, {"id": 3795, "text": "That choice is ___.", "options": ["her", "she", "hers", "herself"], "correct_index": 2}, {"id": 3715, "text": "I listened to ___.", "options": ["she", "her", "hers", "herself"], "correct_index": 1}, {"id": 3735, "text": "I saw ___ again.", "options": ["she", "her", "hers", "herself"], "correct_index": 1}, {"id": 3815, "text": "The phone is ___.", "options": ["his", "him", "he", "himself"], "correct_index": 0}, {"id": 3775, "text": "The jacket is ___.", "options": ["his", "him", "he", "himself"], "correct_index": 0}, {"id": 3675, "text": "___ book is on the table.", "options": ["Mine", "My", "Me", "I"], "correct_index": 1}, {"id": 3635, "text": "This phone is ___.", "options": ["my", "me", "mine", "I"], "correct_index": 2}, {"id": 3695, "text": "___ pen is broken.", "options": ["Mine", "My", "Me", "I"], "correct_index": 1}, {"id": 3755, "text": "The phone is ___.", "options": ["my", "me", "mine", "I"], "correct_index": 2}], "7": [{"id": 3716, "text": "___ don’t agree.", "options": ["Us", "We", "Our", "Ours"], "correct_index": 1}, {"id": 3796, "text": "___ bags are ready.", "options": ["This", "That", "These", "It"], "correct_index": 2}, {"id": 3756, "text": "___ are responsible.", "options": ["Us", "We", "Our", "Ours"], "correct_index": 1}, {"id": 3696, "text": "___ parents are strict.", "options": ["Her", "Hers", "She", "Herself"], "correct_index": 0}, {"id": 3636, "text": "___ car is parked outside.", "options": ["Hers", "Her", "She", "Herself"], "correct_index": 1}, {"id": 3736, "text": "___ house is far away.", "options": ["Our", "Ours", "We", "Us"], "correct_index": 0}, {"id": 3776, "text": "___ doesn’t agree.", "options": ["She", "Her", "Hers", "Herself"], "correct_index": 0}, {"id": 3656, "text": "___ opinion matters.", "options": ["His", "Him", "He", "Himself"], "correct_index": 0}, {"id": 3816, "text": "___ are ready to start.", "options": ["Us", "We", "Our", "Ours"], "correct_index": 1}, {"id": 3676, "text": "That opinion is ___.", "options": ["her", "she", "hers", "herself"], "correct_index": 2}, {"id": 3677, "text": "___ idea sounds good.", "options": ["His", "Him", "He", "Himself"], "correct_index": 0}, {"id": 3777, "text": "I listened to ___.", "options": ["they", "them", "their", "theirs"], "correct_index": 1}, {"id": 3717, "text": "That mistake was ___.", "options": ["their", "them", "theirs", "they"], "correct_index": 2}, {"id": 3697, "text": "The choice is ___.", "options": ["his", "him", "his", "himself"], "correct_index": 2}, {"id": 3657, "text": "That decision was ___.", "options": ["her", "she", "hers", "herself"], "correct_index": 2}, {"id": 3637, "text": "That bag is ___.", "options": ["her", "she", "hers", "herself"], "correct_index": 2}, {"id": 3757, "text": "She talked to ___.", "options": ["we", "us", "our", "ours"], "correct_index": 1}, {"id": 3737, "text": "The house is ___.", "options": ["our", "us", "ours", "we"], "correct_index": 2}, {"id": 3817, "text": "She spoke to ___.", "options": ["we", "us", "our", "ours"], "correct_index": 1}, {"id": 3797, "text": "___ is too expensive.", "options": ["These", "Those", "This", "Them"], "correct_index": 2}], "8": [{"id": 3718, "text": "___ phone is ringing.", "options": ["Their", "Theirs", "Them", "They"], "correct_index": 0}, {"id": 3698, "text": "___ doesn’t feel well.", "options": ["Him", "He", "His", "Himself"], "correct_index": 1}, {"id": 3818, "text": "___ dress is nice.", "options": ["Her", "Hers", "She", "Herself"], "correct_index": 0}, {"id": 3658, "text": "___ team won the match.", "options": ["Our", "Ours", "We", "Us"], "correct_index": 0}, {"id": 3738, "text": "___ isn’t mine.", "options": ["This", "These", "Those", "Them"], "correct_index": 0}, {"id": 3758, "text": "___ dress is beautiful.", "options": ["Her", "Hers", "She", "Herself"], "correct_index": 0}, {"id": 3778, "text": "___ bags are heavy.", "options": ["This", "That", "These", "It"], "correct_index": 2}, {"id": 3638, "text": "___ house is very big.", "options": ["Our", "Ours", "We", "Us"], "correct_index": 0}, {"id": 3798, "text": "He spoke to ___.", "options": ["I", "me", "my", "mine"], "correct_index": 1}, {"id": 3678, "text": "___ are ready to leave.", "options": ["Us", "We", "Our", "Ours"], "correct_index": 1}, {"id": 3639, "text": "The house is ___.", "options": ["our", "us", "ours", "we"], "correct_index": 2}, {"id": 3739, "text": "___ are broken.", "options": ["This", "That", "These", "It"], "correct_index": 2}, {"id": 3759, "text": "The dress is ___.", "options": ["her", "she", "hers", "herself"], "correct_index": 2}, {"id": 3719, "text": "___ looks familiar.", "options": ["These", "Those", "This", "Them"], "correct_index": 2}, {"id": 3679, "text": "She spoke to ___.", "options": ["we", "us", "our", "ours"], "correct_index": 1}, {"id": 3779, "text": "___ is broken again.", "options": ["These", "Those", "This", "Them"], "correct_index": 2}, {"id": 3699, "text": "I met ___ at work.", "options": ["they", "them", "their", "theirs"], "correct_index": 1}, {"id": 3799, "text": "___ jacket is dirty.", "options": ["My", "Mine", "Me", "I"], "correct_index": 0}, {"id": 3659, "text": "The victory was ___.", "options": ["our", "us", "ours", "we"], "correct_index": 2}, {"id": 3819, "text": "The dress is ___.", "options": ["her", "she", "hers", "herself"], "correct_index": 2}], "9": [{"id": 3760, "text": "___ doesn’t belong here.", "options": ["These", "Those", "This", "Them"], "correct_index": 2}, {"id": 3680, "text": "___ shoes are dirty.", "options": ["This", "That", "These", "It"], "correct_index": 2}, {"id": 3780, "text": "___ dog is barking.", "options": ["Our", "Ours", "We", "Us"], "correct_index": 0}, {"id": 3820, "text": "___ doesn’t belong here.", "options": ["These", "Those", "This", "Them"], "correct_index": 2}, {"id": 3740, "text": "He explained ___ clearly.", "options": ["I", "me", "my", "mine"], "correct_index": 1}, {"id": 3660, "text": "Is this ___ seat or mine?", "options": ["your", "yours", "you", "yourself"], "correct_index": 0}, {"id": 3800, "text": "The jacket is ___.", "options": ["my", "me", "mine", "I"], "correct_index": 2}, {"id": 3720, "text": "She borrowed ___.", "options": ["I", "me", "my", "mine"], "correct_index": 1}, {"id": 3700, "text": "___ shoes are too small.", "options": ["This", "That", "These", "It"], "correct_index": 2}, {"id": 3640, "text": "Is this ___ jacket?", "options": ["your", "yours", "you", "yourself"], "correct_index": 0}, {"id": 3641, "text": "That jacket is ___.", "options": ["your", "you", "yours", "yourself"], "correct_index": 2}, {"id": 3701, "text": "___ belongs to me.", "options": ["This", "These", "Those", "Them"], "correct_index": 0}, {"id": 3721, "text": "___ bags are heavy.", "options": ["This", "That", "These", "It"], "correct_index": 2}, {"id": 3741, "text": "___ doesn’t fit.", "options": ["These", "Those", "This", "Them"], "correct_index": 2}, {"id": 3761, "text": "___ bags are ready.", "options": ["This", "That", "These", "It"], "correct_index": 2}, {"id": 3781, "text": "The dog is ___.", "options": ["our", "us", "ours", "we"], "correct_index": 2}, {"id": 3661, "text": "That seat is ___.", "options": ["your", "you", "yours", "yourself"], "correct_index": 2}, {"id": 3681, "text": "___ doesn’t belong here.", "options": ["These", "Those", "This", "Them"], "correct_index": 2}, {"id": 3821, "text": "___ bags are heavy.", "options": ["This", "That", "These", "It"], "correct_index": 2}, {"id": 3801, "text": "___ doesn’t work properly.", "options": ["These", "Those", "This", "Them"], "correct_index": 2}], "10": [{"id": 3682, "text": "I trust ___.", "options": ["they", "them", "their", "theirs"], "correct_index": 1}, {"id": 3802, "text": "___ friends arrived.", "options": ["Our", "Ours", "We", "Us"], "correct_index": 0}, {"id": 3762, "text": "___ teacher is strict.", "options": ["Their", "Theirs", "Them", "They"], "correct_index": 0}, {"id": 3822, "text": "___ teacher is strict.", "options": ["Their", "Theirs", "Them", "They"], "correct_index": 0}, {"id": 3782, "text": "She helped ___.", "options": ["I", "me", "my", "mine"], "correct_index": 1}, {"id": 3742, "text": "___ friends are here.", "options": ["Her", "Hers", "She", "Herself"], "correct_index": 0}, {"id": 3702, "text": "___ dog is barking.", "options": ["Their", "Theirs", "Them", "They"], "correct_index": 0}, {"id": 3722, "text": "___ isn’t working.", "options": ["These", "Those", "This", "Them"], "correct_index": 2}, {"id": 3642, "text": "___ laptop is new.", "options": ["Their", "Theirs", "Them", "They"], "correct_index": 0}, {"id": 3662, "text": "___ dog is very friendly.", "options": ["Their", "Theirs", "Them", "They"], "correct_index": 0}, {"id": 3683, "text": "___ decision was final.", "options": ["Our", "Ours", "We", "Us"], "correct_index": 0}, {"id": 3783, "text": "___ forgot the keys.", "options": ["Him", "He", "His", "Himself"], "correct_index": 1}, {"id": 3763, "text": "The teacher is ___.", "options": ["their", "them", "theirs", "they"], "correct_index": 2}, {"id": 3803, "text": "The friends are ___.", "options": ["our", "us", "ours", "we"], "correct_index": 2}, {"id": 3723, "text": "The final choice was ___.", "options": ["our", "us", "ours", "we"], "correct_index": 2}, {"id": 3823, "text": "The teacher is ___.", "options": ["their", "them", "theirs", "they"], "correct_index": 2}, {"id": 3663, "text": "The friendly dog is ___.", "options": ["their", "them", "theirs", "they"], "correct_index": 2}, {"id": 3703, "text": "The dog is ___.", "options": ["their", "them", "theirs", "they"], "correct_index": 2}, {"id": 3643, "text": "The laptop is ___.", "options": ["their", "them", "theirs", "they"], "correct_index": 2}, {"id": 3743, "text": "The friends are ___.", "options": ["her", "she", "hers", "herself"], "correct_index": 2}]};
+        const allQuizData = {"1": [{"text": "___ is my turn.", "options": ["This", "These", "Those", "Them"], "correct_index": 0, "explanation": "Правильный ответ: A"}, {"text": "___ forgot their keys.", "options": ["Them", "Their", "They", "Theirs"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "___ don’t agree.", "options": ["Us", "We", "Our", "Ours"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "I trust ___.", "options": ["they", "them", "their", "theirs"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "___ doesn’t belong here.", "options": ["These", "Those", "This", "Them"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "The house is ___.", "options": ["their", "them", "theirs", "they"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "___ phone is ringing.", "options": ["Their", "Theirs", "Them", "They"], "correct_index": 0, "explanation": "Правильный ответ: A"}, {"text": "The problem is ___.", "options": ["his", "him", "he", "himself"], "correct_index": 0, "explanation": "Правильный ответ: A"}, {"text": "___ are expensive tickets.", "options": ["This", "That", "These", "It"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "___ don’t understand this rule.", "options": ["Me", "My", "Mine", "I"], "correct_index": 3, "explanation": "Правильный ответ: D"}, {"text": "___ arrived late.", "options": ["Him", "He", "His", "Himself"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "___ friends arrived.", "options": ["Our", "Ours", "We", "Us"], "correct_index": 0, "explanation": "Правильный ответ: A"}, {"text": "___ jacket is warm.", "options": ["His", "Him", "He", "Himself"], "correct_index": 0, "explanation": "Правильный ответ: A"}, {"text": "___ is raining again.", "options": ["He", "She", "It", "They"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "___ doesn’t feel well.", "options": ["Him", "He", "His", "Himself"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "___ is too loud.", "options": ["These", "Those", "This", "Them"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "___ shoes are dirty.", "options": ["This", "That", "These", "It"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "___ bags are ready.", "options": ["This", "That", "These", "It"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "He likes ___.", "options": ["she", "her", "hers", "herself"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "___ plan failed.", "options": ["Our", "Ours", "We", "Us"], "correct_index": 0, "explanation": "Правильный ответ: A"}], "2": [{"text": "___ are responsible.", "options": ["Us", "We", "Our", "Ours"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "___ are expensive shoes.", "options": ["This", "That", "These", "It"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "He gave ___ the keys.", "options": ["we", "us", "our", "ours"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "___ is my responsibility.", "options": ["This", "These", "Those", "Them"], "correct_index": 0, "explanation": "Правильный ответ: A"}, {"text": "___ teacher is strict.", "options": ["Their", "Theirs", "Them", "They"], "correct_index": 0, "explanation": "Правильный ответ: A"}, {"text": "___ opinion matters.", "options": ["His", "Him", "He", "Himself"], "correct_index": 0, "explanation": "Правильный ответ: A"}, {"text": "Can you see ___ clearly?", "options": ["I", "me", "my", "mine"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "___ dog is barking.", "options": ["Our", "Ours", "We", "Us"], "correct_index": 0, "explanation": "Правильный ответ: A"}, {"text": "He thanked ___.", "options": ["I", "me", "my", "mine"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "___ dress is nice.", "options": ["Her", "Hers", "She", "Herself"], "correct_index": 0, "explanation": "Правильный ответ: A"}, {"text": "___ parents are strict.", "options": ["Her", "Hers", "She", "Herself"], "correct_index": 0, "explanation": "Правильный ответ: A"}, {"text": "Can you help ___?", "options": ["I", "me", "my", "mine"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "She is taller than ___.", "options": ["I", "me", "my", "mine"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "___ phone is ringing.", "options": ["His", "Him", "He", "Himself"], "correct_index": 0, "explanation": "Правильный ответ: A"}, {"text": "___ teacher is strict.", "options": ["Their", "Theirs", "Them", "They"], "correct_index": 0, "explanation": "Правильный ответ: A"}, {"text": "___ team won the match.", "options": ["Our", "Ours", "We", "Us"], "correct_index": 0, "explanation": "Правильный ответ: A"}, {"text": "___ doesn’t belong here.", "options": ["These", "Those", "This", "Them"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "___ are waiting outside.", "options": ["Them", "Their", "They", "Theirs"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "This jacket is ___.", "options": ["my", "me", "mine", "I"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "___ is my best friend.", "options": ["Her", "She", "Hers", "Herself"], "correct_index": 1, "explanation": "Правильный ответ: B"}], "3": [{"text": "___ isn’t mine.", "options": ["This", "These", "Those", "Them"], "correct_index": 0, "explanation": "Правильный ответ: A"}, {"text": "___ is my seat.", "options": ["These", "Those", "This", "Them"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "___ car is parked outside.", "options": ["Hers", "Her", "She", "Herself"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "She looked at ___.", "options": ["I", "me", "my", "mine"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "The house is ___.", "options": ["their", "them", "theirs", "they"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "She helped ___.", "options": ["I", "me", "my", "mine"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "This pen is ___.", "options": ["my", "me", "mine", "I"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "She saw ___ yesterday.", "options": ["I", "me", "my", "mine"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "He explained ___ clearly.", "options": ["I", "me", "my", "mine"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "I don’t know ___.", "options": ["she", "her", "hers", "herself"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "___ friends are here.", "options": ["Her", "Hers", "She", "Herself"], "correct_index": 0, "explanation": "Правильный ответ: A"}, {"text": "___ house is far away.", "options": ["Our", "Ours", "We", "Us"], "correct_index": 0, "explanation": "Правильный ответ: A"}, {"text": "___ is interesting.", "options": ["This", "These", "Those", "Them"], "correct_index": 0, "explanation": "Правильный ответ: A"}, {"text": "Is this ___ seat or mine?", "options": ["your", "yours", "you", "yourself"], "correct_index": 0, "explanation": "Правильный ответ: A"}, {"text": "The answer is ___.", "options": ["your", "you", "yours", "yourself"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "___ dress is beautiful.", "options": ["Her", "Hers", "She", "Herself"], "correct_index": 0, "explanation": "Правильный ответ: A"}, {"text": "___ are responsible for this project.", "options": ["Them", "Their", "They", "Theirs"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "This is ___ phone.", "options": ["mine", "my", "me", "I"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "___ arrived early.", "options": ["Him", "He", "His", "Himself"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "She believes ___.", "options": ["he", "him", "his", "himself"], "correct_index": 1, "explanation": "Правильный ответ: B"}], "4": [{"text": "___ doesn’t agree.", "options": ["She", "Her", "Hers", "Herself"], "correct_index": 0, "explanation": "Правильный ответ: A"}, {"text": "___ bags are heavy.", "options": ["This", "That", "These", "It"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "___ are my classmates.", "options": ["This", "That", "These", "It"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "___ dog is barking.", "options": ["Their", "Theirs", "Them", "They"], "correct_index": 0, "explanation": "Правильный ответ: A"}, {"text": "They invited ___ to the party.", "options": ["we", "us", "our", "ours"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "___ was my idea.", "options": ["This", "These", "Those", "Them"], "correct_index": 0, "explanation": "Правильный ответ: A"}, {"text": "___ opinion matters.", "options": ["Your", "Yours", "You", "Yourself"], "correct_index": 0, "explanation": "Правильный ответ: A"}, {"text": "The jacket is ___.", "options": ["my", "me", "mine", "I"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "___ phone is missing.", "options": ["My", "Mine", "Me", "I"], "correct_index": 0, "explanation": "Правильный ответ: A"}, {"text": "They invited ___.", "options": ["we", "us", "our", "ours"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "___ are expensive.", "options": ["This", "That", "These", "It"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "___ opinion matters.", "options": ["His", "Him", "He", "Himself"], "correct_index": 0, "explanation": "Правильный ответ: A"}, {"text": "___ forgot his wallet.", "options": ["Him", "He", "His", "Himself"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "___ house is very big.", "options": ["Our", "Ours", "We", "Us"], "correct_index": 0, "explanation": "Правильный ответ: A"}, {"text": "She borrowed ___.", "options": ["I", "me", "my", "mine"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "She trusts ___.", "options": ["I", "me", "my", "mine"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "___ isn’t working.", "options": ["These", "Those", "This", "Them"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "___ didn’t call back.", "options": ["Him", "He", "His", "Himself"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "___ idea worked.", "options": ["Our", "Ours", "We", "Us"], "correct_index": 0, "explanation": "Правильный ответ: A"}, {"text": "___ was a mistake.", "options": ["This", "These", "Those", "Them"], "correct_index": 0, "explanation": "Правильный ответ: A"}], "5": [{"text": "Can you hear ___?", "options": ["I", "me", "my", "mine"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "She likes ___ very much.", "options": ["I", "me", "my", "mine"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "___ laptop is new.", "options": ["Their", "Theirs", "Them", "They"], "correct_index": 0, "explanation": "Правильный ответ: A"}, {"text": "___ is my fault.", "options": ["It", "He", "She", "They"], "correct_index": 0, "explanation": "Правильный ответ: A"}, {"text": "___ are ready to start.", "options": ["Us", "We", "Our", "Ours"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "___ room is bigger than mine.", "options": ["Your", "Yours", "You", "Yourself"], "correct_index": 0, "explanation": "Правильный ответ: A"}, {"text": "___ are beautiful flowers.", "options": ["This", "That", "These", "It"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "He spoke to ___.", "options": ["I", "me", "my", "mine"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "___ shoes are too small.", "options": ["This", "That", "These", "It"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "This book is ___.", "options": ["my", "me", "mine", "I"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "___ are ready to leave.", "options": ["Us", "We", "Our", "Ours"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "___ idea was rejected.", "options": ["Her", "Hers", "She", "Herself"], "correct_index": 0, "explanation": "Правильный ответ: A"}, {"text": "Is this ___ jacket?", "options": ["your", "yours", "you", "yourself"], "correct_index": 0, "explanation": "Правильный ответ: A"}, {"text": "___ doesn’t work.", "options": ["These", "Those", "This", "Them"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "___ knows the answer.", "options": ["Him", "He", "His", "Himself"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "That opinion is ___.", "options": ["her", "she", "hers", "herself"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "___ is my favorite movie.", "options": ["These", "Those", "This", "Them"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "___ dog is very friendly.", "options": ["Their", "Theirs", "Them", "They"], "correct_index": 0, "explanation": "Правильный ответ: A"}, {"text": "This is ___ problem, not mine.", "options": ["your", "yours", "you", "yourself"], "correct_index": 0, "explanation": "Правильный ответ: A"}, {"text": "___ forgot her phone at home.", "options": ["Her", "She", "Hers", "Herself"], "correct_index": 1, "explanation": "Правильный ответ: B"}], "6": [{"text": "The problem is ___.", "options": ["your", "you", "yours", "yourself"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "That jacket is ___.", "options": ["your", "you", "yours", "yourself"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "The house is ___.", "options": ["our", "us", "ours", "we"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "They asked ___ to wait.", "options": ["we", "us", "our", "ours"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "___ idea sounds good.", "options": ["His", "Him", "He", "Himself"], "correct_index": 0, "explanation": "Правильный ответ: A"}, {"text": "Can you help ___ with this?", "options": ["we", "us", "our", "ours"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "She called ___.", "options": ["I", "me", "my", "mine"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "___ are my notes.", "options": ["This", "That", "These", "It"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "___ decision was final.", "options": ["Our", "Ours", "We", "Us"], "correct_index": 0, "explanation": "Правильный ответ: A"}, {"text": "___ doesn’t matter.", "options": ["These", "Those", "This", "Them"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "___ belongs to me.", "options": ["This", "These", "Those", "Them"], "correct_index": 0, "explanation": "Правильный ответ: A"}, {"text": "That choice is ___.", "options": ["her", "she", "hers", "herself"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "They trust ___.", "options": ["we", "us", "our", "ours"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "___ lives next door.", "options": ["Him", "He", "His", "Himself"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "We saw ___ at the station.", "options": ["they", "them", "their", "theirs"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "___ are broken.", "options": ["This", "That", "These", "It"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "She called ___ yesterday.", "options": ["he", "him", "his", "himself"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "I listened to ___.", "options": ["they", "them", "their", "theirs"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "___ forgot the keys.", "options": ["Him", "He", "His", "Himself"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "He thanked ___.", "options": ["I", "me", "my", "mine"], "correct_index": 1, "explanation": "Правильный ответ: B"}], "7": [{"text": "___ like to travel.", "options": ["Us", "We", "Our", "Ours"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "___ house is old.", "options": ["Their", "Theirs", "Them", "They"], "correct_index": 0, "explanation": "Правильный ответ: A"}, {"text": "We trust ___.", "options": ["they", "them", "their", "theirs"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "___ bags are heavy.", "options": ["This", "That", "These", "It"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "That mistake was ___.", "options": ["their", "them", "theirs", "they"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "The dress is ___.", "options": ["her", "she", "hers", "herself"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "The teacher is ___.", "options": ["their", "them", "theirs", "they"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "I listened to ___.", "options": ["she", "her", "hers", "herself"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "___ car over there is new.", "options": ["This", "That", "These", "Those"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "She called ___.", "options": ["I", "me", "my", "mine"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "The friends are ___.", "options": ["our", "us", "ours", "we"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "___ doesn’t matter now.", "options": ["These", "Those", "This", "Them"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "___ didn’t answer.", "options": ["Him", "He", "His", "Himself"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "___ belongs to him.", "options": ["This", "These", "Those", "Them"], "correct_index": 0, "explanation": "Правильный ответ: A"}, {"text": "___ looks familiar.", "options": ["These", "Those", "This", "Them"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "I saw ___ again.", "options": ["she", "her", "hers", "herself"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "That room is ___.", "options": ["your", "you", "yours", "yourself"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "The choice is ___.", "options": ["his", "him", "his", "himself"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "___ doesn’t fit.", "options": ["These", "Those", "This", "Them"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "She invited ___.", "options": ["I", "me", "my", "mine"], "correct_index": 1, "explanation": "Правильный ответ: B"}], "8": [{"text": "___ bags are ready.", "options": ["This", "That", "These", "It"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "I met ___ last week.", "options": ["he", "him", "his", "himself"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "That decision was ___.", "options": ["her", "she", "hers", "herself"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "She spoke to ___.", "options": ["we", "us", "our", "ours"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "I like ___ very much.", "options": ["she", "her", "hers", "herself"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "The idea was ___.", "options": ["her", "she", "hers", "herself"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "___ jacket is blue.", "options": ["Mine", "My", "Me", "I"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "The final choice was ___.", "options": ["our", "us", "ours", "we"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "___ are not ready.", "options": ["Us", "We", "Our", "Ours"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "The phone is ___.", "options": ["his", "him", "he", "himself"], "correct_index": 0, "explanation": "Правильный ответ: A"}, {"text": "___ are delicious.", "options": ["This", "That", "These", "It"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "___ is broken again.", "options": ["These", "Those", "This", "Them"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "That bag is ___.", "options": ["her", "she", "hers", "herself"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "The teacher praised ___.", "options": ["we", "us", "our", "ours"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "The teacher is ___.", "options": ["their", "them", "theirs", "they"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "___ works in this company.", "options": ["Him", "He", "His", "Himself"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "I like ___.", "options": ["she", "her", "hers", "herself"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "The dog is ___.", "options": ["our", "us", "ours", "we"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "The jacket is ___.", "options": ["his", "him", "he", "himself"], "correct_index": 0, "explanation": "Правильный ответ: A"}, {"text": "___ is not mine.", "options": ["This", "These", "Those", "Them"], "correct_index": 0, "explanation": "Правильный ответ: A"}], "9": [{"text": "That seat is ___.", "options": ["your", "you", "yours", "yourself"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "The plan was ___.", "options": ["our", "us", "ours", "we"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "___ doesn’t work here anymore.", "options": ["Him", "He", "His", "Himself"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "___ are late again.", "options": ["Them", "Their", "They", "Theirs"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "The friendly dog is ___.", "options": ["their", "them", "theirs", "they"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "I met ___ at work.", "options": ["they", "them", "their", "theirs"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "___ book is on the table.", "options": ["Mine", "My", "Me", "I"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "We invited ___.", "options": ["they", "them", "their", "theirs"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "She talked to ___.", "options": ["we", "us", "our", "ours"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "He blamed ___.", "options": ["I", "me", "my", "mine"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "___ belongs to her.", "options": ["This", "These", "Those", "Them"], "correct_index": 0, "explanation": "Правильный ответ: A"}, {"text": "___ answer is correct.", "options": ["Your", "Yours", "You", "Yourself"], "correct_index": 0, "explanation": "Правильный ответ: A"}, {"text": "___ jacket is dirty.", "options": ["My", "Mine", "Me", "I"], "correct_index": 0, "explanation": "Правильный ответ: A"}, {"text": "The house is ___.", "options": ["our", "us", "ours", "we"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "The opinion is ___.", "options": ["your", "you", "yours", "yourself"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "___ problem is serious.", "options": ["His", "Him", "He", "Himself"], "correct_index": 0, "explanation": "Правильный ответ: A"}, {"text": "The dog is ___.", "options": ["their", "them", "theirs", "they"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "___ doesn’t belong here.", "options": ["These", "Those", "This", "Them"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "___ don’t like cold weather.", "options": ["Me", "My", "Mine", "I"], "correct_index": 3, "explanation": "Правильный ответ: D"}, {"text": "This phone is ___.", "options": ["my", "me", "mine", "I"], "correct_index": 2, "explanation": "Правильный ответ: C"}], "10": [{"text": "___ jacket do you like?", "options": ["Which", "What", "Who", "Whose"], "correct_index": 3, "explanation": "Правильный ответ: D"}, {"text": "___ am ready to start.", "options": ["Me", "My", "I", "Mine"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "The victory was ___.", "options": ["our", "us", "ours", "we"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "___ house is new.", "options": ["Their", "Theirs", "Them", "They"], "correct_index": 0, "explanation": "Правильный ответ: A"}, {"text": "She spoke to ___.", "options": ["we", "us", "our", "ours"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "The laptop is ___.", "options": ["their", "them", "theirs", "they"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "___ don’t agree.", "options": ["Us", "We", "Our", "Ours"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "___ bags are heavy.", "options": ["This", "That", "These", "It"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "___ pen is broken.", "options": ["Mine", "My", "Me", "I"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "They helped ___.", "options": ["we", "us", "our", "ours"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "___ is too expensive.", "options": ["These", "Those", "This", "Them"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "___ broke the window.", "options": ["Him", "He", "His", "Himself"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "The phone is ___.", "options": ["my", "me", "mine", "I"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "___ are my friends.", "options": ["This", "That", "These", "It"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "She trusts ___.", "options": ["we", "us", "our", "ours"], "correct_index": 1, "explanation": "Правильный ответ: B"}, {"text": "The idea was ___.", "options": ["our", "us", "ours", "we"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "The friends are ___.", "options": ["her", "she", "hers", "herself"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "___ doesn’t work properly.", "options": ["These", "Those", "This", "Them"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "The dress is ___.", "options": ["her", "she", "hers", "herself"], "correct_index": 2, "explanation": "Правильный ответ: C"}, {"text": "She trusts ___.", "options": ["we", "us", "our", "ours"], "correct_index": 1, "explanation": "Правильный ответ: B"}]};
         let currentQuizSet = 1;
-        const quizData = allQuizData[currentQuizSet] || [];
-
-        function checkAnswers(event) {
-            event.preventDefault();
-
-            const form = document.getElementById('quiz-form');
-            const formData = new FormData(form);
-
-            let correct = 0;
-            let total = quizData.length;
-
-            // Check each question
-            quizData.forEach((question, index) => {
-                const selectedAnswer = parseInt(formData.get(`question-${question.id}`));
-                const options = document.querySelectorAll(`input[name="question-${question.id}"]`);
-
-                options.forEach((option, optIndex) => {
-                    const label = option.closest('.option');
-                    if (optIndex === question.correct_index) {
-                        label.classList.add('correct');
-                    }
-                    if (selectedAnswer === optIndex && selectedAnswer !== question.correct_index) {
-                        label.classList.add('incorrect');
-                    }
-                    option.disabled = true;
-                });
-
-                if (selectedAnswer === question.correct_index) {
-                    correct++;
-                }
-            });
-
-            // Calculate score
-            const percentage = Math.round((correct / total) * 100);
-            const passed = percentage >= 70;
-
-            // Show results
-            const resultsDiv = document.getElementById('results');
-            const scoreDiv = document.getElementById('score');
-            const messageDiv = document.getElementById('results-message');
-
-            scoreDiv.textContent = `${percentage}%`;
-            scoreDiv.className = 'score ' + (passed ? 'pass' : 'fail');
-
-            messageDiv.textContent = `Вы ответили правильно на ${correct} из ${total} вопросов`;
-
-            resultsDiv.classList.remove('hidden');
-
-            // Disable submit button
-            document.getElementById('submit-btn').disabled = true;
-
-            // Scroll to results
-            resultsDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }
-
-        function retakeQuiz() {
-            loadQuiz(currentQuizSet);
-        }
 
         function loadQuiz(quizSet) {
             currentQuizSet = quizSet;
 
-            // Hide placeholder, show form (if they exist)
             const placeholder = document.getElementById('quiz-placeholder');
             const form = document.getElementById('quiz-form');
             if (placeholder) {
@@ -541,7 +528,6 @@
                 form.style.display = 'block';
             }
 
-            // Update button states
             document.querySelectorAll('.quiz-selector-btn').forEach(btn => {
                 btn.classList.remove('active');
                 if (parseInt(btn.dataset.quiz) === quizSet) {
@@ -549,27 +535,20 @@
                 }
             });
 
-            // Get questions for this quiz set
             const questions = allQuizData[quizSet] || [];
-
-            // Clear and rebuild quiz HTML
             const submitBtn = document.getElementById('submit-btn');
-
-            // Remove all questions
             const existingQuestions = form.querySelectorAll('.question');
             existingQuestions.forEach(q => q.remove());
 
-            // Add new questions
             questions.forEach((question, index) => {
                 const questionDiv = document.createElement('div');
                 questionDiv.className = 'question';
-                questionDiv.dataset.questionId = question.id;
 
                 let optionsHtml = '';
                 question.options.forEach((option, optIndex) => {
                     optionsHtml += `
                         <label class="option">
-                            <input type="radio" name="question-${question.id}" value="${optIndex}" required>
+                            <input type="radio" name="question-${index}" value="${optIndex}" required>
                             <span>${option}</span>
                         </label>
                     `;
@@ -585,27 +564,61 @@
                 form.insertBefore(questionDiv, submitBtn);
             });
 
-            // Reset form state
             form.reset();
             submitBtn.disabled = false;
             document.getElementById('results').classList.add('hidden');
-            document.querySelectorAll('.option').forEach(opt => {
-                opt.classList.remove('correct', 'incorrect');
-            });
-
-            // Scroll to quiz
-            form.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
 
-        // Initialize: if only one quiz set, load it automatically
         const quizSetCount = Object.keys(allQuizData).length;
         if (quizSetCount === 1) {
-            // Single quiz - load immediately
             loadQuiz(1);
         }
-        // If multiple quiz sets, user must select one (placeholder will show)
 
-        document.getElementById('quiz-form').addEventListener('submit', checkAnswers);
+        document.getElementById('quiz-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const questions = allQuizData[currentQuizSet];
+            let correct = 0;
+
+            questions.forEach((question, index) => {
+                const selected = document.querySelector(`input[name="question-${index}"]:checked`);
+                if (selected && parseInt(selected.value) === question.correct_index) {
+                    correct++;
+                }
+            });
+
+            const total = questions.length;
+            const percentage = Math.round((correct / total) * 100);
+
+            document.getElementById('score').textContent = percentage + '%';
+            document.getElementById('score').className = percentage >= 70 ? 'score pass' : 'score fail';
+
+            let feedback;
+            if (percentage >= 90) {
+                feedback = 'Отлично!';
+            } else if (percentage >= 70) {
+                feedback = 'Хорошо!';
+            } else if (percentage >= 50) {
+                feedback = 'Неплохо, но можно лучше';
+            } else {
+                feedback = 'Нужно ещё поучить';
+            }
+
+            document.getElementById('feedback').textContent = feedback;
+            document.getElementById('details').textContent = `Правильных ответов: ${correct} из ${total}`;
+
+            document.getElementById('results').classList.remove('hidden');
+            document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+
+            this.querySelector('.submit-btn').disabled = true;
+        });
+
+        function retryQuiz() {
+            document.getElementById('results').classList.add('hidden');
+            document.getElementById('quiz-form').reset();
+            document.querySelector('.submit-btn').disabled = false;
+            document.getElementById('quiz-form').scrollIntoView({ behavior: 'smooth' });
+        }
     </script>
 </body>
 </html>
